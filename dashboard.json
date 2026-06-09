@@ -1,0 +1,156 @@
+{
+  "generated_at": "",
+  "virtual_trading": {
+    "balance": 1000.0,
+    "start_balance": 1000.0,
+    "open_positions": [
+      {
+        "id": "LAB-USDT-1780879199",
+        "symbol": "LAB-USDT",
+        "dir": "LONG",
+        "entry": 12.5162,
+        "sl": 12.36420571,
+        "tp": 12.66819429,
+        "rr": 1.0,
+        "ai_conf": 49.9,
+        "risk_pct": 1.0,
+        "risk_usdt": 10.0,
+        "balance_at_entry": 1000.0,
+        "opened_ts": "2026-06-08T00:39:59.013639+00:00",
+        "status": "open"
+      },
+      {
+        "id": "ZEC-USDT-1780880989",
+        "symbol": "ZEC-USDT",
+        "dir": "LONG",
+        "entry": 430.31,
+        "sl": 426.63742857,
+        "tp": 433.98257143,
+        "rr": 1.0,
+        "ai_conf": 50.6,
+        "risk_pct": 1.0,
+        "risk_usdt": 10.0,
+        "balance_at_entry": 1000.0,
+        "opened_ts": "2026-06-08T01:09:49.013513+00:00",
+        "status": "open"
+      },
+      {
+        "id": "BTC-USDT-1780882506",
+        "symbol": "BTC-USDT",
+        "dir": "LONG",
+        "entry": 62991.8,
+        "sl": 62807.54285714,
+        "tp": 63176.05714286,
+        "rr": 1.0,
+        "ai_conf": 48.0,
+        "risk_pct": 1.0,
+        "risk_usdt": 10.0,
+        "balance_at_entry": 1000.0,
+        "opened_ts": "2026-06-08T01:35:06.165197+00:00",
+        "status": "open"
+      },
+      {
+        "id": "XRP-USDT-1780882502",
+        "symbol": "XRP-USDT",
+        "dir": "LONG",
+        "entry": 1.1482,
+        "sl": 1.14395429,
+        "tp": 1.15244571,
+        "rr": 1.0,
+        "ai_conf": 47.1,
+        "risk_pct": 1.0,
+        "risk_usdt": 10.0,
+        "balance_at_entry": 1000.0,
+        "opened_ts": "2026-06-08T01:35:02.256760+00:00",
+        "status": "open"
+      },
+      {
+        "id": "NEAR-USDT-1780891796",
+        "symbol": "NEAR-USDT",
+        "dir": "LONG",
+        "entry": 2.0672,
+        "sl": 2.05394857,
+        "tp": 2.08045143,
+        "rr": 1.0,
+        "ai_conf": 47.9,
+        "risk_pct": 1.0,
+        "risk_usdt": 10.0,
+        "balance_at_entry": 1000.0,
+        "opened_ts": "2026-06-08T04:09:56.649490+00:00",
+        "status": "open"
+      }
+    ],
+    "closed_trades": []
+  },
+  "feature_flags": {
+    "a": {},
+    "d": {}
+  },
+  "self_upgrades": [
+    {
+      "description": "Add bridge layer placeholder and Jesse environment info request notice",
+      "file": "apex_a.py",
+      "commit": "commit=80c2d823",
+      "time": "2026-06-07T15:42:53.296793+08:00",
+      "trigger": "manual"
+    },
+    {
+      "time": "2026-06-07T14:12:37.803375+00:00",
+      "description": "為 D 建立虛擬交易帳本（本金 1000 USDT，信號觸發即自動記錄模擬交易、依AI信心值自動調整下注比例 1%~3%、追蹤至SL/TP結算），並在週報/月報中附上純數據陳述（餘額、損益、勝率、近期交易），完全不涉及真實下單"
+    },
+    {
+      "time": "2026-06-07T14:50:15.132162+00:00",
+      "description": "新增 /flags 功能開關指令（即時切換 dynamic_anomaly / virtual_ledger / weekly_sweep，無須重新部署），並在週報/月報加入「系統活動量概況」區塊（GitHub commits、自主升級次數、AI大腦對話輪數、信號/警報量），作為粗略成本/負載參考"
+    },
+    {
+      "time": "2026-06-07T14:58:45.817211+00:00",
+      "description": "把 /memory /autopilot /flags /help 全部變成主選單的按鍵操作（含自主升級開關、各功能開關的一鍵切換按鈕），Jesse 在 Telegram 不需要記住或輸入任何指令語法，點按鈕即可操作整個帝國系統"
+    },
+    {
+      "description": "改從 BingX API 讀取時間戳，轉換為 Asia/Taipei 時區顯示，不依賴本地系統時間",
+      "file": "apex_a.py",
+      "commit": "commit=979b98cf",
+      "time": "2026-06-08T09:43:00.252980+08:00",
+      "trigger": "manual"
+    },
+    {
+      "description": "記錄用戶偏好：禁止提供 RR 1:1 相關建議",
+      "file": "apex_a.py",
+      "commit": "commit=79c9b811",
+      "time": "2026-06-08T12:09:24.690000+08:00",
+      "trigger": "manual"
+    }
+  ],
+  "pending_todos": [
+    {
+      "topic": "B 文書助手：選配價目表記憶機制",
+      "note": "Jesse 之後會提供報價範例及選配價格資料（目前在另一台電腦）。屆時要新增 pricing_catalog 記憶分類，讓 B 生成報價單時自動先查表、套用標準選配價格再客製化內容。資料到位後再開始建置。",
+      "status": "waiting_for_data",
+      "added_at": "2026-06-07"
+    },
+    {
+      "topic": "績效週報/月報",
+      "note": "整理D本週實際交易表現(勝率/EV/總R) vs sweep預測值是否吻合、A自主升級項目與成效，定期摘要給Jesse，減少每天緊盯",
+      "priority": "high",
+      "added": "2026-06-07T18:23:00.041416+08:00"
+    },
+    {
+      "topic": "風險管理層/動態部位大小",
+      "note": "依AI信心值動態調整下注部位大小(信心高→部位大)，把threshold分析成果延伸到資金管理層面，需謹慎測試",
+      "priority": "high",
+      "added": "2026-06-07T18:23:00.041416+08:00"
+    },
+    {
+      "topic": "多策略A/B測試框架",
+      "note": "讓D同時紙上模擬多組信心門檻參數(如0.55/0.60/0.65)持續累積比較數據，未來調參更有根據而非單次快照",
+      "priority": "medium",
+      "added": "2026-06-07T18:23:00.041416+08:00"
+    },
+    {
+      "topic": "跨交易對策略適應性分析",
+      "note": "分析不同幣種是否該用不同的AI信心門檻，目前全市場統一用同一門檻，可能某些幣種波動模式不同",
+      "priority": "medium",
+      "added": "2026-06-07T18:23:00.041416+08:00"
+    }
+  ]
+}
