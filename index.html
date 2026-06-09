@@ -118,12 +118,33 @@ async function load() {
         ${openPos.length ? `
         <div class="card wide">
           <h2>📌 目前持倉（${openPos.length} 筆）</h2>
-          ${openPos.map(p => `
-            <div class="row">
-              <span><b>${p.symbol||''}</b> ${p.dir||''}</span>
-              <span>進 ${p.entry||''} | SL ${(p.sl||0).toFixed ? (p.sl).toFixed(5) : p.sl} | TP ${(p.tp||0).toFixed ? (p.tp).toFixed(5) : p.tp}</span>
-            </div>
-          `).join('')}
+          ${openPos.map(p => {
+            const sl = typeof p.sl === 'number' ? p.sl.toFixed(4) : (p.sl||'-');
+            const tp = typeof p.tp === 'number' ? p.tp.toFixed(4) : (p.tp||'-');
+            const liq = typeof p.liquidation_price === 'number' ? p.liquidation_price.toFixed(4) : (p.liquidation_price||'-');
+            const conf = p.ai_confidence != null ? p.ai_confidence + '%' : '-';
+            const rr = p.rr != null ? p.rr : '-';
+            const lev = p.leverage ? p.leverage + 'x' : '';
+            const nominal = p.nominal_usdt ? p.nominal_usdt + ' U' : '';
+            const dirClass = (p.dir||'').toUpperCase()==='LONG' ? 'pos' : 'neg';
+            const slPct = p.sl_pct != null ? (p.sl_pct*100).toFixed(2)+'%' : '';
+            const tpPct = p.tp_pct != null ? (p.tp_pct*100).toFixed(2)+'%' : '';
+            return `<div style="background:rgba(255,255,255,0.04);border-radius:10px;padding:10px;margin-bottom:8px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+                <span style="font-size:15px;font-weight:700;">${p.symbol||''}</span>
+                <span class="badge ${dirClass==='pos'?'badge-green':'badge-red'}">${(p.dir||'').toUpperCase()} ${lev}</span>
+                <span style="color:#888;font-size:12px;">${nominal}</span>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;font-size:12px;">
+                <div><div style="color:#888">開倉價</div><div>${p.entry||'-'}</div></div>
+                <div><div style="color:#f87171">止損 SL</div><div>${sl} <span style="color:#888">${slPct}</span></div></div>
+                <div><div style="color:#4ade80">止盈 TP</div><div>${tp} <span style="color:#888">${tpPct}</span></div></div>
+                <div><div style="color:#888">爆倉價</div><div style="color:#f87171">${liq}</div></div>
+                <div><div style="color:#888">RR</div><div>${rr}</div></div>
+                <div><div style="color:#9bb3ff">AI 信心</div><div style="color:#9bb3ff;font-weight:600;">${conf}</div></div>
+              </div>
+            </div>`;
+          }).join('')}
         </div>` : ''}
         <div class="card wide">
           <h2>📈 本金走勢</h2>
