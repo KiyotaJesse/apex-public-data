@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>APEX-A 帝國儀表板</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, 'Segoe UI', 'Microsoft JhengHei', sans-serif;
+    background: var(--tg-theme-bg-color, #0f1117);
+    color: var(--tg-theme-text-color, #e6e6e6);
+    padding: 12px;
+    font-size: 14px;
+  }
+  h1 { font-size: 18px; margin-bottom: 4px; }
+  .sub { color: #888; font-size: 12px; margin-bottom: 14px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-bottom: 12px; }
+  .card { background: rgba(255,255,255,0.05); border-radius: 12px; padding: 12px; }
+  .card h2 { font-size: 13px; color: #9bb3ff; margin-bottom: 8px; }
+  .stat { font-size: 22px; font-weight: 700; }
+  .label { color: #888; font-size: 11px; margin-top: 2px; }
+  .row { display: flex; justify-content: space-between; padding: 5px 0;
+         border-bottom: 1px solid rgba(255,255,255,0.07); font-size: 12px; }
+  .row:last-child { border-bottom: none; }
+  .pos { color: #4ade80; } .neg { color: #f87171; }
+  .flag-on { color: #4ade80; } .flag-off { color: #f87171; }
+  canvas { max-height: 180px; margin-top: 8px; }
+  .wide { grid-column: 1 / -1; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 20px;
+           font-size: 11px; font-weight: 600; }
+  .badge-green { background: rgba(74,222,128,.2); color: #4ade80; }
+  .badge-red   { background: rgba(248,113,113,.2); color: #f87171; }
+  .badge-yellow{ background: rgba(251,191,36,.2); color: #fbbf24; }
+  .loading { text-align: center; padding: 40px; color: #888; }
+  .err { color: #f87171; text-align: center; padding: 20px; }
+  .refresh-btn {
+    width: 100%; padding: 10px; margin-top: 12px;
+    background: #9bb3ff; color: #0f1117; border: none;
+    border-radius: 10px; font-size: 14px; font-weight: 600; cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<h1>🚀 APEX-A 帝國儀表板</h1>
+<div class="sub" id="meta">讀取中...</div>
+<div id="content"><div class="loading">⏳ 載入資料中...</div></div>
+<button class="refresh-btn" onclick="load()">🔄 重新整理</button>
+
+<script>
+// 初始化 Telegram Mini App
+if (window.Telegram && window.Telegram.WebApp) {
+  Telegram.WebApp.ready();
+  Telegram.WebApp.expand();
+}
+
+// 讀取公開 repo 的合併 dashboard.json（由 A 每小時同步）
+const DATA_URL = 'https://raw.githubusercontent.com/KiyotaJesse/apex-public-data/main/dashboard.json';
+
+function fmtNum(n, dec=2) { return (n >= 0 ? '+' : '') + n.toFixed(dec); }
+
+let chart;
+
+async function load() {
+  document.getElementById('meta').textContent = '更新中...';
+  try {
+    const r = await fetch(DATA_URL + '?t=' + Date.now());
+    if (!r.ok) throw new Error('GitHub ' + r.status);
+    const data = await r.json();
+
+    const vt = data.virtual_trading || {};
+    const closed = vt.closed_trades || [];
+    const balance = vt.balance || 1000;
+    const start = vt.start_balance || 1000;
+    const pnl = balance - start;
+    const wins = closed.filter(t => t.outcome === 'tp');
+    const winRate = closed.length ? (wins.length / closed.length * 100).toFixed(1) : '0.0';
+    const openPos = vt.open_positions || [];
+
+    // 走勢曲線
+    const curve = [start];
+    let running = start;
+    for (const t of closed) { running = +(running + (t.pnl_usdt||0)).toFixed(2); curve.push(running); }
+
+    // 功能開關
+    const flags = data.feature_flags || {};
+    const aFlags = flags.a || {};
+    const dFlags = flags.d || {};
+
+    // 最近升級
+    const upgrades = (data.self_upgrades || []).slice(-5).reverse();
+
+    document.getElementById('meta').textContent =
+      '更新時間：' + new Date().toLocaleString('zh-TW', {timeZone:'Asia/Taipei'});
+
+    document.getElementById('content').innerHTML = `
+      <div class="grid">
+        <div class="card">
+          <h2>💰 虛擬帳本</h2>
+          <div class="stat">${balance.toFixed(2)}</div>
+          <div class="label">USDT &nbsp;
+            <span class="${pnl>=0?'pos':'neg'}">${fmtNum(pnl)} (${fmtNum(pnl/start*100,1)}%)</span>
+          </div>
+          <div style="margin-top:6px;font-size:12px;">
+            <span class="badge badge-green">勝率 ${winRate}%</span> &nbsp;
+            <span class="badge badge-yellow">持倉 ${openPos.length} 筆</span>
+          </div>
+        </div>
+        <div class="card">
+          <h2>📊 交易統計</h2>
+          <div class="row"><span>已結算</span><span>${closed.length} 筆</span></div>
+          <div class="row"><span>止盈 TP</span><span class="pos">${wins.length} 筆</span></div>
+          <div class="row"><span>止損 SL</span><span class="neg">${closed.length - wins.length} 筆</span></div>
+          <div class="row"><span>起始資金</span><span>${start} USDT</span></div>
+        </div>
+        ${openPos.length ? `
+        <div class="card wide">
+          <h2>📌 目前持倉（${openPos.length} 筆）</h2>
+          ${openPos.map(p => `
+            <div class="row">
+              <span><b>${p.symbol||''}</b> ${p.dir||''}</span>
+              <span>進 ${p.entry||''} | SL ${(p.sl||0).toFixed ? (p.sl).toFixed(5) : p.sl} | TP ${(p.tp||0).toFixed ? (p.tp).toFixed(5) : p.tp}</span>
+            </div>
+          `).join('')}
+        </div>` : ''}
+        <div class="card wide">
+          <h2>📈 本金走勢</h2>
+          <canvas id="chart"></canvas>
+        </div>
+        <div class="card">
+          <h2>🚦 功能開關</h2>
+          ${Object.entries({...Object.fromEntries(Object.entries(aFlags).map(([k,v])=>[`[A] ${k}`,v])),
+                            ...Object.fromEntries(Object.entries(dFlags).map(([k,v])=>[`[D] ${k}`,v]))})
+            .map(([k,v]) => `<div class="row"><span>${k}</span><span class="${v?'flag-on':'flag-off'}">${v?'🟢':'🔴'}</span></div>`)
+            .join('') || '<div style="color:#888;font-size:12px">無資料</div>'}
+        </div>
+        <div class="card">
+          <h2>🔧 最近升級</h2>
+          ${upgrades.map(u => `
+            <div class="row">
+              <span style="flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:160px">${(u.description||'').slice(0,40)}</span>
+              <span class="label">${(u.time||'').slice(0,10)}</span>
+            </div>`).join('') || '<div style="color:#888;font-size:12px">無紀錄</div>'}
+        </div>
+        ${closed.length ? `
+        <div class="card wide">
+          <h2>📜 最近交易（最新5筆）</h2>
+          ${closed.slice(-5).reverse().map(t => {
+            const p = t.pnl_usdt||0;
+            return `<div class="row">
+              <span><b>${t.symbol||''}</b> ${t.dir||''} <span class="badge ${t.outcome==='tp'?'badge-green':'badge-red'}">${(t.outcome||'').toUpperCase()}</span></span>
+              <span class="${p>=0?'pos':'neg'}">${fmtNum(p)} USDT</span>
+            </div>`;
+          }).join('')}
+        </div>` : ''}
+      </div>
+    `;
+
+    // 畫走勢圖
+    if (chart) chart.destroy();
+    const ctx = document.getElementById('chart');
+    if (ctx && curve.length > 1) {
+      chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: curve.map((_,i) => i===0 ? '起始' : `#${i}`),
+          datasets: [{ label: 'USDT', data: curve,
+            borderColor: '#9bb3ff', backgroundColor: 'rgba(155,179,255,.15)',
+            fill: true, tension: 0.3, pointRadius: curve.length > 20 ? 0 : 3 }]
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { ticks: { color: '#888', maxTicksLimit: 8 } },
+            y: { ticks: { color: '#888' } }
+          }
+        }
+      });
+    }
+  } catch(e) {
+    document.getElementById('content').innerHTML = `<div class="err">❌ 載入失敗：${e.message}<br><small>請確認 GitHub JSON 可存取</small></div>`;
+    document.getElementById('meta').textContent = '載入失敗';
+  }
+}
+
+load();
+</script>
+</body>
+</html>
