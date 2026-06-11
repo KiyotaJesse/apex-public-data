@@ -77,7 +77,17 @@ async function load() {
     const pnl = balance - start;
     const wins = closed.filter(t => t.outcome === 'tp');
     const winRate = closed.length ? (wins.length / closed.length * 100).toFixed(1) : '0.0';
-    const openPos = vt.open_positions || [];
+    // 持倉彙總：三策略（主策略/趨勢跟隨/RSI區間）各自的虛擬帳本都可能有持倉
+    const strategies = data.strategies || {};
+    let openPos = vt.open_positions || [];
+    if (Object.keys(strategies).length) {
+      openPos = [];
+      for (const s of Object.values(strategies)) {
+        for (const p of (s.open_positions || [])) {
+          openPos.push({...p, strategy_name: s.name});
+        }
+      }
+    }
 
     // 走勢曲線
     const curve = [start];
@@ -133,7 +143,7 @@ async function load() {
               <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
                 <span style="font-size:15px;font-weight:700;">${p.symbol||''}</span>
                 <span class="badge ${dirClass==='pos'?'badge-green':'badge-red'}">${(p.dir||'').toUpperCase()} ${lev}</span>
-                <span style="color:#888;font-size:12px;">${nominal}</span>
+                <span style="color:#888;font-size:12px;">${p.strategy_name||''} ${nominal}</span>
               </div>
               <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;font-size:12px;">
                 <div><div style="color:#888">開倉價</div><div>${p.entry||'-'}</div></div>
