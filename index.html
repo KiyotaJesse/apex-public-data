@@ -89,6 +89,17 @@ async function load() {
       }
     }
 
+    // 策略B真實交易
+    const rtb = data.real_trading_strategy_b || {};
+    const rtbOpen = rtb.open_positions || [];
+    const rtbStats = rtb.stats || {n:0, win_rate_pct:0, ev_r:0};
+
+    // 風控斷路器
+    const rcb = data.risk_circuit_breaker || {};
+
+    // 市場狀態
+    const market = data.market || {};
+
     // 走勢曲線
     const curve = [start];
     let running = start;
@@ -139,10 +150,18 @@ async function load() {
             const dirClass = (p.dir||'').toUpperCase()==='LONG' ? 'pos' : 'neg';
             const slPct = p.sl_pct != null ? (p.sl_pct*100).toFixed(2)+'%' : '';
             const tpPct = p.tp_pct != null ? (p.tp_pct*100).toFixed(2)+'%' : '';
+            // 持倉天數：超過24小時未結算標示為可能卡住
+            let ageBadge = '';
+            if (p.opened_ts) {
+              const ageHrs = (Date.now() - new Date(p.opened_ts).getTime()) / 3600000;
+              const ageTxt = ageHrs >= 24 ? `${(ageHrs/24).toFixed(1)} 天` : `${ageHrs.toFixed(1)} 小時`;
+              ageBadge = `<span class="badge ${ageHrs >= 24 ? 'badge-red' : 'badge-yellow'}" title="開倉時間">${ageTxt}${ageHrs >= 24 ? ' ⚠️卡住?' : ''}</span>`;
+            }
             return `<div style="background:rgba(255,255,255,0.04);border-radius:10px;padding:10px;margin-bottom:8px;">
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;gap:6px;flex-wrap:wrap;">
                 <span style="font-size:15px;font-weight:700;">${p.symbol||''}</span>
                 <span class="badge ${dirClass==='pos'?'badge-green':'badge-red'}">${(p.dir||'').toUpperCase()} ${lev}</span>
+                ${ageBadge}
                 <span style="color:#888;font-size:12px;">${p.strategy_name||''} ${nominal}</span>
               </div>
               <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;font-size:12px;">
@@ -160,6 +179,35 @@ async function load() {
           <h2>📈 本金走勢</h2>
           <canvas id="chart"></canvas>
         </div>
+        <div class="card">
+          <h2>🌐 市場狀態</h2>
+          <div class="row"><span>恐懼貪婪指數</span>
+            <span class="${market.fng_value!=null && market.fng_value<=20 ? 'neg' : (market.fng_value!=null && market.fng_value>=80 ? 'pos' : '')}">
+              ${market.fng_value != null ? market.fng_value + ' (' + market.fng_label + ')' : '-'}
+            </span>
+          </div>
+          <div class="row"><span>BTC</span><span>${market.btc_usd != null ? '$' + market.btc_usd.toLocaleString() : '-'}</span></div>
+          <div class="row"><span>XRP</span><span>${market.xrp_usd != null ? '$' + market.xrp_usd : '-'}</span></div>
+        </div>
+        <div class="card">
+          <h2>🛑 風控斷路器</h2>
+          <div class="row"><span>Killswitch</span><span class="${rcb.killswitch ? 'flag-off' : 'flag-on'}">${rcb.killswitch ? '🔴 已啟動' : '🟢 正常'}</span></div>
+          <div class="row"><span>今日損益</span><span class="${(rcb.daily_pnl_usdt||0)>=0?'pos':'neg'}">${fmtNum(rcb.daily_pnl_usdt||0)} USDT</span></div>
+          <div class="row"><span>每日虧損上限</span><span class="${rcb.daily_loss_limit_hit ? 'neg' : 'pos'}">${rcb.daily_loss_limit_hit ? '⚠️ 已觸發' : '未觸發'}</span></div>
+          <div class="row"><span>日期</span><span class="label">${rcb.daily_pnl_date || '-'}</span></div>
+        </div>
+        ${rtb.mode ? `
+        <div class="card wide">
+          <h2>🎯 策略B 真實交易（主力派發SHORT）</h2>
+          <div class="row"><span>模式</span><span class="badge ${rtb.mode==='live'?'badge-green':'badge-yellow'}">${rtb.mode}</span></div>
+          <div class="row"><span>持倉中</span><span>${rtbOpen.length} 筆</span></div>
+          <div class="row"><span>已結算</span><span>${rtbStats.n} 筆 ｜ 勝率 ${rtbStats.win_rate_pct}% ｜ EV ${rtbStats.ev_r}R</span></div>
+          ${rtbOpen.length ? rtbOpen.map(p => `
+            <div class="row">
+              <span><b>${p.symbol||''}</b> SHORT</span>
+              <span class="label">entry ${p.fill_price||p.sig_entry||'-'} ｜ SL ${p.sl_price||'-'}</span>
+            </div>`).join('') : ''}
+        </div>` : ''}
         <div class="card">
           <h2>🚦 功能開關</h2>
           ${Object.entries({...Object.fromEntries(Object.entries(aFlags).map(([k,v])=>[`[A] ${k}`,v])),
