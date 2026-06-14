@@ -117,6 +117,28 @@ async function load() {
     const dailyLabels = Object.keys(dailyMap);
     const dailyValues = Object.values(dailyMap);
 
+    // 盈虧分析（仿幣安合約帳戶盈虧分析）
+    let pnlAnalysis = null;
+    if (closed.length) {
+      const rs = closed.map(t => t.pnl_usdt || 0);
+      const winsArr = rs.filter(r => r > 0);
+      const lossArr = rs.filter(r => r <= 0);
+      const avgWin = winsArr.length ? winsArr.reduce((a,b)=>a+b,0) / winsArr.length : 0;
+      const avgLoss = lossArr.length ? lossArr.reduce((a,b)=>a+b,0) / lossArr.length : 0;
+      const plRatio = avgLoss !== 0 ? Math.abs(avgWin / avgLoss) : 0;
+      const maxWin = Math.max(...rs);
+      const maxLoss = Math.min(...rs);
+      let curStreak = 0, lastSign = 0, maxWinStreak = 0, maxLossStreak = 0;
+      for (const r of rs) {
+        const sign = r > 0 ? 1 : -1;
+        curStreak = (sign === lastSign) ? curStreak + 1 : 1;
+        if (sign > 0) maxWinStreak = Math.max(maxWinStreak, curStreak);
+        else maxLossStreak = Math.max(maxLossStreak, curStreak);
+        lastSign = sign;
+      }
+      pnlAnalysis = { plRatio, avgWin, avgLoss, maxWin, maxLoss, maxWinStreak, maxLossStreak };
+    }
+
     // 功能開關
     const flags = data.feature_flags || {};
     const aFlags = flags.a || {};
@@ -195,6 +217,19 @@ async function load() {
         <div class="card wide">
           <h2>📅 每日損益</h2>
           <canvas id="dailyChart"></canvas>
+        </div>` : ''}
+        ${pnlAnalysis ? `
+        <div class="card wide">
+          <h2>📊 盈虧分析</h2>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;">
+            <div><div class="label">盈虧比</div><div class="stat" style="font-size:16px;">${pnlAnalysis.plRatio.toFixed(2)}</div></div>
+            <div><div class="label">平均獲利</div><div class="stat pos" style="font-size:16px;">${fmtNum(pnlAnalysis.avgWin)}</div></div>
+            <div><div class="label">平均虧損</div><div class="stat neg" style="font-size:16px;">${fmtNum(pnlAnalysis.avgLoss)}</div></div>
+            <div><div class="label">最大單筆獲利</div><div class="stat pos" style="font-size:16px;">${fmtNum(pnlAnalysis.maxWin)}</div></div>
+            <div><div class="label">最大單筆虧損</div><div class="stat neg" style="font-size:16px;">${fmtNum(pnlAnalysis.maxLoss)}</div></div>
+            <div><div class="label">最大連勝</div><div class="stat" style="font-size:16px;">${pnlAnalysis.maxWinStreak} 筆</div></div>
+            <div><div class="label">最大連虧</div><div class="stat" style="font-size:16px;">${pnlAnalysis.maxLossStreak} 筆</div></div>
+          </div>
         </div>` : ''}
         <div class="card">
           <h2>🌐 市場狀態</h2>
