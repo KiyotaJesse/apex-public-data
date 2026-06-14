@@ -27,9 +27,6 @@
   .row:last-child { border-bottom: none; }
   .pos { color: #4ade80; } .neg { color: #f87171; }
   .flag-on { color: #4ade80; } .flag-off { color: #f87171; }
-  canvas { max-height: 180px; margin-top: 8px; }
-  #chart { max-height: 110px; }
-  #dailyChart { max-height: 140px; }
   .wide { grid-column: 1 / -1; }
   .badge { display: inline-block; padding: 2px 8px; border-radius: 20px;
            font-size: 11px; font-weight: 600; }
@@ -70,8 +67,6 @@ const DATA_URL = 'https://raw.githubusercontent.com/KiyotaJesse/apex-public-data
 
 function fmtNum(n, dec=2) { return (n >= 0 ? '+' : '') + n.toFixed(dec); }
 
-let chart, dailyChart;
-
 async function load() {
   document.getElementById('meta').textContent = '更新中...';
   try {
@@ -83,13 +78,63 @@ async function load() {
     const closed = vt.closed_trades || [];
     const balance = vt.balance || 1000;
     const start = vt.start_balance || 1000;
+    const pnl = balance - start;
+    const wins = closed.filter(t => t.outcome === 'tp');
+    const winRate = closed.length ? (wins.length / closed.length * 100).toFixed(1) : '0.0';
+    // 持倉彙總：三策略（主策略/趨勢跟隨/RSI區間）各自的虛擬帳本都可能有持倉
+    const strategies = data.strategies || {};
+    let openPos = vt.open_positions || [];
+    if (Object.keys(strategies).length) {
+      openPos = [];
+      for (const s of Object.values(strategies)) {
+        for (const p of (s.open_positions || [])) {
+          openPos.push({...p, strategy_name: s.name});
+        }
+      }
+    }
 
-    // 走勢曲線
-    const curve = [start];
-    let running = start;
-    for (const t of closed) { running = +(running + (t.pnl_usdt||0)).toFixed(2); curve.push(running); }
+    // 策略B真實交易
+    const rtb = data.real_trading_strategy_b || {};
+    const rtbOpen = rtb.open_positions || [];
+    const rtbStats = rtb.stats || {n:0, win_rate_pct:0, ev_r:0};
 
-    // 每日損益（以 Taipei 日期彙總，key 為 YYYY-MM-DD）
+    // 風控斷路器
+    const rcb = data.risk_circuit_breaker || {};
+
+    // 市場狀態
+    const market = data.market || {};
+
+    // 功能開關
+    const flags = data.feature_flags || {};
+    const aFlags = flags.a || {};
+    const dFlags = flags.d || {};
+
+    // 最近升級
+    const upgrades = (data.self_upgrades || []).slice(-5).reverse();
+
+    // 盈虧分析（仿幣安合約帳戶盈虧分析）
+    let pnlAnalysis = null;
+    if (closed.length) {
+      const rs = closed.map(t => t.pnl_usdt || 0);
+      const winsArr = rs.filter(r => r > 0);
+      const lossArr = rs.filter(r => r <= 0);
+      const avgWin = winsArr.length ? winsArr.reduce((a,b)=>a+b,0) / winsArr.length : 0;
+      const avgLoss = lossArr.length ? lossArr.reduce((a,b)=>a+b,0) / lossArr.length : 0;
+      const plRatio = avgLoss !== 0 ? Math.abs(avgWin / avgLoss) : 0;
+      const maxWin = Math.max(...rs);
+      const maxLoss = Math.min(...rs);
+      let curStreak = 0, lastSign = 0, maxWinStreak = 0, maxLossStreak = 0;
+      for (const r of rs) {
+        const sign = r > 0 ? 1 : -1;
+        curStreak = (sign === lastSign) ? curStreak + 1 : 1;
+        if (sign > 0) maxWinStreak = Math.max(maxWinStreak, curStreak);
+        else maxLossStreak = Math.max(maxLossStreak, curStreak);
+        lastSign = sign;
+      }
+      pnlAnalysis = { plRatio, avgWin, avgLoss, maxWin, maxLoss, maxWinStreak, maxLossStreak };
+    }
+
+    // 每日損益（以 Taipei 日期彙總，key 為 YYYY-MM-DD）—— 供合約盈虧總覽/月曆使用
     const dailyMap = {};
     for (const t of closed) {
       if (!t.closed_ts) continue;
@@ -98,8 +143,6 @@ async function load() {
       dailyMap[key] = +((dailyMap[key]||0) + (t.pnl_usdt||0)).toFixed(2);
     }
     const dailyKeys = Object.keys(dailyMap).sort();
-    const dailyLabels = dailyKeys.map(k => k.slice(5).replace('-','/'));
-    const dailyValues = dailyKeys.map(k => dailyMap[k]);
 
     // 合約盈虧總覽：本日/7天/30天/累計
     const nowTaipei = new Date(Date.now() + 8*3600000);
@@ -181,63 +224,133 @@ async function load() {
             }).join('')}
           </div>
         </div>
-        <div class="card wide">
-          <h2>📈 本金走勢</h2>
-          <canvas id="chart"></canvas>
+        <div class="card">
+          <h2>💰 虛擬帳本</h2>
+          <div class="stat">${balance.toFixed(2)}</div>
+          <div class="label">USDT &nbsp;
+            <span class="${pnl>=0?'pos':'neg'}">${fmtNum(pnl)} (${fmtNum(pnl/start*100,1)}%)</span>
+          </div>
+          <div style="margin-top:6px;font-size:12px;">
+            <span class="badge badge-green">勝率 ${winRate}%</span> &nbsp;
+            <span class="badge badge-yellow">持倉 ${openPos.length} 筆</span>
+          </div>
         </div>
-        ${dailyLabels.length ? `
+        <div class="card">
+          <h2>📊 交易統計</h2>
+          <div class="row"><span>已結算</span><span>${closed.length} 筆</span></div>
+          <div class="row"><span>止盈 TP</span><span class="pos">${wins.length} 筆</span></div>
+          <div class="row"><span>止損 SL</span><span class="neg">${closed.length - wins.length} 筆</span></div>
+          <div class="row"><span>起始資金</span><span>${start} USDT</span></div>
+        </div>
+        ${openPos.length ? `
         <div class="card wide">
-          <h2>📅 每日損益</h2>
-          <canvas id="dailyChart"></canvas>
+          <h2>📌 目前持倉（${openPos.length} 筆）</h2>
+          ${openPos.map(p => {
+            const sl = typeof p.sl === 'number' ? p.sl.toFixed(4) : (p.sl||'-');
+            const tp = typeof p.tp === 'number' ? p.tp.toFixed(4) : (p.tp||'-');
+            const liq = typeof p.liquidation_price === 'number' ? p.liquidation_price.toFixed(4) : (p.liquidation_price||'-');
+            const conf = p.ai_confidence != null ? p.ai_confidence + '%' : '-';
+            const rr = p.rr != null ? p.rr : '-';
+            const lev = p.leverage ? p.leverage + 'x' : '';
+            const nominal = p.nominal_usdt ? p.nominal_usdt + ' U' : '';
+            const dirClass = (p.dir||'').toUpperCase()==='LONG' ? 'pos' : 'neg';
+            const slPct = p.sl_pct != null ? (p.sl_pct*100).toFixed(2)+'%' : '';
+            const tpPct = p.tp_pct != null ? (p.tp_pct*100).toFixed(2)+'%' : '';
+            // 持倉天數：超過24小時未結算標示為可能卡住
+            let ageBadge = '';
+            if (p.opened_ts) {
+              const ageHrs = (Date.now() - new Date(p.opened_ts).getTime()) / 3600000;
+              const ageTxt = ageHrs >= 24 ? `${(ageHrs/24).toFixed(1)} 天` : `${ageHrs.toFixed(1)} 小時`;
+              ageBadge = `<span class="badge ${ageHrs >= 24 ? 'badge-red' : 'badge-yellow'}" title="開倉時間">${ageTxt}${ageHrs >= 24 ? ' ⚠️卡住?' : ''}</span>`;
+            }
+            return `<div style="background:rgba(255,255,255,0.04);border-radius:10px;padding:10px;margin-bottom:8px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;gap:6px;flex-wrap:wrap;">
+                <span style="font-size:15px;font-weight:700;">${p.symbol||''}</span>
+                <span class="badge ${dirClass==='pos'?'badge-green':'badge-red'}">${(p.dir||'').toUpperCase()} ${lev}</span>
+                ${ageBadge}
+                <span style="color:#888;font-size:12px;">${p.strategy_name||''} ${nominal}</span>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;font-size:12px;">
+                <div><div style="color:#888">開倉價</div><div>${p.entry||'-'}</div></div>
+                <div><div style="color:#f87171">止損 SL</div><div>${sl} <span style="color:#888">${slPct}</span></div></div>
+                <div><div style="color:#4ade80">止盈 TP</div><div>${tp} <span style="color:#888">${tpPct}</span></div></div>
+                <div><div style="color:#888">爆倉價</div><div style="color:#f87171">${liq}</div></div>
+                <div><div style="color:#888">RR</div><div>${rr}</div></div>
+                <div><div style="color:#9bb3ff">AI 信心</div><div style="color:#9bb3ff;font-weight:600;">${conf}</div></div>
+              </div>
+            </div>`;
+          }).join('')}
+        </div>` : ''}
+        ${pnlAnalysis ? `
+        <div class="card wide">
+          <h2>📊 盈虧分析</h2>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;">
+            <div><div class="label">盈虧比</div><div class="stat" style="font-size:16px;">${pnlAnalysis.plRatio.toFixed(2)}</div></div>
+            <div><div class="label">平均獲利</div><div class="stat pos" style="font-size:16px;">${fmtNum(pnlAnalysis.avgWin)}</div></div>
+            <div><div class="label">平均虧損</div><div class="stat neg" style="font-size:16px;">${fmtNum(pnlAnalysis.avgLoss)}</div></div>
+            <div><div class="label">最大單筆獲利</div><div class="stat pos" style="font-size:16px;">${fmtNum(pnlAnalysis.maxWin)}</div></div>
+            <div><div class="label">最大單筆虧損</div><div class="stat neg" style="font-size:16px;">${fmtNum(pnlAnalysis.maxLoss)}</div></div>
+            <div><div class="label">最大連勝</div><div class="stat" style="font-size:16px;">${pnlAnalysis.maxWinStreak} 筆</div></div>
+            <div><div class="label">最大連虧</div><div class="stat" style="font-size:16px;">${pnlAnalysis.maxLossStreak} 筆</div></div>
+          </div>
+        </div>` : ''}
+        <div class="card">
+          <h2>🌐 市場狀態</h2>
+          <div class="row"><span>恐懼貪婪指數</span>
+            <span class="${market.fng_value!=null && market.fng_value<=20 ? 'neg' : (market.fng_value!=null && market.fng_value>=80 ? 'pos' : '')}">
+              ${market.fng_value != null ? market.fng_value + ' (' + market.fng_label + ')' : '-'}
+            </span>
+          </div>
+          <div class="row"><span>BTC</span><span>${market.btc_usd != null ? '$' + market.btc_usd.toLocaleString() : '-'}</span></div>
+          <div class="row"><span>XRP</span><span>${market.xrp_usd != null ? '$' + market.xrp_usd : '-'}</span></div>
+        </div>
+        <div class="card">
+          <h2>🛑 風控斷路器</h2>
+          <div class="row"><span>Killswitch</span><span class="${rcb.killswitch ? 'flag-off' : 'flag-on'}">${rcb.killswitch ? '🔴 已啟動' : '🟢 正常'}</span></div>
+          <div class="row"><span>今日損益</span><span class="${(rcb.daily_pnl_usdt||0)>=0?'pos':'neg'}">${fmtNum(rcb.daily_pnl_usdt||0)} USDT</span></div>
+          <div class="row"><span>每日虧損上限</span><span class="${rcb.daily_loss_limit_hit ? 'neg' : 'pos'}">${rcb.daily_loss_limit_hit ? '⚠️ 已觸發' : '未觸發'}</span></div>
+          <div class="row"><span>日期</span><span class="label">${rcb.daily_pnl_date || '-'}</span></div>
+        </div>
+        ${rtb.mode ? `
+        <div class="card wide">
+          <h2>🎯 策略B 真實交易（主力派發SHORT）</h2>
+          <div class="row"><span>模式</span><span class="badge ${rtb.mode==='live'?'badge-green':'badge-yellow'}">${rtb.mode}</span></div>
+          <div class="row"><span>持倉中</span><span>${rtbOpen.length} 筆</span></div>
+          <div class="row"><span>已結算</span><span>${rtbStats.n} 筆 ｜ 勝率 ${rtbStats.win_rate_pct}% ｜ EV ${rtbStats.ev_r}R</span></div>
+          ${rtbOpen.length ? rtbOpen.map(p => `
+            <div class="row">
+              <span><b>${p.symbol||''}</b> SHORT</span>
+              <span class="label">entry ${p.fill_price||p.sig_entry||'-'} ｜ SL ${p.sl_price||'-'}</span>
+            </div>`).join('') : ''}
+        </div>` : ''}
+        <div class="card">
+          <h2>🚦 功能開關</h2>
+          ${Object.entries({...Object.fromEntries(Object.entries(aFlags).map(([k,v])=>[`[A] ${k}`,v])),
+                            ...Object.fromEntries(Object.entries(dFlags).map(([k,v])=>[`[D] ${k}`,v]))})
+            .map(([k,v]) => `<div class="row"><span>${k}</span><span class="${v?'flag-on':'flag-off'}">${v?'🟢':'🔴'}</span></div>`)
+            .join('') || '<div style="color:#888;font-size:12px">無資料</div>'}
+        </div>
+        <div class="card">
+          <h2>🔧 最近升級</h2>
+          ${upgrades.map(u => `
+            <div class="row">
+              <span style="flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:160px">${(u.description||'').slice(0,40)}</span>
+              <span class="label">${(u.time||'').slice(0,10)}</span>
+            </div>`).join('') || '<div style="color:#888;font-size:12px">無紀錄</div>'}
+        </div>
+        ${closed.length ? `
+        <div class="card wide">
+          <h2>📜 最近交易（最新5筆）</h2>
+          ${closed.slice(-5).reverse().map(t => {
+            const p = t.pnl_usdt||0;
+            return `<div class="row">
+              <span><b>${t.symbol||''}</b> ${t.dir||''} <span class="badge ${t.outcome==='tp'?'badge-green':'badge-red'}">${(t.outcome||'').toUpperCase()}</span></span>
+              <span class="${p>=0?'pos':'neg'}">${fmtNum(p)} USDT</span>
+            </div>`;
+          }).join('')}
         </div>` : ''}
       </div>
     `;
-
-    // 畫走勢圖
-    if (chart) chart.destroy();
-    const ctx = document.getElementById('chart');
-    if (ctx && curve.length > 1) {
-      chart = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: curve.map((_,i) => i===0 ? '起始' : `#${i}`),
-          datasets: [{ label: 'USDT', data: curve,
-            borderColor: '#9bb3ff', backgroundColor: 'rgba(155,179,255,.15)',
-            fill: true, tension: 0.3, pointRadius: curve.length > 20 ? 0 : 3 }]
-        },
-        options: {
-          responsive: true,
-          plugins: { legend: { display: false } },
-          scales: {
-            x: { ticks: { color: '#888', maxTicksLimit: 8 } },
-            y: { ticks: { color: '#888' } }
-          }
-        }
-      });
-    }
-
-    // 畫每日損益圖
-    if (dailyChart) dailyChart.destroy();
-    const dctx = document.getElementById('dailyChart');
-    if (dctx && dailyLabels.length) {
-      dailyChart = new Chart(dctx, {
-        type: 'bar',
-        data: {
-          labels: dailyLabels,
-          datasets: [{ label: '損益 USDT', data: dailyValues,
-            backgroundColor: dailyValues.map(v => v >= 0 ? 'rgba(74,222,128,.6)' : 'rgba(248,113,113,.6)'),
-            borderRadius: 4 }]
-        },
-        options: {
-          responsive: true,
-          plugins: { legend: { display: false } },
-          scales: {
-            x: { ticks: { color: '#888', maxTicksLimit: 8 } },
-            y: { ticks: { color: '#888' } }
-          }
-        }
-      });
-    }
   } catch(e) {
     document.getElementById('content').innerHTML = `<div class="err">❌ 載入失敗：${e.message}<br><small>請確認 GitHub JSON 可存取</small></div>`;
     document.getElementById('meta').textContent = '載入失敗';
