@@ -122,8 +122,8 @@ canvas{display:block;position:absolute;top:0;left:0;}
 
   <div class="hud-section">
     <div class="hud-section-title">◆ BingX 真實帳戶</div>
-    <div class="hud-row">總資產 <span id="live-equity">── 連線中 ──</span></div>
-    <div class="hud-row">24h 損益 <span id="live-pnl24">── 連線中 ──</span></div>
+    <div class="hud-row">帳戶狀態 <span id="live-equity">── 連線中 ──</span></div>
+    <div class="hud-row">24h 損益率 <span id="live-pnl24">── 連線中 ──</span></div>
     <div class="hud-row">目前持倉 <span id="live-positions">──</span></div>
     <div class="hud-row">今日訊號 <span id="live-signals">──</span></div>
   </div>
@@ -672,7 +672,7 @@ updateClock(); setInterval(updateClock,1000);
 // ── Live Data Polling ────────────────────────────────────────────────────────
 // 資料源：A 系統每 90 秒把即時狀態推到 GitHub 靜態 JSON（apex-commander 是 Render
 // background_worker 無公開網址，故不能直接打 API；改讀公開 repo 才能真正連得到）。
-const GALAXY_JSON = './galaxy_live.json';  // 同源（GitHub Pages 與 galaxy_live.json 同 repo）
+const GALAXY_JSON = './galaxy_live.json';
 const LIVE_IDS = ['live-btc','live-xrp','live-fgi','live-equity','live-pnl24','live-positions','live-signals','live-apex'];
 
 function setDisconnected(msg){
@@ -760,11 +760,11 @@ function applyLiveData(d){
   [eqEl,posEl,sigEl].forEach(el=>{ if(el) el.style.color='#7fe7ff'; });
   // BingX 可能為空物件 {}（A 未設金鑰）或缺欄位 → 須逐欄判型，否則 undefined.toFixed() 會整個渲染崩潰
   const bx = (d.bingx && !d.bingx.error) ? d.bingx : {};
-  if(eqEl) eqEl.textContent = (typeof bx.equity==='number') ? `${bx.equity.toFixed(2)} USDT` : '—';
+  if(eqEl){ eqEl.textContent = (bx.status==='online') ? '■ 連線正常' : '—'; eqEl.style.color = (bx.status==='online') ? '#00ff99' : '#7fe7ff'; }
   if(pnlEl){
-    if(typeof bx.pnl_24h==='number'){
-      const p=bx.pnl_24h;
-      pnlEl.textContent=`${p>=0?'+':''}${p.toFixed(2)} USDT`;
+    if(typeof bx.pnl_24h_pct==='number'){
+      const p=bx.pnl_24h_pct;
+      pnlEl.textContent=`${p>=0?'+':''}${p.toFixed(2)}%`;
       pnlEl.style.color=p>=0?'#00ff99':'#ff4466';
     } else { pnlEl.textContent='—'; }
   }
