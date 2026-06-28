@@ -1,364 +1,844 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>APEX-A 帝國儀表板</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<meta charset="UTF-8">
+<title>APEX EMPIRE — NEURAL MAP</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, 'Segoe UI', 'Microsoft JhengHei', sans-serif;
-    background: var(--tg-theme-bg-color, #0f1117);
-    color: var(--tg-theme-text-color, #e6e6e6);
-    padding: 12px;
-    font-size: 14px;
-  }
-  h1 { font-size: 18px; margin-bottom: 4px; }
-  .sub { color: #888; font-size: 12px; margin-bottom: 14px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-bottom: 12px; }
-  .card { background: rgba(255,255,255,0.05); border-radius: 12px; padding: 12px; }
-  .card h2 { font-size: 13px; color: #9bb3ff; margin-bottom: 8px; }
-  .stat { font-size: 22px; font-weight: 700; }
-  .label { color: #888; font-size: 11px; margin-top: 2px; }
-  .row { display: flex; justify-content: space-between; padding: 5px 0;
-         border-bottom: 1px solid rgba(255,255,255,0.07); font-size: 12px; }
-  .row:last-child { border-bottom: none; }
-  .pos { color: #4ade80; } .neg { color: #f87171; }
-  .flag-on { color: #4ade80; } .flag-off { color: #f87171; }
-  .wide { grid-column: 1 / -1; }
-  .badge { display: inline-block; padding: 2px 8px; border-radius: 20px;
-           font-size: 11px; font-weight: 600; }
-  .badge-green { background: rgba(74,222,128,.2); color: #4ade80; }
-  .badge-red   { background: rgba(248,113,113,.2); color: #f87171; }
-  .badge-yellow{ background: rgba(251,191,36,.2); color: #fbbf24; }
-  .loading { text-align: center; padding: 40px; color: #888; }
-  .err { color: #f87171; text-align: center; padding: 20px; }
-  .refresh-btn {
-    width: 100%; padding: 10px; margin-top: 12px;
-    background: #9bb3ff; color: #0f1117; border: none;
-    border-radius: 10px; font-size: 14px; font-weight: 600; cursor: pointer;
-  }
-  .cal-head { display: grid; grid-template-columns: repeat(7,1fr); gap: 4px;
-              text-align: center; font-size: 11px; color: #888; margin-bottom: 4px; }
-  .cal-grid { display: grid; grid-template-columns: repeat(7,1fr); gap: 4px; }
-  .cal-cell { padding: 6px 2px; text-align: center; border-radius: 6px; font-size: 11px; min-height: 36px; }
-  .cal-day { color: #555; }
-  .cal-win { background: rgba(74,222,128,.18); color: #4ade80; }
-  .cal-loss { background: rgba(248,113,113,.18); color: #f87171; }
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#000;overflow:hidden;font-family:'Courier New',monospace;}
+canvas{display:block;position:absolute;top:0;left:0;}
+#three{z-index:1;}
+#hud-canvas{z-index:2;pointer-events:none;}
+
+/* corners */
+.corner{position:fixed;width:56px;height:56px;pointer-events:none;z-index:8;}
+.corner::before,.corner::after{content:'';position:absolute;background:rgba(0,240,255,0.7);}
+#ctlx{top:14px;left:14px;}#ctlx::before{top:0;left:0;width:100%;height:1px;}#ctlx::after{top:0;left:0;width:1px;height:100%;}
+#ctrx{top:14px;right:14px;}#ctrx::before{top:0;right:0;width:100%;height:1px;}#ctrx::after{top:0;right:0;width:1px;height:100%;}
+#cblx{bottom:14px;left:14px;}#cblx::before{bottom:0;left:0;width:100%;height:1px;}#cblx::after{bottom:0;left:0;width:1px;height:100%;}
+#cbrx{bottom:14px;right:14px;}#cbrx::before{bottom:0;right:0;width:100%;height:1px;}#cbrx::after{bottom:0;right:0;width:1px;height:100%;}
+
+/* HUD */
+#hud{position:fixed;top:20px;left:70px;z-index:9;pointer-events:none;width:340px;background:rgba(0,4,20,0.6);border:1px solid rgba(0,200,255,0.12);padding:14px 18px;}
+#hud-title{font-size:18px;font-weight:900;letter-spacing:6px;color:#00eeff;text-shadow:0 0 18px #00ccff,0 0 40px #0055ff;margin-bottom:2px;}
+#hud-sub{font-size:11px;letter-spacing:2px;color:rgba(0,220,255,0.65);margin-bottom:8px;}
+.hud-divider{height:1px;background:linear-gradient(90deg,rgba(0,200,255,0.35),transparent);margin:8px 0;}
+.hud-section{margin-bottom:6px;}
+.hud-section-title{font-size:10px;letter-spacing:2px;color:rgba(0,220,255,0.55);margin-bottom:5px;font-weight:700;}
+.hud-row{display:flex;justify-content:space-between;font-size:12px;color:rgba(160,220,255,0.75);line-height:2;letter-spacing:0.5px;}
+.hud-row span{color:rgba(100,230,255,0.95);font-weight:600;}
+.online{color:#00ff99 !important;}
+.warn{color:#ffdd00 !important;}
+.dim{color:rgba(100,180,255,0.5);}
+#hud-time{font-size:12px;color:rgba(0,230,255,0.8);letter-spacing:2px;margin-bottom:6px;font-weight:700;}
+
+#ticker{position:fixed;bottom:0;left:0;width:100%;height:26px;background:rgba(0,4,16,0.85);border-top:1px solid rgba(0,200,255,0.15);z-index:9;pointer-events:none;overflow:hidden;display:flex;align-items:center;}
+#ticker-inner{display:flex;white-space:nowrap;animation:tick 30s linear infinite;font-size:10px;letter-spacing:1px;color:rgba(0,200,255,0.4);}
+@keyframes tick{0%{transform:translateX(100vw)}100%{transform:translateX(-100%)}}
+
+/* tooltip */
+#tip{position:fixed;pointer-events:none;z-index:30;opacity:0;transition:opacity 0.12s;min-width:170px;}
+.tip-inner{background:rgba(0,3,18,0.96);border:1px solid rgba(0,220,255,0.45);padding:10px 15px;position:relative;box-shadow:0 0 30px rgba(0,180,255,0.25);}
+.tip-inner::before{content:'';position:absolute;top:-1px;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#00eeff 40%,#7722ff,transparent);}
+.tip-inner::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(0,180,255,0.3),transparent);}
+.tip-label{font-size:13px;font-weight:700;letter-spacing:2px;margin-bottom:2px;}
+.tip-sub{font-size:9px;letter-spacing:2px;color:rgba(0,180,255,0.45);}
+.tip-tier{font-size:8px;letter-spacing:1px;color:rgba(0,120,200,0.5);margin-top:4px;border-top:1px solid rgba(0,200,255,0.1);padding-top:4px;}
+
+/* rings on hover */
+.ring{position:fixed;border-radius:50%;pointer-events:none;z-index:7;display:none;transform:translate(-50%,-50%);border:1px solid;}
+#ring1{width:70px;height:70px;animation:rp1 1.6s ease-in-out infinite;}
+#ring2{width:110px;height:110px;animation:rp2 2.2s ease-in-out infinite;}
+#ring3{width:160px;height:160px;animation:rp3 3s ease-in-out infinite;}
+@keyframes rp1{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.85}50%{transform:translate(-50%,-50%) scale(1.18);opacity:.3}}
+@keyframes rp2{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.5}50%{transform:translate(-50%,-50%) scale(1.22);opacity:.15}}
+@keyframes rp3{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.25}50%{transform:translate(-50%,-50%) scale(1.15);opacity:.05}}
+
+/* panel */
+#panel{position:fixed;right:0;top:0;width:340px;height:100vh;background:linear-gradient(160deg,rgba(0,3,18,0.98),rgba(0,6,28,0.98));border-left:1px solid rgba(0,200,255,0.18);transform:translateX(100%);transition:transform .4s cubic-bezier(.16,1,.3,1);overflow-y:auto;z-index:20;padding:32px 22px 60px;}
+#panel.open{transform:translateX(0);}
+#panel::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#00eeff 25%,#7722ff 75%,transparent);}
+#panel::after{content:'';position:absolute;top:0;right:0;width:1px;height:100%;background:linear-gradient(180deg,#00eeff,#7722ff 50%,transparent);}
+#pcls{position:absolute;top:16px;right:18px;background:rgba(0,200,255,0.08);border:1px solid rgba(0,200,255,0.3);color:#00ccff;font-size:13px;cursor:pointer;width:30px;height:30px;display:flex;align-items:center;justify-content:center;transition:all .2s;}
+#pcls:hover{background:rgba(0,200,255,0.2);box-shadow:0 0 16px rgba(0,200,255,0.5);}
+#p-tier{font-size:9px;letter-spacing:3px;color:rgba(0,180,255,0.4);text-transform:uppercase;margin-bottom:5px;}
+#p-title{font-size:22px;font-weight:800;letter-spacing:3px;margin-bottom:3px;text-shadow:0 0 18px currentColor;}
+#p-id{font-size:9px;color:rgba(0,160,255,0.35);letter-spacing:1px;margin-bottom:16px;}
+#p-desc{font-size:11px;color:rgba(150,210,255,0.7);line-height:1.95;margin-bottom:16px;padding:10px 14px;border:1px solid rgba(0,200,255,0.1);background:rgba(0,80,160,0.04);position:relative;}
+#p-desc::before{content:'>';color:rgba(0,200,255,0.3);position:absolute;top:10px;left:4px;font-size:9px;}
+.ps{border-top:1px solid rgba(0,200,255,0.07);padding-top:13px;margin-top:13px;}
+.ps h3{font-size:8px;letter-spacing:3px;color:rgba(0,180,255,0.4);margin-bottom:9px;text-transform:uppercase;}
+.ps p{font-size:11px;color:rgba(150,210,255,0.7);line-height:1.95;white-space:pre-wrap;}
+.tag{display:inline-block;padding:2px 8px;margin:2px;font-size:9px;letter-spacing:1px;background:rgba(0,80,160,0.12);border:1px solid rgba(0,200,255,0.18);color:rgba(80,210,255,0.85);}
+
+#hint{position:fixed;bottom:36px;right:70px;z-index:9;pointer-events:none;font-size:9px;color:rgba(0,180,255,0.28);letter-spacing:1px;text-align:right;line-height:2.4;}
+#legend{position:fixed;bottom:36px;left:70px;z-index:9;pointer-events:none;font-size:9px;color:rgba(0,180,255,0.3);letter-spacing:1px;line-height:2.6;}
 </style>
 </head>
 <body>
-<h1>🚀 APEX-A 帝國儀表板</h1>
-<div class="sub" id="meta">讀取中...</div>
-<div id="content"><div class="loading">⏳ 載入資料中...</div></div>
-<button class="refresh-btn" onclick="load()">🔄 重新整理</button>
+<canvas id="hud-canvas"></canvas>
+<canvas id="three"></canvas>
+<div class="corner" id="ctlx"></div><div class="corner" id="ctrx"></div>
+<div class="corner" id="cblx"></div><div class="corner" id="cbrx"></div>
+<div id="hud">
+  <div id="hud-time" id="hud-clock">── 載入中 ──</div>
+  <div id="hud-title">◈ APEX EMPIRE</div>
+  <div id="hud-sub">帝國神經星圖 // 指揮控制中心 v4.0</div>
 
+  <div class="hud-divider"></div>
+
+  <div class="hud-section">
+    <div class="hud-section-title">◆ 系統狀態</div>
+    <div class="hud-row">指揮中樞 (APEX-A) <span class="online">■ 運行中</span></div>
+    <div class="hud-row">交易系統 (D) <span class="online">■ 運行中</span></div>
+    <div class="hud-row">市場大腦 <span class="online">■ 待命中</span></div>
+    <div class="hud-row">技術大腦 <span class="online">■ 待命中</span></div>
+    <div class="hud-row">B 工作助手 <span class="online">■ 待命中</span></div>
+  </div>
+
+  <div class="hud-divider"></div>
+
+  <div class="hud-section">
+    <div class="hud-section-title">◆ 交易策略</div>
+    <div class="hud-row">策略 B v3 EV <span>+0.363R</span></div>
+    <div class="hud-row">回測樣本 (400天) <span>n = 1,713</span></div>
+    <div class="hud-row">主策略勝率 (100天) <span>24.9%</span></div>
+    <div class="hud-row">主策略總回報 <span class="online">+339.77%</span></div>
+    <div class="hud-row">AI Gate <span class="warn">■ 已停用</span></div>
+  </div>
+
+  <div class="hud-divider"></div>
+
+  <div class="hud-section">
+    <div class="hud-section-title">◆ 即時市場</div>
+    <div class="hud-row">BTC / 24h <span id="live-btc" class="online">── 連線中 ──</span></div>
+    <div class="hud-row">XRP / 24h <span id="live-xrp" class="online">── 連線中 ──</span></div>
+    <div class="hud-row">恐懼貪婪指數 <span id="live-fgi">── 連線中 ──</span></div>
+    <div class="hud-row">APEX-A 狀態 <span id="live-apex" class="online">── 連線中 ──</span></div>
+    <div class="hud-row" style="font-size:10px;color:rgba(0,180,255,0.35);justify-content:flex-end;"><span id="live-ts" style="color:rgba(0,180,255,0.35)">尚未同步</span></div>
+  </div>
+
+  <div class="hud-divider"></div>
+
+  <div class="hud-section">
+    <div class="hud-section-title">◆ BingX 真實帳戶</div>
+    <div class="hud-row">總資產 <span id="live-equity">── 連線中 ──</span></div>
+    <div class="hud-row">24h 損益 <span id="live-pnl24">── 連線中 ──</span></div>
+    <div class="hud-row">目前持倉 <span id="live-positions">──</span></div>
+    <div class="hud-row">今日訊號 <span id="live-signals">──</span></div>
+  </div>
+
+  <div class="hud-divider"></div>
+
+  <div class="hud-section">
+    <div class="hud-section-title">◆ 部署資訊</div>
+    <div class="hud-row">雲端平台 <span>Render</span></div>
+    <div class="hud-row">版本控制 <span>GitHub</span></div>
+    <div class="hud-row">通訊介面 <span>Telegram Bot</span></div>
+    <div class="hud-row">日報時間 <span>每日 09:00 台北</span></div>
+  </div>
+
+  <div class="hud-divider"></div>
+  <div class="hud-row dim">攝影機 <span id="hud-cam2">θ=0.000  φ=0.220  zoom=380</span></div>
+</div>
+<div id="ticker"><div id="ticker-inner"></div></div>
+<div id="tip"><div class="tip-inner"><div class="tip-label" id="tn"></div><div class="tip-sub" id="ts"></div><div class="tip-tier" id="ttr"></div></div></div>
+<div class="ring" id="ring1"></div><div class="ring" id="ring2"></div><div class="ring" id="ring3"></div>
+<div id="hint">DRAG → ROTATE<br>SCROLL → ZOOM<br>CLICK → INSPECT</div>
+<div id="legend"></div>
+<div id="panel">
+  <button id="pcls">✕</button>
+  <div id="p-tier"></div><div id="p-title"></div><div id="p-id"></div>
+  <div id="p-desc"></div><div id="p-extra"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
-// 初始化 Telegram Mini App
-if (window.Telegram && window.Telegram.WebApp) {
-  Telegram.WebApp.ready();
-  Telegram.WebApp.expand();
+// ── HUD canvas (radar + circuit BG)
+const hc = document.getElementById('hud-canvas');
+let W = window.innerWidth, H = window.innerHeight;
+hc.width = W; hc.height = H;
+const hx = hc.getContext('2d');
+
+function drawHUD() {
+  hx.clearRect(0, 0, W, H);
+
+  // circuit board grid
+  hx.strokeStyle = 'rgba(0,40,80,0.3)'; hx.lineWidth = 0.5;
+  const gs = 40;
+  for (let x = 0; x < W; x += gs) { hx.beginPath(); hx.moveTo(x, 0); hx.lineTo(x, H); hx.stroke(); }
+  for (let y = 0; y < H; y += gs) { hx.beginPath(); hx.moveTo(0, y); hx.lineTo(W, y); hx.stroke(); }
+
+  // circuit nodes at intersections (sparse)
+  hx.fillStyle = 'rgba(0,100,180,0.25)';
+  for (let x = 0; x < W; x += gs) for (let y = 0; y < H; y += gs) {
+    if (Math.random() < 0.04) { hx.beginPath(); hx.arc(x, y, 2, 0, Math.PI*2); hx.fill(); }
+  }
+
+  // hexagonal grid overlay (very subtle)
+  hx.strokeStyle = 'rgba(0,100,200,0.06)'; hx.lineWidth = 0.8;
+  const hs = 60, hh = hs * Math.sqrt(3) / 2;
+  for (let row = -1; row < H/hh+1; row++) for (let col = -1; col < W/hs+1; col++) {
+    const cx = col*hs*1.5, cy = row*hh*2 + (col%2)*hh;
+    hx.beginPath();
+    for (let i = 0; i < 6; i++) {
+      const a = Math.PI/180*(60*i-30);
+      i===0 ? hx.moveTo(cx+hs*Math.cos(a)*0.5, cy+hs*Math.sin(a)*0.5)
+             : hx.lineTo(cx+hs*Math.cos(a)*0.5, cy+hs*Math.sin(a)*0.5);
+    }
+    hx.closePath(); hx.stroke();
+  }
+
+  // Radar in bottom-right
+  const rx = W-110, ry = H-110, rr = 80;
+  hx.save();
+  hx.strokeStyle = 'rgba(0,200,255,0.15)'; hx.lineWidth = 0.8;
+  [1,0.66,0.33].forEach(f => { hx.beginPath(); hx.arc(rx,ry,rr*f,0,Math.PI*2); hx.stroke(); });
+  hx.strokeStyle = 'rgba(0,200,255,0.1)';
+  [0,60,120].forEach(a => {
+    const rad = a*Math.PI/180;
+    hx.beginPath(); hx.moveTo(rx,ry); hx.lineTo(rx+Math.cos(rad)*rr, ry+Math.sin(rad)*rr); hx.stroke();
+  });
+  hx.restore();
+}
+drawHUD();
+
+// Ticker text
+const tickerTexts = [
+  'JESSE // EMPEROR ONLINE ◈',
+  'APEX-A // apex-commander RUNNING ◈',
+  'D_SYSTEM // tama-trading ACTIVE ◈',
+  'STRATEGY_B_v3 // EV +0.363R ◈',
+  'BTC_MONITOR // WATCHING ≥5% THRESHOLD ◈',
+  'XRP_MONITOR // WATCHING ≥5% THRESHOLD ◈',
+  'F&G INDEX // SENTINEL ACTIVE ◈',
+  'GITHUB // KiyotaJesse/apex-commander ◈',
+  'RENDER // AUTO-DEPLOY ARMED ◈',
+  'AI_GATE // DISABLED 2026-06-12 (c7c30c7) ◈',
+  'TAMA_V5 // CVD × VWAP × POC ONLINE ◈',
+  'BACKTEST // +339.77% / 100D ◈',
+];
+document.getElementById('ticker-inner').textContent = tickerTexts.join('   ///   ') + '   ///   ' + tickerTexts.join('   ///   ');
+
+// ── Three.js
+const canvas = document.getElementById('three');
+canvas.width = W; canvas.height = H;
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+renderer.setSize(W, H);
+renderer.setClearColor(0x000000, 0);
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(52, W/H, 0.1, 2000);
+camera.position.set(0, 80, 380);
+camera.lookAt(0, 50, 0);
+
+window.addEventListener('resize', () => {
+  W = window.innerWidth; H = window.innerHeight;
+  hc.width = W; hc.height = H; drawHUD();
+  renderer.setSize(W, H); camera.aspect = W/H; camera.updateProjectionMatrix();
+});
+
+// Texture helpers
+function mkTex(fn, s=256) {
+  const c = document.createElement('canvas'); c.width = c.height = s;
+  fn(c.getContext('2d'), s); return new THREE.CanvasTexture(c);
+}
+function rg(g, s, layers) {
+  layers.forEach(([r,col,a]) => {
+    const gr = g.createRadialGradient(s/2,s/2,0, s/2,s/2,r);
+    gr.addColorStop(0, col + Math.round(a*255).toString(16).padStart(2,'0'));
+    gr.addColorStop(1, col + '00');
+    g.fillStyle = gr; g.fillRect(0,0,s,s);
+  });
 }
 
-// 讀取公開 repo 的合併 dashboard.json（由 A 每小時同步）
-const DATA_URL = 'https://raw.githubusercontent.com/KiyotaJesse/apex-public-data/main/dashboard.json';
-
-function fmtNum(n, dec=2) { return (n >= 0 ? '+' : '') + n.toFixed(dec); }
-
-async function load() {
-  document.getElementById('meta').textContent = '更新中...';
-  try {
-    const r = await fetch(DATA_URL + '?t=' + Date.now());
-    if (!r.ok) throw new Error('GitHub ' + r.status);
-    const data = await r.json();
-
-    const vt = data.virtual_trading || {};
-    const closed = vt.closed_trades || [];
-    const balance = vt.balance || 1000;
-    const start = vt.start_balance || 1000;
-    const pnl = balance - start;
-    const wins = closed.filter(t => t.outcome === 'tp');
-    const winRate = closed.length ? (wins.length / closed.length * 100).toFixed(1) : '0.0';
-    // 持倉彙總：三策略（主策略/趨勢跟隨/RSI區間）各自的虛擬帳本都可能有持倉
-    const strategies = data.strategies || {};
-    let openPos = vt.open_positions || [];
-    if (Object.keys(strategies).length) {
-      openPos = [];
-      for (const s of Object.values(strategies)) {
-        for (const p of (s.open_positions || [])) {
-          openPos.push({...p, strategy_name: s.name});
-        }
+function mkStar(c1,c2,spikes,rings,s=256) {
+  return mkTex((g,s) => {
+    g.globalCompositeOperation = 'source-over';
+    rg(g,s,[[s/2,c2,0.18],[s*.38,c1,0.55],[s*.18,c1,0.95],[s*.05,'#ffffff',1]]);
+    if (spikes) {
+      g.save(); g.translate(s/2,s/2); g.globalCompositeOperation='lighter';
+      for (let i=0;i<spikes;i++) {
+        g.rotate(Math.PI*2/spikes);
+        const l=g.createLinearGradient(0,0,s*.48,0);
+        l.addColorStop(0,'rgba(255,255,255,.85)');l.addColorStop(.2,c1+'aa');l.addColorStop(1,'transparent');
+        g.fillStyle=l; g.fillRect(0,-1,s*.48,2);
       }
+      g.restore();
     }
-
-    // 策略B真實交易
-    const rtb = data.real_trading_strategy_b || {};
-    const rtbOpen = rtb.open_positions || [];
-    const rtbStats = rtb.stats || {n:0, win_rate_pct:0, ev_r:0};
-
-    // 風控斷路器
-    const rcb = data.risk_circuit_breaker || {};
-
-    // 市場狀態
-    const market = data.market || {};
-
-    // 功能開關
-    const flags = data.feature_flags || {};
-    const aFlags = flags.a || {};
-    const dFlags = flags.d || {};
-
-    // 最近升級
-    const upgrades = (data.self_upgrades || []).slice(-5).reverse();
-
-    // 盈虧分析（仿幣安合約帳戶盈虧分析）
-    let pnlAnalysis = null;
-    if (closed.length) {
-      const rs = closed.map(t => t.pnl_usdt || 0);
-      const winsArr = rs.filter(r => r > 0);
-      const lossArr = rs.filter(r => r <= 0);
-      const avgWin = winsArr.length ? winsArr.reduce((a,b)=>a+b,0) / winsArr.length : 0;
-      const avgLoss = lossArr.length ? lossArr.reduce((a,b)=>a+b,0) / lossArr.length : 0;
-      const plRatio = avgLoss !== 0 ? Math.abs(avgWin / avgLoss) : 0;
-      const maxWin = Math.max(...rs);
-      const maxLoss = Math.min(...rs);
-      let curStreak = 0, lastSign = 0, maxWinStreak = 0, maxLossStreak = 0;
-      for (const r of rs) {
-        const sign = r > 0 ? 1 : -1;
-        curStreak = (sign === lastSign) ? curStreak + 1 : 1;
-        if (sign > 0) maxWinStreak = Math.max(maxWinStreak, curStreak);
-        else maxLossStreak = Math.max(maxLossStreak, curStreak);
-        lastSign = sign;
+    if (rings) {
+      g.save(); g.translate(s/2,s/2);
+      for (let i=0;i<rings;i++) {
+        g.beginPath(); g.arc(0,0,s*(.17+i*.1),0,Math.PI*2);
+        g.strokeStyle=c1+Math.round((.28-i*.06)*255).toString(16).padStart(2,'0');
+        g.lineWidth=.8; g.stroke();
       }
-      pnlAnalysis = { plRatio, avgWin, avgLoss, maxWin, maxLoss, maxWinStreak, maxLossStreak };
+      g.restore();
     }
+  },s);
+}
 
-    // 每日損益（以 Taipei 日期彙總，key 為 YYYY-MM-DD）—— 供合約盈虧總覽/月曆使用
-    const dailyMap = {};
-    for (const t of closed) {
-      if (!t.closed_ts) continue;
-      const taipei = new Date(new Date(t.closed_ts).getTime() + 8*3600000);
-      const key = taipei.toISOString().slice(0,10);
-      dailyMap[key] = +((dailyMap[key]||0) + (t.pnl_usdt||0)).toFixed(2);
-    }
-    const dailyKeys = Object.keys(dailyMap).sort();
+function mkPulsar(s=256){return mkTex((g,s)=>{
+  rg(g,s,[[s/2,'#3300cc',.28],[s*.3,'#8833ff',.75],[s*.13,'#cc88ff',.95],[s*.04,'#ffffff',1]]);
+  g.save();g.translate(s/2,s/2);g.globalCompositeOperation='lighter';
+  for(let i=0;i<6;i++){g.save();g.rotate(i*Math.PI/3);const l=g.createLinearGradient(0,0,s*.49,0);l.addColorStop(0,'rgba(255,255,255,.9)');l.addColorStop(.3,'rgba(180,60,255,'+(i<2?.6:.25)+')');l.addColorStop(1,'transparent');g.fillStyle=l;g.fillRect(0,-(i<2?2.5:1),s*.49,(i<2?5:2));g.restore();}
+  g.restore();
+  [.12,.22,.34].forEach((r,i)=>{g.beginPath();g.arc(s/2,s/2,s*r,0,Math.PI*2);g.strokeStyle='rgba(160,80,255,'+(0.5-i*.13)+')';g.lineWidth=.8;g.stroke();});
+},s);}
 
-    // 合約盈虧總覽：本日/7天/30天/累計
-    const nowTaipei = new Date(Date.now() + 8*3600000);
-    const todayKey = nowTaipei.toISOString().slice(0,10);
-    const daysAgoKey = n => new Date(nowTaipei.getTime() - n*86400000).toISOString().slice(0,10);
+function mkNeutron(s=256){return mkTex((g,s)=>{
+  rg(g,s,[[s/2,'#330077',.3],[s*.2,'#aa66ff',.85],[s*.07,'#ffffff',1]]);
+  g.save();g.translate(s/2,s/2);g.globalCompositeOperation='lighter';
+  [0,Math.PI,Math.PI/3,Math.PI*4/3,Math.PI*2/3,Math.PI*5/3].forEach(a=>{
+    g.save();g.rotate(a);const l=g.createLinearGradient(0,0,s*.46,0);
+    l.addColorStop(0,'rgba(255,255,255,.9)');l.addColorStop(.4,'rgba(180,80,255,.3)');l.addColorStop(1,'transparent');
+    g.fillStyle=l;g.fillRect(0,-1.2,s*.46,2.4);g.restore();
+  });g.restore();
+},s);}
 
-    let pnlToday = 0, pnl7d = 0, pnl30d = 0, totalProfit = 0, totalLoss = 0;
-    for (const k of dailyKeys) {
-      const v = dailyMap[k];
-      if (v >= 0) totalProfit += v; else totalLoss += v;
-      if (k === todayKey) pnlToday += v;
-      if (k >= daysAgoKey(6))  pnl7d  += v;
-      if (k >= daysAgoKey(29)) pnl30d += v;
-    }
-    const netPnl = +(totalProfit + totalLoss).toFixed(2);
-    const cumPnl = +(balance - start).toFixed(2);
+function mkWDwarf(s=256){return mkTex((g,s)=>{
+  rg(g,s,[[s/2,'#5577cc',.22],[s*.28,'#aaccff',.65],[s*.1,'#ffffff',.9]]);
+  g.save();g.translate(s/2,s/2);
+  [0,Math.PI/4,Math.PI/2,3*Math.PI/4].forEach(a=>{
+    g.save();g.rotate(a);const l=g.createLinearGradient(-s/2,0,s/2,0);
+    l.addColorStop(0,'transparent');l.addColorStop(.46,'rgba(160,200,255,.3)');
+    l.addColorStop(.5,'rgba(255,255,255,.75)');l.addColorStop(.54,'rgba(160,200,255,.3)');l.addColorStop(1,'transparent');
+    g.fillStyle=l;g.fillRect(-s/2,-.8,s,1.6);g.restore();
+  });g.restore();
+},s);}
 
-    const pctOf = (p, baseAfter) => { const baseBefore = baseAfter - p; return baseBefore !== 0 ? (p/baseBefore*100) : 0; };
-    const pnlTodayPct = pctOf(pnlToday, balance);
-    const pnl7dPct    = pctOf(pnl7d, balance);
-    const pnl30dPct   = pctOf(pnl30d, balance);
-    const cumPnlPct   = start !== 0 ? (cumPnl/start*100) : 0;
+const TX = {
+  supergiant: mkStar('#ffe866','#ff7700',28,4,320),
+  pulsar: mkPulsar(256),
+  blueGiant: mkStar('#22aaff','#002299',10,2,256),
+  yellowDwarf: mkStar('#ffcc33','#ff4400',8,2,256),
+  greenStar: mkStar('#33ffaa','#006633',6,2,256),
+  whiteDwarf: mkWDwarf(256),
+  neutron: mkNeutron(256),
+  redDwarf: mkStar('#ff3344','#660011',4,1,160),
+  particle: (col)=>mkTex((g,s)=>{
+    const gr=g.createRadialGradient(s/2,s/2,0,s/2,s/2,s/2);
+    gr.addColorStop(0,'rgba(255,255,255,1)');gr.addColorStop(.1,col+'ff');gr.addColorStop(.45,col+'44');gr.addColorStop(1,'transparent');
+    g.fillStyle=gr;g.fillRect(0,0,s,s);
+  },64),
+};
 
-    // 每日盈虧日曆（當月）
-    const calYear = nowTaipei.getUTCFullYear();
-    const calMonth = nowTaipei.getUTCMonth(); // 0-indexed
-    const firstDow = new Date(Date.UTC(calYear, calMonth, 1)).getUTCDay();
-    const daysInMonth = new Date(Date.UTC(calYear, calMonth+1, 0)).getUTCDate();
-    const calCells = [];
-    for (let i=0;i<firstDow;i++) calCells.push(null);
-    for (let d=1;d<=daysInMonth;d++) {
-      const key = `${calYear}-${String(calMonth+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
-      calCells.push({ day: d, pnl: dailyMap[key] });
-    }
+// ── NODE DATA  (Jesse at top, hierarchical layout)
+const NODES = [
+  // ── TIER 0: Jesse (centre top)
+  {id:'jesse',label:'JESSE',sub:'最高指揮官 // EMPEROR',tier:'TIER-0',tex:'supergiant',
+   pos:[0,200,0],sz:26,col:'#ffdd66',
+   desc:'帝國最高指揮官。所有指令從 Telegram 下達，APEX-A 接收後分派執行。',
+   tags:['EMPEROR','最高指揮','Telegram','決策核心'],
+   details:[
+     {t:'ROLE',b:'控制整個 APEX 帝國的最終決策者。'},
+     {t:'INPUT_CH',b:'Telegram Bot：/task D / /task B / /status / /report'},
+     {t:'ALERT_RECV',b:'異常警報、日報摘要皆由 APEX-A 推送至此 Chat ID。'},
+   ]},
 
-    document.getElementById('meta').textContent =
-      '更新時間：' + new Date().toLocaleString('zh-TW', {timeZone:'Asia/Taipei'});
+  // ── TIER 1: Telegram (Jesse's hand) + APEX-A
+  {id:'telegram',label:'TELEGRAM',sub:'通訊介面 // COMM RELAY',tier:'TIER-1',tex:'whiteDwarf',
+   pos:[-80,130,60],sz:7,col:'#88ccff',
+   desc:'Jesse 與 APEX-A 的唯一通訊介面。輸入指令、接收警報與日報。',
+   tags:['Bot Token','Chat ID','雙向加密'],
+   details:[
+     {t:'SECURITY',b:'僅授權 Chat ID，其他靜默忽略。'},
+     {t:'COMMANDS',b:'/status /report /task_D /task_B /pause /resume /security /help'},
+   ]},
 
-    document.getElementById('content').innerHTML = `
-      <div class="grid">
-        <div class="card wide">
-          <h2>📊 合約盈虧總覽</h2>
-          <div class="label">本日盈虧</div>
-          <div class="stat ${pnlToday>=0?'pos':'neg'}" style="font-size:26px;">
-            ${fmtNum(pnlTodayPct,2)}% <span style="font-size:13px;font-weight:400;">${fmtNum(pnlToday)} USDT</span>
-          </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px;">
-            <div>
-              <div class="label">7天盈虧</div>
-              <div class="${pnl7d>=0?'pos':'neg'}" style="font-weight:700;font-size:15px;">${fmtNum(pnl7dPct,2)}%</div>
-              <div class="label">${fmtNum(pnl7d)} USDT</div>
-            </div>
-            <div>
-              <div class="label">30天盈虧</div>
-              <div class="${pnl30d>=0?'pos':'neg'}" style="font-weight:700;font-size:15px;">${fmtNum(pnl30dPct,2)}%</div>
-              <div class="label">${fmtNum(pnl30d)} USDT</div>
-            </div>
-            <div>
-              <div class="label">累計盈虧</div>
-              <div class="${cumPnl>=0?'pos':'neg'}" style="font-weight:700;font-size:15px;">${fmtNum(cumPnlPct,2)}%</div>
-              <div class="label">${fmtNum(cumPnl)} USDT</div>
-            </div>
-          </div>
-          <div style="margin-top:10px;">
-            <div class="row"><span>總利潤</span><span class="pos">${fmtNum(totalProfit)} USDT</span></div>
-            <div class="row"><span>總虧損</span><span class="neg">${fmtNum(totalLoss)} USDT</span></div>
-            <div class="row"><span>淨盈虧</span><span class="${netPnl>=0?'pos':'neg'}">${fmtNum(netPnl)} USDT</span></div>
-          </div>
-        </div>
-        <div class="card wide">
-          <h2>📅 每日盈虧日曆（${calYear}-${String(calMonth+1).padStart(2,'0')}）</h2>
-          <div class="cal-head"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div>
-          <div class="cal-grid">
-            ${calCells.map(c => {
-              if (!c) return '<div></div>';
-              if (c.pnl == null) return `<div class="cal-cell cal-day">${c.day}</div>`;
-              const cls = c.pnl >= 0 ? 'cal-win' : 'cal-loss';
-              return `<div class="cal-cell ${cls}"><div>${c.day}</div><div style="font-size:10px;">${fmtNum(c.pnl)}</div></div>`;
-            }).join('')}
-          </div>
-        </div>
-        <div class="card">
-          <h2>💰 虛擬帳本</h2>
-          <div class="stat">${balance.toFixed(2)}</div>
-          <div class="label">USDT &nbsp;
-            <span class="${pnl>=0?'pos':'neg'}">${fmtNum(pnl)} (${fmtNum(pnl/start*100,1)}%)</span>
-          </div>
-          <div style="margin-top:6px;font-size:12px;">
-            <span class="badge badge-green">勝率 ${winRate}%</span> &nbsp;
-            <span class="badge badge-yellow">持倉 ${openPos.length} 筆</span>
-          </div>
-        </div>
-        <div class="card">
-          <h2>📊 交易統計</h2>
-          <div class="row"><span>已結算</span><span>${closed.length} 筆</span></div>
-          <div class="row"><span>止盈 TP</span><span class="pos">${wins.length} 筆</span></div>
-          <div class="row"><span>止損 SL</span><span class="neg">${closed.length - wins.length} 筆</span></div>
-          <div class="row"><span>起始資金</span><span>${start} USDT</span></div>
-        </div>
-        ${openPos.length ? `
-        <div class="card wide">
-          <h2>📌 目前持倉（${openPos.length} 筆）</h2>
-          ${openPos.map(p => {
-            const sl = typeof p.sl === 'number' ? p.sl.toFixed(4) : (p.sl||'-');
-            const tp = typeof p.tp === 'number' ? p.tp.toFixed(4) : (p.tp||'-');
-            const liq = typeof p.liquidation_price === 'number' ? p.liquidation_price.toFixed(4) : (p.liquidation_price||'-');
-            const conf = p.ai_confidence != null ? p.ai_confidence + '%' : '-';
-            const rr = p.rr != null ? p.rr : '-';
-            const lev = p.leverage ? p.leverage + 'x' : '';
-            const nominal = p.nominal_usdt ? p.nominal_usdt + ' U' : '';
-            const dirClass = (p.dir||'').toUpperCase()==='LONG' ? 'pos' : 'neg';
-            const slPct = p.sl_pct != null ? (p.sl_pct*100).toFixed(2)+'%' : '';
-            const tpPct = p.tp_pct != null ? (p.tp_pct*100).toFixed(2)+'%' : '';
-            // 持倉天數：超過24小時未結算標示為可能卡住
-            let ageBadge = '';
-            if (p.opened_ts) {
-              const ageHrs = (Date.now() - new Date(p.opened_ts).getTime()) / 3600000;
-              const ageTxt = ageHrs >= 24 ? `${(ageHrs/24).toFixed(1)} 天` : `${ageHrs.toFixed(1)} 小時`;
-              ageBadge = `<span class="badge ${ageHrs >= 24 ? 'badge-red' : 'badge-yellow'}" title="開倉時間">${ageTxt}${ageHrs >= 24 ? ' ⚠️卡住?' : ''}</span>`;
-            }
-            return `<div style="background:rgba(255,255,255,0.04);border-radius:10px;padding:10px;margin-bottom:8px;">
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;gap:6px;flex-wrap:wrap;">
-                <span style="font-size:15px;font-weight:700;">${p.symbol||''}</span>
-                <span class="badge ${dirClass==='pos'?'badge-green':'badge-red'}">${(p.dir||'').toUpperCase()} ${lev}</span>
-                ${ageBadge}
-                <span style="color:#888;font-size:12px;">${p.strategy_name||''} ${nominal}</span>
-              </div>
-              <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;font-size:12px;">
-                <div><div style="color:#888">開倉價</div><div>${p.entry||'-'}</div></div>
-                <div><div style="color:#f87171">止損 SL</div><div>${sl} <span style="color:#888">${slPct}</span></div></div>
-                <div><div style="color:#4ade80">止盈 TP</div><div>${tp} <span style="color:#888">${tpPct}</span></div></div>
-                <div><div style="color:#888">爆倉價</div><div style="color:#f87171">${liq}</div></div>
-                <div><div style="color:#888">RR</div><div>${rr}</div></div>
-                <div><div style="color:#9bb3ff">AI 信心</div><div style="color:#9bb3ff;font-weight:600;">${conf}</div></div>
-              </div>
-            </div>`;
-          }).join('')}
-        </div>` : ''}
-        ${pnlAnalysis ? `
-        <div class="card wide">
-          <h2>📊 盈虧分析</h2>
-          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;">
-            <div><div class="label">盈虧比</div><div class="stat" style="font-size:16px;">${pnlAnalysis.plRatio.toFixed(2)}</div></div>
-            <div><div class="label">平均獲利</div><div class="stat pos" style="font-size:16px;">${fmtNum(pnlAnalysis.avgWin)}</div></div>
-            <div><div class="label">平均虧損</div><div class="stat neg" style="font-size:16px;">${fmtNum(pnlAnalysis.avgLoss)}</div></div>
-            <div><div class="label">最大單筆獲利</div><div class="stat pos" style="font-size:16px;">${fmtNum(pnlAnalysis.maxWin)}</div></div>
-            <div><div class="label">最大單筆虧損</div><div class="stat neg" style="font-size:16px;">${fmtNum(pnlAnalysis.maxLoss)}</div></div>
-            <div><div class="label">最大連勝</div><div class="stat" style="font-size:16px;">${pnlAnalysis.maxWinStreak} 筆</div></div>
-            <div><div class="label">最大連虧</div><div class="stat" style="font-size:16px;">${pnlAnalysis.maxLossStreak} 筆</div></div>
-          </div>
-        </div>` : ''}
-        <div class="card">
-          <h2>🌐 市場狀態</h2>
-          <div class="row"><span>恐懼貪婪指數</span>
-            <span class="${market.fng_value!=null && market.fng_value<=20 ? 'neg' : (market.fng_value!=null && market.fng_value>=80 ? 'pos' : '')}">
-              ${market.fng_value != null ? market.fng_value + ' (' + market.fng_label + ')' : '-'}
-            </span>
-          </div>
-          <div class="row"><span>BTC</span><span>${market.btc_usd != null ? '$' + market.btc_usd.toLocaleString() : '-'}</span></div>
-          <div class="row"><span>XRP</span><span>${market.xrp_usd != null ? '$' + market.xrp_usd : '-'}</span></div>
-        </div>
-        <div class="card">
-          <h2>🛑 風控斷路器</h2>
-          <div class="row"><span>Killswitch</span><span class="${rcb.killswitch ? 'flag-off' : 'flag-on'}">${rcb.killswitch ? '🔴 已啟動' : '🟢 正常'}</span></div>
-          <div class="row"><span>今日損益</span><span class="${(rcb.daily_pnl_usdt||0)>=0?'pos':'neg'}">${fmtNum(rcb.daily_pnl_usdt||0)} USDT</span></div>
-          <div class="row"><span>每日虧損上限</span><span class="${rcb.daily_loss_limit_hit ? 'neg' : 'pos'}">${rcb.daily_loss_limit_hit ? '⚠️ 已觸發' : '未觸發'}</span></div>
-          <div class="row"><span>日期</span><span class="label">${rcb.daily_pnl_date || '-'}</span></div>
-        </div>
-        ${rtb.mode ? `
-        <div class="card wide">
-          <h2>🎯 策略B 真實交易（主力派發SHORT）</h2>
-          <div class="row"><span>模式</span><span class="badge ${rtb.mode==='live'?'badge-green':'badge-yellow'}">${rtb.mode}</span></div>
-          <div class="row"><span>持倉中</span><span>${rtbOpen.length} 筆</span></div>
-          <div class="row"><span>已結算</span><span>${rtbStats.n} 筆 ｜ 勝率 ${rtbStats.win_rate_pct}% ｜ EV ${rtbStats.ev_r}R</span></div>
-          ${rtbOpen.length ? rtbOpen.map(p => `
-            <div class="row">
-              <span><b>${p.symbol||''}</b> SHORT</span>
-              <span class="label">entry ${p.fill_price||p.sig_entry||'-'} ｜ SL ${p.sl_price||'-'}</span>
-            </div>`).join('') : ''}
-        </div>` : ''}
-        <div class="card">
-          <h2>🚦 功能開關</h2>
-          ${Object.entries({...Object.fromEntries(Object.entries(aFlags).map(([k,v])=>[`[A] ${k}`,v])),
-                            ...Object.fromEntries(Object.entries(dFlags).map(([k,v])=>[`[D] ${k}`,v]))})
-            .map(([k,v]) => `<div class="row"><span>${k}</span><span class="${v?'flag-on':'flag-off'}">${v?'🟢':'🔴'}</span></div>`)
-            .join('') || '<div style="color:#888;font-size:12px">無資料</div>'}
-        </div>
-        <div class="card">
-          <h2>🔧 最近升級</h2>
-          ${upgrades.map(u => `
-            <div class="row">
-              <span style="flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:160px">${(u.description||'').slice(0,40)}</span>
-              <span class="label">${(u.time||'').slice(0,10)}</span>
-            </div>`).join('') || '<div style="color:#888;font-size:12px">無紀錄</div>'}
-        </div>
-        ${closed.length ? `
-        <div class="card wide">
-          <h2>📜 最近交易（最新5筆）</h2>
-          ${closed.slice(-5).reverse().map(t => {
-            const p = t.pnl_usdt||0;
-            return `<div class="row">
-              <span><b>${t.symbol||''}</b> ${t.dir||''} <span class="badge ${t.outcome==='tp'?'badge-green':'badge-red'}">${(t.outcome||'').toUpperCase()}</span></span>
-              <span class="${p>=0?'pos':'neg'}">${fmtNum(p)} USDT</span>
-            </div>`;
-          }).join('')}
-        </div>` : ''}
-      </div>
-    `;
-  } catch(e) {
-    document.getElementById('content').innerHTML = `<div class="err">❌ 載入失敗：${e.message}<br><small>請確認 GitHub JSON 可存取</small></div>`;
-    document.getElementById('meta').textContent = '載入失敗';
+  {id:'apex',label:'APEX-A',sub:'脈衝星指揮官 // COMMANDER',tier:'TIER-1',tex:'pulsar',
+   pos:[0,100,0],sz:18,col:'#bb77ff',
+   desc:'A 級總指揮，部署於 Render（apex-commander）。監控所有系統、接收指令、調度子系統、每日彙報。',
+   tags:['apex-commander','Render','CODE_EXEC','SELF_MODIFY'],
+   details:[
+     {t:'DEPLOY',b:'Render Cloud — KiyotaJesse/apex-commander'},
+     {t:'DUTIES',b:'監控 Render/GitHub/價格/F&G，異常立即 Telegram 警報。'},
+     {t:'SELF_MOD',b:'CODE_EXEC 引擎可修改自身程式碼並推送 GitHub，無需人工介入。'},
+     {t:'SCHEDULE',b:'每日 09:00 台北時間 → 昨日摘要'},
+   ]},
+
+  // ── TIER 2: APEX-A's direct subordinates
+  {id:'market',label:'市場大腦',sub:'Claude Sonnet // ANALYST',tier:'TIER-2',tex:'blueGiant',
+   pos:[-160,10,0],sz:12,col:'#33ccff',
+   desc:'市場分析引擎，解讀價格訊號、評估策略 EV、判斷市場 regime。',
+   tags:['Claude Sonnet','CVD','EV評估','Regime'],
+   details:[
+     {t:'MODEL',b:'Claude Sonnet（最新版）'},
+     {t:'TASKS',b:'BTC/XRP 波動 / 策略Bv3 EV計算 / regime 判斷'},
+     {t:'RESEARCH',b:'AI gate 停用 2026-06-12（c7c30c7）\n策略Bv3：熊+0.369R / 牛+0.345R / 盤整+0.225R'},
+   ]},
+
+  {id:'tech',label:'技術大腦',sub:'Claude Sonnet // ENGINEER',tier:'TIER-2',tex:'blueGiant',
+   pos:[160,10,0],sz:12,col:'#33ccff',
+   desc:'系統修改引擎，程式碼規劃、patch 生成、GitHub push。',
+   tags:['Claude Sonnet','PATCH','REST API'],
+   details:[
+     {t:'MODEL',b:'Claude Sonnet（最新版）'},
+     {t:'PIPELINE',b:'/task D → A → 技術大腦 → patch → push → Render → 審核'},
+     {t:'ACCESS',b:'KiyotaJesse/tama-trading，GITHUB_TOKEN 授權'},
+   ]},
+
+  {id:'d',label:'D SYSTEM',sub:'tama-trading // EXECUTOR',tier:'TIER-2',tex:'yellowDwarf',
+   pos:[0,-20,0],sz:15,col:'#ffcc33',
+   desc:'tama-trading，部署於 Render。執行 tama_v5.py，接受 A 遠端指揮修改。',
+   tags:['tama-trading','Render','3策略','virtual_trading'],
+   details:[
+     {t:'DEPLOY',b:'Render — KiyotaJesse/tama-trading'},
+     {t:'STRATEGIES',b:'① BearMarketMonitor（熊市底部）\n② MA50/200 金叉死叉（4h）\n③ RSI<30/RSI>70 區間（1h）'},
+     {t:'Bv3_PARAMS',b:'BREAKEVEN_R=2.5 / TRAIL=0.1% / FLAT_THR=3.0% → EV+15.6%'},
+   ]},
+
+  {id:'b',label:'B ASSISTANT',sub:'Haiku+Sonnet // SECRETARY',tier:'TIER-2',tex:'greenStar',
+   pos:[0,40,-120],sz:10,col:'#33ffaa',
+   desc:'文書任務執行者。Haiku 起草，Sonnet 審核潤色後輸出成品。',
+   tags:['Haiku','Sonnet審核','文書','報告'],
+   details:[
+     {t:'PIPELINE',b:'/task B → A → Haiku起草 → Sonnet審核 → 回報'},
+     {t:'TASKS',b:'報價單 / 合約 / 出差報告 / 週報 / 分析摘要'},
+   ]},
+
+  // ── TIER 3: Infrastructure + Data
+  {id:'github',label:'GITHUB',sub:'版本控制 // VCS',tier:'TIER-3',tex:'whiteDwarf',
+   pos:[100,-100,100],sz:7,col:'#88ccff',
+   desc:'版本控制中心。A 讀取 D 的程式碼、推送修改、觸發 Render 自動部署。',
+   tags:['REST API','VCS','trigger'],
+   details:[
+     {t:'REPOS',b:'apex-commander（A）\ntama-trading（D）'},
+     {t:'AUTH',b:'GITHUB_TOKEN — repo 寫入權限'},
+   ]},
+
+  {id:'render',label:'RENDER',sub:'雲端平台 // CLOUD',tier:'TIER-3',tex:'whiteDwarf',
+   pos:[-100,-100,100],sz:7,col:'#88ccff',
+   desc:'雲端部署平台。apex-commander（A）與 tama-trading（D）皆在此運行。',
+   tags:['Cloud','API監控','自動重啟'],
+   details:[
+     {t:'MONITOR',b:'A 每小時 Render API 確認服務狀態，異常立即警報。'},
+     {t:'AUTO_DEPLOY',b:'GitHub push → Render 自動重部署 → A 驗證結果'},
+   ]},
+
+  {id:'tama',label:'TAMA_V5',sub:'核心引擎 // CORE ENGINE',tier:'TIER-3',tex:'neutron',
+   pos:[0,-130,0],sz:9,col:'#cc88ff',
+   desc:'D 系統的核心策略引擎，持續由 A 指揮優化。',
+   tags:['CVD','VWAP偏離','POC','Bv3'],
+   details:[
+     {t:'INDICATORS',b:'CVD（資金流向）/ VWAP偏離 / POC（成交量中心）'},
+     {t:'BACKTEST',b:'主策略100天：542筆 / 勝率24.9% / +339.77%\nBv3：24幣/400天 EV+0.363R n=1713'},
+     {t:'AI_GATE',b:'2026-06-12 停用（c7c30c7）。ai_conf 仍記錄供校準。'},
+   ]},
+
+  {id:'btc',label:'BTC',sub:'價格哨兵 // SENTINEL',tier:'TIER-3',tex:'redDwarf',
+   pos:[-180,-10,-50],sz:6,col:'#ff4455',
+   desc:'比特幣價格監控。24h ≥5% 觸發警報。',
+   tags:['CoinGecko','≥5%警報'],
+   details:[{t:'ALERT',b:'24h 波動 ≥ 5%'},{t:'SRC',b:'CoinGecko API'}]},
+
+  {id:'xrp',label:'XRP',sub:'價格哨兵 // SENTINEL',tier:'TIER-3',tex:'redDwarf',
+   pos:[180,-10,-50],sz:6,col:'#ff4455',
+   desc:'瑞波幣價格監控。24h ≥5% 觸發警報。',
+   tags:['CoinGecko','≥5%警報'],
+   details:[{t:'ALERT',b:'24h 波動 ≥ 5%'},{t:'SRC',b:'CoinGecko API'}]},
+
+  {id:'fgi',label:'F&G INDEX',sub:'情緒哨兵 // SENTIMENT',tier:'TIER-3',tex:'redDwarf',
+   pos:[0,-10,-180],sz:6,col:'#ff4455',
+   desc:'市場情緒指數。≤20 極恐或 ≥80 極貪時觸發警報。',
+   tags:['alternative.me','≤20','≥80'],
+   details:[{t:'ALERT',b:'指數 ≤ 20 或 ≥ 80'},{t:'SRC',b:'alternative.me API'}]},
+
+  // ── E & Z — APEX-A 的特種部隊
+  {id:'e',label:'APEX-E',sub:'偵錯小組 // DEBUG SQUAD',tier:'TIER-2',tex:'blueGiant',
+   pos:[120,40,120],sz:11,col:'#ff9933',
+   desc:'APEX-E 偵錯小組。全系統程式碼稽核、自動修復 bug、push 到 GitHub。每週一 09:15 自動巡邏，亦可 /task E 手動觸發。',
+   tags:['Claude Sonnet','CODE_EXEC','自動修復','週稽核'],
+   details:[
+     {t:'TRIGGER',b:'/task E [描述] 或每週一 09:15 台北時間自動啟動'},
+     {t:'PIPELINE',b:'讀取 apex_a.py + tama_v5.py → 分析 → patch → push → 回報'},
+     {t:'SKILLS',b:'語法檢查 / 邏輯稽核 / pyflakes / 安全性審查'},
+     {t:'OUTPUT',b:'Telegram 回報：修復項目列表 + commit SHA'},
+   ]},
+
+  {id:'z',label:'Z TRAINER',sub:'模型訓練 // ML ENGINE',tier:'TIER-2',tex:'blueGiant',
+   pos:[-120,40,120],sz:11,col:'#cc33ff',
+   desc:'Z 模型訓練器（tama_z_trainer.py）。自動掃描 30 幣歷史資料、訓練 AI 信心模型、輸出最佳超參數，完成後 Telegram 報告。',
+   tags:['tama_z_trainer','策略發現','30幣掃描','walk-forward'],
+   details:[
+     {t:'TRIGGER',b:'/task Z 手動啟動，預計 10-20 分鐘完成'},
+     {t:'PIPELINE',b:'30幣資料抓取 → 特徵工程 → 訓練 → AI門檻sweep → RR sweep → 報告'},
+     {t:'OUTPUT',b:'最佳 AI 門檻 / RR 組合 / 各幣勝率 / EV → Telegram + JSON 存檔'},
+     {t:'AUTO_WARN',b:'模型超過指定天數未更新時，A 自動推送提醒重訓'},
+   ]},
+];
+
+const LINKS = [
+  ['jesse','telegram'],['jesse','apex'],
+  ['apex','market'],['apex','tech'],['apex','d'],['apex','b'],
+  ['apex','e'],['apex','z'],
+  ['apex','github'],['apex','render'],['apex','btc'],['apex','xrp'],['apex','fgi'],
+  ['d','github'],['d','render'],['d','tama'],
+  ['e','github'],['z','tama'],
+  ['market','tama'],['tech','tama'],
+];
+
+// ── Starfield
+{
+  const g=new THREE.BufferGeometry();
+  const p=new Float32Array(9000), cl=new Float32Array(3000*3);
+  for(let i=0;i<9000;i++) p[i]=(Math.random()-.5)*2200;
+  for(let i=0;i<3000;i++){const t=Math.random(),h=Math.random();cl[i*3]=h>.7?.8:.5+t*.5;cl[i*3+1]=h>.7?.9:.6+t*.4;cl[i*3+2]=1;}
+  g.setAttribute('position',new THREE.BufferAttribute(p,3));
+  g.setAttribute('color',new THREE.BufferAttribute(cl,3));
+  scene.add(new THREE.Points(g,new THREE.PointsMaterial({size:.65,vertexColors:true,transparent:true,opacity:.8})));
+}
+
+// ── 3D Hex grid floor
+{
+  const hs=55, hh=hs*Math.sqrt(3)/2, lines=[];
+  for(let row=-4;row<5;row++) for(let col=-6;col<7;col++){
+    const cx=col*hs*1.5, cz=row*hh*2+(col%2)*hh;
+    const verts=[];
+    for(let i=0;i<7;i++){const a=Math.PI/180*(60*i-30);verts.push(new THREE.Vector3(cx+hs*.48*Math.cos(a),-200,cz+hs*.48*Math.sin(a)));}
+    lines.push(new THREE.Line(new THREE.BufferGeometry().setFromPoints(verts),new THREE.LineBasicMaterial({color:0x002244,transparent:true,opacity:.12})));
+  }
+  lines.forEach(l=>scene.add(l));
+}
+
+// ── Orbital rings around Jesse
+function mkRing(radius, col, rotX, rotZ) {
+  const geo = new THREE.TorusGeometry(radius, 0.6, 6, 80);
+  const mat = new THREE.MeshBasicMaterial({color:col, transparent:true, opacity:0.35, wireframe:false});
+  const m = new THREE.Mesh(geo, mat);
+  const p = NODES.find(n=>n.id==='jesse').pos;
+  m.position.set(...p); m.rotation.x=rotX; m.rotation.z=rotZ;
+  scene.add(m); return m;
+}
+const orbRings = [
+  mkRing(50, 0xffcc22, Math.PI/2, 0),
+  mkRing(65, 0xff8800, Math.PI/4, Math.PI/5),
+  mkRing(80, 0xffee66, Math.PI/6, -Math.PI/4),
+];
+
+// ── Tier indicator rings (big circles around each tier)
+function mkTierRing(y, r, col) {
+  const pts = [];
+  for(let i=0;i<=80;i++){const a=i/80*Math.PI*2;pts.push(new THREE.Vector3(Math.cos(a)*r,y,Math.sin(a)*r));}
+  scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts),new THREE.LineBasicMaterial({color:col,transparent:true,opacity:.08})));
+}
+mkTierRing(200,0,'#ffdd66');  // Jesse tier
+mkTierRing(100,160,'#bb77ff'); // APEX tier
+mkTierRing(0,220,'#33ccff');   // Layer 2
+mkTierRing(-80,220,'#88ccff'); // Layer 3
+
+// ── Nodes
+const meshes=[], nMap={}, lbls={};
+NODES.forEach(n=>{
+  const sp=new THREE.Sprite(new THREE.SpriteMaterial({map:TX[n.tex],transparent:true,blending:THREE.AdditiveBlending,depthWrite:false}));
+  sp.scale.set(n.sz*2.8,n.sz*2.8,1); sp.position.set(...n.pos); sp.userData=n;
+  scene.add(sp); meshes.push(sp); nMap[n.id]=sp;
+
+  const hit=new THREE.Mesh(new THREE.SphereGeometry(n.sz,8,8),new THREE.MeshBasicMaterial({transparent:true,opacity:0}));
+  hit.position.set(...n.pos); hit.userData=n; scene.add(hit); meshes.push(hit);
+
+  // Label
+  const el=document.createElement('div');
+  const tierColor={JESSE:'rgba(255,220,100,0.9)','TIER-0':'rgba(255,220,100,0.9)','TIER-1':'rgba(180,140,255,0.9)','TIER-2':'rgba(60,200,255,0.9)','TIER-3':'rgba(140,200,255,0.7)'}[n.tier]||'rgba(200,220,255,0.8)';
+  el.innerHTML=`<div style="font-size:10px;letter-spacing:2px;color:${tierColor};font-weight:700;">${n.label}</div><div style="font-size:7px;letter-spacing:1px;color:rgba(0,180,255,0.4);margin-top:1px;">${n.sub}</div>`;
+  el.style.cssText='position:fixed;pointer-events:none;white-space:nowrap;z-index:6;text-shadow:0 0 12px rgba(0,180,255,0.5);line-height:1.4;';
+  document.body.appendChild(el); lbls[n.id]=el;
+});
+
+// ── Glowing links
+LINKS.forEach(([a,b])=>{
+  const pa=new THREE.Vector3(...NODES.find(n=>n.id===a).pos);
+  const pb=new THREE.Vector3(...NODES.find(n=>n.id===b).pos);
+  scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([pa,pb]),new THREE.LineBasicMaterial({color:0x001144,transparent:true,opacity:.55})));
+  scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([pa,pb]),new THREE.LineBasicMaterial({color:0x003388,transparent:true,opacity:.18})));
+});
+
+// ── Particles along links
+const parts=[], ptx={};
+LINKS.forEach(([a,b])=>{
+  const na=NODES.find(n=>n.id===a), nb=NODES.find(n=>n.id===b);
+  if(!ptx[na.col]) ptx[na.col]=TX.particle(na.col);
+  const pa=new THREE.Vector3(...na.pos), pb=new THREE.Vector3(...nb.pos);
+  for(let i=0;i<6;i++){
+    const ps=new THREE.Sprite(new THREE.SpriteMaterial({map:ptx[na.col],transparent:true,blending:THREE.AdditiveBlending,depthWrite:false}));
+    ps.scale.set(3,3,1); scene.add(ps);
+    parts.push({sp:ps,pa,pb,t:Math.random(),spd:.0015+Math.random()*.003});
+  }
+});
+
+// ── Legend
+document.getElementById('legend').innerHTML=[
+  ['超巨星','#ffdd66'],['脈衝星','#bb77ff'],['藍巨星','#33ccff'],
+  ['黃矮星','#ffcc33'],['綠色星','#33ffaa'],['中子星','#cc88ff'],
+  ['白矮星','#88ccff'],['紅矮星','#ff4455'],
+].map(([t,c])=>`<span style="color:${c}">◈</span> ${t}`).join('<br>');
+
+// ── Panel
+function openP(n){
+  document.getElementById('p-tier').textContent=n.tier+' // '+n.sub;
+  const pt=document.getElementById('p-title'); pt.textContent=n.label; pt.style.color=n.col;
+  document.getElementById('p-id').textContent='◆ NODE_ID: '+n.id.toUpperCase()+' // POS: ['+n.pos.map(v=>v.toFixed(0)).join(', ')+']';
+  document.getElementById('p-desc').textContent=n.desc;
+  const tags=n.tags.map(t=>`<span class="tag">${t}</span>`).join('');
+  let html=`<div class="ps"><h3>SYS_TAGS</h3>${tags}</div>`;
+  (n.details||[]).forEach(d=>{html+=`<div class="ps"><h3>${d.t}</h3><p>${d.b}</p></div>`;});
+  document.getElementById('p-extra').innerHTML=html;
+  document.getElementById('panel').classList.add('open');
+}
+document.getElementById('pcls').onclick=()=>document.getElementById('panel').classList.remove('open');
+
+// ── Controls
+let drag=false, lx=0, ly=0, rx=0.22, ry=0, dist=380;
+const ray=new THREE.Raycaster(), mo=new THREE.Vector2();
+const r1=document.getElementById('ring1'), r2=document.getElementById('ring2'), r3=document.getElementById('ring3');
+
+function showRings(n,ex,ey){
+  if(n){
+    [r1,r2,r3].forEach((r,i)=>{r.style.display='block';r.style.left=ex+'px';r.style.top=ey+'px';r.style.borderColor=n.col+(i===0?'bb':i===1?'55':'22');r.style.boxShadow=`0 0 ${20+i*10}px ${n.col}${i===0?'55':'22'}`;});
+  } else {[r1,r2,r3].forEach(r=>r.style.display='none');}
+}
+
+canvas.addEventListener('mousedown',e=>{drag=true;lx=e.clientX;ly=e.clientY;});
+window.addEventListener('mouseup',()=>drag=false);
+window.addEventListener('mousemove',e=>{
+  if(drag){ry+=(e.clientX-lx)*.005;rx+=(e.clientY-ly)*.005;lx=e.clientX;ly=e.clientY;}
+  const rect=canvas.getBoundingClientRect();
+  mo.x=((e.clientX-rect.left)/W)*2-1; mo.y=-((e.clientY-rect.top)/H)*2+1;
+  ray.setFromCamera(mo,camera); const hits=ray.intersectObjects(meshes);
+  const tip=document.getElementById('tip');
+  if(hits.length&&hits[0].object.userData.label){
+    const n=hits[0].object.userData;
+    document.getElementById('tn').textContent=n.label; document.getElementById('tn').style.color=n.col;
+    document.getElementById('ts').textContent=n.sub||'';
+    document.getElementById('ttr').textContent=n.tier||'';
+    tip.style.opacity='1'; tip.style.left=(e.clientX+22)+'px'; tip.style.top=(e.clientY-10)+'px';
+    canvas.style.cursor='crosshair'; showRings(n,e.clientX,e.clientY);
+  } else {tip.style.opacity='0'; canvas.style.cursor='default'; showRings(null);}
+});
+canvas.addEventListener('wheel',e=>{dist=Math.max(100,Math.min(600,dist+e.deltaY*.4));},{passive:true});
+canvas.addEventListener('click',e=>{
+  const rect=canvas.getBoundingClientRect();
+  mo.x=((e.clientX-rect.left)/W)*2-1; mo.y=-((e.clientY-rect.top)/H)*2+1;
+  ray.setFromCamera(mo,camera); const hits=ray.intersectObjects(meshes);
+  if(hits.length&&hits[0].object.userData.label) openP(hits[0].object.userData);
+});
+
+let ltd=0;
+canvas.addEventListener('touchstart',e=>{if(e.touches.length===1){drag=true;lx=e.touches[0].clientX;ly=e.touches[0].clientY;}if(e.touches.length===2)ltd=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);},{passive:true});
+canvas.addEventListener('touchend',()=>drag=false,{passive:true});
+canvas.addEventListener('touchmove',e=>{if(e.touches.length===1&&drag){ry+=(e.touches[0].clientX-lx)*.005;rx+=(e.touches[0].clientY-ly)*.005;lx=e.touches[0].clientX;ly=e.touches[0].clientY;}if(e.touches.length===2){const d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);dist=Math.max(100,Math.min(600,dist-(d-ltd)*.5));ltd=d;}},{passive:true});
+
+// ── Radar sweep animation
+let radarAngle=0;
+function drawRadar(){
+  const rx2=W-110, ry2=H-110, rr=80;
+  // clear radar area
+  hx.save();
+  hx.globalCompositeOperation='source-over';
+  hx.fillStyle='rgba(0,0,0,0.08)';
+  hx.beginPath();hx.arc(rx2,ry2,rr,0,Math.PI*2);hx.fill();
+  // sweep
+  const sx=rx2+Math.cos(radarAngle)*rr, sy=ry2+Math.sin(radarAngle)*rr;
+  const sweep=hx.createConicalGradient?null:null;
+  hx.beginPath();
+  hx.moveTo(rx2,ry2);
+  for(let i=0;i<30;i++){
+    const a=radarAngle-i*.12;
+    hx.lineTo(rx2+Math.cos(a)*rr*(1-i/30)*0.95,ry2+Math.sin(a)*rr*(1-i/30)*0.95);
+  }
+  hx.closePath();
+  const g=hx.createLinearGradient(rx2,ry2,sx,sy);
+  g.addColorStop(0,'rgba(0,255,180,0.3)');g.addColorStop(1,'rgba(0,255,180,0)');
+  hx.fillStyle=g;hx.fill();
+  // sweep line
+  hx.strokeStyle='rgba(0,255,180,0.8)';hx.lineWidth=1;
+  hx.beginPath();hx.moveTo(rx2,ry2);hx.lineTo(sx,sy);hx.stroke();
+  hx.restore();
+  radarAngle+=0.03;
+}
+
+// ── Clock
+function updateClock(){
+  const now=new Date();
+  const tw=new Date(now.toLocaleString('en-US',{timeZone:'Asia/Taipei'}));
+  const hh=String(tw.getHours()).padStart(2,'0');
+  const mm=String(tw.getMinutes()).padStart(2,'0');
+  const ss=String(tw.getSeconds()).padStart(2,'0');
+  const yyyy=tw.getFullYear(),mo=String(tw.getMonth()+1).padStart(2,'0'),dd=String(tw.getDate()).padStart(2,'0');
+  const el=document.getElementById('hud-time');
+  if(el) el.textContent=`台北時間　${yyyy}-${mo}-${dd}　${hh}:${mm}:${ss}`;
+}
+updateClock(); setInterval(updateClock,1000);
+
+// ── Live Data Polling ────────────────────────────────────────────────────────
+// 資料源：A 系統每 90 秒把即時狀態推到 GitHub 靜態 JSON（apex-commander 是 Render
+// background_worker 無公開網址，故不能直接打 API；改讀公開 repo 才能真正連得到）。
+const GALAXY_JSON = './galaxy_live.json';  // 同源（GitHub Pages 與 galaxy_live.json 同 repo）
+const LIVE_IDS = ['live-btc','live-xrp','live-fgi','live-equity','live-pnl24','live-positions','live-signals','live-apex'];
+
+function setDisconnected(msg){
+  // fetch 失敗或資料過期 → 全部欄位顯示斷線，不再靜默卡在「連線中」
+  LIVE_IDS.forEach(id=>{
+    const el=document.getElementById(id);
+    if(el){ el.textContent='✕ 斷線'; el.style.color='#ff4466'; }
+  });
+  const tsEl=document.getElementById('live-ts');
+  if(tsEl){ tsEl.textContent=msg||'✕ 無法連線'; tsEl.style.color='#ff4466'; }
+}
+
+async function fetchLiveData(){
+  try{
+    const r = await fetch(GALAXY_JSON+'?t='+Date.now(),{cache:'no-store',signal:AbortSignal.timeout(8000)});
+    if(!r.ok){ setDisconnected('✕ 資料源 '+r.status); return; }
+    const d = await r.json();
+    applyLiveData(d);
+  }catch(e){
+    setDisconnected('✕ 連線逾時');
   }
 }
 
-load();
-setInterval(load, 60000); // 每 60 秒自動重抓資料
+function fmtN(v, decs=2, prefix=''){
+  if(!v && v!==0) return '—';
+  const s = Math.abs(v).toFixed(decs);
+  return (v>=0?'+':'-') + prefix + s;
+}
+
+function applyLiveData(d){
+  // ── 真實連線新鮮度：依 generated_at 算資料年齡（< 5 分鐘=即時，5-15=陳舊，> 15=斷線）
+  const tsEl0 = document.getElementById('live-ts');
+  let ageMin = Infinity;
+  if(d.generated_at){
+    const g = new Date(d.generated_at).getTime();
+    if(!isNaN(g)) ageMin = (Date.now() - g) / 60000;
+  }
+  // 門檻考量：A 每 2 分鐘推送 + GitHub raw CDN 最多快取約 5 分鐘 → 正常資料最舊約 7 分。
+  // 故綠燈放寬到 < 8 分（正常運作恆綠），8-20 分黃燈，> 20 分判定 A 真的停了 → 斷線。
+  if(ageMin > 20){
+    setDisconnected('✕ 資料過期 '+(isFinite(ageMin)?Math.round(ageMin)+'m':''));
+    return;  // 資料太舊，不用陳舊數值誤導
+  }
+  if(tsEl0){
+    const hhmmss = (d.ts||'').slice(11,19) || new Date().toTimeString().slice(0,8);
+    if(ageMin < 8){ tsEl0.textContent='● 即時　'+hhmmss; tsEl0.style.color='#00ff99'; }
+    else          { tsEl0.textContent='▲ 陳舊 '+Math.round(ageMin)+'m　'+hhmmss; tsEl0.style.color='#ffaa00'; }
+  }
+
+  // ── 更新 BTC/XRP 監控哨兵區域
+  const btcEl  = document.getElementById('live-btc');
+  const xrpEl  = document.getElementById('live-xrp');
+  const fgiEl  = document.getElementById('live-fgi');
+  const eqEl   = document.getElementById('live-equity');
+  const pnlEl  = document.getElementById('live-pnl24');
+  const posEl  = document.getElementById('live-positions');
+  const sigEl  = document.getElementById('live-signals');
+  const apxEl  = document.getElementById('live-apex');
+  const tsEl   = document.getElementById('live-ts');
+
+  if(btcEl && d.btc){
+    const chg = d.btc.change_24h;
+    const sign = chg>=0?'+':'';
+    btcEl.textContent = d.btc.price? `$${d.btc.price.toLocaleString()} (${sign}${chg.toFixed(1)}%)` : '—';
+    btcEl.style.color = chg>=0?'#00ff99':'#ff4466';
+
+    // 動畫：BTC 節點大小隨波動放大
+    const bNode=nMap['btc'];
+    if(bNode){const baseSz=NODES.find(n=>n.id==='btc')?.sz||8; bNode._liveScale=1+Math.min(Math.abs(chg)/5,.5)*.4;}
+  }
+  if(xrpEl && d.xrp){
+    const chg = d.xrp.change_24h;
+    const sign = chg>=0?'+':'';
+    xrpEl.textContent = d.xrp.price? `$${d.xrp.price.toFixed(4)} (${sign}${chg.toFixed(1)}%)` : '—';
+    xrpEl.style.color = chg>=0?'#00ff99':'#ff4466';
+    const xNode=nMap['xrp'];
+    if(xNode){xNode._liveScale=1+Math.min(Math.abs(chg)/5,.5)*.4;}
+  }
+  if(fgiEl && d.fear_greed){
+    const v=d.fear_greed.value;
+    fgiEl.textContent=`${v} — ${d.fear_greed.label}`;
+    fgiEl.style.color=v<=30?'#ff4466':v>=70?'#ffaa00':'#00ff99';
+  }
+  // 資料新鮮且有效 → 還原先前斷線可能殘留的紅色（這三欄平時不自帶顏色）
+  [eqEl,posEl,sigEl].forEach(el=>{ if(el) el.style.color='#7fe7ff'; });
+  // BingX 可能為空物件 {}（A 未設金鑰）或缺欄位 → 須逐欄判型，否則 undefined.toFixed() 會整個渲染崩潰
+  const bx = (d.bingx && !d.bingx.error) ? d.bingx : {};
+  if(eqEl) eqEl.textContent = (typeof bx.equity==='number') ? `${bx.equity.toFixed(2)} USDT` : '—';
+  if(pnlEl){
+    if(typeof bx.pnl_24h==='number'){
+      const p=bx.pnl_24h;
+      pnlEl.textContent=`${p>=0?'+':''}${p.toFixed(2)} USDT`;
+      pnlEl.style.color=p>=0?'#00ff99':'#ff4466';
+    } else { pnlEl.textContent='—'; }
+  }
+  if(posEl) posEl.textContent = (typeof bx.open_positions==='number') ? `${bx.open_positions} 個` : '—';
+  if(sigEl && d.today) sigEl.textContent=`今日 ${d.today.signals} 筆 / 警報 ${d.today.alerts} 次`;
+  if(apxEl && d.apex){
+    apxEl.textContent=d.apex.status==='online'?'■ 運行中':'■ 已暫停';
+    apxEl.style.color=d.apex.status==='online'?'#00ff99':'#ffaa00';
+  }
+  // live-ts 已在函數開頭依新鮮度設定（綠=即時/黃=陳舊），此處不再覆蓋
+}
+
+fetchLiveData();
+setInterval(fetchLiveData, 30000);
+
+// ── Animate
+let pulse=0, frame=0;
+function animate(){
+  requestAnimationFrame(animate); pulse+=.018; frame++;
+
+  // Camera orbit
+  const camX=Math.sin(ry)*Math.cos(rx)*dist;
+  const camY=Math.sin(rx)*dist+50;
+  const camZ=Math.cos(ry)*Math.cos(rx)*dist;
+  camera.position.set(camX,camY,camZ);
+  camera.lookAt(0,50,0);
+
+  // Orbital rings spin
+  orbRings[0].rotation.y=pulse*.4;
+  orbRings[1].rotation.y=pulse*.6; orbRings[1].rotation.x=Math.PI/4+pulse*.2;
+  orbRings[2].rotation.y=-pulse*.35; orbRings[2].rotation.z=pulse*.15;
+
+  // Jesse glow pulse
+  const jn=NODES.find(n=>n.id==='jesse');
+  if(nMap['jesse']){const b=1+Math.sin(pulse*1.5)*.08;nMap['jesse'].scale.set(jn.sz*2.8*b,jn.sz*2.8*b,1);}
+
+  // APEX spin
+  if(nMap['apex'])nMap['apex'].material.rotation=pulse*.9;
+  if(nMap['tama'])nMap['tama'].material.rotation=-pulse*.5;
+
+  // Breathe all
+  NODES.forEach(n=>{
+    if(n.id==='jesse'||n.id==='apex')return;
+    const sp=nMap[n.id];if(!sp)return;
+    const b=1+Math.sin(pulse*1.2+n.pos[0]*.04+n.pos[2]*.03)*.06;
+    sp.scale.set(n.sz*2.8*b,n.sz*2.8*b,1);
+  });
+
+  // Particles
+  parts.forEach(p=>{
+    p.t=(p.t+p.spd)%1; p.sp.position.lerpVectors(p.pa,p.pb,p.t);
+    const br=Math.sin(p.t*Math.PI); p.sp.material.opacity=.15+br*.85;
+    const s=1.5+br*9; p.sp.scale.set(s,s,1);
+  });
+
+  // Labels
+  NODES.forEach(n=>{
+    const v=new THREE.Vector3(...n.pos); v.project(camera);
+    const x=(v.x*.5+.5)*W, y=(-v.y*.5+.5)*H;
+    const el=lbls[n.id]; if(!el)return;
+    if(v.z<1){el.style.left=(x+n.sz*1.5+3)+'px';el.style.top=(y-9)+'px';el.style.opacity='1';}
+    else el.style.opacity='0';
+  });
+
+  // Radar
+  if(frame%2===0) drawRadar();
+
+  // HUD cam
+  if(frame%5===0) document.getElementById('hud-cam2').textContent=
+    `θ=${ry.toFixed(3)}  φ=${rx.toFixed(3)}  ZOOM=${dist.toFixed(0)} LY`;
+
+  renderer.render(scene,camera);
+}
+animate();
 </script>
 </body>
 </html>
