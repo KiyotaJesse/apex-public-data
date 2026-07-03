@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-03T11:39:39.766396+08:00",
+  "generated_at": "2026-07-03T11:42:01.710925+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
     "closed_trades": [],
-    "last_cycle_ts": "2026-07-03T03:34:43.298261+00:00",
+    "last_cycle_ts": "2026-07-03T03:39:44.423375+00:00",
     "stats": {
       "n": 0,
       "win_rate_pct": 0.0,
@@ -23,6 +23,120 @@
   "feature_flags": {
     "a": {},
     "d": {}
+  },
+  "tama_config": {
+    "current": {
+      "_meta": {
+        "desc": "APEX 控制台熱載入配置。改此檔 <=60 秒生效，無需重新部署。硬邊界見 tama_v5.py TAMA_CONFIG_BOUNDS。",
+        "updated": "2026-07-03T00:00:00+00:00",
+        "by": "APEX-A init (實測完成復原)"
+      },
+      "b1": {
+        "live_enabled": true,
+        "risk_pct": 0.02,
+        "leverage": 50,
+        "max_positions": 5,
+        "daily_loss_limit_pct": 0.1,
+        "cycle_seconds": 300
+      },
+      "tl": {
+        "live_enabled": true,
+        "risk_pct": 0.02,
+        "leverage": 50,
+        "max_positions": 2,
+        "max_hold_h": 48,
+        "cycle_seconds": 900
+      },
+      "global": {
+        "same_dir_max": 3,
+        "total_drawdown_halt_pct": 0.25,
+        "killswitch": false
+      }
+    },
+    "applied": {
+      "applied_sha": "77256f9036d1df617fbc98ac8fc9a5fa72cf43cd",
+      "applied_at": "2026-07-03T03:02:23.343820+00:00",
+      "changes": [
+        "tl.cycle_seconds: 7200 -> 900"
+      ]
+    },
+    "bounds": {
+      "b1.live_enabled": {
+        "kind": "bool",
+        "min": null,
+        "max": null
+      },
+      "b1.risk_pct": {
+        "kind": "float",
+        "min": 0.0001,
+        "max": 0.02
+      },
+      "b1.leverage": {
+        "kind": "int",
+        "min": 1,
+        "max": 50
+      },
+      "b1.max_positions": {
+        "kind": "int",
+        "min": 0,
+        "max": 5
+      },
+      "b1.daily_loss_limit_pct": {
+        "kind": "float",
+        "min": 0.005,
+        "max": 0.1
+      },
+      "b1.cycle_seconds": {
+        "kind": "int",
+        "min": 60,
+        "max": 3600
+      },
+      "tl.live_enabled": {
+        "kind": "bool",
+        "min": null,
+        "max": null
+      },
+      "tl.risk_pct": {
+        "kind": "float",
+        "min": 0.0001,
+        "max": 0.02
+      },
+      "tl.leverage": {
+        "kind": "int",
+        "min": 1,
+        "max": 50
+      },
+      "tl.max_positions": {
+        "kind": "int",
+        "min": 0,
+        "max": 5
+      },
+      "tl.max_hold_h": {
+        "kind": "int",
+        "min": 4,
+        "max": 168
+      },
+      "tl.cycle_seconds": {
+        "kind": "int",
+        "min": 60,
+        "max": 7200
+      },
+      "global.same_dir_max": {
+        "kind": "int",
+        "min": 1,
+        "max": 6
+      },
+      "global.total_drawdown_halt_pct": {
+        "kind": "float",
+        "min": 0.05,
+        "max": 0.3
+      },
+      "global.killswitch": {
+        "kind": "bool",
+        "min": null,
+        "max": null
+      }
+    }
   },
   "self_upgrades": [
     {
