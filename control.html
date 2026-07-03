@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>APEX 控制台</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+  :root{ --bg:#0b0e14; --card:#151a23; --card2:#1c232e; --line:#2a323f;
+         --txt:#e6edf3; --sub:#8b98a9; --grn:#31d07a; --grn2:#1f8f52;
+         --red:#ff5c5c; --amber:#f0b93b; --blue:#4a9eff; }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+  body{margin:0; background:var(--bg); color:var(--txt);
+       font-family:-apple-system,"Segoe UI",Roboto,"PingFang TC","Microsoft JhengHei",sans-serif;
+       padding:14px 12px 120px; font-size:15px;}
+  h1{font-size:18px; margin:2px 0 2px;}
+  .sub{color:var(--sub); font-size:12px; margin-bottom:14px;}
+  .grp{background:var(--card); border:1px solid var(--line); border-radius:14px;
+       padding:12px 14px; margin-bottom:14px;}
+  .grp h2{font-size:15px; margin:0 0 10px; display:flex; align-items:center; gap:7px;}
+  .knob{padding:11px 0; border-top:1px solid var(--line);}
+  .knob:first-of-type{border-top:none;}
+  .krow{display:flex; justify-content:space-between; align-items:center; gap:10px;}
+  .klabel{font-size:14px;}
+  .khint{color:var(--sub); font-size:11px; margin-top:2px;}
+  .kval{font-variant-numeric:tabular-nums; font-weight:600; color:var(--grn); min-width:66px; text-align:right;}
+  .kval.dirty{color:var(--amber);}
+  input[type=range]{width:100%; margin:10px 0 0; accent-color:var(--grn); height:26px;}
+  .danger .klabel{color:var(--amber);}
+  .toggle{position:relative; width:52px; height:30px; flex:0 0 auto;}
+  .toggle input{opacity:0; width:0; height:0;}
+  .slider{position:absolute; inset:0; background:#3a4250; border-radius:30px; transition:.2s; cursor:pointer;}
+  .slider:before{content:""; position:absolute; height:24px; width:24px; left:3px; top:3px;
+                 background:#fff; border-radius:50%; transition:.2s;}
+  .toggle input:checked + .slider{background:var(--grn2);}
+  .toggle input:checked + .slider:before{transform:translateX(22px);}
+  .status{font-size:12px; color:var(--sub); margin:-6px 0 14px; line-height:1.5;}
+  .dot{display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:5px; vertical-align:middle;}
+  .bar{position:fixed; left:0; right:0; bottom:0; background:var(--card2);
+       border-top:1px solid var(--line); padding:12px 14px calc(12px + env(safe-area-inset-bottom));
+       display:flex; gap:10px; align-items:center;}
+  .bar .info{flex:1; font-size:12px; color:var(--sub);}
+  button{border:none; border-radius:11px; padding:13px 18px; font-size:15px; font-weight:700;
+         color:#fff; background:var(--grn2); cursor:pointer;}
+  button:disabled{opacity:.4;}
+  button.ghost{background:#333b47;}
+  .warn{background:#3a2416; border:1px solid #6b4a1f; color:var(--amber);
+        border-radius:11px; padding:11px 13px; font-size:13px; margin-bottom:14px; display:none;}
+  .modal{position:fixed; inset:0; background:rgba(0,0,0,.72); display:none;
+         align-items:center; justify-content:center; padding:24px; z-index:9;}
+  .modal .box{background:var(--card); border:1px solid var(--line); border-radius:16px;
+              padding:18px; max-width:420px; width:100%;}
+  .modal h3{margin:0 0 10px; font-size:16px;}
+  .chg{font-size:13px; line-height:1.7; background:var(--card2); border-radius:10px;
+       padding:10px 12px; margin:10px 0; max-height:40vh; overflow:auto;}
+  .chg .d{color:var(--amber);}
+  .mbtns{display:flex; gap:10px; margin-top:6px;}
+  .mbtns button{flex:1;}
+</style>
+</head>
+<body>
+  <h1>⚙️ APEX 交易控制台</h1>
+  <div class="sub" id="sub">載入中…</div>
+  <div class="status" id="applied"></div>
+  <div class="warn" id="warn">⚠️ 請從 Telegram 內用 /control 指令的「⚙️ 開啟控制台」按鈕進入，否則無法送出變更。</div>
+  <div id="groups"></div>
+
+  <div class="bar">
+    <div class="info" id="barinfo">尚無變更</div>
+    <button class="ghost" id="reset" disabled>還原</button>
+    <button id="save" disabled>儲存變更</button>
+  </div>
+
+  <div class="modal" id="modal">
+    <div class="box">
+      <h3>⚠️ 確認變更</h3>
+      <div class="sub">以下變更將於 60 秒內套用到實盤交易引擎：</div>
+      <div class="chg" id="modalchg"></div>
+      <div class="mbtns">
+        <button class="ghost" id="mcancel">取消</button>
+        <button id="mok">確認送出</button>
+      </div>
+    </div>
+  </div>
+
+<script>
+const TG = window.Telegram && window.Telegram.WebApp ? window.Telegram.WebApp : null;
+if (TG) { TG.ready(); TG.expand(); }
+const canSend = !!(TG && typeof TG.sendData === "function");
+
+// 旋鈕顯示定義（label/單位/危險旗標）。min/max/kind 以伺服器 bounds 為準。
+const META = {
+  "b1.live_enabled":   {g:"b1", label:"啟用 B1 做空", type:"bool", danger:true},
+  "b1.risk_pct":       {g:"b1", label:"每筆風險", type:"pct", hint:"帳戶%（上限2%）"},
+  "b1.leverage":       {g:"b1", label:"槓桿倍數", type:"int", danger:true},
+  "b1.max_positions":  {g:"b1", label:"最大同時持倉", type:"int", hint:"筆"},
+  "b1.daily_loss_limit_pct":{g:"b1", label:"每日虧損熔斷", type:"pct"},
+  "b1.cycle_seconds":  {g:"b1", label:"掃描間隔", type:"int", hint:"秒"},
+  "tl.live_enabled":   {g:"tl", label:"啟用 TL 做多", type:"bool", danger:true},
+  "tl.risk_pct":       {g:"tl", label:"每筆風險", type:"pct", hint:"帳戶%（上限2%）"},
+  "tl.leverage":       {g:"tl", label:"槓桿倍數", type:"int", danger:true},
+  "tl.max_positions":  {g:"tl", label:"最大同時持倉", type:"int", hint:"筆"},
+  "tl.max_hold_h":     {g:"tl", label:"最長持有", type:"int", hint:"小時"},
+  "tl.cycle_seconds":  {g:"tl", label:"掃描間隔", type:"int", hint:"秒"},
+  "global.same_dir_max":{g:"global", label:"同向總倉上限", type:"int", hint:"筆"},
+  "global.total_drawdown_halt_pct":{g:"global", label:"總回撤熔斷", type:"pct"},
+  "global.killswitch": {g:"global", label:"🛑 緊急全停（停止所有開倉）", type:"bool", danger:true},
+};
+const GROUPS = [
+  {id:"b1", title:"🔻 策略 B1（做空）"},
+  {id:"tl", title:"🔺 策略 TL（做多）"},
+  {id:"global", title:"🌐 全域風控"},
+];
+
+let CUR = {};      // 目前值 {key:val}
+let BOUNDS = {};   // {key:{kind,min,max}}
+let PENDING = {};  // 已改動 {key:newval}
+
+function flat(cfg){ // cfg={b1:{...},tl:{...},global:{...}} -> {"b1.risk_pct":..}
+  const o={};
+  for(const sect of ["b1","tl","global"]){
+    const s=cfg[sect]||{};
+    for(const k in s) o[sect+"."+k]=s[k];
+  }
+  return o;
+}
+function fmt(key,val){
+  const m=META[key];
+  if(m.type==="bool") return val ? "開" : "關";
+  if(m.type==="pct") return (val*100).toFixed(val*100<1?2:1)+"%";
+  return String(val);
+}
+
+async function load(){
+  try{
+    const r=await fetch("./dashboard.json?t="+Date.now(),{cache:"no-store"});
+    const d=await r.json();
+    const tc=d.tama_config;
+    if(!tc||!tc.current||!tc.current.b1){
+      document.getElementById("sub").textContent="⚠️ 尚未取得配置資料（A 端可能剛部署，請稍候重開）";
+      return;
+    }
+    CUR=flat(tc.current);
+    BOUNDS=tc.bounds||{};
+    const ap=tc.applied||{};
+    document.getElementById("sub").textContent="調整後按「儲存變更」，60 秒內生效。硬邊界自動防護。";
+    const when = ap.applied_at ? new Date(ap.applied_at).toLocaleString("zh-TW") : "—";
+    const chg = (ap.changes&&ap.changes.length)? ap.changes.join("、") : "無";
+    document.getElementById("applied").innerHTML =
+      '<span class="dot" style="background:var(--grn)"></span>D 最後生效：'+when+'　（'+chg+'）';
+    if(!canSend) document.getElementById("warn").style.display="block";
+    render();
+  }catch(e){
+    document.getElementById("sub").textContent="⚠️ 載入失敗："+e;
+  }
+}
+
+function render(){
+  const root=document.getElementById("groups"); root.innerHTML="";
+  for(const grp of GROUPS){
+    const box=document.createElement("div"); box.className="grp";
+    box.innerHTML='<h2>'+grp.title+'</h2>';
+    for(const key in META){
+      if(META[key].g!==grp.id) continue;
+      if(!(key in CUR)) continue;
+      box.appendChild(knobEl(key));
+    }
+    root.appendChild(box);
+  }
+}
+
+function knobEl(key){
+  const m=META[key], b=BOUNDS[key]||{}, cur=(key in PENDING)?PENDING[key]:CUR[key];
+  const dirty=(key in PENDING);
+  const el=document.createElement("div"); el.className="knob"+(m.danger?" danger":"");
+  const row=document.createElement("div"); row.className="krow";
+  const left=document.createElement("div");
+  left.innerHTML='<div class="klabel">'+m.label+'</div>'+(m.hint?'<div class="khint">'+m.hint+'</div>':'');
+  row.appendChild(left);
+
+  if(m.type==="bool"){
+    const t=document.createElement("label"); t.className="toggle";
+    const inp=document.createElement("input"); inp.type="checkbox"; inp.checked=!!cur;
+    const sl=document.createElement("span"); sl.className="slider";
+    inp.onchange=()=>setVal(key, inp.checked);
+    t.appendChild(inp); t.appendChild(sl); row.appendChild(t);
+    el.appendChild(row);
+  } else {
+    const v=document.createElement("div"); v.className="kval"+(dirty?" dirty":""); v.id="v_"+key;
+    v.textContent=fmt(key,cur); row.appendChild(v); el.appendChild(row);
+    const rng=document.createElement("input"); rng.type="range";
+    const isPct=m.type==="pct", scale=isPct?100:1;
+    rng.min=(b.min!=null?b.min:0)*scale;
+    rng.max=(b.max!=null?b.max:100)*scale;
+    rng.step=m.type==="float"||isPct ? (isPct?0.05:0.0005) : 1;
+    rng.value=cur*scale;
+    rng.oninput=()=>{
+      let nv = m.type==="int" ? Math.round(+rng.value) : (+rng.value)/scale;
+      if(isPct) nv=+( (+rng.value)/100 ).toFixed(4);
+      setVal(key, nv, true);
+    };
+    el.appendChild(rng);
+  }
+  return el;
+}
+
+function setVal(key,val,liveOnly){
+  if(val===CUR[key]) delete PENDING[key];
+  else PENDING[key]=val;
+  const vEl=document.getElementById("v_"+key);
+  if(vEl){ vEl.textContent=fmt(key,val); vEl.className="kval"+((key in PENDING)?" dirty":""); }
+  refreshBar();
+}
+function refreshBar(){
+  const n=Object.keys(PENDING).length;
+  document.getElementById("barinfo").textContent = n? (n+" 項待送出") : "尚無變更";
+  document.getElementById("save").disabled = n===0 || !canSend;
+  document.getElementById("reset").disabled = n===0;
+}
+
+document.getElementById("reset").onclick=()=>{ PENDING={}; render(); refreshBar(); };
+
+document.getElementById("save").onclick=()=>{
+  const keys=Object.keys(PENDING); if(!keys.length) return;
+  const box=document.getElementById("modalchg"); box.innerHTML="";
+  let hasDanger=false;
+  for(const k of keys){
+    if(META[k].danger) hasDanger=true;
+    box.innerHTML += '<div>'+META[k].label+'：'+fmt(k,CUR[k])+
+                     ' → <span class="d">'+fmt(k,PENDING[k])+'</span></div>';
+  }
+  document.getElementById("mok").textContent = hasDanger ? "我了解風險，確認送出" : "確認送出";
+  document.getElementById("modal").style.display="flex";
+};
+document.getElementById("mcancel").onclick=()=>{ document.getElementById("modal").style.display="none"; };
+document.getElementById("mok").onclick=()=>{
+  const payload={action:"set_config", changes:{...PENDING}};
+  try{
+    TG.sendData(JSON.stringify(payload));  // 送給 bot 並自動關閉
+  }catch(e){
+    alert("送出失敗："+e+"\n請確認是從 Telegram /control 按鈕開啟。");
+  }
+};
+
+load();
+</script>
+</body>
+</html>
