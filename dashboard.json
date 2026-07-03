@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-03T21:43:08.594036+08:00",
+  "generated_at": "2026-07-03T22:07:36.033207+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
     "closed_trades": [],
-    "last_cycle_ts": "2026-07-03T13:41:58.599032+00:00",
+    "last_cycle_ts": "2026-07-03T14:06:30.156373+00:00",
     "stats": {
       "n": 0,
       "win_rate_pct": 0.0,
@@ -55,10 +55,10 @@
     },
     "applied": {
       "applied_sha": "a5e4f855dff170672a024f4f2be14f76417d8e3f",
-      "applied_at": "2026-07-03T08:15:31.870630+00:00",
+      "applied_at": "2026-07-03T13:59:59.120590+00:00",
       "changes": [
-        "b1.live_enabled: False -> True",
-        "tl.live_enabled: False -> True"
+        "b1.cycle_seconds: 300 -> 60",
+        "tl.cycle_seconds: 900 -> 60"
       ]
     },
     "bounds": {
