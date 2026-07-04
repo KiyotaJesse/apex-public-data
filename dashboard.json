@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-04T17:24:44.699590+08:00",
+  "generated_at": "2026-07-04T17:29:15.571337+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
     "closed_trades": [],
-    "last_cycle_ts": "2026-07-04T09:21:55.344470+00:00",
+    "last_cycle_ts": "2026-07-04T09:28:16.827037+00:00",
     "stats": {
       "n": 0,
       "win_rate_pct": 0.0,
@@ -23,6 +23,40 @@
   "feature_flags": {
     "a": {},
     "d": {}
+  },
+  "strat_tl": {
+    "mode": "live",
+    "open_positions": [
+      {
+        "id": "strattl_AAVEUSDT_1783148407",
+        "symbol": "AAVE-USDT",
+        "direction": "LONG",
+        "entry": 87.17,
+        "sl_price": 85.21142857142857,
+        "tp_price": 93.04571428571428,
+        "sl_dist": 1.9585714285714317,
+        "qty": 5.1,
+        "max_hold_h": 48,
+        "strategy": "TL",
+        "sl_order_id": "2073301061728829440",
+        "opened_ts": "2026-07-04T07:01:07.686272+00:00",
+        "highest": 87.17,
+        "lowest": 87.17,
+        "breakeven_done": false,
+        "bars_elapsed": 0,
+        "last_checked_time": "2026-07-04T07:01:07.686272+00:00",
+        "notion_page_id": "3930a137-4574-81ca-98a4-e394e0fdcb82"
+      }
+    ],
+    "last_cycle_ts": "2026-07-04T09:27:36.604465+00:00",
+    "stats": {
+      "n": 0,
+      "win_rate_pct": 0.0,
+      "ev_r": 0.0,
+      "total_pnl_usdt": 0.0,
+      "avg_win_usdt": 0.0,
+      "avg_loss_usdt": 0.0
+    }
   },
   "tama_config": {
     "current": {
