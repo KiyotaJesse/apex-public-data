@@ -88,12 +88,22 @@
   .barwrap{height:10px;background:#241040;margin-top:6px;position:relative;
            clip-path:polygon(0 0,calc(100% - 6px) 0,100% 6px,100% 100%,6px 100%,0 100%);}
   .bar{height:100%;background:linear-gradient(90deg,var(--cyan),var(--yel));box-shadow:0 0 10px var(--cyan);}
+  #bgm{background:transparent;color:var(--vio);border:1px solid var(--vio);cursor:pointer;
+       font-family:'Orbitron',monospace;font-size:11px;letter-spacing:1.5px;padding:8px 14px;
+       clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px));
+       transition:.2s;}
+  #bgm.on{color:var(--yel);border-color:var(--yel);box-shadow:0 0 14px rgba(252,238,10,.45);
+          text-shadow:0 0 8px var(--yel);animation:bgmpulse 1.4s infinite;}
+  @keyframes bgmpulse{50%{box-shadow:0 0 26px rgba(252,238,10,.7);}}
 </style>
 </head>
 <body>
 <div class="top">
   <h1 class="glitch"><span class="tag">NIGHT CITY // TRADING DIVISION</span>APEX 指揮中心 <span id="mainlight" style="color:var(--cyan)">◆</span></h1>
-  <div class="upd" id="upd">SYNCING…</div>
+  <div style="display:flex;align-items:center;gap:14px;">
+    <button id="bgm" title="Synthwave BGM">♪ BGM OFF</button>
+    <div class="upd" id="upd">SYNCING…</div>
+  </div>
 </div>
 
 <div class="grid">
@@ -250,6 +260,64 @@ function drawEq(eq){
   x.fillStyle='#fcee0a'; x.shadowColor='#fcee0a'; x.shadowBlur=12; x.fill(); x.shadowBlur=0;
 }
 load(); setInterval(load, 60000);
+
+/* ===== SYNTHWAVE BGM（Web Audio 即時合成, 零檔案零版權）===== */
+(function(){
+  let ctx=null, master=null, timer=null, on=false, step=0;
+  const BPM=92, SPB=60/BPM/4;             // 16分音符
+  // Am 調性: 低音走 A-F-C-G，琶音走和弦音
+  const BASS=[55.0,43.65,65.41,49.0];      // A1 F1 C2 G1
+  const CHORD=[[220,261.6,329.6],[174.6,220,261.6],[261.6,329.6,392],[196,246.9,293.7]];
+  function env(g,t,a,d,peak){ g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(peak,t+a);
+    g.gain.exponentialRampToValueAtTime(0.0001,t+a+d); }
+  function bass(t,f){ const o=ctx.createOscillator(),g=ctx.createGain(),fl=ctx.createBiquadFilter();
+    o.type='sawtooth'; o.frequency.value=f; fl.type='lowpass'; fl.frequency.value=320; fl.Q.value=6;
+    o.connect(fl); fl.connect(g); g.connect(master); env(g,t,0.01,SPB*3.4,0.34);
+    o.start(t); o.stop(t+SPB*4); }
+  function arp(t,f){ const o=ctx.createOscillator(),g=ctx.createGain(),fl=ctx.createBiquadFilter();
+    o.type='square'; o.frequency.value=f*2; fl.type='lowpass';
+    fl.frequency.setValueAtTime(2600,t); fl.frequency.exponentialRampToValueAtTime(700,t+SPB*.9);
+    o.connect(fl); fl.connect(g); g.connect(dly); g.connect(master); env(g,t,0.005,SPB*.85,0.10);
+    o.start(t); o.stop(t+SPB); }
+  function pad(t,fs){ fs.forEach((f,i)=>{ const o=ctx.createOscillator(),g=ctx.createGain();
+    o.type='sawtooth'; o.frequency.value=f*(i?1.003:0.997); const fl=ctx.createBiquadFilter();
+    fl.type='lowpass'; fl.frequency.value=900; o.connect(fl); fl.connect(g); g.connect(master);
+    g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(0.045,t+SPB*4);
+    g.gain.setValueAtTime(0.045,t+SPB*12); g.gain.linearRampToValueAtTime(0,t+SPB*16);
+    o.start(t); o.stop(t+SPB*16); }); }
+  function hat(t){ const b=ctx.createBufferSource(),g=ctx.createGain(),hp=ctx.createBiquadFilter();
+    const buf=ctx.createBuffer(1,ctx.sampleRate*0.04,ctx.sampleRate);
+    const d=buf.getChannelData(0); for(let i=0;i<d.length;i++) d[i]=(Math.random()*2-1)*(1-i/d.length);
+    b.buffer=buf; hp.type='highpass'; hp.frequency.value=8000;
+    b.connect(hp); hp.connect(g); g.connect(master); g.gain.value=0.05; b.start(t); }
+  let dly=null;
+  function schedule(){ const ahead=ctx.currentTime+0.15;
+    while(nextT<ahead){
+      const bar=Math.floor(step/16)%4, s16=step%16;
+      if(s16===0){ bass(nextT,BASS[bar]); if(step%64===0) pad(nextT,CHORD[bar]); }
+      if(s16===8) bass(nextT,BASS[bar]);
+      if(s16%2===0) arp(nextT, CHORD[bar][(s16/2)%3]);
+      if(s16%4===2) hat(nextT);
+      step++; nextT+=SPB;
+    } }
+  let nextT=0;
+  const btn=document.getElementById('bgm');
+  btn.onclick=function(){
+    if(!on){
+      if(!ctx){ ctx=new (window.AudioContext||window.webkitAudioContext)();
+        master=ctx.createGain(); master.gain.value=0.55;
+        const cmp=ctx.createDynamicsCompressor(); master.connect(cmp); cmp.connect(ctx.destination);
+        dly=ctx.createDelay(); dly.delayTime.value=SPB*3; const fb=ctx.createGain(); fb.gain.value=0.28;
+        dly.connect(fb); fb.connect(dly); dly.connect(master); }
+      ctx.resume(); nextT=ctx.currentTime+0.1; step=0;
+      timer=setInterval(schedule,60); schedule();
+      on=true; btn.classList.add('on'); btn.textContent='♪ BGM ON';
+    }else{
+      clearInterval(timer); if(ctx) ctx.suspend();
+      on=false; btn.classList.remove('on'); btn.textContent='♪ BGM OFF';
+    }
+  };
+})();
 </script>
 </body>
 </html>
