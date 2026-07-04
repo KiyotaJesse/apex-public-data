@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APEX 指揮中心</title>
+<style>
+  :root{--bg:#070a12;--card:#101624;--card2:#161e30;--line:#232d45;--txt:#e8eef7;--sub:#8b98af;
+        --grn:#35d98b;--red:#ff5f6e;--amber:#f2b63c;--blue:#59a7ff;--vio:#9d7bff;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--txt);
+       font-family:-apple-system,"Segoe UI","PingFang TC","Microsoft JhengHei",sans-serif;
+       font-size:14px;padding:18px 16px 60px;position:relative;overflow-x:hidden;}
+  /* 星空底 */
+  #stars{position:fixed;inset:0;z-index:-1;}
+  h1{font-size:20px;margin:0;display:flex;align-items:center;gap:10px;}
+  h1 .pulse{width:10px;height:10px;border-radius:50%;background:var(--grn);
+            box-shadow:0 0 12px var(--grn);animation:pu 2s infinite;}
+  @keyframes pu{50%{opacity:.35}}
+  .top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+  .upd{color:var(--sub);font-size:12px;}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px;}
+  .card{background:linear-gradient(160deg,var(--card),var(--card2));border:1px solid var(--line);
+        border-radius:16px;padding:14px 16px;box-shadow:0 4px 24px rgba(0,0,0,.35);}
+  .card h2{font-size:14px;margin:0 0 10px;color:var(--sub);letter-spacing:.5px;display:flex;justify-content:space-between;}
+  .wide{grid-column:1/-1;}
+  .comp{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-top:1px solid var(--line);}
+  .comp:first-of-type{border-top:none;}
+  .dot{width:10px;height:10px;border-radius:50%;margin-top:4px;flex:0 0 auto;}
+  .g{background:var(--grn);box-shadow:0 0 8px var(--grn);}
+  .y{background:var(--amber);box-shadow:0 0 8px var(--amber);}
+  .r{background:var(--red);box-shadow:0 0 8px var(--red);}
+  .gray{background:#5a667e;}
+  .cname{font-weight:700;}
+  .cdo{color:var(--sub);font-size:12.5px;margin-top:2px;line-height:1.5;}
+  .kv{display:flex;justify-content:space-between;padding:6px 0;border-top:1px solid var(--line);font-size:13.5px;}
+  .kv:first-of-type{border-top:none;}
+  .kv b{font-variant-numeric:tabular-nums;}
+  .pos{color:var(--grn);} .neg{color:var(--red);} .mid{color:var(--amber);}
+  canvas{width:100%;height:190px;}
+  table{width:100%;border-collapse:collapse;font-size:12.5px;}
+  th{color:var(--sub);text-align:left;font-weight:600;padding:5px 6px;border-bottom:1px solid var(--line);}
+  td{padding:6px;border-bottom:1px solid var(--line);}
+  .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;}
+  a.btn{background:#22304e;color:var(--txt);text-decoration:none;border-radius:10px;
+        padding:10px 14px;font-size:13px;font-weight:600;border:1px solid var(--line);}
+  a.btn.p{background:linear-gradient(135deg,#1f8f52,#177a44);border:none;}
+  .note{color:var(--sub);font-size:12px;line-height:1.6;margin-top:8px;}
+  .empty{color:var(--sub);font-size:13px;padding:12px 0;}
+</style>
+</head>
+<body>
+<canvas id="stars"></canvas>
+<div class="top">
+  <h1><span class="pulse" id="mainlight"></span>🛰️ APEX 指揮中心</h1>
+  <div class="upd" id="upd">載入中…</div>
+</div>
+
+<div class="grid">
+  <div class="card wide"><h2>系統元件即時活動 <span id="ks"></span></h2><div id="components"></div></div>
+  <div class="card wide"><h2>權益曲線（指數化，起點=100）<span id="eqinfo"></span></h2><canvas id="eq" height="190"></canvas></div>
+  <div class="card"><h2>🔻 策略 B1（做空）</h2><div id="b1"></div></div>
+  <div class="card"><h2>🔺 策略 TL（做多）</h2><div id="tl"></div></div>
+  <div class="card"><h2>🛡️ 風控防線</h2><div id="risk"></div></div>
+  <div class="card"><h2>⚙️ 生效參數</h2><div id="cfg"></div></div>
+  <div class="card wide"><h2>📒 最近交易（R 值）</h2><div id="trades"></div></div>
+  <div class="card wide"><h2>🔧 E 偵錯小組・最近升級</h2><div id="upgrades"></div></div>
+  <div class="card wide"><h2>🎛️ 調整系統</h2>
+    <div class="btnrow">
+      <a class="btn p" href="https://t.me/" onclick="alert('到 Telegram 對 APEX bot 輸入 /control，點「⚙️ 開啟控制台」即可滑桿調參（60秒生效）');return false;">⚙️ 調整交易參數（Telegram /control）</a>
+      <a class="btn" href="./control.html">👁️ 檢視控制台（唯讀）</a>
+      <a class="btn" href="./index.html">🌌 星系圖</a>
+    </div>
+    <div class="note">參數調整走 Telegram 控制台（有身份驗證＋硬邊界防護＋二段確認）；緊急全停 killswitch 也在裡面。此頁每 60 秒自動更新。</div>
+  </div>
+</div>
+
+<script>
+/* 星空 */
+(function(){const c=document.getElementById('stars');const x=c.getContext('2d');
+function rs(){c.width=innerWidth;c.height=innerHeight;x.fillStyle='#070a12';x.fillRect(0,0,c.width,c.height);
+for(let i=0;i<140;i++){x.globalAlpha=Math.random()*.7+.1;x.fillStyle=['#9db8ff','#fff','#7ef0c0'][i%3];
+x.beginPath();x.arc(Math.random()*c.width,Math.random()*c.height,Math.random()*1.3,0,7);x.fill();}x.globalAlpha=1;}
+rs();addEventListener('resize',rs);})();
+
+const $=id=>document.getElementById(id);
+function ago(ts){ if(!ts) return null; const m=(Date.now()-new Date(ts))/60000;
+  if(isNaN(m)) return null; if(m<1.5) return "剛剛"; if(m<90) return Math.round(m)+" 分鐘前";
+  if(m<48*60) return (m/60).toFixed(1)+" 小時前"; return Math.round(m/1440)+" 天前"; }
+function light(m,ok,warn){ return m==null?'gray':(m<=ok?'g':(m<=warn?'y':'r')); }
+function mins(ts){const m=(Date.now()-new Date(ts))/60000;return isNaN(m)?null:m;}
+
+async function load(){
+ try{
+  const r=await fetch('./dashboard.json?t='+Date.now(),{cache:'no-store'});
+  const d=await r.json();
+  const g=await fetch('./galaxy_live.json?t='+Date.now(),{cache:'no-store'}).then(x=>x.json()).catch(()=>null);
+  $('upd').textContent='資料時間 '+new Date(d.generated_at).toLocaleString('zh-TW')+'（每60秒自動更新）';
+
+  const cfg=(d.tama_config||{}).current||{}; const app=(d.tama_config||{}).applied||{};
+  const rcb=d.risk_circuit_breaker||{};
+  const b1=d.real_trading_strategy_b||{}; const tl=d.strat_tl||null;
+  const ks=rcb.killswitch||cfg.global&&cfg.global.killswitch;
+  $('ks').innerHTML= ks?'<span class="neg">🛑 KILLSWITCH 啟動中</span>':'<span class="pos">護盾正常</span>';
+  $('mainlight').style.background = ks?'var(--red)':'var(--grn)';
+
+  /* 元件活動 */
+  const b1m=mins(b1.last_cycle_ts), tlm=tl?mins(tl.last_cycle_ts):null, apm=mins(app.applied_at);
+  const upg=(d.self_upgrades||[]); const lastUpg=upg[upg.length-1]||{};
+  const comps=[
+   {n:'D 交易引擎',  l:light(b1m,15,45), do_:(b1m!=null?('主迴圈運作中・B1 掃描於 '+ago(b1.last_cycle_ts)):'狀態未知')},
+   {n:'B1 做空策略', l: (cfg.b1&&cfg.b1.live_enabled===false)?'y':light(b1m,15,45),
+     do_:(cfg.b1&&cfg.b1.live_enabled===false?'已暫停(live off)':'掃描 19 幣・盤整+CVD派發+跌破訊號')+(b1.open_positions&&b1.open_positions.length?('・持倉 '+b1.open_positions.length+' 筆'):'・目前無持倉')},
+   {n:'TL 做多策略', l: tl? ((cfg.tl&&cfg.tl.live_enabled===false)?'y':light(tlm,30,90)) :'gray',
+     do_: tl? ((cfg.tl&&cfg.tl.live_enabled===false?'已暫停(live off)':'掃描 19 幣・順勢回踩訊號')+(tl.open_positions&&tl.open_positions.length?('・持倉 '+tl.open_positions.length+' 筆'):'・目前無持倉')+'・掃描於 '+ago(tl.last_cycle_ts)) : '(資料欄位佈署中)'},
+   {n:'config 熱載入', l:light(apm,90,240), do_:'最後套用 '+(ago(app.applied_at)||'?')+(app.changes&&app.changes.length?('・'+app.changes.join('、').slice(0,60)):'・無待套用變更')},
+   {n:'E 偵錯小組', l: upg.length?'g':'gray', do_: lastUpg.description?('最近: '+String(lastUpg.description).slice(0,70)+'（'+(lastUpg.date||'')+'）'):'每日自動全檔稽核・自動修復含回滾保護'},
+   {n:'每日情報書', l:'g', do_:'每日 08:00（台北）新聞+情緒分析 → Telegram + Notion'},
+  ];
+  $('components').innerHTML = comps.map(c=>
+    '<div class="comp"><div class="dot '+c.l+'"></div><div><div class="cname">'+c.n+'</div><div class="cdo">'+c.do_+'</div></div></div>').join('');
+
+  /* 權益曲線 */
+  const eq=d.equity_curve||[];
+  $('eqinfo').textContent = eq.length? (eq.length+' 點・最新指數 '+eq[eq.length-1].idx) : '累積中(每小時1點)';
+  drawEq(eq);
+
+  /* 策略卡 */
+  function stratCard(cconf, ledger, stats){
+    const st=stats||{}; const on=cconf&&cconf.live_enabled!==false;
+    return '<div class="kv"><span>狀態</span><b class="'+(on?'pos':'mid')+'">'+(on?'● LIVE':'⏸ 暫停')+'</b></div>'
+      +'<div class="kv"><span>每筆風險</span><b>'+(cconf?(cconf.risk_pct*100).toFixed(1)+'%':'?')+'</b></div>'
+      +'<div class="kv"><span>持倉 / 上限</span><b>'+((ledger&&ledger.open_positions)?ledger.open_positions.length:0)+' / '+(cconf?cconf.max_positions:'?')+'</b></div>'
+      +'<div class="kv"><span>已結算</span><b>'+(st.n||0)+' 筆・勝率 '+(st.win_rate_pct||0)+'%</b></div>'
+      +'<div class="kv"><span>累計盈虧</span><b class="'+((st.total_pnl_usdt||0)>=0?'pos':'neg')+'">'+(st.total_pnl_usdt||0)+' U</b></div>';
+  }
+  $('b1').innerHTML=stratCard(cfg.b1, b1, b1.stats);
+  $('tl').innerHTML= tl? stratCard(cfg.tl, tl, tl.stats) : '<div class="empty">TL 資料欄位佈署中（策略運作正常，見上方活動燈）</div>';
+
+  /* 風控 */
+  $('risk').innerHTML =
+    '<div class="kv"><span>Killswitch</span><b class="'+(ks?'neg':'pos')+'">'+(ks?'🛑 啟動':'🟢 正常')+'</b></div>'
+   +'<div class="kv"><span>今日盈虧</span><b class="'+((rcb.daily_pnl_usdt||0)>=0?'pos':'neg')+'">'+(rcb.daily_pnl_usdt||0)+' U</b></div>'
+   +'<div class="kv"><span>每日虧損熔斷</span><b>'+(rcb.daily_loss_limit_hit?'⚠️ 已觸發':'未觸發')+'</b></div>'
+   +'<div class="kv"><span>總回撤熔斷線</span><b>'+(cfg.global?(cfg.global.total_drawdown_halt_pct*100).toFixed(0)+'%':'?')+'</b></div>'
+   +'<div class="kv"><span>同向總倉上限</span><b>'+(cfg.global?cfg.global.same_dir_max:'?')+' 筆</b></div>';
+
+  /* 生效參數 */
+  $('cfg').innerHTML =
+    '<div class="kv"><span>B1 掃描間隔</span><b>'+(cfg.b1?cfg.b1.cycle_seconds+' 秒':'?')+'</b></div>'
+   +'<div class="kv"><span>TL 掃描間隔</span><b>'+(cfg.tl?cfg.tl.cycle_seconds+' 秒':'?')+'</b></div>'
+   +'<div class="kv"><span>槓桿</span><b>'+(cfg.b1?cfg.b1.leverage+'x':'?')+'</b></div>'
+   +'<div class="kv"><span>D 已生效於</span><b>'+(app.applied_at?new Date(app.applied_at).toLocaleTimeString('zh-TW'):'?')+'</b></div>';
+
+  /* 交易 */
+  const tp=(d.trades_public||[]).slice().reverse().slice(0,12);
+  $('trades').innerHTML = tp.length?
+    '<table><tr><th>時間</th><th>幣</th><th>策略</th><th>方向</th><th>R</th></tr>'+tp.map(t=>
+      '<tr><td>'+String(t.ts).slice(5,16).replace("T"," ")+'</td><td>'+t.sym+'</td><td>'+t.strat+'</td><td>'+t.dir+'</td><td class="'+((t.r||0)>=0?'pos':'neg')+'">'+(t.r==null?'-':(t.r>0?'+':'')+t.r)+'</td></tr>').join('')+'</table>'
+    : '<div class="empty">尚無已結算交易——開倉阻斷 bug 已於 2026-07-04 修復，等待新訊號進場。</div>';
+
+  /* 升級 */
+  const ups=(d.self_upgrades||[]).slice().reverse().slice(0,6);
+  $('upgrades').innerHTML = ups.length?
+    ups.map(u=>'<div class="kv"><span style="max-width:78%">'+String(u.description||'').slice(0,90)+'</span><b>'+(u.date||'')+'</b></div>').join('')
+    : '<div class="empty">尚無記錄</div>';
+ }catch(e){ $('upd').textContent='載入失敗: '+e; }
+}
+
+function drawEq(eq){
+  const c=$('eq'); const dpr=devicePixelRatio||1;
+  c.width=c.clientWidth*dpr; c.height=190*dpr;
+  const x=c.getContext('2d'); x.scale(dpr,dpr);
+  const W=c.clientWidth,H=190;
+  x.clearRect(0,0,W,H);
+  if(eq.length<2){ x.fillStyle='#8b98af'; x.font='13px sans-serif';
+    x.fillText(eq.length?'資料累積中（每小時 1 點，明天就有曲線了）':'等待第一個快照…', 14, 100); return; }
+  const vals=eq.map(p=>p.idx);
+  const lo=Math.min(...vals), hi=Math.max(...vals), pad=(hi-lo)*0.15||1;
+  const yv=v=>H-14-((v-(lo-pad))/((hi+pad)-(lo-pad)))*(H-32);
+  const xv=i=>12+i*(W-24)/(vals.length-1);
+  x.strokeStyle='#232d45'; x.beginPath(); x.moveTo(12,yv(100)); x.lineTo(W-12,yv(100)); x.stroke();
+  x.fillStyle='#8b98af'; x.font='11px sans-serif'; x.fillText('100', W-34, yv(100)-4);
+  const grad=x.createLinearGradient(0,0,0,H); grad.addColorStop(0,'rgba(53,217,139,.35)'); grad.addColorStop(1,'rgba(53,217,139,0)');
+  x.beginPath(); x.moveTo(xv(0),yv(vals[0]));
+  vals.forEach((v,i)=>x.lineTo(xv(i),yv(v)));
+  x.strokeStyle = vals[vals.length-1]>=100 ? '#35d98b' : '#ff5f6e';
+  x.lineWidth=2; x.stroke();
+  x.lineTo(xv(vals.length-1),H-14); x.lineTo(xv(0),H-14); x.closePath(); x.fillStyle=grad; x.fill();
+}
+
+load(); setInterval(load, 60000);
+</script>
+</body>
+</html>
