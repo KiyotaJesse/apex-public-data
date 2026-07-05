@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-05T08:31:38.800947+08:00",
+  "generated_at": "2026-07-05T09:31:48.143877+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
     "closed_trades": [],
-    "last_cycle_ts": "2026-07-05T00:30:37.413997+00:00",
+    "last_cycle_ts": "2026-07-05T01:28:45.694157+00:00",
     "stats": {
       "n": 0,
       "win_rate_pct": 0.0,
@@ -43,12 +43,32 @@
         "highest": 90.17,
         "lowest": 87.17,
         "breakeven_done": false,
-        "bars_elapsed": 17,
-        "last_checked_time": "2026-07-05 00:00:00",
+        "bars_elapsed": 18,
+        "last_checked_time": "2026-07-05 01:00:00",
         "notion_page_id": "3930a137-4574-81ca-98a4-e394e0fdcb82"
+      },
+      {
+        "id": "strattl_FILUSDT_1783213357",
+        "symbol": "FIL-USDT",
+        "direction": "LONG",
+        "entry": 0.796,
+        "sl_price": 0.781,
+        "tp_price": 0.841,
+        "sl_dist": 0.015000000000000013,
+        "qty": 682.1,
+        "max_hold_h": 48,
+        "strategy": "TL",
+        "sl_order_id": "2073576696284020736",
+        "opened_ts": "2026-07-05T01:16:23.587868+00:00",
+        "highest": 0.796,
+        "lowest": 0.796,
+        "breakeven_done": false,
+        "bars_elapsed": 0,
+        "last_checked_time": "2026-07-05T01:16:23.587868+00:00",
+        "notion_page_id": "3940a137-4574-8106-ac97-f70e40a711eb"
       }
     ],
-    "last_cycle_ts": "2026-07-05T00:29:40.171792+00:00",
+    "last_cycle_ts": "2026-07-05T01:29:00.213146+00:00",
     "stats": {
       "n": 0,
       "win_rate_pct": 0.0,
@@ -257,6 +277,10 @@
     {
       "ts": "2026-07-04T23:56:22.895305+00:00",
       "idx": 101.31
+    },
+    {
+      "ts": "2026-07-05T00:56:27.629816+00:00",
+      "idx": 101.03
     }
   ],
   "trades_public": [],
