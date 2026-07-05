@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-05T10:31:58.196605+08:00",
+  "generated_at": "2026-07-05T11:32:07.686978+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
     "closed_trades": [],
-    "last_cycle_ts": "2026-07-05T02:31:10.639535+00:00",
+    "last_cycle_ts": "2026-07-05T03:29:25.794430+00:00",
     "stats": {
       "n": 0,
       "win_rate_pct": 0.0,
@@ -43,39 +43,39 @@
         "highest": 90.17,
         "lowest": 87.17,
         "breakeven_done": false,
-        "bars_elapsed": 19,
-        "last_checked_time": "2026-07-05 02:00:00",
+        "bars_elapsed": 20,
+        "last_checked_time": "2026-07-05 03:00:00",
         "notion_page_id": "3930a137-4574-81ca-98a4-e394e0fdcb82"
       },
       {
-        "id": "strattl_FILUSDT_1783213357",
-        "symbol": "FIL-USDT",
+        "id": "strattl_DOGEUSDT_1783220611",
+        "symbol": "DOGE-USDT",
         "direction": "LONG",
-        "entry": 0.796,
-        "sl_price": 0.781,
-        "tp_price": 0.841,
-        "sl_dist": 0.015000000000000013,
-        "qty": 682.1,
+        "entry": 0.07585,
+        "sl_price": 0.07442857142857143,
+        "tp_price": 0.08011428571428572,
+        "sl_dist": 0.0014214285714285735,
+        "qty": 6947.0,
         "max_hold_h": 48,
         "strategy": "TL",
-        "sl_order_id": "2073576696284020736",
-        "opened_ts": "2026-07-05T01:16:23.587868+00:00",
-        "highest": 0.796,
-        "lowest": 0.796,
+        "sl_order_id": "2073603910601900032",
+        "opened_ts": "2026-07-05T03:04:32.443975+00:00",
+        "highest": 0.07585,
+        "lowest": 0.07585,
         "breakeven_done": false,
-        "bars_elapsed": 1,
-        "last_checked_time": "2026-07-05 02:00:00",
-        "notion_page_id": "3940a137-4574-8106-ac97-f70e40a711eb"
+        "bars_elapsed": 0,
+        "last_checked_time": "2026-07-05T03:04:32.443975+00:00",
+        "notion_page_id": "3940a137-4574-8155-a3b9-f7ed051e76a2"
       }
     ],
-    "last_cycle_ts": "2026-07-05T02:30:33.456227+00:00",
+    "last_cycle_ts": "2026-07-05T03:29:52.740536+00:00",
     "stats": {
-      "n": 0,
+      "n": 1,
       "win_rate_pct": 0.0,
-      "ev_r": 0.0,
-      "total_pnl_usdt": 0.0,
-      "avg_win_usdt": 0.0,
-      "avg_loss_usdt": 0.0
+      "ev_r": -1.0,
+      "total_pnl_usdt": -1.0,
+      "avg_win_usdt": 0,
+      "avg_loss_usdt": -1.0
     }
   },
   "tama_config": {
@@ -109,7 +109,7 @@
     },
     "applied": {
       "applied_sha": "1621fa31cc848271e06d86da8572d3d3ad65eb37",
-      "applied_at": "2026-07-04T13:55:37.157278+00:00",
+      "applied_at": "2026-07-05T03:03:21.529416+00:00",
       "changes": [
         "b1.cycle_seconds: 300 -> 60",
         "tl.cycle_seconds: 900 -> 60"
@@ -285,9 +285,25 @@
     {
       "ts": "2026-07-05T01:56:28.062481+00:00",
       "idx": 100.08
+    },
+    {
+      "ts": "2026-07-05T02:56:32.557358+00:00",
+      "idx": 97.86
+    },
+    {
+      "ts": "2026-07-05T03:03:26.837298+00:00",
+      "idx": 98.0
     }
   ],
-  "trades_public": [],
+  "trades_public": [
+    {
+      "ts": "2026-07-05T03:03:27.484218+00:00",
+      "sym": "FIL-USDT",
+      "strat": "TL",
+      "dir": "LONG",
+      "r": -1.0
+    }
+  ],
   "self_upgrades": [
     {
       "time": "2026-06-07T14:12:37.803375+00:00",
