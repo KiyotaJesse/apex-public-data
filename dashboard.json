@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-06T07:41:36.409259+08:00",
+  "generated_at": "2026-07-06T07:42:03.169374+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -182,6 +182,31 @@
         "kind": "int",
         "min": 60,
         "max": 7200
+      },
+      "rs.live_enabled": {
+        "kind": "bool",
+        "min": null,
+        "max": null
+      },
+      "rs.risk_pct": {
+        "kind": "float",
+        "min": 0.0001,
+        "max": 0.02
+      },
+      "rs.leverage": {
+        "kind": "int",
+        "min": 1,
+        "max": 50
+      },
+      "rs.max_positions": {
+        "kind": "int",
+        "min": 0,
+        "max": 3
+      },
+      "rs.cycle_seconds": {
+        "kind": "int",
+        "min": 600,
+        "max": 86400
       },
       "global.same_dir_max": {
         "kind": "int",
