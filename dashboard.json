@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-06T19:43:59.021810+08:00",
+  "generated_at": "2026-07-06T20:44:07.876232+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
     "closed_trades": [],
-    "last_cycle_ts": "2026-07-06T11:42:43.838142+00:00",
+    "last_cycle_ts": "2026-07-06T12:43:23.635307+00:00",
     "stats": {
       "n": 0,
       "win_rate_pct": 0.0,
@@ -28,54 +28,54 @@
     "mode": "live",
     "open_positions": [
       {
-        "id": "strattl_DOGEUSDT_1783220611",
-        "symbol": "DOGE-USDT",
+        "id": "strattl_SOLUSDT_1783340015",
+        "symbol": "SOL-USDT",
         "direction": "LONG",
-        "entry": 0.07585,
-        "sl_price": 0.07585,
-        "tp_price": 0.08011428571428572,
-        "sl_dist": 0.0014214285714285735,
-        "qty": 6947.0,
+        "entry": 80.375,
+        "sl_price": 78.98385714285715,
+        "tp_price": 84.54842857142857,
+        "sl_dist": 1.391142857142853,
+        "qty": 7.09,
         "max_hold_h": 48,
         "strategy": "TL",
-        "sl_order_id": "2073904896356745216",
-        "opened_ts": "2026-07-05T03:04:32.443975+00:00",
-        "highest": 0.07838,
-        "lowest": 0.07585,
+        "sl_order_id": "2074104735782764544",
+        "opened_ts": "2026-07-06T12:14:38.020498+00:00",
+        "highest": 80.375,
+        "lowest": 80.375,
         "breakeven_done": false,
-        "bars_elapsed": 32,
-        "last_checked_time": "2026-07-06 11:00:00",
-        "notion_page_id": "3940a137-4574-8155-a3b9-f7ed051e76a2"
+        "bars_elapsed": 0,
+        "last_checked_time": "2026-07-06T12:14:38.020498+00:00",
+        "notion_page_id": "3950a137-4574-817b-931e-e393507657f5"
       },
       {
-        "id": "strattl_ARBUSDT_1783321223",
-        "symbol": "ARB-USDT",
+        "id": "strattl_NEARUSDT_1783341016",
+        "symbol": "NEAR-USDT",
         "direction": "LONG",
-        "entry": 0.07883,
-        "sl_price": 0.07714714285714284,
-        "tp_price": 0.08387857142857146,
-        "sl_dist": 0.0016828571428571526,
-        "qty": 6079.9,
+        "entry": 1.995,
+        "sl_price": 1.9345714285714286,
+        "tp_price": 2.1762857142857146,
+        "sl_dist": 0.0604285714285715,
+        "qty": 162.0,
         "max_hold_h": 48,
         "strategy": "TL",
-        "sl_order_id": "2074026149063262208",
-        "opened_ts": "2026-07-06T07:02:21.959315+00:00",
-        "highest": 0.07896,
-        "lowest": 0.07883,
+        "sl_order_id": "2074112108626804736",
+        "opened_ts": "2026-07-06T12:43:56.272203+00:00",
+        "highest": 1.995,
+        "lowest": 1.995,
         "breakeven_done": false,
-        "bars_elapsed": 4,
-        "last_checked_time": "2026-07-06 11:00:00",
-        "notion_page_id": "3950a137-4574-8145-a6b4-c37fd13f88e4"
+        "bars_elapsed": 0,
+        "last_checked_time": "2026-07-06T12:43:56.272203+00:00",
+        "notion_page_id": "3950a137-4574-81b0-b3f1-eb1102033a31"
       }
     ],
-    "last_cycle_ts": "2026-07-06T11:42:12.581312+00:00",
+    "last_cycle_ts": "2026-07-06T12:43:56.272196+00:00",
     "stats": {
-      "n": 2,
+      "n": 4,
       "win_rate_pct": 0.0,
-      "ev_r": -0.5,
-      "total_pnl_usdt": -1.0,
+      "ev_r": -0.546,
+      "total_pnl_usdt": -2.18,
       "avg_win_usdt": 0,
-      "avg_loss_usdt": -0.5
+      "avg_loss_usdt": -0.55
     }
   },
   "tama_config": {
@@ -461,6 +461,10 @@
     {
       "ts": "2026-07-06T11:43:05.729319+00:00",
       "idx": 101.8
+    },
+    {
+      "ts": "2026-07-06T12:43:09.785686+00:00",
+      "idx": 97.76
     }
   ],
   "trades_public": [
@@ -477,6 +481,20 @@
       "strat": "TL",
       "dir": "LONG",
       "r": 0.0
+    },
+    {
+      "ts": "2026-07-06T12:02:14.007358+00:00",
+      "sym": "ARB-USDT",
+      "strat": "TL",
+      "dir": "LONG",
+      "r": -1.07
+    },
+    {
+      "ts": "2026-07-06T12:04:18.173060+00:00",
+      "sym": "DOGE-USDT",
+      "strat": "TL",
+      "dir": "LONG",
+      "r": -0.113
     }
   ],
   "self_upgrades": [
