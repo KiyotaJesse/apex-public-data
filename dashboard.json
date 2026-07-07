@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-08T05:49:38.799762+08:00",
+  "generated_at": "2026-07-08T06:49:51.335887+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
     "closed_trades": [],
-    "last_cycle_ts": "2026-07-07T21:48:31.203889+00:00",
+    "last_cycle_ts": "2026-07-07T22:48:28.817488+00:00",
     "stats": {
       "n": 0,
       "win_rate_pct": 0.0,
@@ -28,26 +28,6 @@
     "mode": "live",
     "open_positions": [
       {
-        "id": "strattl_SOLUSDT_1783340015",
-        "symbol": "SOL-USDT",
-        "direction": "LONG",
-        "entry": 80.375,
-        "sl_price": 80.375,
-        "tp_price": 84.54842857142857,
-        "sl_dist": 1.391142857142853,
-        "qty": 7.09,
-        "max_hold_h": 48,
-        "strategy": "TL",
-        "sl_order_id": "2074252274200838144",
-        "opened_ts": "2026-07-06T12:14:38.020498+00:00",
-        "highest": 82.854,
-        "lowest": 80.375,
-        "breakeven_done": false,
-        "bars_elapsed": 33,
-        "last_checked_time": "2026-07-07 21:00:00",
-        "notion_page_id": "3950a137-4574-817b-931e-e393507657f5"
-      },
-      {
         "id": "strattl_NEARUSDT_1783341016",
         "symbol": "NEAR-USDT",
         "direction": "LONG",
@@ -63,19 +43,39 @@
         "highest": 2.085,
         "lowest": 1.995,
         "breakeven_done": false,
-        "bars_elapsed": 33,
-        "last_checked_time": "2026-07-07 21:00:00",
+        "bars_elapsed": 34,
+        "last_checked_time": "2026-07-07 22:00:00",
         "notion_page_id": "3950a137-4574-81b0-b3f1-eb1102033a31"
+      },
+      {
+        "id": "strattl_ETHUSDT_1783461897",
+        "symbol": "ETH-USDT",
+        "direction": "LONG",
+        "entry": 1772.36,
+        "sl_price": 1739.1699999999998,
+        "tp_price": 1873.81,
+        "sl_dist": 33.190000000000055,
+        "qty": 0.29,
+        "max_hold_h": 48,
+        "strategy": "TL",
+        "sl_order_id": "2074615870416060416",
+        "opened_ts": "2026-07-07T22:05:41.365746+00:00",
+        "highest": 1772.36,
+        "lowest": 1772.36,
+        "breakeven_done": false,
+        "bars_elapsed": 0,
+        "last_checked_time": "2026-07-07T22:05:41.365746+00:00",
+        "notion_page_id": "3960a137-4574-8156-a6e6-d392a6fbb7e6"
       }
     ],
-    "last_cycle_ts": "2026-07-07T21:47:46.501025+00:00",
+    "last_cycle_ts": "2026-07-07T22:47:45.597027+00:00",
     "stats": {
-      "n": 4,
+      "n": 5,
       "win_rate_pct": 0.0,
-      "ev_r": -0.546,
-      "total_pnl_usdt": -2.18,
+      "ev_r": -0.442,
+      "total_pnl_usdt": -2.21,
       "avg_win_usdt": 0,
-      "avg_loss_usdt": -0.55
+      "avg_loss_usdt": -0.44
     }
   },
   "tama_config": {
@@ -597,6 +597,10 @@
     {
       "ts": "2026-07-07T21:45:30.656514+00:00",
       "idx": 98.01
+    },
+    {
+      "ts": "2026-07-07T22:45:31.269510+00:00",
+      "idx": 97.84
     }
   ],
   "trades_public": [
@@ -627,6 +631,13 @@
       "strat": "TL",
       "dir": "LONG",
       "r": -0.113
+    },
+    {
+      "ts": "2026-07-07T22:01:30.270042+00:00",
+      "sym": "SOL-USDT",
+      "strat": "TL",
+      "dir": "LONG",
+      "r": -0.029
     }
   ],
   "self_upgrades": [
