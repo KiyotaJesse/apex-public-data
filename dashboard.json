@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-08T19:51:58.926341+08:00",
+  "generated_at": "2026-07-08T20:52:07.074350+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
     "closed_trades": [],
-    "last_cycle_ts": "2026-07-08T11:49:28.072595+00:00",
+    "last_cycle_ts": "2026-07-08T12:49:19.137192+00:00",
     "stats": {
       "n": 0,
       "win_rate_pct": 0.0,
@@ -32,23 +32,23 @@
         "symbol": "ETH-USDT",
         "direction": "LONG",
         "entry": 1744.86,
-        "sl_price": 1716.057142857143,
+        "sl_price": 1716.05714286,
         "tp_price": 1837.4285714285718,
         "sl_dist": 28.802857142856965,
         "qty": 0.3,
         "max_hold_h": 48,
         "strategy": "TL",
-        "sl_order_id": "2074822157988888576",
+        "sl_order_id": "2074825867796250624",
         "opened_ts": "2026-07-08T11:45:25.023977+00:00",
-        "highest": 1744.86,
+        "highest": 1747.07,
         "lowest": 1744.86,
         "breakeven_done": false,
-        "bars_elapsed": 0,
-        "last_checked_time": "2026-07-08T11:45:25.023977+00:00",
+        "bars_elapsed": 1,
+        "last_checked_time": "2026-07-08 12:00:00",
         "notion_page_id": "3970a137-4574-81c8-8e18-edf978736467"
       }
     ],
-    "last_cycle_ts": "2026-07-08T11:48:39.072401+00:00",
+    "last_cycle_ts": "2026-07-08T12:48:33.935426+00:00",
     "stats": {
       "n": 8,
       "win_rate_pct": 0.0,
@@ -633,6 +633,10 @@
     {
       "ts": "2026-07-08T11:46:37.567480+00:00",
       "idx": 91.74
+    },
+    {
+      "ts": "2026-07-08T12:46:43.194188+00:00",
+      "idx": 91.73
     }
   ],
   "trades_public": [
