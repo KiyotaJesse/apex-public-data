@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-08T21:52:20.162683+08:00",
+  "generated_at": "2026-07-08T22:52:29.254457+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
     "closed_trades": [],
-    "last_cycle_ts": "2026-07-08T13:49:47.366314+00:00",
+    "last_cycle_ts": "2026-07-08T14:51:54.991895+00:00",
     "stats": {
       "n": 0,
       "win_rate_pct": 0.0,
@@ -43,12 +43,32 @@
         "highest": 1747.07,
         "lowest": 1744.86,
         "breakeven_done": false,
-        "bars_elapsed": 2,
-        "last_checked_time": "2026-07-08 13:00:00",
+        "bars_elapsed": 3,
+        "last_checked_time": "2026-07-08 14:00:00",
         "notion_page_id": "3970a137-4574-81c8-8e18-edf978736467"
+      },
+      {
+        "id": "strattl_BCHUSDT_1783519166",
+        "symbol": "BCH-USDT",
+        "direction": "LONG",
+        "entry": 233.37,
+        "sl_price": 227.03857142857143,
+        "tp_price": 252.3642857142857,
+        "sl_dist": 6.3314285714285745,
+        "qty": 1.45,
+        "max_hold_h": 48,
+        "strategy": "TL",
+        "sl_order_id": "2074856141754040320",
+        "opened_ts": "2026-07-08T14:00:27.674800+00:00",
+        "highest": 233.37,
+        "lowest": 233.37,
+        "breakeven_done": false,
+        "bars_elapsed": 0,
+        "last_checked_time": "2026-07-08T14:00:27.674800+00:00",
+        "notion_page_id": "3970a137-4574-81e5-b055-f4a548c678b3"
       }
     ],
-    "last_cycle_ts": "2026-07-08T13:48:49.273106+00:00",
+    "last_cycle_ts": "2026-07-08T14:52:21.492433+00:00",
     "stats": {
       "n": 8,
       "win_rate_pct": 0.0,
@@ -641,6 +661,10 @@
     {
       "ts": "2026-07-08T13:46:53.035716+00:00",
       "idx": 91.44
+    },
+    {
+      "ts": "2026-07-08T14:46:53.492038+00:00",
+      "idx": 90.26
     }
   ],
   "trades_public": [
