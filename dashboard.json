@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-09T00:52:50.935939+08:00",
+  "generated_at": "2026-07-09T01:52:59.776932+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
     "closed_trades": [],
-    "last_cycle_ts": "2026-07-08T16:52:28.729701+00:00",
+    "last_cycle_ts": "2026-07-08T17:52:26.845034+00:00",
     "stats": {
       "n": 0,
       "win_rate_pct": 0.0,
@@ -40,15 +40,35 @@
         "strategy": "TL",
         "sl_order_id": "2074871313134616576",
         "opened_ts": "2026-07-08T14:00:27.674800+00:00",
-        "highest": 233.37,
+        "highest": 235.71,
         "lowest": 233.37,
         "breakeven_done": false,
-        "bars_elapsed": 2,
-        "last_checked_time": "2026-07-08 16:00:00",
+        "bars_elapsed": 3,
+        "last_checked_time": "2026-07-08 17:00:00",
         "notion_page_id": "3970a137-4574-81e5-b055-f4a548c678b3"
+      },
+      {
+        "id": "strattl_AAVEUSDT_1783532143",
+        "symbol": "AAVE-USDT",
+        "direction": "LONG",
+        "entry": 88.38,
+        "sl_price": 86.22428571428571,
+        "tp_price": 94.84714285714286,
+        "sl_dist": 2.155714285714282,
+        "qty": 4.2,
+        "max_hold_h": 48,
+        "strategy": "TL",
+        "sl_order_id": "2074910825915187200",
+        "opened_ts": "2026-07-08T17:37:45.014098+00:00",
+        "highest": 88.38,
+        "lowest": 88.38,
+        "breakeven_done": false,
+        "bars_elapsed": 0,
+        "last_checked_time": "2026-07-08T17:37:45.014098+00:00",
+        "notion_page_id": "3970a137-4574-81be-a420-e08e6b8ad1d9"
       }
     ],
-    "last_cycle_ts": "2026-07-08T16:51:40.381682+00:00",
+    "last_cycle_ts": "2026-07-08T17:51:31.639870+00:00",
     "stats": {
       "n": 9,
       "win_rate_pct": 0.0,
@@ -653,6 +673,10 @@
     {
       "ts": "2026-07-08T16:47:02.097816+00:00",
       "idx": 90.55
+    },
+    {
+      "ts": "2026-07-08T17:47:06.600625+00:00",
+      "idx": 90.3
     }
   ],
   "trades_public": [
