@@ -214,7 +214,8 @@ function setVal(key,val,liveOnly){
 function refreshBar(){
   const n=Object.keys(PENDING).length;
   document.getElementById("barinfo").textContent = n? (n+" 項待送出") : "尚無變更";
-  document.getElementById("save").disabled = n===0 || !canSend;
+  document.getElementById("save").disabled = n===0;
+  document.getElementById("save").textContent = canSend ? "儲存變更" : "⚠️ 需從 /control 開啟";
   document.getElementById("reset").disabled = n===0;
 }
 
@@ -222,6 +223,10 @@ document.getElementById("reset").onclick=()=>{ PENDING={}; render(); refreshBar(
 
 document.getElementById("save").onclick=()=>{
   const keys=Object.keys(PENDING); if(!keys.length) return;
+  if(!canSend){
+    alert("此頁面為唯讀檢視，無法儲存。\n\n要調整並儲存，請：\n1. 打開 Telegram 找 APEX bot\n2. 輸入 /control\n3. 點訊息下方的「⚙️ 開啟控制台」按鈕\n\n從那個按鈕進來的控制台才能送出變更（Telegram 安全限制）。");
+    return;
+  }
   const box=document.getElementById("modalchg"); box.innerHTML="";
   let hasDanger=false;
   for(const k of keys){
