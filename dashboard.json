@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-10T01:19:05.059474+08:00",
+  "generated_at": "2026-07-10T02:19:17.257299+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
     "closed_trades": [],
-    "last_cycle_ts": "2026-07-09T17:16:14.439706+00:00",
+    "last_cycle_ts": "2026-07-09T18:16:06.155443+00:00",
     "stats": {
       "n": 0,
       "win_rate_pct": 0.0,
@@ -40,15 +40,15 @@
         "strategy": "TL",
         "sl_order_id": "2075264778888642560",
         "opened_ts": "2026-07-09T17:04:13.794850+00:00",
-        "highest": 235.88,
+        "highest": 237.66,
         "lowest": 235.88,
         "breakeven_done": false,
-        "bars_elapsed": 0,
-        "last_checked_time": "2026-07-09T17:04:13.794850+00:00",
+        "bars_elapsed": 1,
+        "last_checked_time": "2026-07-09 18:00:00",
         "notion_page_id": "3980a137-4574-81fb-8af8-fd7530de0e4e"
       }
     ],
-    "last_cycle_ts": "2026-07-09T17:16:35.148718+00:00",
+    "last_cycle_ts": "2026-07-09T18:15:06.624583+00:00",
     "stats": {
       "n": 13,
       "win_rate_pct": 0.0,
@@ -749,6 +749,10 @@
     {
       "ts": "2026-07-09T16:48:40.130489+00:00",
       "idx": 99.5
+    },
+    {
+      "ts": "2026-07-09T17:48:54.059456+00:00",
+      "idx": 92.28
     }
   ],
   "trades_public": [
