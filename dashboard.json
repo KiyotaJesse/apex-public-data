@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-09T19:18:01.286050+08:00",
+  "generated_at": "2026-07-09T20:18:10.939180+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
     "closed_trades": [],
-    "last_cycle_ts": "2026-07-09T11:14:52.863985+00:00",
+    "last_cycle_ts": "2026-07-09T12:14:34.860098+00:00",
     "stats": {
       "n": 0,
       "win_rate_pct": 0.0,
@@ -28,54 +28,34 @@
     "mode": "live",
     "open_positions": [
       {
-        "id": "strattl_BCHUSDT_1783519166",
-        "symbol": "BCH-USDT",
-        "direction": "LONG",
-        "entry": 233.37,
-        "sl_price": 227.03857143,
-        "tp_price": 252.3642857142857,
-        "sl_dist": 6.3314285714285745,
-        "qty": 1.45,
-        "max_hold_h": 48,
-        "strategy": "TL",
-        "sl_order_id": "2074871313134616576",
-        "opened_ts": "2026-07-08T14:00:27.674800+00:00",
-        "highest": 239.31,
-        "lowest": 233.37,
-        "breakeven_done": false,
-        "bars_elapsed": 21,
-        "last_checked_time": "2026-07-09 11:00:00",
-        "notion_page_id": "3970a137-4574-81e5-b055-f4a548c678b3"
-      },
-      {
-        "id": "strattl_AAVEUSDT_1783532143",
+        "id": "strattl_AAVEUSDT_1783598449",
         "symbol": "AAVE-USDT",
         "direction": "LONG",
-        "entry": 88.38,
-        "sl_price": 86.22428571428571,
-        "tp_price": 94.84714285714286,
-        "sl_dist": 2.155714285714282,
-        "qty": 4.2,
+        "entry": 89.17,
+        "sl_price": 87.58571428571429,
+        "tp_price": 93.92285714285715,
+        "sl_dist": 1.5842857142857127,
+        "qty": 5.9,
         "max_hold_h": 48,
         "strategy": "TL",
-        "sl_order_id": "2074910825915187200",
-        "opened_ts": "2026-07-08T17:37:45.014098+00:00",
-        "highest": 88.67,
-        "lowest": 88.38,
+        "sl_order_id": "2075188913068670976",
+        "opened_ts": "2026-07-09T12:02:46.469133+00:00",
+        "highest": 89.17,
+        "lowest": 89.17,
         "breakeven_done": false,
-        "bars_elapsed": 18,
-        "last_checked_time": "2026-07-09 11:00:00",
-        "notion_page_id": "3970a137-4574-81be-a420-e08e6b8ad1d9"
+        "bars_elapsed": 0,
+        "last_checked_time": "2026-07-09T12:02:46.469133+00:00",
+        "notion_page_id": "3980a137-4574-81e6-b44a-e1dbec17fab2"
       }
     ],
-    "last_cycle_ts": "2026-07-09T11:15:31.530332+00:00",
+    "last_cycle_ts": "2026-07-09T12:15:09.091280+00:00",
     "stats": {
-      "n": 9,
+      "n": 11,
       "win_rate_pct": 0.0,
-      "ev_r": -0.698,
-      "total_pnl_usdt": -6.28,
+      "ev_r": -0.753,
+      "total_pnl_usdt": -8.28,
       "avg_win_usdt": 0,
-      "avg_loss_usdt": -0.7
+      "avg_loss_usdt": -0.75
     }
   },
   "tama_config": {
@@ -745,6 +725,10 @@
     {
       "ts": "2026-07-09T10:48:26.527025+00:00",
       "idx": 90.87
+    },
+    {
+      "ts": "2026-07-09T11:48:26.857852+00:00",
+      "idx": 94.81
     }
   ],
   "trades_public": [
@@ -810,6 +794,20 @@
       "strat": "TL",
       "dir": "LONG",
       "r": -0.995
+    },
+    {
+      "ts": "2026-07-09T11:44:00.710014+00:00",
+      "sym": "BCH-USDT",
+      "strat": "TL",
+      "dir": "LONG",
+      "r": -1.0
+    },
+    {
+      "ts": "2026-07-09T11:44:02.277105+00:00",
+      "sym": "AAVE-USDT",
+      "strat": "TL",
+      "dir": "LONG",
+      "r": -1.0
     }
   ],
   "self_upgrades": [
