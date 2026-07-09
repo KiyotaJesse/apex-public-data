@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-09T21:18:20.526147+08:00",
+  "generated_at": "2026-07-09T22:18:34.002547+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
     "closed_trades": [],
-    "last_cycle_ts": "2026-07-09T13:15:06.034964+00:00",
+    "last_cycle_ts": "2026-07-09T14:16:13.343118+00:00",
     "stats": {
       "n": 0,
       "win_rate_pct": 0.0,
@@ -32,19 +32,19 @@
         "symbol": "AAVE-USDT",
         "direction": "LONG",
         "entry": 89.17,
-        "sl_price": 87.58571429,
+        "sl_price": 89.17,
         "tp_price": 93.92285714285715,
         "sl_dist": 1.5842857142857127,
         "qty": 5.9,
         "max_hold_h": 48,
         "strategy": "TL",
-        "sl_order_id": "2075203549629349888",
+        "sl_order_id": "2075218587165491200",
         "opened_ts": "2026-07-09T12:02:46.469133+00:00",
-        "highest": 90.05,
+        "highest": 91.69,
         "lowest": 89.17,
         "breakeven_done": false,
-        "bars_elapsed": 1,
-        "last_checked_time": "2026-07-09 13:00:00",
+        "bars_elapsed": 2,
+        "last_checked_time": "2026-07-09 14:00:00",
         "notion_page_id": "3980a137-4574-81e6-b44a-e1dbec17fab2"
       },
       {
@@ -52,23 +52,23 @@
         "symbol": "BCH-USDT",
         "direction": "LONG",
         "entry": 237.5,
-        "sl_price": 232.92714285714285,
+        "sl_price": 232.92714286,
         "tp_price": 251.2185714285714,
         "sl_dist": 4.572857142857146,
         "qty": 2.05,
         "max_hold_h": 48,
         "strategy": "TL",
-        "sl_order_id": "2075207204231282688",
+        "sl_order_id": "2075218599119257600",
         "opened_ts": "2026-07-09T13:15:27.353787+00:00",
-        "highest": 237.5,
+        "highest": 238.05,
         "lowest": 237.5,
         "breakeven_done": false,
-        "bars_elapsed": 0,
-        "last_checked_time": "2026-07-09T13:15:27.353787+00:00",
+        "bars_elapsed": 1,
+        "last_checked_time": "2026-07-09 14:00:00",
         "notion_page_id": "3980a137-4574-81b2-8952-dfb04e216fab"
       }
     ],
-    "last_cycle_ts": "2026-07-09T13:15:27.353782+00:00",
+    "last_cycle_ts": "2026-07-09T14:16:40.506358+00:00",
     "stats": {
       "n": 11,
       "win_rate_pct": 0.0,
@@ -753,6 +753,10 @@
     {
       "ts": "2026-07-09T12:48:30.079924+00:00",
       "idx": 97.16
+    },
+    {
+      "ts": "2026-07-09T13:48:33.735500+00:00",
+      "idx": 92.84
     }
   ],
   "trades_public": [
