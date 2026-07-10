@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-10T15:21:49.725083+08:00",
+  "generated_at": "2026-07-10T16:22:02.536604+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
     "closed_trades": [],
-    "last_cycle_ts": "2026-07-10T07:19:48.405431+00:00",
+    "last_cycle_ts": "2026-07-10T08:18:41.377108+00:00",
     "stats": {
       "n": 0,
       "win_rate_pct": 0.0,
@@ -15,7 +15,7 @@
     }
   },
   "risk_circuit_breaker": {
-    "killswitch": false,
+    "killswitch": true,
     "daily_loss_limit_hit": false,
     "daily_pnl_usdt": 0.0,
     "daily_pnl_date": "2026-07-10"
@@ -26,56 +26,15 @@
   },
   "strat_tl": {
     "mode": "live",
-    "open_positions": [
-      {
-        "id": "strattl_BCHUSDT_1783616461",
-        "symbol": "BCH-USDT",
-        "direction": "LONG",
-        "entry": 235.88,
-        "sl_price": 231.83142857142857,
-        "tp_price": 248.02571428571426,
-        "sl_dist": 4.048571428571421,
-        "qty": 2.44,
-        "max_hold_h": 48,
-        "strategy": "TL",
-        "sl_order_id": "2075264778888642560",
-        "opened_ts": "2026-07-09T17:04:13.794850+00:00",
-        "highest": 242.91,
-        "lowest": 235.88,
-        "breakeven_done": false,
-        "bars_elapsed": 14,
-        "last_checked_time": "2026-07-10 07:00:00",
-        "notion_page_id": "3980a137-4574-81fb-8af8-fd7530de0e4e"
-      },
-      {
-        "id": "strattl_FILUSDT_1783627734",
-        "symbol": "FIL-USDT",
-        "direction": "LONG",
-        "entry": 0.781,
-        "sl_price": 0.7672571428571429,
-        "tp_price": 0.8238285714285714,
-        "sl_dist": 0.013742857142857168,
-        "qty": 637.7,
-        "max_hold_h": 48,
-        "strategy": "TL",
-        "sl_order_id": "2075313643255857152",
-        "opened_ts": "2026-07-09T20:18:24.254039+00:00",
-        "highest": 0.791,
-        "lowest": 0.781,
-        "breakeven_done": false,
-        "bars_elapsed": 11,
-        "last_checked_time": "2026-07-10 07:00:00",
-        "notion_page_id": "3980a137-4574-81e9-b034-fa627fcc100b"
-      }
-    ],
-    "last_cycle_ts": "2026-07-10T07:19:03.432834+00:00",
+    "open_positions": [],
+    "last_cycle_ts": "2026-07-10T08:18:56.309435+00:00",
     "stats": {
-      "n": 13,
+      "n": 15,
       "win_rate_pct": 0.0,
-      "ev_r": -0.714,
-      "total_pnl_usdt": -9.28,
+      "ev_r": -0.752,
+      "total_pnl_usdt": -11.28,
       "avg_win_usdt": 0,
-      "avg_loss_usdt": -0.71
+      "avg_loss_usdt": -0.75
     }
   },
   "tama_config": {
@@ -829,6 +788,10 @@
     {
       "ts": "2026-07-10T07:01:01.749496+00:00",
       "idx": 82.86
+    },
+    {
+      "ts": "2026-07-10T08:01:02.619688+00:00",
+      "idx": 75.49
     }
   ],
   "trades_public": [
@@ -919,6 +882,20 @@
     {
       "ts": "2026-07-09T15:39:54.443880+00:00",
       "sym": "BCH-USDT",
+      "strat": "TL",
+      "dir": "LONG",
+      "r": -1.0
+    },
+    {
+      "ts": "2026-07-10T08:02:22.457221+00:00",
+      "sym": "BCH-USDT",
+      "strat": "TL",
+      "dir": "LONG",
+      "r": -1.0
+    },
+    {
+      "ts": "2026-07-10T08:02:23.903878+00:00",
+      "sym": "FIL-USDT",
       "strat": "TL",
       "dir": "LONG",
       "r": -1.0
