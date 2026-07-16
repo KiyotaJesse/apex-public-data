@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-17T00:56:39.613527+08:00",
+  "generated_at": "2026-07-17T01:56:49.339825+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
     "closed_trades": [],
-    "last_cycle_ts": "2026-07-16T16:52:56.923862+00:00",
+    "last_cycle_ts": "2026-07-16T17:56:07.807062+00:00",
     "stats": {
       "n": 0,
       "win_rate_pct": 0.0,
@@ -28,26 +28,6 @@
     "mode": "live",
     "open_positions": [
       {
-        "id": "strattl_FILUSDT_1784217230",
-        "symbol": "FIL-USDT",
-        "direction": "LONG",
-        "entry": 0.7855,
-        "sl_price": 0.7737285714285714,
-        "tp_price": 0.8212142857142857,
-        "sl_dist": 0.011771428571428544,
-        "qty": 843.8,
-        "max_hold_h": 48,
-        "strategy": "TL",
-        "sl_order_id": "2077784024315166720",
-        "opened_ts": "2026-07-16T15:54:49.218469+00:00",
-        "highest": 0.7855,
-        "lowest": 0.7855,
-        "breakeven_done": false,
-        "bars_elapsed": 1,
-        "last_checked_time": "2026-07-16 16:00:00",
-        "notion_page_id": "39f0a137-4574-81a1-b40f-e355b4b06763"
-      },
-      {
         "id": "strattl_ARBUSDT_1784217234",
         "symbol": "ARB-USDT",
         "direction": "LONG",
@@ -63,19 +43,39 @@
         "highest": 0.08858,
         "lowest": 0.08858,
         "breakeven_done": false,
-        "bars_elapsed": 1,
-        "last_checked_time": "2026-07-16 16:00:00",
+        "bars_elapsed": 2,
+        "last_checked_time": "2026-07-16 17:00:00",
         "notion_page_id": "39f0a137-4574-81e9-ab4f-d06e82e689de"
+      },
+      {
+        "id": "strattl_UNIUSDT_1784223161",
+        "symbol": "UNI-USDT",
+        "direction": "LONG",
+        "entry": 3.623,
+        "sl_price": 3.5141428571428572,
+        "tp_price": 3.949571428571429,
+        "sl_dist": 0.10885714285714299,
+        "qty": 90.0,
+        "max_hold_h": 48,
+        "strategy": "TL",
+        "sl_order_id": "2077809172963491840",
+        "opened_ts": "2026-07-16T17:34:44.049037+00:00",
+        "highest": 3.623,
+        "lowest": 3.623,
+        "breakeven_done": false,
+        "bars_elapsed": 0,
+        "last_checked_time": "2026-07-16T17:34:44.049037+00:00",
+        "notion_page_id": "39f0a137-4574-8144-a3ee-d34465b34d38"
       }
     ],
-    "last_cycle_ts": "2026-07-16T16:53:23.072997+00:00",
+    "last_cycle_ts": "2026-07-16T17:56:39.871085+00:00",
     "stats": {
-      "n": 15,
+      "n": 16,
       "win_rate_pct": 0.0,
-      "ev_r": -0.752,
-      "total_pnl_usdt": -11.28,
+      "ev_r": -0.77,
+      "total_pnl_usdt": -12.31,
       "avg_win_usdt": 0,
-      "avg_loss_usdt": -0.75
+      "avg_loss_usdt": -0.77
     }
   },
   "tama_config": {
@@ -1445,6 +1445,14 @@
     {
       "ts": "2026-07-16T15:53:42.895836+00:00",
       "idx": 99.42
+    },
+    {
+      "ts": "2026-07-16T16:53:43.124898+00:00",
+      "idx": 98.35
+    },
+    {
+      "ts": "2026-07-16T17:53:47.956082+00:00",
+      "idx": 95.8
     }
   ],
   "trades_public": [
@@ -1552,6 +1560,13 @@
       "strat": "TL",
       "dir": "LONG",
       "r": -1.0
+    },
+    {
+      "ts": "2026-07-16T17:17:41.087654+00:00",
+      "sym": "FIL-USDT",
+      "strat": "TL",
+      "dir": "LONG",
+      "r": -1.036
     }
   ],
   "self_upgrades": [
