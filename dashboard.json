@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-16T22:56:17.837702+08:00",
+  "generated_at": "2026-07-16T23:56:28.148884+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
     "closed_trades": [],
-    "last_cycle_ts": "2026-07-16T14:54:38.703239+00:00",
+    "last_cycle_ts": "2026-07-16T15:54:47.202689+00:00",
     "stats": {
       "n": 0,
       "win_rate_pct": 0.0,
@@ -15,7 +15,7 @@
     }
   },
   "risk_circuit_breaker": {
-    "killswitch": true,
+    "killswitch": false,
     "daily_loss_limit_hit": false,
     "daily_pnl_usdt": 0.0,
     "daily_pnl_date": "2026-07-16"
@@ -26,8 +26,49 @@
   },
   "strat_tl": {
     "mode": "live",
-    "open_positions": [],
-    "last_cycle_ts": "2026-07-16T14:53:47.146434+00:00",
+    "open_positions": [
+      {
+        "id": "strattl_FILUSDT_1784217230",
+        "symbol": "FIL-USDT",
+        "direction": "LONG",
+        "entry": 0.7855,
+        "sl_price": 0.7737285714285714,
+        "tp_price": 0.8212142857142857,
+        "sl_dist": 0.011771428571428544,
+        "qty": 843.8,
+        "max_hold_h": 48,
+        "strategy": "TL",
+        "sl_order_id": "2077784024315166720",
+        "opened_ts": "2026-07-16T15:54:49.218469+00:00",
+        "highest": 0.7855,
+        "lowest": 0.7855,
+        "breakeven_done": false,
+        "bars_elapsed": 0,
+        "last_checked_time": "2026-07-16T15:54:49.218469+00:00",
+        "notion_page_id": "39f0a137-4574-81a1-b40f-e355b4b06763"
+      },
+      {
+        "id": "strattl_ARBUSDT_1784217234",
+        "symbol": "ARB-USDT",
+        "direction": "LONG",
+        "entry": 0.08858,
+        "sl_price": 0.08673285714285714,
+        "tp_price": 0.09424142857142856,
+        "sl_dist": 0.0018471428571428666,
+        "qty": 5330.3,
+        "max_hold_h": 48,
+        "strategy": "TL",
+        "sl_order_id": "2077784041063022592",
+        "opened_ts": "2026-07-16T15:54:49.218469+00:00",
+        "highest": 0.08858,
+        "lowest": 0.08858,
+        "breakeven_done": false,
+        "bars_elapsed": 0,
+        "last_checked_time": "2026-07-16T15:54:49.218469+00:00",
+        "notion_page_id": "39f0a137-4574-81e9-ab4f-d06e82e689de"
+      }
+    ],
+    "last_cycle_ts": "2026-07-16T15:54:49.218455+00:00",
     "stats": {
       "n": 15,
       "win_rate_pct": 0.0,
@@ -75,7 +116,7 @@
     },
     "applied": {
       "applied_sha": "481926f6f406ef068660e78cdc28cea3d0b7230d",
-      "applied_at": "2026-07-10T03:00:41.066945+00:00",
+      "applied_at": "2026-07-16T15:53:38.751470+00:00",
       "changes": [
         "b1.cycle_seconds: 300 -> 60",
         "tl.cycle_seconds: 900 -> 60"
@@ -1391,6 +1432,18 @@
     },
     {
       "ts": "2026-07-16T14:10:49.722817+00:00",
+      "idx": 99.42
+    },
+    {
+      "ts": "2026-07-16T15:10:52.788921+00:00",
+      "idx": 99.42
+    },
+    {
+      "ts": "2026-07-16T15:38:52.635714+00:00",
+      "idx": 99.42
+    },
+    {
+      "ts": "2026-07-16T15:53:42.895836+00:00",
       "idx": 99.42
     }
   ],
