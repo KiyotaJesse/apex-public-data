@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T18:08:29.573614+08:00",
+  "generated_at": "2026-07-17T19:08:40.736124+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [
@@ -22,15 +22,15 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-16 17:00:00",
         "entry_bar_time": "2026-07-16 17:00:00",
-        "last_checked_time": "2026-07-17 10:00:00",
-        "bars_elapsed": 17,
+        "last_checked_time": "2026-07-17 11:00:00",
+        "bars_elapsed": 18,
         "opened_ts": "2026-07-16T18:00:20.026927+00:00",
         "status": "open",
         "notion_page_id": "39f0a137-4574-8166-accb-dfddeb1beaa0"
       }
     ],
     "closed_trades": [],
-    "last_cycle_ts": "2026-07-17T10:07:33.378362+00:00",
+    "last_cycle_ts": "2026-07-17T11:07:38.713009+00:00",
     "stats": {
       "n": 0,
       "win_rate_pct": 0.0,
@@ -66,11 +66,11 @@
         "strategy": "TL",
         "sl_order_id": "2077785377477328896",
         "opened_ts": "2026-07-16T15:54:49.218469+00:00",
-        "highest": 0.09028,
+        "highest": 0.09031,
         "lowest": 0.08858,
         "breakeven_done": false,
-        "bars_elapsed": 19,
-        "last_checked_time": "2026-07-17 10:00:00",
+        "bars_elapsed": 20,
+        "last_checked_time": "2026-07-17 11:00:00",
         "notion_page_id": "39f0a137-4574-81e9-ab4f-d06e82e689de"
       },
       {
@@ -89,12 +89,12 @@
         "highest": 1.0921,
         "lowest": 1.0905,
         "breakeven_done": false,
-        "bars_elapsed": 10,
-        "last_checked_time": "2026-07-17 10:00:00",
+        "bars_elapsed": 11,
+        "last_checked_time": "2026-07-17 11:00:00",
         "notion_page_id": "3a00a137-4574-8112-aad8-c03cdd96c3f1"
       }
     ],
-    "last_cycle_ts": "2026-07-17T10:07:08.168900+00:00",
+    "last_cycle_ts": "2026-07-17T11:07:19.585698+00:00",
     "stats": {
       "n": 17,
       "win_rate_pct": 0.0,
@@ -1543,6 +1543,10 @@
     {
       "ts": "2026-07-17T09:54:44.575170+00:00",
       "idx": 72.23
+    },
+    {
+      "ts": "2026-07-17T10:54:46.278468+00:00",
+      "idx": 72.32
     }
   ],
   "trades_public": [
