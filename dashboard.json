@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T07:48:55.962237+08:00",
+  "generated_at": "2026-07-17T08:49:06.082407+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [
@@ -18,19 +18,19 @@
         "sl_dist": 0.017828571428571444,
         "sl_order_id": "2077815610398048256",
         "open_order_id": "2077815609903759360",
-        "lowest": 1.511,
+        "lowest": 1.509,
         "breakeven_done": false,
         "sig_bar_time": "2026-07-16 17:00:00",
         "entry_bar_time": "2026-07-16 17:00:00",
-        "last_checked_time": "2026-07-16 23:00:00",
-        "bars_elapsed": 6,
+        "last_checked_time": "2026-07-17 00:00:00",
+        "bars_elapsed": 7,
         "opened_ts": "2026-07-16T18:00:20.026927+00:00",
         "status": "open",
         "notion_page_id": "39f0a137-4574-8166-accb-dfddeb1beaa0"
       }
     ],
     "closed_trades": [],
-    "last_cycle_ts": "2026-07-16T23:48:44.936044+00:00",
+    "last_cycle_ts": "2026-07-17T00:48:02.343166+00:00",
     "stats": {
       "n": 0,
       "win_rate_pct": 0.0,
@@ -44,7 +44,7 @@
     "killswitch": false,
     "daily_loss_limit_hit": false,
     "daily_pnl_usdt": 0.0,
-    "daily_pnl_date": "2026-07-16"
+    "daily_pnl_date": "2026-07-17"
   },
   "feature_flags": {
     "a": {},
@@ -69,39 +69,19 @@
         "highest": 0.08994,
         "lowest": 0.08858,
         "breakeven_done": false,
-        "bars_elapsed": 8,
-        "last_checked_time": "2026-07-16 23:00:00",
+        "bars_elapsed": 9,
+        "last_checked_time": "2026-07-17 00:00:00",
         "notion_page_id": "39f0a137-4574-81e9-ab4f-d06e82e689de"
-      },
-      {
-        "id": "strattl_UNIUSDT_1784223161",
-        "symbol": "UNI-USDT",
-        "direction": "LONG",
-        "entry": 3.623,
-        "sl_price": 3.51414286,
-        "tp_price": 3.949571428571429,
-        "sl_dist": 0.10885714285714299,
-        "qty": 90.0,
-        "max_hold_h": 48,
-        "strategy": "TL",
-        "sl_order_id": "2077815759090319360",
-        "opened_ts": "2026-07-16T17:34:44.049037+00:00",
-        "highest": 3.682,
-        "lowest": 3.623,
-        "breakeven_done": false,
-        "bars_elapsed": 6,
-        "last_checked_time": "2026-07-16 23:00:00",
-        "notion_page_id": "39f0a137-4574-8144-a3ee-d34465b34d38"
       }
     ],
-    "last_cycle_ts": "2026-07-16T23:48:19.263517+00:00",
+    "last_cycle_ts": "2026-07-17T00:47:23.073646+00:00",
     "stats": {
-      "n": 16,
+      "n": 17,
       "win_rate_pct": 0.0,
-      "ev_r": -0.77,
-      "total_pnl_usdt": -12.31,
+      "ev_r": -0.785,
+      "total_pnl_usdt": -13.35,
       "avg_win_usdt": 0,
-      "avg_loss_usdt": -0.77
+      "avg_loss_usdt": -0.79
     }
   },
   "tama_config": {
@@ -1499,6 +1479,10 @@
     {
       "ts": "2026-07-16T22:54:06.721911+00:00",
       "idx": 95.2
+    },
+    {
+      "ts": "2026-07-16T23:54:08.366347+00:00",
+      "idx": 93.91
     }
   ],
   "trades_public": [
@@ -1613,6 +1597,13 @@
       "strat": "TL",
       "dir": "LONG",
       "r": -1.036
+    },
+    {
+      "ts": "2026-07-17T00:37:51.572307+00:00",
+      "sym": "UNI-USDT",
+      "strat": "TL",
+      "dir": "LONG",
+      "r": -1.038
     }
   ],
   "self_upgrades": [
