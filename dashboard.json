@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T22:29:03.623181+08:00",
+  "generated_at": "2026-07-17T23:29:14.275896+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [
@@ -22,8 +22,8 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-16 17:00:00",
         "entry_bar_time": "2026-07-16 17:00:00",
-        "last_checked_time": "2026-07-17 14:00:00",
-        "bars_elapsed": 21,
+        "last_checked_time": "2026-07-17 15:00:00",
+        "bars_elapsed": 22,
         "opened_ts": "2026-07-16T18:00:20.026927+00:00",
         "status": "open",
         "notion_page_id": "39f0a137-4574-8166-accb-dfddeb1beaa0"
@@ -47,15 +47,15 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-17 13:00:00",
         "entry_bar_time": "2026-07-17 13:00:00",
-        "last_checked_time": "2026-07-17 14:00:00",
-        "bars_elapsed": 1,
+        "last_checked_time": "2026-07-17 15:00:00",
+        "bars_elapsed": 2,
         "opened_ts": "2026-07-17T14:00:54.915574+00:00",
         "status": "open",
         "notion_page_id": "3a00a137-4574-81e1-9278-f34f3979a2f9"
       }
     ],
     "closed_trades": [],
-    "last_cycle_ts": "2026-07-17T14:28:46.008793+00:00",
+    "last_cycle_ts": "2026-07-17T15:29:04.355388+00:00",
     "stats": {
       "n": 0,
       "win_rate_pct": 0.0,
@@ -94,8 +94,8 @@
         "highest": 0.09031,
         "lowest": 0.08858,
         "breakeven_done": false,
-        "bars_elapsed": 23,
-        "last_checked_time": "2026-07-17 14:00:00",
+        "bars_elapsed": 24,
+        "last_checked_time": "2026-07-17 15:00:00",
         "notion_page_id": "39f0a137-4574-81e9-ab4f-d06e82e689de"
       },
       {
@@ -114,12 +114,12 @@
         "highest": 63276.9,
         "lowest": 63276.9,
         "breakeven_done": false,
-        "bars_elapsed": 0,
-        "last_checked_time": "2026-07-17T14:08:28.426577+00:00",
+        "bars_elapsed": 1,
+        "last_checked_time": "2026-07-17 15:00:00",
         "notion_page_id": "3a00a137-4574-81dc-a6d1-d0de777bf2fb"
       }
     ],
-    "last_cycle_ts": "2026-07-17T14:28:02.409247+00:00",
+    "last_cycle_ts": "2026-07-17T15:28:26.696269+00:00",
     "stats": {
       "n": 18,
       "win_rate_pct": 0.0,
@@ -1589,6 +1589,10 @@
     {
       "ts": "2026-07-17T13:57:40.466957+00:00",
       "idx": 67.95
+    },
+    {
+      "ts": "2026-07-17T14:57:44.519309+00:00",
+      "idx": 67.41
     }
   ],
   "trades_public": [
