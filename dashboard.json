@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T21:35:23.851402+08:00",
+  "generated_at": "2026-07-17T22:29:03.623181+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [
@@ -22,15 +22,40 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-16 17:00:00",
         "entry_bar_time": "2026-07-16 17:00:00",
-        "last_checked_time": "2026-07-17 13:00:00",
-        "bars_elapsed": 20,
+        "last_checked_time": "2026-07-17 14:00:00",
+        "bars_elapsed": 21,
         "opened_ts": "2026-07-16T18:00:20.026927+00:00",
         "status": "open",
         "notion_page_id": "39f0a137-4574-8166-accb-dfddeb1beaa0"
+      },
+      {
+        "id": "stratb_BNBUSDT_1784296854",
+        "symbol": "BNB-USDT",
+        "dir": "SHORT",
+        "sig_entry": 560.25,
+        "fill_price": 560.52,
+        "qty": 1.85,
+        "notional_usdt": 1036.962,
+        "margin_usdt": 20.7392,
+        "leverage": 50,
+        "risk_usdt": 6.8585,
+        "sl_price": 563.9485,
+        "sl_dist": 3.6984999999999935,
+        "sl_order_id": "2078117746558205952",
+        "open_order_id": "2078117746143608832",
+        "lowest": 560.05,
+        "breakeven_done": false,
+        "sig_bar_time": "2026-07-17 13:00:00",
+        "entry_bar_time": "2026-07-17 13:00:00",
+        "last_checked_time": "2026-07-17 14:00:00",
+        "bars_elapsed": 1,
+        "opened_ts": "2026-07-17T14:00:54.915574+00:00",
+        "status": "open",
+        "notion_page_id": "3a00a137-4574-81e1-9278-f34f3979a2f9"
       }
     ],
     "closed_trades": [],
-    "last_cycle_ts": "2026-07-17T13:35:17.881574+00:00",
+    "last_cycle_ts": "2026-07-17T14:28:46.008793+00:00",
     "stats": {
       "n": 0,
       "win_rate_pct": 0.0,
@@ -41,7 +66,7 @@
     }
   },
   "risk_circuit_breaker": {
-    "killswitch": true,
+    "killswitch": false,
     "daily_loss_limit_hit": false,
     "daily_pnl_usdt": 0.0,
     "daily_pnl_date": "2026-07-17"
@@ -69,12 +94,32 @@
         "highest": 0.09031,
         "lowest": 0.08858,
         "breakeven_done": false,
-        "bars_elapsed": 22,
-        "last_checked_time": "2026-07-17 13:00:00",
+        "bars_elapsed": 23,
+        "last_checked_time": "2026-07-17 14:00:00",
         "notion_page_id": "39f0a137-4574-81e9-ab4f-d06e82e689de"
+      },
+      {
+        "id": "strattl_BTCUSDT_1784297248",
+        "symbol": "BTC-USDT",
+        "direction": "LONG",
+        "entry": 63276.9,
+        "sl_price": 62609.614285714284,
+        "tp_price": 65278.757142857154,
+        "sl_dist": 667.2857142857174,
+        "qty": 0.005,
+        "max_hold_h": 48,
+        "strategy": "TL",
+        "sl_order_id": "2078119651061628928",
+        "opened_ts": "2026-07-17T14:08:28.426577+00:00",
+        "highest": 63276.9,
+        "lowest": 63276.9,
+        "breakeven_done": false,
+        "bars_elapsed": 0,
+        "last_checked_time": "2026-07-17T14:08:28.426577+00:00",
+        "notion_page_id": "3a00a137-4574-81dc-a6d1-d0de777bf2fb"
       }
     ],
-    "last_cycle_ts": "2026-07-17T13:34:51.744928+00:00",
+    "last_cycle_ts": "2026-07-17T14:28:02.409247+00:00",
     "stats": {
       "n": 18,
       "win_rate_pct": 0.0,
@@ -88,8 +133,8 @@
     "current": {
       "_meta": {
         "desc": "APEX 控制台熱載入配置。改此檔 <=60 秒生效，無需重新部署。硬邊界見 tama_v5.py TAMA_CONFIG_BOUNDS。",
-        "updated": "2026-07-06T00:00:00+00:00",
-        "by": "RS策略上線(paper)"
+        "updated": "2026-07-17T13:55:51+00:00",
+        "by": "Claude(Jesse批准: walk-forward TL近季EV轉負,降檔觀察)"
       },
       "b1": {
         "live_enabled": true,
@@ -101,7 +146,7 @@
       },
       "tl": {
         "live_enabled": true,
-        "risk_pct": 0.02,
+        "risk_pct": 0.01,
         "leverage": 50,
         "max_positions": 2,
         "max_hold_h": 48,
@@ -121,10 +166,11 @@
       }
     },
     "applied": {
-      "applied_sha": "481926f6f406ef068660e78cdc28cea3d0b7230d",
-      "applied_at": "2026-07-17T12:38:41.819011+00:00",
+      "applied_sha": "cbf83a980096380d2482052c28ba143252b24123",
+      "applied_at": "2026-07-17T13:57:35.178532+00:00",
       "changes": [
         "b1.cycle_seconds: 300 -> 60",
+        "tl.risk_pct: 0.02 -> 0.01",
         "tl.cycle_seconds: 900 -> 60"
       ]
     },
@@ -1535,6 +1581,14 @@
     {
       "ts": "2026-07-17T12:38:46.840872+00:00",
       "idx": 70.64
+    },
+    {
+      "ts": "2026-07-17T13:38:47.889891+00:00",
+      "idx": 67.51
+    },
+    {
+      "ts": "2026-07-17T13:57:40.466957+00:00",
+      "idx": 67.95
     }
   ],
   "trades_public": [
