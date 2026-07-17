@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T20:35:12.828689+08:00",
+  "generated_at": "2026-07-17T21:35:23.851402+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [
@@ -18,19 +18,19 @@
         "sl_dist": 0.017828571428571444,
         "sl_order_id": "2077815610398048256",
         "open_order_id": "2077815609903759360",
-        "lowest": 1.493,
+        "lowest": 1.492,
         "breakeven_done": false,
         "sig_bar_time": "2026-07-16 17:00:00",
         "entry_bar_time": "2026-07-16 17:00:00",
-        "last_checked_time": "2026-07-17 12:00:00",
-        "bars_elapsed": 19,
+        "last_checked_time": "2026-07-17 13:00:00",
+        "bars_elapsed": 20,
         "opened_ts": "2026-07-16T18:00:20.026927+00:00",
         "status": "open",
         "notion_page_id": "39f0a137-4574-8166-accb-dfddeb1beaa0"
       }
     ],
     "closed_trades": [],
-    "last_cycle_ts": "2026-07-17T12:35:03.868535+00:00",
+    "last_cycle_ts": "2026-07-17T13:35:17.881574+00:00",
     "stats": {
       "n": 0,
       "win_rate_pct": 0.0,
@@ -69,39 +69,19 @@
         "highest": 0.09031,
         "lowest": 0.08858,
         "breakeven_done": false,
-        "bars_elapsed": 21,
-        "last_checked_time": "2026-07-17 12:00:00",
+        "bars_elapsed": 22,
+        "last_checked_time": "2026-07-17 13:00:00",
         "notion_page_id": "39f0a137-4574-81e9-ab4f-d06e82e689de"
-      },
-      {
-        "id": "strattl_XRPUSDT_1784249557",
-        "symbol": "XRP-USDT",
-        "direction": "LONG",
-        "entry": 1.0905,
-        "sl_price": 1.0737571428571429,
-        "tp_price": 1.1407285714285715,
-        "sl_dist": 0.01674285714285717,
-        "qty": 558.0,
-        "max_hold_h": 48,
-        "strategy": "TL",
-        "sl_order_id": "2077919886231306240",
-        "opened_ts": "2026-07-17T00:54:41.226470+00:00",
-        "highest": 1.0921,
-        "lowest": 1.0905,
-        "breakeven_done": false,
-        "bars_elapsed": 12,
-        "last_checked_time": "2026-07-17 12:00:00",
-        "notion_page_id": "3a00a137-4574-8112-aad8-c03cdd96c3f1"
       }
     ],
-    "last_cycle_ts": "2026-07-17T12:34:38.286534+00:00",
+    "last_cycle_ts": "2026-07-17T13:34:51.744928+00:00",
     "stats": {
-      "n": 17,
+      "n": 18,
       "win_rate_pct": 0.0,
-      "ev_r": -0.785,
-      "total_pnl_usdt": -13.35,
+      "ev_r": -0.798,
+      "total_pnl_usdt": -14.36,
       "avg_win_usdt": 0,
-      "avg_loss_usdt": -0.79
+      "avg_loss_usdt": -0.8
     }
   },
   "tama_config": {
@@ -142,7 +122,7 @@
     },
     "applied": {
       "applied_sha": "481926f6f406ef068660e78cdc28cea3d0b7230d",
-      "applied_at": "2026-07-16T15:53:38.751470+00:00",
+      "applied_at": "2026-07-17T12:38:41.819011+00:00",
       "changes": [
         "b1.cycle_seconds: 300 -> 60",
         "tl.cycle_seconds: 900 -> 60"
@@ -1551,6 +1531,10 @@
     {
       "ts": "2026-07-17T11:54:48.915769+00:00",
       "idx": 71.32
+    },
+    {
+      "ts": "2026-07-17T12:38:46.840872+00:00",
+      "idx": 70.64
     }
   ],
   "trades_public": [
@@ -1672,6 +1656,13 @@
       "strat": "TL",
       "dir": "LONG",
       "r": -1.038
+    },
+    {
+      "ts": "2026-07-17T13:06:44.357884+00:00",
+      "sym": "XRP-USDT",
+      "strat": "TL",
+      "dir": "LONG",
+      "r": -1.009
     }
   ],
   "self_upgrades": [
