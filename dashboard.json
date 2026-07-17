@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-18T00:08:01.991711+08:00",
+  "generated_at": "2026-07-18T01:08:12.572160+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [
@@ -22,12 +22,14 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-16 17:00:00",
         "entry_bar_time": "2026-07-16 17:00:00",
-        "last_checked_time": "2026-07-17 16:00:00",
-        "bars_elapsed": 23,
+        "last_checked_time": "2026-07-17 17:00:00",
+        "bars_elapsed": 24,
         "opened_ts": "2026-07-16T18:00:20.026927+00:00",
         "status": "open",
         "notion_page_id": "39f0a137-4574-8166-accb-dfddeb1beaa0"
-      },
+      }
+    ],
+    "closed_trades": [
       {
         "id": "stratb_BNBUSDT_1784296854",
         "symbol": "BNB-USDT",
@@ -51,24 +53,29 @@
         "bars_elapsed": 3,
         "opened_ts": "2026-07-17T14:00:54.915574+00:00",
         "status": "open",
-        "notion_page_id": "3a00a137-4574-81e1-9278-f34f3979a2f9"
+        "notion_page_id": "3a00a137-4574-81e1-9278-f34f3979a2f9",
+        "exit_price": 564.37,
+        "exit_reason": "sl_hit",
+        "realized_r": -1.1925,
+        "pnl_usdt": -7.1225,
+        "outcome": "LOSS",
+        "closed_ts": "2026-07-17T16:11:15.140466+00:00"
       }
     ],
-    "closed_trades": [],
-    "last_cycle_ts": "2026-07-17T16:07:04.237607+00:00",
+    "last_cycle_ts": "2026-07-17T17:07:40.660807+00:00",
     "stats": {
-      "n": 0,
+      "n": 1,
       "win_rate_pct": 0.0,
-      "ev_r": 0.0,
-      "total_pnl_usdt": 0.0,
-      "avg_win_usdt": 0.0,
-      "avg_loss_usdt": 0.0
+      "ev_r": -1.038,
+      "total_pnl_usdt": -7.12,
+      "avg_win_usdt": 0,
+      "avg_loss_usdt": -7.12
     }
   },
   "risk_circuit_breaker": {
     "killswitch": false,
     "daily_loss_limit_hit": false,
-    "daily_pnl_usdt": 0.0,
+    "daily_pnl_usdt": -7.1225,
     "daily_pnl_date": "2026-07-17"
   },
   "feature_flags": {
@@ -94,8 +101,8 @@
         "highest": 0.09031,
         "lowest": 0.08858,
         "breakeven_done": false,
-        "bars_elapsed": 25,
-        "last_checked_time": "2026-07-17 16:00:00",
+        "bars_elapsed": 26,
+        "last_checked_time": "2026-07-17 17:00:00",
         "notion_page_id": "39f0a137-4574-81e9-ab4f-d06e82e689de"
       },
       {
@@ -111,15 +118,15 @@
         "strategy": "TL",
         "sl_order_id": "2078119651061628928",
         "opened_ts": "2026-07-17T14:08:28.426577+00:00",
-        "highest": 63437.4,
+        "highest": 63580.7,
         "lowest": 63276.9,
         "breakeven_done": false,
-        "bars_elapsed": 2,
-        "last_checked_time": "2026-07-17 16:00:00",
+        "bars_elapsed": 3,
+        "last_checked_time": "2026-07-17 17:00:00",
         "notion_page_id": "3a00a137-4574-81dc-a6d1-d0de777bf2fb"
       }
     ],
-    "last_cycle_ts": "2026-07-17T16:06:49.979597+00:00",
+    "last_cycle_ts": "2026-07-17T17:07:34.257699+00:00",
     "stats": {
       "n": 18,
       "win_rate_pct": 0.0,
@@ -167,7 +174,7 @@
     },
     "applied": {
       "applied_sha": "cbf83a980096380d2482052c28ba143252b24123",
-      "applied_at": "2026-07-17T15:57:25.296373+00:00",
+      "applied_at": "2026-07-17T16:30:18.113992+00:00",
       "changes": [
         "b1.cycle_seconds: 300 -> 60",
         "tl.risk_pct: 0.02 -> 0.01",
@@ -1597,6 +1604,18 @@
     {
       "ts": "2026-07-17T15:57:30.978865+00:00",
       "idx": 67.69
+    },
+    {
+      "ts": "2026-07-17T16:13:53.394811+00:00",
+      "idx": 66.71
+    },
+    {
+      "ts": "2026-07-17T16:22:06.100756+00:00",
+      "idx": 67.36
+    },
+    {
+      "ts": "2026-07-17T16:30:23.269223+00:00",
+      "idx": 67.08
     }
   ],
   "trades_public": [
@@ -1725,6 +1744,13 @@
       "strat": "TL",
       "dir": "LONG",
       "r": -1.009
+    },
+    {
+      "ts": "2026-07-17T16:11:15.140466+00:00",
+      "sym": "BNB-USDT",
+      "strat": "B1",
+      "dir": "SHORT",
+      "r": -1.1925
     }
   ],
   "self_upgrades": [
