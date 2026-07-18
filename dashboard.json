@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-19T05:13:35.194215+08:00",
+  "generated_at": "2026-07-19T06:13:47.178087+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [
@@ -22,8 +22,8 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-16 17:00:00",
         "entry_bar_time": "2026-07-16 17:00:00",
-        "last_checked_time": "2026-07-18 21:00:00",
-        "bars_elapsed": 52,
+        "last_checked_time": "2026-07-18 22:00:00",
+        "bars_elapsed": 53,
         "opened_ts": "2026-07-16T18:00:20.026927+00:00",
         "status": "open",
         "notion_page_id": "39f0a137-4574-8166-accb-dfddeb1beaa0"
@@ -62,7 +62,7 @@
         "closed_ts": "2026-07-17T16:11:15.140466+00:00"
       }
     ],
-    "last_cycle_ts": "2026-07-18T21:13:18.306949+00:00",
+    "last_cycle_ts": "2026-07-18T22:12:54.325033+00:00",
     "stats": {
       "n": 1,
       "win_rate_pct": 0.0,
@@ -98,11 +98,11 @@
         "strategy": "TL",
         "sl_order_id": "2078525404524150784",
         "opened_ts": "2026-07-17T14:08:28.426577+00:00",
-        "highest": 64684.3,
+        "highest": 64706.3,
         "lowest": 63276.9,
         "breakeven_done": false,
-        "bars_elapsed": 31,
-        "last_checked_time": "2026-07-18 21:00:00",
+        "bars_elapsed": 32,
+        "last_checked_time": "2026-07-18 22:00:00",
         "notion_page_id": "3a00a137-4574-81dc-a6d1-d0de777bf2fb"
       },
       {
@@ -121,8 +121,8 @@
         "highest": 8.35,
         "lowest": 8.272,
         "breakeven_done": false,
-        "bars_elapsed": 5,
-        "last_checked_time": "2026-07-18 21:00:00",
+        "bars_elapsed": 6,
+        "last_checked_time": "2026-07-18 22:00:00",
         "notion_page_id": "3a10a137-4574-8112-809f-e5d08f042341"
       },
       {
@@ -141,12 +141,12 @@
         "highest": 8.35,
         "lowest": 8.272,
         "breakeven_done": false,
-        "bars_elapsed": 5,
-        "last_checked_time": "2026-07-18 21:00:00",
+        "bars_elapsed": 6,
+        "last_checked_time": "2026-07-18 22:00:00",
         "notion_page_id": "3a10a137-4574-8130-9802-cf407c89b15d"
       }
     ],
-    "last_cycle_ts": "2026-07-18T21:12:41.621505+00:00",
+    "last_cycle_ts": "2026-07-18T22:12:17.546587+00:00",
     "stats": {
       "n": 19,
       "win_rate_pct": 0.0,
@@ -1756,6 +1756,10 @@
     {
       "ts": "2026-07-18T20:33:33.215544+00:00",
       "idx": 71.15
+    },
+    {
+      "ts": "2026-07-18T21:33:35.185674+00:00",
+      "idx": 71.46
     }
   ],
   "trades_public": [
