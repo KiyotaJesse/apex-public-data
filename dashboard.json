@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-19T00:12:35.175695+08:00",
+  "generated_at": "2026-07-19T01:12:47.244226+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [
@@ -22,8 +22,8 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-16 17:00:00",
         "entry_bar_time": "2026-07-16 17:00:00",
-        "last_checked_time": "2026-07-18 16:00:00",
-        "bars_elapsed": 47,
+        "last_checked_time": "2026-07-18 17:00:00",
+        "bars_elapsed": 48,
         "opened_ts": "2026-07-16T18:00:20.026927+00:00",
         "status": "open",
         "notion_page_id": "39f0a137-4574-8166-accb-dfddeb1beaa0"
@@ -62,7 +62,7 @@
         "closed_ts": "2026-07-17T16:11:15.140466+00:00"
       }
     ],
-    "last_cycle_ts": "2026-07-18T16:11:54.620944+00:00",
+    "last_cycle_ts": "2026-07-18T17:11:51.386246+00:00",
     "stats": {
       "n": 1,
       "win_rate_pct": 0.0,
@@ -90,23 +90,63 @@
         "symbol": "BTC-USDT",
         "direction": "LONG",
         "entry": 63276.9,
-        "sl_price": 62609.614285714284,
+        "sl_price": 63276.9,
         "tp_price": 65278.757142857154,
         "sl_dist": 667.2857142857174,
         "qty": 0.005,
         "max_hold_h": 48,
         "strategy": "TL",
-        "sl_order_id": "2078119651061628928",
+        "sl_order_id": "2078525404524150784",
         "opened_ts": "2026-07-17T14:08:28.426577+00:00",
-        "highest": 64244.8,
+        "highest": 64293.2,
         "lowest": 63276.9,
         "breakeven_done": false,
-        "bars_elapsed": 26,
-        "last_checked_time": "2026-07-18 16:00:00",
+        "bars_elapsed": 27,
+        "last_checked_time": "2026-07-18 17:00:00",
         "notion_page_id": "3a00a137-4574-81dc-a6d1-d0de777bf2fb"
+      },
+      {
+        "id": "strattl_LINKUSDT_1784391289",
+        "symbol": "LINK-USDT",
+        "direction": "LONG",
+        "entry": 8.272,
+        "sl_price": 8.190285714285714,
+        "tp_price": 8.517142857142858,
+        "sl_dist": 0.08171428571428585,
+        "qty": 43.4,
+        "max_hold_h": 48,
+        "strategy": "TL",
+        "sl_order_id": "2078514597014896640",
+        "opened_ts": "2026-07-18T16:17:50.838062+00:00",
+        "highest": 8.285,
+        "lowest": 8.272,
+        "breakeven_done": false,
+        "bars_elapsed": 1,
+        "last_checked_time": "2026-07-18 17:00:00",
+        "notion_page_id": "3a10a137-4574-8112-809f-e5d08f042341"
+      },
+      {
+        "id": "strattl_LINKUSDT_1784391289",
+        "symbol": "LINK-USDT",
+        "direction": "LONG",
+        "entry": 8.272,
+        "sl_price": 8.190285714285714,
+        "tp_price": 8.517142857142858,
+        "sl_dist": 0.08171428571428585,
+        "qty": 43.4,
+        "max_hold_h": 48,
+        "strategy": "TL",
+        "sl_order_id": "2078514857862856704",
+        "opened_ts": "2026-07-18T16:18:53.544951+00:00",
+        "highest": 8.285,
+        "lowest": 8.272,
+        "breakeven_done": false,
+        "bars_elapsed": 1,
+        "last_checked_time": "2026-07-18 17:00:00",
+        "notion_page_id": "3a10a137-4574-8130-9802-cf407c89b15d"
       }
     ],
-    "last_cycle_ts": "2026-07-18T16:11:38.964407+00:00",
+    "last_cycle_ts": "2026-07-18T17:11:08.711568+00:00",
     "stats": {
       "n": 19,
       "win_rate_pct": 0.0,
@@ -154,7 +194,7 @@
     },
     "applied": {
       "applied_sha": "cbf83a980096380d2482052c28ba143252b24123",
-      "applied_at": "2026-07-17T16:30:18.113992+00:00",
+      "applied_at": "2026-07-18T16:32:59.442316+00:00",
       "changes": [
         "b1.cycle_seconds: 300 -> 60",
         "tl.risk_pct: 0.02 -> 0.01",
@@ -1688,6 +1728,18 @@
     {
       "ts": "2026-07-18T15:31:47.728101+00:00",
       "idx": 70.78
+    },
+    {
+      "ts": "2026-07-18T16:18:10.822465+00:00",
+      "idx": 70.18
+    },
+    {
+      "ts": "2026-07-18T16:25:36.858951+00:00",
+      "idx": 70.33
+    },
+    {
+      "ts": "2026-07-18T16:33:04.445820+00:00",
+      "idx": 70.3
     }
   ],
   "trades_public": [
