@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-19T20:16:27.880193+08:00",
+  "generated_at": "2026-07-19T21:16:40.088630+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [
@@ -22,11 +22,61 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-16 17:00:00",
         "entry_bar_time": "2026-07-16 17:00:00",
-        "last_checked_time": "2026-07-19 12:00:00",
-        "bars_elapsed": 67,
+        "last_checked_time": "2026-07-19 13:00:00",
+        "bars_elapsed": 68,
         "opened_ts": "2026-07-16T18:00:20.026927+00:00",
         "status": "open",
         "notion_page_id": "39f0a137-4574-8166-accb-dfddeb1beaa0"
+      },
+      {
+        "id": "stratb_DOTUSDT_1784466010",
+        "symbol": "DOT-USDT",
+        "dir": "SHORT",
+        "sig_entry": 0.826,
+        "fill_price": 0.824,
+        "qty": 1054.4,
+        "notional_usdt": 868.8256,
+        "margin_usdt": 17.7311,
+        "leverage": 49,
+        "risk_usdt": 7.2453,
+        "sl_price": 0.83287143,
+        "sl_dist": 0.006871428571428578,
+        "sl_order_id": "2078827237813616640",
+        "open_order_id": "2078827236694376448",
+        "lowest": 0.824,
+        "breakeven_done": false,
+        "sig_bar_time": "2026-07-19 12:00:00",
+        "entry_bar_time": "2026-07-19 12:00:00",
+        "last_checked_time": "2026-07-19 13:00:00",
+        "bars_elapsed": 1,
+        "opened_ts": "2026-07-19T13:00:10.611618+00:00",
+        "status": "open",
+        "notion_page_id": "3a20a137-4574-81ef-858b-dd704e60b8f0"
+      },
+      {
+        "id": "stratb_APTUSDT_1784466016",
+        "symbol": "APT-USDT",
+        "dir": "SHORT",
+        "sig_entry": 0.5985,
+        "fill_price": 0.5985,
+        "qty": 1627.1,
+        "notional_usdt": 973.8193,
+        "margin_usdt": 19.4764,
+        "leverage": 50,
+        "risk_usdt": 7.2071,
+        "sl_price": 0.60292929,
+        "sl_dist": 0.004429285714285753,
+        "sl_order_id": "2078827260605464576",
+        "open_order_id": "2078827260270559232",
+        "lowest": 0.5983,
+        "breakeven_done": false,
+        "sig_bar_time": "2026-07-19 12:00:00",
+        "entry_bar_time": "2026-07-19 12:00:00",
+        "last_checked_time": "2026-07-19 13:00:00",
+        "bars_elapsed": 1,
+        "opened_ts": "2026-07-19T13:00:16.230259+00:00",
+        "status": "open",
+        "notion_page_id": "3a20a137-4574-8174-a31d-f6fbcbd322c3"
       }
     ],
     "closed_trades": [
@@ -62,7 +112,7 @@
         "closed_ts": "2026-07-17T16:11:15.140466+00:00"
       }
     ],
-    "last_cycle_ts": "2026-07-19T12:15:54.846730+00:00",
+    "last_cycle_ts": "2026-07-19T13:15:39.395686+00:00",
     "stats": {
       "n": 1,
       "win_rate_pct": 0.0,
@@ -101,8 +151,8 @@
         "highest": 64818.0,
         "lowest": 63276.9,
         "breakeven_done": false,
-        "bars_elapsed": 46,
-        "last_checked_time": "2026-07-19 12:00:00",
+        "bars_elapsed": 47,
+        "last_checked_time": "2026-07-19 13:00:00",
         "notion_page_id": "3a00a137-4574-81dc-a6d1-d0de777bf2fb"
       },
       {
@@ -121,8 +171,8 @@
         "highest": 8.372,
         "lowest": 8.272,
         "breakeven_done": false,
-        "bars_elapsed": 20,
-        "last_checked_time": "2026-07-19 12:00:00",
+        "bars_elapsed": 21,
+        "last_checked_time": "2026-07-19 13:00:00",
         "notion_page_id": "3a10a137-4574-8112-809f-e5d08f042341"
       },
       {
@@ -141,12 +191,12 @@
         "highest": 8.372,
         "lowest": 8.272,
         "breakeven_done": false,
-        "bars_elapsed": 20,
-        "last_checked_time": "2026-07-19 12:00:00",
+        "bars_elapsed": 21,
+        "last_checked_time": "2026-07-19 13:00:00",
         "notion_page_id": "3a10a137-4574-8130-9802-cf407c89b15d"
       }
     ],
-    "last_cycle_ts": "2026-07-19T12:15:30.091228+00:00",
+    "last_cycle_ts": "2026-07-19T13:15:20.642883+00:00",
     "stats": {
       "n": 19,
       "win_rate_pct": 0.0,
@@ -1816,6 +1866,10 @@
     {
       "ts": "2026-07-19T11:34:33.998784+00:00",
       "idx": 72.54
+    },
+    {
+      "ts": "2026-07-19T12:34:38.135251+00:00",
+      "idx": 71.92
     }
   ],
   "trades_public": [
