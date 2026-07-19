@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-19T21:16:40.088630+08:00",
+  "generated_at": "2026-07-19T22:16:52.205025+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [
@@ -22,8 +22,8 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-16 17:00:00",
         "entry_bar_time": "2026-07-16 17:00:00",
-        "last_checked_time": "2026-07-19 13:00:00",
-        "bars_elapsed": 68,
+        "last_checked_time": "2026-07-19 14:00:00",
+        "bars_elapsed": 69,
         "opened_ts": "2026-07-16T18:00:20.026927+00:00",
         "status": "open",
         "notion_page_id": "39f0a137-4574-8166-accb-dfddeb1beaa0"
@@ -47,8 +47,8 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-19 12:00:00",
         "entry_bar_time": "2026-07-19 12:00:00",
-        "last_checked_time": "2026-07-19 13:00:00",
-        "bars_elapsed": 1,
+        "last_checked_time": "2026-07-19 14:00:00",
+        "bars_elapsed": 2,
         "opened_ts": "2026-07-19T13:00:10.611618+00:00",
         "status": "open",
         "notion_page_id": "3a20a137-4574-81ef-858b-dd704e60b8f0"
@@ -72,8 +72,8 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-19 12:00:00",
         "entry_bar_time": "2026-07-19 12:00:00",
-        "last_checked_time": "2026-07-19 13:00:00",
-        "bars_elapsed": 1,
+        "last_checked_time": "2026-07-19 14:00:00",
+        "bars_elapsed": 2,
         "opened_ts": "2026-07-19T13:00:16.230259+00:00",
         "status": "open",
         "notion_page_id": "3a20a137-4574-8174-a31d-f6fbcbd322c3"
@@ -112,7 +112,7 @@
         "closed_ts": "2026-07-17T16:11:15.140466+00:00"
       }
     ],
-    "last_cycle_ts": "2026-07-19T13:15:39.395686+00:00",
+    "last_cycle_ts": "2026-07-19T14:16:24.209854+00:00",
     "stats": {
       "n": 1,
       "win_rate_pct": 0.0,
@@ -136,26 +136,6 @@
     "mode": "live",
     "open_positions": [
       {
-        "id": "strattl_BTCUSDT_1784297248",
-        "symbol": "BTC-USDT",
-        "direction": "LONG",
-        "entry": 63276.9,
-        "sl_price": 63276.9,
-        "tp_price": 65278.757142857154,
-        "sl_dist": 667.2857142857174,
-        "qty": 0.005,
-        "max_hold_h": 48,
-        "strategy": "TL",
-        "sl_order_id": "2078525404524150784",
-        "opened_ts": "2026-07-17T14:08:28.426577+00:00",
-        "highest": 64818.0,
-        "lowest": 63276.9,
-        "breakeven_done": false,
-        "bars_elapsed": 47,
-        "last_checked_time": "2026-07-19 13:00:00",
-        "notion_page_id": "3a00a137-4574-81dc-a6d1-d0de777bf2fb"
-      },
-      {
         "id": "strattl_LINKUSDT_1784391289",
         "symbol": "LINK-USDT",
         "direction": "LONG",
@@ -171,8 +151,8 @@
         "highest": 8.372,
         "lowest": 8.272,
         "breakeven_done": false,
-        "bars_elapsed": 21,
-        "last_checked_time": "2026-07-19 13:00:00",
+        "bars_elapsed": 22,
+        "last_checked_time": "2026-07-19 14:00:00",
         "notion_page_id": "3a10a137-4574-8112-809f-e5d08f042341"
       },
       {
@@ -191,19 +171,19 @@
         "highest": 8.372,
         "lowest": 8.272,
         "breakeven_done": false,
-        "bars_elapsed": 21,
-        "last_checked_time": "2026-07-19 13:00:00",
+        "bars_elapsed": 22,
+        "last_checked_time": "2026-07-19 14:00:00",
         "notion_page_id": "3a10a137-4574-8130-9802-cf407c89b15d"
       }
     ],
-    "last_cycle_ts": "2026-07-19T13:15:20.642883+00:00",
+    "last_cycle_ts": "2026-07-19T14:16:05.665993+00:00",
     "stats": {
-      "n": 19,
+      "n": 20,
       "win_rate_pct": 0.0,
-      "ev_r": -0.756,
+      "ev_r": -0.718,
       "total_pnl_usdt": -14.36,
       "avg_win_usdt": 0,
-      "avg_loss_usdt": -0.76
+      "avg_loss_usdt": -0.72
     }
   },
   "tama_config": {
@@ -1870,6 +1850,10 @@
     {
       "ts": "2026-07-19T12:34:38.135251+00:00",
       "idx": 71.92
+    },
+    {
+      "ts": "2026-07-19T13:34:38.147482+00:00",
+      "idx": 71.62
     }
   ],
   "trades_public": [
@@ -2009,6 +1993,13 @@
     {
       "ts": "2026-07-18T15:00:28.598767+00:00",
       "sym": "ARB-USDT",
+      "strat": "TL",
+      "dir": "LONG",
+      "r": 0.0
+    },
+    {
+      "ts": "2026-07-19T14:00:39.583095+00:00",
+      "sym": "BTC-USDT",
       "strat": "TL",
       "dir": "LONG",
       "r": 0.0
