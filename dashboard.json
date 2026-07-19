@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-20T03:17:49.299293+08:00",
+  "generated_at": "2026-07-20T04:18:03.143527+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [
@@ -22,8 +22,8 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-19 12:00:00",
         "entry_bar_time": "2026-07-19 12:00:00",
-        "last_checked_time": "2026-07-19 19:00:00",
-        "bars_elapsed": 7,
+        "last_checked_time": "2026-07-19 20:00:00",
+        "bars_elapsed": 8,
         "opened_ts": "2026-07-19T13:00:10.611618+00:00",
         "status": "open",
         "notion_page_id": "3a20a137-4574-81ef-858b-dd704e60b8f0"
@@ -47,8 +47,8 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-19 18:00:00",
         "entry_bar_time": "2026-07-19 18:00:00",
-        "last_checked_time": "2026-07-19 19:00:00",
-        "bars_elapsed": 1,
+        "last_checked_time": "2026-07-19 20:00:00",
+        "bars_elapsed": 2,
         "opened_ts": "2026-07-19T19:00:03.531851+00:00",
         "status": "open",
         "notion_page_id": "3a20a137-4574-81c1-8f5f-d75565d08e99"
@@ -149,7 +149,7 @@
         "closed_ts": "2026-07-19T17:01:15.155198+00:00"
       }
     ],
-    "last_cycle_ts": "2026-07-19T19:16:42.448477+00:00",
+    "last_cycle_ts": "2026-07-19T20:17:34.926691+00:00",
     "stats": {
       "n": 3,
       "win_rate_pct": 0.0,
@@ -188,8 +188,8 @@
         "highest": 8.372,
         "lowest": 8.272,
         "breakeven_done": false,
-        "bars_elapsed": 27,
-        "last_checked_time": "2026-07-19 19:00:00",
+        "bars_elapsed": 28,
+        "last_checked_time": "2026-07-19 20:00:00",
         "notion_page_id": "3a10a137-4574-8112-809f-e5d08f042341"
       },
       {
@@ -208,12 +208,12 @@
         "highest": 8.372,
         "lowest": 8.272,
         "breakeven_done": false,
-        "bars_elapsed": 27,
-        "last_checked_time": "2026-07-19 19:00:00",
+        "bars_elapsed": 28,
+        "last_checked_time": "2026-07-19 20:00:00",
         "notion_page_id": "3a10a137-4574-8130-9802-cf407c89b15d"
       }
     ],
-    "last_cycle_ts": "2026-07-19T19:16:17.265631+00:00",
+    "last_cycle_ts": "2026-07-19T20:17:22.462500+00:00",
     "stats": {
       "n": 20,
       "win_rate_pct": 0.0,
@@ -1919,6 +1919,10 @@
     {
       "ts": "2026-07-19T18:40:09.493689+00:00",
       "idx": 72.07
+    },
+    {
+      "ts": "2026-07-19T19:40:11.800671+00:00",
+      "idx": 71.91
     }
   ],
   "trades_public": [
