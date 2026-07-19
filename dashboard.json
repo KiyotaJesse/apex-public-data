@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-20T05:18:15.593551+08:00",
+  "generated_at": "2026-07-20T06:18:25.946822+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [
@@ -22,36 +22,11 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-19 12:00:00",
         "entry_bar_time": "2026-07-19 12:00:00",
-        "last_checked_time": "2026-07-19 21:00:00",
-        "bars_elapsed": 9,
+        "last_checked_time": "2026-07-19 22:00:00",
+        "bars_elapsed": 10,
         "opened_ts": "2026-07-19T13:00:10.611618+00:00",
         "status": "open",
         "notion_page_id": "3a20a137-4574-81ef-858b-dd704e60b8f0"
-      },
-      {
-        "id": "stratb_DOGEUSDT_1784487603",
-        "symbol": "DOGE-USDT",
-        "dir": "SHORT",
-        "sig_entry": 0.07203,
-        "fill_price": 0.07203,
-        "qty": 17657.0,
-        "notional_usdt": 1271.8337,
-        "margin_usdt": 25.4367,
-        "leverage": 50,
-        "risk_usdt": 7.329,
-        "sl_price": 0.07244507,
-        "sl_dist": 0.00041507142857143006,
-        "sl_order_id": "2078917804371312640",
-        "open_order_id": "2078917803797331968",
-        "lowest": 0.07197,
-        "breakeven_done": false,
-        "sig_bar_time": "2026-07-19 18:00:00",
-        "entry_bar_time": "2026-07-19 18:00:00",
-        "last_checked_time": "2026-07-19 21:00:00",
-        "bars_elapsed": 3,
-        "opened_ts": "2026-07-19T19:00:03.531851+00:00",
-        "status": "open",
-        "notion_page_id": "3a20a137-4574-81c1-8f5f-d75565d08e99"
       }
     ],
     "closed_trades": [
@@ -147,22 +122,53 @@
         "pnl_usdt": -10.6717,
         "outcome": "LOSS",
         "closed_ts": "2026-07-19T17:01:15.155198+00:00"
+      },
+      {
+        "id": "stratb_DOGEUSDT_1784487603",
+        "symbol": "DOGE-USDT",
+        "dir": "SHORT",
+        "sig_entry": 0.07203,
+        "fill_price": 0.07203,
+        "qty": 17657.0,
+        "notional_usdt": 1271.8337,
+        "margin_usdt": 25.4367,
+        "leverage": 50,
+        "risk_usdt": 7.329,
+        "sl_price": 0.07244507,
+        "sl_dist": 0.00041507142857143006,
+        "sl_order_id": "2078917804371312640",
+        "open_order_id": "2078917803797331968",
+        "lowest": 0.0719,
+        "breakeven_done": false,
+        "sig_bar_time": "2026-07-19 18:00:00",
+        "entry_bar_time": "2026-07-19 18:00:00",
+        "last_checked_time": "2026-07-19 22:00:00",
+        "bars_elapsed": 4,
+        "opened_ts": "2026-07-19T19:00:03.531851+00:00",
+        "status": "open",
+        "notion_page_id": "3a20a137-4574-81c1-8f5f-d75565d08e99",
+        "exit_price": 0.07251,
+        "exit_reason": "sl_hit",
+        "realized_r": -1.33,
+        "pnl_usdt": -8.4754,
+        "outcome": "LOSS",
+        "closed_ts": "2026-07-19T22:16:48.582605+00:00"
       }
     ],
-    "last_cycle_ts": "2026-07-19T21:18:03.679168+00:00",
+    "last_cycle_ts": "2026-07-19T22:17:49.795833+00:00",
     "stats": {
-      "n": 3,
+      "n": 4,
       "win_rate_pct": 0.0,
-      "ev_r": -1.068,
-      "total_pnl_usdt": -25.28,
+      "ev_r": -1.089,
+      "total_pnl_usdt": -33.75,
       "avg_win_usdt": 0,
-      "avg_loss_usdt": -8.43
+      "avg_loss_usdt": -8.44
     }
   },
   "risk_circuit_breaker": {
     "killswitch": false,
     "daily_loss_limit_hit": false,
-    "daily_pnl_usdt": -18.1564,
+    "daily_pnl_usdt": -26.6318,
     "daily_pnl_date": "2026-07-19"
   },
   "feature_flags": {
@@ -188,8 +194,8 @@
         "highest": 8.372,
         "lowest": 8.272,
         "breakeven_done": false,
-        "bars_elapsed": 29,
-        "last_checked_time": "2026-07-19 21:00:00",
+        "bars_elapsed": 30,
+        "last_checked_time": "2026-07-19 22:00:00",
         "notion_page_id": "3a10a137-4574-8112-809f-e5d08f042341"
       },
       {
@@ -208,12 +214,12 @@
         "highest": 8.372,
         "lowest": 8.272,
         "breakeven_done": false,
-        "bars_elapsed": 29,
-        "last_checked_time": "2026-07-19 21:00:00",
+        "bars_elapsed": 30,
+        "last_checked_time": "2026-07-19 22:00:00",
         "notion_page_id": "3a10a137-4574-8130-9802-cf407c89b15d"
       }
     ],
-    "last_cycle_ts": "2026-07-19T21:17:45.160531+00:00",
+    "last_cycle_ts": "2026-07-19T22:17:31.370643+00:00",
     "stats": {
       "n": 20,
       "win_rate_pct": 0.0,
@@ -1927,6 +1933,10 @@
     {
       "ts": "2026-07-19T20:40:22.770302+00:00",
       "idx": 71.22
+    },
+    {
+      "ts": "2026-07-19T21:40:27.344362+00:00",
+      "idx": 72.01
     }
   ],
   "trades_public": [
@@ -2090,6 +2100,13 @@
       "strat": "B1",
       "dir": "SHORT",
       "r": -1.1972
+    },
+    {
+      "ts": "2026-07-19T22:16:48.582605+00:00",
+      "sym": "DOGE-USDT",
+      "strat": "B1",
+      "dir": "SHORT",
+      "r": -1.33
     }
   ],
   "self_upgrades": [
