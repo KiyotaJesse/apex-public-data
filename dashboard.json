@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-19T07:13:58.160523+08:00",
+  "generated_at": "2026-07-19T08:14:08.401341+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [
@@ -22,8 +22,8 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-16 17:00:00",
         "entry_bar_time": "2026-07-16 17:00:00",
-        "last_checked_time": "2026-07-18 23:00:00",
-        "bars_elapsed": 54,
+        "last_checked_time": "2026-07-19 00:00:00",
+        "bars_elapsed": 55,
         "opened_ts": "2026-07-16T18:00:20.026927+00:00",
         "status": "open",
         "notion_page_id": "39f0a137-4574-8166-accb-dfddeb1beaa0"
@@ -62,7 +62,7 @@
         "closed_ts": "2026-07-17T16:11:15.140466+00:00"
       }
     ],
-    "last_cycle_ts": "2026-07-18T23:13:44.246964+00:00",
+    "last_cycle_ts": "2026-07-19T00:13:08.033561+00:00",
     "stats": {
       "n": 1,
       "win_rate_pct": 0.0,
@@ -76,7 +76,7 @@
     "killswitch": false,
     "daily_loss_limit_hit": false,
     "daily_pnl_usdt": 0.0,
-    "daily_pnl_date": "2026-07-18"
+    "daily_pnl_date": "2026-07-19"
   },
   "feature_flags": {
     "a": {},
@@ -98,11 +98,11 @@
         "strategy": "TL",
         "sl_order_id": "2078525404524150784",
         "opened_ts": "2026-07-17T14:08:28.426577+00:00",
-        "highest": 64781.6,
+        "highest": 64818.0,
         "lowest": 63276.9,
         "breakeven_done": false,
-        "bars_elapsed": 33,
-        "last_checked_time": "2026-07-18 23:00:00",
+        "bars_elapsed": 34,
+        "last_checked_time": "2026-07-19 00:00:00",
         "notion_page_id": "3a00a137-4574-81dc-a6d1-d0de777bf2fb"
       },
       {
@@ -121,8 +121,8 @@
         "highest": 8.364,
         "lowest": 8.272,
         "breakeven_done": false,
-        "bars_elapsed": 7,
-        "last_checked_time": "2026-07-18 23:00:00",
+        "bars_elapsed": 8,
+        "last_checked_time": "2026-07-19 00:00:00",
         "notion_page_id": "3a10a137-4574-8112-809f-e5d08f042341"
       },
       {
@@ -141,12 +141,12 @@
         "highest": 8.364,
         "lowest": 8.272,
         "breakeven_done": false,
-        "bars_elapsed": 7,
-        "last_checked_time": "2026-07-18 23:00:00",
+        "bars_elapsed": 8,
+        "last_checked_time": "2026-07-19 00:00:00",
         "notion_page_id": "3a10a137-4574-8130-9802-cf407c89b15d"
       }
     ],
-    "last_cycle_ts": "2026-07-18T23:13:07.508076+00:00",
+    "last_cycle_ts": "2026-07-19T00:12:31.280568+00:00",
     "stats": {
       "n": 19,
       "win_rate_pct": 0.0,
@@ -1764,6 +1764,10 @@
     {
       "ts": "2026-07-18T22:33:37.294187+00:00",
       "idx": 71.17
+    },
+    {
+      "ts": "2026-07-18T23:33:42.405107+00:00",
+      "idx": 71.06
     }
   ],
   "trades_public": [
