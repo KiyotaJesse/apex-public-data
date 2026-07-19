@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-20T02:17:39.085510+08:00",
+  "generated_at": "2026-07-20T03:17:49.299293+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [
@@ -18,15 +18,40 @@
         "sl_dist": 0.006871428571428578,
         "sl_order_id": "2078827237813616640",
         "open_order_id": "2078827236694376448",
-        "lowest": 0.816,
+        "lowest": 0.811,
         "breakeven_done": false,
         "sig_bar_time": "2026-07-19 12:00:00",
         "entry_bar_time": "2026-07-19 12:00:00",
-        "last_checked_time": "2026-07-19 18:00:00",
-        "bars_elapsed": 6,
+        "last_checked_time": "2026-07-19 19:00:00",
+        "bars_elapsed": 7,
         "opened_ts": "2026-07-19T13:00:10.611618+00:00",
         "status": "open",
         "notion_page_id": "3a20a137-4574-81ef-858b-dd704e60b8f0"
+      },
+      {
+        "id": "stratb_DOGEUSDT_1784487603",
+        "symbol": "DOGE-USDT",
+        "dir": "SHORT",
+        "sig_entry": 0.07203,
+        "fill_price": 0.07203,
+        "qty": 17657.0,
+        "notional_usdt": 1271.8337,
+        "margin_usdt": 25.4367,
+        "leverage": 50,
+        "risk_usdt": 7.329,
+        "sl_price": 0.07244507,
+        "sl_dist": 0.00041507142857143006,
+        "sl_order_id": "2078917804371312640",
+        "open_order_id": "2078917803797331968",
+        "lowest": 0.07197,
+        "breakeven_done": false,
+        "sig_bar_time": "2026-07-19 18:00:00",
+        "entry_bar_time": "2026-07-19 18:00:00",
+        "last_checked_time": "2026-07-19 19:00:00",
+        "bars_elapsed": 1,
+        "opened_ts": "2026-07-19T19:00:03.531851+00:00",
+        "status": "open",
+        "notion_page_id": "3a20a137-4574-81c1-8f5f-d75565d08e99"
       }
     ],
     "closed_trades": [
@@ -124,7 +149,7 @@
         "closed_ts": "2026-07-19T17:01:15.155198+00:00"
       }
     ],
-    "last_cycle_ts": "2026-07-19T18:16:35.684139+00:00",
+    "last_cycle_ts": "2026-07-19T19:16:42.448477+00:00",
     "stats": {
       "n": 3,
       "win_rate_pct": 0.0,
@@ -163,8 +188,8 @@
         "highest": 8.372,
         "lowest": 8.272,
         "breakeven_done": false,
-        "bars_elapsed": 26,
-        "last_checked_time": "2026-07-19 18:00:00",
+        "bars_elapsed": 27,
+        "last_checked_time": "2026-07-19 19:00:00",
         "notion_page_id": "3a10a137-4574-8112-809f-e5d08f042341"
       },
       {
@@ -183,12 +208,12 @@
         "highest": 8.372,
         "lowest": 8.272,
         "breakeven_done": false,
-        "bars_elapsed": 26,
-        "last_checked_time": "2026-07-19 18:00:00",
+        "bars_elapsed": 27,
+        "last_checked_time": "2026-07-19 19:00:00",
         "notion_page_id": "3a10a137-4574-8130-9802-cf407c89b15d"
       }
     ],
-    "last_cycle_ts": "2026-07-19T18:16:13.299016+00:00",
+    "last_cycle_ts": "2026-07-19T19:16:17.265631+00:00",
     "stats": {
       "n": 20,
       "win_rate_pct": 0.0,
@@ -1890,6 +1915,10 @@
     {
       "ts": "2026-07-19T17:39:59.926818+00:00",
       "idx": 71.56
+    },
+    {
+      "ts": "2026-07-19T18:40:09.493689+00:00",
+      "idx": 72.07
     }
   ],
   "trades_public": [
