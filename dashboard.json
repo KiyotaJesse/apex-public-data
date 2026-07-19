@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-19T23:17:02.308673+08:00",
+  "generated_at": "2026-07-20T00:17:15.030775+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [
@@ -22,8 +22,8 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-16 17:00:00",
         "entry_bar_time": "2026-07-16 17:00:00",
-        "last_checked_time": "2026-07-19 15:00:00",
-        "bars_elapsed": 70,
+        "last_checked_time": "2026-07-19 16:00:00",
+        "bars_elapsed": 71,
         "opened_ts": "2026-07-16T18:00:20.026927+00:00",
         "status": "open",
         "notion_page_id": "39f0a137-4574-8166-accb-dfddeb1beaa0"
@@ -43,12 +43,12 @@
         "sl_dist": 0.006871428571428578,
         "sl_order_id": "2078827237813616640",
         "open_order_id": "2078827236694376448",
-        "lowest": 0.824,
+        "lowest": 0.823,
         "breakeven_done": false,
         "sig_bar_time": "2026-07-19 12:00:00",
         "entry_bar_time": "2026-07-19 12:00:00",
-        "last_checked_time": "2026-07-19 15:00:00",
-        "bars_elapsed": 3,
+        "last_checked_time": "2026-07-19 16:00:00",
+        "bars_elapsed": 4,
         "opened_ts": "2026-07-19T13:00:10.611618+00:00",
         "status": "open",
         "notion_page_id": "3a20a137-4574-81ef-858b-dd704e60b8f0"
@@ -118,7 +118,7 @@
         "closed_ts": "2026-07-19T14:48:18.352021+00:00"
       }
     ],
-    "last_cycle_ts": "2026-07-19T15:16:07.683852+00:00",
+    "last_cycle_ts": "2026-07-19T16:16:42.365376+00:00",
     "stats": {
       "n": 2,
       "win_rate_pct": 0.0,
@@ -157,8 +157,8 @@
         "highest": 8.372,
         "lowest": 8.272,
         "breakeven_done": false,
-        "bars_elapsed": 23,
-        "last_checked_time": "2026-07-19 15:00:00",
+        "bars_elapsed": 24,
+        "last_checked_time": "2026-07-19 16:00:00",
         "notion_page_id": "3a10a137-4574-8112-809f-e5d08f042341"
       },
       {
@@ -177,12 +177,12 @@
         "highest": 8.372,
         "lowest": 8.272,
         "breakeven_done": false,
-        "bars_elapsed": 23,
-        "last_checked_time": "2026-07-19 15:00:00",
+        "bars_elapsed": 24,
+        "last_checked_time": "2026-07-19 16:00:00",
         "notion_page_id": "3a10a137-4574-8130-9802-cf407c89b15d"
       }
     ],
-    "last_cycle_ts": "2026-07-19T15:15:43.196369+00:00",
+    "last_cycle_ts": "2026-07-19T16:16:17.899641+00:00",
     "stats": {
       "n": 20,
       "win_rate_pct": 0.0,
@@ -1864,6 +1864,10 @@
     {
       "ts": "2026-07-19T14:34:43.552692+00:00",
       "idx": 71.07
+    },
+    {
+      "ts": "2026-07-19T15:34:49.641173+00:00",
+      "idx": 71.3
     }
   ],
   "trades_public": [
