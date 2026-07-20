@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-20T23:22:04.779006+08:00",
+  "generated_at": "2026-07-21T00:22:19.160512+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -253,7 +253,7 @@
         "closed_ts": "2026-07-20T11:40:33.445618+00:00"
       }
     ],
-    "last_cycle_ts": "2026-07-20T15:18:54.341952+00:00",
+    "last_cycle_ts": "2026-07-20T16:21:51.655931+00:00",
     "stats": {
       "n": 8,
       "win_rate_pct": 12.5,
@@ -281,23 +281,23 @@
         "symbol": "BTC-USDT",
         "direction": "LONG",
         "entry": 64312.8,
-        "sl_price": 63513.04285714286,
+        "sl_price": 64312.8,
         "tp_price": 66811.67142857141,
         "sl_dist": 799.7571428571464,
         "qty": 0.004,
         "max_hold_h": 48,
         "strategy": "TL",
-        "sl_order_id": "2079205162052321280",
+        "sl_order_id": "2079234941744939008",
         "opened_ts": "2026-07-20T14:01:54.868921+00:00",
-        "highest": 64428.0,
+        "highest": 65594.9,
         "lowest": 64312.8,
         "breakeven_done": false,
-        "bars_elapsed": 1,
-        "last_checked_time": "2026-07-20 15:00:00",
+        "bars_elapsed": 2,
+        "last_checked_time": "2026-07-20 16:00:00",
         "notion_page_id": "3a30a137-4574-819a-adf6-d9919ff6c56a"
       }
     ],
-    "last_cycle_ts": "2026-07-20T15:19:14.616027+00:00",
+    "last_cycle_ts": "2026-07-20T16:22:09.504605+00:00",
     "stats": {
       "n": 22,
       "win_rate_pct": 9.1,
@@ -2083,6 +2083,10 @@
     {
       "ts": "2026-07-20T14:41:45.079629+00:00",
       "idx": 65.54
+    },
+    {
+      "ts": "2026-07-20T15:41:48.612229+00:00",
+      "idx": 65.96
     }
   ],
   "trades_public": [
