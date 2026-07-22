@@ -4,8 +4,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>L.A.P.D. — 夜城裁決台</title>
 <style>
-@import url('');
-:root{--bg:#05070E;--bg2:#0A0E1A;--panel:#0D1322;--line:#1B2A45;
+:root{--bg:#05070E;--bg2:#0A0E1A;--panel:#0D1322;--panel2:#111A2E;--line:#1B2A45;
 --cyan:#00F0FF;--mag:#FF2E88;--amber:#FFB020;--grn:#2CFF9E;--ink:#D8E4F5;--ink2:#5F7398}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;min-height:100vh;overflow-x:hidden}
@@ -15,6 +14,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:98;
 background:radial-gradient(ellipse at 50% -10%,rgba(255,46,136,.10),transparent 55%),
 radial-gradient(ellipse at 90% 110%,rgba(0,240,255,.07),transparent 50%)}
 .mono{font-family:"Cascadia Code",ui-monospace,Consolas,monospace}
+button{font-family:inherit;cursor:pointer}
 /* ── 登入閘 ── */
 #gate{position:fixed;inset:0;background:var(--bg);z-index:200;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0}
 .glitch{font-size:56px;font-weight:900;letter-spacing:.18em;color:var(--cyan);position:relative;
@@ -30,7 +30,7 @@ text-shadow:0 0 18px rgba(0,240,255,.55);font-family:"Cascadia Code",Consolas,mo
 font-family:Consolas,monospace;font-size:16px;padding:13px 16px;text-align:center;outline:none;letter-spacing:.2em}
 #gate input:focus{box-shadow:0 0 22px rgba(0,240,255,.3)}
 #gate button{margin-top:16px;width:300px;background:transparent;border:1px solid var(--mag);color:var(--mag);
-font-size:14px;letter-spacing:.4em;padding:12px;cursor:pointer;font-weight:700}
+font-size:14px;letter-spacing:.4em;padding:12px;font-weight:700}
 #gate button:hover{background:rgba(255,46,136,.12);box-shadow:0 0 24px rgba(255,46,136,.35)}
 #gerr{color:var(--mag);font-size:12px;margin-top:14px;min-height:16px;font-family:Consolas,monospace}
 /* ── 主畫面 ── */
@@ -39,9 +39,9 @@ font-size:14px;letter-spacing:.4em;padding:12px;cursor:pointer;font-weight:700}
 .hd h1{font-size:26px;margin:0;color:var(--cyan);letter-spacing:.14em;font-family:Consolas,monospace;text-shadow:0 0 14px rgba(0,240,255,.4)}
 .hd .st{color:var(--ink2);font-size:11.5px;font-family:Consolas,monospace}
 nav{display:flex;gap:2px;margin:14px 0 22px;flex-wrap:wrap}
-nav a{font-size:12px;letter-spacing:.2em;padding:8px 18px;color:var(--ink2);border:1px solid var(--line);text-decoration:none;cursor:pointer}
+nav a{font-size:12px;letter-spacing:.2em;padding:8px 18px;color:var(--ink2);border:1px solid var(--line)}
 nav a.on{color:var(--cyan);border-color:var(--cyan);background:rgba(0,240,255,.06)}
-nav a.soon{opacity:.4;cursor:default}
+nav a.soon{opacity:.4}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:22px}
 .stat{background:var(--panel);border:1px solid var(--line);padding:12px 16px;position:relative;overflow:hidden}
 .stat::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--cyan)}
@@ -58,17 +58,37 @@ nav a.soon{opacity:.4;cursor:default}
 .case .bd{font-size:13px;color:var(--ink2);line-height:1.7}
 .case .bd b{color:var(--ink)}
 .case .acts{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
-.case .acts a{font-size:12.5px;letter-spacing:.12em;padding:8px 18px;text-decoration:none;border:1px solid;font-weight:700}
-.ok{color:var(--grn);border-color:var(--grn)}.ok:hover{background:rgba(44,255,158,.12)}
-.no{color:var(--mag);border-color:var(--mag)}.no:hover{background:rgba(255,46,136,.12)}
-.tk{color:var(--cyan);border-color:var(--cyan)}.tk:hover{background:rgba(0,240,255,.10)}
+.case .acts button{font-size:12.5px;letter-spacing:.1em;padding:8px 18px;border:1px solid;font-weight:700;background:transparent}
+.ok{color:var(--grn);border-color:var(--grn)}.ok:hover{background:rgba(44,255,158,.12);box-shadow:0 0 16px rgba(44,255,158,.25)}
+.no{color:var(--mag);border-color:var(--mag)}.no:hover{background:rgba(255,46,136,.12);box-shadow:0 0 16px rgba(255,46,136,.25)}
+.tk{color:var(--cyan);border-color:var(--cyan)}.tk:hover{background:rgba(0,240,255,.10);box-shadow:0 0 16px rgba(0,240,255,.22)}
 .sev{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.2em;padding:1px 9px;border:1px solid;vertical-align:2px;margin-right:8px;font-family:Consolas,monospace}
-.sev.M{color:var(--amber);border-color:var(--amber)}
-.sev.L{color:var(--mag);border-color:var(--mag)}
-.done{opacity:.45}
+.sev.M{color:var(--amber);border-color:var(--amber)}.sev.L{color:var(--mag);border-color:var(--mag)}
+.demo{display:inline-block;font-size:9.5px;letter-spacing:.15em;color:var(--ink2);border:1px solid var(--line);padding:1px 7px;margin-left:8px;vertical-align:2px}
+.done{opacity:.5}
 .empty{color:var(--ink2);text-align:center;padding:50px 0;font-size:14px;letter-spacing:.2em}
 h2.sec{font-size:12px;letter-spacing:.3em;color:var(--ink2);margin:26px 0 12px;font-family:Consolas,monospace}
 .note{font-size:11px;color:var(--ink2);border-top:1px solid var(--line);margin-top:34px;padding-top:14px;line-height:1.9}
+/* ── 裁決確認層(頁內, 不跳轉) ── */
+#modal{position:fixed;inset:0;z-index:300;background:rgba(3,5,12,.86);display:none;align-items:center;justify-content:center;padding:20px}
+#modal.show{display:flex;animation:fade .18s}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.sheet{background:var(--panel2);border:1px solid var(--cyan);max-width:440px;width:100%;padding:24px 24px 22px;position:relative;
+box-shadow:0 0 40px rgba(0,240,255,.18)}
+.sheet .vh{font-size:11px;letter-spacing:.3em;color:var(--ink2);font-family:Consolas,monospace;margin-bottom:8px}
+.sheet h3{margin:0 0 6px;font-size:18px;color:var(--cyan)}
+.sheet h3.no{color:var(--mag)}
+.sheet .cs{font-size:13px;color:var(--ink);line-height:1.6;margin-bottom:18px}
+.sheet .big{display:block;width:100%;text-align:center;text-decoration:none;font-size:15px;font-weight:700;letter-spacing:.1em;
+padding:14px;border:1px solid var(--cyan);color:var(--cyan);margin-bottom:10px}
+.sheet .big:hover{background:rgba(0,240,255,.12);box-shadow:0 0 22px rgba(0,240,255,.3)}
+.sheet .big.no{border-color:var(--mag);color:var(--mag)}
+.sheet .big.no:hover{background:rgba(255,46,136,.12)}
+.sheet .fallback{font-size:11px;color:var(--ink2);text-align:center;margin:8px 0 14px;font-family:Consolas,monospace;word-break:break-all;line-height:1.6}
+.sheet .fallback a{color:var(--ink2)}
+.sheet .x{background:transparent;border:1px solid var(--line);color:var(--ink2);width:100%;padding:10px;font-size:12px;letter-spacing:.2em}
+.sheet .x:hover{border-color:var(--ink);color:var(--ink)}
+.sheet .demonote{font-size:11.5px;color:var(--amber);border:1px solid var(--amber);padding:8px 12px;margin-bottom:16px;line-height:1.6}
 </style>
 </head>
 <body>
@@ -82,18 +102,16 @@ h2.sec{font-size:12px;letter-spacing:.3em;color:var(--ink2);margin:26px 0 12px;f
 <div id="app">
   <div class="hd"><h1>L.A.P.D.</h1><span class="st" id="gen"></span></div>
   <nav>
-    <a class="on">🗂 案件簿</a>
-    <a class="soon">📡 系統狀態(預留)</a>
-    <a class="soon">🏭 創業戰情(預留)</a>
-    <a class="soon">📁 檔案庫(預留)</a>
+    <a class="on">案件簿</a><a class="soon">系統狀態(預留)</a><a class="soon">創業戰情(預留)</a><a class="soon">檔案庫(預留)</a>
   </nav>
   <div class="stats" id="stats"></div>
-  <h2 class="sec">// PENDING VERDICTS — 點按鈕會開你的 Telegram 完成裁決(授權=你本人的TG)</h2>
+  <h2 class="sec">// PENDING VERDICTS</h2>
   <div id="pending"></div>
-  <h2 class="sec">// RESOLVED — 近期已裁決</h2>
+  <h2 class="sec">// RESOLVED</h2>
   <div id="resolved"></div>
-  <div class="note">加密說明:本頁資料以 AES-256-GCM 加密存放於公開儲存庫,ACCESS CODE 即解密金鑰(PBKDF2-SHA256×20萬輪),伺服器端無明文。裁決動作經由你的 Telegram 授權通道執行,本頁本身無寫入權限——撿到密碼的人最多只能「看」,不能「動」。小錯誤(S級)由 LAPD 自動修復不經此台;此台只裁 M/L 級。</div>
+  <div class="note">加密說明:案件簿以 AES-256-GCM 加密存放,ACCESS CODE 即解密金鑰(PBKDF2-SHA256×20萬輪),撿到網址的人沒密碼只看到亂碼。裁決一律經你本人的 Telegram 授權執行,本頁無寫入權限。S 級小錯由 LAPD 自動修復,此台只裁 M/L 級。</div>
 </div>
+<div id="modal"><div class="sheet" id="sheet"></div></div>
 <script>
 const BOT='xrp_apex_bot';
 async function unlock(){
@@ -102,15 +120,15 @@ async function unlock(){
   err.textContent='DECRYPTING…';
   try{
     const r=await fetch('./lapd_data.enc?t='+Date.now(),{cache:'no-store'});
-    if(!r.ok)throw new Error('案件簿尚未發布(等LAPD首次巡邏)');
+    if(!r.ok)throw new Error('案件簿尚未發布(等 LAPD 首次巡邏)');
     const blob=atob((await r.text()).trim());
     const raw=Uint8Array.from(blob,c=>c.charCodeAt(0));
     const salt=raw.slice(0,16),nonce=raw.slice(16,28),ct=raw.slice(28);
     const km=await crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveKey']);
     const key=await crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations:200000,hash:'SHA-256'},km,{name:'AES-GCM',length:256},false,['decrypt']);
     const pt=await crypto.subtle.decrypt({name:'AES-GCM',iv:nonce},key,ct);
-    const data=JSON.parse(new TextDecoder().decode(pt));
-    render(data);
+    window.__DATA=JSON.parse(new TextDecoder().decode(pt));
+    render(window.__DATA);
     document.getElementById('gate').style.display='none';
     document.getElementById('app').style.display='block';
   }catch(e){
@@ -118,21 +136,42 @@ async function unlock(){
   }
 }
 document.getElementById('pw').addEventListener('keydown',e=>{if(e.key==='Enter')unlock()});
-function esc(s){return String(s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))}
+function esc(s){return String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function findCase(id){return (window.__DATA.cases||[]).find(c=>c.id===id)}
+function verdict(id,approve){
+  const c=findCase(id); if(!c)return;
+  const isDemo=String(id).startsWith('c_demo');
+  const tag=approve?'lapdok':'lapdno';
+  const url=`https://t.me/${BOT}?start=${tag}_${id}`;
+  const title=approve?'核准修復':'駁回歸檔';
+  const sheet=document.getElementById('sheet');
+  sheet.innerHTML=`<div class="vh">VERDICT · ${esc(id)}</div>
+    <h3 class="${approve?'':'no'}">${approve?'✅ ':'❌ '}${title}</h3>
+    <div class="cs">${esc(c.title)}</div>
+    ${isDemo?`<div class="demonote">這是示範案件——真實案件在此會開啟你的 Telegram 完成裁決。示範不寫入,點下方按鈕可預覽跳轉行為。</div>`:''}
+    <a class="big ${approve?'':'no'}" href="${url}" target="_blank" rel="noopener" onclick="afterOpen()">在 Telegram 確認 →</a>
+    <div class="fallback">沒自動開啟?手動複製:<br><a href="${url}" target="_blank" rel="noopener">${esc(url)}</a></div>
+    <button class="x" onclick="closeModal()">取消</button>`;
+  document.getElementById('modal').classList.add('show');
+}
+function afterOpen(){setTimeout(closeModal,400)}
+function discuss(){window.open(`https://t.me/${BOT}`,'_blank','noopener')}
+function closeModal(){document.getElementById('modal').classList.remove('show')}
+document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal()});
 function card(c,done){
-  const dl=t=>`https://t.me/${BOT}?start=${t}_${c.id}`;
+  const isDemo=String(c.id).startsWith('c_demo');
   return `<div class="case ${c.severity}${done?' done':''}"><div class="in">
-  <h3><span class="sev ${c.severity}">${c.severity==='M'?'MID':'CRITICAL'}</span>${esc(c.title)}</h3>
+  <h3><span class="sev ${c.severity}">${c.severity==='M'?'MID':'CRITICAL'}</span>${esc(c.title)}${isDemo?'<span class="demo">DEMO</span>':''}</h3>
   <div class="meta">${esc(c.id)} · ${esc(c.ts)} · ${esc(c.repo)}/${esc(c.file)}${done?' · '+esc(c.status).toUpperCase():''}</div>
   <div class="bd"><b>狀況</b>:${esc(c.detail)||'—'}<br><b>LAPD 建議</b>:${esc(c.proposal)||'—'}</div>
   ${done?'':`<div class="acts">
-    <a class="ok" href="${dl('lapdok')}">✅ 核准修復</a>
-    <a class="no" href="${dl('lapdno')}">❌ 駁回</a>
-    <a class="tk" href="https://t.me/${BOT}">💬 開TG討論</a>
+    <button class="ok" onclick="verdict('${c.id}',true)">✅ 核准修復</button>
+    <button class="no" onclick="verdict('${c.id}',false)">❌ 駁回</button>
+    <button class="tk" onclick="discuss()">💬 開TG討論</button>
   </div>`}
   </div></div>`}
 function render(d){
-  document.getElementById('gen').textContent='CASE FILE '+ (d.generated||'') +' · ENCRYPTED CHANNEL';
+  document.getElementById('gen').textContent='CASE FILE '+(d.generated||'')+' · ENCRYPTED CHANNEL';
   const cs=d.cases||[];
   const pend=cs.filter(c=>c.status==='pending').reverse();
   const done=cs.filter(c=>c.status!=='pending').reverse().slice(0,10);
