@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T20:25:50.142491+08:00",
+  "generated_at": "2026-07-22T21:25:56.380451+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -253,7 +253,7 @@
         "closed_ts": "2026-07-20T11:40:33.445618+00:00"
       }
     ],
-    "last_cycle_ts": "2026-07-22T12:21:58.694467+00:00",
+    "last_cycle_ts": "2026-07-22T13:25:26.041476+00:00",
     "stats": {
       "n": 8,
       "win_rate_pct": 12.5,
@@ -292,12 +292,32 @@
         "highest": 0.84,
         "lowest": 0.838,
         "breakeven_done": false,
-        "bars_elapsed": 2,
-        "last_checked_time": "2026-07-22 12:00:00",
+        "bars_elapsed": 3,
+        "last_checked_time": "2026-07-22 13:00:00",
         "notion_page_id": "3a50a137-4574-8148-b191-e8c7b45c1fd2"
+      },
+      {
+        "id": "strattl_SOLUSDT_1784725556",
+        "symbol": "SOL-USDT",
+        "direction": "LONG",
+        "entry": 77.211,
+        "sl_price": 76.40014285714285,
+        "tp_price": 79.64357142857143,
+        "sl_dist": 0.8108571428571452,
+        "qty": 4.17,
+        "max_hold_h": 48,
+        "strategy": "TL",
+        "sl_order_id": "2079916113026187264",
+        "opened_ts": "2026-07-22T13:06:58.757916+00:00",
+        "highest": 77.211,
+        "lowest": 77.211,
+        "breakeven_done": false,
+        "bars_elapsed": 0,
+        "last_checked_time": "2026-07-22T13:06:58.757916+00:00",
+        "notion_page_id": "3a50a137-4574-813c-9c8f-cf01b5901908"
       }
     ],
-    "last_cycle_ts": "2026-07-22T12:22:37.705986+00:00",
+    "last_cycle_ts": "2026-07-22T13:25:48.221006+00:00",
     "stats": {
       "n": 23,
       "win_rate_pct": 13.0,
@@ -2271,6 +2291,10 @@
     {
       "ts": "2026-07-22T11:42:04.350931+00:00",
       "idx": 67.17
+    },
+    {
+      "ts": "2026-07-22T12:42:06.234077+00:00",
+      "idx": 67.08
     }
   ],
   "trades_public": [
