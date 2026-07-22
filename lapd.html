@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>L.A.P.D. — 夜城裁決台</title>
+<style>
+@import url('');
+:root{--bg:#05070E;--bg2:#0A0E1A;--panel:#0D1322;--line:#1B2A45;
+--cyan:#00F0FF;--mag:#FF2E88;--amber:#FFB020;--grn:#2CFF9E;--ink:#D8E4F5;--ink2:#5F7398}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;min-height:100vh;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:99;
+background:repeating-linear-gradient(0deg,transparent 0 2px,rgba(0,240,255,.012) 2px 4px)}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:98;
+background:radial-gradient(ellipse at 50% -10%,rgba(255,46,136,.10),transparent 55%),
+radial-gradient(ellipse at 90% 110%,rgba(0,240,255,.07),transparent 50%)}
+.mono{font-family:"Cascadia Code",ui-monospace,Consolas,monospace}
+/* ── 登入閘 ── */
+#gate{position:fixed;inset:0;background:var(--bg);z-index:200;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0}
+.glitch{font-size:56px;font-weight:900;letter-spacing:.18em;color:var(--cyan);position:relative;
+text-shadow:0 0 18px rgba(0,240,255,.55);font-family:"Cascadia Code",Consolas,monospace}
+.glitch::before,.glitch::after{content:"L.A.P.D.";position:absolute;inset:0}
+.glitch::before{color:var(--mag);clip-path:inset(28% 0 48% 0);transform:translate(-2px,1px);opacity:.85;animation:g1 2.8s infinite steps(1)}
+.glitch::after{color:var(--amber);clip-path:inset(62% 0 12% 0);transform:translate(2px,-1px);opacity:.7;animation:g2 3.7s infinite steps(1)}
+@keyframes g1{0%,92%{clip-path:inset(28% 0 48% 0)}93%{clip-path:inset(5% 0 80% 0)}96%{clip-path:inset(70% 0 8% 0)}98%{clip-path:inset(40% 0 30% 0)}}
+@keyframes g2{0%,90%{clip-path:inset(62% 0 12% 0)}91%{clip-path:inset(20% 0 60% 0)}95%{clip-path:inset(85% 0 2% 0)}}
+@media (prefers-reduced-motion:reduce){.glitch::before,.glitch::after{animation:none}}
+#gate .sub{color:var(--ink2);font-size:12px;letter-spacing:.5em;margin:10px 0 42px}
+#gate input{width:300px;background:var(--panel);border:1px solid var(--cyan);color:var(--cyan);
+font-family:Consolas,monospace;font-size:16px;padding:13px 16px;text-align:center;outline:none;letter-spacing:.2em}
+#gate input:focus{box-shadow:0 0 22px rgba(0,240,255,.3)}
+#gate button{margin-top:16px;width:300px;background:transparent;border:1px solid var(--mag);color:var(--mag);
+font-size:14px;letter-spacing:.4em;padding:12px;cursor:pointer;font-weight:700}
+#gate button:hover{background:rgba(255,46,136,.12);box-shadow:0 0 24px rgba(255,46,136,.35)}
+#gerr{color:var(--mag);font-size:12px;margin-top:14px;min-height:16px;font-family:Consolas,monospace}
+/* ── 主畫面 ── */
+#app{display:none;max-width:1020px;margin:0 auto;padding:26px 16px 80px;position:relative;z-index:10}
+.hd{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:6px}
+.hd h1{font-size:26px;margin:0;color:var(--cyan);letter-spacing:.14em;font-family:Consolas,monospace;text-shadow:0 0 14px rgba(0,240,255,.4)}
+.hd .st{color:var(--ink2);font-size:11.5px;font-family:Consolas,monospace}
+nav{display:flex;gap:2px;margin:14px 0 22px;flex-wrap:wrap}
+nav a{font-size:12px;letter-spacing:.2em;padding:8px 18px;color:var(--ink2);border:1px solid var(--line);text-decoration:none;cursor:pointer}
+nav a.on{color:var(--cyan);border-color:var(--cyan);background:rgba(0,240,255,.06)}
+nav a.soon{opacity:.4;cursor:default}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:22px}
+.stat{background:var(--panel);border:1px solid var(--line);padding:12px 16px;position:relative;overflow:hidden}
+.stat::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--cyan)}
+.stat.m::before{background:var(--amber)}.stat.l::before{background:var(--mag)}.stat.g::before{background:var(--grn)}
+.stat .n{font-size:26px;font-weight:800;font-family:Consolas,monospace}
+.stat .t{font-size:11px;color:var(--ink2);letter-spacing:.2em}
+.case{background:var(--panel);border:1px solid var(--line);margin-bottom:12px;position:relative;overflow:hidden}
+.case::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px}
+.case.M::before{background:var(--amber);box-shadow:0 0 12px var(--amber)}
+.case.L::before{background:var(--mag);box-shadow:0 0 12px var(--mag)}
+.case .in{padding:14px 18px 14px 22px}
+.case h3{margin:0 0 4px;font-size:15px}
+.case .meta{font-size:11px;color:var(--ink2);font-family:Consolas,monospace;margin-bottom:8px}
+.case .bd{font-size:13px;color:var(--ink2);line-height:1.7}
+.case .bd b{color:var(--ink)}
+.case .acts{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+.case .acts a{font-size:12.5px;letter-spacing:.12em;padding:8px 18px;text-decoration:none;border:1px solid;font-weight:700}
+.ok{color:var(--grn);border-color:var(--grn)}.ok:hover{background:rgba(44,255,158,.12)}
+.no{color:var(--mag);border-color:var(--mag)}.no:hover{background:rgba(255,46,136,.12)}
+.tk{color:var(--cyan);border-color:var(--cyan)}.tk:hover{background:rgba(0,240,255,.10)}
+.sev{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.2em;padding:1px 9px;border:1px solid;vertical-align:2px;margin-right:8px;font-family:Consolas,monospace}
+.sev.M{color:var(--amber);border-color:var(--amber)}
+.sev.L{color:var(--mag);border-color:var(--mag)}
+.done{opacity:.45}
+.empty{color:var(--ink2);text-align:center;padding:50px 0;font-size:14px;letter-spacing:.2em}
+h2.sec{font-size:12px;letter-spacing:.3em;color:var(--ink2);margin:26px 0 12px;font-family:Consolas,monospace}
+.note{font-size:11px;color:var(--ink2);border-top:1px solid var(--line);margin-top:34px;padding-top:14px;line-height:1.9}
+</style>
+</head>
+<body>
+<div id="gate">
+  <div class="glitch">L.A.P.D.</div>
+  <div class="sub">NIGHT CITY · 全系統巡警裁決台</div>
+  <input id="pw" type="password" placeholder="ACCESS CODE" autocomplete="current-password">
+  <button onclick="unlock()">JACK IN</button>
+  <div id="gerr"></div>
+</div>
+<div id="app">
+  <div class="hd"><h1>L.A.P.D.</h1><span class="st" id="gen"></span></div>
+  <nav>
+    <a class="on">🗂 案件簿</a>
+    <a class="soon">📡 系統狀態(預留)</a>
+    <a class="soon">🏭 創業戰情(預留)</a>
+    <a class="soon">📁 檔案庫(預留)</a>
+  </nav>
+  <div class="stats" id="stats"></div>
+  <h2 class="sec">// PENDING VERDICTS — 點按鈕會開你的 Telegram 完成裁決(授權=你本人的TG)</h2>
+  <div id="pending"></div>
+  <h2 class="sec">// RESOLVED — 近期已裁決</h2>
+  <div id="resolved"></div>
+  <div class="note">加密說明:本頁資料以 AES-256-GCM 加密存放於公開儲存庫,ACCESS CODE 即解密金鑰(PBKDF2-SHA256×20萬輪),伺服器端無明文。裁決動作經由你的 Telegram 授權通道執行,本頁本身無寫入權限——撿到密碼的人最多只能「看」,不能「動」。小錯誤(S級)由 LAPD 自動修復不經此台;此台只裁 M/L 級。</div>
+</div>
+<script>
+const BOT='xrp_apex_bot';
+async function unlock(){
+  const pw=document.getElementById('pw').value;
+  const err=document.getElementById('gerr');
+  err.textContent='DECRYPTING…';
+  try{
+    const r=await fetch('./lapd_data.enc?t='+Date.now(),{cache:'no-store'});
+    if(!r.ok)throw new Error('案件簿尚未發布(等LAPD首次巡邏)');
+    const blob=atob((await r.text()).trim());
+    const raw=Uint8Array.from(blob,c=>c.charCodeAt(0));
+    const salt=raw.slice(0,16),nonce=raw.slice(16,28),ct=raw.slice(28);
+    const km=await crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveKey']);
+    const key=await crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations:200000,hash:'SHA-256'},km,{name:'AES-GCM',length:256},false,['decrypt']);
+    const pt=await crypto.subtle.decrypt({name:'AES-GCM',iv:nonce},key,ct);
+    const data=JSON.parse(new TextDecoder().decode(pt));
+    render(data);
+    document.getElementById('gate').style.display='none';
+    document.getElementById('app').style.display='block';
+  }catch(e){
+    err.textContent=String(e).includes('尚未發布')?'⚠ '+e.message:'✖ ACCESS DENIED — 密碼錯誤';
+  }
+}
+document.getElementById('pw').addEventListener('keydown',e=>{if(e.key==='Enter')unlock()});
+function esc(s){return String(s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))}
+function card(c,done){
+  const dl=t=>`https://t.me/${BOT}?start=${t}_${c.id}`;
+  return `<div class="case ${c.severity}${done?' done':''}"><div class="in">
+  <h3><span class="sev ${c.severity}">${c.severity==='M'?'MID':'CRITICAL'}</span>${esc(c.title)}</h3>
+  <div class="meta">${esc(c.id)} · ${esc(c.ts)} · ${esc(c.repo)}/${esc(c.file)}${done?' · '+esc(c.status).toUpperCase():''}</div>
+  <div class="bd"><b>狀況</b>:${esc(c.detail)||'—'}<br><b>LAPD 建議</b>:${esc(c.proposal)||'—'}</div>
+  ${done?'':`<div class="acts">
+    <a class="ok" href="${dl('lapdok')}">✅ 核准修復</a>
+    <a class="no" href="${dl('lapdno')}">❌ 駁回</a>
+    <a class="tk" href="https://t.me/${BOT}">💬 開TG討論</a>
+  </div>`}
+  </div></div>`}
+function render(d){
+  document.getElementById('gen').textContent='CASE FILE '+ (d.generated||'') +' · ENCRYPTED CHANNEL';
+  const cs=d.cases||[];
+  const pend=cs.filter(c=>c.status==='pending').reverse();
+  const done=cs.filter(c=>c.status!=='pending').reverse().slice(0,10);
+  const m=pend.filter(c=>c.severity==='M').length,l=pend.filter(c=>c.severity==='L').length;
+  document.getElementById('stats').innerHTML=
+    `<div class="stat g"><div class="n">AUTO</div><div class="t">S級·自動修復</div></div>
+     <div class="stat m"><div class="n">${m}</div><div class="t">M級·待裁決</div></div>
+     <div class="stat l"><div class="n">${l}</div><div class="t">L級·待裁決</div></div>
+     <div class="stat"><div class="n">${done.length}</div><div class="t">近期已結案</div></div>`;
+  document.getElementById('pending').innerHTML=pend.length?pend.map(c=>card(c,false)).join(''):'<div class="empty">— 案件簿乾淨 · 夜城無事 —</div>';
+  document.getElementById('resolved').innerHTML=done.length?done.map(c=>card(c,true)).join(''):'<div class="empty">—</div>';
+}
+</script>
+</body>
+</html>
