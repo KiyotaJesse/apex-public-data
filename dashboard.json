@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T08:37:44.364443+08:00",
+  "generated_at": "2026-07-22T09:37:56.368588+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -253,7 +253,7 @@
         "closed_ts": "2026-07-20T11:40:33.445618+00:00"
       }
     ],
-    "last_cycle_ts": "2026-07-22T00:34:29.918067+00:00",
+    "last_cycle_ts": "2026-07-22T01:35:07.383524+00:00",
     "stats": {
       "n": 8,
       "win_rate_pct": 12.5,
@@ -275,35 +275,14 @@
   },
   "strat_tl": {
     "mode": "live",
-    "open_positions": [
-      {
-        "id": "strattl_BTCUSDT_1784556052",
-        "symbol": "BTC-USDT",
-        "direction": "LONG",
-        "entry": 64312.8,
-        "sl_price": 65112.55714286,
-        "tp_price": 66811.67142857141,
-        "sl_dist": 799.7571428571464,
-        "qty": 0.004,
-        "max_hold_h": 48,
-        "strategy": "TL",
-        "sl_order_id": "2079536937064562688",
-        "opened_ts": "2026-07-20T14:01:54.868921+00:00",
-        "highest": 66803.8,
-        "lowest": 64312.8,
-        "breakeven_done": false,
-        "bars_elapsed": 34,
-        "last_checked_time": "2026-07-22 00:00:00",
-        "notion_page_id": "3a30a137-4574-819a-adf6-d9919ff6c56a"
-      }
-    ],
-    "last_cycle_ts": "2026-07-22T00:35:08.531952+00:00",
+    "open_positions": [],
+    "last_cycle_ts": "2026-07-22T01:34:46.611749+00:00",
     "stats": {
-      "n": 22,
-      "win_rate_pct": 9.1,
-      "ev_r": -0.566,
-      "total_pnl_usdt": -12.44,
-      "avg_win_usdt": 0.96,
+      "n": 23,
+      "win_rate_pct": 13.0,
+      "ev_r": -0.498,
+      "total_pnl_usdt": -11.44,
+      "avg_win_usdt": 0.97,
       "avg_loss_usdt": -0.72
     }
   },
@@ -2219,6 +2198,10 @@
     {
       "ts": "2026-07-22T00:18:55.458272+00:00",
       "idx": 67.23
+    },
+    {
+      "ts": "2026-07-22T01:18:57.564614+00:00",
+      "idx": 67.23
     }
   ],
   "trades_public": [
@@ -2431,6 +2414,13 @@
       "strat": "TL",
       "dir": "LONG",
       "r": 0.918
+    },
+    {
+      "ts": "2026-07-22T01:08:03.796161+00:00",
+      "sym": "BTC-USDT",
+      "strat": "TL",
+      "dir": "LONG",
+      "r": 1.0
     }
   ],
   "self_upgrades": [
