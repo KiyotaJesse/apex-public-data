@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T17:25:33.013719+08:00",
+  "generated_at": "2026-07-22T18:25:38.551070+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -253,7 +253,7 @@
         "closed_ts": "2026-07-20T11:40:33.445618+00:00"
       }
     ],
-    "last_cycle_ts": "2026-07-22T09:22:19.469924+00:00",
+    "last_cycle_ts": "2026-07-22T10:22:34.410940+00:00",
     "stats": {
       "n": 8,
       "win_rate_pct": 12.5,
@@ -275,8 +275,29 @@
   },
   "strat_tl": {
     "mode": "live",
-    "open_positions": [],
-    "last_cycle_ts": "2026-07-22T09:21:26.411884+00:00",
+    "open_positions": [
+      {
+        "id": "strattl_DOTUSDT_1784714410",
+        "symbol": "DOT-USDT",
+        "direction": "LONG",
+        "entry": 0.838,
+        "sl_price": 0.8254857142857143,
+        "tp_price": 0.8735428571428572,
+        "sl_dist": 0.0125142857142857,
+        "qty": 281.9,
+        "max_hold_h": 48,
+        "strategy": "TL",
+        "sl_order_id": "2079869348877008896",
+        "opened_ts": "2026-07-22T10:01:09.241375+00:00",
+        "highest": 0.838,
+        "lowest": 0.838,
+        "breakeven_done": false,
+        "bars_elapsed": 0,
+        "last_checked_time": "2026-07-22T10:01:09.241375+00:00",
+        "notion_page_id": "3a50a137-4574-8148-b191-e8c7b45c1fd2"
+      }
+    ],
+    "last_cycle_ts": "2026-07-22T10:23:07.142390+00:00",
     "stats": {
       "n": 23,
       "win_rate_pct": 13.0,
@@ -324,7 +345,7 @@
     },
     "applied": {
       "applied_sha": "cbf83a980096380d2482052c28ba143252b24123",
-      "applied_at": "2026-07-22T09:12:46.645368+00:00",
+      "applied_at": "2026-07-22T09:41:49.721207+00:00",
       "changes": [
         "b1.cycle_seconds: 300 -> 60",
         "tl.risk_pct: 0.02 -> 0.01",
@@ -2237,6 +2258,10 @@
     },
     {
       "ts": "2026-07-22T09:12:52.506497+00:00",
+      "idx": 67.23
+    },
+    {
+      "ts": "2026-07-22T09:41:56.114368+00:00",
       "idx": 67.23
     }
   ],
