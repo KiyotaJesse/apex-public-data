@@ -1,8 +1,84 @@
 {
-  "generated_at": "2026-07-23T21:11:40.710101+08:00",
+  "generated_at": "2026-07-23T22:11:45.974523+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
-    "open_positions": [],
+    "open_positions": [
+      {
+        "id": "stratb_BNBUSDT_1784815236",
+        "symbol": "BNB-USDT",
+        "dir": "SHORT",
+        "sig_entry": 566.23,
+        "fill_price": 566.08,
+        "qty": 3.11,
+        "notional_usdt": 1760.5088,
+        "margin_usdt": 35.2102,
+        "leverage": 50,
+        "risk_usdt": 6.6045,
+        "sl_price": 568.34992857,
+        "sl_dist": 2.1199285714285856,
+        "sl_order_id": "2080291995569979392",
+        "open_order_id": "2080291995134410752",
+        "lowest": 566.04,
+        "breakeven_done": false,
+        "sig_bar_time": "2026-07-23 13:00:00",
+        "entry_bar_time": "2026-07-23 13:00:00",
+        "last_checked_time": "2026-07-23 14:00:00",
+        "bars_elapsed": 1,
+        "opened_ts": "2026-07-23T14:00:36.274264+00:00",
+        "status": "open",
+        "notion_page_id": "3a60a137-4574-812d-ad3f-c5eaa83dbadf"
+      },
+      {
+        "id": "stratb_DOGEUSDT_1784815241",
+        "symbol": "DOGE-USDT",
+        "dir": "SHORT",
+        "sig_entry": 0.07025,
+        "fill_price": 0.0702,
+        "qty": 11044.0,
+        "notional_usdt": 775.2888,
+        "margin_usdt": 16.1518,
+        "leverage": 48,
+        "risk_usdt": 6.5737,
+        "sl_price": 0.07084521,
+        "sl_dist": 0.0005952142857142831,
+        "sl_order_id": "2080292017871093760",
+        "open_order_id": "2080292017238392832",
+        "lowest": 0.0701,
+        "breakeven_done": false,
+        "sig_bar_time": "2026-07-23 13:00:00",
+        "entry_bar_time": "2026-07-23 13:00:00",
+        "last_checked_time": "2026-07-23 14:00:00",
+        "bars_elapsed": 1,
+        "opened_ts": "2026-07-23T14:00:41.553156+00:00",
+        "status": "open",
+        "notion_page_id": "3a60a137-4574-81f6-8925-c2fe4b05a78e"
+      },
+      {
+        "id": "stratb_ATOMUSDT_1784815247",
+        "symbol": "ATOM-USDT",
+        "dir": "SHORT",
+        "sig_entry": 1.434,
+        "fill_price": 1.433,
+        "qty": 480.05,
+        "notional_usdt": 687.9117,
+        "margin_usdt": 14.9546,
+        "leverage": 46,
+        "risk_usdt": 6.5527,
+        "sl_price": 1.44765,
+        "sl_dist": 0.013650000000000044,
+        "sl_order_id": "2080292044425232384",
+        "open_order_id": "2080292043947720704",
+        "lowest": 1.433,
+        "breakeven_done": false,
+        "sig_bar_time": "2026-07-23 13:00:00",
+        "entry_bar_time": "2026-07-23 13:00:00",
+        "last_checked_time": "2026-07-23 14:00:00",
+        "bars_elapsed": 1,
+        "opened_ts": "2026-07-23T14:00:47.912029+00:00",
+        "status": "open",
+        "notion_page_id": "3a60a137-4574-8126-8bc9-d6594eaee213"
+      }
+    ],
     "closed_trades": [
       {
         "id": "stratb_BNBUSDT_1784296854",
@@ -253,7 +329,7 @@
         "closed_ts": "2026-07-20T11:40:33.445618+00:00"
       }
     ],
-    "last_cycle_ts": "2026-07-23T13:11:02.989680+00:00",
+    "last_cycle_ts": "2026-07-23T14:10:47.124111+00:00",
     "stats": {
       "n": 8,
       "win_rate_pct": 12.5,
@@ -277,26 +353,6 @@
     "mode": "live",
     "open_positions": [
       {
-        "id": "strattl_LTCUSDT_1784782819",
-        "symbol": "LTC-USDT",
-        "direction": "LONG",
-        "entry": 47.15,
-        "sl_price": 46.62714286,
-        "tp_price": 48.71857142857142,
-        "sl_dist": 0.5228571428571414,
-        "qty": 6.4,
-        "max_hold_h": 48,
-        "strategy": "TL",
-        "sl_order_id": "2080171063970988032",
-        "opened_ts": "2026-07-23T05:01:22.315363+00:00",
-        "highest": 47.21,
-        "lowest": 47.15,
-        "breakeven_done": false,
-        "bars_elapsed": 8,
-        "last_checked_time": "2026-07-23 13:00:00",
-        "notion_page_id": "3a60a137-4574-8123-a2f3-d07c31c5db33"
-      },
-      {
         "id": "strattl_INJUSDT_1784792078",
         "symbol": "INJ-USDT",
         "direction": "LONG",
@@ -312,19 +368,39 @@
         "highest": 5.189,
         "lowest": 5.173,
         "breakeven_done": false,
-        "bars_elapsed": 6,
-        "last_checked_time": "2026-07-23 13:00:00",
+        "bars_elapsed": 7,
+        "last_checked_time": "2026-07-23 14:00:00",
         "notion_page_id": "3a60a137-4574-8127-9070-f92d824bbd99"
+      },
+      {
+        "id": "strattl_LTCUSDT_1784815256",
+        "symbol": "LTC-USDT",
+        "direction": "LONG",
+        "entry": 46.75,
+        "sl_price": 46.22,
+        "tp_price": 48.34,
+        "sl_dist": 0.5300000000000011,
+        "qty": 6.1,
+        "max_hold_h": 48,
+        "strategy": "TL",
+        "sl_order_id": "2080292329113616384",
+        "opened_ts": "2026-07-23T14:01:55.686517+00:00",
+        "highest": 46.75,
+        "lowest": 46.75,
+        "breakeven_done": false,
+        "bars_elapsed": 0,
+        "last_checked_time": "2026-07-23T14:01:55.686517+00:00",
+        "notion_page_id": "3a60a137-4574-8107-b850-c03a9270e989"
       }
     ],
-    "last_cycle_ts": "2026-07-23T13:10:25.784110+00:00",
+    "last_cycle_ts": "2026-07-23T14:10:09.852403+00:00",
     "stats": {
-      "n": 25,
-      "win_rate_pct": 12.0,
-      "ev_r": -0.504,
-      "total_pnl_usdt": -12.6,
+      "n": 26,
+      "win_rate_pct": 11.5,
+      "ev_r": -0.526,
+      "total_pnl_usdt": -13.68,
       "avg_win_usdt": 0.97,
-      "avg_loss_usdt": -0.71
+      "avg_loss_usdt": -0.72
     }
   },
   "tama_config": {
@@ -2395,6 +2471,10 @@
     {
       "ts": "2026-07-23T12:55:15.123418+00:00",
       "idx": 66.03
+    },
+    {
+      "ts": "2026-07-23T13:55:22.069059+00:00",
+      "idx": 65.73
     }
   ],
   "trades_public": [
@@ -2628,6 +2708,13 @@
       "strat": "TL",
       "dir": "LONG",
       "r": -0.042
+    },
+    {
+      "ts": "2026-07-23T13:49:17.752452+00:00",
+      "sym": "LTC-USDT",
+      "strat": "TL",
+      "dir": "LONG",
+      "r": -1.071
     }
   ],
   "self_upgrades": [
