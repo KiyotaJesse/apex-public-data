@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-23T14:53:51.420353+08:00",
+  "generated_at": "2026-07-23T16:26:08.028427+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -253,7 +253,7 @@
         "closed_ts": "2026-07-20T11:40:33.445618+00:00"
       }
     ],
-    "last_cycle_ts": "2026-07-23T06:52:08.602319+00:00",
+    "last_cycle_ts": "2026-07-23T08:25:14.966930+00:00",
     "stats": {
       "n": 8,
       "win_rate_pct": 12.5,
@@ -277,26 +277,6 @@
     "mode": "live",
     "open_positions": [
       {
-        "id": "strattl_SOLUSDT_1784725556",
-        "symbol": "SOL-USDT",
-        "direction": "LONG",
-        "entry": 77.211,
-        "sl_price": 77.211,
-        "tp_price": 79.64357142857143,
-        "sl_dist": 0.8108571428571452,
-        "qty": 4.17,
-        "max_hold_h": 48,
-        "strategy": "TL",
-        "sl_order_id": "2079959929112330240",
-        "opened_ts": "2026-07-22T13:06:58.757916+00:00",
-        "highest": 78.55,
-        "lowest": 77.211,
-        "breakeven_done": false,
-        "bars_elapsed": 17,
-        "last_checked_time": "2026-07-23 06:00:00",
-        "notion_page_id": "3a50a137-4574-813c-9c8f-cf01b5901908"
-      },
-      {
         "id": "strattl_LTCUSDT_1784782819",
         "symbol": "LTC-USDT",
         "direction": "LONG",
@@ -309,22 +289,42 @@
         "strategy": "TL",
         "sl_order_id": "2080171063970988032",
         "opened_ts": "2026-07-23T05:01:22.315363+00:00",
-        "highest": 47.15,
+        "highest": 47.21,
         "lowest": 47.15,
         "breakeven_done": false,
-        "bars_elapsed": 1,
-        "last_checked_time": "2026-07-23 06:00:00",
+        "bars_elapsed": 3,
+        "last_checked_time": "2026-07-23 08:00:00",
         "notion_page_id": "3a60a137-4574-8123-a2f3-d07c31c5db33"
+      },
+      {
+        "id": "strattl_INJUSDT_1784792078",
+        "symbol": "INJ-USDT",
+        "direction": "LONG",
+        "entry": 5.173,
+        "sl_price": 5.09114286,
+        "tp_price": 5.418571428571429,
+        "sl_dist": 0.0818571428571433,
+        "qty": 40.0,
+        "max_hold_h": 48,
+        "strategy": "TL",
+        "sl_order_id": "2080201315568943104",
+        "opened_ts": "2026-07-23T07:35:39.793031+00:00",
+        "highest": 5.173,
+        "lowest": 5.173,
+        "breakeven_done": false,
+        "bars_elapsed": 1,
+        "last_checked_time": "2026-07-23 08:00:00",
+        "notion_page_id": "3a60a137-4574-8127-9070-f92d824bbd99"
       }
     ],
-    "last_cycle_ts": "2026-07-23T06:52:28.886400+00:00",
+    "last_cycle_ts": "2026-07-23T08:24:19.046234+00:00",
     "stats": {
-      "n": 24,
-      "win_rate_pct": 12.5,
-      "ev_r": -0.523,
-      "total_pnl_usdt": -12.56,
+      "n": 25,
+      "win_rate_pct": 12.0,
+      "ev_r": -0.504,
+      "total_pnl_usdt": -12.6,
       "avg_win_usdt": 0.97,
-      "avg_loss_usdt": -0.74
+      "avg_loss_usdt": -0.71
     }
   },
   "tama_config": {
@@ -365,7 +365,7 @@
     },
     "applied": {
       "applied_sha": "cbf83a980096380d2482052c28ba143252b24123",
-      "applied_at": "2026-07-22T09:41:49.721207+00:00",
+      "applied_at": "2026-07-23T06:54:40.918728+00:00",
       "changes": [
         "b1.cycle_seconds: 300 -> 60",
         "tl.risk_pct: 0.02 -> 0.01",
@@ -2367,6 +2367,14 @@
     {
       "ts": "2026-07-23T06:43:00.438848+00:00",
       "idx": 66.52
+    },
+    {
+      "ts": "2026-07-23T06:54:46.721584+00:00",
+      "idx": 66.56
+    },
+    {
+      "ts": "2026-07-23T07:54:56.545810+00:00",
+      "idx": 65.48
     }
   ],
   "trades_public": [
@@ -2593,6 +2601,13 @@
       "strat": "TL",
       "dir": "LONG",
       "r": -1.119
+    },
+    {
+      "ts": "2026-07-23T07:11:50.254689+00:00",
+      "sym": "SOL-USDT",
+      "strat": "TL",
+      "dir": "LONG",
+      "r": -0.042
     }
   ],
   "self_upgrades": [
