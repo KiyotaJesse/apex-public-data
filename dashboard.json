@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-24T00:11:59.044277+08:00",
+  "generated_at": "2026-07-24T01:12:04.127571+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [
@@ -22,8 +22,8 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-23 13:00:00",
         "entry_bar_time": "2026-07-23 13:00:00",
-        "last_checked_time": "2026-07-23 16:00:00",
-        "bars_elapsed": 3,
+        "last_checked_time": "2026-07-23 17:00:00",
+        "bars_elapsed": 4,
         "opened_ts": "2026-07-23T14:00:36.274264+00:00",
         "status": "open",
         "notion_page_id": "3a60a137-4574-812d-ad3f-c5eaa83dbadf"
@@ -43,12 +43,12 @@
         "sl_dist": 0.0005952142857142831,
         "sl_order_id": "2080292017871093760",
         "open_order_id": "2080292017238392832",
-        "lowest": 0.06963,
+        "lowest": 0.06959,
         "breakeven_done": false,
         "sig_bar_time": "2026-07-23 13:00:00",
         "entry_bar_time": "2026-07-23 13:00:00",
-        "last_checked_time": "2026-07-23 16:00:00",
-        "bars_elapsed": 3,
+        "last_checked_time": "2026-07-23 17:00:00",
+        "bars_elapsed": 4,
         "opened_ts": "2026-07-23T14:00:41.553156+00:00",
         "status": "open",
         "notion_page_id": "3a60a137-4574-81f6-8925-c2fe4b05a78e"
@@ -72,11 +72,36 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-23 13:00:00",
         "entry_bar_time": "2026-07-23 13:00:00",
-        "last_checked_time": "2026-07-23 16:00:00",
-        "bars_elapsed": 3,
+        "last_checked_time": "2026-07-23 17:00:00",
+        "bars_elapsed": 4,
         "opened_ts": "2026-07-23T14:00:47.912029+00:00",
         "status": "open",
         "notion_page_id": "3a60a137-4574-8126-8bc9-d6594eaee213"
+      },
+      {
+        "id": "stratb_DOTUSDT_1784826005",
+        "symbol": "DOT-USDT",
+        "dir": "SHORT",
+        "sig_entry": 0.8098,
+        "fill_price": 0.8095,
+        "qty": 881.9,
+        "notional_usdt": 713.8981,
+        "margin_usdt": 15.1893,
+        "leverage": 47,
+        "risk_usdt": 6.5842,
+        "sl_price": 0.81726571,
+        "sl_dist": 0.007465714285714289,
+        "sl_order_id": "2080337165392904192",
+        "open_order_id": "2080337163950702592",
+        "lowest": 0.8095,
+        "breakeven_done": false,
+        "sig_bar_time": "2026-07-23 16:00:00",
+        "entry_bar_time": "2026-07-23 16:00:00",
+        "last_checked_time": "2026-07-23 17:00:00",
+        "bars_elapsed": 1,
+        "opened_ts": "2026-07-23T17:00:05.360855+00:00",
+        "status": "open",
+        "notion_page_id": "3a60a137-4574-8106-9682-dede98564da1"
       }
     ],
     "closed_trades": [
@@ -329,7 +354,7 @@
         "closed_ts": "2026-07-20T11:40:33.445618+00:00"
       }
     ],
-    "last_cycle_ts": "2026-07-23T16:11:40.556956+00:00",
+    "last_cycle_ts": "2026-07-23T17:11:28.480357+00:00",
     "stats": {
       "n": 8,
       "win_rate_pct": 12.5,
@@ -368,12 +393,32 @@
         "highest": 5.189,
         "lowest": 5.173,
         "breakeven_done": false,
-        "bars_elapsed": 9,
-        "last_checked_time": "2026-07-23 16:00:00",
+        "bars_elapsed": 10,
+        "last_checked_time": "2026-07-23 17:00:00",
         "notion_page_id": "3a60a137-4574-8127-9070-f92d824bbd99"
+      },
+      {
+        "id": "strattl_LTCUSDT_1784824978",
+        "symbol": "LTC-USDT",
+        "direction": "LONG",
+        "entry": 46.58,
+        "sl_price": 45.97714286,
+        "tp_price": 48.388571428571424,
+        "sl_dist": 0.6028571428571396,
+        "qty": 5.4,
+        "max_hold_h": 48,
+        "strategy": "TL",
+        "sl_order_id": "2080337241947340800",
+        "opened_ts": "2026-07-23T16:43:56.096890+00:00",
+        "highest": 46.58,
+        "lowest": 46.58,
+        "breakeven_done": false,
+        "bars_elapsed": 1,
+        "last_checked_time": "2026-07-23 17:00:00",
+        "notion_page_id": "3a60a137-4574-81ee-a6e3-e8e561efb9b2"
       }
     ],
-    "last_cycle_ts": "2026-07-23T16:11:06.655202+00:00",
+    "last_cycle_ts": "2026-07-23T17:10:51.296469+00:00",
     "stats": {
       "n": 27,
       "win_rate_pct": 11.1,
@@ -2463,6 +2508,10 @@
     {
       "ts": "2026-07-23T15:55:30.608207+00:00",
       "idx": 63.09
+    },
+    {
+      "ts": "2026-07-23T16:55:32.606938+00:00",
+      "idx": 65.5
     }
   ],
   "trades_public": [
