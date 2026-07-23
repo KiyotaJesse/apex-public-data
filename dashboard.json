@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-24T06:12:33.220616+08:00",
+  "generated_at": "2026-07-24T07:12:38.327464+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [
@@ -22,8 +22,8 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-23 13:00:00",
         "entry_bar_time": "2026-07-23 13:00:00",
-        "last_checked_time": "2026-07-23 22:00:00",
-        "bars_elapsed": 9,
+        "last_checked_time": "2026-07-23 23:00:00",
+        "bars_elapsed": 10,
         "opened_ts": "2026-07-23T14:00:41.553156+00:00",
         "status": "open",
         "notion_page_id": "3a60a137-4574-81f6-8925-c2fe4b05a78e"
@@ -47,8 +47,8 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-23 13:00:00",
         "entry_bar_time": "2026-07-23 13:00:00",
-        "last_checked_time": "2026-07-23 22:00:00",
-        "bars_elapsed": 9,
+        "last_checked_time": "2026-07-23 23:00:00",
+        "bars_elapsed": 10,
         "opened_ts": "2026-07-23T14:00:47.912029+00:00",
         "status": "open",
         "notion_page_id": "3a60a137-4574-8126-8bc9-d6594eaee213"
@@ -366,7 +366,7 @@
         "closed_ts": "2026-07-23T20:16:46.191281+00:00"
       }
     ],
-    "last_cycle_ts": "2026-07-23T22:11:50.125558+00:00",
+    "last_cycle_ts": "2026-07-23T23:11:34.951098+00:00",
     "stats": {
       "n": 10,
       "win_rate_pct": 10.0,
@@ -405,12 +405,32 @@
         "highest": 47.48,
         "lowest": 46.58,
         "breakeven_done": false,
-        "bars_elapsed": 6,
-        "last_checked_time": "2026-07-23 22:00:00",
+        "bars_elapsed": 7,
+        "last_checked_time": "2026-07-23 23:00:00",
         "notion_page_id": "3a60a137-4574-81ee-a6e3-e8e561efb9b2"
+      },
+      {
+        "id": "strattl_TRXUSDT_1784843993",
+        "symbol": "TRX-USDT",
+        "direction": "LONG",
+        "entry": 0.3284,
+        "sl_price": 0.32667429,
+        "tp_price": 0.33357714285714296,
+        "sl_dist": 0.0017257142857143304,
+        "qty": 1872.0,
+        "max_hold_h": 48,
+        "strategy": "TL",
+        "sl_order_id": "2080427861537816576",
+        "opened_ts": "2026-07-23T22:18:21.087060+00:00",
+        "highest": 0.32849,
+        "lowest": 0.3284,
+        "breakeven_done": false,
+        "bars_elapsed": 1,
+        "last_checked_time": "2026-07-23 23:00:00",
+        "notion_page_id": "3a60a137-4574-8150-8c28-d95881bc9bd0"
       }
     ],
-    "last_cycle_ts": "2026-07-23T22:11:07.149006+00:00",
+    "last_cycle_ts": "2026-07-23T23:10:51.252502+00:00",
     "stats": {
       "n": 28,
       "win_rate_pct": 10.7,
@@ -2524,6 +2544,10 @@
     {
       "ts": "2026-07-23T21:55:51.186722+00:00",
       "idx": 64.23
+    },
+    {
+      "ts": "2026-07-23T22:55:52.095713+00:00",
+      "idx": 63.98
     }
   ],
   "trades_public": [
