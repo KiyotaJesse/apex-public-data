@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-23T22:11:45.974523+08:00",
+  "generated_at": "2026-07-23T23:11:52.657330+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [
@@ -22,8 +22,8 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-23 13:00:00",
         "entry_bar_time": "2026-07-23 13:00:00",
-        "last_checked_time": "2026-07-23 14:00:00",
-        "bars_elapsed": 1,
+        "last_checked_time": "2026-07-23 15:00:00",
+        "bars_elapsed": 2,
         "opened_ts": "2026-07-23T14:00:36.274264+00:00",
         "status": "open",
         "notion_page_id": "3a60a137-4574-812d-ad3f-c5eaa83dbadf"
@@ -47,8 +47,8 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-23 13:00:00",
         "entry_bar_time": "2026-07-23 13:00:00",
-        "last_checked_time": "2026-07-23 14:00:00",
-        "bars_elapsed": 1,
+        "last_checked_time": "2026-07-23 15:00:00",
+        "bars_elapsed": 2,
         "opened_ts": "2026-07-23T14:00:41.553156+00:00",
         "status": "open",
         "notion_page_id": "3a60a137-4574-81f6-8925-c2fe4b05a78e"
@@ -72,8 +72,8 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-23 13:00:00",
         "entry_bar_time": "2026-07-23 13:00:00",
-        "last_checked_time": "2026-07-23 14:00:00",
-        "bars_elapsed": 1,
+        "last_checked_time": "2026-07-23 15:00:00",
+        "bars_elapsed": 2,
         "opened_ts": "2026-07-23T14:00:47.912029+00:00",
         "status": "open",
         "notion_page_id": "3a60a137-4574-8126-8bc9-d6594eaee213"
@@ -329,7 +329,7 @@
         "closed_ts": "2026-07-20T11:40:33.445618+00:00"
       }
     ],
-    "last_cycle_ts": "2026-07-23T14:10:47.124111+00:00",
+    "last_cycle_ts": "2026-07-23T15:11:23.156368+00:00",
     "stats": {
       "n": 8,
       "win_rate_pct": 12.5,
@@ -368,8 +368,8 @@
         "highest": 5.189,
         "lowest": 5.173,
         "breakeven_done": false,
-        "bars_elapsed": 7,
-        "last_checked_time": "2026-07-23 14:00:00",
+        "bars_elapsed": 8,
+        "last_checked_time": "2026-07-23 15:00:00",
         "notion_page_id": "3a60a137-4574-8127-9070-f92d824bbd99"
       },
       {
@@ -388,12 +388,12 @@
         "highest": 46.75,
         "lowest": 46.75,
         "breakeven_done": false,
-        "bars_elapsed": 0,
-        "last_checked_time": "2026-07-23T14:01:55.686517+00:00",
+        "bars_elapsed": 1,
+        "last_checked_time": "2026-07-23 15:00:00",
         "notion_page_id": "3a60a137-4574-8107-b850-c03a9270e989"
       }
     ],
-    "last_cycle_ts": "2026-07-23T14:10:09.852403+00:00",
+    "last_cycle_ts": "2026-07-23T15:10:45.927813+00:00",
     "stats": {
       "n": 26,
       "win_rate_pct": 11.5,
@@ -2475,6 +2475,10 @@
     {
       "ts": "2026-07-23T13:55:22.069059+00:00",
       "idx": 65.73
+    },
+    {
+      "ts": "2026-07-23T14:55:25.186360+00:00",
+      "idx": 64.25
     }
   ],
   "trades_public": [
