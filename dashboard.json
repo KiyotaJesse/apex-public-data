@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-24T20:13:51.941586+08:00",
+  "generated_at": "2026-07-24T21:13:58.241917+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [
@@ -22,8 +22,8 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-23 13:00:00",
         "entry_bar_time": "2026-07-23 13:00:00",
-        "last_checked_time": "2026-07-24 12:00:00",
-        "bars_elapsed": 23,
+        "last_checked_time": "2026-07-24 13:00:00",
+        "bars_elapsed": 24,
         "opened_ts": "2026-07-23T14:00:41.553156+00:00",
         "status": "open",
         "notion_page_id": "3a60a137-4574-81f6-8925-c2fe4b05a78e"
@@ -403,7 +403,7 @@
         "closed_ts": "2026-07-24T11:04:39.406363+00:00"
       }
     ],
-    "last_cycle_ts": "2026-07-24T12:12:45.406808+00:00",
+    "last_cycle_ts": "2026-07-24T13:13:39.544919+00:00",
     "stats": {
       "n": 12,
       "win_rate_pct": 16.7,
@@ -442,8 +442,8 @@
         "highest": 47.48,
         "lowest": 46.58,
         "breakeven_done": false,
-        "bars_elapsed": 20,
-        "last_checked_time": "2026-07-24 12:00:00",
+        "bars_elapsed": 21,
+        "last_checked_time": "2026-07-24 13:00:00",
         "notion_page_id": "3a60a137-4574-81ee-a6e3-e8e561efb9b2"
       },
       {
@@ -462,12 +462,12 @@
         "highest": 0.33147,
         "lowest": 0.3284,
         "breakeven_done": false,
-        "bars_elapsed": 14,
-        "last_checked_time": "2026-07-24 12:00:00",
+        "bars_elapsed": 15,
+        "last_checked_time": "2026-07-24 13:00:00",
         "notion_page_id": "3a60a137-4574-8150-8c28-d95881bc9bd0"
       }
     ],
-    "last_cycle_ts": "2026-07-24T12:13:15.095907+00:00",
+    "last_cycle_ts": "2026-07-24T13:13:10.336176+00:00",
     "stats": {
       "n": 28,
       "win_rate_pct": 10.7,
@@ -2637,6 +2637,10 @@
     {
       "ts": "2026-07-24T11:13:52.664571+00:00",
       "idx": 63.75
+    },
+    {
+      "ts": "2026-07-24T12:13:58.446876+00:00",
+      "idx": 64.51
     }
   ],
   "trades_public": [
