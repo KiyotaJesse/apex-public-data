@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-25T00:28:08.676879+08:00",
+  "generated_at": "2026-07-25T02:19:29.507037+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [
@@ -22,8 +22,8 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-24 13:00:00",
         "entry_bar_time": "2026-07-24 13:00:00",
-        "last_checked_time": "2026-07-24 16:00:00",
-        "bars_elapsed": 3,
+        "last_checked_time": "2026-07-24 18:00:00",
+        "bars_elapsed": 5,
         "opened_ts": "2026-07-24T14:00:32.025431+00:00",
         "status": "open",
         "notion_page_id": "3a70a137-4574-816f-bfd5-e57996b46614"
@@ -434,7 +434,7 @@
         "closed_ts": "2026-07-24T14:59:34.580603+00:00"
       }
     ],
-    "last_cycle_ts": "2026-07-24T16:27:49.596384+00:00",
+    "last_cycle_ts": "2026-07-24T18:18:42.609713+00:00",
     "stats": {
       "n": 13,
       "win_rate_pct": 23.1,
@@ -473,8 +473,8 @@
         "highest": 0.33147,
         "lowest": 0.3284,
         "breakeven_done": false,
-        "bars_elapsed": 18,
-        "last_checked_time": "2026-07-24 16:00:00",
+        "bars_elapsed": 20,
+        "last_checked_time": "2026-07-24 18:00:00",
         "notion_page_id": "3a60a137-4574-8150-8c28-d95881bc9bd0"
       },
       {
@@ -490,15 +490,15 @@
         "strategy": "TL",
         "sl_order_id": "2080666231627153408",
         "opened_ts": "2026-07-24T14:47:40.983466+00:00",
-        "highest": 3.826,
+        "highest": 3.835,
         "lowest": 3.78,
         "breakeven_done": false,
-        "bars_elapsed": 2,
-        "last_checked_time": "2026-07-24 16:00:00",
+        "bars_elapsed": 4,
+        "last_checked_time": "2026-07-24 18:00:00",
         "notion_page_id": "3a70a137-4574-81fc-b13e-efa9f41f5a9f"
       }
     ],
-    "last_cycle_ts": "2026-07-24T16:27:17.118273+00:00",
+    "last_cycle_ts": "2026-07-24T18:18:18.127908+00:00",
     "stats": {
       "n": 29,
       "win_rate_pct": 10.3,
@@ -546,7 +546,7 @@
     },
     "applied": {
       "applied_sha": "cbf83a980096380d2482052c28ba143252b24123",
-      "applied_at": "2026-07-24T08:13:37.879572+00:00",
+      "applied_at": "2026-07-24T17:23:41.663105+00:00",
       "changes": [
         "b1.cycle_seconds: 300 -> 60",
         "tl.risk_pct: 0.02 -> 0.01",
@@ -2688,6 +2688,14 @@
     {
       "ts": "2026-07-24T16:14:17.978047+00:00",
       "idx": 66.52
+    },
+    {
+      "ts": "2026-07-24T17:14:22.437611+00:00",
+      "idx": 67.13
+    },
+    {
+      "ts": "2026-07-24T17:23:47.710957+00:00",
+      "idx": 66.78
     }
   ],
   "trades_public": [
