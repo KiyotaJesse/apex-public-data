@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-24T21:13:58.241917+08:00",
+  "generated_at": "2026-07-24T22:14:04.569476+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [
@@ -9,24 +9,49 @@
         "dir": "SHORT",
         "sig_entry": 0.07025,
         "fill_price": 0.0702,
-        "qty": 11044.0,
+        "qty": 5523.0,
         "notional_usdt": 775.2888,
         "margin_usdt": 16.1518,
         "leverage": 48,
         "risk_usdt": 6.5737,
-        "sl_price": 0.07084521,
+        "sl_price": 0.06881583,
         "sl_dist": 0.0005952142857142831,
-        "sl_order_id": "2080292017871093760",
+        "sl_order_id": "2080654341354127360",
         "open_order_id": "2080292017238392832",
-        "lowest": 0.06898,
-        "breakeven_done": false,
+        "lowest": 0.06861,
+        "breakeven_done": true,
         "sig_bar_time": "2026-07-23 13:00:00",
         "entry_bar_time": "2026-07-23 13:00:00",
-        "last_checked_time": "2026-07-24 13:00:00",
-        "bars_elapsed": 24,
+        "last_checked_time": "2026-07-24 14:00:00",
+        "bars_elapsed": 25,
         "opened_ts": "2026-07-23T14:00:41.553156+00:00",
         "status": "open",
         "notion_page_id": "3a60a137-4574-81f6-8925-c2fe4b05a78e"
+      },
+      {
+        "id": "stratb_NEARUSDT_1784901631",
+        "symbol": "NEAR-USDT",
+        "dir": "SHORT",
+        "sig_entry": 1.844,
+        "fill_price": 1.84,
+        "qty": 258.0,
+        "notional_usdt": 474.72,
+        "margin_usdt": 12.4926,
+        "leverage": 38,
+        "risk_usdt": 6.6217,
+        "sl_price": 1.86962857,
+        "sl_dist": 0.02562857142857143,
+        "sl_order_id": "2080654365815308288",
+        "open_order_id": "2080654365132275712",
+        "lowest": 1.84,
+        "breakeven_done": false,
+        "sig_bar_time": "2026-07-24 13:00:00",
+        "entry_bar_time": "2026-07-24 13:00:00",
+        "last_checked_time": "2026-07-24 14:00:00",
+        "bars_elapsed": 1,
+        "opened_ts": "2026-07-24T14:00:32.025431+00:00",
+        "status": "open",
+        "notion_page_id": "3a70a137-4574-816f-bfd5-e57996b46614"
       }
     ],
     "closed_trades": [
@@ -403,7 +428,7 @@
         "closed_ts": "2026-07-24T11:04:39.406363+00:00"
       }
     ],
-    "last_cycle_ts": "2026-07-24T13:13:39.544919+00:00",
+    "last_cycle_ts": "2026-07-24T14:13:54.548415+00:00",
     "stats": {
       "n": 12,
       "win_rate_pct": 16.7,
@@ -442,8 +467,8 @@
         "highest": 47.48,
         "lowest": 46.58,
         "breakeven_done": false,
-        "bars_elapsed": 21,
-        "last_checked_time": "2026-07-24 13:00:00",
+        "bars_elapsed": 22,
+        "last_checked_time": "2026-07-24 14:00:00",
         "notion_page_id": "3a60a137-4574-81ee-a6e3-e8e561efb9b2"
       },
       {
@@ -462,12 +487,12 @@
         "highest": 0.33147,
         "lowest": 0.3284,
         "breakeven_done": false,
-        "bars_elapsed": 15,
-        "last_checked_time": "2026-07-24 13:00:00",
+        "bars_elapsed": 16,
+        "last_checked_time": "2026-07-24 14:00:00",
         "notion_page_id": "3a60a137-4574-8150-8c28-d95881bc9bd0"
       }
     ],
-    "last_cycle_ts": "2026-07-24T13:13:10.336176+00:00",
+    "last_cycle_ts": "2026-07-24T14:13:23.306281+00:00",
     "stats": {
       "n": 28,
       "win_rate_pct": 10.7,
@@ -2641,6 +2666,10 @@
     {
       "ts": "2026-07-24T12:13:58.446876+00:00",
       "idx": 64.51
+    },
+    {
+      "ts": "2026-07-24T13:13:59.100488+00:00",
+      "idx": 65.82
     }
   ],
   "trades_public": [
