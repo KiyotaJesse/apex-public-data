@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-24T16:13:27.710984+08:00",
+  "generated_at": "2026-07-24T17:13:34.056897+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [
@@ -22,8 +22,8 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-23 13:00:00",
         "entry_bar_time": "2026-07-23 13:00:00",
-        "last_checked_time": "2026-07-24 08:00:00",
-        "bars_elapsed": 19,
+        "last_checked_time": "2026-07-24 09:00:00",
+        "bars_elapsed": 20,
         "opened_ts": "2026-07-23T14:00:41.553156+00:00",
         "status": "open",
         "notion_page_id": "3a60a137-4574-81f6-8925-c2fe4b05a78e"
@@ -43,12 +43,12 @@
         "sl_dist": 0.013650000000000044,
         "sl_order_id": "2080292044425232384",
         "open_order_id": "2080292043947720704",
-        "lowest": 1.417,
+        "lowest": 1.416,
         "breakeven_done": false,
         "sig_bar_time": "2026-07-23 13:00:00",
         "entry_bar_time": "2026-07-23 13:00:00",
-        "last_checked_time": "2026-07-24 08:00:00",
-        "bars_elapsed": 19,
+        "last_checked_time": "2026-07-24 09:00:00",
+        "bars_elapsed": 20,
         "opened_ts": "2026-07-23T14:00:47.912029+00:00",
         "status": "open",
         "notion_page_id": "3a60a137-4574-8126-8bc9-d6594eaee213"
@@ -397,7 +397,7 @@
         "closed_ts": "2026-07-24T07:11:19.444961+00:00"
       }
     ],
-    "last_cycle_ts": "2026-07-24T08:12:58.789770+00:00",
+    "last_cycle_ts": "2026-07-24T09:12:56.476190+00:00",
     "stats": {
       "n": 11,
       "win_rate_pct": 9.1,
@@ -436,8 +436,8 @@
         "highest": 47.48,
         "lowest": 46.58,
         "breakeven_done": false,
-        "bars_elapsed": 16,
-        "last_checked_time": "2026-07-24 08:00:00",
+        "bars_elapsed": 17,
+        "last_checked_time": "2026-07-24 09:00:00",
         "notion_page_id": "3a60a137-4574-81ee-a6e3-e8e561efb9b2"
       },
       {
@@ -456,12 +456,12 @@
         "highest": 0.33134,
         "lowest": 0.3284,
         "breakeven_done": false,
-        "bars_elapsed": 10,
-        "last_checked_time": "2026-07-24 08:00:00",
+        "bars_elapsed": 11,
+        "last_checked_time": "2026-07-24 09:00:00",
         "notion_page_id": "3a60a137-4574-8150-8c28-d95881bc9bd0"
       }
     ],
-    "last_cycle_ts": "2026-07-24T08:12:40.227096+00:00",
+    "last_cycle_ts": "2026-07-24T09:12:37.897342+00:00",
     "stats": {
       "n": 28,
       "win_rate_pct": 10.7,
@@ -509,7 +509,7 @@
     },
     "applied": {
       "applied_sha": "cbf83a980096380d2482052c28ba143252b24123",
-      "applied_at": "2026-07-24T07:28:30.239684+00:00",
+      "applied_at": "2026-07-24T08:13:37.879572+00:00",
       "changes": [
         "b1.cycle_seconds: 300 -> 60",
         "tl.risk_pct: 0.02 -> 0.01",
@@ -2615,6 +2615,10 @@
     {
       "ts": "2026-07-24T07:28:35.428445+00:00",
       "idx": 62.5
+    },
+    {
+      "ts": "2026-07-24T08:13:43.428013+00:00",
+      "idx": 62.7
     }
   ],
   "trades_public": [
