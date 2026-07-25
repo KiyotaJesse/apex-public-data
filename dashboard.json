@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-26T05:22:19.113292+08:00",
+  "generated_at": "2026-07-26T06:22:24.422903+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -439,7 +439,7 @@
         "closed_ts": "2026-07-25T08:05:47.842361+00:00"
       }
     ],
-    "last_cycle_ts": "2026-07-25T21:21:23.425443+00:00",
+    "last_cycle_ts": "2026-07-25T22:18:52.956153+00:00",
     "stats": {
       "n": 14,
       "win_rate_pct": 28.6,
@@ -461,36 +461,15 @@
   },
   "strat_tl": {
     "mode": "live",
-    "open_positions": [
-      {
-        "id": "strattl_TRXUSDT_1784843993",
-        "symbol": "TRX-USDT",
-        "direction": "LONG",
-        "entry": 0.3284,
-        "sl_price": 0.3284,
-        "tp_price": 0.33357714285714296,
-        "sl_dist": 0.0017257142857143304,
-        "qty": 1872.0,
-        "max_hold_h": 48,
-        "strategy": "TL",
-        "sl_order_id": "2080563751845199872",
-        "opened_ts": "2026-07-23T22:18:21.087060+00:00",
-        "highest": 0.33221,
-        "lowest": 0.3284,
-        "breakeven_done": false,
-        "bars_elapsed": 47,
-        "last_checked_time": "2026-07-25 21:00:00",
-        "notion_page_id": "3a60a137-4574-8150-8c28-d95881bc9bd0"
-      }
-    ],
-    "last_cycle_ts": "2026-07-25T21:22:10.280208+00:00",
+    "open_positions": [],
+    "last_cycle_ts": "2026-07-25T22:19:26.117570+00:00",
     "stats": {
-      "n": 30,
-      "win_rate_pct": 10.0,
-      "ev_r": -0.597,
+      "n": 31,
+      "win_rate_pct": 9.7,
+      "ev_r": -0.578,
       "total_pnl_usdt": -17.91,
       "avg_win_usdt": 0.97,
-      "avg_loss_usdt": -0.77
+      "avg_loss_usdt": -0.74
     }
   },
   "tama_config": {
@@ -2789,6 +2768,10 @@
     {
       "ts": "2026-07-25T20:25:14.374069+00:00",
       "idx": 67.15
+    },
+    {
+      "ts": "2026-07-25T21:25:18.689145+00:00",
+      "idx": 67.27
     }
   ],
   "trades_public": [
@@ -3099,6 +3082,13 @@
       "strat": "B1",
       "dir": "SHORT",
       "r": 2.0352
+    },
+    {
+      "ts": "2026-07-25T22:00:13.870218+00:00",
+      "sym": "TRX-USDT",
+      "strat": "TL",
+      "dir": "LONG",
+      "r": 0.0
     }
   ],
   "self_upgrades": [
