@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>JARVIS — APEX 語音副官</title>
+<style>
+:root{--bg:#05070D;--bg2:#0A0F1A;--panel:#0D1424;--panel2:#121B30;--line:#1C2A44;
+--cyan:#28E0FF;--mag:#FF3D8B;--amber:#FFB020;--grn:#2EFF9E;--ink:#DCE7F5;--ink2:#657A99;--ink3:#3E4E68}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:var(--bg);color:var(--ink);font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;
+overflow:hidden;display:flex;flex-direction:column;height:100dvh}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:99;
+background:repeating-linear-gradient(0deg,transparent 0 2px,rgba(40,224,255,.015) 2px 4px)}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;
+background:radial-gradient(ellipse at 50% 120%,rgba(40,224,255,.10),transparent 60%),
+radial-gradient(ellipse at 80% -10%,rgba(255,61,139,.08),transparent 55%)}
+.mono{font-family:"Cascadia Code",ui-monospace,Consolas,monospace}
+header{padding:14px 18px 10px;border-bottom:1px solid var(--line);position:relative;z-index:10;display:flex;align-items:center;gap:12px}
+header .logo{font-family:"Cascadia Code",Consolas,monospace;font-size:19px;font-weight:800;letter-spacing:.22em;color:var(--cyan);text-shadow:0 0 14px rgba(40,224,255,.5)}
+header .st{margin-left:auto;font-size:10.5px;font-family:Consolas,monospace;display:flex;gap:12px;align-items:center}
+.led{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:4px}
+.led.on{background:var(--grn);box-shadow:0 0 8px var(--grn)}
+.led.off{background:var(--mag);box-shadow:0 0 8px var(--mag)}
+/* 即時儀表列 */
+.hud{display:flex;gap:8px;padding:9px 14px;overflow-x:auto;border-bottom:1px solid var(--line);position:relative;z-index:10;background:var(--bg2)}
+.hud::-webkit-scrollbar{display:none}
+.stat{flex:0 0 auto;background:var(--panel);border:1px solid var(--line);padding:6px 12px;min-width:88px}
+.stat .l{font-size:9px;letter-spacing:.12em;color:var(--ink3)}
+.stat .v{font-size:15px;font-weight:700;font-family:Consolas,monospace;margin-top:1px}
+.up{color:var(--grn)}.dn{color:var(--mag)}.cy{color:var(--cyan)}.am{color:var(--amber)}
+/* 對話區 */
+.chat{flex:1;overflow-y:auto;padding:16px 14px 6px;position:relative;z-index:10;display:flex;flex-direction:column;gap:12px}
+.msg{max-width:86%;padding:10px 14px;font-size:14.5px;line-height:1.65;white-space:pre-wrap;border:1px solid var(--line)}
+.msg.u{align-self:flex-end;background:rgba(40,224,255,.08);border-color:var(--cyan);color:var(--ink)}
+.msg.j{align-self:flex-start;background:var(--panel);border-left:3px solid var(--cyan)}
+.msg.j b{color:var(--cyan)}.msg .num{font-family:Consolas,monospace}
+.msg.sys{align-self:center;font-size:11.5px;color:var(--ink2);border:none;background:none;max-width:100%;text-align:center}
+.chips{display:flex;gap:7px;flex-wrap:wrap;padding:6px 14px 4px;position:relative;z-index:10}
+.chip{font-size:12px;color:var(--ink2);border:1px solid var(--line);padding:5px 12px;cursor:pointer;background:var(--panel);white-space:nowrap}
+.chip:hover{border-color:var(--cyan);color:var(--cyan)}
+/* 輸入列 */
+.bar{display:flex;gap:8px;align-items:center;padding:10px 12px 14px;border-top:1px solid var(--line);position:relative;z-index:10;background:var(--bg2)}
+.mic{flex:0 0 auto;width:52px;height:52px;border-radius:50%;border:2px solid var(--cyan);background:transparent;color:var(--cyan);font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.15s}
+.mic:hover{background:rgba(40,224,255,.1)}
+.mic.rec{border-color:var(--mag);color:var(--mag);animation:pulse 1s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,61,139,.5)}50%{box-shadow:0 0 0 12px rgba(255,61,139,0)}}
+@media(prefers-reduced-motion:reduce){.mic.rec{animation:none}}
+.bar input{flex:1;background:var(--panel);border:1px solid var(--line);color:var(--ink);font-size:15px;padding:13px 15px;outline:none;font-family:inherit}
+.bar input:focus{border-color:var(--cyan)}
+.send{flex:0 0 auto;background:var(--cyan);color:#04121a;border:none;font-weight:700;font-size:14px;padding:0 18px;height:48px;cursor:pointer}
+.tog{flex:0 0 auto;font-size:10px;color:var(--ink3);border:1px solid var(--line);padding:5px 8px;cursor:pointer;text-align:center;line-height:1.3}
+.tog.on{color:var(--grn);border-color:var(--grn)}
+</style>
+</head>
+<body>
+<header>
+  <span class="logo">J.A.R.V.I.S</span>
+  <span class="st mono"><span><span class="led off" id="led"></span><span id="sysst">連線中</span></span></span>
+</header>
+<div class="hud" id="hud"></div>
+<div class="chat" id="chat"></div>
+<div class="chips" id="chips"></div>
+<div class="bar">
+  <button class="mic" id="mic" title="按住講話" aria-label="語音輸入">🎤</button>
+  <input id="inp" placeholder="說話或打字…例:現在有什麼倉" autocomplete="off">
+  <button class="tog" id="ttsTog" title="語音回覆開關">🔊<br>回覆</button>
+  <button class="send" id="send">送出</button>
+</div>
+<script>
+const RAW='./dashboard.json';
+let DATA=null, ttsOn=false;
+const $=id=>document.getElementById(id);
+function esc(s){return String(s??'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))}
+function add(role,html){const d=document.createElement('div');d.className='msg '+role;d.innerHTML=html;$('chat').appendChild(d);$('chat').scrollTop=$('chat').scrollHeight;return d;}
+function say(text){ if(!ttsOn)return; try{const u=new SpeechSynthesisUtterance(text.replace(/<[^>]+>/g,''));u.lang='zh-TW';u.rate=1.05;speechSynthesis.speak(u);}catch(e){} }
+
+async function load(){
+  try{
+    const r=await fetch(RAW+'?t='+Date.now(),{cache:'no-store'});
+    DATA=await r.json();
+    const age=(Date.now()-new Date(DATA.generated_at).getTime())/60000;
+    const alive=age<15;
+    $('led').className='led '+(alive?'on':'off');
+    $('sysst').textContent=alive?('系統在線 '+Math.round(age)+'分前'):'數據延遲';
+    renderHud();
+  }catch(e){ $('sysst').textContent='連線失敗'; }
+}
+function eq(){ const ec=DATA.equity_curve||[]; return ec.length?ec[ec.length-1]: null; }
+function positions(){
+  const out=[];
+  for(const[tag,led] of [['B1',DATA.real_trading_strategy_b],['TL',DATA.strat_tl]]){
+    for(const p of (led?.open_positions||[])) out.push({tag,sym:p.symbol,dir:(p.dir||p.direction||'').toUpperCase(),
+      entry:p.fill_price||p.entry,sl:p.sl_price});
+  }
+  return out;
+}
+function renderHud(){
+  const cb=DATA.risk_circuit_breaker||{}; const e=eq();
+  const eqv=e? (e.equity??e.eq??e[1]??null):null;
+  const pos=positions();
+  const cards=[
+    ['帳戶淨值', eqv!=null?('$'+Math.round(eqv)):'—','cy'],
+    ['持倉', pos.length+' 筆','cy'],
+    ['熔斷', (cb.killswitch||cb.dd_halt)?'觸發':'正常', (cb.killswitch||cb.dd_halt)?'dn':'up'],
+    ['B1', DATA.real_trading_strategy_b?.mode||'—','am'],
+    ['TL', DATA.strat_tl?.mode||'—','am'],
+  ];
+  $('hud').innerHTML=cards.map(([l,v,c])=>`<div class="stat"><div class="l">${l}</div><div class="v ${c}">${esc(v)}</div></div>`).join('');
+}
+
+// ── 本地意圖引擎(零成本秒答系統問題) ──
+function answer(q){
+  const t=q.toLowerCase().replace(/\s/g,'');
+  const pos=positions(); const cb=DATA?.risk_circuit_breaker||{};
+  if(/倉|持倉|部位|position/.test(t)){
+    if(!pos.length) return '目前<b>沒有持倉</b>。策略在場上等訊號。';
+    return '目前持倉 <b>'+pos.length+'</b> 筆:\n'+pos.map(p=>`▪️ [${p.tag}] <b>${p.sym.replace('-USDT','')}</b> ${p.dir==='SHORT'?'做空':'做多'} <span class="num">進場${p.entry??'?'} SL${p.sl??'?'}</span>`).join('\n');
+  }
+  if(/淨值|餘額|多少錢|equity|資產/.test(t)){
+    const e=eq(); const v=e?(e.equity??e.eq??e[1]):null;
+    return v!=null?`帳戶淨值約 <b class="num">$${Math.round(v)} USDT</b>。`:'淨值資料暫無(公開快照只給狀態不給金額細節)。';
+  }
+  if(/熔斷|風控|killswitch|停了|halt/.test(t)){
+    const h=cb.killswitch||cb.dd_halt;
+    return h?'⚠️ <b class="dn">熔斷觸發中</b>,策略已停止開倉。':'風控<b class="up">正常</b>,killswitch 關閉、未觸發總回撤熔斷。';
+  }
+  if(/策略|b1|tl|rs|狀態|status/.test(t)){
+    return `策略狀態:\n▪️ B1(做空) <b>${DATA.real_trading_strategy_b?.mode||'?'}</b>\n▪️ TL(做多) <b>${DATA.strat_tl?.mode||'?'}</b>\n▪️ 持倉共 ${pos.length} 筆`;
+  }
+  if(/幾點|時間|更新|多久/.test(t)){
+    const age=Math.round((Date.now()-new Date(DATA.generated_at).getTime())/60000);
+    return `系統數據 <b class="num">${age}</b> 分鐘前更新。`;
+  }
+  if(/你好|嗨|哈囉|hi|hello|在嗎|順嗎/.test(t)){
+    return '在。我是 JARVIS,APEX 的語音副官。目前我能即時回答你的<b>持倉、淨值、風控、策略狀態</b>——用講的或打字都行。\n(開放式對話與創業諮詢需接大腦,那是下一階段。)';
+  }
+  if(/謝謝|感謝|thanks|好/.test(t)) return '隨時待命,指揮官。';
+  // 未命中
+  return '這個問題超出我目前的即時查詢範圍(我現在專精:持倉/淨值/風控/策略狀態)。\n開放式對話與創業諮詢要接大腦(Groq/Claude),那是下一階段升級。你可以試:「現在有什麼倉」「熔斷了嗎」「策略狀態」。';
+}
+function ask(q){
+  if(!q.trim())return;
+  add('u',esc(q));
+  $('inp').value='';
+  if(!DATA){ add('j','數據還在載入,稍等一秒再問。'); return; }
+  const a=answer(q);
+  setTimeout(()=>{ const d=add('j','🎖 '+a); say(a); },180);
+}
+
+// ── 語音輸入(瀏覽器原生, 免費) ──
+const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+let rec=null,recording=false;
+if(SR){
+  rec=new SR(); rec.lang='zh-TW'; rec.interimResults=false; rec.maxAlternatives=1;
+  rec.onresult=e=>{ const txt=e.results[0][0].transcript; ask(txt); };
+  rec.onend=()=>{ recording=false; $('mic').classList.remove('rec'); };
+  rec.onerror=()=>{ recording=false; $('mic').classList.remove('rec'); };
+}
+$('mic').onclick=()=>{
+  if(!SR){ add('sys','此瀏覽器不支援語音輸入,請用 Chrome/Edge,或直接打字。'); return; }
+  if(recording){ rec.stop(); return; }
+  try{ rec.start(); recording=true; $('mic').classList.add('rec'); }catch(e){}
+};
+$('send').onclick=()=>ask($('inp').value);
+$('inp').addEventListener('keydown',e=>{if(e.key==='Enter')ask($('inp').value);});
+$('ttsTog').onclick=()=>{ ttsOn=!ttsOn; $('ttsTog').classList.toggle('on',ttsOn); };
+
+// 快捷問句
+const CHIPS=['現在有什麼倉','熔斷了嗎','策略狀態','淨值多少','數據多久前更新'];
+$('chips').innerHTML=CHIPS.map(c=>`<span class="chip">${c}</span>`).join('');
+$('chips').querySelectorAll('.chip').forEach(el=>el.onclick=()=>ask(el.textContent));
+
+// 開場
+add('sys','JARVIS 語音副官 v1 · 數據來自你的即時系統快照');
+add('j','🎖 指揮官,我已上線。點麥克風講話或直接打字——問我持倉、淨值、風控、策略狀態,我即時回你。右下「🔊回覆」開啟後我會用語音唸給你聽。');
+load(); setInterval(load,60000);
+</script>
+</body>
+</html>
