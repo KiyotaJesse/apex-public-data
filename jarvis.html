@@ -69,7 +69,9 @@ header .st{margin-left:auto;font-size:10.5px;font-family:Consolas,monospace;disp
 </div>
 <script>
 const RAW='./dashboard.json';
-let DATA=null, ttsOn=false;
+let DATA=null, ttsOn=false, brainOn=true, HIST=[];
+const BRAIN='https://jarvis-backend-bh6u.onrender.com/chat';
+const PASS=(new URLSearchParams(location.search).get('k'))||localStorage.getItem('jpass')||'112233';
 const $=id=>document.getElementById(id);
 function esc(s){return String(s??'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))}
 function add(role,html){const d=document.createElement('div');d.className='msg '+role;d.innerHTML=html;$('chat').appendChild(d);$('chat').scrollTop=$('chat').scrollHeight;return d;}
@@ -133,19 +135,43 @@ function answer(q){
     return `系統數據 <b class="num">${age}</b> 分鐘前更新。`;
   }
   if(/你好|嗨|哈囉|hi|hello|在嗎|順嗎/.test(t)){
-    return '在。我是 JARVIS,APEX 的語音副官。目前我能即時回答你的<b>持倉、淨值、風控、策略狀態</b>——用講的或打字都行。\n(開放式對話與創業諮詢需接大腦,那是下一階段。)';
+    return '在。我是 JARVIS,APEX 的語音副官。目前我能即時回答你的<b>持倉、淨值、風控、策略狀態</b>——用講的或打字都行。\n(';
   }
   if(/謝謝|感謝|thanks|好/.test(t)) return '隨時待命,指揮官。';
   // 未命中
-  return '這個問題超出我目前的即時查詢範圍(我現在專精:持倉/淨值/風控/策略狀態)。\n開放式對話與創業諮詢要接大腦(Groq/Claude),那是下一階段升級。你可以試:「現在有什麼倉」「熔斷了嗎」「策略狀態」。';
+  return '這個問題超出我目前的即時查詢範圍(我現在專精:持倉/淨值/風控/策略狀態)。\n';
 }
-function ask(q){
+function localHit(q){
+  const t=q.toLowerCase().replace(/\s/g,'');
+  return /倉|持倉|部位|position|淨值|餘額|多少錢|equity|資產|熔斷|風控|killswitch|停了|halt|策略狀態|幾點|更新/.test(t);
+}
+async function ask(q){
   if(!q.trim())return;
   add('u',esc(q));
   $('inp').value='';
-  if(!DATA){ add('j','數據還在載入,稍等一秒再問。'); return; }
-  const a=answer(q);
-  setTimeout(()=>{ const d=add('j','🎖 '+a); say(a); },180);
+  HIST.push({role:'user',content:q});
+  // 本地意圖(系統數據)秒答, 零成本
+  if(DATA && localHit(q)){
+    const a=answer(q);
+    setTimeout(()=>{ add('j','🎖 '+a); say(a); },150);
+    HIST.push({role:'assistant',content:a.replace(/<[^>]+>/g,'')});
+    return;
+  }
+  // 其餘轉大腦(Claude)
+  const think=add('j','🎖 <span class="mono" style="color:var(--ink2)">思考中…</span>');
+  try{
+    const r=await fetch(BRAIN,{method:'POST',headers:{'content-type':'application/json'},
+      body:JSON.stringify({pass:PASS,messages:HIST.slice(-12)})});
+    const d=await r.json();
+    const reply=d.reply||'(無回應)';
+    think.innerHTML='🎖 '+esc(reply).replace(/
+/g,'<br>').replace(/\*\*(.+?)\*\*/g,'<b>$1</b>');
+    HIST.push({role:'assistant',content:reply});
+    say(reply);
+  }catch(e){
+    think.innerHTML='🎖 大腦連線失敗('+esc(String(e).slice(0,50))+')。系統數據問題我仍可本地回答。';
+  }
+  $('chat').scrollTop=$('chat').scrollHeight;
 }
 
 // ── 語音輸入(瀏覽器原生, 免費) ──
@@ -167,13 +193,13 @@ $('inp').addEventListener('keydown',e=>{if(e.key==='Enter')ask($('inp').value);}
 $('ttsTog').onclick=()=>{ ttsOn=!ttsOn; $('ttsTog').classList.toggle('on',ttsOn); };
 
 // 快捷問句
-const CHIPS=['現在有什麼倉','熔斷了嗎','策略狀態','淨值多少','數據多久前更新'];
+const CHIPS=['現在有什麼倉','熔斷了嗎','今天該注意什麼','治具訪談開場白','BTC你看法'];
 $('chips').innerHTML=CHIPS.map(c=>`<span class="chip">${c}</span>`).join('');
 $('chips').querySelectorAll('.chip').forEach(el=>el.onclick=()=>ask(el.textContent));
 
 // 開場
 add('sys','JARVIS 語音副官 v1 · 數據來自你的即時系統快照');
-add('j','🎖 指揮官,我已上線。點麥克風講話或直接打字——問我持倉、淨值、風控、策略狀態,我即時回你。右下「🔊回覆」開啟後我會用語音唸給你聽。');
+add('j','🎖 指揮官,我已上線。點麥克風講話或直接打字——問我什麼都行——持倉淨值秒查、市場分析、創業諮詢、翻譯計算,我用 Claude 大腦即時回你。右下「🔊回覆」開啟語音朗讀。');
 load(); setInterval(load,60000);
 </script>
 </body>
