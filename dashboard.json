@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-27T17:39:38.189222+08:00",
+  "generated_at": "2026-07-27T18:39:50.754491+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -439,7 +439,7 @@
         "closed_ts": "2026-07-25T08:05:47.842361+00:00"
       }
     ],
-    "last_cycle_ts": "2026-07-27T09:38:09.945428+00:00",
+    "last_cycle_ts": "2026-07-27T10:38:09.081889+00:00",
     "stats": {
       "n": 14,
       "win_rate_pct": 28.6,
@@ -462,14 +462,14 @@
   "strat_tl": {
     "mode": "live",
     "open_positions": [],
-    "last_cycle_ts": "2026-07-27T09:38:51.947804+00:00",
+    "last_cycle_ts": "2026-07-27T10:38:39.143418+00:00",
     "stats": {
-      "n": 31,
-      "win_rate_pct": 9.7,
-      "ev_r": -0.578,
-      "total_pnl_usdt": -17.91,
+      "n": 32,
+      "win_rate_pct": 9.4,
+      "ev_r": -0.591,
+      "total_pnl_usdt": -18.91,
       "avg_win_usdt": 0.97,
-      "avg_loss_usdt": -0.74
+      "avg_loss_usdt": -0.75
     }
   },
   "tama_config": {
@@ -2932,6 +2932,10 @@
     {
       "ts": "2026-07-27T09:35:11.725322+00:00",
       "idx": 67.36
+    },
+    {
+      "ts": "2026-07-27T10:35:17.098675+00:00",
+      "idx": 67.16
     }
   ],
   "trades_public": [
@@ -3249,6 +3253,13 @@
       "strat": "TL",
       "dir": "LONG",
       "r": 0.0
+    },
+    {
+      "ts": "2026-07-27T10:11:23.993462+00:00",
+      "sym": "TRX-USDT",
+      "strat": "TL",
+      "dir": "LONG",
+      "r": -1.0
     }
   ],
   "self_upgrades": [
