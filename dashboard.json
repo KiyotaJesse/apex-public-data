@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T05:43:23.472710+08:00",
+  "generated_at": "2026-07-28T06:43:36.251193+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -439,7 +439,7 @@
         "closed_ts": "2026-07-25T08:05:47.842361+00:00"
       }
     ],
-    "last_cycle_ts": "2026-07-27T21:42:17.441953+00:00",
+    "last_cycle_ts": "2026-07-27T22:41:48.515051+00:00",
     "stats": {
       "n": 14,
       "win_rate_pct": 28.6,
@@ -463,26 +463,6 @@
     "mode": "live",
     "open_positions": [
       {
-        "id": "strattl_UNIUSDT_1785164433",
-        "symbol": "UNI-USDT",
-        "direction": "LONG",
-        "entry": 3.833,
-        "sl_price": 3.74371429,
-        "tp_price": 4.1008571428571425,
-        "sl_dist": 0.08928571428571441,
-        "qty": 37.0,
-        "max_hold_h": 48,
-        "strategy": "TL",
-        "sl_order_id": "2081771629172064256",
-        "opened_ts": "2026-07-27T15:01:32.616077+00:00",
-        "highest": 3.852,
-        "lowest": 3.833,
-        "breakeven_done": false,
-        "bars_elapsed": 6,
-        "last_checked_time": "2026-07-27 21:00:00",
-        "notion_page_id": "3aa0a137-4574-8137-8d82-c1da7094d573"
-      },
-      {
         "id": "strattl_BNBUSDT_1785166576",
         "symbol": "BNB-USDT",
         "direction": "LONG",
@@ -498,19 +478,19 @@
         "highest": 575.79,
         "lowest": 568.41,
         "breakeven_done": false,
-        "bars_elapsed": 6,
-        "last_checked_time": "2026-07-27 21:00:00",
+        "bars_elapsed": 7,
+        "last_checked_time": "2026-07-27 22:00:00",
         "notion_page_id": "3aa0a137-4574-8191-aa92-c486918351cf"
       }
     ],
-    "last_cycle_ts": "2026-07-27T21:41:40.303199+00:00",
+    "last_cycle_ts": "2026-07-27T22:42:18.517124+00:00",
     "stats": {
-      "n": 33,
-      "win_rate_pct": 9.1,
-      "ev_r": -0.606,
-      "total_pnl_usdt": -20.0,
+      "n": 34,
+      "win_rate_pct": 8.8,
+      "ev_r": -0.62,
+      "total_pnl_usdt": -21.08,
       "avg_win_usdt": 0.97,
-      "avg_loss_usdt": -0.76
+      "avg_loss_usdt": -0.77
     }
   },
   "tama_config": {
@@ -3021,6 +3001,10 @@
     {
       "ts": "2026-07-27T21:35:58.640591+00:00",
       "idx": 66.44
+    },
+    {
+      "ts": "2026-07-27T22:36:00.304969+00:00",
+      "idx": 65.98
     }
   ],
   "trades_public": [
@@ -3352,6 +3336,13 @@
       "strat": "TL",
       "dir": "LONG",
       "r": -1.088
+    },
+    {
+      "ts": "2026-07-27T22:26:25.010686+00:00",
+      "sym": "UNI-USDT",
+      "strat": "TL",
+      "dir": "LONG",
+      "r": -1.086
     }
   ],
   "self_upgrades": [
