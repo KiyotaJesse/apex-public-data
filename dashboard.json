@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T08:44:06.759491+08:00",
+  "generated_at": "2026-07-28T09:44:20.928606+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -439,7 +439,7 @@
         "closed_ts": "2026-07-25T08:05:47.842361+00:00"
       }
     ],
-    "last_cycle_ts": "2026-07-28T00:42:06.804820+00:00",
+    "last_cycle_ts": "2026-07-28T01:42:07.681687+00:00",
     "stats": {
       "n": 14,
       "win_rate_pct": 28.6,
@@ -461,36 +461,15 @@
   },
   "strat_tl": {
     "mode": "live",
-    "open_positions": [
-      {
-        "id": "strattl_BNBUSDT_1785166576",
-        "symbol": "BNB-USDT",
-        "direction": "LONG",
-        "entry": 568.41,
-        "sl_price": 563.1842857142857,
-        "tp_price": 584.0871428571428,
-        "sl_dist": 5.225714285714275,
-        "qty": 0.63,
-        "max_hold_h": 48,
-        "strategy": "TL",
-        "sl_order_id": "2081765872573710336",
-        "opened_ts": "2026-07-27T15:37:15.801309+00:00",
-        "highest": 575.79,
-        "lowest": 568.41,
-        "breakeven_done": false,
-        "bars_elapsed": 9,
-        "last_checked_time": "2026-07-28 00:00:00",
-        "notion_page_id": "3aa0a137-4574-8191-aa92-c486918351cf"
-      }
-    ],
-    "last_cycle_ts": "2026-07-28T00:42:57.159288+00:00",
+    "open_positions": [],
+    "last_cycle_ts": "2026-07-28T01:42:51.905264+00:00",
     "stats": {
-      "n": 34,
-      "win_rate_pct": 8.8,
-      "ev_r": -0.62,
-      "total_pnl_usdt": -21.08,
+      "n": 35,
+      "win_rate_pct": 8.6,
+      "ev_r": -0.632,
+      "total_pnl_usdt": -22.12,
       "avg_win_usdt": 0.97,
-      "avg_loss_usdt": -0.77
+      "avg_loss_usdt": -0.78
     }
   },
   "tama_config": {
@@ -3013,6 +2992,10 @@
     {
       "ts": "2026-07-28T00:36:02.553159+00:00",
       "idx": 65.32
+    },
+    {
+      "ts": "2026-07-28T01:36:02.713020+00:00",
+      "idx": 64.81
     }
   ],
   "trades_public": [
@@ -3351,6 +3334,13 @@
       "strat": "TL",
       "dir": "LONG",
       "r": -1.086
+    },
+    {
+      "ts": "2026-07-28T01:08:13.925052+00:00",
+      "sym": "BNB-USDT",
+      "strat": "TL",
+      "dir": "LONG",
+      "r": -1.035
     }
   ],
   "self_upgrades": [
