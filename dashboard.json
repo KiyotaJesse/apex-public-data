@@ -1,8 +1,84 @@
 {
-  "generated_at": "2026-07-31T17:34:32.687640+08:00",
+  "generated_at": "2026-07-31T18:34:45.286338+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
-    "open_positions": [],
+    "open_positions": [
+      {
+        "id": "stratb_BTCUSDT_1785492021",
+        "symbol": "BTC-USDT",
+        "dir": "SHORT",
+        "sig_entry": 63689.6,
+        "fill_price": 63666.5,
+        "qty": 0.0162,
+        "notional_usdt": 1031.3973,
+        "margin_usdt": 20.6279,
+        "leverage": 50,
+        "risk_usdt": 6.3659,
+        "sl_price": 64082.35785714,
+        "sl_dist": 392.75785714285826,
+        "sl_order_id": "2083130638093352960",
+        "open_order_id": "2083130637406126080",
+        "lowest": 63645.6,
+        "breakeven_done": false,
+        "sig_bar_time": "2026-07-31 09:00:00",
+        "entry_bar_time": "2026-07-31 09:00:00",
+        "last_checked_time": "2026-07-31 10:00:00",
+        "bars_elapsed": 1,
+        "opened_ts": "2026-07-31T10:00:21.353162+00:00",
+        "status": "open",
+        "notion_page_id": null
+      },
+      {
+        "id": "stratb_ARBUSDT_1785492037",
+        "symbol": "ARB-USDT",
+        "dir": "SHORT",
+        "sig_entry": 0.07612,
+        "fill_price": 0.07604,
+        "qty": 8055.9,
+        "notional_usdt": 612.5706,
+        "margin_usdt": 13.9221,
+        "leverage": 44,
+        "risk_usdt": 6.3584,
+        "sl_price": 0.07690929,
+        "sl_dist": 0.0007892857142857176,
+        "sl_order_id": "2083130705558732800",
+        "open_order_id": "2083130705056055296",
+        "lowest": 0.07604,
+        "breakeven_done": false,
+        "sig_bar_time": "2026-07-31 09:00:00",
+        "entry_bar_time": "2026-07-31 09:00:00",
+        "last_checked_time": "2026-07-31 10:00:00",
+        "bars_elapsed": 1,
+        "opened_ts": "2026-07-31T10:00:37.475454+00:00",
+        "status": "open",
+        "notion_page_id": null
+      },
+      {
+        "id": "stratb_OPUSDT_1785492042",
+        "symbol": "OP-USDT",
+        "dir": "SHORT",
+        "sig_entry": 0.0862,
+        "fill_price": 0.0859,
+        "qty": 6393.4,
+        "notional_usdt": 549.1931,
+        "margin_usdt": 13.076,
+        "leverage": 42,
+        "risk_usdt": 6.3523,
+        "sl_price": 0.08719357,
+        "sl_dist": 0.0009935714285714274,
+        "sl_order_id": "2083130725506842624",
+        "open_order_id": "2083130724911890432",
+        "lowest": 0.0858,
+        "breakeven_done": false,
+        "sig_bar_time": "2026-07-31 09:00:00",
+        "entry_bar_time": "2026-07-31 09:00:00",
+        "last_checked_time": "2026-07-31 10:00:00",
+        "bars_elapsed": 1,
+        "opened_ts": "2026-07-31T10:00:42.208781+00:00",
+        "status": "open",
+        "notion_page_id": "3ae0a137-4574-8138-982d-d04bdf2d2c0e"
+      }
+    ],
     "closed_trades": [
       {
         "id": "stratb_BNBUSDT_1784296854",
@@ -470,7 +546,7 @@
         "closed_ts": "2026-07-28T15:21:12.923877+00:00"
       }
     ],
-    "last_cycle_ts": "2026-07-31T09:31:48.859226+00:00",
+    "last_cycle_ts": "2026-07-31T10:34:25.619356+00:00",
     "stats": {
       "n": 15,
       "win_rate_pct": 26.7,
@@ -493,7 +569,7 @@
   "strat_tl": {
     "mode": "disabled",
     "open_positions": [],
-    "last_cycle_ts": "2026-07-31T09:32:09.021866+00:00",
+    "last_cycle_ts": "2026-07-31T10:33:48.881904+00:00",
     "stats": {
       "n": 35,
       "win_rate_pct": 8.6,
@@ -3345,6 +3421,10 @@
     {
       "ts": "2026-07-31T09:07:12.452844+00:00",
       "idx": 63.18
+    },
+    {
+      "ts": "2026-07-31T10:07:16.452068+00:00",
+      "idx": 64.11
     }
   ],
   "trades_public": [
