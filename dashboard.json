@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-31T22:35:33.469630+08:00",
+  "generated_at": "2026-07-31T23:35:47.208161+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [
@@ -14,16 +14,16 @@
         "margin_usdt": 20.6279,
         "leverage": 50,
         "risk_usdt": 6.3659,
-        "sl_price": 64082.35785714,
+        "sl_price": 62797.83,
         "sl_dist": 392.75785714285826,
-        "sl_order_id": "2083130638093352960",
+        "sl_order_id": "2083206187172069376",
         "open_order_id": "2083130637406126080",
-        "lowest": 63214.7,
-        "breakeven_done": false,
+        "lowest": 62610.0,
+        "breakeven_done": true,
         "sig_bar_time": "2026-07-31 09:00:00",
         "entry_bar_time": "2026-07-31 09:00:00",
-        "last_checked_time": "2026-07-31 14:00:00",
-        "bars_elapsed": 5,
+        "last_checked_time": "2026-07-31 15:00:00",
+        "bars_elapsed": 6,
         "opened_ts": "2026-07-31T10:00:21.353162+00:00",
         "status": "open",
         "notion_page_id": null
@@ -47,8 +47,8 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-31 09:00:00",
         "entry_bar_time": "2026-07-31 09:00:00",
-        "last_checked_time": "2026-07-31 14:00:00",
-        "bars_elapsed": 5,
+        "last_checked_time": "2026-07-31 15:00:00",
+        "bars_elapsed": 6,
         "opened_ts": "2026-07-31T10:00:42.208781+00:00",
         "status": "open",
         "notion_page_id": "3ae0a137-4574-8138-982d-d04bdf2d2c0e"
@@ -68,12 +68,12 @@
         "sl_dist": 15.898999999999983,
         "sl_order_id": "2083191215083847680",
         "open_order_id": "2083191213356433408",
-        "lowest": 1865.66,
+        "lowest": 1856.51,
         "breakeven_done": false,
         "sig_bar_time": "2026-07-31 13:00:00",
         "entry_bar_time": "2026-07-31 13:00:00",
-        "last_checked_time": "2026-07-31 14:00:00",
-        "bars_elapsed": 1,
+        "last_checked_time": "2026-07-31 15:00:00",
+        "bars_elapsed": 2,
         "opened_ts": "2026-07-31T14:01:03.861389+00:00",
         "status": "open",
         "notion_page_id": "3ae0a137-4574-81b1-8c10-e5db3b44922b"
@@ -93,40 +93,40 @@
         "sl_dist": 0.5798000000000026,
         "sl_order_id": "2083191238806831104",
         "open_order_id": "2083191238333513728",
-        "lowest": 73.206,
+        "lowest": 72.95,
         "breakeven_done": false,
         "sig_bar_time": "2026-07-31 13:00:00",
         "entry_bar_time": "2026-07-31 13:00:00",
-        "last_checked_time": "2026-07-31 14:00:00",
-        "bars_elapsed": 1,
+        "last_checked_time": "2026-07-31 15:00:00",
+        "bars_elapsed": 2,
         "opened_ts": "2026-07-31T14:01:09.722362+00:00",
         "status": "open",
         "notion_page_id": "3ae0a137-4574-8114-b0f1-c28934448543"
       },
       {
-        "id": "stratb_APTUSDT_1785507756",
-        "symbol": "APT-USDT",
+        "id": "stratb_XRPUSDT_1785510277",
+        "symbol": "XRP-USDT",
         "dir": "SHORT",
-        "sig_entry": 0.5577,
-        "fill_price": 0.5612,
-        "qty": 1145.0,
-        "notional_usdt": 642.574,
-        "margin_usdt": 14.2794,
-        "leverage": 45,
-        "risk_usdt": 6.4539,
-        "sl_price": 0.56333643,
-        "sl_dist": 0.005636428571428569,
-        "sl_order_id": "2083196638646075392",
-        "open_order_id": "2083196638051123200",
-        "lowest": 0.5513,
+        "sig_entry": 1.0625,
+        "fill_price": 1.0643,
+        "qty": 982.0,
+        "notional_usdt": 1045.1426,
+        "margin_usdt": 20.9029,
+        "leverage": 50,
+        "risk_usdt": 6.5474,
+        "sl_price": 1.06916714,
+        "sl_dist": 0.006667142857142927,
+        "sl_order_id": "2083207209743384576",
+        "open_order_id": "2083207209265872896",
+        "lowest": 1.0613,
         "breakeven_done": false,
-        "sig_bar_time": "2026-07-31 13:00:00",
-        "entry_bar_time": "2026-07-31 13:00:00",
-        "last_checked_time": "2026-07-31 14:00:00",
+        "sig_bar_time": "2026-07-31 14:00:00",
+        "entry_bar_time": "2026-07-31 14:00:00",
+        "last_checked_time": "2026-07-31 15:00:00",
         "bars_elapsed": 1,
-        "opened_ts": "2026-07-31T14:22:37.116765+00:00",
+        "opened_ts": "2026-07-31T15:04:37.492346+00:00",
         "status": "open",
-        "notion_page_id": "3ae0a137-4574-8191-bcdf-e7118f72a7a7"
+        "notion_page_id": "3ae0a137-4574-81ec-b93c-f0d423e117cf"
       }
     ],
     "closed_trades": [
@@ -687,22 +687,53 @@
         "pnl_usdt": 4.8726,
         "outcome": "WIN",
         "closed_ts": "2026-07-31T14:22:30.160545+00:00"
+      },
+      {
+        "id": "stratb_APTUSDT_1785507756",
+        "symbol": "APT-USDT",
+        "dir": "SHORT",
+        "sig_entry": 0.5577,
+        "fill_price": 0.5612,
+        "qty": 1145.0,
+        "notional_usdt": 642.574,
+        "margin_usdt": 14.2794,
+        "leverage": 45,
+        "risk_usdt": 6.4539,
+        "sl_price": 0.56333643,
+        "sl_dist": 0.005636428571428569,
+        "sl_order_id": "2083196638646075392",
+        "open_order_id": "2083196638051123200",
+        "lowest": 0.5513,
+        "breakeven_done": false,
+        "sig_bar_time": "2026-07-31 13:00:00",
+        "entry_bar_time": "2026-07-31 13:00:00",
+        "last_checked_time": "2026-07-31 15:00:00",
+        "bars_elapsed": 2,
+        "opened_ts": "2026-07-31T14:22:37.116765+00:00",
+        "status": "open",
+        "notion_page_id": "3ae0a137-4574-8191-bcdf-e7118f72a7a7",
+        "exit_price": 0.5647,
+        "exit_reason": "sl_hit",
+        "realized_r": -0.7205,
+        "pnl_usdt": -4.0075,
+        "outcome": "LOSS",
+        "closed_ts": "2026-07-31T15:04:31.731099+00:00"
       }
     ],
-    "last_cycle_ts": "2026-07-31T14:34:41.660682+00:00",
+    "last_cycle_ts": "2026-07-31T15:35:10.623019+00:00",
     "stats": {
-      "n": 18,
-      "win_rate_pct": 33.3,
-      "ev_r": -0.223,
-      "total_pnl_usdt": -27.97,
+      "n": 19,
+      "win_rate_pct": 31.6,
+      "ev_r": -0.243,
+      "total_pnl_usdt": -31.98,
       "avg_win_usdt": 11.09,
-      "avg_loss_usdt": -7.88
+      "avg_loss_usdt": -7.58
     }
   },
   "risk_circuit_breaker": {
     "killswitch": false,
     "daily_loss_limit_hit": false,
-    "daily_pnl_usdt": 2.5065,
+    "daily_pnl_usdt": -1.501,
     "daily_pnl_date": "2026-07-31"
   },
   "feature_flags": {
@@ -712,7 +743,7 @@
   "strat_tl": {
     "mode": "disabled",
     "open_positions": [],
-    "last_cycle_ts": "2026-07-31T14:33:58.477674+00:00",
+    "last_cycle_ts": "2026-07-31T15:34:27.877852+00:00",
     "stats": {
       "n": 35,
       "win_rate_pct": 8.6,
@@ -3584,6 +3615,10 @@
     {
       "ts": "2026-07-31T14:07:40.259371+00:00",
       "idx": 70.12
+    },
+    {
+      "ts": "2026-07-31T15:07:57.343835+00:00",
+      "idx": 65.14
     }
   ],
   "trades_public": [
@@ -3957,6 +3992,13 @@
       "strat": "B1",
       "dir": "SHORT",
       "r": 0.6513
+    },
+    {
+      "ts": "2026-07-31T15:04:31.731099+00:00",
+      "sym": "APT-USDT",
+      "strat": "B1",
+      "dir": "SHORT",
+      "r": -0.7205
     }
   ],
   "self_upgrades": [
