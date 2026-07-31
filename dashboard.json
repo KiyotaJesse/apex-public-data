@@ -1,33 +1,8 @@
 {
-  "generated_at": "2026-07-31T23:35:47.208161+08:00",
+  "generated_at": "2026-08-01T00:36:00.644195+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [
-      {
-        "id": "stratb_BTCUSDT_1785492021",
-        "symbol": "BTC-USDT",
-        "dir": "SHORT",
-        "sig_entry": 63689.6,
-        "fill_price": 63666.5,
-        "qty": 0.0162,
-        "notional_usdt": 1031.3973,
-        "margin_usdt": 20.6279,
-        "leverage": 50,
-        "risk_usdt": 6.3659,
-        "sl_price": 62797.83,
-        "sl_dist": 392.75785714285826,
-        "sl_order_id": "2083206187172069376",
-        "open_order_id": "2083130637406126080",
-        "lowest": 62610.0,
-        "breakeven_done": true,
-        "sig_bar_time": "2026-07-31 09:00:00",
-        "entry_bar_time": "2026-07-31 09:00:00",
-        "last_checked_time": "2026-07-31 15:00:00",
-        "bars_elapsed": 6,
-        "opened_ts": "2026-07-31T10:00:21.353162+00:00",
-        "status": "open",
-        "notion_page_id": null
-      },
       {
         "id": "stratb_OPUSDT_1785492042",
         "symbol": "OP-USDT",
@@ -47,8 +22,8 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-31 09:00:00",
         "entry_bar_time": "2026-07-31 09:00:00",
-        "last_checked_time": "2026-07-31 15:00:00",
-        "bars_elapsed": 6,
+        "last_checked_time": "2026-07-31 16:00:00",
+        "bars_elapsed": 7,
         "opened_ts": "2026-07-31T10:00:42.208781+00:00",
         "status": "open",
         "notion_page_id": "3ae0a137-4574-8138-982d-d04bdf2d2c0e"
@@ -72,8 +47,8 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-31 13:00:00",
         "entry_bar_time": "2026-07-31 13:00:00",
-        "last_checked_time": "2026-07-31 15:00:00",
-        "bars_elapsed": 2,
+        "last_checked_time": "2026-07-31 16:00:00",
+        "bars_elapsed": 3,
         "opened_ts": "2026-07-31T14:01:03.861389+00:00",
         "status": "open",
         "notion_page_id": "3ae0a137-4574-81b1-8c10-e5db3b44922b"
@@ -97,8 +72,8 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-31 13:00:00",
         "entry_bar_time": "2026-07-31 13:00:00",
-        "last_checked_time": "2026-07-31 15:00:00",
-        "bars_elapsed": 2,
+        "last_checked_time": "2026-07-31 16:00:00",
+        "bars_elapsed": 3,
         "opened_ts": "2026-07-31T14:01:09.722362+00:00",
         "status": "open",
         "notion_page_id": "3ae0a137-4574-8114-b0f1-c28934448543"
@@ -118,12 +93,12 @@
         "sl_dist": 0.006667142857142927,
         "sl_order_id": "2083207209743384576",
         "open_order_id": "2083207209265872896",
-        "lowest": 1.0613,
+        "lowest": 1.0598,
         "breakeven_done": false,
         "sig_bar_time": "2026-07-31 14:00:00",
         "entry_bar_time": "2026-07-31 14:00:00",
-        "last_checked_time": "2026-07-31 15:00:00",
-        "bars_elapsed": 1,
+        "last_checked_time": "2026-07-31 16:00:00",
+        "bars_elapsed": 2,
         "opened_ts": "2026-07-31T15:04:37.492346+00:00",
         "status": "open",
         "notion_page_id": "3ae0a137-4574-81ec-b93c-f0d423e117cf"
@@ -718,22 +693,53 @@
         "pnl_usdt": -4.0075,
         "outcome": "LOSS",
         "closed_ts": "2026-07-31T15:04:31.731099+00:00"
+      },
+      {
+        "id": "stratb_BTCUSDT_1785492021",
+        "symbol": "BTC-USDT",
+        "dir": "SHORT",
+        "sig_entry": 63689.6,
+        "fill_price": 63666.5,
+        "qty": 0.0162,
+        "notional_usdt": 1031.3973,
+        "margin_usdt": 20.6279,
+        "leverage": 50,
+        "risk_usdt": 6.3659,
+        "sl_price": 62797.83,
+        "sl_dist": 392.75785714285826,
+        "sl_order_id": "2083206187172069376",
+        "open_order_id": "2083130637406126080",
+        "lowest": 62610.0,
+        "breakeven_done": true,
+        "sig_bar_time": "2026-07-31 09:00:00",
+        "entry_bar_time": "2026-07-31 09:00:00",
+        "last_checked_time": "2026-07-31 16:00:00",
+        "bars_elapsed": 7,
+        "opened_ts": "2026-07-31T10:00:21.353162+00:00",
+        "status": "open",
+        "notion_page_id": null,
+        "exit_price": 62799.8,
+        "exit_reason": "sl_hit",
+        "realized_r": 2.0446,
+        "pnl_usdt": 14.0405,
+        "outcome": "WIN",
+        "closed_ts": "2026-07-31T16:09:00.653941+00:00"
       }
     ],
-    "last_cycle_ts": "2026-07-31T15:35:10.623019+00:00",
+    "last_cycle_ts": "2026-07-31T16:34:55.317660+00:00",
     "stats": {
-      "n": 19,
-      "win_rate_pct": 31.6,
-      "ev_r": -0.243,
-      "total_pnl_usdt": -31.98,
-      "avg_win_usdt": 11.09,
+      "n": 20,
+      "win_rate_pct": 35.0,
+      "ev_r": -0.13,
+      "total_pnl_usdt": -17.94,
+      "avg_win_usdt": 11.51,
       "avg_loss_usdt": -7.58
     }
   },
   "risk_circuit_breaker": {
     "killswitch": false,
     "daily_loss_limit_hit": false,
-    "daily_pnl_usdt": -1.501,
+    "daily_pnl_usdt": 12.5395,
     "daily_pnl_date": "2026-07-31"
   },
   "feature_flags": {
@@ -743,7 +749,7 @@
   "strat_tl": {
     "mode": "disabled",
     "open_positions": [],
-    "last_cycle_ts": "2026-07-31T15:34:27.877852+00:00",
+    "last_cycle_ts": "2026-07-31T16:34:06.620463+00:00",
     "stats": {
       "n": 35,
       "win_rate_pct": 8.6,
@@ -793,9 +799,12 @@
     },
     "applied": {
       "applied_sha": "50a92a63b2ff0013ecfdc8676d63a74d25a26823",
-      "applied_at": "2026-07-31T08:34:51.273946+00:00",
+      "applied_at": "2026-07-31T16:28:31.708416+00:00",
       "changes": [
-        "tl.live_enabled: True -> False"
+        "b1.cycle_seconds: 300 -> 60",
+        "tl.live_enabled: True -> False",
+        "tl.risk_pct: 0.02 -> 0.01",
+        "tl.cycle_seconds: 900 -> 60"
       ]
     },
     "bounds": {
@@ -3619,6 +3628,14 @@
     {
       "ts": "2026-07-31T15:07:57.343835+00:00",
       "idx": 65.14
+    },
+    {
+      "ts": "2026-07-31T16:07:59.451680+00:00",
+      "idx": 64.85
+    },
+    {
+      "ts": "2026-07-31T16:28:37.507856+00:00",
+      "idx": 64.04
     }
   ],
   "trades_public": [
@@ -3999,6 +4016,13 @@
       "strat": "B1",
       "dir": "SHORT",
       "r": -0.7205
+    },
+    {
+      "ts": "2026-07-31T16:09:00.653941+00:00",
+      "sym": "BTC-USDT",
+      "strat": "B1",
+      "dir": "SHORT",
+      "r": 2.0446
     }
   ],
   "self_upgrades": [
