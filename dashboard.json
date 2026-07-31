@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-31T16:34:21.745319+08:00",
+  "generated_at": "2026-07-31T17:34:32.687640+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -470,7 +470,7 @@
         "closed_ts": "2026-07-28T15:21:12.923877+00:00"
       }
     ],
-    "last_cycle_ts": "2026-07-31T08:32:59.843180+00:00",
+    "last_cycle_ts": "2026-07-31T09:31:48.859226+00:00",
     "stats": {
       "n": 15,
       "win_rate_pct": 26.7,
@@ -491,9 +491,9 @@
     "d": {}
   },
   "strat_tl": {
-    "mode": "live",
+    "mode": "disabled",
     "open_positions": [],
-    "last_cycle_ts": "2026-07-31T08:32:05.165186+00:00",
+    "last_cycle_ts": "2026-07-31T09:32:09.021866+00:00",
     "stats": {
       "n": 35,
       "win_rate_pct": 8.6,
@@ -507,8 +507,8 @@
     "current": {
       "_meta": {
         "desc": "APEX 控制台熱載入配置。改此檔 <=60 秒生效，無需重新部署。硬邊界見 tama_v5.py TAMA_CONFIG_BOUNDS。",
-        "updated": "2026-07-25T17:36:41+00:00",
-        "by": "Claude(Jesse批准: walk-forward TL近季EV轉負,降檔觀察)"
+        "updated": "2026-07-31T08:34:42+00:00",
+        "by": "Claude(Jesse批准2026-07-31: 首輪覆盤TL三重負證據,實彈35筆-22R勝率9%,轉停用止血)"
       },
       "b1": {
         "live_enabled": true,
@@ -520,7 +520,7 @@
         "regime_gate": true
       },
       "tl": {
-        "live_enabled": true,
+        "live_enabled": false,
         "risk_pct": 0.01,
         "leverage": 50,
         "max_positions": 2,
@@ -542,12 +542,10 @@
       }
     },
     "applied": {
-      "applied_sha": "340bb304fff4d37cee269ef031872286616c8252",
-      "applied_at": "2026-07-30T01:05:21.584086+00:00",
+      "applied_sha": "50a92a63b2ff0013ecfdc8676d63a74d25a26823",
+      "applied_at": "2026-07-31T08:34:51.273946+00:00",
       "changes": [
-        "b1.cycle_seconds: 300 -> 60",
-        "tl.risk_pct: 0.02 -> 0.01",
-        "tl.cycle_seconds: 900 -> 60"
+        "tl.live_enabled: True -> False"
       ]
     },
     "bounds": {
@@ -3342,6 +3340,10 @@
     },
     {
       "ts": "2026-07-31T08:07:11.072559+00:00",
+      "idx": 63.18
+    },
+    {
+      "ts": "2026-07-31T09:07:12.452844+00:00",
       "idx": 63.18
     }
   ],
