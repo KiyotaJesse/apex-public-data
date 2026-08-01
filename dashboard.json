@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T18:40:25.837473+08:00",
+  "generated_at": "2026-08-01T19:31:04.734638+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [
@@ -22,8 +22,8 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-31 09:00:00",
         "entry_bar_time": "2026-07-31 09:00:00",
-        "last_checked_time": "2026-08-01 10:00:00",
-        "bars_elapsed": 25,
+        "last_checked_time": "2026-08-01 11:00:00",
+        "bars_elapsed": 26,
         "opened_ts": "2026-07-31T10:00:42.208781+00:00",
         "status": "open",
         "notion_page_id": "3ae0a137-4574-8138-982d-d04bdf2d2c0e"
@@ -47,8 +47,8 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-31 13:00:00",
         "entry_bar_time": "2026-07-31 13:00:00",
-        "last_checked_time": "2026-08-01 10:00:00",
-        "bars_elapsed": 21,
+        "last_checked_time": "2026-08-01 11:00:00",
+        "bars_elapsed": 22,
         "opened_ts": "2026-07-31T14:01:03.861389+00:00",
         "status": "open",
         "notion_page_id": "3ae0a137-4574-81b1-8c10-e5db3b44922b"
@@ -72,8 +72,8 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-31 13:00:00",
         "entry_bar_time": "2026-07-31 13:00:00",
-        "last_checked_time": "2026-08-01 10:00:00",
-        "bars_elapsed": 21,
+        "last_checked_time": "2026-08-01 11:00:00",
+        "bars_elapsed": 22,
         "opened_ts": "2026-07-31T14:01:09.722362+00:00",
         "status": "open",
         "notion_page_id": "3ae0a137-4574-8114-b0f1-c28934448543"
@@ -732,7 +732,7 @@
         "closed_ts": "2026-07-31T17:32:15.712504+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-01T10:39:52.116147+00:00",
+    "last_cycle_ts": "2026-08-01T11:30:17.223088+00:00",
     "stats": {
       "n": 21,
       "win_rate_pct": 33.3,
@@ -755,7 +755,7 @@
   "strat_tl": {
     "mode": "disabled",
     "open_positions": [],
-    "last_cycle_ts": "2026-08-01T10:39:27.437173+00:00",
+    "last_cycle_ts": "2026-08-01T11:30:04.520423+00:00",
     "stats": {
       "n": 35,
       "win_rate_pct": 8.6,
@@ -769,8 +769,8 @@
     "current": {
       "_meta": {
         "desc": "APEX 控制台熱載入配置。改此檔 <=60 秒生效，無需重新部署。硬邊界見 tama_v5.py TAMA_CONFIG_BOUNDS。",
-        "updated": "2026-07-31T08:34:42+00:00",
-        "by": "Claude(Jesse批准2026-07-31: 首輪覆盤TL三重負證據,實彈35筆-22R勝率9%,轉停用止血)"
+        "updated": "2026-08-01T00:00:00+00:00",
+        "by": "Claude(SC家族S1/S2/S3接入, live_enabled=false待Jesse一鍵, 依2026-07-31三關過免paper新政策)"
       },
       "b1": {
         "live_enabled": true,
@@ -801,11 +801,21 @@
         "leverage": 50,
         "max_positions": 3,
         "cycle_seconds": 3600
+      },
+      "sc": {
+        "live_enabled": false,
+        "risk_pct": 0.01,
+        "leverage": 50,
+        "max_positions": 4,
+        "cycle_seconds": 900,
+        "s1_enabled": true,
+        "s2_enabled": true,
+        "s3_enabled": true
       }
     },
     "applied": {
-      "applied_sha": "50a92a63b2ff0013ecfdc8676d63a74d25a26823",
-      "applied_at": "2026-07-31T16:28:31.708416+00:00",
+      "applied_sha": "4e522beb39b855618790a5bf6a15bd7f9d15758b",
+      "applied_at": "2026-08-01T11:28:09.349537+00:00",
       "changes": [
         "b1.cycle_seconds: 300 -> 60",
         "tl.live_enabled: True -> False",
@@ -908,6 +918,46 @@
         "kind": "int",
         "min": 600,
         "max": 86400
+      },
+      "sc.live_enabled": {
+        "kind": "bool",
+        "min": null,
+        "max": null
+      },
+      "sc.risk_pct": {
+        "kind": "float",
+        "min": 0.0001,
+        "max": 0.02
+      },
+      "sc.leverage": {
+        "kind": "int",
+        "min": 1,
+        "max": 50
+      },
+      "sc.max_positions": {
+        "kind": "int",
+        "min": 0,
+        "max": 6
+      },
+      "sc.cycle_seconds": {
+        "kind": "int",
+        "min": 300,
+        "max": 7200
+      },
+      "sc.s1_enabled": {
+        "kind": "bool",
+        "min": null,
+        "max": null
+      },
+      "sc.s2_enabled": {
+        "kind": "bool",
+        "min": null,
+        "max": null
+      },
+      "sc.s3_enabled": {
+        "kind": "bool",
+        "min": null,
+        "max": null
       },
       "global.same_dir_max": {
         "kind": "int",
@@ -3714,6 +3764,10 @@
     {
       "ts": "2026-08-01T10:29:48.408297+00:00",
       "idx": 64.35
+    },
+    {
+      "ts": "2026-08-01T11:29:51.953748+00:00",
+      "idx": 63.61
     }
   ],
   "trades_public": [
