@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-02T04:44:41.947031+08:00",
+  "generated_at": "2026-08-02T05:44:55.303663+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [
@@ -22,8 +22,8 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-31 13:00:00",
         "entry_bar_time": "2026-07-31 13:00:00",
-        "last_checked_time": "2026-08-01 20:00:00",
-        "bars_elapsed": 31,
+        "last_checked_time": "2026-08-01 21:00:00",
+        "bars_elapsed": 32,
         "opened_ts": "2026-07-31T14:01:03.861389+00:00",
         "status": "open",
         "notion_page_id": "3ae0a137-4574-81b1-8c10-e5db3b44922b"
@@ -43,40 +43,15 @@
         "sl_dist": 0.0037885714285714133,
         "sl_order_id": "2083613908941766656",
         "open_order_id": "2083613908472643584",
-        "lowest": 0.55,
+        "lowest": 0.5481,
         "breakeven_done": false,
         "sig_bar_time": "2026-08-01 17:00:00",
         "entry_bar_time": "2026-08-01 17:00:00",
-        "last_checked_time": "2026-08-01 20:00:00",
-        "bars_elapsed": 3,
+        "last_checked_time": "2026-08-01 21:00:00",
+        "bars_elapsed": 4,
         "opened_ts": "2026-08-01T18:00:42.136522+00:00",
         "status": "open",
         "notion_page_id": "3af0a137-4574-81df-9215-e4dde178ee8f"
-      },
-      {
-        "id": "stratb_DOGEUSDT_1785610891",
-        "symbol": "DOGE-USDT",
-        "dir": "SHORT",
-        "sig_entry": 0.06849,
-        "fill_price": 0.0684,
-        "qty": 22676.0,
-        "notional_usdt": 1551.0384,
-        "margin_usdt": 31.0208,
-        "leverage": 50,
-        "risk_usdt": 8.0016,
-        "sl_price": 0.06884286,
-        "sl_dist": 0.00035285714285714266,
-        "sl_order_id": "2083629214263246848",
-        "open_order_id": "2083629213857038336",
-        "lowest": 0.0684,
-        "breakeven_done": false,
-        "sig_bar_time": "2026-08-01 18:00:00",
-        "entry_bar_time": "2026-08-01 18:00:00",
-        "last_checked_time": "2026-08-01 20:00:00",
-        "bars_elapsed": 2,
-        "opened_ts": "2026-08-01T19:01:31.209971+00:00",
-        "status": "open",
-        "notion_page_id": "3af0a137-4574-8123-ad24-dcb1190ad585"
       },
       {
         "id": "stratb_ETCUSDT_1785611017",
@@ -97,8 +72,8 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-08-01 18:00:00",
         "entry_bar_time": "2026-08-01 18:00:00",
-        "last_checked_time": "2026-08-01 20:00:00",
-        "bars_elapsed": 2,
+        "last_checked_time": "2026-08-01 21:00:00",
+        "bars_elapsed": 3,
         "opened_ts": "2026-08-01T19:03:37.466710+00:00",
         "status": "open",
         "notion_page_id": "3af0a137-4574-8181-9393-c9658e584a9a"
@@ -122,8 +97,8 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-08-01 18:00:00",
         "entry_bar_time": "2026-08-01 18:00:00",
-        "last_checked_time": "2026-08-01 20:00:00",
-        "bars_elapsed": 2,
+        "last_checked_time": "2026-08-01 21:00:00",
+        "bars_elapsed": 3,
         "opened_ts": "2026-08-01T19:06:48.101731+00:00",
         "status": "open",
         "notion_page_id": "3af0a137-4574-81b0-a828-f167d4361391"
@@ -904,22 +879,53 @@
         "pnl_usdt": -7.99,
         "outcome": "LOSS",
         "closed_ts": "2026-08-01T19:06:35.329460+00:00"
+      },
+      {
+        "id": "stratb_DOGEUSDT_1785610891",
+        "symbol": "DOGE-USDT",
+        "dir": "SHORT",
+        "sig_entry": 0.06849,
+        "fill_price": 0.0684,
+        "qty": 22676.0,
+        "notional_usdt": 1551.0384,
+        "margin_usdt": 31.0208,
+        "leverage": 50,
+        "risk_usdt": 8.0016,
+        "sl_price": 0.06884286,
+        "sl_dist": 0.00035285714285714266,
+        "sl_order_id": "2083629214263246848",
+        "open_order_id": "2083629213857038336",
+        "lowest": 0.0684,
+        "breakeven_done": false,
+        "sig_bar_time": "2026-08-01 18:00:00",
+        "entry_bar_time": "2026-08-01 18:00:00",
+        "last_checked_time": "2026-08-01 21:00:00",
+        "bars_elapsed": 3,
+        "opened_ts": "2026-08-01T19:01:31.209971+00:00",
+        "status": "open",
+        "notion_page_id": "3af0a137-4574-8123-ad24-dcb1190ad585",
+        "exit_price": 0.06889,
+        "exit_reason": "sl_hit",
+        "realized_r": -1.5825,
+        "pnl_usdt": -11.1112,
+        "outcome": "LOSS",
+        "closed_ts": "2026-08-01T21:01:59.817803+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-01T20:44:32.028006+00:00",
+    "last_cycle_ts": "2026-08-01T21:44:23.807941+00:00",
     "stats": {
-      "n": 25,
-      "win_rate_pct": 40.0,
-      "ev_r": 0.244,
-      "total_pnl_usdt": 42.13,
+      "n": 26,
+      "win_rate_pct": 38.5,
+      "ev_r": 0.172,
+      "total_pnl_usdt": 31.02,
       "avg_win_usdt": 15.37,
-      "avg_loss_usdt": -7.44
+      "avg_loss_usdt": -7.67
     }
   },
   "risk_circuit_breaker": {
     "killswitch": false,
     "daily_loss_limit_hit": false,
-    "daily_pnl_usdt": 65.1692,
+    "daily_pnl_usdt": 54.058,
     "daily_pnl_date": "2026-08-01"
   },
   "feature_flags": {
@@ -929,7 +935,7 @@
   "strat_tl": {
     "mode": "disabled",
     "open_positions": [],
-    "last_cycle_ts": "2026-08-01T20:43:49.350316+00:00",
+    "last_cycle_ts": "2026-08-01T21:43:28.636793+00:00",
     "stats": {
       "n": 35,
       "win_rate_pct": 8.6,
@@ -4047,6 +4053,10 @@
     {
       "ts": "2026-08-01T20:08:07.126486+00:00",
       "idx": 74.99
+    },
+    {
+      "ts": "2026-08-01T21:08:07.637564+00:00",
+      "idx": 73.17
     }
   ],
   "trades_public": [
@@ -4469,6 +4479,13 @@
       "strat": "B1",
       "dir": "SHORT",
       "r": -1.1346
+    },
+    {
+      "ts": "2026-08-01T21:01:59.817803+00:00",
+      "sym": "DOGE-USDT",
+      "strat": "B1",
+      "dir": "SHORT",
+      "r": -1.5825
     }
   ],
   "self_upgrades": [
