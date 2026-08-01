@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T13:39:25.838096+08:00",
+  "generated_at": "2026-08-01T14:39:37.934604+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [
@@ -22,8 +22,8 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-31 09:00:00",
         "entry_bar_time": "2026-07-31 09:00:00",
-        "last_checked_time": "2026-08-01 05:00:00",
-        "bars_elapsed": 20,
+        "last_checked_time": "2026-08-01 06:00:00",
+        "bars_elapsed": 21,
         "opened_ts": "2026-07-31T10:00:42.208781+00:00",
         "status": "open",
         "notion_page_id": "3ae0a137-4574-8138-982d-d04bdf2d2c0e"
@@ -47,8 +47,8 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-31 13:00:00",
         "entry_bar_time": "2026-07-31 13:00:00",
-        "last_checked_time": "2026-08-01 05:00:00",
-        "bars_elapsed": 16,
+        "last_checked_time": "2026-08-01 06:00:00",
+        "bars_elapsed": 17,
         "opened_ts": "2026-07-31T14:01:03.861389+00:00",
         "status": "open",
         "notion_page_id": "3ae0a137-4574-81b1-8c10-e5db3b44922b"
@@ -72,8 +72,8 @@
         "breakeven_done": false,
         "sig_bar_time": "2026-07-31 13:00:00",
         "entry_bar_time": "2026-07-31 13:00:00",
-        "last_checked_time": "2026-08-01 05:00:00",
-        "bars_elapsed": 16,
+        "last_checked_time": "2026-08-01 06:00:00",
+        "bars_elapsed": 17,
         "opened_ts": "2026-07-31T14:01:09.722362+00:00",
         "status": "open",
         "notion_page_id": "3ae0a137-4574-8114-b0f1-c28934448543"
@@ -732,7 +732,7 @@
         "closed_ts": "2026-07-31T17:32:15.712504+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-01T05:38:56.465356+00:00",
+    "last_cycle_ts": "2026-08-01T06:38:55.165183+00:00",
     "stats": {
       "n": 21,
       "win_rate_pct": 33.3,
@@ -755,7 +755,7 @@
   "strat_tl": {
     "mode": "disabled",
     "open_positions": [],
-    "last_cycle_ts": "2026-08-01T05:38:31.316934+00:00",
+    "last_cycle_ts": "2026-08-01T06:38:35.980905+00:00",
     "stats": {
       "n": 35,
       "win_rate_pct": 8.6,
@@ -3694,6 +3694,10 @@
     {
       "ts": "2026-08-01T05:29:20.781690+00:00",
       "idx": 62.41
+    },
+    {
+      "ts": "2026-08-01T06:29:25.902638+00:00",
+      "idx": 62.47
     }
   ],
   "trades_public": [
