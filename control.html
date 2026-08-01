@@ -96,6 +96,26 @@ const META={
   ['leverage','槓桿上限','','int',1,1,50,1],
   ['max_positions','最大同時持倉','','int',0,0,3,1],
   ['cycle_seconds','掃描週期(秒)','RS本質低頻,建議≥3600','int',0,600,86400,600]]},
+ mrs:{name:'MRS 超漲回落做空',rows:[
+  ['live_enabled','實盤開關','目前 paper,開=真金上陣','bool',1],
+  ['risk_pct','單筆風險','三階段驗證建議起步0.75%','pct',1,0.0001,0.02,0.0001],
+  ['leverage','槓桿上限','實際依爆倉線動態下調','int',1,1,50,1],
+  ['max_positions','最大同時持倉','','int',0,0,4,1],
+  ['vd_thr','VWAP偏離門檻','進場需vwap_dev≥此值(驗證值2.5)','float',0,1.5,4.0,0.25],
+  ['rsi_thr','RSI門檻','進場需RSI≥此值(驗證值75)','float',0,60,90,1],
+  ['sl_atr','止損ATR倍數','驗證值1.5','float',0,0.8,2.5,0.1],
+  ['max_hold_h','最長持倉(小時)','到時強制平倉','int',0,12,168,12],
+  ['cooldown_h','同幣冷卻(小時)','','int',0,1,48,1],
+  ['cycle_seconds','掃描週期(秒)','','int',0,300,7200,300]]},
+ sc:{name:'SC 空方家族 S1/S2/S3',rows:[
+  ['live_enabled','實盤開關','目前 paper,開=真金上陣','bool',1],
+  ['risk_pct','單筆風險','子策略配比S1x1/S2x0.75/S3x0.5','pct',1,0.0001,0.02,0.0001],
+  ['leverage','槓桿上限','','int',1,1,50,1],
+  ['max_positions','最大同時持倉','','int',0,0,6,1],
+  ['s1_enabled','S1 崩盤捕手','熊市閘門內4h跌破Donchian55','bool',0],
+  ['s2_enabled','S2 過熱獵人','無閘門,cvd_z+vwap_dev過熱空','bool',0],
+  ['s3_enabled','S3 高頻跌破','熊市閘門內1h跌破Donchian20','bool',0],
+  ['cycle_seconds','掃描週期(秒)','','int',0,300,7200,300]]},
  global:{name:'全域風控',rows:[
   ['same_dir_max','同方向倉位上限','跨策略合計','int',0,1,6,1],
   ['total_drawdown_halt_pct','總回撤熔斷','距峰值回撤達此比例全停','pct',0,0.05,0.30,0.01],
@@ -132,7 +152,7 @@ function render(){
   const m=META[sect];const c=CFG[sect]||{};
   const card=document.createElement('div');card.className='card';
   let mode='';
-  if('live_enabled' in c)mode=c.live_enabled?'<span class="mode live">LIVE</span>':(sect==='rs'?'<span class="mode paper">PAPER</span>':'<span class="mode off">OFF</span>');
+  if('live_enabled' in c)mode=c.live_enabled?'<span class="mode live">LIVE</span>':((sect==='rs'||sect==='mrs'||sect==='sc')?'<span class="mode paper">PAPER</span>':'<span class="mode off">OFF</span>');
   if(sect==='global')mode=c.killswitch?'<span class="mode off" style="color:var(--bear);border-color:var(--bear)">HALTED</span>':'<span class="mode live">ARMED</span>';
   card.innerHTML='<div class="chd"><b>'+m.name+'</b>'+mode+'</div>';
   for(const row of m.rows){
