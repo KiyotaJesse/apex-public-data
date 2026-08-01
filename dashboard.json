@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T19:31:04.734638+08:00",
+  "generated_at": "2026-08-01T19:42:56.741288+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [
@@ -732,7 +732,7 @@
         "closed_ts": "2026-07-31T17:32:15.712504+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-01T11:30:17.223088+00:00",
+    "last_cycle_ts": "2026-08-01T11:42:39.941196+00:00",
     "stats": {
       "n": 21,
       "win_rate_pct": 33.3,
@@ -755,7 +755,7 @@
   "strat_tl": {
     "mode": "disabled",
     "open_positions": [],
-    "last_cycle_ts": "2026-08-01T11:30:04.520423+00:00",
+    "last_cycle_ts": "2026-08-01T11:41:57.253723+00:00",
     "stats": {
       "n": 35,
       "win_rate_pct": 8.6,
@@ -769,8 +769,8 @@
     "current": {
       "_meta": {
         "desc": "APEX 控制台熱載入配置。改此檔 <=60 秒生效，無需重新部署。硬邊界見 tama_v5.py TAMA_CONFIG_BOUNDS。",
-        "updated": "2026-08-01T00:00:00+00:00",
-        "by": "Claude(SC家族S1/S2/S3接入, live_enabled=false待Jesse一鍵, 依2026-07-31三關過免paper新政策)"
+        "updated": "2026-08-01T11:40:44+00:00",
+        "by": "Claude(Jesse指示2026-08-01: MRS三階段全過上線, live_enabled待Jesse一鍵)"
       },
       "b1": {
         "live_enabled": true,
@@ -811,11 +811,23 @@
         "s1_enabled": true,
         "s2_enabled": true,
         "s3_enabled": true
+      },
+      "mrs": {
+        "live_enabled": false,
+        "risk_pct": 0.0075,
+        "leverage": 50,
+        "max_positions": 2,
+        "cycle_seconds": 900,
+        "vd_thr": 2.5,
+        "rsi_thr": 75,
+        "sl_atr": 1.5,
+        "max_hold_h": 72,
+        "cooldown_h": 12
       }
     },
     "applied": {
-      "applied_sha": "4e522beb39b855618790a5bf6a15bd7f9d15758b",
-      "applied_at": "2026-08-01T11:28:09.349537+00:00",
+      "applied_sha": "6b2036cb9f33e07cb1a9b1c6d42d0ac960a2dd2e",
+      "applied_at": "2026-08-01T11:42:52.206496+00:00",
       "changes": [
         "b1.cycle_seconds: 300 -> 60",
         "tl.live_enabled: True -> False",
@@ -958,6 +970,56 @@
         "kind": "bool",
         "min": null,
         "max": null
+      },
+      "mrs.live_enabled": {
+        "kind": "bool",
+        "min": null,
+        "max": null
+      },
+      "mrs.risk_pct": {
+        "kind": "float",
+        "min": 0.0001,
+        "max": 0.02
+      },
+      "mrs.leverage": {
+        "kind": "int",
+        "min": 1,
+        "max": 50
+      },
+      "mrs.max_positions": {
+        "kind": "int",
+        "min": 0,
+        "max": 4
+      },
+      "mrs.cycle_seconds": {
+        "kind": "int",
+        "min": 300,
+        "max": 7200
+      },
+      "mrs.vd_thr": {
+        "kind": "float",
+        "min": 1.5,
+        "max": 4.0
+      },
+      "mrs.rsi_thr": {
+        "kind": "float",
+        "min": 60.0,
+        "max": 90.0
+      },
+      "mrs.sl_atr": {
+        "kind": "float",
+        "min": 0.8,
+        "max": 2.5
+      },
+      "mrs.max_hold_h": {
+        "kind": "int",
+        "min": 12,
+        "max": 168
+      },
+      "mrs.cooldown_h": {
+        "kind": "int",
+        "min": 1,
+        "max": 48
       },
       "global.same_dir_max": {
         "kind": "int",
@@ -3768,6 +3830,10 @@
     {
       "ts": "2026-08-01T11:29:51.953748+00:00",
       "idx": 63.61
+    },
+    {
+      "ts": "2026-08-01T11:31:17.582679+00:00",
+      "idx": 63.8
     }
   ],
   "trades_public": [
