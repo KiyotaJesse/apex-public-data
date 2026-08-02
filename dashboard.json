@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-02T18:57:09.771768+08:00",
+  "generated_at": "2026-08-02T19:25:54.063401+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -935,7 +935,7 @@
         "closed_ts": "2026-08-02T02:20:45.840664+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-02T10:54:46.920936+00:00",
+    "last_cycle_ts": "2026-08-02T11:24:35.560603+00:00",
     "stats": {
       "n": 30,
       "win_rate_pct": 33.3,
@@ -958,7 +958,7 @@
   "strat_tl": {
     "mode": "disabled",
     "open_positions": [],
-    "last_cycle_ts": "2026-08-02T10:55:07.684707+00:00",
+    "last_cycle_ts": "2026-08-02T11:24:49.997266+00:00",
     "stats": {
       "n": 35,
       "win_rate_pct": 8.6,
@@ -972,8 +972,8 @@
     "current": {
       "_meta": {
         "desc": "APEX 控制台熱載入配置。改此檔 <=60 秒生效，無需重新部署。硬邊界見 tama_v5.py TAMA_CONFIG_BOUNDS。",
-        "updated": "2026-08-02T00:28:40.694857+08:00",
-        "by": "Claude(killswitch演習復原 2026-08-01)"
+        "updated": "2026-08-02T12:00:00+00:00",
+        "by": "Claude(P1 atr_r濾網旋鈕, 全策略體檢報告2026-08-02, 待Jesse核准)"
       },
       "b1": {
         "live_enabled": true,
@@ -982,7 +982,8 @@
         "max_positions": 5,
         "daily_loss_limit_pct": 0.1,
         "cycle_seconds": 60,
-        "regime_gate": true
+        "regime_gate": true,
+        "atr_r_thr": 1.1
       },
       "tl": {
         "live_enabled": false,
@@ -1029,8 +1030,8 @@
       }
     },
     "applied": {
-      "applied_sha": "5eb7a27d014eb99fcd50b1d609548c86ba47b1ad",
-      "applied_at": "2026-08-02T01:09:46.643710+00:00",
+      "applied_sha": "e8690f887292155e0efebafcaedf1662f882b32a",
+      "applied_at": "2026-08-02T11:25:32.336056+00:00",
       "changes": [
         "b1.cycle_seconds: 300 -> 60",
         "tl.live_enabled: True -> False",
@@ -1100,6 +1101,11 @@
         "kind": "bool",
         "min": null,
         "max": null
+      },
+      "b1.atr_r_thr": {
+        "kind": "float",
+        "min": 0.0,
+        "max": 3.0
       },
       "tl.regime_gate": {
         "kind": "bool",
@@ -4139,6 +4145,10 @@
     {
       "ts": "2026-08-02T10:10:23.869538+00:00",
       "idx": 64.02
+    },
+    {
+      "ts": "2026-08-02T11:10:29.140464+00:00",
+      "idx": 64.33
     }
   ],
   "trades_public": [
