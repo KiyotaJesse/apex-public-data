@@ -1,34 +1,8 @@
 {
-  "generated_at": "2026-08-02T09:45:47.336974+08:00",
+  "generated_at": "2026-08-02T10:45:59.205423+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
-    "open_positions": [
-      {
-        "id": "stratb_ETHUSDT_1785506463",
-        "symbol": "ETH-USDT",
-        "dir": "SHORT",
-        "sig_entry": 1866.19,
-        "fill_price": 1867.34,
-        "qty": 0.41,
-        "notional_usdt": 765.6135,
-        "margin_usdt": 15.9503,
-        "leverage": 48,
-        "risk_usdt": 6.528,
-        "sl_price": 1882.089,
-        "sl_dist": 15.898999999999983,
-        "sl_order_id": "2083191215083847680",
-        "open_order_id": "2083191213356433408",
-        "lowest": 1834.71,
-        "breakeven_done": false,
-        "sig_bar_time": "2026-07-31 13:00:00",
-        "entry_bar_time": "2026-07-31 13:00:00",
-        "last_checked_time": "2026-08-02 01:00:00",
-        "bars_elapsed": 36,
-        "opened_ts": "2026-07-31T14:01:03.861389+00:00",
-        "status": "open",
-        "notion_page_id": "3ae0a137-4574-81b1-8c10-e5db3b44922b"
-      }
-    ],
+    "open_positions": [],
     "closed_trades": [
       {
         "id": "stratb_BNBUSDT_1784296854",
@@ -928,22 +902,53 @@
         "pnl_usdt": -9.2703,
         "outcome": "LOSS",
         "closed_ts": "2026-08-02T01:14:35.286387+00:00"
+      },
+      {
+        "id": "stratb_ETHUSDT_1785506463",
+        "symbol": "ETH-USDT",
+        "dir": "SHORT",
+        "sig_entry": 1866.19,
+        "fill_price": 1867.34,
+        "qty": 0.41,
+        "notional_usdt": 765.6135,
+        "margin_usdt": 15.9503,
+        "leverage": 48,
+        "risk_usdt": 6.528,
+        "sl_price": 1882.089,
+        "sl_dist": 15.898999999999983,
+        "sl_order_id": "2083191215083847680",
+        "open_order_id": "2083191213356433408",
+        "lowest": 1834.71,
+        "breakeven_done": false,
+        "sig_bar_time": "2026-07-31 13:00:00",
+        "entry_bar_time": "2026-07-31 13:00:00",
+        "last_checked_time": "2026-08-02 02:00:00",
+        "bars_elapsed": 37,
+        "opened_ts": "2026-07-31T14:01:03.861389+00:00",
+        "status": "open",
+        "notion_page_id": "3ae0a137-4574-81b1-8c10-e5db3b44922b",
+        "exit_price": 1882.24,
+        "exit_reason": "sl_hit",
+        "realized_r": -1.0546,
+        "pnl_usdt": -6.109,
+        "outcome": "LOSS",
+        "closed_ts": "2026-08-02T02:20:45.840664+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-02T01:45:32.972988+00:00",
+    "last_cycle_ts": "2026-08-02T02:43:59.427147+00:00",
     "stats": {
-      "n": 29,
-      "win_rate_pct": 34.5,
-      "ev_r": 0.033,
-      "total_pnl_usdt": 6.73,
+      "n": 30,
+      "win_rate_pct": 33.3,
+      "ev_r": 0.003,
+      "total_pnl_usdt": 0.62,
       "avg_win_usdt": 15.37,
-      "avg_loss_usdt": -7.74
+      "avg_loss_usdt": -7.66
     }
   },
   "risk_circuit_breaker": {
     "killswitch": false,
     "daily_loss_limit_hit": false,
-    "daily_pnl_usdt": -16.7823,
+    "daily_pnl_usdt": -22.8913,
     "daily_pnl_date": "2026-08-02"
   },
   "feature_flags": {
@@ -953,7 +958,7 @@
   "strat_tl": {
     "mode": "disabled",
     "open_positions": [],
-    "last_cycle_ts": "2026-08-02T01:45:02.910709+00:00",
+    "last_cycle_ts": "2026-08-02T02:43:29.425783+00:00",
     "stats": {
       "n": 35,
       "win_rate_pct": 8.6,
@@ -4098,6 +4103,10 @@
     {
       "ts": "2026-08-02T01:09:51.360255+00:00",
       "idx": 67.82
+    },
+    {
+      "ts": "2026-08-02T02:09:53.224087+00:00",
+      "idx": 65.49
     }
   ],
   "trades_public": [
@@ -4548,6 +4557,13 @@
       "strat": "B1",
       "dir": "SHORT",
       "r": -1.492
+    },
+    {
+      "ts": "2026-08-02T02:20:45.840664+00:00",
+      "sym": "ETH-USDT",
+      "strat": "B1",
+      "dir": "SHORT",
+      "r": -1.0546
     }
   ],
   "self_upgrades": [
