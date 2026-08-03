@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T08:22:43.414674+08:00",
+  "generated_at": "2026-08-03T09:22:53.586155+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -935,7 +935,7 @@
         "closed_ts": "2026-08-02T02:20:45.840664+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-03T00:20:45.242012+00:00",
+    "last_cycle_ts": "2026-08-03T01:21:17.155669+00:00",
     "stats": {
       "n": 30,
       "win_rate_pct": 33.3,
@@ -958,7 +958,7 @@
   "strat_tl": {
     "mode": "disabled",
     "open_positions": [],
-    "last_cycle_ts": "2026-08-03T00:20:23.538385+00:00",
+    "last_cycle_ts": "2026-08-03T01:20:34.513980+00:00",
     "stats": {
       "n": 35,
       "win_rate_pct": 8.6,
@@ -1031,7 +1031,7 @@
     },
     "applied": {
       "applied_sha": "e8690f887292155e0efebafcaedf1662f882b32a",
-      "applied_at": "2026-08-02T12:20:12.665213+00:00",
+      "applied_at": "2026-08-03T01:14:32.238422+00:00",
       "changes": [
         "b1.cycle_seconds: 300 -> 60",
         "tl.live_enabled: True -> False",
@@ -4204,6 +4204,10 @@
     },
     {
       "ts": "2026-08-03T00:21:06.665249+00:00",
+      "idx": 63.54
+    },
+    {
+      "ts": "2026-08-03T01:14:37.327870+00:00",
       "idx": 63.54
     }
   ],
