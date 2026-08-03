@@ -1,34 +1,8 @@
 {
-  "generated_at": "2026-08-03T20:55:17.267858+08:00",
+  "generated_at": "2026-08-03T21:55:29.787251+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
-    "open_positions": [
-      {
-        "id": "stratb_XRPUSDT_1785747628",
-        "symbol": "XRP-USDT",
-        "dir": "SHORT",
-        "sig_entry": 1.0669,
-        "fill_price": 1.0666,
-        "qty": 979.0,
-        "notional_usdt": 1044.2014,
-        "margin_usdt": 20.884,
-        "leverage": 50,
-        "risk_usdt": 6.4119,
-        "sl_price": 1.07344643,
-        "sl_dist": 0.006546428571428573,
-        "sl_order_id": "2084202731350360064",
-        "open_order_id": "2084202730675716096",
-        "lowest": 1.0633,
-        "breakeven_done": false,
-        "sig_bar_time": "2026-08-03 08:00:00",
-        "entry_bar_time": "2026-08-03 08:00:00",
-        "last_checked_time": "2026-08-03 12:00:00",
-        "bars_elapsed": 4,
-        "opened_ts": "2026-08-03T09:00:28.264919+00:00",
-        "status": "open",
-        "notion_page_id": "3b10a137-4574-8128-84b8-e72a5a2cdf2f"
-      }
-    ],
+    "open_positions": [],
     "closed_trades": [
       {
         "id": "stratb_BNBUSDT_1784296854",
@@ -959,22 +933,53 @@
         "pnl_usdt": -6.109,
         "outcome": "LOSS",
         "closed_ts": "2026-08-02T02:20:45.840664+00:00"
+      },
+      {
+        "id": "stratb_XRPUSDT_1785747628",
+        "symbol": "XRP-USDT",
+        "dir": "SHORT",
+        "sig_entry": 1.0669,
+        "fill_price": 1.0666,
+        "qty": 979.0,
+        "notional_usdt": 1044.2014,
+        "margin_usdt": 20.884,
+        "leverage": 50,
+        "risk_usdt": 6.4119,
+        "sl_price": 1.07344643,
+        "sl_dist": 0.006546428571428573,
+        "sl_order_id": "2084202731350360064",
+        "open_order_id": "2084202730675716096",
+        "lowest": 1.0633,
+        "breakeven_done": false,
+        "sig_bar_time": "2026-08-03 08:00:00",
+        "entry_bar_time": "2026-08-03 08:00:00",
+        "last_checked_time": "2026-08-03 13:00:00",
+        "bars_elapsed": 5,
+        "opened_ts": "2026-08-03T09:00:28.264919+00:00",
+        "status": "open",
+        "notion_page_id": "3b10a137-4574-8128-84b8-e72a5a2cdf2f",
+        "exit_price": 1.0733,
+        "exit_reason": "sl_hit",
+        "realized_r": -1.1864,
+        "pnl_usdt": -6.5593,
+        "outcome": "LOSS",
+        "closed_ts": "2026-08-03T13:53:07.752692+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-03T12:54:15.548627+00:00",
+    "last_cycle_ts": "2026-08-03T13:53:07.562807+00:00",
     "stats": {
-      "n": 30,
-      "win_rate_pct": 33.3,
-      "ev_r": 0.003,
-      "total_pnl_usdt": 0.62,
+      "n": 31,
+      "win_rate_pct": 32.3,
+      "ev_r": -0.028,
+      "total_pnl_usdt": -5.94,
       "avg_win_usdt": 15.37,
-      "avg_loss_usdt": -7.66
+      "avg_loss_usdt": -7.6
     }
   },
   "risk_circuit_breaker": {
     "killswitch": false,
     "daily_loss_limit_hit": false,
-    "daily_pnl_usdt": 0.0,
+    "daily_pnl_usdt": -8.2356,
     "daily_pnl_date": "2026-08-03"
   },
   "feature_flags": {
@@ -984,7 +989,7 @@
   "strat_tl": {
     "mode": "disabled",
     "open_positions": [],
-    "last_cycle_ts": "2026-08-03T12:53:38.824601+00:00",
+    "last_cycle_ts": "2026-08-03T13:52:48.834190+00:00",
     "stats": {
       "n": 35,
       "win_rate_pct": 8.6,
@@ -4279,6 +4284,10 @@
     {
       "ts": "2026-08-03T11:57:47.672418+00:00",
       "idx": 64.04
+    },
+    {
+      "ts": "2026-08-03T12:57:52.749756+00:00",
+      "idx": 63.51
     }
   ],
   "trades_public": [
@@ -4736,6 +4745,13 @@
       "strat": "B1",
       "dir": "SHORT",
       "r": -1.0546
+    },
+    {
+      "ts": "2026-08-03T13:53:07.752692+00:00",
+      "sym": "XRP-USDT",
+      "strat": "B1",
+      "dir": "SHORT",
+      "r": -1.1864
     }
   ],
   "self_upgrades": [
