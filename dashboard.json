@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T20:23:58.739022+08:00",
+  "generated_at": "2026-08-04T21:24:15.151781+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -966,7 +966,7 @@
         "closed_ts": "2026-08-03T13:53:07.752692+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-04T12:23:03.828354+00:00",
+    "last_cycle_ts": "2026-08-04T13:22:34.544828+00:00",
     "stats": {
       "n": 31,
       "win_rate_pct": 32.3,
@@ -977,7 +977,7 @@
     }
   },
   "risk_circuit_breaker": {
-    "killswitch": true,
+    "killswitch": false,
     "daily_loss_limit_hit": false,
     "daily_pnl_usdt": 0.0,
     "daily_pnl_date": "2026-08-04"
@@ -989,7 +989,7 @@
   "strat_tl": {
     "mode": "disabled",
     "open_positions": [],
-    "last_cycle_ts": "2026-08-04T12:23:42.485151+00:00",
+    "last_cycle_ts": "2026-08-04T13:21:39.841302+00:00",
     "stats": {
       "n": 35,
       "win_rate_pct": 8.6,
@@ -1003,8 +1003,8 @@
     "current": {
       "_meta": {
         "desc": "APEX 控制台熱載入配置。改此檔 <=60 秒生效，無需重新部署。硬邊界見 tama_v5.py TAMA_CONFIG_BOUNDS。",
-        "updated": "2026-08-02T12:00:00+00:00",
-        "by": "Claude(P1 atr_r濾網旋鈕, 全策略體檢報告2026-08-02, 待Jesse核准)"
+        "updated": "2026-08-04T13:17:38.116833+00:00",
+        "by": "Claude(重啟SOP: SC/MRS降50%檔交L2管理, Jesse批准2026-08-04)"
       },
       "b1": {
         "live_enabled": true,
@@ -1039,7 +1039,7 @@
       },
       "sc": {
         "live_enabled": true,
-        "risk_pct": 0.01,
+        "risk_pct": 0.005,
         "leverage": 50,
         "max_positions": 4,
         "cycle_seconds": 900,
@@ -1049,7 +1049,7 @@
       },
       "mrs": {
         "live_enabled": true,
-        "risk_pct": 0.0075,
+        "risk_pct": 0.00375,
         "leverage": 50,
         "max_positions": 2,
         "cycle_seconds": 900,
@@ -1061,15 +1061,17 @@
       }
     },
     "applied": {
-      "applied_sha": "e8690f887292155e0efebafcaedf1662f882b32a",
-      "applied_at": "2026-08-03T14:19:09.974117+00:00",
+      "applied_sha": "a8fd429e2c82350c4c4e95612dbdb5343424602d",
+      "applied_at": "2026-08-04T13:19:14.058529+00:00",
       "changes": [
         "b1.cycle_seconds: 300 -> 60",
         "tl.live_enabled: True -> False",
         "tl.risk_pct: 0.02 -> 0.01",
         "tl.cycle_seconds: 900 -> 60",
         "sc.live_enabled: False -> True",
-        "mrs.live_enabled: False -> True"
+        "sc.risk_pct: 0.01 -> 0.005",
+        "mrs.live_enabled: False -> True",
+        "mrs.risk_pct: 0.0075 -> 0.00375"
       ]
     },
     "bounds": {
@@ -4388,6 +4390,10 @@
     },
     {
       "ts": "2026-08-04T12:20:56.703585+00:00",
+      "idx": 61.64
+    },
+    {
+      "ts": "2026-08-04T13:19:19.727773+00:00",
       "idx": 61.64
     }
   ],
