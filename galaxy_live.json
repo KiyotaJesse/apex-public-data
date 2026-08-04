@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-04T21:50:25.517602+08:00",
-  "ts": "2026-08-04 21:50:25",
+  "generated_at": "2026-08-04T21:52:27.576740+08:00",
+  "ts": "2026-08-04 21:52:27",
   "btc": {
     "price": 63920.0,
     "change_24h": 1.9,
@@ -37,9 +37,6 @@
     "alerts": 0
   },
   "bingx": {
-    "open_positions": 0,
-    "pnl_24h_pct": -2.13,
-    "upnl_pct": 0.0,
-    "status": "online"
+    "error": "'NoneType' object has no attribute 'get'"
   }
 }
