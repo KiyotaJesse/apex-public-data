@@ -670,7 +670,7 @@ function updateClock(){
 updateClock(); setInterval(updateClock,1000);
 
 // ── Live Data Polling ────────────────────────────────────────────────────────
-// 資料源：A 系統每 90 秒把即時狀態推到 GitHub 靜態 JSON（apex-commander 是 Render
+// 資料源：A 系統每 10 分鐘把即時狀態推到 GitHub 靜態 JSON（apex-commander 是 Render
 // background_worker 無公開網址，故不能直接打 API；改讀公開 repo 才能真正連得到）。
 const GALAXY_JSON = './galaxy_live.json';
 const LIVE_IDS = ['live-btc','live-xrp','live-fgi','live-equity','live-pnl24','live-positions','live-signals','live-apex'];
@@ -703,7 +703,9 @@ function fmtN(v, decs=2, prefix=''){
 }
 
 function applyLiveData(d){
-  // ── 真實連線新鮮度：依 generated_at 算資料年齡（< 5 分鐘=即時，5-15=陳舊，> 15=斷線）
+  // ── 真實連線新鮮度：依 generated_at 算資料年齡（< 13 分鐘=即時，13-30=陳舊，> 30=斷線）
+  // 2026-08-07: 推送節奏由 2 分鐘改 10 分鐘(Pages 建置佇列被打爆), 門檻同步放寬,
+  // 否則正常節奏會半數時間顯示「陳舊」黃字 —— 假警報比沒警報更糟。
   const tsEl0 = document.getElementById('live-ts');
   let ageMin = Infinity;
   if(d.generated_at){
@@ -712,13 +714,13 @@ function applyLiveData(d){
   }
   // 門檻考量：A 每 2 分鐘推送 + GitHub raw CDN 最多快取約 5 分鐘 → 正常資料最舊約 7 分。
   // 故綠燈放寬到 < 8 分（正常運作恆綠），8-20 分黃燈，> 20 分判定 A 真的停了 → 斷線。
-  if(ageMin > 20){
+  if(ageMin > 30){
     setDisconnected('✕ 資料過期 '+(isFinite(ageMin)?Math.round(ageMin)+'m':''));
     return;  // 資料太舊，不用陳舊數值誤導
   }
   if(tsEl0){
     const hhmmss = (d.ts||'').slice(11,19) || new Date().toTimeString().slice(0,8);
-    if(ageMin < 8){ tsEl0.textContent='● 即時　'+hhmmss; tsEl0.style.color='#00ff99'; }
+    if(ageMin < 13){ tsEl0.textContent='● 即時　'+hhmmss; tsEl0.style.color='#00ff99'; }
     else          { tsEl0.textContent='▲ 陳舊 '+Math.round(ageMin)+'m　'+hhmmss; tsEl0.style.color='#ffaa00'; }
   }
 
