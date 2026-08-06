@@ -68,6 +68,10 @@ nav a.soon{opacity:.4}
 .done{opacity:.5}
 .empty{color:var(--ink2);text-align:center;padding:50px 0;font-size:14px;letter-spacing:.2em}
 h2.sec{font-size:12px;letter-spacing:.3em;color:var(--ink2);margin:26px 0 12px;font-family:Consolas,monospace}
+.stale{display:none;background:rgba(255,46,136,.10);border:1px solid var(--mag);border-left:4px solid var(--mag);
+color:var(--mag);padding:12px 16px;margin-bottom:20px;font-size:12.5px;line-height:1.8}
+.stale b{color:#FF6FA8;letter-spacing:.08em}
+.hd .st.old{color:var(--mag)}
 .note{font-size:11px;color:var(--ink2);border-top:1px solid var(--line);margin-top:34px;padding-top:14px;line-height:1.9}
 /* ── 裁決確認層(頁內, 不跳轉) ── */
 #modal{position:fixed;inset:0;z-index:300;background:rgba(3,5,12,.86);display:none;align-items:center;justify-content:center;padding:20px}
@@ -104,6 +108,7 @@ padding:14px;border:1px solid var(--cyan);color:var(--cyan);margin-bottom:10px}
   <nav>
     <a class="on">案件簿</a><a class="soon">系統狀態(預留)</a><a class="soon">創業戰情(預留)</a><a class="soon">檔案庫(預留)</a>
   </nav>
+  <div class="stale" id="stale"></div>
   <div class="stats" id="stats"></div>
   <h2 class="sec">// PENDING VERDICTS</h2>
   <div id="pending"></div>
@@ -170,8 +175,34 @@ function card(c,done){
     <button class="tk" onclick="discuss()">💬 開TG討論</button>
   </div>`}
   </div></div>`}
+const STALE_H=26;  // 每日 09:00 巡邏發布一次; 超過 26h 未更新 = 巡邏或發布已停擺
+function ageHours(g){
+  if(!g)return null;
+  // generated 是台北時間且不帶時區, 補 +08:00 才不會被當成本地/UTC 算錯
+  const t=Date.parse(/([Zz]|[+-]\d\d:?\d\d)$/.test(g)?g:g+'+08:00');
+  return isNaN(t)?null:(Date.now()-t)/3600000;
+}
+function fmtAge(h){
+  if(h<1)return Math.max(0,Math.round(h*60))+' 分鐘';
+  if(h<48)return h.toFixed(1)+' 小時';
+  return Math.floor(h/24)+' 天';
+}
 function render(d){
-  document.getElementById('gen').textContent='CASE FILE '+(d.generated||'')+' · ENCRYPTED CHANNEL';
+  const age=ageHours(d.generated);
+  const gen=document.getElementById('gen');
+  gen.textContent='CASE FILE '+(d.generated||'')+(age===null?'':' · '+fmtAge(age)+'前')+' · ENCRYPTED CHANNEL';
+  const stale=document.getElementById('stale');
+  if(age!==null&&age>STALE_H){
+    gen.classList.add('old');
+    stale.style.display='block';
+    stale.innerHTML='⚠ <b>案件簿已過期</b> — 最後更新 '+esc(d.generated)+'('+fmtAge(age)+'前)。'
+      +'每日 09:00 巡邏會自動刷新,超過 '+STALE_H+' 小時沒動代表巡邏或發布已停擺,'
+      +'以下內容<b>不代表現況</b>,去 TG 查 A 是否還活著。';
+  }else{
+    gen.classList.remove('old');
+    stale.style.display='none';
+    stale.innerHTML='';
+  }
   const cs=d.cases||[];
   const pend=cs.filter(c=>c.status==='pending').reverse();
   const done=cs.filter(c=>c.status!=='pending').reverse().slice(0,10);
