@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-08-07T09:01:34.361431+08:00",
-  "ts": "2026-08-07 09:01:34",
+  "generated_at": "2026-08-07T09:11:35.561973+08:00",
+  "ts": "2026-08-07 09:11:35",
   "btc": {
-    "price": 64264.0,
+    "price": 64253.0,
     "change_24h": 0.5,
-    "status_str": "$64,264.00  ▼0.5%"
+    "status_str": "$64,253.00  ▼0.5%"
   },
   "xrp": {
     "price": 1.03,
-    "change_24h": 2.6,
-    "status_str": "$1.03  ▼2.6%"
+    "change_24h": 2.5,
+    "status_str": "$1.03  ▼2.5%"
   },
   "fear_greed": {
     "value": 50,
@@ -21,20 +21,20 @@
     "system_status": {
       "render": "✅ 運行中（更新 2026-08-07 00:01） [部署 OK 2026-08-06 23:59]",
       "render_a": "✅ 運行中（更新 2026-08-07 00:01）",
-      "github": "✅ 最新 commit 0.0h 前",
+      "github": "✅ 最新 commit 0.5h 前",
       "telegram": "運行中",
-      "btc": "$64,264.00  ▼0.5%",
-      "xrp": "$1.03  ▼2.6%",
+      "btc": "$64,253.00  ▼0.5%",
+      "xrp": "$1.03  ▼2.5%",
       "twii": "❌ 資料不足",
       "spx": "S&P500 7,710  ▼0.18%",
       "nasdaq": "NASDAQ 26,348  ▼0.06%",
       "dji": "道瓊 53,885  ▼0.85%",
-      "D_scan": "✅ 運行中 [策略B 00:00UTC]"
+      "D_scan": "✅ 運行中 [策略B 01:00UTC]"
     }
   },
   "today": {
     "signals": 0,
-    "alerts": 1
+    "alerts": 2
   },
   "bingx": {
     "error": "'NoneType' object has no attribute 'get'"
