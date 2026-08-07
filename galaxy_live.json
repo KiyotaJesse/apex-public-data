@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-08-07T07:52:22.498250+08:00",
-  "ts": "2026-08-07 07:52:22",
+  "generated_at": "2026-08-07T08:01:24.844459+08:00",
+  "ts": "2026-08-07 08:01:24",
   "btc": {
-    "price": 64309.0,
+    "price": 64264.0,
     "change_24h": 0.5,
-    "status_str": "$64,309.00  ▼0.5%"
+    "status_str": "$64,264.00  ▼0.5%"
   },
   "xrp": {
-    "price": 1.03,
-    "change_24h": 2.5,
-    "status_str": "$1.03  ▼2.5%"
+    "price": 0.0,
+    "change_24h": 0.0,
+    "status_str": "未知"
   },
   "fear_greed": {
     "value": 50,
@@ -19,22 +19,22 @@
   "apex": {
     "status": "online",
     "system_status": {
-      "render": "✅ 運行中（更新 2026-08-06 16:10） [部署 OK 2026-08-06 16:09]",
-      "render_a": "✅ 運行中（更新 2026-08-06 16:10）",
-      "github": "✅ 最新 commit 1.0h 前",
+      "render": "✅ 運行中（更新 2026-08-07 00:01） [部署 OK 2026-08-06 23:59]",
+      "render_a": "✅ 運行中（更新 2026-08-07 00:01）",
+      "github": "✅ 最新 commit 0.0h 前",
       "telegram": "運行中",
-      "btc": "$64,309.00  ▼0.5%",
-      "xrp": "$1.03  ▼2.5%",
-      "twii": "❌ 資料不足",
-      "spx": "S&P500 7,710  ▼0.18%",
-      "nasdaq": "NASDAQ 26,348  ▼0.06%",
-      "dji": "道瓊 53,885  ▼0.85%",
-      "D_scan": "✅ 運行中 [策略B 23:11UTC]"
+      "btc": "$64,264.00  ▼0.5%",
+      "xrp": "$1.03  ▼2.6%",
+      "twii": "未知",
+      "spx": "未知",
+      "nasdaq": "未知",
+      "dji": "未知",
+      "D_scan": "等待首次心跳…"
     }
   },
   "today": {
     "signals": 0,
-    "alerts": 5
+    "alerts": 0
   },
   "bingx": {
     "error": "'NoneType' object has no attribute 'get'"
