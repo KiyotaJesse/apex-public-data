@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-08T00:07:23.569601+08:00",
+  "generated_at": "2026-08-08T01:02:15.476005+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -966,7 +966,7 @@
         "closed_ts": "2026-08-03T13:53:07.752692+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-07T16:04:46.315038+00:00",
+    "last_cycle_ts": "2026-08-07T16:59:20.582945+00:00",
     "stats": {
       "n": 31,
       "win_rate_pct": 32.3,
@@ -989,7 +989,7 @@
   "strat_tl": {
     "mode": "disabled",
     "open_positions": [],
-    "last_cycle_ts": "2026-08-07T16:03:44.948034+00:00",
+    "last_cycle_ts": "2026-08-07T16:58:43.109656+00:00",
     "stats": {
       "n": 35,
       "win_rate_pct": 8.6,
@@ -1003,8 +1003,8 @@
     "current": {
       "_meta": {
         "desc": "APEX 控制台熱載入配置。改此檔 <=60 秒生效，無需重新部署。硬邊界見 tama_v5.py TAMA_CONFIG_BOUNDS。",
-        "updated": "2026-08-04T13:17:38.116833+00:00",
-        "by": "APEX-A L1冠軍挑戰者(Jesse 2026-08-03 全自動授權)"
+        "updated": "2026-08-07T16:08:05.636080+00:00",
+        "by": "APEX-A 批次2 maker 旋鈕上線(20s -> 8s)"
       },
       "b1": {
         "live_enabled": true,
@@ -1015,7 +1015,9 @@
         "cycle_seconds": 60,
         "regime_gate": true,
         "atr_r_thr": 1.1,
-        "volr_thr": 1.5
+        "volr_thr": 1.5,
+        "maker_first": true,
+        "maker_wait_s": 8
       },
       "tl": {
         "live_enabled": false,
@@ -1063,19 +1065,10 @@
       "auto_strategies": []
     },
     "applied": {
-      "applied_sha": "48143c798743cd382ef37430ceebaa67ad4cd4e1",
-      "applied_at": "2026-08-07T16:07:06.338645+00:00",
+      "applied_sha": "56cc3c4fc447b71fd845d90181a4cac5287b6717",
+      "applied_at": "2026-08-07T16:08:09.274087+00:00",
       "changes": [
-        "b1.cycle_seconds: 300 -> 60",
-        "tl.live_enabled: True -> False",
-        "tl.risk_pct: 0.02 -> 0.01",
-        "b1.volr_thr: 1.2 -> 1.5",
-        "tl.cycle_seconds: 900 -> 60",
-        "sc.live_enabled: False -> True",
-        "sc.risk_pct: 0.01 -> 0.005",
-        "mrs.live_enabled: False -> True",
-        "mrs.risk_pct: 0.0075 -> 0.00375",
-        "global.same_dir_max: 3 -> 4"
+        "b1.maker_wait_s: 20 -> 8"
       ]
     },
     "bounds": {
@@ -4720,6 +4713,10 @@
     },
     {
       "ts": "2026-08-07T15:54:54.294024+00:00",
+      "idx": 61.32
+    },
+    {
+      "ts": "2026-08-07T16:07:11.288939+00:00",
       "idx": 61.32
     }
   ],
