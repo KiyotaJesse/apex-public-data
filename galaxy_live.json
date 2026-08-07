@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-08-07T08:01:24.844459+08:00",
-  "ts": "2026-08-07 08:01:24",
+  "generated_at": "2026-08-07T08:11:26.004983+08:00",
+  "ts": "2026-08-07 08:11:26",
   "btc": {
     "price": 64264.0,
     "change_24h": 0.5,
     "status_str": "$64,264.00  ▼0.5%"
   },
   "xrp": {
-    "price": 0.0,
-    "change_24h": 0.0,
-    "status_str": "未知"
+    "price": 1.03,
+    "change_24h": 2.6,
+    "status_str": "$1.03  ▼2.6%"
   },
   "fear_greed": {
     "value": 50,
@@ -25,16 +25,16 @@
       "telegram": "運行中",
       "btc": "$64,264.00  ▼0.5%",
       "xrp": "$1.03  ▼2.6%",
-      "twii": "未知",
-      "spx": "未知",
-      "nasdaq": "未知",
-      "dji": "未知",
-      "D_scan": "等待首次心跳…"
+      "twii": "❌ 資料不足",
+      "spx": "S&P500 7,710  ▼0.18%",
+      "nasdaq": "NASDAQ 26,348  ▼0.06%",
+      "dji": "道瓊 53,885  ▼0.85%",
+      "D_scan": "✅ 運行中 [策略B 00:00UTC]"
     }
   },
   "today": {
     "signals": 0,
-    "alerts": 0
+    "alerts": 1
   },
   "bingx": {
     "error": "'NoneType' object has no attribute 'get'"
