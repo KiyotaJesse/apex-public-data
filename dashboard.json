@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T09:01:40.868233+08:00",
+  "generated_at": "2026-08-07T10:01:40.445718+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -966,7 +966,7 @@
         "closed_ts": "2026-08-03T13:53:07.752692+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-07T01:00:45.416347+00:00",
+    "last_cycle_ts": "2026-08-07T01:58:51.226515+00:00",
     "stats": {
       "n": 31,
       "win_rate_pct": 32.3,
@@ -989,7 +989,7 @@
   "strat_tl": {
     "mode": "disabled",
     "open_positions": [],
-    "last_cycle_ts": "2026-08-07T01:00:20.416506+00:00",
+    "last_cycle_ts": "2026-08-07T01:58:57.226839+00:00",
     "stats": {
       "n": 35,
       "win_rate_pct": 8.6,
@@ -1004,7 +1004,7 @@
       "_meta": {
         "desc": "APEX 控制台熱載入配置。改此檔 <=60 秒生效，無需重新部署。硬邊界見 tama_v5.py TAMA_CONFIG_BOUNDS。",
         "updated": "2026-08-04T13:17:38.116833+00:00",
-        "by": "清除 autodeploy 全鏈測試殘留規格(測試用假候選, 非真實選礦結果)"
+        "by": "APEX-A L1冠軍挑戰者(Jesse 2026-08-03 全自動授權)"
       },
       "b1": {
         "live_enabled": true,
@@ -1014,7 +1014,8 @@
         "daily_loss_limit_pct": 0.1,
         "cycle_seconds": 60,
         "regime_gate": true,
-        "atr_r_thr": 1.1
+        "atr_r_thr": 1.1,
+        "volr_thr": 1.5
       },
       "tl": {
         "live_enabled": false,
@@ -1063,7 +1064,7 @@
     },
     "applied": {
       "applied_sha": "af656dea6f38855000c56c4f6ead7c04a5d86e0c",
-      "applied_at": "2026-08-06T16:03:39.356357+00:00",
+      "applied_at": "2026-08-07T01:10:32.256993+00:00",
       "changes": [
         "b1.cycle_seconds: 300 -> 60",
         "tl.live_enabled: True -> False",
@@ -4645,6 +4646,10 @@
     {
       "ts": "2026-08-07T00:47:23.830318+00:00",
       "idx": 61.7
+    },
+    {
+      "ts": "2026-08-07T01:10:37.353640+00:00",
+      "idx": 61.69
     }
   ],
   "trades_public": [
