@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<title>APEX 監督台</title>
+<style>
+:root{--bg:#0C1117;--panel:#131A23;--panel2:#1A2330;--line:#263140;--ink:#E8EDF4;--ink2:#8C9BAD;--ink3:#5A6879;
+--gold:#D9A441;--bull:#35B98F;--bear:#E15A6E;--amber:#D9A441}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans TC","Microsoft JhengHei",-apple-system,sans-serif;padding:14px 12px 40px}
+.hd{display:flex;align-items:baseline;gap:9px}
+.hd h1{font-size:16px;margin:0;letter-spacing:.06em}
+.hd .ts{margin-left:auto;font:11px Consolas,monospace;color:var(--ink3)}
+
+/* 結論帶: 一眼就知道要不要理它 */
+.verdict{margin:12px 0 16px;border:1px solid var(--line);border-left:3px solid var(--bull);border-radius:10px;
+  background:var(--panel);padding:16px 16px 14px}
+.verdict.act{border-left-color:var(--bear)}
+.verdict .big{font-size:26px;font-weight:700;letter-spacing:.02em;line-height:1.2}
+.verdict.ok .big{color:var(--bull)}
+.verdict.act .big{color:var(--bear)}
+.verdict .meta{margin-top:7px;font:12px Consolas,monospace;color:var(--ink2)}
+.verdict .meta b{color:var(--ink)}
+
+h2{font-size:12px;letter-spacing:.14em;color:var(--ink3);margin:22px 2px 8px;font-weight:600}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.it{display:block;padding:11px 13px;border-bottom:1px solid var(--line)}
+.it:last-child{border-bottom:none}
+.it .t{display:flex;align-items:baseline;gap:8px}
+.it .nm{font-size:13.5px}
+.it .cy{margin-left:auto;font:10.5px Consolas,monospace;color:var(--ink3);white-space:nowrap}
+.it .ds{font:11.5px Consolas,monospace;color:var(--ink2);margin-top:3px;line-height:1.5}
+.it .pp{font-size:11px;color:var(--ink3);margin-top:3px;line-height:1.55}
+.it.red{border-left:3px solid var(--bear)}
+.it.red .ds{color:var(--bear)}
+.it.amb{border-left:3px solid var(--amber)}
+.it.amb .ds{color:var(--amber)}
+
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:2px 0 0}
+.chip{font:11.5px Consolas,monospace;color:var(--ink2);background:var(--panel);border:1px solid var(--line);
+  border-radius:99px;padding:5px 11px}
+.chip b{color:var(--bull);font-weight:600}
+details{margin-top:9px}
+summary{font-size:12px;color:var(--ink3);cursor:pointer;list-style:none;padding:7px 2px}
+summary::-webkit-details-marker{display:none}
+summary:before{content:"▸ ";color:var(--gold)}
+details[open] summary:before{content:"▾ "}
+.grp{font:10.5px Consolas,monospace;letter-spacing:.1em;color:var(--ink3);padding:9px 13px 5px;background:var(--panel2)}
+.err{border:1px solid var(--bear);color:var(--bear);border-radius:10px;padding:13px;font-size:13px;line-height:1.6}
+.foot{margin-top:26px;font:10.5px Consolas,monospace;color:var(--ink3);line-height:1.8}
+</style>
+</head>
+<body>
+<div class="hd"><h1>APEX 監督台</h1><span class="ts" id="ts">載入中…</span></div>
+<div id="app"><div class="err" style="border-color:var(--line);color:var(--ink3)">讀取中…</div></div>
+<div class="foot" id="foot"></div>
+
+<script>
+const SRC = 'https://raw.githubusercontent.com/KiyotaJesse/apex-public-data/main/supervision_state.json';
+const esc = s => String(s == null ? '' : s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+
+function ago(iso){
+  const h = (Date.now() - new Date(iso).getTime()) / 3.6e6;
+  if (h < 1) return Math.round(h*60) + ' 分鐘前';
+  if (h < 48) return h.toFixed(1) + ' 小時前';
+  return (h/24).toFixed(1) + ' 天前';
+}
+
+function item(r, cls){
+  return `<div class="it ${cls}">
+    <div class="t"><span class="nm">${esc(r.name)}</span><span class="cy">${esc(r.cadence||'')}</span></div>
+    <div class="ds">${esc(r.detail)}</div>
+    <div class="pp">${esc(r.purpose||'')}</div>
+  </div>`;
+}
+
+function render(s){
+  const stale = (Date.now() - new Date(s.ts).getTime()) / 3.6e6;
+  const bad = s.items.filter(r => ['late','never','error'].includes(r.state));
+  const pend = s.items.filter(r => r.state === 'pending');
+  const ok = s.items.filter(r => r.state === 'ok');
+  let h = '';
+
+  // 監督台自己停擺 = 最高優先。看門狗自己死了不能還一片綠。
+  if (stale > 3){
+    h += `<div class="err">⚠ 監督台自己已 ${stale.toFixed(1)} 小時沒更新 —— 下面的資料是舊的，不能當作「一切正常」。
+      多半是這台電腦關機或排程沒跑。</div>`;
+  }
+
+  const needYou = s.need_you;
+  h += `<div class="verdict ${needYou ? 'act' : 'ok'}">
+      <div class="big">${needYou ? needYou + ' 件需要你' : '沒有需要你的事'}</div>
+      <div class="meta"><b>${ok.length}</b>/${s.items.length} 正常運轉　·　${pend.length} 等下次輪到　·　資料 ${ago(s.ts)}</div>
+    </div>`;
+
+  if (bad.length || (s.unregistered||[]).length || (s.decisions||[]).length){
+    h += '<h2>需要你</h2><div class="card">';
+    bad.forEach(r => h += item(r, 'red'));
+    (s.unregistered||[]).forEach(f => h += `<div class="it red"><div class="t"><span class="nm">未列管</span></div>
+      <div class="ds">${esc(f)}</div><div class="pp">有東西在跑但不在名冊上 — 登記它或關掉它</div></div>`);
+    (s.decisions||[]).forEach(d => h += `<div class="it red"><div class="t"><span class="nm">${esc(d.source)}</span>
+      <span class="cy">${d.count} 件</span></div><div class="ds">${esc(d.detail)}</div>
+      <div class="pp">等你裁決</div></div>`);
+    h += '</div>';
+  }
+
+  if ((s.fresh_outputs||[]).length){
+    h += '<h2>新產出 — 可看可不看</h2><div class="card">';
+    s.fresh_outputs.forEach(f => h += `<div class="it amb"><div class="t"><span class="nm">${esc(f.name)}</span>
+      <span class="cy">${f.age_h == null ? '—' : (f.age_h/24).toFixed(1) + ' 天前'}</span></div>
+      <div class="ds">${esc(f.summary)}</div></div>`);
+    h += '</div>';
+  }
+
+  // 綠的東西預設收起來 —— 正常運轉的不該佔用注意力。
+  const groups = {};
+  ok.forEach(r => (groups[r.group] = groups[r.group] || []).push(r));
+  h += '<h2>自動跑中 — 不用管</h2><div class="chips">';
+  Object.entries(groups).sort((a,b) => b[1].length - a[1].length)
+    .forEach(([g, rs]) => h += `<span class="chip">${esc(g)} <b>${rs.length}</b></span>`);
+  h += '</div><details><summary>展開全部 ' + ok.length + ' 項（含用途說明）</summary><div class="card">';
+  Object.entries(groups).sort((a,b) => b[1].length - a[1].length).forEach(([g, rs]) => {
+    h += `<div class="grp">${esc(g)}</div>`;
+    rs.forEach(r => h += item(r, ''));
+  });
+  h += '</div></details>';
+
+  if (pend.length){
+    h += '<details><summary>等下次輪到 ' + pend.length + ' 項</summary><div class="card">';
+    pend.forEach(r => h += item(r, ''));
+    h += '</div></details>';
+  }
+
+  document.getElementById('app').innerHTML = h;
+  document.getElementById('ts').textContent = s.ts.replace('T', ' ').slice(0, 16) + 'Z';
+  document.getElementById('foot').innerHTML =
+    '名冊 supervision_registry.json · 採集 supervisor.py<br>'
+    + '在跑卻不在冊的會被列成「未列管」— 這頁的目的是讓你不必記得自己開過什麼。';
+}
+
+fetch(SRC + '?t=' + Date.now())
+  .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+  .then(render)
+  .catch(e => {
+    document.getElementById('app').innerHTML =
+      '<div class="err">讀不到監督台資料：' + esc(e.message) + '<br>supervision_state.json 可能還沒推上去。</div>';
+    document.getElementById('ts').textContent = '—';
+  });
+</script>
+</body>
+</html>
