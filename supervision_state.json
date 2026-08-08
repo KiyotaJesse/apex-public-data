@@ -1,5 +1,5 @@
 {
- "ts": "2026-08-08T14:56:27+00:00",
+ "ts": "2026-08-08T14:56:51+00:00",
  "total": 32,
  "ok": 25,
  "bad": 1,
@@ -14,7 +14,7 @@
    "purpose": "四策略掃描下單的心跳; 停了就完全沒有交易",
    "cadence": "60 秒",
    "state": "ok",
-   "detail": "1 分鐘前",
+   "detail": "2 分鐘前",
    "last": "2026-08-08T14:55:10Z",
    "next": null
   },
@@ -26,7 +26,7 @@
    "purpose": "價格/服務/心跳警報 + 星系圖資料產出",
    "cadence": "連續",
    "state": "ok",
-   "detail": "9 分鐘前",
+   "detail": "10 分鐘前",
    "last": "2026-08-08T14:47:20Z",
    "next": null
   },
@@ -38,7 +38,7 @@
    "purpose": "交易系統本體在不在線",
    "cadence": "常駐",
    "state": "ok",
-   "detail": "live(20 分鐘前部署)",
+   "detail": "live(21 分鐘前部署)",
    "last": "2026-08-08T14:36:02.178756Z",
    "next": null
   },
@@ -266,7 +266,7 @@
    "purpose": "每小時抓市場快照做逆向診斷",
    "cadence": "每小時",
    "state": "ok",
-   "detail": "56 分鐘前",
+   "detail": "57 分鐘前",
    "last": "2026-08-08T14:00:01",
    "next": "2026-08-08T15:00:00"
   },
@@ -374,7 +374,7 @@
    "purpose": "每次推 master 跑決策層回歸測試",
    "cadence": "每次 push",
    "state": "ok",
-   "detail": "success(21 分鐘前)",
+   "detail": "success(22 分鐘前)",
    "last": "2026-08-08T14:35:00Z",
    "next": null
   },
