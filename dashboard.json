@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-08T20:17:03.900523+08:00",
+  "generated_at": "2026-08-08T21:17:16.792874+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -966,7 +966,7 @@
         "closed_ts": "2026-08-03T13:53:07.752692+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-08T12:16:28.264975+00:00",
+    "last_cycle_ts": "2026-08-08T13:16:42.891394+00:00",
     "stats": {
       "n": 31,
       "win_rate_pct": 32.3,
@@ -989,7 +989,7 @@
   "strat_tl": {
     "mode": "disabled",
     "open_positions": [],
-    "last_cycle_ts": "2026-08-08T12:15:27.184422+00:00",
+    "last_cycle_ts": "2026-08-08T13:15:41.472052+00:00",
     "stats": {
       "n": 35,
       "win_rate_pct": 8.6,
@@ -1003,8 +1003,8 @@
     "current": {
       "_meta": {
         "desc": "APEX 控制台熱載入配置。改此檔 <=60 秒生效，無需重新部署。硬邊界見 tama_v5.py TAMA_CONFIG_BOUNDS。",
-        "updated": "2026-08-08T04:31:59.035449+00:00",
-        "by": "APEX-A 非阻塞掛單上線後拉長 maker 等待(8->30s)"
+        "updated": "2026-08-08T13:09:49.746923+00:00",
+        "by": "APEX-A 還原 SC/MRS 風險至基準 50%(降級依據為出場機制修復前樣本, Jesse 裁決)"
       },
       "b1": {
         "live_enabled": true,
@@ -1042,7 +1042,7 @@
       },
       "sc": {
         "live_enabled": true,
-        "risk_pct": 0.0025,
+        "risk_pct": 0.005,
         "leverage": 50,
         "max_positions": 4,
         "cycle_seconds": 900,
@@ -1052,7 +1052,7 @@
       },
       "mrs": {
         "live_enabled": true,
-        "risk_pct": 0.001875,
+        "risk_pct": 0.00375,
         "leverage": 50,
         "max_positions": 2,
         "cycle_seconds": 900,
@@ -1065,10 +1065,11 @@
       "auto_strategies": []
     },
     "applied": {
-      "applied_sha": "d3c81f0fafcbe702ab3f61362a86c7500596655d",
-      "applied_at": "2026-08-08T04:32:02.092621+00:00",
+      "applied_sha": "2ed5ca208b5f7e1f394086d4a18958a9edfa9146",
+      "applied_at": "2026-08-08T13:10:29.772640+00:00",
       "changes": [
-        "b1.maker_wait_s: 8 -> 30"
+        "sc.risk_pct: 0.0025 -> 0.005",
+        "mrs.risk_pct: 0.001875 -> 0.00375"
       ]
     },
     "bounds": {
@@ -4822,6 +4823,10 @@
     {
       "ts": "2026-08-08T11:51:49.893494+00:00",
       "idx": 61.34
+    },
+    {
+      "ts": "2026-08-08T12:52:03.837979+00:00",
+      "idx": 61.23
     }
   ],
   "trades_public": [
