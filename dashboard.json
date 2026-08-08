@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-08T12:29:24.854404+08:00",
+  "generated_at": "2026-08-08T12:37:14.556865+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -966,7 +966,7 @@
         "closed_ts": "2026-08-03T13:53:07.752692+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-08T04:28:52.325293+00:00",
+    "last_cycle_ts": "2026-08-08T04:35:11.146101+00:00",
     "stats": {
       "n": 31,
       "win_rate_pct": 32.3,
@@ -989,7 +989,7 @@
   "strat_tl": {
     "mode": "disabled",
     "open_positions": [],
-    "last_cycle_ts": "2026-08-08T04:28:03.628392+00:00",
+    "last_cycle_ts": "2026-08-08T04:34:15.103439+00:00",
     "stats": {
       "n": 35,
       "win_rate_pct": 8.6,
@@ -1003,8 +1003,8 @@
     "current": {
       "_meta": {
         "desc": "APEX 控制台熱載入配置。改此檔 <=60 秒生效，無需重新部署。硬邊界見 tama_v5.py TAMA_CONFIG_BOUNDS。",
-        "updated": "2026-08-07T16:08:05.636080+00:00",
-        "by": "APEX-A L2階梯風險自適應(Jesse 2026-08-03 全自動授權)"
+        "updated": "2026-08-08T04:31:59.035449+00:00",
+        "by": "APEX-A 非阻塞掛單上線後拉長 maker 等待(8->30s)"
       },
       "b1": {
         "live_enabled": true,
@@ -1017,7 +1017,7 @@
         "atr_r_thr": 1.1,
         "volr_thr": 1.5,
         "maker_first": true,
-        "maker_wait_s": 8
+        "maker_wait_s": 30
       },
       "tl": {
         "live_enabled": false,
@@ -1065,20 +1065,10 @@
       "auto_strategies": []
     },
     "applied": {
-      "applied_sha": "cd8dc0bf68c18b09a77818376bf0efa44ad31096",
-      "applied_at": "2026-08-08T03:51:18.738602+00:00",
+      "applied_sha": "d3c81f0fafcbe702ab3f61362a86c7500596655d",
+      "applied_at": "2026-08-08T04:32:02.092621+00:00",
       "changes": [
-        "b1.cycle_seconds: 300 -> 60",
-        "b1.maker_wait_s: 20 -> 8",
-        "tl.live_enabled: True -> False",
-        "tl.risk_pct: 0.02 -> 0.01",
-        "b1.volr_thr: 1.2 -> 1.5",
-        "tl.cycle_seconds: 900 -> 60",
-        "sc.live_enabled: False -> True",
-        "sc.risk_pct: 0.01 -> 0.0025",
-        "mrs.live_enabled: False -> True",
-        "mrs.risk_pct: 0.0075 -> 0.001875",
-        "global.same_dir_max: 3 -> 4"
+        "b1.maker_wait_s: 8 -> 30"
       ]
     },
     "bounds": {
