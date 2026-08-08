@@ -131,7 +131,11 @@ let CFG=null,BASE={},PEND={};
 const fmt=(k,v,kind)=>kind==='pct'?(v*100).toFixed(2).replace(/\.?0+$/,'')+'%':String(v);
 async function load(){
  try{
-  const r=await fetch('./dashboard.json?t='+Date.now(),{cache:'no-store'});
+  // 2026-08-08: 改讀 raw —— 同源 ./dashboard.json 要等 Pages 建置成功才更新,
+  // 星系圖同樣情形實測落後 20 分鐘, 面板顯示舊參數會讓人誤判「調了沒生效」。
+  // raw 直接讀 repo 內容不經建置; 已帶 ?t= 時間戳, max-age=300 快取擋不住。
+  const DASH='https://raw.githubusercontent.com/KiyotaJesse/apex-public-data/main/dashboard.json';
+  const r=await fetch(DASH+'?t='+Date.now(),{cache:'no-store'});
   const d=await r.json();const tc=d.tama_config||{};CFG=tc.current||{};
   const ap=tc.applied||{};
   document.getElementById('meta').textContent='最後變更: '+((CFG._meta||{}).updated||'?').slice(0,16)+' · '+((CFG._meta||{}).by||'').slice(0,42);
