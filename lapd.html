@@ -247,6 +247,18 @@ function doneRow(c){
   const col=c.status==='approved'?'var(--grn)':(c.status==='fixed'?'var(--cyan)':'var(--ink2)');
   return `<div class="done-row"><span class="dot" style="background:${col}"></span>
   <span class="t">${esc(c.title)}</span><span class="chip st-${esc(c.status)}">${esc(c.status).toUpperCase()}</span></div>`}
+const STALE_H=26;  // 每日 09:00 巡邏發布一次; 超過 26h 未更新 = 巡邏或發布已停擺
+function ageHours(g){
+  if(!g)return null;
+  // generated 是台北時間且不帶時區, 補 +08:00 才不會被當成本地/UTC 算錯
+  const t=Date.parse(/([Zz]|[+-]\d\d:?\d\d)$/.test(g)?g:g+'+08:00');
+  return isNaN(t)?null:(Date.now()-t)/3600000;
+}
+function fmtAge(h){
+  if(h<1)return Math.max(0,Math.round(h*60))+' 分鐘';
+  if(h<48)return h.toFixed(1)+' 小時';
+  return Math.floor(h/24)+' 天';
+}
 function render(d){
   const age=ageHours(d.generated);
   const gen=document.getElementById('gen');
