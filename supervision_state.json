@@ -1,10 +1,10 @@
 {
- "ts": "2026-08-10T07:05:02+00:00",
+ "ts": "2026-08-10T07:07:15+00:00",
  "total": 34,
  "ok": 32,
  "bad": 1,
  "pending": 1,
- "need_you": 9,
+ "need_you": 10,
  "items": [
   {
    "id": "d_loop",
@@ -14,8 +14,8 @@
    "purpose": "四策略掃描下單的心跳; 停了就完全沒有交易",
    "cadence": "60 秒",
    "state": "ok",
-   "detail": "2 分鐘前",
-   "last": "2026-08-10T07:03:17Z",
+   "detail": "1 分鐘前",
+   "last": "2026-08-10T07:06:29Z",
    "next": null
   },
   {
@@ -26,8 +26,8 @@
    "purpose": "價格/服務/心跳警報 + 星系圖資料產出",
    "cadence": "連續",
    "state": "ok",
-   "detail": "0 分鐘前",
-   "last": "2026-08-10T07:04:49Z",
+   "detail": "2 分鐘前",
+   "last": "2026-08-10T07:05:19Z",
    "next": null
   },
   {
@@ -38,7 +38,7 @@
    "purpose": "交易系統本體在不在線",
    "cadence": "常駐",
    "state": "ok",
-   "detail": "live(5 分鐘前部署)",
+   "detail": "live(8 分鐘前部署)",
    "last": "2026-08-10T06:59:35.189398Z",
    "next": null
   },
@@ -50,7 +50,7 @@
    "purpose": "總指揮本體在不在線",
    "cadence": "常駐",
    "state": "ok",
-   "detail": "live(1 分鐘前部署)",
+   "detail": "live(3 分鐘前部署)",
    "last": "2026-08-10T07:04:23.018815Z",
    "next": null
   },
@@ -62,7 +62,7 @@
    "purpose": "每日盤口深度與未平倉量原始資料, T3 滑價防護與未來研究的原料",
    "cadence": "每日一檔",
    "state": "ok",
-   "detail": "最新檔 2026-08-10.jsonl(5 分鐘前寫入)",
+   "detail": "最新檔 2026-08-10.jsonl(7 分鐘前寫入)",
    "last": "2026-08-10T06:59:55Z",
    "next": null
   },
@@ -74,7 +74,7 @@
    "purpose": "同源 K 線庫(T1): 讓回測與實盤吃同一份資料",
    "cadence": "每日一檔",
    "state": "ok",
-   "detail": "最新檔 2026-08-09.json(8.7 小時前寫入)",
+   "detail": "最新檔 2026-08-09.json(8.8 小時前寫入)",
    "last": "2026-08-09T22:20:13Z",
    "next": null
   },
@@ -86,7 +86,7 @@
    "purpose": "同源 K 線庫(T1) 4 小時級別",
    "cadence": "每日一檔",
    "state": "ok",
-   "detail": "最新檔 2026-08-09.json(8.7 小時前寫入)",
+   "detail": "最新檔 2026-08-09.json(8.8 小時前寫入)",
    "last": "2026-08-09T22:20:19Z",
    "next": null
   },
@@ -98,7 +98,7 @@
    "purpose": "控制台/指揮中心的即時資料源",
    "cadence": "隨 config 變更 + 定期",
    "state": "ok",
-   "detail": "0 分鐘前",
+   "detail": "2 分鐘前",
    "last": "2026-08-10T07:04:57Z",
    "next": null
   },
@@ -122,7 +122,7 @@
    "purpose": "每天早上的總體情勢與績效",
    "cadence": "每日 08:30",
    "state": "ok",
-   "detail": "6.5 小時前",
+   "detail": "6.6 小時前",
    "last": "2026-08-10T00:32:35.394296+00:00",
    "next": null
   },
@@ -134,7 +134,7 @@
    "purpose": "自動巡查系統異常並立案, 產出待裁決案件",
    "cadence": "每日 09:00",
    "state": "ok",
-   "detail": "6.0 小時前",
+   "detail": "6.1 小時前",
    "last": "2026-08-10T01:02:37.927284+00:00",
    "next": null
   },
@@ -146,7 +146,7 @@
    "purpose": "自動比較現役策略與挑戰者參數, 決定要不要換將",
    "cadence": "每日",
    "state": "ok",
-   "detail": "5.0 小時前",
+   "detail": "5.1 小時前",
    "last": "2026-08-10T02:02:47.444792+00:00",
    "next": null
   },
@@ -170,7 +170,7 @@
    "purpose": "查本機日檢出勤卡新鮮度; 電腦關機時的第三方見證",
    "cadence": "每日 10:30",
    "state": "ok",
-   "detail": "4.5 小時前",
+   "detail": "4.6 小時前",
    "last": "2026-08-10T02:32:49.539273+00:00",
    "next": null
   },
@@ -182,7 +182,7 @@
    "purpose": "把交易與事件蒸餾成長期記憶",
    "cadence": "每日 23:00",
    "state": "ok",
-   "detail": "16.0 小時前",
+   "detail": "16.1 小時前",
    "last": "2026-08-09T15:02:31.783287+00:00",
    "next": null
   },
@@ -194,7 +194,7 @@
    "purpose": "每週策略績效驗收",
    "cadence": "每週日 20:00",
    "state": "ok",
-   "detail": "19.0 小時前",
+   "detail": "19.1 小時前",
    "last": "2026-08-09T12:02:26.139312+00:00",
    "next": null
   },
@@ -242,7 +242,7 @@
    "purpose": "8/10 盤口滿月提醒; 本機版的雲端平行備援",
    "cadence": "單次 2026-08-10 09:00",
    "state": "ok",
-   "detail": "6.0 小時前",
+   "detail": "6.1 小時前",
    "last": "2026-08-10T01:02:40.480976+00:00",
    "next": null
   },
@@ -266,7 +266,7 @@
    "purpose": "照冊對帳全系統; 更新監督台頁面資料; 每天一則日報 + 新異常才推播",
    "cadence": "每小時",
    "state": "ok",
-   "detail": "0 分鐘前",
+   "detail": "2 分鐘前",
    "last": "2026-08-10T07:05:01",
    "next": "2026-08-10T08:05:00"
   },
@@ -278,7 +278,7 @@
    "purpose": "每小時抓市場快照做逆向診斷",
    "cadence": "每小時",
    "state": "ok",
-   "detail": "5 分鐘前",
+   "detail": "7 分鐘前",
    "last": "2026-08-10T07:00:01",
    "next": "2026-08-10T08:00:00"
   },
@@ -290,7 +290,7 @@
    "purpose": "本機訊號掃描",
    "cadence": "每 15 分鐘",
    "state": "ok",
-   "detail": "12 分鐘前",
+   "detail": "15 分鐘前",
    "last": "2026-08-10T06:52:40",
    "next": "2026-08-10T07:07:39"
   },
@@ -302,7 +302,7 @@
    "purpose": "每週重跑參數 sweep",
    "cadence": "每週一 00:10",
    "state": "ok",
-   "detail": "14.9 小時前",
+   "detail": "15.0 小時前",
    "last": "2026-08-09T16:10:00",
    "next": "2026-08-16T16:10:00"
   },
@@ -338,7 +338,7 @@
    "purpose": "每小時掃 26 族群+512 同源組合找新策略; 週上限 1 自動上線; 已裁決候選由裁決檔壓制",
    "cadence": "每小時",
    "state": "ok",
-   "detail": "45 分鐘前",
+   "detail": "47 分鐘前",
    "last": "2026-08-10T06:20:01",
    "next": "2026-08-10T07:20:00"
   },
@@ -374,7 +374,7 @@
    "purpose": "每次推 master 跑決策層回歸測試",
    "cadence": "每次 push",
    "state": "ok",
-   "detail": "success(6 分鐘前)",
+   "detail": "success(8 分鐘前)",
    "last": "2026-08-10T06:58:56Z",
    "next": null
   },
@@ -386,8 +386,8 @@
    "purpose": "apex-commander 每次推 master 跑 39 項決策層回歸測試",
    "cadence": "每次 push",
    "state": "ok",
-   "detail": "success(1 分鐘前)",
-   "last": "2026-08-10T07:04:06Z",
+   "detail": "success(0 分鐘前)",
+   "last": "2026-08-10T07:06:54Z",
    "next": null
   },
   {
@@ -398,7 +398,7 @@
    "purpose": "apex-commander 推送前置檢查",
    "cadence": "每次 push",
    "state": "ok",
-   "detail": "success(1 分鐘前)",
+   "detail": "success(3 分鐘前)",
    "last": "2026-08-10T07:03:49Z",
    "next": null
   },
@@ -416,7 +416,7 @@
   }
  ],
  "unregistered": [
-  "已知行程重複啟動: watch_sc_bnb.py x2 份, 最久已跑 120 分鐘",
+  "已知行程重複啟動: watch_sc_bnb.py x2 份, 最久已跑 122 分鐘",
   "Render 服務未列管: jarvis-backend"
  ],
  "decisions": [
@@ -424,6 +424,11 @@
    "source": "LAPD 案件簿",
    "count": 6,
    "detail": "幽靈峰值自癒(P12)可能誤判30天前的真實峰值並下修回撤熔斷基準; _cancel_confirmed 缺少 client_order_id 後備，; AUTO 通用策略引擎的 spec_id 歸屬標記與倉位上限計算不精確"
+  },
+  {
+   "source": "選礦機候選",
+   "count": 1,
+   "detail": "mr_short_vd2.5_bear"
   }
  ],
  "fresh_outputs": [
@@ -442,8 +447,8 @@
   {
    "id": "task_prospector",
    "name": "策略選礦機(常駐)",
-   "age_h": 0.7,
-   "summary": "候選 0 個 / 掃描 26 變體; 最接近 mr_short_vd2.5 全期 +0.20R 近月 +0.51R"
+   "age_h": 0.0,
+   "summary": "候選 1 個 / 掃描 26 變體"
   }
  ]
 }
