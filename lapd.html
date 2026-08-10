@@ -81,8 +81,8 @@ font-size:22px;font-weight:900;border-right:1px solid var(--line)}
 .c3.M .sv{color:var(--amber);box-shadow:inset 3px 0 0 var(--amber)}
 .c3.L .sv{color:var(--mag);box-shadow:inset 3px 0 0 var(--mag)}
 .c3 .mid{padding:10px 12px;min-width:0}
-.c3 h3{margin:0;font-size:14px;line-height:1.5;font-weight:700;
-display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.c3 h3{margin:0;font-size:14px;line-height:1.5;font-weight:700}
+/* v3.1: 待裁決標題顯示全文 -- 兩行裁切會把句尾的關鍵字吃掉, 而待裁決通常只有幾件 */
 .chips{display:flex;gap:6px;margin-top:7px;flex-wrap:wrap;align-items:center}
 .chip{font-family:Consolas,monospace;font-size:10px;letter-spacing:.08em;padding:1px 8px;
 border:1px solid var(--line);color:var(--ink2);white-space:nowrap}
@@ -102,8 +102,8 @@ font-size:13px;color:var(--ink2);line-height:1.8;cursor:auto}
 .c3 .acts2 button{font-size:12px;letter-spacing:.08em;padding:7px 16px;border:1px solid;
 font-weight:700;background:transparent}
 /* 比例條 */
-.meter{height:6px;display:flex;border:1px solid var(--line);margin:2px 0 20px;overflow:hidden}
-.meter i{display:block;height:100%}
+.meter{height:10px;display:flex;gap:3px;margin:2px 0 20px}
+.meter i{display:block;height:100%;flex:1;max-width:26px}
 .meter .mM{background:var(--amber)}.meter .mL{background:var(--mag)}
 .meter .mOK{background:rgba(44,255,158,.35)}
 /* 已結案收合 */
@@ -284,11 +284,10 @@ function render(d){
      <div class="stat m"><div class="n">${m}</div><div class="t">M級·待裁決</div></div>
      <div class="stat l"><div class="n">${l}</div><div class="t">L級·待裁決</div></div>
      <div class="stat"><div class="n">${done.length}</div><div class="t">近期已結案</div></div>`;
-  // 比例條: 待裁決(M橙/L紫) vs 已結案(綠) —— 一眼看出還剩多少事
-  const tot=Math.max(1,m+l+done.length);
+  // v3.1: 一件一格 —— 3 橙 1 紫 10 綠是可以數的, 比例寬度不是
   document.getElementById('meter').innerHTML=
-    `<i class="mM" style="width:${m/tot*100}%"></i><i class="mL" style="width:${l/tot*100}%"></i>`+
-    `<i class="mOK" style="width:${done.length/tot*100}%"></i>`;
+    '<i class="mM"></i>'.repeat(m)+'<i class="mL"></i>'.repeat(l)+
+    '<i class="mOK"></i>'.repeat(done.length);
   document.getElementById('pending').innerHTML=pend.length?pend.map(c=>card(c,false)).join(''):'<div class="empty">— 案件簿乾淨 · 夜城無事 —</div>';
   document.getElementById('resolved').innerHTML=done.length?done.map(doneRow).join(''):'<div class="empty">—</div>';
   document.getElementById('resolved-n').textContent='('+done.length+')';
