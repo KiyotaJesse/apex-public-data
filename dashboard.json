@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-11T09:42:49.119304+08:00",
+  "generated_at": "2026-08-11T10:19:51.676088+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -966,7 +966,7 @@
         "closed_ts": "2026-08-03T13:53:07.752692+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-11T01:42:16.201155+00:00",
+    "last_cycle_ts": "2026-08-11T02:17:28.313446+00:00",
     "stats": {
       "n": 31,
       "win_rate_pct": 32.3,
@@ -989,7 +989,7 @@
   "strat_tl": {
     "mode": "disabled",
     "open_positions": [],
-    "last_cycle_ts": "2026-08-11T01:41:18.050329+00:00",
+    "last_cycle_ts": "2026-08-11T02:16:30.285396+00:00",
     "stats": {
       "n": 35,
       "win_rate_pct": 8.6,
@@ -1065,21 +1065,10 @@
       "auto_strategies": []
     },
     "applied": {
-      "applied_sha": "f547a3a536e1c889e1dac0a49bf6e40656cd3cc6",
-      "applied_at": "2026-08-10T06:59:49.946651+00:00",
+      "applied_sha": "6dd4a74341bd23566ebe1dedea355f1677967a68",
+      "applied_at": "2026-08-11T01:43:00.255026+00:00",
       "changes": [
-        "b1.cycle_seconds: 300 -> 60",
-        "b1.maker_wait_s: 20 -> 30",
-        "tl.live_enabled: True -> False",
-        "tl.risk_pct: 0.02 -> 0.01",
-        "b1.volr_thr: 1.2 -> 1.5",
-        "tl.cycle_seconds: 900 -> 60",
-        "sc.live_enabled: False -> True",
-        "sc.risk_pct: 0.01 -> 0.005",
-        "sc.s2_enabled: True -> False",
-        "mrs.live_enabled: False -> True",
-        "mrs.risk_pct: 0.0075 -> 0.00375",
-        "global.same_dir_max: 3 -> 4"
+        "mrs.risk_pct: 0.00375 -> 0.0075"
       ]
     },
     "bounds": {
@@ -5093,6 +5082,10 @@
     {
       "ts": "2026-08-11T01:00:54.829147+00:00",
       "idx": 51.65
+    },
+    {
+      "ts": "2026-08-11T02:00:58.782918+00:00",
+      "idx": 51.63
     }
   ],
   "trades_public": [
