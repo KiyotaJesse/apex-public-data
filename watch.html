@@ -104,6 +104,17 @@ function render(s){
     h += '</div>';
   }
 
+  // 活著但沒在工作 (2026-08-13): 心跳新鮮不等於有在做事。D 端整輪不動作時會寫下
+  // idle_reason，這裡把它顯示成黃燈 —— 不是紅燈(它沒壞)，但也絕不該混進綠燈裡。
+  if ((s.idle||[]).length){
+    h += '<h2>活著但沒在工作</h2><div class="card">';
+    s.idle.forEach(i => h += `<div class="it amb"><div class="t"><span class="nm">${esc(i.strategy)}</span>
+      <span class="cy">心跳 ${esc(i.last)}</span></div>
+      <div class="ds">${esc(i.reason)}</div>
+      <div class="pp">迴圈有在跑，但整輪沒有掃描或下單 — 不是故障，是條件不成立</div></div>`);
+    h += '</div>';
+  }
+
   if ((s.fresh_outputs||[]).length){
     h += '<h2>新產出 — 可看可不看</h2><div class="card">';
     s.fresh_outputs.forEach(f => h += `<div class="it amb"><div class="t"><span class="nm">${esc(f.name)}</span>
