@@ -1,8 +1,34 @@
 {
-  "generated_at": "2026-08-13T05:19:42.204537+08:00",
+  "generated_at": "2026-08-13T06:19:55.360906+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
-    "open_positions": [],
+    "open_positions": [
+      {
+        "id": "stratb_FILUSDT_1786572044",
+        "symbol": "FIL-USDT",
+        "dir": "SHORT",
+        "sig_entry": 0.669,
+        "fill_price": 0.6657,
+        "qty": 832.5,
+        "notional_usdt": 554.1952,
+        "margin_usdt": 11.7914,
+        "leverage": 47,
+        "risk_usdt": 5.1641,
+        "sl_price": 0.67500286,
+        "sl_dist": 0.006202857142857151,
+        "sl_order_id": "2087660736704249856",
+        "open_order_id": "2087660735878610944",
+        "lowest": 0.6641,
+        "breakeven_done": false,
+        "sig_bar_time": "2026-08-12 21:00:00",
+        "entry_bar_time": "2026-08-12 21:00:00",
+        "last_checked_time": "2026-08-12 22:00:00",
+        "bars_elapsed": 1,
+        "opened_ts": "2026-08-12T22:01:20.959165+00:00",
+        "status": "open",
+        "notion_page_id": "3ba0a137-4574-8140-bca9-e48a7f024256"
+      }
+    ],
     "closed_trades": [
       {
         "id": "stratb_BNBUSDT_1784296854",
@@ -966,7 +992,7 @@
         "closed_ts": "2026-08-03T13:53:07.752692+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-12T21:18:09.234339+00:00",
+    "last_cycle_ts": "2026-08-12T22:19:18.263250+00:00",
     "stats": {
       "n": 31,
       "win_rate_pct": 32.3,
@@ -989,7 +1015,7 @@
   "strat_tl": {
     "mode": "disabled",
     "open_positions": [],
-    "last_cycle_ts": "2026-08-12T21:17:50.379381+00:00",
+    "last_cycle_ts": "2026-08-12T22:18:34.935233+00:00",
     "stats": {
       "n": 35,
       "win_rate_pct": 8.6,
@@ -5326,6 +5352,10 @@
     },
     {
       "ts": "2026-08-12T20:25:36.418422+00:00",
+      "idx": 51.25
+    },
+    {
+      "ts": "2026-08-12T21:25:40.024204+00:00",
       "idx": 51.25
     }
   ],
