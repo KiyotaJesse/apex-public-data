@@ -1,14 +1,14 @@
 {
  "_doc": "分層幣池(單一真相)。main=可實盤(D 端交易掃描吃這層); observe=只蒐資料不交易(D 端 kline_archive/orderbook 吃 main+observe); promote_candidates=流動性與歷史合格但缺一年驗證, 跑驗證後才可升 main。main 永不自動長大 -- 這是 XMR 事故(實彈在跑而回測沒看過)的程式化防線。",
  "version": 1,
- "reviewed_at": "2026-08-13T07:37",
+ "reviewed_at": "2026-08-13T07:39",
  "review_days": 3,
- "next_review": "2026-08-16T07:37",
+ "next_review": "2026-08-16T07:39",
  "validated_source": "ad_consistency frozen set",
  "main": [
   {
    "symbol": "BTC-USDT",
-   "vol24h_m": 710.4,
+   "vol24h_m": 710.6,
    "spread_bps": 0.0,
    "age_days": 2318.3,
    "thin_volume": false,
@@ -16,7 +16,7 @@
   },
   {
    "symbol": "ETH-USDT",
-   "vol24h_m": 481.2,
+   "vol24h_m": 481.3,
    "spread_bps": 0.1,
    "age_days": 2318.3,
    "thin_volume": false,
@@ -24,8 +24,8 @@
   },
   {
    "symbol": "SOL-USDT",
-   "vol24h_m": 215.8,
-   "spread_bps": 2.0,
+   "vol24h_m": 215.9,
+   "spread_bps": 2.1,
    "age_days": 1743.3,
    "thin_volume": false,
    "thin_spread": false
@@ -57,7 +57,7 @@
   {
    "symbol": "AVAX-USDT",
    "vol24h_m": 15.6,
-   "spread_bps": 11.1,
+   "spread_bps": 12.7,
    "age_days": 1784.3,
    "thin_volume": false,
    "thin_spread": false
@@ -72,7 +72,7 @@
   },
   {
    "symbol": "LINK-USDT",
-   "vol24h_m": 14.3,
+   "vol24h_m": 14.4,
    "spread_bps": 6.9,
    "age_days": 2103.3,
    "thin_volume": false,
@@ -80,9 +80,17 @@
   },
   {
    "symbol": "INJ-USDT",
-   "vol24h_m": 12.1,
-   "spread_bps": 17.3,
+   "vol24h_m": 12.2,
+   "spread_bps": 15.2,
    "age_days": 1416.3,
+   "thin_volume": false,
+   "thin_spread": false
+  },
+  {
+   "symbol": "UNI-USDT",
+   "vol24h_m": 11.5,
+   "spread_bps": 8.4,
+   "age_days": 1738.3,
    "thin_volume": false,
    "thin_spread": false
   },
@@ -91,14 +99,6 @@
    "vol24h_m": 11.5,
    "spread_bps": 11.1,
    "age_days": 1899.3,
-   "thin_volume": false,
-   "thin_spread": false
-  },
-  {
-   "symbol": "UNI-USDT",
-   "vol24h_m": 11.5,
-   "spread_bps": 14.0,
-   "age_days": 1738.3,
    "thin_volume": false,
    "thin_spread": false
   },
@@ -113,15 +113,15 @@
   {
    "symbol": "ADA-USDT",
    "vol24h_m": 7.6,
-   "spread_bps": 21.9,
+   "spread_bps": 16.4,
    "age_days": 1899.3,
    "thin_volume": true,
-   "thin_spread": true
+   "thin_spread": false
   },
   {
    "symbol": "DOT-USDT",
    "vol24h_m": 5.3,
-   "spread_bps": 7.8,
+   "spread_bps": 5.2,
    "age_days": 1785.3,
    "thin_volume": true,
    "thin_spread": false
@@ -129,7 +129,7 @@
   {
    "symbol": "BCH-USDT",
    "vol24h_m": 5.3,
-   "spread_bps": 1.4,
+   "spread_bps": 2.4,
    "age_days": 2283.3,
    "thin_volume": true,
    "thin_spread": false
@@ -161,7 +161,7 @@
   {
    "symbol": "FIL-USDT",
    "vol24h_m": 3.1,
-   "spread_bps": 9.0,
+   "spread_bps": 7.5,
    "age_days": 1738.3,
    "thin_volume": true,
    "thin_spread": false
@@ -181,19 +181,13 @@
    "spread_bps": 30.5,
    "vol24h_m": 7.8,
    "note": "價差為回測成本假設(10bps全程)的 3.0 倍"
-  },
-  {
-   "symbol": "ADA-USDT",
-   "spread_bps": 21.9,
-   "vol24h_m": 7.6,
-   "note": "價差為回測成本假設(10bps全程)的 2.2 倍"
   }
  ],
  "promote_candidates": [
   {
    "symbol": "HYPE-USDT",
    "vol24h_m": 25.6,
-   "spread_bps": 1.1,
+   "spread_bps": 0.9,
    "age_days": 601.5,
    "reason": "量能與歷史都達理想值, 缺一年驗證"
   },
@@ -207,14 +201,14 @@
   {
    "symbol": "TAO-USDT",
    "vol24h_m": 16.4,
-   "spread_bps": 6.5,
+   "spread_bps": 7.0,
    "age_days": 925.5,
    "reason": "已過一年驗證且流動性足, 只是還沒加進 D 池(可低成本升)"
   },
   {
    "symbol": "1000PEPE-USDT",
    "vol24h_m": 14.1,
-   "spread_bps": 1.9,
+   "spread_bps": 1.1,
    "age_days": 1087.3,
    "reason": "量能與歷史都達理想值, 缺一年驗證"
   },
@@ -228,7 +222,7 @@
   {
    "symbol": "PUMP-USDT",
    "vol24h_m": 11.1,
-   "spread_bps": 18.2,
+   "spread_bps": 10.9,
    "age_days": 398.7,
    "reason": "量能與歷史都達理想值, 缺一年驗證"
   },
@@ -249,15 +243,27 @@
   {
    "symbol": "JUP-USDT",
    "vol24h_m": 7.4,
-   "spread_bps": 23.5,
+   "spread_bps": 17.6,
    "age_days": 924.3,
    "reason": "已過一年驗證且流動性足, 只是還沒加進 D 池(可低成本升)"
   }
  ],
  "observe": [
   {
+   "symbol": "OP-USDT",
+   "vol24h_m": 3.7,
+   "is_nc": false,
+   "reason": "成本否決: 往返成本 68.5bps = 0.415R/筆, 超過否決線 0.25R(吃掉現役策略整個平均邊際)"
+  },
+  {
+   "symbol": "ATOM-USDT",
+   "vol24h_m": 2.8,
+   "is_nc": false,
+   "reason": "成本否決: 往返成本 47.7bps = 0.354R/筆, 超過否決線 0.25R(吃掉現役策略整個平均邊際)"
+  },
+  {
    "symbol": "NCCOGOLD2USD-USDT",
-   "vol24h_m": 913.0,
+   "vol24h_m": 913.1,
    "is_nc": true,
    "reason": "非加密: 只有 6 週歷史, 先蒐資料"
   },
@@ -280,8 +286,92 @@
    "reason": "非加密: 只有 6 週歷史, 先蒐資料"
   },
   {
+   "symbol": "NCCO1OILBRENT2USD-USDT",
+   "vol24h_m": 23.7,
+   "is_nc": true,
+   "reason": "非加密: 只有 6 週歷史, 先蒐資料"
+  },
+  {
+   "symbol": "NCCOGASOLINE2USD-USDT",
+   "vol24h_m": 16.1,
+   "is_nc": true,
+   "reason": "非加密: 只有 6 週歷史, 先蒐資料"
+  },
+  {
+   "symbol": "NCFXEUR2USD-USDT",
+   "vol24h_m": 15.7,
+   "is_nc": true,
+   "reason": "非加密: 只有 6 週歷史, 先蒐資料"
+  },
+  {
+   "symbol": "NCSISP5002USD-USDT",
+   "vol24h_m": 10.5,
+   "is_nc": true,
+   "reason": "非加密: 只有 6 週歷史, 先蒐資料"
+  },
+  {
+   "symbol": "NCSINIKKEI2252USD-USDT",
+   "vol24h_m": 9.4,
+   "is_nc": true,
+   "reason": "非加密: 只有 6 週歷史, 先蒐資料"
+  },
+  {
+   "symbol": "NCFXEUR2GBP-USDT",
+   "vol24h_m": 7.1,
+   "is_nc": true,
+   "reason": "非加密: 只有 6 週歷史, 先蒐資料"
+  },
+  {
+   "symbol": "NCFXGBP2CHF-USDT",
+   "vol24h_m": 6.6,
+   "is_nc": true,
+   "reason": "非加密: 只有 6 週歷史, 先蒐資料"
+  },
+  {
+   "symbol": "NCCOPALLADIUM2USD-USDT",
+   "vol24h_m": 6.6,
+   "is_nc": true,
+   "reason": "非加密: 只有 6 週歷史, 先蒐資料"
+  },
+  {
+   "symbol": "NCFXEUR2CHF-USDT",
+   "vol24h_m": 6.6,
+   "is_nc": true,
+   "reason": "非加密: 只有 6 週歷史, 先蒐資料"
+  },
+  {
+   "symbol": "NCFXUSDSGD2USD-USDT",
+   "vol24h_m": 6.5,
+   "is_nc": true,
+   "reason": "非加密: 只有 6 週歷史, 先蒐資料"
+  },
+  {
+   "symbol": "NCCOXAUJPY2USD-USDT",
+   "vol24h_m": 6.5,
+   "is_nc": true,
+   "reason": "非加密: 只有 6 週歷史, 先蒐資料"
+  },
+  {
+   "symbol": "NCFXGBPSGD2USD-USDT",
+   "vol24h_m": 6.5,
+   "is_nc": true,
+   "reason": "非加密: 只有 6 週歷史, 先蒐資料"
+  },
+  {
+   "symbol": "NCFXEURSGD2USD-USDT",
+   "vol24h_m": 6.5,
+   "is_nc": true,
+   "reason": "非加密: 只有 6 週歷史, 先蒐資料"
+  },
+  {
+   "symbol": "NCCOHEATINGOIL2USD-USDT",
+   "vol24h_m": 6.3,
+   "is_nc": true,
+   "reason": "非加密: 只有 6 週歷史, 先蒐資料"
+  },
+  {
    "symbol": "NCSKSPCX2USD-USDT",
-   "vol24h_m": 26.6,
+   "vol24h_m": 26.7,
    "is_nc": false,
    "reason": "上市83天<365; 未驗證"
   },
@@ -298,28 +388,10 @@
    "reason": "上市283天<365; 未驗證"
   },
   {
-   "symbol": "NCCO1OILBRENT2USD-USDT",
-   "vol24h_m": 23.7,
-   "is_nc": true,
-   "reason": "非加密: 只有 6 週歷史, 先蒐資料"
-  },
-  {
    "symbol": "APR-USDT",
    "vol24h_m": 18.7,
    "is_nc": false,
    "reason": "上市294天<365; 未驗證"
-  },
-  {
-   "symbol": "NCCOGASOLINE2USD-USDT",
-   "vol24h_m": 16.0,
-   "is_nc": true,
-   "reason": "非加密: 只有 6 週歷史, 先蒐資料"
-  },
-  {
-   "symbol": "NCFXEUR2USD-USDT",
-   "vol24h_m": 15.7,
-   "is_nc": true,
-   "reason": "非加密: 只有 6 週歷史, 先蒐資料"
   },
   {
    "symbol": "NCSKSNDK2USD-USDT",
@@ -340,12 +412,6 @@
    "reason": "上市324天<365; 未驗證"
   },
   {
-   "symbol": "NCSISP5002USD-USDT",
-   "vol24h_m": 10.5,
-   "is_nc": true,
-   "reason": "非加密: 只有 6 週歷史, 先蒐資料"
-  },
-  {
    "symbol": "KAITO-USDT",
    "vol24h_m": 9.8,
    "is_nc": false,
@@ -362,12 +428,6 @@
    "vol24h_m": 9.5,
    "is_nc": false,
    "reason": "量9.5M<10M; 上市273天<365; 未驗證"
-  },
-  {
-   "symbol": "NCSINIKKEI2252USD-USDT",
-   "vol24h_m": 9.4,
-   "is_nc": true,
-   "reason": "非加密: 只有 6 週歷史, 先蒐資料"
   },
   {
    "symbol": "HOLO-USDT",
@@ -389,9 +449,9 @@
   },
   {
    "symbol": "NCSKSOXL2USD-USDT",
-   "vol24h_m": 8.7,
+   "vol24h_m": 8.8,
    "is_nc": false,
-   "reason": "量8.7M<10M; 上市113天<365; 未驗證"
+   "reason": "量8.8M<10M; 上市113天<365; 未驗證"
   },
   {
    "symbol": "VIRTUAL-USDT",
@@ -485,21 +545,21 @@
   },
   {
    "symbol": "ALLO-USDT",
-   "vol24h_m": 7.1,
+   "vol24h_m": 7.2,
    "is_nc": false,
-   "reason": "量7.1M<10M; 上市274天<365; 未驗證"
-  },
-  {
-   "symbol": "NIL-USDT",
-   "vol24h_m": 7.1,
-   "is_nc": false,
-   "reason": "量7.1M<10M; 上市84天<365; 未驗證"
+   "reason": "量7.2M<10M; 上市274天<365; 未驗證"
   },
   {
    "symbol": "HOME-USDT",
    "vol24h_m": 7.1,
    "is_nc": false,
    "reason": "量7.1M<10M; 未驗證"
+  },
+  {
+   "symbol": "NIL-USDT",
+   "vol24h_m": 7.1,
+   "is_nc": false,
+   "reason": "量7.1M<10M; 上市84天<365; 未驗證"
   },
   {
    "symbol": "BOME-USDT",
@@ -512,12 +572,6 @@
    "vol24h_m": 7.1,
    "is_nc": false,
    "reason": "量7.1M<10M; 上市293天<365; 未驗證"
-  },
-  {
-   "symbol": "NCFXEUR2GBP-USDT",
-   "vol24h_m": 7.1,
-   "is_nc": true,
-   "reason": "非加密: 只有 6 週歷史, 先蒐資料"
   },
   {
    "symbol": "TRUMPSOL-USDT",
@@ -539,9 +593,9 @@
   },
   {
    "symbol": "NCSKMETA2USD-USDT",
-   "vol24h_m": 6.9,
+   "vol24h_m": 7.0,
    "is_nc": false,
-   "reason": "量6.9M<10M; 上市273天<365; 未驗證"
+   "reason": "量7.0M<10M; 上市273天<365; 未驗證"
   },
   {
    "symbol": "BABY-USDT",
@@ -563,9 +617,9 @@
   },
   {
    "symbol": "ZRO-USDT",
-   "vol24h_m": 6.8,
+   "vol24h_m": 6.9,
    "is_nc": false,
-   "reason": "量6.8M<10M; 未驗證"
+   "reason": "量6.9M<10M; 未驗證"
   },
   {
    "symbol": "BLUAI-USDT",
@@ -580,16 +634,16 @@
    "reason": "量6.8M<10M; 上市92天<365; 未驗證"
   },
   {
-   "symbol": "NCSKCOIN2USD-USDT",
-   "vol24h_m": 6.8,
-   "is_nc": false,
-   "reason": "量6.8M<10M; 上市273天<365; 未驗證"
-  },
-  {
    "symbol": "RIVER-USDT",
    "vol24h_m": 6.8,
    "is_nc": false,
    "reason": "量6.8M<10M; 上市325天<365; 未驗證"
+  },
+  {
+   "symbol": "NCSKCOIN2USD-USDT",
+   "vol24h_m": 6.8,
+   "is_nc": false,
+   "reason": "量6.8M<10M; 上市273天<365; 未驗證"
   },
   {
    "symbol": "POL-USDT",
@@ -614,6 +668,66 @@
    "vol24h_m": 6.8,
    "is_nc": false,
    "reason": "量6.8M<10M; 未驗證"
+  },
+  {
+   "symbol": "PLUME-USDT",
+   "vol24h_m": 6.7,
+   "is_nc": false,
+   "reason": "量6.7M<10M; 未驗證"
+  },
+  {
+   "symbol": "COOKIE-USDT",
+   "vol24h_m": 6.7,
+   "is_nc": false,
+   "reason": "量6.7M<10M; 未驗證"
+  },
+  {
+   "symbol": "STX-USDT",
+   "vol24h_m": 6.7,
+   "is_nc": false,
+   "reason": "量6.7M<10M; 未驗證"
+  },
+  {
+   "symbol": "NCSKHOOD2USD-USDT",
+   "vol24h_m": 6.7,
+   "is_nc": false,
+   "reason": "量6.7M<10M; 上市272天<365; 未驗證"
+  },
+  {
+   "symbol": "AT-USDT",
+   "vol24h_m": 6.7,
+   "is_nc": false,
+   "reason": "量6.7M<10M; 上市293天<365; 未驗證"
+  },
+  {
+   "symbol": "ASTER-USDT",
+   "vol24h_m": 6.7,
+   "is_nc": false,
+   "reason": "量6.7M<10M; 上市328天<365; 未驗證"
+  },
+  {
+   "symbol": "CFX-USDT",
+   "vol24h_m": 6.7,
+   "is_nc": false,
+   "reason": "量6.7M<10M; 未驗證"
+  },
+  {
+   "symbol": "MERL-USDT",
+   "vol24h_m": 6.7,
+   "is_nc": false,
+   "reason": "量6.7M<10M; 未驗證"
+  },
+  {
+   "symbol": "2Z-USDT",
+   "vol24h_m": 6.7,
+   "is_nc": false,
+   "reason": "量6.7M<10M; 上市314天<365; 未驗證"
+  },
+  {
+   "symbol": "UAI-USDT",
+   "vol24h_m": 6.6,
+   "is_nc": false,
+   "reason": "量6.6M<10M; 上市280天<365; 未驗證"
   }
  ],
  "cost_vetoed": {
