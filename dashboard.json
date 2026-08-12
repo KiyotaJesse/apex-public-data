@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T20:27:30.929454+08:00",
+  "generated_at": "2026-08-12T21:27:49.106356+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -966,7 +966,7 @@
         "closed_ts": "2026-08-03T13:53:07.752692+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-12T12:25:09.627538+00:00",
+    "last_cycle_ts": "2026-08-12T13:24:06.976545+00:00",
     "stats": {
       "n": 31,
       "win_rate_pct": 32.3,
@@ -989,7 +989,7 @@
   "strat_tl": {
     "mode": "disabled",
     "open_positions": [],
-    "last_cycle_ts": "2026-08-12T12:25:36.699629+00:00",
+    "last_cycle_ts": "2026-08-12T13:24:39.453450+00:00",
     "stats": {
       "n": 35,
       "win_rate_pct": 8.6,
@@ -1004,7 +1004,7 @@
       "_meta": {
         "desc": "APEX 控制台熱載入配置。改此檔 <=60 秒生效，無需重新部署。硬邊界見 tama_v5.py TAMA_CONFIG_BOUNDS。",
         "updated": "2026-08-09T07:47:40.241368+00:00",
-        "by": "APEX-A L2階梯風險自適應(Jesse 2026-08-03 全自動授權)"
+        "by": "策略選礦機自動上線(三關通過, Jesse 2026-08-03 全自動授權)"
       },
       "b1": {
         "live_enabled": true,
@@ -1062,13 +1062,55 @@
         "max_hold_h": 72,
         "cooldown_h": 12
       },
-      "auto_strategies": []
+      "auto_strategies": [
+        {
+          "id": "AUTO_CS_RSI__70_COIL__0_6_CVD_Z___1_R",
+          "tf": "1h",
+          "side": "SHORT",
+          "sl_atr": 1.5,
+          "tp_atr": 3.0,
+          "max_hold_h": 72,
+          "regime_gate": null,
+          "max_positions": 2,
+          "exit": "ratchet",
+          "entry": [
+            [
+              "rsi",
+              ">=",
+              70
+            ],
+            [
+              "coil",
+              ">=",
+              0.6
+            ],
+            [
+              "cvd_z",
+              "<=",
+              -1.0
+            ]
+          ],
+          "live_enabled": true,
+          "risk_pct": 0.005,
+          "leverage": 50,
+          "src": "prospector",
+          "added": "2026-08-12 21:24",
+          "evidence": {
+            "ev_full": 0.396,
+            "ev_h1": 0.1598,
+            "ev_h2": 0.6321,
+            "ev_recent_m": 1.0128,
+            "n": 74,
+            "win": 50.0
+          }
+        }
+      ]
     },
     "applied": {
-      "applied_sha": "6dd4a74341bd23566ebe1dedea355f1677967a68",
-      "applied_at": "2026-08-11T01:43:00.255026+00:00",
+      "applied_sha": "97ea998554628214251a4b761c68b974504dd127",
+      "applied_at": "2026-08-12T13:25:11.443424+00:00",
       "changes": [
-        "mrs.risk_pct: 0.00375 -> 0.0075"
+        "auto_strategies: 載入 1 個規格"
       ]
     },
     "bounds": {
@@ -5221,6 +5263,10 @@
     },
     {
       "ts": "2026-08-12T12:03:19.201594+00:00",
+      "idx": 51.25
+    },
+    {
+      "ts": "2026-08-12T13:03:22.352691+00:00",
       "idx": 51.25
     }
   ],
