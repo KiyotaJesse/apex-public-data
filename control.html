@@ -76,6 +76,9 @@ const canSend=!!(TG&&typeof TG.sendData==="function");
 if(TG){TG.ready();TG.expand();}
 if(!canSend)document.getElementById('ro').style.display='block';
 const META={
+ pool:{name:'幣池分層',rows:[
+  ['review_days','重審週期(天)','幣池多久重篩一次;移出主池只擋新進場,持倉照原策略出場','int',1,1,14,1],
+ ]},
  b1:{name:'B1 盤整破位做空',rows:[
   ['live_enabled','實盤開關','關=停止新開倉(舊倉照管)','bool',1],
   ['risk_pct','單筆風險','每筆最多虧損佔權益比例','pct',1,0.0001,0.02,0.0001],
@@ -85,9 +88,7 @@ const META={
   ['cycle_seconds','掃描週期(秒)','越短越即時、API消耗越大','int',0,60,3600,30],
   ['regime_gate','BTC大盤閘門','熊市才放行做空(7/26實證+0.24R)','bool',0],
   ['atr_r_thr','ATR比率門檻','8/2體檢atr_r雙驗證,0=停用','float',0,0,3.0,0.1],
-  ['volr_thr','量能比門檻','進場需量能達均量倍數,1.0=停用','float',0,1.0,2.5,0.1],
-  ['maker_first','限價搶maker','先掛限價省手續費,未成交改市價;關=直接市價','bool',0],
-  ['maker_wait_s','限價等待(秒)','等越久越省手續費,但掃描迴圈會被卡住同樣秒數;0=直接市價','int',0,0,30,2]]},
+  ['volr_thr','量能比門檻','進場需量能達均量倍數,1.0=停用','float',0,1.0,2.5,0.1]]},
  tl:{name:'TL 順勢回踩做多',rows:[
   ['live_enabled','實盤開關','','bool',1],
   ['risk_pct','單筆風險','目前降檔中(walk-forward近季EV轉負)','pct',1,0.0001,0.02,0.0001],
@@ -131,11 +132,7 @@ let CFG=null,BASE={},PEND={};
 const fmt=(k,v,kind)=>kind==='pct'?(v*100).toFixed(2).replace(/\.?0+$/,'')+'%':String(v);
 async function load(){
  try{
-  // 2026-08-08: 改讀 raw —— 同源 ./dashboard.json 要等 Pages 建置成功才更新,
-  // 星系圖同樣情形實測落後 20 分鐘, 面板顯示舊參數會讓人誤判「調了沒生效」。
-  // raw 直接讀 repo 內容不經建置; 已帶 ?t= 時間戳, max-age=300 快取擋不住。
-  const DASH='https://raw.githubusercontent.com/KiyotaJesse/apex-public-data/main/dashboard.json';
-  const r=await fetch(DASH+'?t='+Date.now(),{cache:'no-store'});
+  const r=await fetch('./dashboard.json?t='+Date.now(),{cache:'no-store'});
   const d=await r.json();const tc=d.tama_config||{};CFG=tc.current||{};
   const ap=tc.applied||{};
   document.getElementById('meta').textContent='最後變更: '+((CFG._meta||{}).updated||'?').slice(0,16)+' · '+((CFG._meta||{}).by||'').slice(0,42);
