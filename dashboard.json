@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-13T23:38:02.311671+08:00",
+  "generated_at": "2026-08-14T00:38:15.327530+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -997,7 +997,7 @@
         "closed_ts": "2026-08-13T02:53:38.313134+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-13T15:37:29.928776+00:00",
+    "last_cycle_ts": "2026-08-13T16:35:07.223207+00:00",
     "stats": {
       "n": 32,
       "win_rate_pct": 31.2,
@@ -1020,7 +1020,7 @@
   "strat_tl": {
     "mode": "disabled",
     "open_positions": [],
-    "last_cycle_ts": "2026-08-13T15:37:50.154234+00:00",
+    "last_cycle_ts": "2026-08-13T16:34:12.499590+00:00",
     "stats": {
       "n": 35,
       "win_rate_pct": 8.6,
@@ -1035,7 +1035,7 @@
       "_meta": {
         "desc": "APEX 控制台熱載入配置。改此檔 <=60 秒生效，無需重新部署。硬邊界見 tama_v5.py TAMA_CONFIG_BOUNDS。",
         "updated": "2026-08-09T07:47:40.241368+00:00",
-        "by": "P3 分層幣池: 寫入 pool.review_days 預設值(讓控制台旋鈕有真值可調)"
+        "by": "P4 探針期: 既有 AUTO 納管(2026-08-13)"
       },
       "b1": {
         "live_enabled": true,
@@ -1133,7 +1133,12 @@
             "ev_recent_m": 1.0128,
             "n": 74,
             "win": 50.0
-          }
+          },
+          "state": "probe",
+          "probe_started": "2026-08-13T23:39",
+          "base_risk_pct": 0.005,
+          "bt_ev": 0.3644,
+          "_probe_note": "2026-08-13 納入 P4 探針管理: 此 spec 由舊資格鏈上線(n=74/舊成本假設), 新鏈因樣本不足(n=71<120, 近月n=7<12)不會放行。逐幣真實成本重測 EV_full=+0.3644R(僅縮水8%)故不逕行退場, 改由探針期用實彈檢驗。bt_ev 取 ev_full 而非近月(+0.965R, n=7 太薄不足為憑)。"
         }
       ],
       "pool": {
@@ -1141,20 +1146,9 @@
       }
     },
     "applied": {
-      "applied_sha": "3af65a140a75f1c3e10358966210ed857cc955ef",
-      "applied_at": "2026-08-13T10:27:11.769929+00:00",
+      "applied_sha": "29b7e336bb1e84fbf4ea52ca5646d0e587e1beaa",
+      "applied_at": "2026-08-13T15:40:36.586977+00:00",
       "changes": [
-        "b1.cycle_seconds: 300 -> 60",
-        "b1.maker_wait_s: 20 -> 30",
-        "tl.live_enabled: True -> False",
-        "tl.risk_pct: 0.02 -> 0.01",
-        "b1.volr_thr: 1.2 -> 1.5",
-        "tl.cycle_seconds: 900 -> 60",
-        "sc.live_enabled: False -> True",
-        "sc.risk_pct: 0.01 -> 0.005",
-        "sc.s2_enabled: True -> False",
-        "mrs.live_enabled: False -> True",
-        "global.same_dir_max: 3 -> 4",
         "auto_strategies: 載入 1 個規格"
       ]
     },
@@ -5450,6 +5444,10 @@
     {
       "ts": "2026-08-13T15:27:39.207998+00:00",
       "idx": 47.73
+    },
+    {
+      "ts": "2026-08-13T16:27:45.784608+00:00",
+      "idx": 42.28
     }
   ],
   "trades_public": [
