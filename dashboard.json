@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-16T08:52:50.617336+08:00",
+  "generated_at": "2026-08-16T09:43:58.212718+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -997,7 +997,7 @@
         "closed_ts": "2026-08-13T02:53:38.313134+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-16T00:51:52.769078+00:00",
+    "last_cycle_ts": "2026-08-16T01:43:24.209075+00:00",
     "stats": {
       "n": 32,
       "win_rate_pct": 31.2,
@@ -1020,7 +1020,7 @@
   "strat_tl": {
     "mode": "disabled",
     "open_positions": [],
-    "last_cycle_ts": "2026-08-16T00:51:28.766444+00:00",
+    "last_cycle_ts": "2026-08-16T01:42:54.207474+00:00",
     "stats": {
       "n": 35,
       "win_rate_pct": 8.6,
@@ -1035,11 +1035,11 @@
       "_meta": {
         "desc": "APEX 控制台熱載入配置。改此檔 <=60 秒生效，無需重新部署。硬邊界見 tama_v5.py TAMA_CONFIG_BOUNDS。",
         "updated": "2026-08-09T07:47:40.241368+00:00",
-        "by": "P4 探針期: 既有 AUTO 納管(2026-08-13)"
+        "by": "APEX-A L2階梯風險自適應(Jesse 2026-08-03 全自動授權)"
       },
       "b1": {
         "live_enabled": true,
-        "risk_pct": 0.02,
+        "risk_pct": 0.01,
         "leverage": 50,
         "max_positions": 5,
         "daily_loss_limit_pct": 0.1,
@@ -5682,6 +5682,10 @@
     },
     {
       "ts": "2026-08-16T00:10:20.978884+00:00",
+      "idx": 10.1
+    },
+    {
+      "ts": "2026-08-16T01:10:23.347666+00:00",
       "idx": 10.1
     }
   ],
