@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-18T22:11:07.183251+08:00",
+  "generated_at": "2026-08-18T23:11:29.439074+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -997,7 +997,7 @@
         "closed_ts": "2026-08-13T02:53:38.313134+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-18T14:08:33.681993+00:00",
+    "last_cycle_ts": "2026-08-18T15:09:38.352219+00:00",
     "stats": {
       "n": 32,
       "win_rate_pct": 31.2,
@@ -1020,7 +1020,7 @@
   "strat_tl": {
     "mode": "disabled",
     "open_positions": [],
-    "last_cycle_ts": "2026-08-18T14:09:09.780820+00:00",
+    "last_cycle_ts": "2026-08-18T15:09:11.780414+00:00",
     "stats": {
       "n": 35,
       "win_rate_pct": 8.6,
@@ -1035,7 +1035,7 @@
       "_meta": {
         "desc": "APEX 控制台熱載入配置。改此檔 <=60 秒生效，無需重新部署。硬邊界見 tama_v5.py TAMA_CONFIG_BOUNDS。",
         "updated": "2026-08-09T07:47:40.241368+00:00",
-        "by": "APEX-A L2階梯風險自適應(Jesse 2026-08-03 全自動授權)"
+        "by": "策略選礦機自動上線(三關通過, Jesse 2026-08-03 全自動授權)"
       },
       "b1": {
         "live_enabled": true,
@@ -1139,6 +1139,53 @@
           "base_risk_pct": 0.005,
           "bt_ev": 0.3644,
           "_probe_note": "2026-08-13 納入 P4 探針管理: 此 spec 由舊資格鏈上線(n=74/舊成本假設), 新鏈因樣本不足(n=71<120, 近月n=7<12)不會放行。逐幣真實成本重測 EV_full=+0.3644R(僅縮水8%)故不逕行退場, 改由探針期用實彈檢驗。bt_ev 取 ev_full 而非近月(+0.965R, n=7 太薄不足為憑)。"
+        },
+        {
+          "id": "AUTO_CS_CVD_DIV__0_5_VOL_R__1_5_CVD_Z___1_BEAR_R",
+          "tf": "1h",
+          "side": "SHORT",
+          "sl_atr": 1.5,
+          "tp_atr": 3.0,
+          "max_hold_h": 72,
+          "regime_gate": "bear",
+          "max_positions": 2,
+          "exit": "ratchet",
+          "entry": [
+            [
+              "cvd_div",
+              ">=",
+              0.5
+            ],
+            [
+              "vol_r",
+              ">=",
+              1.5
+            ],
+            [
+              "cvd_z",
+              "<=",
+              -1.0
+            ]
+          ],
+          "live_enabled": true,
+          "risk_pct": 0.005,
+          "leverage": 50,
+          "state": "probe",
+          "probe_started": "2026-08-18T22:19",
+          "base_risk_pct": 0.005,
+          "bt_ev": 0.8489,
+          "src": "prospector",
+          "added": "2026-08-18 22:19",
+          "evidence": {
+            "ev_full": 0.3203,
+            "ev_h1": 0.4827,
+            "ev_h2": 0.0433,
+            "ev_recent_m": 0.8489,
+            "n": 266,
+            "win": 48.5,
+            "ev_cost2x": 0.1793,
+            "ev_ex_topq": 0.2413
+          }
         }
       ],
       "pool": {
@@ -1146,10 +1193,10 @@
       }
     },
     "applied": {
-      "applied_sha": "ad25c1ad2fb79d4e87e0d24d1d7f9a42126c69c1",
-      "applied_at": "2026-08-16T01:43:56.853339+00:00",
+      "applied_sha": "04ea9cf6ea0c740d2a7c4736112ac8e22e55ba17",
+      "applied_at": "2026-08-18T14:20:05.291264+00:00",
       "changes": [
-        "b1.risk_pct: 0.02 -> 0.01"
+        "auto_strategies: 載入 2 個規格"
       ]
     },
     "bounds": {
@@ -5915,6 +5962,10 @@
     },
     {
       "ts": "2026-08-18T13:14:35.441723+00:00",
+      "idx": 10.1
+    },
+    {
+      "ts": "2026-08-18T14:14:39.356273+00:00",
       "idx": 10.1
     }
   ],
