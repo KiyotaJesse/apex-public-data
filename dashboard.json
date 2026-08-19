@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T20:17:10.259295+08:00",
+  "generated_at": "2026-08-19T20:23:59.275441+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -997,7 +997,7 @@
         "closed_ts": "2026-08-13T02:53:38.313134+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-19T12:15:03.567930+00:00",
+    "last_cycle_ts": "2026-08-19T12:22:24.223465+00:00",
     "stats": {
       "n": 32,
       "win_rate_pct": 31.2,
@@ -1020,7 +1020,7 @@
   "strat_tl": {
     "mode": "disabled",
     "open_positions": [],
-    "last_cycle_ts": "2026-08-19T12:14:11.528168+00:00",
+    "last_cycle_ts": "2026-08-19T12:22:48.327351+00:00",
     "stats": {
       "n": 35,
       "win_rate_pct": 8.6,
@@ -1034,8 +1034,8 @@
     "current": {
       "_meta": {
         "desc": "APEX 控制台熱載入配置。改此檔 <=60 秒生效，無需重新部署。硬邊界見 tama_v5.py TAMA_CONFIG_BOUNDS。",
-        "updated": "2026-08-09T07:47:40.241368+00:00",
-        "by": "策略選礦機自動上線(三關通過, Jesse 2026-08-03 全自動授權)"
+        "updated": "2026-08-19T20:23:55.816874+08:00",
+        "by": "控制台 Telegram user 7702310838"
       },
       "b1": {
         "live_enabled": true,
@@ -1051,7 +1051,7 @@
         "maker_wait_s": 30
       },
       "tl": {
-        "live_enabled": false,
+        "live_enabled": true,
         "risk_pct": 0.01,
         "leverage": 50,
         "max_positions": 2,
@@ -6050,6 +6050,10 @@
     },
     {
       "ts": "2026-08-19T11:16:04.091946+00:00",
+      "idx": 10.1
+    },
+    {
+      "ts": "2026-08-19T12:16:07.492709+00:00",
       "idx": 10.1
     }
   ],
