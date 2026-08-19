@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T20:23:59.275441+08:00",
+  "generated_at": "2026-08-19T21:17:23.098854+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -997,7 +997,7 @@
         "closed_ts": "2026-08-13T02:53:38.313134+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-19T12:22:24.223465+00:00",
+    "last_cycle_ts": "2026-08-19T13:14:59.402767+00:00",
     "stats": {
       "n": 32,
       "win_rate_pct": 31.2,
@@ -1018,9 +1018,9 @@
     "d": {}
   },
   "strat_tl": {
-    "mode": "disabled",
+    "mode": "live",
     "open_positions": [],
-    "last_cycle_ts": "2026-08-19T12:22:48.327351+00:00",
+    "last_cycle_ts": "2026-08-19T13:14:00.925027+00:00",
     "stats": {
       "n": 35,
       "win_rate_pct": 8.6,
@@ -1193,10 +1193,10 @@
       }
     },
     "applied": {
-      "applied_sha": "04ea9cf6ea0c740d2a7c4736112ac8e22e55ba17",
-      "applied_at": "2026-08-18T14:20:05.291264+00:00",
+      "applied_sha": "cce7bdc171aebe3b3a21eb41d4562c5d86eed0c6",
+      "applied_at": "2026-08-19T12:24:37.472668+00:00",
       "changes": [
-        "auto_strategies: 載入 2 個規格"
+        "tl.live_enabled: False -> True"
       ]
     },
     "bounds": {
