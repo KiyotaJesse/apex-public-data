@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20T03:18:56.178804+08:00",
+  "generated_at": "2026-08-20T04:19:10.532281+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -997,7 +997,7 @@
         "closed_ts": "2026-08-13T02:53:38.313134+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-19T19:15:31.341907+00:00",
+    "last_cycle_ts": "2026-08-19T20:16:11.585644+00:00",
     "stats": {
       "n": 32,
       "win_rate_pct": 31.2,
@@ -1010,7 +1010,7 @@
   "risk_circuit_breaker": {
     "killswitch": false,
     "daily_loss_limit_hit": false,
-    "daily_pnl_usdt": 0.0,
+    "daily_pnl_usdt": -0.3903,
     "daily_pnl_date": "2026-08-19"
   },
   "feature_flags": {
@@ -1019,8 +1019,32 @@
   },
   "strat_tl": {
     "mode": "live",
-    "open_positions": [],
-    "last_cycle_ts": "2026-08-19T19:16:01.345259+00:00",
+    "open_positions": [
+      {
+        "id": "strattl_TRXUSDT_1787167220",
+        "symbol": "TRX-USDT",
+        "direction": "LONG",
+        "entry": 0.33199,
+        "sl_price": 0.33070571428571427,
+        "tp_price": 0.33584285714285717,
+        "sl_dist": 0.0012842857142857378,
+        "qty": 395.0,
+        "max_hold_h": 48,
+        "strategy": "TL",
+        "fill_price": 0.33199,
+        "sig_key": "tl_TRX-USDT_2026-08-19 19:00:00",
+        "leverage": 50,
+        "sl_order_id": "2090165546347233280",
+        "opened_ts": "2026-08-19T19:54:34.141358+00:00",
+        "highest": 0.33203,
+        "lowest": 0.33199,
+        "breakeven_done": false,
+        "bars_elapsed": 1,
+        "last_checked_time": "2026-08-19 20:00:00",
+        "notion_page_id": "3c10a137-4574-816e-aaef-d541232d0896"
+      }
+    ],
+    "last_cycle_ts": "2026-08-19T20:16:44.430450+00:00",
     "stats": {
       "n": 35,
       "win_rate_pct": 8.6,
@@ -6094,6 +6118,10 @@
     {
       "ts": "2026-08-19T18:45:37.695979+00:00",
       "idx": 10.1
+    },
+    {
+      "ts": "2026-08-19T19:45:39.457372+00:00",
+      "idx": 10.05
     }
   ],
   "trades_public": [
