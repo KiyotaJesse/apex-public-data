@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20T11:20:47.091318+08:00",
+  "generated_at": "2026-08-20T12:20:59.525168+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -997,7 +997,7 @@
         "closed_ts": "2026-08-13T02:53:38.313134+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-20T03:18:10.929777+00:00",
+    "last_cycle_ts": "2026-08-20T04:17:30.653589+00:00",
     "stats": {
       "n": 32,
       "win_rate_pct": 31.2,
@@ -1019,39 +1019,15 @@
   },
   "strat_tl": {
     "mode": "live",
-    "open_positions": [
-      {
-        "id": "strattl_TRXUSDT_1787167220",
-        "symbol": "TRX-USDT",
-        "direction": "LONG",
-        "entry": 0.33199,
-        "sl_price": 0.33199,
-        "tp_price": 0.33584285714285717,
-        "sl_dist": 0.0012842857142857378,
-        "qty": 395.0,
-        "max_hold_h": 48,
-        "strategy": "TL",
-        "fill_price": 0.33199,
-        "sig_key": "tl_TRX-USDT_2026-08-19 19:00:00",
-        "leverage": 50,
-        "sl_order_id": "2090227407251931136",
-        "opened_ts": "2026-08-19T19:54:34.141358+00:00",
-        "highest": 0.33474,
-        "lowest": 0.33199,
-        "breakeven_done": false,
-        "bars_elapsed": 8,
-        "last_checked_time": "2026-08-20 03:00:00",
-        "notion_page_id": "3c10a137-4574-816e-aaef-d541232d0896"
-      }
-    ],
-    "last_cycle_ts": "2026-08-20T03:17:24.169576+00:00",
+    "open_positions": [],
+    "last_cycle_ts": "2026-08-20T04:18:12.983832+00:00",
     "stats": {
-      "n": 35,
-      "win_rate_pct": 8.6,
-      "ev_r": -0.632,
+      "n": 36,
+      "win_rate_pct": 8.3,
+      "ev_r": -0.614,
       "total_pnl_usdt": -22.12,
       "avg_win_usdt": 0.97,
-      "avg_loss_usdt": -0.78
+      "avg_loss_usdt": -0.76
     }
   },
   "tama_config": {
@@ -6150,6 +6126,10 @@
     {
       "ts": "2026-08-20T02:45:58.696339+00:00",
       "idx": 9.9
+    },
+    {
+      "ts": "2026-08-20T03:45:59.054791+00:00",
+      "idx": 9.79
     }
   ],
   "trades_public": [
@@ -6621,6 +6601,13 @@
       "strat": "B1",
       "dir": "SHORT",
       "r": -1.655
+    },
+    {
+      "ts": "2026-08-20T04:00:12.788462+00:00",
+      "sym": "TRX-USDT",
+      "strat": "TL",
+      "dir": "LONG",
+      "r": 0.0
     }
   ],
   "self_upgrades": [
