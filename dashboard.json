@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20T14:21:29.944723+08:00",
+  "generated_at": "2026-08-20T15:21:46.134773+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -997,7 +997,7 @@
         "closed_ts": "2026-08-13T02:53:38.313134+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-20T06:19:45.562043+00:00",
+    "last_cycle_ts": "2026-08-20T07:20:21.187191+00:00",
     "stats": {
       "n": 32,
       "win_rate_pct": 31.2,
@@ -1020,7 +1020,7 @@
   "strat_tl": {
     "mode": "live",
     "open_positions": [],
-    "last_cycle_ts": "2026-08-20T06:18:55.886206+00:00",
+    "last_cycle_ts": "2026-08-20T07:19:21.140926+00:00",
     "stats": {
       "n": 36,
       "win_rate_pct": 8.3,
@@ -1121,7 +1121,7 @@
               -1.0
             ]
           ],
-          "live_enabled": true,
+          "live_enabled": false,
           "risk_pct": 0.005,
           "leverage": 50,
           "src": "prospector",
@@ -1138,7 +1138,9 @@
           "probe_started": "2026-08-13T23:39",
           "base_risk_pct": 0.005,
           "bt_ev": 0.3644,
-          "_probe_note": "2026-08-13 納入 P4 探針管理: 此 spec 由舊資格鏈上線(n=74/舊成本假設), 新鏈因樣本不足(n=71<120, 近月n=7<12)不會放行。逐幣真實成本重測 EV_full=+0.3644R(僅縮水8%)故不逕行退場, 改由探針期用實彈檢驗。bt_ev 取 ev_full 而非近月(+0.965R, n=7 太薄不足為憑)。"
+          "_probe_note": "2026-08-13 納入 P4 探針管理: 此 spec 由舊資格鏈上線(n=74/舊成本假設), 新鏈因樣本不足(n=71<120, 近月n=7<12)不會放行。逐幣真實成本重測 EV_full=+0.3644R(僅縮水8%)故不逕行退場, 改由探針期用實彈檢驗。bt_ev 取 ev_full 而非近月(+0.965R, n=7 太薄不足為憑)。",
+          "_disabled_at": "2026-08-20 14:23",
+          "_disabled_reason": "2026-08-20 Jesse 裁決: 上線證據 ev_full=+0.396 由有缺陷的 sim_ratchet 算出(拖曳停損用拿不到的掛單價結算); 修正後重算 EV=+0.1773 n=74, 低於 EV_BAR 0.3"
         },
         {
           "id": "AUTO_CS_CVD_DIV__0_5_VOL_R__1_5_CVD_Z___1_BEAR_R",
@@ -1193,20 +1195,9 @@
       }
     },
     "applied": {
-      "applied_sha": "cce7bdc171aebe3b3a21eb41d4562c5d86eed0c6",
-      "applied_at": "2026-08-20T04:27:24.506153+00:00",
+      "applied_sha": "cac97543b3ca8c5d61815c47094181ac0fee7de7",
+      "applied_at": "2026-08-20T06:23:57.436802+00:00",
       "changes": [
-        "b1.risk_pct: 0.02 -> 0.01",
-        "b1.cycle_seconds: 300 -> 60",
-        "b1.maker_wait_s: 20 -> 30",
-        "tl.risk_pct: 0.02 -> 0.01",
-        "b1.volr_thr: 1.2 -> 1.5",
-        "tl.cycle_seconds: 900 -> 60",
-        "sc.live_enabled: False -> True",
-        "sc.risk_pct: 0.01 -> 0.005",
-        "sc.s2_enabled: True -> False",
-        "mrs.live_enabled: False -> True",
-        "global.same_dir_max: 3 -> 4",
         "auto_strategies: 載入 2 個規格"
       ]
     },
@@ -6137,6 +6128,10 @@
     },
     {
       "ts": "2026-08-20T05:27:36.318807+00:00",
+      "idx": 9.77
+    },
+    {
+      "ts": "2026-08-20T06:27:37.858200+00:00",
       "idx": 9.77
     }
   ],
