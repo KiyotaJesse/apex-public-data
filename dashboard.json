@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T08:26:39.483304+08:00",
+  "generated_at": "2026-08-21T09:26:59.928970+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -997,7 +997,7 @@
         "closed_ts": "2026-08-13T02:53:38.313134+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-21T00:25:30.025769+00:00",
+    "last_cycle_ts": "2026-08-21T01:25:40.922642+00:00",
     "stats": {
       "n": 32,
       "win_rate_pct": 31.2,
@@ -1020,7 +1020,7 @@
   "strat_tl": {
     "mode": "live",
     "open_positions": [],
-    "last_cycle_ts": "2026-08-21T00:25:30.025816+00:00",
+    "last_cycle_ts": "2026-08-21T01:25:00.435046+00:00",
     "stats": {
       "n": 36,
       "win_rate_pct": 8.3,
@@ -1196,8 +1196,19 @@
     },
     "applied": {
       "applied_sha": "cac97543b3ca8c5d61815c47094181ac0fee7de7",
-      "applied_at": "2026-08-20T06:23:57.436802+00:00",
+      "applied_at": "2026-08-21T01:12:47.558353+00:00",
       "changes": [
+        "b1.risk_pct: 0.02 -> 0.01",
+        "b1.cycle_seconds: 300 -> 60",
+        "b1.maker_wait_s: 20 -> 30",
+        "tl.risk_pct: 0.02 -> 0.01",
+        "b1.volr_thr: 1.2 -> 1.5",
+        "tl.cycle_seconds: 900 -> 60",
+        "sc.live_enabled: False -> True",
+        "sc.risk_pct: 0.01 -> 0.005",
+        "sc.s2_enabled: True -> False",
+        "mrs.live_enabled: False -> True",
+        "global.same_dir_max: 3 -> 4",
         "auto_strategies: 載入 2 個規格"
       ]
     },
@@ -6201,6 +6212,14 @@
     {
       "ts": "2026-08-20T23:29:06.308074+00:00",
       "idx": 9.82
+    },
+    {
+      "ts": "2026-08-21T00:29:13.298283+00:00",
+      "idx": 9.79
+    },
+    {
+      "ts": "2026-08-21T01:12:53.560204+00:00",
+      "idx": 9.79
     }
   ],
   "trades_public": [
