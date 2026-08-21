@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T07:26:21.950743+08:00",
+  "generated_at": "2026-08-21T08:26:39.483304+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -997,7 +997,7 @@
         "closed_ts": "2026-08-13T02:53:38.313134+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-20T23:25:26.277425+00:00",
+    "last_cycle_ts": "2026-08-21T00:25:30.025769+00:00",
     "stats": {
       "n": 32,
       "win_rate_pct": 31.2,
@@ -1010,8 +1010,8 @@
   "risk_circuit_breaker": {
     "killswitch": false,
     "daily_loss_limit_hit": false,
-    "daily_pnl_usdt": -0.367,
-    "daily_pnl_date": "2026-08-20"
+    "daily_pnl_usdt": 0.0,
+    "daily_pnl_date": "2026-08-21"
   },
   "feature_flags": {
     "a": {},
@@ -1020,7 +1020,7 @@
   "strat_tl": {
     "mode": "live",
     "open_positions": [],
-    "last_cycle_ts": "2026-08-20T23:25:44.322310+00:00",
+    "last_cycle_ts": "2026-08-21T00:25:30.025816+00:00",
     "stats": {
       "n": 36,
       "win_rate_pct": 8.3,
@@ -6196,6 +6196,10 @@
     },
     {
       "ts": "2026-08-20T22:29:02.007870+00:00",
+      "idx": 9.82
+    },
+    {
+      "ts": "2026-08-20T23:29:06.308074+00:00",
       "idx": 9.82
     }
   ],
