@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-23T15:38:41.140590+08:00",
+  "generated_at": "2026-08-23T16:21:37.100783+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -997,7 +997,7 @@
         "closed_ts": "2026-08-13T02:53:38.313134+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-23T07:37:50.323608+00:00",
+    "last_cycle_ts": "2026-08-23T08:19:15.760271+00:00",
     "stats": {
       "n": 32,
       "win_rate_pct": 31.2,
@@ -1036,15 +1036,15 @@
         "leverage": 17,
         "sl_order_id": "2091390224457891840",
         "opened_ts": "2026-08-23T04:01:01.214978+00:00",
-        "highest": 1.838,
+        "highest": 1.851,
         "lowest": 1.838,
         "breakeven_done": false,
-        "bars_elapsed": 3,
-        "last_checked_time": "2026-08-23 07:00:00",
+        "bars_elapsed": 4,
+        "last_checked_time": "2026-08-23 08:00:00",
         "notion_page_id": "3c50a137-4574-8156-a573-e72bcc5a27b5"
       }
     ],
-    "last_cycle_ts": "2026-08-23T07:36:42.080225+00:00",
+    "last_cycle_ts": "2026-08-23T08:18:46.140073+00:00",
     "stats": {
       "n": 36,
       "win_rate_pct": 8.3,
@@ -1058,8 +1058,8 @@
     "current": {
       "_meta": {
         "desc": "APEX 控制台熱載入配置。改此檔 <=60 秒生效，無需重新部署。硬邊界見 tama_v5.py TAMA_CONFIG_BOUNDS。",
-        "updated": "2026-08-19T20:23:55.816874+08:00",
-        "by": "控制台 Telegram user 7702310838"
+        "updated": "2026-08-23T15:40:00+08:00",
+        "by": "APEX-A 重算下架 (Jesse 2026-08-23 裁決)"
       },
       "b1": {
         "live_enabled": true,
@@ -1193,10 +1193,10 @@
               -1.0
             ]
           ],
-          "live_enabled": true,
+          "live_enabled": false,
           "risk_pct": 0.005,
           "leverage": 50,
-          "state": "probe",
+          "state": "retired",
           "probe_started": "2026-08-18T22:19",
           "base_risk_pct": 0.005,
           "bt_ev": 0.8489,
@@ -1211,6 +1211,27 @@
             "win": 48.5,
             "ev_cost2x": 0.1793,
             "ev_ex_topq": 0.2413
+          },
+          "_disabled_at": "2026-08-23 15:40",
+          "_disabled_reason": "2026-08-23 裁決: 上線證據 ev_full=+0.3203 產生於 8/18, 早於 8/20 修掉 sim_ratchet 「拖曳停損用拿不到的掛單價結算」的高估。同一批樣本(n=266)用修正後模擬重算: ev_full=+0.0958(門檻0.30) / ev_h2=-0.1473 / WF 4折中2折為負(-0.219,-0.076) / ev_cost2x=-0.0452(需>0) / win=44.0%(需>=45) -- 核心五關全部不過。實彈零成交(strat_auto_ledger open=0 closed=0), 無損失。",
+          "_recheck_evidence": {
+            "ev_full": 0.0958,
+            "ev_h1": 0.2121,
+            "ev_h2": -0.1473,
+            "folds": [
+              0.2758,
+              0.1483,
+              -0.2185,
+              -0.0761
+            ],
+            "ev_recent_m": 0.6815,
+            "n_recent_m": 26,
+            "ev_cost2x": -0.0452,
+            "ev_ex_topq": 0.0276,
+            "win": 44.0,
+            "n": 266,
+            "core_gates_pass": false,
+            "by": "_recheck_live_auto.py 2026-08-23"
           }
         }
       ],
@@ -1219,20 +1240,9 @@
       }
     },
     "applied": {
-      "applied_sha": "cac97543b3ca8c5d61815c47094181ac0fee7de7",
-      "applied_at": "2026-08-21T01:12:47.558353+00:00",
+      "applied_sha": "d85a1b154e0687835d538b3ccac6ff6386307445",
+      "applied_at": "2026-08-23T07:57:06.235694+00:00",
       "changes": [
-        "b1.risk_pct: 0.02 -> 0.01",
-        "b1.cycle_seconds: 300 -> 60",
-        "b1.maker_wait_s: 20 -> 30",
-        "tl.risk_pct: 0.02 -> 0.01",
-        "b1.volr_thr: 1.2 -> 1.5",
-        "tl.cycle_seconds: 900 -> 60",
-        "sc.live_enabled: False -> True",
-        "sc.risk_pct: 0.01 -> 0.005",
-        "sc.s2_enabled: True -> False",
-        "mrs.live_enabled: False -> True",
-        "global.same_dir_max: 3 -> 4",
         "auto_strategies: 載入 2 個規格"
       ]
     },
@@ -6460,6 +6470,10 @@
     {
       "ts": "2026-08-23T07:18:05.172711+00:00",
       "idx": 9.88
+    },
+    {
+      "ts": "2026-08-23T08:18:10.837133+00:00",
+      "idx": 9.9
     }
   ],
   "trades_public": [
