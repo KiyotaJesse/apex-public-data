@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-23T16:52:22.805753+08:00",
+  "generated_at": "2026-08-23T17:52:34.830922+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -997,7 +997,7 @@
         "closed_ts": "2026-08-13T02:53:38.313134+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-23T08:49:21.050209+00:00",
+    "last_cycle_ts": "2026-08-23T09:49:29.449494+00:00",
     "stats": {
       "n": 32,
       "win_rate_pct": 31.2,
@@ -1036,15 +1036,15 @@
         "leverage": 17,
         "sl_order_id": "2091390224457891840",
         "opened_ts": "2026-08-23T04:01:01.214978+00:00",
-        "highest": 1.851,
+        "highest": 1.879,
         "lowest": 1.838,
         "breakeven_done": false,
-        "bars_elapsed": 4,
-        "last_checked_time": "2026-08-23 08:00:00",
+        "bars_elapsed": 5,
+        "last_checked_time": "2026-08-23 09:00:00",
         "notion_page_id": "3c50a137-4574-8156-a573-e72bcc5a27b5"
       }
     ],
-    "last_cycle_ts": "2026-08-23T08:49:52.721309+00:00",
+    "last_cycle_ts": "2026-08-23T09:50:06.615950+00:00",
     "stats": {
       "n": 36,
       "win_rate_pct": 8.3,
@@ -1058,8 +1058,8 @@
     "current": {
       "_meta": {
         "desc": "APEX 控制台熱載入配置。改此檔 <=60 秒生效，無需重新部署。硬邊界見 tama_v5.py TAMA_CONFIG_BOUNDS。",
-        "updated": "2026-08-23T15:40:00+08:00",
-        "by": "APEX-A 重算下架 (Jesse 2026-08-23 裁決)"
+        "updated": "2026-08-23T17:20:00+08:00",
+        "by": "APEX-A 加 MRS bear 閘門 (Jesse 2026-08-23 裁決)"
       },
       "b1": {
         "live_enabled": true,
@@ -1115,7 +1115,8 @@
         "rsi_thr": 75,
         "sl_atr": 1.5,
         "max_hold_h": 72,
-        "cooldown_h": 12
+        "cooldown_h": 12,
+        "regime_gate": true
       },
       "auto_strategies": [
         {
@@ -1240,9 +1241,20 @@
       }
     },
     "applied": {
-      "applied_sha": "d85a1b154e0687835d538b3ccac6ff6386307445",
-      "applied_at": "2026-08-23T07:57:06.235694+00:00",
+      "applied_sha": "f8b345804db5977175bb7fcb09924771570cda7e",
+      "applied_at": "2026-08-23T09:28:21.447697+00:00",
       "changes": [
+        "b1.risk_pct: 0.02 -> 0.01",
+        "b1.cycle_seconds: 300 -> 60",
+        "b1.maker_wait_s: 20 -> 30",
+        "tl.risk_pct: 0.02 -> 0.01",
+        "b1.volr_thr: 1.2 -> 1.5",
+        "tl.cycle_seconds: 900 -> 60",
+        "sc.live_enabled: False -> True",
+        "sc.risk_pct: 0.01 -> 0.005",
+        "sc.s2_enabled: True -> False",
+        "mrs.live_enabled: False -> True",
+        "global.same_dir_max: 3 -> 4",
         "auto_strategies: 載入 2 個規格"
       ]
     },
@@ -6474,6 +6486,18 @@
     {
       "ts": "2026-08-23T08:18:10.837133+00:00",
       "idx": 9.9
+    },
+    {
+      "ts": "2026-08-23T09:18:12.409422+00:00",
+      "idx": 9.94
+    },
+    {
+      "ts": "2026-08-23T09:20:29.219693+00:00",
+      "idx": 9.93
+    },
+    {
+      "ts": "2026-08-23T09:28:28.492970+00:00",
+      "idx": 9.93
     }
   ],
   "trades_public": [
