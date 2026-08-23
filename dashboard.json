@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-23T12:38:02.353017+08:00",
+  "generated_at": "2026-08-23T13:38:16.573613+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -997,7 +997,7 @@
         "closed_ts": "2026-08-13T02:53:38.313134+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-23T04:36:56.176729+00:00",
+    "last_cycle_ts": "2026-08-23T05:36:32.709781+00:00",
     "stats": {
       "n": 32,
       "win_rate_pct": 31.2,
@@ -1025,7 +1025,7 @@
         "symbol": "NEAR-USDT",
         "direction": "LONG",
         "entry": 1.838,
-        "sl_price": 1.7571428571428573,
+        "sl_price": 1.75714286,
         "tp_price": 2.0805714285714285,
         "sl_dist": 0.08085714285714274,
         "qty": 6.0,
@@ -1034,17 +1034,17 @@
         "fill_price": 1.838,
         "sig_key": "tl_NEAR-USDT_2026-08-23 04:00:00",
         "leverage": 17,
-        "sl_order_id": "2091375144030797824",
+        "sl_order_id": "2091390224457891840",
         "opened_ts": "2026-08-23T04:01:01.214978+00:00",
         "highest": 1.838,
         "lowest": 1.838,
         "breakeven_done": false,
-        "bars_elapsed": 0,
-        "last_checked_time": "2026-08-23T04:01:01.214978+00:00",
+        "bars_elapsed": 1,
+        "last_checked_time": "2026-08-23 05:00:00",
         "notion_page_id": "3c50a137-4574-8156-a573-e72bcc5a27b5"
       }
     ],
-    "last_cycle_ts": "2026-08-23T04:35:50.507339+00:00",
+    "last_cycle_ts": "2026-08-23T05:35:29.699352+00:00",
     "stats": {
       "n": 36,
       "win_rate_pct": 8.3,
@@ -6448,6 +6448,10 @@
     {
       "ts": "2026-08-23T04:17:56.879133+00:00",
       "idx": 9.87
+    },
+    {
+      "ts": "2026-08-23T05:17:58.787181+00:00",
+      "idx": 9.82
     }
   ],
   "trades_public": [
