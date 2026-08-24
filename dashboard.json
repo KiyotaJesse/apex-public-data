@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-24T22:58:32.307392+08:00",
+  "generated_at": "2026-08-24T23:47:43.286721+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -997,7 +997,7 @@
         "closed_ts": "2026-08-13T02:53:38.313134+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-24T14:56:35.218340+00:00",
+    "last_cycle_ts": "2026-08-24T15:47:18.905344+00:00",
     "stats": {
       "n": 32,
       "win_rate_pct": 31.2,
@@ -1039,12 +1039,12 @@
         "highest": 2.043,
         "lowest": 1.838,
         "breakeven_done": false,
-        "bars_elapsed": 34,
-        "last_checked_time": "2026-08-24 14:00:00",
+        "bars_elapsed": 35,
+        "last_checked_time": "2026-08-24 15:00:00",
         "notion_page_id": "3c50a137-4574-8156-a573-e72bcc5a27b5"
       }
     ],
-    "last_cycle_ts": "2026-08-24T14:55:51.375833+00:00",
+    "last_cycle_ts": "2026-08-24T15:47:19.036999+00:00",
     "stats": {
       "n": 36,
       "win_rate_pct": 8.3,
@@ -1242,7 +1242,7 @@
     },
     "applied": {
       "applied_sha": "f8b345804db5977175bb7fcb09924771570cda7e",
-      "applied_at": "2026-08-23T09:28:21.447697+00:00",
+      "applied_at": "2026-08-24T15:47:02.500502+00:00",
       "changes": [
         "b1.risk_pct: 0.02 -> 0.01",
         "b1.cycle_seconds: 300 -> 60",
@@ -1468,6 +1468,11 @@
         "kind": "int",
         "min": 1,
         "max": 48
+      },
+      "mrs.regime_gate": {
+        "kind": "bool",
+        "min": null,
+        "max": null
       },
       "global.same_dir_max": {
         "kind": "int",
@@ -6614,6 +6619,10 @@
     {
       "ts": "2026-08-24T14:30:40.421216+00:00",
       "idx": 10.07
+    },
+    {
+      "ts": "2026-08-24T15:47:08.270030+00:00",
+      "idx": 10.08
     }
   ],
   "trades_public": [
