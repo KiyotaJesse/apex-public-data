@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-25T00:34:47.763255+08:00",
+  "generated_at": "2026-08-25T01:35:01.429567+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -997,7 +997,7 @@
         "closed_ts": "2026-08-13T02:53:38.313134+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-24T16:34:37.002738+00:00",
+    "last_cycle_ts": "2026-08-24T17:32:59.014135+00:00",
     "stats": {
       "n": 32,
       "win_rate_pct": 31.2,
@@ -1010,7 +1010,7 @@
   "risk_circuit_breaker": {
     "killswitch": false,
     "daily_loss_limit_hit": false,
-    "daily_pnl_usdt": 0.0,
+    "daily_pnl_usdt": 2.1459,
     "daily_pnl_date": "2026-08-24"
   },
   "feature_flags": {
@@ -1021,59 +1021,59 @@
     "mode": "live",
     "open_positions": [
       {
-        "id": "strattl_NEARUSDT_1787457640",
-        "symbol": "NEAR-USDT",
+        "id": "strattl_FILUSDT_1787589360",
+        "symbol": "FIL-USDT",
         "direction": "LONG",
-        "entry": 1.838,
-        "sl_price": 1.91885714,
-        "tp_price": 2.0805714285714285,
-        "sl_dist": 0.08085714285714274,
-        "qty": 6.0,
+        "entry": 0.766,
+        "sl_price": 0.74094286,
+        "tp_price": 0.8399714285714286,
+        "sl_dist": 0.025057142857142778,
+        "qty": 13.6,
         "max_hold_h": 48,
         "strategy": "TL",
-        "fill_price": 1.838,
-        "sig_key": "tl_NEAR-USDT_2026-08-23 04:00:00",
-        "leverage": 17,
-        "sl_order_id": "2091692008552366080",
-        "opened_ts": "2026-08-23T04:01:01.214978+00:00",
-        "highest": 2.043,
-        "lowest": 1.838,
-        "breakeven_done": false,
-        "bars_elapsed": 36,
-        "last_checked_time": "2026-08-24 16:00:00",
-        "notion_page_id": "3c50a137-4574-8156-a573-e72bcc5a27b5"
-      },
-      {
-        "id": "strattl_TRXUSDT_1787198476",
-        "symbol": "TRX-USDT",
-        "direction": "LONG",
-        "entry": 0.33198,
-        "sl_price": 0.33371571,
-        "tp_price": 0.3371871428571429,
-        "sl_dist": 0.0017357142857142849,
-        "qty": 90.0,
-        "max_hold_h": 48,
-        "strategy": "TL",
-        "fill_price": 0.33198,
-        "sig_key": "tl_TRX-USDT_2026-08-20 04:00:00",
-        "leverage": 50,
-        "sl_order_id": "2091918469129404416",
-        "opened_ts": "2026-08-24T15:57:24.675296+00:00",
-        "highest": 0.34308,
-        "lowest": 0.33198,
+        "fill_price": 0.766,
+        "sig_key": "tl_FIL-USDT_2026-08-24 16:00:00",
+        "leverage": 22,
+        "sl_order_id": "2091933647313141760",
+        "opened_ts": "2026-08-24T16:36:17.877296+00:00",
+        "highest": 0.766,
+        "lowest": 0.766,
         "breakeven_done": false,
         "bars_elapsed": 1,
-        "last_checked_time": "2026-08-24 16:00:00",
-        "notion_page_id": "3c60a137-4574-8126-9a85-e3210ba442d8"
+        "last_checked_time": "2026-08-24 17:00:00",
+        "notion_page_id": "3c60a137-4574-8146-9f45-e3f47b4109cb"
+      },
+      {
+        "id": "strattl_DOTUSDT_1787589366",
+        "symbol": "DOT-USDT",
+        "direction": "LONG",
+        "entry": 0.918,
+        "sl_price": 0.8866857142857143,
+        "tp_price": 1.0135428571428573,
+        "sl_dist": 0.03131428571428574,
+        "qty": 10.7,
+        "max_hold_h": 48,
+        "strategy": "TL",
+        "fill_price": 0.918,
+        "sig_key": "tl_DOT-USDT_2026-08-24 16:00:00",
+        "leverage": 21,
+        "sl_order_id": "2091927805406838784",
+        "opened_ts": "2026-08-24T16:37:09.472272+00:00",
+        "highest": 0.918,
+        "lowest": 0.918,
+        "breakeven_done": false,
+        "bars_elapsed": 1,
+        "last_checked_time": "2026-08-24 17:00:00",
+        "notion_page_id": "3c60a137-4574-81bb-baa9-e9477e96c96e"
       }
     ],
-    "last_cycle_ts": "2026-08-24T16:34:37.073902+00:00",
+    "last_cycle_ts": "2026-08-24T17:33:35.623093+00:00",
     "stats": {
-      "n": 36,
-      "win_rate_pct": 8.3,
-      "ev_r": -0.614,
-      "total_pnl_usdt": -22.12,
-      "avg_win_usdt": 0.97,
+      "n": 38,
+      "win_rate_pct": 13.2,
+      "ev_r": -0.353,
+      "total_pnl_usdt": -13.41,
+      "avg_win_usdt": 2.32,
       "avg_loss_usdt": -0.76
     }
   },
@@ -1099,7 +1099,7 @@
       },
       "tl": {
         "live_enabled": true,
-        "risk_pct": 0.01,
+        "risk_pct": 0.005,
         "leverage": 50,
         "max_positions": 2,
         "max_hold_h": 48,
@@ -1264,21 +1264,10 @@
       }
     },
     "applied": {
-      "applied_sha": "f8b345804db5977175bb7fcb09924771570cda7e",
-      "applied_at": "2026-08-24T16:34:25.554410+00:00",
+      "applied_sha": "a453e847815b7d894e01dc244a68e8ec5a941200",
+      "applied_at": "2026-08-24T17:02:11.417085+00:00",
       "changes": [
-        "b1.risk_pct: 0.02 -> 0.01",
-        "b1.cycle_seconds: 300 -> 60",
-        "b1.maker_wait_s: 20 -> 30",
-        "tl.risk_pct: 0.02 -> 0.01",
-        "b1.volr_thr: 1.2 -> 1.5",
-        "tl.cycle_seconds: 900 -> 60",
-        "sc.live_enabled: False -> True",
-        "sc.risk_pct: 0.01 -> 0.005",
-        "sc.s2_enabled: True -> False",
-        "mrs.live_enabled: False -> True",
-        "global.same_dir_max: 3 -> 4",
-        "auto_strategies: 載入 2 個規格"
+        "tl.risk_pct: 0.01 -> 0.005"
       ]
     },
     "bounds": {
@@ -6654,6 +6643,10 @@
     {
       "ts": "2026-08-24T16:34:31.108043+00:00",
       "idx": 9.94
+    },
+    {
+      "ts": "2026-08-24T16:57:08.699282+00:00",
+      "idx": 12.08
     }
   ],
   "trades_public": [
@@ -7132,6 +7125,20 @@
       "strat": "TL",
       "dir": "LONG",
       "r": 0.0
+    },
+    {
+      "ts": "2026-08-24T16:35:43.107042+00:00",
+      "sym": "NEAR-USDT",
+      "strat": "TL",
+      "dir": "LONG",
+      "r": 2.265
+    },
+    {
+      "ts": "2026-08-24T16:35:45.617494+00:00",
+      "sym": "TRX-USDT",
+      "strat": "TL",
+      "dir": "LONG",
+      "r": 6.44
     }
   ],
   "self_upgrades": [
