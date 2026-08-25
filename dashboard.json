@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-25T16:38:10.402655+08:00",
+  "generated_at": "2026-08-25T17:38:22.029428+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -997,7 +997,7 @@
         "closed_ts": "2026-08-13T02:53:38.313134+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-25T08:36:50.774187+00:00",
+    "last_cycle_ts": "2026-08-25T09:36:26.310777+00:00",
     "stats": {
       "n": 32,
       "win_rate_pct": 31.2,
@@ -1039,12 +1039,35 @@
         "highest": 0.918,
         "lowest": 0.918,
         "breakeven_done": false,
-        "bars_elapsed": 16,
-        "last_checked_time": "2026-08-25 08:00:00",
+        "bars_elapsed": 17,
+        "last_checked_time": "2026-08-25 09:00:00",
         "notion_page_id": "3c60a137-4574-81bb-baa9-e9477e96c96e"
+      },
+      {
+        "id": "strattl_LINKUSDT_1787649035",
+        "symbol": "LINK-USDT",
+        "direction": "LONG",
+        "entry": 11.62,
+        "sl_price": 11.356142857142856,
+        "tp_price": 12.411571428571428,
+        "sl_dist": 0.2638571428571428,
+        "qty": 0.9,
+        "max_hold_h": 48,
+        "strategy": "TL",
+        "fill_price": 11.62,
+        "sig_key": "tl_LINK-USDT_2026-08-25 09:00:00",
+        "leverage": 28,
+        "sl_order_id": "2092177961029042176",
+        "opened_ts": "2026-08-25T09:11:11.202361+00:00",
+        "highest": 11.62,
+        "lowest": 11.62,
+        "breakeven_done": false,
+        "bars_elapsed": 0,
+        "last_checked_time": "2026-08-25T09:11:11.202361+00:00",
+        "notion_page_id": "3c70a137-4574-8143-a9e1-dbbcb7f21f90"
       }
     ],
-    "last_cycle_ts": "2026-08-25T08:36:56.843298+00:00",
+    "last_cycle_ts": "2026-08-25T09:36:38.311420+00:00",
     "stats": {
       "n": 39,
       "win_rate_pct": 12.8,
@@ -1242,9 +1265,20 @@
     },
     "applied": {
       "applied_sha": "a453e847815b7d894e01dc244a68e8ec5a941200",
-      "applied_at": "2026-08-24T17:02:11.417085+00:00",
+      "applied_at": "2026-08-25T08:41:47.272755+00:00",
       "changes": [
-        "tl.risk_pct: 0.01 -> 0.005"
+        "b1.risk_pct: 0.02 -> 0.01",
+        "b1.cycle_seconds: 300 -> 60",
+        "b1.maker_wait_s: 20 -> 30",
+        "tl.risk_pct: 0.02 -> 0.005",
+        "b1.volr_thr: 1.2 -> 1.5",
+        "tl.cycle_seconds: 900 -> 60",
+        "sc.live_enabled: False -> True",
+        "sc.risk_pct: 0.01 -> 0.005",
+        "sc.s2_enabled: True -> False",
+        "mrs.live_enabled: False -> True",
+        "global.same_dir_max: 3 -> 4",
+        "auto_strategies: 載入 2 個規格"
       ]
     },
     "bounds": {
@@ -6684,6 +6718,10 @@
     {
       "ts": "2026-08-25T07:57:57.821410+00:00",
       "idx": 9.88
+    },
+    {
+      "ts": "2026-08-25T08:41:52.784805+00:00",
+      "idx": 8.95
     }
   ],
   "trades_public": [
