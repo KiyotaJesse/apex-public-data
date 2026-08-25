@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-25T15:37:56.434357+08:00",
+  "generated_at": "2026-08-25T16:38:10.402655+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -997,7 +997,7 @@
         "closed_ts": "2026-08-13T02:53:38.313134+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-25T07:37:12.400590+00:00",
+    "last_cycle_ts": "2026-08-25T08:36:50.774187+00:00",
     "stats": {
       "n": 32,
       "win_rate_pct": 31.2,
@@ -1010,7 +1010,7 @@
   "risk_circuit_breaker": {
     "killswitch": false,
     "daily_loss_limit_hit": false,
-    "daily_pnl_usdt": 0.0,
+    "daily_pnl_usdt": -0.3408,
     "daily_pnl_date": "2026-08-25"
   },
   "feature_flags": {
@@ -1020,29 +1020,6 @@
   "strat_tl": {
     "mode": "live",
     "open_positions": [
-      {
-        "id": "strattl_FILUSDT_1787589360",
-        "symbol": "FIL-USDT",
-        "direction": "LONG",
-        "entry": 0.766,
-        "sl_price": 0.74094286,
-        "tp_price": 0.8399714285714286,
-        "sl_dist": 0.025057142857142778,
-        "qty": 13.6,
-        "max_hold_h": 48,
-        "strategy": "TL",
-        "fill_price": 0.766,
-        "sig_key": "tl_FIL-USDT_2026-08-24 16:00:00",
-        "leverage": 22,
-        "sl_order_id": "2091933647313141760",
-        "opened_ts": "2026-08-24T16:36:17.877296+00:00",
-        "highest": 0.7664,
-        "lowest": 0.766,
-        "breakeven_done": false,
-        "bars_elapsed": 15,
-        "last_checked_time": "2026-08-25 07:00:00",
-        "notion_page_id": "3c60a137-4574-8146-9f45-e3f47b4109cb"
-      },
       {
         "id": "strattl_DOTUSDT_1787589366",
         "symbol": "DOT-USDT",
@@ -1062,19 +1039,19 @@
         "highest": 0.918,
         "lowest": 0.918,
         "breakeven_done": false,
-        "bars_elapsed": 15,
-        "last_checked_time": "2026-08-25 07:00:00",
+        "bars_elapsed": 16,
+        "last_checked_time": "2026-08-25 08:00:00",
         "notion_page_id": "3c60a137-4574-81bb-baa9-e9477e96c96e"
       }
     ],
-    "last_cycle_ts": "2026-08-25T07:36:09.566993+00:00",
+    "last_cycle_ts": "2026-08-25T08:36:56.843298+00:00",
     "stats": {
-      "n": 38,
-      "win_rate_pct": 13.2,
-      "ev_r": -0.353,
-      "total_pnl_usdt": -13.41,
+      "n": 39,
+      "win_rate_pct": 12.8,
+      "ev_r": -0.37,
+      "total_pnl_usdt": -14.44,
       "avg_win_usdt": 2.32,
-      "avg_loss_usdt": -0.76
+      "avg_loss_usdt": -0.77
     }
   },
   "tama_config": {
@@ -6703,6 +6680,10 @@
     {
       "ts": "2026-08-25T06:57:53.045738+00:00",
       "idx": 6.93
+    },
+    {
+      "ts": "2026-08-25T07:57:57.821410+00:00",
+      "idx": 9.88
     }
   ],
   "trades_public": [
@@ -7195,6 +7176,13 @@
       "strat": "TL",
       "dir": "LONG",
       "r": 6.44
+    },
+    {
+      "ts": "2026-08-25T07:49:44.311386+00:00",
+      "sym": "FIL-USDT",
+      "strat": "TL",
+      "dir": "LONG",
+      "r": -1.031
     }
   ],
   "self_upgrades": [
