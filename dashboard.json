@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-25T19:38:48.269878+08:00",
+  "generated_at": "2026-08-25T20:38:59.986295+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -997,7 +997,7 @@
         "closed_ts": "2026-08-13T02:53:38.313134+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-25T11:37:28.370264+00:00",
+    "last_cycle_ts": "2026-08-25T12:36:56.333462+00:00",
     "stats": {
       "n": 32,
       "win_rate_pct": 31.2,
@@ -1010,7 +1010,7 @@
   "risk_circuit_breaker": {
     "killswitch": false,
     "daily_loss_limit_hit": false,
-    "daily_pnl_usdt": -0.3408,
+    "daily_pnl_usdt": -0.6757,
     "daily_pnl_date": "2026-08-25"
   },
   "feature_flags": {
@@ -1020,29 +1020,6 @@
   "strat_tl": {
     "mode": "live",
     "open_positions": [
-      {
-        "id": "strattl_DOTUSDT_1787589366",
-        "symbol": "DOT-USDT",
-        "direction": "LONG",
-        "entry": 0.918,
-        "sl_price": 0.8866857142857143,
-        "tp_price": 1.0135428571428573,
-        "sl_dist": 0.03131428571428574,
-        "qty": 10.7,
-        "max_hold_h": 48,
-        "strategy": "TL",
-        "fill_price": 0.918,
-        "sig_key": "tl_DOT-USDT_2026-08-24 16:00:00",
-        "leverage": 21,
-        "sl_order_id": "2091927805406838784",
-        "opened_ts": "2026-08-24T16:37:09.472272+00:00",
-        "highest": 0.918,
-        "lowest": 0.918,
-        "breakeven_done": false,
-        "bars_elapsed": 19,
-        "last_checked_time": "2026-08-25 11:00:00",
-        "notion_page_id": "3c60a137-4574-81bb-baa9-e9477e96c96e"
-      },
       {
         "id": "strattl_LINKUSDT_1787649035",
         "symbol": "LINK-USDT",
@@ -1062,17 +1039,40 @@
         "highest": 11.62,
         "lowest": 11.62,
         "breakeven_done": false,
-        "bars_elapsed": 2,
-        "last_checked_time": "2026-08-25 11:00:00",
+        "bars_elapsed": 3,
+        "last_checked_time": "2026-08-25 12:00:00",
         "notion_page_id": "3c70a137-4574-8143-a9e1-dbbcb7f21f90"
+      },
+      {
+        "id": "strattl_ETCUSDT_1787659432",
+        "symbol": "ETC-USDT",
+        "direction": "LONG",
+        "entry": 7.926,
+        "sl_price": 7.673571428571429,
+        "tp_price": 8.683285714285715,
+        "sl_dist": 0.2524285714285712,
+        "qty": 1.27,
+        "max_hold_h": 48,
+        "strategy": "TL",
+        "fill_price": 7.926,
+        "sig_key": "tl_ETC-USDT_2026-08-25 12:00:00",
+        "leverage": 22,
+        "sl_order_id": "2092221987358867456",
+        "opened_ts": "2026-08-25T12:06:07.915093+00:00",
+        "highest": 7.926,
+        "lowest": 7.926,
+        "breakeven_done": false,
+        "bars_elapsed": 0,
+        "last_checked_time": "2026-08-25T12:06:07.915093+00:00",
+        "notion_page_id": "3c70a137-4574-81ce-a697-ef0e388b2f72"
       }
     ],
-    "last_cycle_ts": "2026-08-25T11:36:39.173937+00:00",
+    "last_cycle_ts": "2026-08-25T12:37:14.334348+00:00",
     "stats": {
-      "n": 39,
-      "win_rate_pct": 12.8,
-      "ev_r": -0.37,
-      "total_pnl_usdt": -14.44,
+      "n": 40,
+      "win_rate_pct": 12.5,
+      "ev_r": -0.387,
+      "total_pnl_usdt": -15.47,
       "avg_win_usdt": 2.32,
       "avg_loss_usdt": -0.77
     }
@@ -6730,6 +6730,10 @@
     {
       "ts": "2026-08-25T10:41:54.947307+00:00",
       "idx": 11.7
+    },
+    {
+      "ts": "2026-08-25T11:42:00.523150+00:00",
+      "idx": 11.9
     }
   ],
   "trades_public": [
@@ -7229,6 +7233,13 @@
       "strat": "TL",
       "dir": "LONG",
       "r": -1.031
+    },
+    {
+      "ts": "2026-08-25T12:03:48.225821+00:00",
+      "sym": "DOT-USDT",
+      "strat": "TL",
+      "dir": "LONG",
+      "r": -1.029
     }
   ],
   "self_upgrades": [
