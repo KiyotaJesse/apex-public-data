@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-27T22:46:46.483324+08:00",
+  "generated_at": "2026-08-27T23:08:35.941452+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -997,7 +997,7 @@
         "closed_ts": "2026-08-13T02:53:38.313134+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-27T14:44:51.847301+00:00",
+    "last_cycle_ts": "2026-08-27T15:06:41.910530+00:00",
     "stats": {
       "n": 32,
       "win_rate_pct": 31.2,
@@ -1039,8 +1039,8 @@
         "highest": 4.524,
         "lowest": 4.213,
         "breakeven_done": false,
-        "bars_elapsed": 41,
-        "last_checked_time": "2026-08-27 14:00:00",
+        "bars_elapsed": 42,
+        "last_checked_time": "2026-08-27 15:00:00",
         "notion_page_id": "3c70a137-4574-81b3-9ff7-fcd3dd6812ed"
       },
       {
@@ -1062,12 +1062,35 @@
         "highest": 7.96,
         "lowest": 7.681,
         "breakeven_done": false,
-        "bars_elapsed": 41,
-        "last_checked_time": "2026-08-27 14:00:00",
+        "bars_elapsed": 42,
+        "last_checked_time": "2026-08-27 15:00:00",
         "notion_page_id": "3c70a137-4574-8114-9e65-e3be5cd77558"
+      },
+      {
+        "id": "strattl_BCHUSDT_1787842051",
+        "symbol": "BCH-USDT",
+        "direction": "LONG",
+        "entry": 270.82,
+        "sl_price": 265.3942857142857,
+        "tp_price": 287.1771428571428,
+        "sl_dist": 5.425714285714321,
+        "qty": 0.06,
+        "max_hold_h": 48,
+        "strategy": "TL",
+        "fill_price": 270.82,
+        "sig_key": "tl_BCH-USDT_2026-08-27 14:00:00",
+        "leverage": 31,
+        "sl_order_id": "2092987425579696128",
+        "opened_ts": "2026-08-27T14:47:42.482050+00:00",
+        "highest": 270.82,
+        "lowest": 270.82,
+        "breakeven_done": false,
+        "bars_elapsed": 1,
+        "last_checked_time": "2026-08-27 15:00:00",
+        "notion_page_id": "3c90a137-4574-81b0-aa5e-f58fc40eedbb"
       }
     ],
-    "last_cycle_ts": "2026-08-27T14:45:19.471726+00:00",
+    "last_cycle_ts": "2026-08-27T15:06:03.427498+00:00",
     "stats": {
       "n": 42,
       "win_rate_pct": 11.9,
@@ -1081,7 +1104,7 @@
     "current": {
       "_meta": {
         "desc": "APEX 控制台熱載入配置。改此檔 <=60 秒生效，無需重新部署。硬邊界見 tama_v5.py TAMA_CONFIG_BOUNDS。",
-        "updated": "2026-08-27T22:46:43.564700+08:00",
+        "updated": "2026-08-27T23:08:31.661832+08:00",
         "by": "控制台 Telegram user 7702310838"
       },
       "b1": {
@@ -1101,12 +1124,12 @@
         "live_enabled": true,
         "risk_pct": 0.005,
         "leverage": 50,
-        "max_positions": 5,
+        "max_positions": 2,
         "max_hold_h": 48,
         "cycle_seconds": 60,
         "regime_gate": true,
-        "rr": 3.0,
-        "lock_r": 2.5
+        "rr": 5.0,
+        "lock_r": 0.0
       },
       "global": {
         "same_dir_max": 4,
@@ -1266,11 +1289,11 @@
       }
     },
     "applied": {
-      "applied_sha": "10c81deef53a5d5bd6db4e79f127a08084c12f10",
-      "applied_at": "2026-08-27T14:45:51.117871+00:00",
+      "applied_sha": "7128288b143c3a48aaa7914e11a9fdfee19cd324",
+      "applied_at": "2026-08-27T14:49:02.399832+00:00",
       "changes": [
-        "tl.lock_r: 0.0 -> 2.5",
-        "tl.rr: 5.0 -> 3.0"
+        "tl.lock_r: 2.5 -> 0.0",
+        "tl.rr: 3.0 -> 5.0"
       ]
     },
     "bounds": {
