@@ -98,7 +98,9 @@ const META={
   ['max_positions','最大同時持倉','','int',0,0,5,1],
   ['max_hold_h','最長持倉(小時)','到時強制平倉','int',0,4,168,4],
   ['cycle_seconds','掃描週期(秒)','','int',0,60,7200,60],
-  ['regime_gate','BTC大盤閘門','多頭才放行做多','bool',0]]},
+  ['regime_gate','BTC大盤閘門','多頭才放行做多','bool',0],
+  ['rr','TP 賠率(R)','出場置換實驗 2026-08-27: 5.0 最穩健(+0.148R/筆)','num',0,1.0,10.0,0.5],
+  ['lock_r','鎖利觸發(R)','0=不鎖利(與 rr=5 成對); 2.5=舊設計','num',0,0,5,0.5]]},
  rs:{name:'RS 相對強弱輪動',rows:[
   ['live_enabled','實盤開關','目前 paper 觀察中,開=真金上陣','bool',1],
   ['risk_pct','單筆風險','','pct',1,0.0001,0.02,0.0001],
@@ -151,7 +153,7 @@ async function load(){
  }catch(e){
   document.getElementById('meta').textContent='⚠ 無法取得線上配置(顯示預設值,唯讀): '+String(e).slice(0,60);
   CFG={b1:{live_enabled:true,risk_pct:0.02,leverage:50,max_positions:5,daily_loss_limit_pct:0.10,cycle_seconds:60},
-       tl:{live_enabled:true,risk_pct:0.01,leverage:50,max_positions:2,max_hold_h:48,cycle_seconds:60},
+       tl:{live_enabled:true,risk_pct:0.01,leverage:50,max_positions:2,max_hold_h:48,cycle_seconds:60,rr:3.0,lock_r:2.5},
        rs:{live_enabled:false,risk_pct:0.01,leverage:50,max_positions:3,cycle_seconds:3600},
        global:{same_dir_max:3,total_drawdown_halt_pct:0.25,killswitch:false},_meta:{}};
   BASE={};
