@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-27T22:14:37.740776+08:00",
+  "generated_at": "2026-08-27T22:46:46.483324+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -997,7 +997,7 @@
         "closed_ts": "2026-08-13T02:53:38.313134+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-27T14:13:38.411420+00:00",
+    "last_cycle_ts": "2026-08-27T14:44:51.847301+00:00",
     "stats": {
       "n": 32,
       "win_rate_pct": 31.2,
@@ -1067,7 +1067,7 @@
         "notion_page_id": "3c70a137-4574-8114-9e65-e3be5cd77558"
       }
     ],
-    "last_cycle_ts": "2026-08-27T14:14:02.746377+00:00",
+    "last_cycle_ts": "2026-08-27T14:45:19.471726+00:00",
     "stats": {
       "n": 42,
       "win_rate_pct": 11.9,
@@ -1081,8 +1081,8 @@
     "current": {
       "_meta": {
         "desc": "APEX 控制台熱載入配置。改此檔 <=60 秒生效，無需重新部署。硬邊界見 tama_v5.py TAMA_CONFIG_BOUNDS。",
-        "updated": "2026-08-23T17:20:00+08:00",
-        "by": "APEX-A L2階梯風險自適應(Jesse 2026-08-03 全自動授權)"
+        "updated": "2026-08-27T22:46:43.564700+08:00",
+        "by": "控制台 Telegram user 7702310838"
       },
       "b1": {
         "live_enabled": true,
@@ -1101,10 +1101,12 @@
         "live_enabled": true,
         "risk_pct": 0.005,
         "leverage": 50,
-        "max_positions": 2,
+        "max_positions": 5,
         "max_hold_h": 48,
         "cycle_seconds": 60,
-        "regime_gate": true
+        "regime_gate": true,
+        "rr": 3.0,
+        "lock_r": 2.5
       },
       "global": {
         "same_dir_max": 4,
@@ -1264,10 +1266,11 @@
       }
     },
     "applied": {
-      "applied_sha": "f6e0b2b85c98af8332dd4793bea330f97286cb04",
-      "applied_at": "2026-08-27T01:41:25.976240+00:00",
+      "applied_sha": "10c81deef53a5d5bd6db4e79f127a08084c12f10",
+      "applied_at": "2026-08-27T14:45:51.117871+00:00",
       "changes": [
-        "mrs.risk_pct: 0.0075 -> 0.00375"
+        "tl.lock_r: 0.0 -> 2.5",
+        "tl.rr: 5.0 -> 3.0"
       ]
     },
     "bounds": {
@@ -6977,6 +6980,10 @@
     {
       "ts": "2026-08-27T13:49:21.016943+00:00",
       "idx": 15.01
+    },
+    {
+      "ts": "2026-08-27T14:14:43.686733+00:00",
+      "idx": 15.02
     }
   ],
   "trades_public": [
