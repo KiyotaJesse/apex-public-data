@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-28T00:15:05.771388+08:00",
+  "generated_at": "2026-08-28T01:15:20.142787+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -997,7 +997,7 @@
         "closed_ts": "2026-08-13T02:53:38.313134+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-27T16:14:34.911327+00:00",
+    "last_cycle_ts": "2026-08-27T17:14:30.034345+00:00",
     "stats": {
       "n": 32,
       "win_rate_pct": 31.2,
@@ -1010,7 +1010,7 @@
   "risk_circuit_breaker": {
     "killswitch": false,
     "daily_loss_limit_hit": false,
-    "daily_pnl_usdt": 0.0,
+    "daily_pnl_usdt": 0.9673,
     "daily_pnl_date": "2026-08-27"
   },
   "feature_flags": {
@@ -1020,52 +1020,6 @@
   "strat_tl": {
     "mode": "live",
     "open_positions": [
-      {
-        "id": "strattl_UNIUSDT_1787691654",
-        "symbol": "UNI-USDT",
-        "direction": "LONG",
-        "entry": 4.213,
-        "sl_price": 4.0644285714285715,
-        "tp_price": 4.658714285714286,
-        "sl_dist": 0.14857142857142858,
-        "qty": 2.0,
-        "max_hold_h": 48,
-        "strategy": "TL",
-        "fill_price": 4.213,
-        "sig_key": "tl_UNI-USDT_2026-08-25 21:00:00",
-        "leverage": 21,
-        "sl_order_id": "2092356612362174464",
-        "opened_ts": "2026-08-25T21:01:05.034472+00:00",
-        "highest": 4.524,
-        "lowest": 4.213,
-        "breakeven_done": false,
-        "bars_elapsed": 43,
-        "last_checked_time": "2026-08-27 16:00:00",
-        "notion_page_id": "3c70a137-4574-81b3-9ff7-fcd3dd6812ed"
-      },
-      {
-        "id": "strattl_ETCUSDT_1787691964",
-        "symbol": "ETC-USDT",
-        "direction": "LONG",
-        "entry": 7.681,
-        "sl_price": 7.426,
-        "tp_price": 8.446,
-        "sl_dist": 0.2549999999999999,
-        "qty": 1.56,
-        "max_hold_h": 48,
-        "strategy": "TL",
-        "fill_price": 7.681,
-        "sig_key": "tl_ETC-USDT_2026-08-25 21:00:00",
-        "leverage": 22,
-        "sl_order_id": "2092357915490484224",
-        "opened_ts": "2026-08-25T21:06:15.695134+00:00",
-        "highest": 7.96,
-        "lowest": 7.681,
-        "breakeven_done": false,
-        "bars_elapsed": 43,
-        "last_checked_time": "2026-08-27 16:00:00",
-        "notion_page_id": "3c70a137-4574-8114-9e65-e3be5cd77558"
-      },
       {
         "id": "strattl_BCHUSDT_1787842051",
         "symbol": "BCH-USDT",
@@ -1082,21 +1036,21 @@
         "leverage": 31,
         "sl_order_id": "2092987425579696128",
         "opened_ts": "2026-08-27T14:47:42.482050+00:00",
-        "highest": 271.15,
+        "highest": 272.19,
         "lowest": 270.82,
         "breakeven_done": false,
-        "bars_elapsed": 2,
-        "last_checked_time": "2026-08-27 16:00:00",
+        "bars_elapsed": 3,
+        "last_checked_time": "2026-08-27 17:00:00",
         "notion_page_id": "3c90a137-4574-81b0-aa5e-f58fc40eedbb"
       }
     ],
-    "last_cycle_ts": "2026-08-27T16:13:45.284383+00:00",
+    "last_cycle_ts": "2026-08-27T17:13:52.161875+00:00",
     "stats": {
-      "n": 42,
-      "win_rate_pct": 11.9,
-      "ev_r": -0.419,
-      "total_pnl_usdt": -17.59,
-      "avg_win_usdt": 2.32,
+      "n": 44,
+      "win_rate_pct": 15.9,
+      "ev_r": -0.333,
+      "total_pnl_usdt": -14.66,
+      "avg_win_usdt": 2.08,
       "avg_loss_usdt": -0.79
     }
   },
@@ -7010,6 +6964,10 @@
     {
       "ts": "2026-08-27T15:14:47.785633+00:00",
       "idx": 15.07
+    },
+    {
+      "ts": "2026-08-27T16:14:48.571609+00:00",
+      "idx": 75.32
     }
   ],
   "trades_public": [
@@ -7530,6 +7488,20 @@
       "strat": "TL",
       "dir": "LONG",
       "r": -1.061
+    },
+    {
+      "ts": "2026-08-27T16:23:15.131885+00:00",
+      "sym": "UNI-USDT",
+      "strat": "TL",
+      "dir": "LONG",
+      "r": 2.193
+    },
+    {
+      "ts": "2026-08-27T16:23:16.954696+00:00",
+      "sym": "ETC-USDT",
+      "strat": "TL",
+      "dir": "LONG",
+      "r": 0.742
     }
   ],
   "self_upgrades": [
