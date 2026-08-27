@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-27T09:40:36.176637+08:00",
+  "generated_at": "2026-08-27T09:46:46.103036+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -997,7 +997,7 @@
         "closed_ts": "2026-08-13T02:53:38.313134+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-27T01:38:54.816872+00:00",
+    "last_cycle_ts": "2026-08-27T01:44:09.855423+00:00",
     "stats": {
       "n": 32,
       "win_rate_pct": 31.2,
@@ -1067,7 +1067,7 @@
         "notion_page_id": "3c70a137-4574-8114-9e65-e3be5cd77558"
       }
     ],
-    "last_cycle_ts": "2026-08-27T01:38:11.652023+00:00",
+    "last_cycle_ts": "2026-08-27T01:44:28.415930+00:00",
     "stats": {
       "n": 42,
       "win_rate_pct": 11.9,
@@ -1264,21 +1264,10 @@
       }
     },
     "applied": {
-      "applied_sha": "a453e847815b7d894e01dc244a68e8ec5a941200",
-      "applied_at": "2026-08-26T15:48:05.315041+00:00",
+      "applied_sha": "f6e0b2b85c98af8332dd4793bea330f97286cb04",
+      "applied_at": "2026-08-27T01:41:25.976240+00:00",
       "changes": [
-        "b1.risk_pct: 0.02 -> 0.01",
-        "b1.cycle_seconds: 300 -> 60",
-        "b1.maker_wait_s: 20 -> 30",
-        "tl.risk_pct: 0.02 -> 0.005",
-        "b1.volr_thr: 1.2 -> 1.5",
-        "tl.cycle_seconds: 900 -> 60",
-        "sc.live_enabled: False -> True",
-        "sc.risk_pct: 0.01 -> 0.005",
-        "sc.s2_enabled: True -> False",
-        "mrs.live_enabled: False -> True",
-        "global.same_dir_max: 3 -> 4",
-        "auto_strategies: 載入 2 個規格"
+        "mrs.risk_pct: 0.0075 -> 0.00375"
       ]
     },
     "bounds": {
