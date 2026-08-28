@@ -137,7 +137,7 @@
 (() => {
   // 巢況資料:每日清晨由排程從監督台名冊+D端config自動重編此行。
   // idx=帳戶權益指數(100=基準日) strategies=覓食蟻(on=false蜷著睡) groups=各群工蟻 retired=新墓碑
-  const NEST_DATA={"idx":100,"eq":378.8,"asOf":"08-28","strategies":[{"n":"B1","on":true},{"n":"TL","on":true},{"n":"RS","on":false},{"n":"SC1","on":true},{"n":"MRS","on":true},{"n":"AUTO×2","on":true}],"groups":{"展示":["蟻丘畫師"],"監控":["A迴圈"],"資料蒐集":["盤口OI","1H K線","4H K線","控制台快照","形態庫","幣池分層"],"例行報告":["晨報","LTM蒸餾","績效週報","月報","週日覆盤","OBI提醒"],"自我稽核":["LAPD","本機查勤","E稽核","驗證網","監督台"],"自適應決策":["L1換將","L2風險檔"],"研究":["LiveDiag","Scanner","週度優化","walk-fwd","變體艦隊","選礦機","非加密掃描","型態艦隊","極值盯盤","抄底盯盤"],"王座":["情報院","營收盯哨","2486哨兵"],"資料地基":["訂單流","盤口熟成","幣池重審"],"創業":["創業推播"],"風控":["TL驗收哨兵"]},"retired":["OBI提醒","雲端scanner","Jarvis"]};//NEST-MARKER
+  const NEST_DATA={"idx":100,"eq":378.3,"asOf":"08-28","strategies":[{"n":"B1","on":true},{"n":"TL","on":true},{"n":"RS","on":false},{"n":"SC1","on":true},{"n":"MRS","on":true},{"n":"AUTO×2","on":true}],"groups":{"展示":["蟻丘畫師"],"監控":["A迴圈"],"資料蒐集":["盤口OI","1H K線","4H K線","控制台快照","形態庫","幣池分層"],"例行報告":["晨報","LTM蒸餾","績效週報","月報","週日覆盤","OBI提醒"],"自我稽核":["LAPD","本機查勤","E稽核","驗證網","監督台"],"自適應決策":["L1換將","L2風險檔"],"研究":["LiveDiag","Scanner","週度優化","walk-fwd","變體艦隊","選礦機","非加密掃描","型態艦隊","極值盯盤","抄底盯盤"],"王座":["情報院","營收盯哨","2486哨兵"],"資料地基":["訂單流","盤口熟成","幣池重審"],"創業":["創業推播"],"風控":["TL驗收哨兵"]},"retired":["OBI提醒","雲端scanner","Jarvis"]};//NEST-MARKER
   const cv = document.getElementById('nest');
   const W = 1200, H = 3000;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -215,17 +215,17 @@
   const rev=p=>p.slice().reverse();
   const seg=(...ps)=>ps.flat();
 
-  // ---- 蟻種圖鑑:各蟻種體型分化 ----
+  // ---- 蟻種圖鑑:寫實幾丁質配色(真螞蟻沒有糖果色),職務只用名牌上的色點區分 ----
   const AMBER='#D99A3E',SCOUT='#6FA79B',GUARD='#BF4F3B',MEDIC='#9C86B4',CARRY='#C9B48C';
-  // s體長 gk腹型 hk頭型 mand大顎 antn觸鬚 leg足長 stripes腹節環紋
+  // s體長 gk腹型 hk頭型 mand大顎 antn觸鬚 leg足長 stripes腹節環紋 tagc名牌職務色點
   const CASTES={
-    forager:{s:1.55,color:AMBER,dark:'#7E5A20',gk:1,   hk:1,   mand:1,  antn:1,  leg:1,   stripes:2},
-    guard:  {s:1.75,color:GUARD,dark:'#6E2C1D',gk:1.05,hk:1.55,mand:1.9,antn:.85,leg:1,   stripes:2},
-    scout:  {s:1.35,color:SCOUT,dark:'#3C6157',gk:.82, hk:.95, mand:.8, antn:1.6,leg:1.35,stripes:1},
-    medic:  {s:1.45,color:MEDIC,dark:'#584A70',gk:1.12,hk:1,   mand:.7, antn:1.1,leg:1,   stripes:2, cross:true},
-    carrier:{s:1.65,color:CARRY,dark:'#6E5C3C',gk:1.2, hk:1.05,mand:1.1,antn:.9, leg:1.05,stripes:3},
-    queen:  {s:2.7, color:AMBER,dark:'#7E5A20',gk:1.6, hk:1.05,mand:.9, antn:1,  leg:.95, stripes:4, wings:true},
-    sleeper:{s:1.35,color:'#7A6A50',dark:'#4A4030',gk:1.15,hk:1,mand:.8,antn:1,  leg:1,   stripes:2, folded:true},
+    forager:{s:1.55,color:'#3E2E1C',dark:'#1E150C',gk:1,   hk:1,   mand:1,  antn:1,  leg:1,   stripes:2, tagc:AMBER},
+    guard:  {s:1.8, color:'#43291A',dark:'#20130A',gk:1.05,hk:1.6, mand:2,  antn:.85,leg:1,   stripes:2, tagc:GUARD},
+    scout:  {s:1.35,color:'#332A1C',dark:'#191309',gk:.8,  hk:.95, mand:.8, antn:1.65,leg:1.4,stripes:1, tagc:SCOUT},
+    medic:  {s:1.45,color:'#3A2F22',dark:'#1C150D',gk:1.12,hk:1,   mand:.7, antn:1.1,leg:1,   stripes:2, tagc:MEDIC},
+    carrier:{s:1.7, color:'#3F311E',dark:'#1F170D',gk:1.22,hk:1.05,mand:1.1,antn:.9, leg:1.05,stripes:3, tagc:CARRY},
+    queen:  {s:2.7, color:'#332412',dark:'#170F07',gk:1.62,hk:1.05,mand:.9, antn:1,  leg:.95, stripes:4, wings:true, tagc:AMBER},
+    sleeper:{s:1.35,color:'#3A3122',dark:'#1D1810',gk:1.15,hk:1,   mand:.8, antn:1,  leg:1,   stripes:2, folded:true, tagc:'#7A6A50'},
   };
   // 蟻后隨帳戶肥瘦:立方根縮放(漲跌都看得出來但不會爆表),上下限保護
   CASTES.queen.s = Math.min(4.6, Math.max(1.5, 2.7*Math.cbrt(Math.max(1,NEST_DATA.idx)/100)));
@@ -308,18 +308,23 @@
     ctx.strokeStyle=color;ctx.lineWidth=wdt;ctx.lineCap='round';ctx.stroke();
     ctx.restore();
   }
-  // 名牌:深色膠囊+蟻種同色細框,位置穩定不抖
-  function drawTag(ctx,x,y,text,color){
-    ctx.font='10px "Noto Sans TC","Microsoft JhengHei",sans-serif';
-    const w=ctx.measureText(text).width+10, h=15, r=7;
-    const bx=x-w/2, by=y-h/2;
-    ctx.beginPath();
-    ctx.moveTo(bx+r,by);ctx.lineTo(bx+w-r,by);ctx.arc(bx+w-r,by+h/2,r,-Math.PI/2,Math.PI/2);
-    ctx.lineTo(bx+r,by+h);ctx.arc(bx+r,by+h/2,r,Math.PI/2,-Math.PI/2);ctx.closePath();
-    ctx.fillStyle='rgba(14,10,6,.78)';ctx.fill();
-    ctx.strokeStyle=color;ctx.globalAlpha=.55;ctx.lineWidth=1;ctx.stroke();ctx.globalAlpha=1;
-    ctx.fillStyle='#EAD9B0';ctx.textAlign='center';ctx.textBaseline='middle';
-    ctx.fillText(text,x,y+.5);
+  // 標本註記:細引線+小字+職務色點(documentary 風,不是遊戲 UI)
+  // (x,y)=文字位置; antY=蟻身 y,提供時畫一條細引線連向蟻身
+  function drawTag(ctx,x,y,text,dotColor,antY){
+    if(antY!==undefined){
+      ctx.strokeStyle='rgba(190,168,130,.3)';ctx.lineWidth=.8;
+      ctx.beginPath();
+      ctx.moveTo(x,y+(antY>y?6:-6));ctx.lineTo(x,antY+(antY>y?-9:9));ctx.stroke();
+    }
+    ctx.font='9.5px "Noto Sans TC","Microsoft JhengHei",sans-serif';
+    const tw=ctx.measureText(text).width;
+    ctx.textAlign='left';ctx.textBaseline='middle';
+    const tx=x-(tw+7)/2;
+    // 暗色描邊當光暈,字才浮得出土色背景
+    ctx.lineWidth=2.6;ctx.strokeStyle='rgba(10,7,4,.8)';ctx.strokeText(text,tx+7,y);
+    ctx.fillStyle='#CDBB96';ctx.fillText(text,tx+7,y);
+    ctx.fillStyle=dotColor;
+    ctx.beginPath();ctx.arc(tx+1.5,y,2,0,7);ctx.fill();
     ctx.textAlign='left';ctx.textBaseline='alphabetic';
   }
 
@@ -328,6 +333,9 @@
     const s=c.s;
     ctx.save();ctx.translate(x,y);ctx.rotate(ang);
     ctx.lineCap='round';
+    // 地面陰影:寫實感的一半來自這裡
+    ctx.fillStyle='rgba(0,0,0,.3)';
+    ctx.beginPath();ctx.ellipse(-.8*s,1.8*s,6.4*s,2*s,0,0,7);ctx.fill();
     // 六足:1,3,5 與 2,4,6 反相擺動;冬眠時收足
     ctx.strokeStyle=c.dark;ctx.lineWidth=.55*s;
     const attach=[-.5*s,.7*s,1.8*s], sweep=[-2.4,-.2,2.2];
@@ -350,9 +358,11 @@
         ctx.fill();ctx.stroke();
       }
     }
-    // 腹(gaster):環紋+高光
+    // 腹(gaster):幾丁質光澤漸層+環紋
     const gr=3.6*s*c.gk, gy=2.5*s*c.gk;
-    ctx.fillStyle=c.color;
+    const gg=ctx.createRadialGradient(-4.6*s-gr*.3,-gy*.4,gr*.1,-4.6*s,0,gr*1.15);
+    gg.addColorStop(0,'#6B5334');gg.addColorStop(.35,c.color);gg.addColorStop(1,c.dark);
+    ctx.fillStyle=gg;
     ctx.beginPath();ctx.ellipse(-4.6*s,0,gr,gy,0,0,7);ctx.fill();
     ctx.strokeStyle=c.dark;ctx.lineWidth=.45*s;
     for(let i=1;i<=c.stripes;i++){
@@ -552,9 +562,9 @@
     ctx.fillText('BINGX',P.forage.x-20,P.forage.y-28);
     ctx.font='16px "LXGW WenKai TC",serif';ctx.fillStyle='#E6D6B8';
     ctx.fillText('覓食場(市場)',P.forage.x-48,P.forage.y-10);
-    ctx.fillStyle='#5E7A4A';
+    ctx.fillStyle='#8A7040';
     for(const[fx,fy]of[[P.forage.x-14,P.forage.y+2],[P.forage.x+6,P.forage.y-2],[P.forage.x+18,P.forage.y+4]]){
-      ctx.beginPath();ctx.arc(fx,fy,3,0,7);ctx.fill();
+      ctx.beginPath();ctx.ellipse(fx,fy,3.4,2.2,.5,0,7);ctx.fill();
     }
     ctx.fillStyle='#8F7E62';ctx.font='11px "IBM Plex Mono",monospace';
     ctx.fillText('巢口',P.entry.x+16,GROUND-8);
@@ -623,16 +633,14 @@
     sleepers.forEach((n,i)=>{
       const sx=P.workers.x-72+i*52, sy=P.workers.y+28;
       drawAnt(ctx,sx,sy,2.5,0,CASTES.sleeper);
-      ctx.fillStyle='#7A6A50';ctx.font='12px "IBM Plex Mono",monospace';
-      ctx.fillText('z z',sx-16,sy-16);
-      drawTag(ctx,sx,sy+22,n+'(休)',CASTES.sleeper.color);
+      drawTag(ctx,sx,sy+22,n+' · 休眠',CASTES.sleeper.tagc);
     });
     // 決策蟻(L1/L2):繞著蟻后打轉
     orbiters.forEach(o=>{
       const a=(reduced?o.off:time*.0004+o.off);
       const ox=P.queen.x+Math.cos(a)*(96+CASTES.queen.s*8), oy=P.queen.y+Math.sin(a)*(50+CASTES.queen.s*5);
       drawAnt(ctx,ox,oy,a+Math.PI/2,reduced?0:time*.022,CASTES.forager);
-      drawTag(ctx,ox,oy-18,o.label,CASTES.forager.color);
+      drawTag(ctx,ox,oy-18,o.label,CASTES.forager.tagc);
     });
     // 蟻群
     ants.forEach((a,ai)=>{
@@ -649,19 +657,19 @@
       const x=px+Math.cos(ang+Math.PI/2)*wob, y=py+Math.sin(ang+Math.PI/2)*wob;
       const c=CASTES[a.caste];
       drawAnt(ctx,x,y,ang,reduced?0:time*.022+a.jig*3,c);
-      // 名牌:每隻蟻是哪支程式;相鄰蟻上下交錯避免疊字
-      if(a.label) drawTag(ctx,px,py+(ai%2?24:-20),a.label,c.color);
+      // 標本註記:每隻蟻是哪支程式;相鄰蟻上下交錯避免疊字
+      if(a.label) drawTag(ctx,px,py+(ai%2?26:-22),a.label,c.tagc,py);
       // 覓食蟻叼回的食物(咬在大顎上)
       if(a.forager&&a.dir<0&&a.has){
-        ctx.fillStyle='#5E7A4A';
+        ctx.fillStyle='#8A7040';
         ctx.beginPath();
-        ctx.arc(x+Math.cos(ang)*6.4*c.s,y+Math.sin(ang)*6.4*c.s,1.9*c.s,0,7);ctx.fill();
+        ctx.ellipse(x+Math.cos(ang)*6.4*c.s,y+Math.sin(ang)*6.4*c.s,2.1*c.s,1.4*c.s,ang,0,7);ctx.fill();
       }
       // 搬運蟻扛在大顎前的記憶碎片
       if(a.carrier){
         const hx=x+Math.cos(ang)*6.2*c.s, hy=y+Math.sin(ang)*6.2*c.s;
         ctx.save();ctx.translate(hx,hy);ctx.rotate(ang+.3);
-        ctx.fillStyle='#E6D6B8';ctx.fillRect(-1.6*c.s,-1.6*c.s,3.2*c.s,3.2*c.s);
+        ctx.fillStyle='#B9A67E';ctx.fillRect(-1.6*c.s,-1.6*c.s,3.2*c.s,3.2*c.s);
         ctx.restore();
       }
     });
