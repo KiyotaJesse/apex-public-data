@@ -1,0 +1,609 @@
+<title>APEX 蟻丘</title>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;900&family=LXGW+WenKai+TC&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  /* 單一世界:夜裡的垂直深掘剖面。顏色全部明寫。 */
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    background:#100C08;color:#DFD2B4;
+    font-family:"LXGW WenKai TC","Noto Sans TC","Microsoft JhengHei",serif;
+    line-height:1.8;overflow-x:hidden;
+  }
+  header{max-width:820px;margin:0 auto;padding:64px 24px 30px}
+  .stamp{
+    font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.3em;
+    color:#8A7455;
+  }
+  h1{
+    font-family:"Noto Serif TC",serif;font-weight:900;
+    font-size:clamp(36px,6vw,56px);color:#EFE3C6;line-height:1.2;
+    margin:12px 0 4px;text-wrap:balance;
+  }
+  .subtitle{
+    font-family:"Noto Serif TC",serif;font-weight:600;font-size:17px;
+    color:#B99F6F;margin-bottom:22px;
+  }
+  .fieldnote-intro{
+    max-width:34em;font-size:16.5px;color:#C9B994;
+  }
+  .fieldnote-intro em{font-style:normal;color:#D99A3E}
+
+  /* 剖面舞台:tall canvas + 釘在深度上的紙片筆記 */
+  .dig{position:relative;width:100%;max-width:1200px;margin:40px auto 0}
+  canvas{display:block;width:100%;height:auto}
+
+  .note{
+    position:absolute;width:min(300px,27%);
+    background:#EDE3CC;color:#3A2E1C;
+    padding:14px 16px 12px;font-size:14.5px;line-height:1.75;
+    box-shadow:0 6px 18px rgba(0,0,0,.55);
+    border-radius:1px;
+  }
+  .note::before{ /* 膠帶 */
+    content:"";position:absolute;top:-9px;left:50%;transform:translateX(-50%) rotate(-2deg);
+    width:64px;height:18px;background:rgba(217,180,110,.4);
+    border-left:1px solid rgba(120,90,40,.25);border-right:1px solid rgba(120,90,40,.25);
+  }
+  .note .d{
+    font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.14em;
+    color:#8A6B3A;display:block;margin-bottom:5px;
+  }
+  .note.torn{clip-path:polygon(0 0,100% 0,100% 96%,94% 100%,88% 97%,70% 100%,52% 97%,30% 100%,12% 97%,0 100%)}
+  @media (max-width:760px){ .note{font-size:12px;width:34%;padding:10px 11px;line-height:1.6} }
+
+  footer{
+    max-width:820px;margin:0 auto;padding:56px 24px 90px;
+    color:#9C8A68;font-size:15px;
+  }
+  footer .sig{
+    margin-top:28px;font-family:"IBM Plex Mono",monospace;font-size:11px;
+    letter-spacing:.18em;color:#6E5C42;
+  }
+</style>
+
+<header>
+  <div class="stamp">FIELD JOURNAL · COLONY “APEX” · 第 4 觀察季</div>
+  <h1>蟻丘觀察誌</h1>
+  <div class="subtitle">一座活的交易系統,以蟻群剖面記之</div>
+  <p class="fieldnote-intro">
+    本巢建於二〇二六年春。無中央大腦,靠<em>費洛蒙</em>行事——Telegram 推播、log、每六十秒揮發重讀的 config。
+    以下剖面由淺入深,是實地觀察,不是想像圖:每一隻蟻都有程式實體,每一道疤都有事故日期,
+    最深處的空房,是這座巢還沒長出來的部分。往下捲,就是往下挖。
+  </p>
+</header>
+
+<div class="dig" id="dig">
+  <canvas id="nest" width="1200" height="3000"></canvas>
+
+  <div class="note torn" style="left:2.5%;top:6.5%">
+    <span class="d">深度 0m · 巢口</span>
+    整座巢只認一支手機的氣味。別的 Chat ID 來的費洛蒙,一律靜默忽略——這是巢規,不是禮貌。
+  </div>
+
+  <div class="note" style="right:3%;top:11.5%;transform:rotate(.6deg)">
+    <span class="d">深度 -0.4m · 女王室</span>
+    這裡的女王不產卵,她產命令。真正產卵的是深處的選礦機——每小時一顆,絕大多數孵不出來。能孵出來的,要先過五道關,再過一道「血緣打臉關」。
+  </div>
+
+  <div class="note torn" style="left:2%;top:24%;transform:rotate(-.8deg)">
+    <span class="d">深度 -1m · 工蟻房</span>
+    覓食隊誠實紀錄:近三個月搬回 <b>−323 單位</b>的食物。真正撐住巢的,是一隻不在編制內的手動大螞蟻。角落蜷著的那隻沒有死——她在等冬天,多頭的天氣裡她的門全是關的。
+  </div>
+
+  <div class="note" style="right:2.5%;top:20.5%;transform:rotate(-.5deg)">
+    <span class="d">06-29 · 醫護室</span>
+    醫護蟻有前科:曾把兩個主檔整口咬掉。自那天起她只准隔著玻璃開藥單——只建議,不動手。四道牆,是那次留下的。
+  </div>
+
+  <div class="note torn" style="left:33%;top:30.5%;transform:rotate(.4deg)">
+    <span class="d">07-05 · 塌方修補處</span>
+    巢災。FIL 房整間塌掉——爆倉線比我們以為的近得多,五十倍槓桿下,牆薄得只剩百分之一點五。此處的加固樑,就是那一夜補上的。
+  </div>
+
+  <div class="note" style="right:4%;top:34%;transform:rotate(.7deg)">
+    <span class="d">08-24 · 封死的暗房</span>
+    幽靈倉。一隻沒登記的螞蟻——九十顆、五十倍——在名冊外活了四天,卡死整條隧道。自此查倉直接開燈看交易所,不信帳本。
+  </div>
+
+  <div class="note torn" style="left:3%;top:41.5%;transform:rotate(-.6deg)">
+    <span class="d">深度 -1.8m · 真菌園</span>
+    全巢最值錢的一間。食物會吃完,菌絲不會:事故、裁決、教訓,每天由搬運蟻運下來接種。再往下是檔案館,防的是同一件事——重挖已經挖過的土。
+  </div>
+
+  <div class="note" style="right:3.5%;top:49.5%;transform:rotate(.5deg)">
+    <span class="d">深度 -2.4m · 墳場</span>
+    每一塊碑都是自己人立的。真蟻群靠費洛蒙揮發忘掉壞路徑;本巢靠這裡。忘記壞路徑的能力,比找到好路徑的能力貴——這是四季觀察下來,最確定的一條。
+  </div>
+
+  <div class="note torn" style="left:4%;top:63%;transform:rotate(-.4deg)">
+    <span class="d">深度 -3m · 掘進面</span>
+    巢還在往下長。偵察蟻晝夜輪班,每小時回報一次;三千七百餘個座標,大多是空土。下方几間房已經放樣,還沒住蟻——這座巢蓋房子從來不是為了現在。
+  </div>
+</div>
+
+<footer>
+  <p>
+    觀察至此。剖面所繪均有實體:覓食蟻四、冬眠蟻一、偵察蟻三、兵蟻三、醫護蟻一、搬運蟻三;
+    墓碑十座,預留巢室四間。下一季的誌,會從掘進面接著寫。
+  </p>
+  <div class="sig">RECORDED BY J. · RENDERED LIVE · 2026-08-28</div>
+</footer>
+
+<script>
+(() => {
+  // 蟻后體重:帳戶權益相對基準日的指數(100=基準)。每日由排程自動更新此行。
+  const QUEEN_WEIGHT={idx:100,asOf:'08-28'};//QW-MARKER
+  const cv = document.getElementById('nest');
+  const W = 1200, H = 3000;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const GROUND = 150;
+
+  // ---- 種子亂數(畫面固定,不閃爍) ----
+  let _s = 1337;
+  const rnd = () => (_s = (_s * 16807) % 2147483647) / 2147483647;
+
+  // ---- 地點 ----
+  const P = {
+    jesse:  {x:150, y:64},
+    entry:  {x:620, y:GROUND},
+    forage: {x:1010,y:GROUND-24},
+    queen:  {x:600, y:390},
+    guard:  {x:885, y:330},
+    workers:{x:365, y:660},
+    medic:  {x:835, y:585},
+    scar:   {x:520, y:820},
+    ghost:  {x:880, y:900},
+    memory: {x:640, y:1180},
+    archive:{x:955, y:1320},
+    grave:  {x:300, y:1560},
+    front:  {x:600, y:1960},
+    futA:   {x:340, y:2230},
+    futB:   {x:800, y:2330},
+    futC:   {x:560, y:2560},
+    futQ:   {x:620, y:2820},
+  };
+
+  const chambers = [
+    {p:P.queen,  rx:95, ry:55, eyebrow:'APEX-A · RENDER',    name:'女王室(指揮官)'},
+    {p:P.guard,  rx:62, ry:38, eyebrow:'SENTRIES',           name:'兵蟻崗(哨兵)'},
+    {p:P.workers,rx:118,ry:64, eyebrow:'TAMA-TRADING · D',   name:'工蟻房(交易系統)'},
+    {p:P.medic,  rx:60, ry:40, eyebrow:'E · 只建議不套用',    name:'醫護室'},
+    {p:P.memory, rx:96, ry:54, eyebrow:'MEMORY · DATA 分支',  name:'真菌園(記憶庫)'},
+    {p:P.archive,rx:70, ry:42, eyebrow:'NOTION',             name:'檔案館'},
+    {p:P.grave,  rx:132,ry:58, eyebrow:'GRAVEYARD',          name:'墳場(證偽假設)'},
+    {p:P.front,  rx:84, ry:50, eyebrow:'PROSPECTOR · 每小時', name:'掘進面'},
+  ];
+  const futures = [
+    {p:P.futA, rx:88, ry:46, tag:'預留巢室 α', line:'第六策略 · 選礦機孵化中'},
+    {p:P.futB, rx:80, ry:44, tag:'預留巢室 β', line:'盤口資料室 · 蒐集第 34 天'},
+    {p:P.futC, rx:84, ry:44, tag:'預留巢室 γ', line:'非加密糧倉 · 蒐而不獵'},
+    {p:P.futQ, rx:52, ry:34, tag:'?',          line:''},
+  ];
+
+  // ---- 隧道 ----
+  function tunnel(a,b,bend){
+    const mx=(a.x+b.x)/2+(bend?bend[0]:0), my=(a.y+b.y)/2+(bend?bend[1]:0);
+    const pts=[];
+    for(let i=0;i<=30;i++){
+      const t=i/30,u=1-t;
+      pts.push([u*u*a.x+2*u*t*mx+t*t*b.x, u*u*a.y+2*u*t*my+t*t*b.y]);
+    }
+    return pts;
+  }
+  const T = {
+    entryQueen:  tunnel(P.entry,P.queen,[30,-16]),
+    queenGuard:  tunnel(P.queen,P.guard,[16,-30]),
+    queenWorkers:tunnel(P.queen,P.workers,[-46,26]),
+    workersForage:tunnel(P.workers,P.forage,[250,-300]),
+    workersMedic:tunnel(P.workers,P.medic,[60,90]),
+    medicGhost:  tunnel(P.medic,P.ghost,[40,20]),
+    workersMemory:tunnel(P.workers,P.memory,[-30,140]),
+    queenMemory: tunnel(P.queen,P.memory,[90,60]),
+    memoryArchive:tunnel(P.memory,P.archive,[60,40]),
+    memoryGrave: tunnel(P.memory,P.grave,[-80,80]),
+    memoryFront: tunnel(P.memory,P.front,[70,180]),
+    frontGrave:  tunnel(P.front,P.grave,[-120,60]),
+    frontA:      tunnel(P.front,P.futA,[-60,40]),
+    frontB:      tunnel(P.front,P.futB,[60,50]),
+    frontC:      tunnel(P.front,P.futC,[10,80]),
+  };
+  const rev=p=>p.slice().reverse();
+  const seg=(...ps)=>ps.flat();
+
+  // ---- 蟻種圖鑑:各蟻種體型分化 ----
+  const AMBER='#D99A3E',SCOUT='#6FA79B',GUARD='#BF4F3B',MEDIC='#9C86B4',CARRY='#C9B48C';
+  // s體長 gk腹型 hk頭型 mand大顎 antn觸鬚 leg足長 stripes腹節環紋
+  const CASTES={
+    forager:{s:1.55,color:AMBER,dark:'#7E5A20',gk:1,   hk:1,   mand:1,  antn:1,  leg:1,   stripes:2},
+    guard:  {s:1.75,color:GUARD,dark:'#6E2C1D',gk:1.05,hk:1.55,mand:1.9,antn:.85,leg:1,   stripes:2},
+    scout:  {s:1.35,color:SCOUT,dark:'#3C6157',gk:.82, hk:.95, mand:.8, antn:1.6,leg:1.35,stripes:1},
+    medic:  {s:1.45,color:MEDIC,dark:'#584A70',gk:1.12,hk:1,   mand:.7, antn:1.1,leg:1,   stripes:2, cross:true},
+    carrier:{s:1.65,color:CARRY,dark:'#6E5C3C',gk:1.2, hk:1.05,mand:1.1,antn:.9, leg:1.05,stripes:3},
+    queen:  {s:2.7, color:AMBER,dark:'#7E5A20',gk:1.6, hk:1.05,mand:.9, antn:1,  leg:.95, stripes:4, wings:true},
+    sleeper:{s:1.35,color:'#7A6A50',dark:'#4A4030',gk:1.15,hk:1,mand:.8,antn:1,  leg:1,   stripes:2, folded:true},
+  };
+  // 蟻后隨帳戶肥瘦:立方根縮放(漲跌都看得出來但不會爆表),上下限保護
+  CASTES.queen.s = Math.min(4.6, Math.max(1.5, 2.7*Math.cbrt(Math.max(1,QUEEN_WEIGHT.idx)/100)));
+  function mkAnt(route,caste,speed,opt={}){
+    return {route,caste,speed,t:rnd(),dir:1,jig:rnd()*7,...opt};
+  }
+  const ants=[
+    mkAnt(T.workersForage,'forager',.0016,{forager:true,luck:.25}),
+    mkAnt(T.workersForage,'forager',.0012,{forager:true,luck:.25}),
+    mkAnt(T.workersForage,'forager',.0019,{forager:true,luck:.25}),
+    mkAnt(T.workersForage,'forager',.0010,{forager:true,luck:.25}),
+    mkAnt(T.entryQueen,'forager',.0022),
+    mkAnt(seg(T.queenGuard,rev(T.queenGuard)),'guard',.0021),
+    mkAnt(seg(rev(T.queenWorkers),T.queenWorkers),'guard',.0016),
+    mkAnt(seg(T.workersMedic,rev(T.workersMedic)),'guard',.0018),
+    mkAnt(T.workersMedic,'medic',.0011),
+    mkAnt(T.workersMemory,'carrier',.0009,{carrier:true}),
+    mkAnt(T.queenMemory,'carrier',.0011,{carrier:true}),
+    mkAnt(T.memoryArchive,'carrier',.0008,{carrier:true}),
+    mkAnt(T.memoryFront,'scout',.0013),
+    mkAnt(seg(T.memoryFront,T.frontGrave),'scout',.0010),
+    mkAnt(T.frontA,'scout',.0016),
+  ];
+
+  // ---- 手繪感的腔室輪廓 ----
+  function blobPath(ctx,cx,cy,rx,ry,seed){
+    let s=seed; const r2=()=> (s=(s*16807)%2147483647)/2147483647;
+    const n=16, pts=[];
+    for(let i=0;i<n;i++){
+      const a=i/n*Math.PI*2, w=1+(r2()-.5)*.22;
+      pts.push([cx+Math.cos(a)*rx*w, cy+Math.sin(a)*ry*w]);
+    }
+    ctx.beginPath();
+    ctx.moveTo((pts[0][0]+pts[n-1][0])/2,(pts[0][1]+pts[n-1][1])/2);
+    for(let i=0;i<n;i++){
+      const p=pts[i],q=pts[(i+1)%n];
+      ctx.quadraticCurveTo(p[0],p[1],(p[0]+q[0])/2,(p[1]+q[1])/2);
+    }
+    ctx.closePath();
+  }
+  function stone(ctx,x,y,r,seed){
+    let s=seed; const r2=()=>(s=(s*16807)%2147483647)/2147483647;
+    ctx.beginPath();
+    for(let i=0;i<7;i++){
+      const a=i/7*Math.PI*2, rr=r*(0.7+r2()*.5);
+      const px=x+Math.cos(a)*rr, py=y+Math.sin(a)*rr*.8;
+      i?ctx.lineTo(px,py):ctx.moveTo(px,py);
+    }
+    ctx.closePath();
+  }
+  function pathStroke(ctx,pts,color,wdt,dash){
+    ctx.save();
+    if(dash) ctx.setLineDash(dash);
+    ctx.beginPath();ctx.moveTo(pts[0][0],pts[0][1]);
+    for(const p of pts)ctx.lineTo(p[0],p[1]);
+    ctx.strokeStyle=color;ctx.lineWidth=wdt;ctx.lineCap='round';ctx.stroke();
+    ctx.restore();
+  }
+  // 解剖學螞蟻:六足三腳架步態、腰節、大顎、彎折觸鬚、腹節環紋
+  function drawAnt(ctx,x,y,ang,phase,c){
+    const s=c.s;
+    ctx.save();ctx.translate(x,y);ctx.rotate(ang);
+    ctx.lineCap='round';
+    // 六足:1,3,5 與 2,4,6 反相擺動;冬眠時收足
+    ctx.strokeStyle=c.dark;ctx.lineWidth=.55*s;
+    const attach=[-.5*s,.7*s,1.8*s], sweep=[-2.4,-.2,2.2];
+    for(let i=0;i<3;i++)for(const side of[-1,1]){
+      const tri=((i+(side>0?1:0))%2)?0:Math.PI;
+      const osc=c.folded?0:Math.sin(phase+tri)*(i===1?1.5:1.15)*s;
+      const ax=attach[i], ay=side*1.05*s;
+      const span=c.folded?1.6*s:(3.4+(i===0?.5:0))*s*c.leg;
+      const fx=ax+sweep[i]*s*(c.folded?.4:.75)+osc, fy=side*span;
+      const kx=(ax+fx)/2+.4*s, ky=side*(span*.52+.9*s);
+      ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(kx,ky);ctx.lineTo(fx,fy);ctx.stroke();
+    }
+    // 褶翅(僅蟻后)
+    if(c.wings){
+      ctx.fillStyle='rgba(232,220,190,.13)';
+      ctx.strokeStyle='rgba(232,220,190,.28)';ctx.lineWidth=.4;
+      for(const side of[-1,1]){
+        ctx.beginPath();
+        ctx.ellipse(-3.2*s,side*1.1*s,4.4*s,1.25*s,side*.22,0,7);
+        ctx.fill();ctx.stroke();
+      }
+    }
+    // 腹(gaster):環紋+高光
+    const gr=3.6*s*c.gk, gy=2.5*s*c.gk;
+    ctx.fillStyle=c.color;
+    ctx.beginPath();ctx.ellipse(-4.6*s,0,gr,gy,0,0,7);ctx.fill();
+    ctx.strokeStyle=c.dark;ctx.lineWidth=.45*s;
+    for(let i=1;i<=c.stripes;i++){
+      const off=-4.6*s+gr*(i/(c.stripes+1)*1.4-.7);
+      const h=gy*Math.sqrt(Math.max(.1,1-Math.pow((off+4.6*s)/gr,2)));
+      ctx.beginPath();ctx.moveTo(off,-h*.92);
+      ctx.quadraticCurveTo(off-.5*s,0,off,h*.92);ctx.stroke();
+    }
+    ctx.fillStyle='rgba(255,244,214,.16)';
+    ctx.beginPath();ctx.ellipse(-4.6*s-gr*.25,-gy*.4,gr*.4,gy*.28,-.4,0,7);ctx.fill();
+    // 腰節(petiole)
+    ctx.fillStyle=c.dark;
+    ctx.beginPath();ctx.ellipse(-1.35*s,0,.75*s,.6*s,0,0,7);ctx.fill();
+    // 胸(thorax)
+    ctx.fillStyle=c.color;
+    ctx.beginPath();ctx.ellipse(.6*s,0,2*s,1.4*s,0,0,7);ctx.fill();
+    ctx.strokeStyle=c.dark;ctx.lineWidth=.35*s;
+    ctx.beginPath();ctx.moveTo(.2*s,-1.2*s);ctx.quadraticCurveTo(.5*s,0,.2*s,1.2*s);ctx.stroke();
+    // 醫護蟻:胸背記號
+    if(c.cross){
+      ctx.strokeStyle='rgba(240,232,214,.75)';ctx.lineWidth=.5*s;
+      ctx.beginPath();ctx.moveTo(-.1*s,0);ctx.lineTo(1.3*s,0);
+      ctx.moveTo(.6*s,-.7*s);ctx.lineTo(.6*s,.7*s);ctx.stroke();
+    }
+    // 頭:兵蟻放大;大顎依蟻種
+    const hr=1.75*s*c.hk, hx=3.3*s+(c.hk-1)*1.2*s;
+    ctx.fillStyle=c.color;
+    ctx.beginPath();ctx.ellipse(hx,0,hr,hr*.88,0,0,7);ctx.fill();
+    ctx.strokeStyle=c.dark;ctx.lineWidth=.5*s;
+    for(const side of[-1,1]){
+      ctx.beginPath();
+      ctx.moveTo(hx+hr*.75,side*hr*.45);
+      ctx.quadraticCurveTo(hx+hr*(1+.75*c.mand),side*hr*.8*c.mand,hx+hr*(1+.9*c.mand),side*hr*.12);
+      ctx.stroke();
+    }
+    // 複眼
+    ctx.fillStyle='#1C140C';
+    ctx.beginPath();ctx.arc(hx+hr*.25,-hr*.42,.32*s,0,7);ctx.fill();
+    ctx.beginPath();ctx.arc(hx+hr*.25, hr*.42,.32*s,0,7);ctx.fill();
+    // 觸鬚:柄節+鞭節,末端隨步態輕擺;冬眠時下垂
+    ctx.strokeStyle=c.dark;ctx.lineWidth=.4*s;
+    for(const side of[-1,1]){
+      const wig=c.folded?0:Math.sin(phase*.6+side)*(.5*s);
+      const bx=hx+hr*.55, by=side*hr*.5;
+      ctx.beginPath();ctx.moveTo(bx,by);
+      ctx.lineTo(bx+1.4*s*c.antn,side*1.7*s*c.antn);
+      ctx.lineTo(bx+(c.folded?.8*s:2.3*s*c.antn)+ (c.folded?0:.9*s*c.antn),
+                 side*(c.folded?2.4*s:2.1*s*c.antn)+wig);
+      ctx.stroke();
+    }
+    ctx.restore();
+  }
+
+  // ---- 靜態層(預先畫一次) ----
+  const bg = document.createElement('canvas'); bg.width=W; bg.height=H;
+  function paintStatic(){
+    const ctx=bg.getContext('2d');
+    ctx.clearRect(0,0,W,H);
+    // 夜空
+    const sky=ctx.createLinearGradient(0,0,0,GROUND);
+    sky.addColorStop(0,'#0C1120');sky.addColorStop(1,'#291D14');
+    ctx.fillStyle=sky;ctx.fillRect(0,0,W,GROUND);
+    ctx.fillStyle='rgba(230,214,184,.55)';
+    for(const[sx,sy]of[[90,28],[310,50],[540,22],[770,42],[915,18],[1120,56],[430,78],[1035,88],[660,60]])
+      ctx.fillRect(sx,sy,1.6,1.6);
+    // 土壤:越深越黑
+    const soil=ctx.createLinearGradient(0,GROUND,0,H);
+    soil.addColorStop(0,'#241A11');soil.addColorStop(.55,'#1A1209');soil.addColorStop(1,'#0B0806');
+    ctx.fillStyle=soil;ctx.fillRect(0,GROUND,W,H-GROUND);
+    // 地表線與草
+    ctx.strokeStyle='#4A3826';ctx.lineWidth=2;
+    ctx.beginPath();ctx.moveTo(0,GROUND);ctx.lineTo(W,GROUND);ctx.stroke();
+    ctx.strokeStyle='#3E4A2C';ctx.lineWidth=1.4;
+    for(let gx=10;gx<W;gx+=31){
+      const h=5+((gx*7)%13);
+      ctx.beginPath();ctx.moveTo(gx,GROUND);ctx.lineTo(gx+((gx%3)-1)*3,GROUND-h);ctx.stroke();
+    }
+    // 垂根
+    ctx.strokeStyle='rgba(90,74,48,.7)';ctx.lineWidth=1.6;
+    for(const rx of [70,230,470,760,940,1150]){
+      ctx.beginPath();ctx.moveTo(rx,GROUND);
+      ctx.bezierCurveTo(rx-14,GROUND+70,rx+18,GROUND+130,rx-6,GROUND+210+((rx*3)%80));
+      ctx.stroke();
+      ctx.beginPath();ctx.moveTo(rx-2,GROUND+80);ctx.lineTo(rx-26,GROUND+130);ctx.stroke();
+    }
+    // 土壤顆粒與石塊
+    _s=42;
+    for(let i=0;i<2600;i++){
+      const y=GROUND+(H-GROUND)*Math.pow(rnd(),.85);
+      ctx.fillStyle=`rgba(120,96,66,${rnd()*.4+.05})`;
+      ctx.beginPath();ctx.arc(rnd()*W,y,rnd()*1.7+.3,0,7);ctx.fill();
+    }
+    for(let i=0;i<26;i++){
+      const y=GROUND+80+(H-GROUND-160)*rnd(), x=rnd()*W;
+      ctx.fillStyle='rgba(78,64,48,.9)';
+      stone(ctx,x,y,6+rnd()*14,1000+i);ctx.fill();
+      ctx.strokeStyle='rgba(40,30,20,.6)';ctx.lineWidth=1;ctx.stroke();
+    }
+    // 隧道
+    for(const k of ['entryQueen','queenGuard','queenWorkers','workersForage','workersMedic','medicGhost','workersMemory','queenMemory','memoryArchive','memoryGrave','memoryFront','frontGrave'])
+      pathStroke(ctx,T[k],'#2E2318',26);
+    for(const k of ['entryQueen','queenGuard','queenWorkers','workersForage','workersMedic','medicGhost','workersMemory','queenMemory','memoryArchive','memoryGrave','memoryFront','frontGrave'])
+      pathStroke(ctx,T[k],'#241A0F',17);
+    // 未來隧道:虛線放樣
+    for(const k of ['frontA','frontB','frontC'])
+      pathStroke(ctx,T[k],'rgba(111,167,155,.4)',3,[8,10]);
+
+    // 腔室
+    for(const c of chambers){
+      ctx.fillStyle='#31251A';
+      blobPath(ctx,c.p.x,c.p.y,c.rx,c.ry,c.p.x|0);ctx.fill();
+      ctx.strokeStyle='#4A3826';ctx.lineWidth=1.6;ctx.stroke();
+    }
+    // 預留巢室:只有放樣線
+    for(const f of futures){
+      ctx.save();ctx.setLineDash([7,8]);
+      ctx.strokeStyle='rgba(111,167,155,.55)';ctx.lineWidth=1.6;
+      blobPath(ctx,f.p.x,f.p.y,f.rx,f.ry,f.p.x|0);ctx.stroke();
+      ctx.restore();
+      ctx.textAlign='center';
+      ctx.fillStyle='rgba(111,167,155,.9)';
+      ctx.font='500 12px "IBM Plex Mono",monospace';
+      ctx.fillText(f.tag,f.p.x,f.p.y-2);
+      if(f.line){
+        ctx.fillStyle='rgba(160,180,168,.65)';
+        ctx.font='13px "LXGW WenKai TC",serif';
+        ctx.fillText(f.line,f.p.x,f.p.y+18);
+      }
+      ctx.textAlign='left';
+    }
+
+    // 07-05 塌方修補:亂石+加固樑
+    {
+      const s0=P.scar;
+      ctx.fillStyle='rgba(60,46,32,.95)';
+      for(let i=0;i<9;i++){stone(ctx,s0.x-30+rnd()*60,s0.y-16+rnd()*32,4+rnd()*8,7000+i);ctx.fill();}
+      ctx.strokeStyle='#6B5638';ctx.lineWidth=4;
+      for(const dx of [-26,0,26]){
+        ctx.beginPath();ctx.moveTo(s0.x+dx-8,s0.y+22);ctx.lineTo(s0.x+dx+8,s0.y-22);ctx.stroke();
+      }
+      ctx.fillStyle='#8A7455';ctx.font='500 10px "IBM Plex Mono",monospace';
+      ctx.textAlign='center';ctx.fillText('07-05 修補樑',s0.x,s0.y+42);ctx.textAlign='left';
+    }
+    // 08-24 封死的暗房
+    {
+      const g=P.ghost;
+      ctx.fillStyle='#20180F';
+      blobPath(ctx,g.x,g.y,46,30,999);ctx.fill();
+      ctx.strokeStyle='#4A3826';ctx.lineWidth=1.4;ctx.stroke();
+      // 封條:交叉木板
+      ctx.strokeStyle='#6B5638';ctx.lineWidth=5;
+      ctx.beginPath();ctx.moveTo(g.x-40,g.y-22);ctx.lineTo(g.x+40,g.y+22);ctx.stroke();
+      ctx.beginPath();ctx.moveTo(g.x-40,g.y+22);ctx.lineTo(g.x+40,g.y-22);ctx.stroke();
+      ctx.fillStyle='#8A7455';ctx.font='500 10px "IBM Plex Mono",monospace';
+      ctx.textAlign='center';ctx.fillText('08-24 已封',g.x,g.y+48);ctx.textAlign='left';
+    }
+
+    // 冬眠蟻的鼾聲(蟻本體改在動態層畫)
+    ctx.fillStyle='#7A6A50';ctx.font='12px "IBM Plex Mono",monospace';
+    ctx.fillText('z z',P.workers.x-88,P.workers.y+2);
+
+    // 墳場墓碑(真實名單)
+    const tombs=['OB','RS','Z訓練器','VB','時鐘','莊家4式','強平瀑布','EMA20','關鍵位','自動YT'];
+    ctx.font='500 9px "IBM Plex Mono",monospace';
+    tombs.forEach((t,i)=>{
+      const tx=P.grave.x-106+(i%5)*47, ty=P.grave.y-22+Math.floor(i/5)*34;
+      ctx.fillStyle='#4A3826';
+      ctx.beginPath();
+      ctx.moveTo(tx,ty+12);ctx.lineTo(tx,ty+2);
+      ctx.arc(tx+7,ty+2,7,Math.PI,0);
+      ctx.lineTo(tx+14,ty+12);ctx.closePath();ctx.fill();
+      ctx.fillStyle='#8F7E62';ctx.textAlign='center';
+      ctx.fillText(t,tx+7,ty+24);ctx.textAlign='left';
+    });
+
+    // 掘進面:碎土痕
+    ctx.strokeStyle='rgba(111,167,155,.35)';ctx.lineWidth=1;
+    for(let i=0;i<16;i++){
+      const a=rnd()*Math.PI*2,r=P.front.rx+8+rnd()*26;
+      const x=P.front.x+Math.cos(a)*r, y=P.front.y+Math.sin(a)*r*.7;
+      ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+3,y+3);ctx.stroke();
+    }
+
+    // 地表:Jesse 與覓食場
+    ctx.fillStyle='#E6D6B8';ctx.font='900 15px "Noto Serif TC",serif';
+    ctx.fillText('JESSE',P.jesse.x-24,P.jesse.y-16);
+    ctx.strokeStyle=AMBER;ctx.lineWidth=2;
+    ctx.strokeRect(P.jesse.x-11,P.jesse.y-8,22,36);
+    ctx.fillStyle=AMBER;ctx.fillRect(P.jesse.x-4,P.jesse.y+21,8,2);
+    ctx.fillStyle='#8F7E62';ctx.font='11px "IBM Plex Mono",monospace';
+    ctx.fillText('TELEGRAM 費洛蒙',330,52);
+    ctx.fillText('BINGX',P.forage.x-20,P.forage.y-28);
+    ctx.font='16px "LXGW WenKai TC",serif';ctx.fillStyle='#E6D6B8';
+    ctx.fillText('覓食場(市場)',P.forage.x-48,P.forage.y-10);
+    ctx.fillStyle='#5E7A4A';
+    for(const[fx,fy]of[[P.forage.x-14,P.forage.y+2],[P.forage.x+6,P.forage.y-2],[P.forage.x+18,P.forage.y+4]]){
+      ctx.beginPath();ctx.arc(fx,fy,3,0,7);ctx.fill();
+    }
+    ctx.fillStyle='#8F7E62';ctx.font='11px "IBM Plex Mono",monospace';
+    ctx.fillText('巢口',P.entry.x+16,GROUND-8);
+
+    // 腔室標籤
+    for(const c of chambers){
+      ctx.textAlign='center';
+      ctx.fillStyle='#B78A45';ctx.font='500 9.5px "IBM Plex Mono",monospace';
+      ctx.fillText(c.eyebrow,c.p.x,c.p.y+c.ry+18);
+      ctx.fillStyle='#E6D6B8';ctx.font='16px "LXGW WenKai TC",serif';
+      ctx.fillText(c.name,c.p.x,c.p.y+c.ry+37);
+      ctx.textAlign='left';
+    }
+    // 蟻后體檢卡:只給指數,不給金額(巢規)
+    ctx.textAlign='center';
+    ctx.fillStyle='#B78A45';ctx.font='500 10px "IBM Plex Mono",monospace';
+    ctx.fillText('后體重指數 '+QUEEN_WEIGHT.idx+' · 量於 '+QUEEN_WEIGHT.asOf,P.queen.x,P.queen.y-CASTES.queen.s*10-16);
+    ctx.textAlign='left';
+
+    // 深度尺
+    ctx.strokeStyle='rgba(138,116,85,.5)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(46,GROUND);ctx.lineTo(46,H-60);ctx.stroke();
+    ctx.font='10px "IBM Plex Mono",monospace';ctx.fillStyle='#8A7455';
+    for(let d=1;d<=6;d++){
+      const y=GROUND+d*450;
+      if(y>H-70)break;
+      ctx.beginPath();ctx.moveTo(40,y);ctx.lineTo(52,y);ctx.stroke();
+      ctx.fillText('-'+(d*0.5).toFixed(1)+'m',58,y+3);
+    }
+  }
+
+  // ---- 動態層 ----
+  const ctx=cv.getContext('2d');
+  function frame(time){
+    ctx.clearRect(0,0,W,H);
+    ctx.drawImage(bg,0,0);
+    // 活躍費洛蒙呼吸
+    const pulse=reduced?.5:.3+.25*Math.sin(time*.0012);
+    ctx.save();ctx.globalAlpha=pulse;
+    pathStroke(ctx,T.workersForage,'rgba(217,154,62,.5)',3);
+    pathStroke(ctx,T.entryQueen,'rgba(217,154,62,.5)',3);
+    ctx.restore();
+    // TG 虛線
+    ctx.save();ctx.setLineDash([5,7]);
+    ctx.strokeStyle='rgba(217,154,62,'+(reduced?.6:(.35+.3*Math.sin(time*.002)))+')';
+    ctx.lineWidth=1.6;
+    ctx.beginPath();ctx.moveTo(P.jesse.x+14,P.jesse.y+14);
+    ctx.quadraticCurveTo(380,40,P.entry.x-6,GROUND-4);ctx.stroke();
+    ctx.restore();
+    // 掘進面的挖掘塵(在原地小顆粒)
+    if(!reduced){
+      ctx.fillStyle='rgba(111,167,155,.5)';
+      for(let i=0;i<5;i++){
+        const a=(time*.001+i*1.3)%(Math.PI*2);
+        ctx.beginPath();
+        ctx.arc(P.front.x+Math.cos(a)*(P.front.rx+14),P.front.y+Math.sin(a)*(P.front.ry+10)*.8,1.5,0,7);
+        ctx.fill();
+      }
+    }
+    // 蟻后(APEX-A):原地小幅轉頭、觸鬚輕擺
+    drawAnt(ctx,P.queen.x,P.queen.y-4,-.12+(reduced?0:Math.sin(time*.0007)*.06),reduced?0:time*.004,CASTES.queen);
+    // 冬眠的 SC1:收足垂鬚
+    drawAnt(ctx,P.workers.x-70,P.workers.y+26,2.5,0,CASTES.sleeper);
+    // 蟻群
+    for(const a of ants){
+      a.t+=a.speed*a.dir*(reduced?0:1);
+      if(a.t>=1){a.t=1;a.dir=-1;if(a.forager)a.has=Math.random()<a.luck;}
+      if(a.t<=0){a.t=0;a.dir=1;a.has=false;}
+      const idx=a.t*(a.route.length-1);
+      const i=Math.min(Math.floor(idx),a.route.length-2);
+      const f=idx-i;
+      const[x1,y1]=a.route[i],[x2,y2]=a.route[i+1];
+      let x=x1+(x2-x1)*f,y=y1+(y2-y1)*f;
+      const ang=Math.atan2(y2-y1,x2-x1)+(a.dir<0?Math.PI:0);
+      const wob=Math.sin(time*.02+a.jig)*1.4;
+      x+=Math.cos(ang+Math.PI/2)*wob;y+=Math.sin(ang+Math.PI/2)*wob;
+      const c=CASTES[a.caste];
+      drawAnt(ctx,x,y,ang,reduced?0:time*.022+a.jig*3,c);
+      // 覓食蟻叼回的食物(咬在大顎上)
+      if(a.forager&&a.dir<0&&a.has){
+        ctx.fillStyle='#5E7A4A';
+        ctx.beginPath();
+        ctx.arc(x+Math.cos(ang)*6.4*c.s,y+Math.sin(ang)*6.4*c.s,1.9*c.s,0,7);ctx.fill();
+      }
+      // 搬運蟻扛在大顎前的記憶碎片
+      if(a.carrier){
+        const hx=x+Math.cos(ang)*6.2*c.s, hy=y+Math.sin(ang)*6.2*c.s;
+        ctx.save();ctx.translate(hx,hy);ctx.rotate(ang+.3);
+        ctx.fillStyle='#E6D6B8';ctx.fillRect(-1.6*c.s,-1.6*c.s,3.2*c.s,3.2*c.s);
+        ctx.restore();
+      }
+    }
+    if(!reduced)requestAnimationFrame(frame);
+  }
+
+  function start(){paintStatic();frame(0);}
+  if(document.fonts&&document.fonts.ready){document.fonts.ready.then(start);}
+  start();
+})();
+</script>
