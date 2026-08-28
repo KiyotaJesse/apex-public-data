@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-28T22:19:38.745817+08:00",
+  "generated_at": "2026-08-28T23:19:52.994929+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -997,7 +997,7 @@
         "closed_ts": "2026-08-13T02:53:38.313134+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-28T14:18:33.381936+00:00",
+    "last_cycle_ts": "2026-08-28T15:19:15.809615+00:00",
     "stats": {
       "n": 32,
       "win_rate_pct": 31.2,
@@ -1010,7 +1010,7 @@
   "risk_circuit_breaker": {
     "killswitch": false,
     "daily_loss_limit_hit": false,
-    "daily_pnl_usdt": -2.3826,
+    "daily_pnl_usdt": -4.222,
     "daily_pnl_date": "2026-08-28"
   },
   "feature_flags": {
@@ -1036,20 +1036,43 @@
         "leverage": 31,
         "sl_order_id": "2093081512639037440",
         "opened_ts": "2026-08-27T20:01:19.616058+00:00",
-        "highest": 2516.19,
+        "highest": 2518.0,
         "lowest": 2498.44,
         "breakeven_done": false,
-        "bars_elapsed": 18,
-        "last_checked_time": "2026-08-28 14:00:00",
+        "bars_elapsed": 19,
+        "last_checked_time": "2026-08-28 15:00:00",
         "notion_page_id": "3c90a137-4574-81d3-aeeb-d3581157ef8f"
+      },
+      {
+        "id": "strattl_BTCUSDT_1787929258",
+        "symbol": "BTC-USDT",
+        "direction": "LONG",
+        "entry": 79730.2,
+        "sl_price": 78844.52857142857,
+        "tp_price": 84230.55714285714,
+        "sl_dist": 885.6714285714261,
+        "qty": 0.0021,
+        "max_hold_h": 48,
+        "strategy": "TL",
+        "fill_price": 79730.2,
+        "sig_key": "tl_BTC-USDT_2026-08-28 15:00:00",
+        "leverage": 42,
+        "sl_order_id": "2093353195178393600",
+        "opened_ts": "2026-08-28T15:01:08.775415+00:00",
+        "highest": 79730.2,
+        "lowest": 79730.2,
+        "breakeven_done": false,
+        "bars_elapsed": 0,
+        "last_checked_time": "2026-08-28T15:01:08.775415+00:00",
+        "notion_page_id": "3ca0a137-4574-812f-b78a-c9355f044a59"
       }
     ],
-    "last_cycle_ts": "2026-08-28T14:19:09.386364+00:00",
+    "last_cycle_ts": "2026-08-28T15:18:38.666120+00:00",
     "stats": {
-      "n": 46,
-      "win_rate_pct": 15.2,
-      "ev_r": -0.367,
-      "total_pnl_usdt": -16.86,
+      "n": 47,
+      "win_rate_pct": 14.9,
+      "ev_r": -0.381,
+      "total_pnl_usdt": -17.91,
       "avg_win_usdt": 2.08,
       "avg_loss_usdt": -0.81
     }
@@ -7056,6 +7079,10 @@
     {
       "ts": "2026-08-28T14:15:51.134639+00:00",
       "idx": 74.69
+    },
+    {
+      "ts": "2026-08-28T15:15:51.765404+00:00",
+      "idx": 74.74
     }
   ],
   "trades_public": [
@@ -7604,6 +7631,13 @@
       "strat": "TL",
       "dir": "LONG",
       "r": -1.144
+    },
+    {
+      "ts": "2026-08-28T14:37:56.178371+00:00",
+      "sym": "XRP-USDT",
+      "strat": "TL",
+      "dir": "LONG",
+      "r": -1.047
     }
   ],
   "self_upgrades": [
