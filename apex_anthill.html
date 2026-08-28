@@ -308,6 +308,21 @@
     ctx.strokeStyle=color;ctx.lineWidth=wdt;ctx.lineCap='round';ctx.stroke();
     ctx.restore();
   }
+  // 名牌:深色膠囊+蟻種同色細框,位置穩定不抖
+  function drawTag(ctx,x,y,text,color){
+    ctx.font='10px "Noto Sans TC","Microsoft JhengHei",sans-serif';
+    const w=ctx.measureText(text).width+10, h=15, r=7;
+    const bx=x-w/2, by=y-h/2;
+    ctx.beginPath();
+    ctx.moveTo(bx+r,by);ctx.lineTo(bx+w-r,by);ctx.arc(bx+w-r,by+h/2,r,-Math.PI/2,Math.PI/2);
+    ctx.lineTo(bx+r,by+h);ctx.arc(bx+r,by+h/2,r,Math.PI/2,-Math.PI/2);ctx.closePath();
+    ctx.fillStyle='rgba(14,10,6,.78)';ctx.fill();
+    ctx.strokeStyle=color;ctx.globalAlpha=.55;ctx.lineWidth=1;ctx.stroke();ctx.globalAlpha=1;
+    ctx.fillStyle='#EAD9B0';ctx.textAlign='center';ctx.textBaseline='middle';
+    ctx.fillText(text,x,y+.5);
+    ctx.textAlign='left';ctx.textBaseline='alphabetic';
+  }
+
   // 解剖學螞蟻:六足三腳架步態、腰節、大顎、彎折觸鬚、腹節環紋
   function drawAnt(ctx,x,y,ang,phase,c){
     const s=c.s;
@@ -602,25 +617,22 @@
     // 蟻后(APEX-A):原地小幅轉頭、觸鬚輕擺
     drawAnt(ctx,P.queen.x,P.queen.y-4,-.12+(reduced?0:Math.sin(time*.0007)*.06),reduced?0:time*.004,CASTES.queen);
     // 冬眠蟻:被關掉的策略蜷在工蟻房睡(名單來自 NEST_DATA)
-    ctx.font='12px "IBM Plex Mono",monospace';
     sleepers.forEach((n,i)=>{
-      const sx=P.workers.x-72+i*46, sy=P.workers.y+30;
+      const sx=P.workers.x-72+i*52, sy=P.workers.y+28;
       drawAnt(ctx,sx,sy,2.5,0,CASTES.sleeper);
-      ctx.fillStyle='#7A6A50';
+      ctx.fillStyle='#7A6A50';ctx.font='12px "IBM Plex Mono",monospace';
       ctx.fillText('z z',sx-16,sy-16);
-      ctx.textAlign='center';ctx.font='9px "IBM Plex Mono",monospace';
-      ctx.fillText(n,sx,sy+18);ctx.textAlign='left';ctx.font='12px "IBM Plex Mono",monospace';
+      drawTag(ctx,sx,sy+22,n+'(休)',CASTES.sleeper.color);
     });
     // 決策蟻(L1/L2):繞著蟻后打轉
     orbiters.forEach(o=>{
       const a=(reduced?o.off:time*.0004+o.off);
       const ox=P.queen.x+Math.cos(a)*(96+CASTES.queen.s*8), oy=P.queen.y+Math.sin(a)*(50+CASTES.queen.s*5);
       drawAnt(ctx,ox,oy,a+Math.PI/2,reduced?0:time*.022,CASTES.forager);
-      ctx.textAlign='center';ctx.fillStyle='rgba(230,214,184,.5)';ctx.font='9px "IBM Plex Mono",monospace';
-      ctx.fillText(o.label,ox,oy-14);ctx.textAlign='left';
+      drawTag(ctx,ox,oy-18,o.label,CASTES.forager.color);
     });
     // 蟻群
-    for(const a of ants){
+    ants.forEach((a,ai)=>{
       a.t+=a.speed*a.dir*(reduced?0:1);
       if(a.t>=1){a.t=1;a.dir=-1;if(a.forager)a.has=Math.random()<a.luck;}
       if(a.t<=0){a.t=0;a.dir=1;a.has=false;}
@@ -628,18 +640,14 @@
       const i=Math.min(Math.floor(idx),a.route.length-2);
       const f=idx-i;
       const[x1,y1]=a.route[i],[x2,y2]=a.route[i+1];
-      let x=x1+(x2-x1)*f,y=y1+(y2-y1)*f;
+      const px=x1+(x2-x1)*f, py=y1+(y2-y1)*f;   // 名牌用的穩定位置(不含抖動)
       const ang=Math.atan2(y2-y1,x2-x1)+(a.dir<0?Math.PI:0);
       const wob=Math.sin(time*.02+a.jig)*1.4;
-      x+=Math.cos(ang+Math.PI/2)*wob;y+=Math.sin(ang+Math.PI/2)*wob;
+      const x=px+Math.cos(ang+Math.PI/2)*wob, y=py+Math.sin(ang+Math.PI/2)*wob;
       const c=CASTES[a.caste];
       drawAnt(ctx,x,y,ang,reduced?0:time*.022+a.jig*3,c);
-      // 名牌:每隻蟻是哪支程式,一眼認出
-      if(a.label){
-        ctx.textAlign='center';ctx.fillStyle='rgba(230,214,184,.5)';
-        ctx.font='9px "IBM Plex Mono",monospace';
-        ctx.fillText(a.label,x,y-13);ctx.textAlign='left';
-      }
+      // 名牌:每隻蟻是哪支程式;相鄰蟻上下交錯避免疊字
+      if(a.label) drawTag(ctx,px,py+(ai%2?24:-20),a.label,c.color);
       // 覓食蟻叼回的食物(咬在大顎上)
       if(a.forager&&a.dir<0&&a.has){
         ctx.fillStyle='#5E7A4A';
@@ -653,7 +661,7 @@
         ctx.fillStyle='#E6D6B8';ctx.fillRect(-1.6*c.s,-1.6*c.s,3.2*c.s,3.2*c.s);
         ctx.restore();
       }
-    }
+    });
     if(!reduced)requestAnimationFrame(frame);
   }
 
