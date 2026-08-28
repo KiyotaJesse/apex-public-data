@@ -137,7 +137,7 @@
 (() => {
   // 巢況資料:每日清晨由排程從監督台名冊+D端config自動重編此行。
   // idx=帳戶權益指數(100=基準日) strategies=覓食蟻(on=false蜷著睡) groups=各群工蟻 retired=新墓碑
-  const NEST_DATA={"idx":100,"eq":378.3,"asOf":"08-28","strategies":[{"n":"B1","on":true},{"n":"TL","on":true},{"n":"RS","on":false},{"n":"SC1","on":true},{"n":"MRS","on":true},{"n":"AUTO×2","on":true}],"groups":{"展示":["蟻丘畫師"],"監控":["A迴圈"],"資料蒐集":["盤口OI","1H K線","4H K線","控制台快照","形態庫","幣池分層"],"例行報告":["晨報","LTM蒸餾","績效週報","月報","週日覆盤","OBI提醒"],"自我稽核":["LAPD","本機查勤","E稽核","驗證網","監督台"],"自適應決策":["L1換將","L2風險檔"],"研究":["LiveDiag","Scanner","週度優化","walk-fwd","變體艦隊","選礦機","非加密掃描","型態艦隊","極值盯盤","抄底盯盤"],"王座":["情報院","營收盯哨","2486哨兵"],"資料地基":["訂單流","盤口熟成","幣池重審"],"創業":["創業推播"],"風控":["TL驗收哨兵"]},"retired":["OBI提醒","雲端scanner","Jarvis"]};//NEST-MARKER
+  const NEST_DATA={"idx":100,"eq":378.4,"asOf":"08-28","strategies":[{"n":"B1","on":true},{"n":"TL","on":true},{"n":"RS","on":false},{"n":"SC1","on":true},{"n":"MRS","on":true},{"n":"AUTO×2","on":true}],"groups":{"展示":["蟻丘畫師"],"監控":["A迴圈"],"資料蒐集":["盤口OI","1H K線","4H K線","控制台快照","形態庫","幣池分層"],"例行報告":["晨報","LTM蒸餾","績效週報","月報","週日覆盤","OBI提醒"],"自我稽核":["LAPD","本機查勤","E稽核","驗證網","監督台"],"自適應決策":["L1換將","L2風險檔"],"研究":["LiveDiag","Scanner","週度優化","walk-fwd","變體艦隊","選礦機","非加密掃描","型態艦隊","極值盯盤","抄底盯盤"],"王座":["情報院","營收盯哨","2486哨兵"],"資料地基":["訂單流","盤口熟成","幣池重審"],"創業":["創業推播"],"風控":["TL驗收哨兵"]},"retired":["OBI提醒","雲端scanner","Jarvis"]};//NEST-MARKER
   const cv = document.getElementById('nest');
   const W = 1200, H = 3000;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -300,6 +300,43 @@
     }
     ctx.closePath();
   }
+  // 沿路徑等距重取樣(粗糙隧道壁要夠密的取樣點)
+  function resample(pts,step){
+    const out=[pts[0].slice()]; let need=step;
+    for(let i=1;i<pts.length;i++){
+      const [x0,y0]=pts[i-1], [x1,y1]=pts[i];
+      const d=Math.hypot(x1-x0,y1-y0);
+      let pos=0;
+      while(d-pos>=need){
+        pos+=need;
+        const t=pos/d;
+        out.push([x0+(x1-x0)*t, y0+(y1-y0)*t]);
+        need=step;
+      }
+      need-=d-pos;
+    }
+    return out;
+  }
+  // 寫實隧道:沿路徑蓋一串半徑帶噪聲的圓=粗糙挖掘壁;外圈是被壓實的土,內圈挖空
+  function roughTunnel(ctx,pts,w){
+    const rs=resample(pts,6);
+    for(const[r0,col]of[[w*.78,'#332718'],[w*.55,'#1E150C']]){
+      ctx.fillStyle=col;
+      rs.forEach((p,i)=>{
+        const n=((i*2654435761>>>3)%89)/89;   // 定值噪聲,不閃爍
+        const r=r0*(0.86+n*.34);
+        ctx.beginPath();ctx.arc(p[0],p[1],r,0,7);ctx.fill();
+      });
+    }
+    // 挖掘碎屑:沿壁緣散落的小土粒
+    ctx.fillStyle='rgba(90,70,46,.55)';
+    rs.forEach((p,i)=>{
+      if(i%4)return;
+      const n=((i*40503>>>2)%97)/97, a=n*Math.PI*2;
+      ctx.beginPath();
+      ctx.arc(p[0]+Math.cos(a)*w*.62,p[1]+Math.sin(a)*w*.62,1+n*1.6,0,7);ctx.fill();
+    });
+  }
   function pathStroke(ctx,pts,color,wdt,dash){
     ctx.save();
     if(dash) ctx.setLineDash(dash);
@@ -432,6 +469,26 @@
     const soil=ctx.createLinearGradient(0,GROUND,0,H);
     soil.addColorStop(0,'#241A11');soil.addColorStop(.55,'#1A1209');soil.addColorStop(1,'#0B0806');
     ctx.fillStyle=soil;ctx.fillRect(0,GROUND,W,H-GROUND);
+    // 地層帶:沉積層的水平色帶,頂緣起伏
+    _s=77;
+    const strata=[[GROUND+150,'#5A4630',.07],[GROUND+430,'#2E2114',.12],[GROUND+780,'#6B5334',.05],
+                  [GROUND+1150,'#1A130B',.16],[GROUND+1600,'#4A3826',.05],[GROUND+2100,'#120C07',.2]];
+    for(const[sy,col,al]of strata){
+      const th=60+rnd()*90, ph=rnd()*7, amp=8+rnd()*14;
+      ctx.globalAlpha=al;ctx.fillStyle=col;
+      ctx.beginPath();ctx.moveTo(0,sy);
+      for(let gx=0;gx<=W;gx+=40) ctx.lineTo(gx,sy+Math.sin(gx*.01+ph)*amp);
+      for(let gx=W;gx>=0;gx-=40) ctx.lineTo(gx,sy+th+Math.sin(gx*.013+ph)*amp);
+      ctx.closePath();ctx.fill();ctx.globalAlpha=1;
+    }
+    // 乾裂縫:細黑折線往下竄
+    ctx.strokeStyle='rgba(0,0,0,.3)';ctx.lineWidth=1;
+    for(let i=0;i<9;i++){
+      let cx=rnd()*W, cy=GROUND+40+rnd()*(H-GROUND-300);
+      ctx.beginPath();ctx.moveTo(cx,cy);
+      for(let k=0;k<6;k++){cx+=(rnd()-.5)*26;cy+=14+rnd()*26;ctx.lineTo(cx,cy);}
+      ctx.stroke();
+    }
     // 地表線與草
     ctx.strokeStyle='#4A3826';ctx.lineWidth=2;
     ctx.beginPath();ctx.moveTo(0,GROUND);ctx.lineTo(W,GROUND);ctx.stroke();
@@ -440,42 +497,125 @@
       const h=5+((gx*7)%13);
       ctx.beginPath();ctx.moveTo(gx,GROUND);ctx.lineTo(gx+((gx%3)-1)*3,GROUND-h);ctx.stroke();
     }
-    // 垂根
-    ctx.strokeStyle='rgba(90,74,48,.7)';ctx.lineWidth=1.6;
+    // 垂根:主根+側根+細鬚,深淺粗細不一
     for(const rx of [70,230,470,760,940,1150]){
+      const depth=GROUND+180+((rx*7)%160);
+      ctx.strokeStyle='rgba(90,74,48,.7)';ctx.lineWidth=2;
       ctx.beginPath();ctx.moveTo(rx,GROUND);
-      ctx.bezierCurveTo(rx-14,GROUND+70,rx+18,GROUND+130,rx-6,GROUND+210+((rx*3)%80));
+      ctx.bezierCurveTo(rx-14,GROUND+70,rx+18,GROUND+130,rx-6,depth);
       ctx.stroke();
-      ctx.beginPath();ctx.moveTo(rx-2,GROUND+80);ctx.lineTo(rx-26,GROUND+130);ctx.stroke();
+      ctx.lineWidth=1.1;ctx.strokeStyle='rgba(90,74,48,.55)';
+      ctx.beginPath();ctx.moveTo(rx-2,GROUND+70);ctx.quadraticCurveTo(rx-22,GROUND+95,rx-30,GROUND+140);ctx.stroke();
+      ctx.beginPath();ctx.moveTo(rx+2,GROUND+110);ctx.quadraticCurveTo(rx+20,GROUND+140,rx+26,GROUND+185);ctx.stroke();
+      // 細鬚
+      ctx.lineWidth=.6;ctx.strokeStyle='rgba(110,90,58,.4)';
+      for(let k=0;k<5;k++){
+        const ry=GROUND+50+k*((depth-GROUND-50)/5), side=(k%2?1:-1);
+        ctx.beginPath();ctx.moveTo(rx+side*2,ry);ctx.lineTo(rx+side*(10+(rx+k*37)%12),ry+14);ctx.stroke();
+      }
     }
-    // 土壤顆粒與石塊
+    // 土壤顆粒:兩層粒徑,亮暗摻雜才像真土
     _s=42;
-    for(let i=0;i<2600;i++){
+    for(let i=0;i<5200;i++){
       const y=GROUND+(H-GROUND)*Math.pow(rnd(),.85);
-      ctx.fillStyle=`rgba(120,96,66,${rnd()*.4+.05})`;
-      ctx.beginPath();ctx.arc(rnd()*W,y,rnd()*1.7+.3,0,7);ctx.fill();
+      const bright=rnd()>.72;
+      ctx.fillStyle=bright?`rgba(150,122,84,${rnd()*.3+.08})`:`rgba(70,52,34,${rnd()*.45+.08})`;
+      ctx.beginPath();ctx.arc(rnd()*W,y,rnd()*1.9+.3,0,7);ctx.fill();
     }
-    for(let i=0;i<26;i++){
-      const y=GROUND+80+(H-GROUND-160)*rnd(), x=rnd()*W;
-      ctx.fillStyle='rgba(78,64,48,.9)';
-      stone(ctx,x,y,6+rnd()*14,1000+i);ctx.fill();
-      ctx.strokeStyle='rgba(40,30,20,.6)';ctx.lineWidth=1;ctx.stroke();
+    // 石塊:上緣受光下緣陰影,埋在土裡才立體
+    for(let i=0;i<64;i++){
+      const y=GROUND+80+(H-GROUND-160)*rnd(), x=rnd()*W, r=5+rnd()*16;
+      ctx.fillStyle='rgba(82,66,48,.95)';
+      stone(ctx,x,y,r,1000+i);ctx.fill();
+      ctx.strokeStyle='rgba(30,22,14,.7)';ctx.lineWidth=1.2;ctx.stroke();
+      ctx.strokeStyle='rgba(160,132,92,.35)';ctx.lineWidth=1;
+      ctx.beginPath();ctx.arc(x-r*.15,y-r*.2,r*.62,Math.PI*1.05,Math.PI*1.85);ctx.stroke();
     }
-    // 隧道
+    // 濕氣斑:深處土壤的暗色浸潤
+    for(let i=0;i<14;i++){
+      const y=GROUND+300+(H-GROUND-400)*rnd(), x=rnd()*W;
+      ctx.fillStyle='rgba(8,5,3,'+(0.08+rnd()*.1)+')';
+      ctx.beginPath();ctx.ellipse(x,y,40+rnd()*90,20+rnd()*40,rnd(),0,7);ctx.fill();
+    }
+    // 隧道:粗糙挖掘壁(非均勻筆畫)
     for(const k of ['entryQueen','queenGuard','queenWorkers','workersForage','workersMedic','medicGhost','workersMemory','queenMemory','memoryArchive','memoryGrave','memoryFront','frontGrave'])
-      pathStroke(ctx,T[k],'#2E2318',26);
-    for(const k of ['entryQueen','queenGuard','queenWorkers','workersForage','workersMedic','medicGhost','workersMemory','queenMemory','memoryArchive','memoryGrave','memoryFront','frontGrave'])
-      pathStroke(ctx,T[k],'#241A0F',17);
+      roughTunnel(ctx,T[k],26);
+    // 死巷短坑:挖了沒通的支線,真巢到處都是
+    _s=311;
+    const stubs=[];
+    for(const k of ['queenWorkers','workersMemory','memoryFront','memoryGrave','workersForage','queenMemory']){
+      const pts=T[k], i0=6+Math.floor(rnd()*16);
+      const [sx,sy]=pts[i0];
+      const a=rnd()*Math.PI*2, len=30+rnd()*55;
+      stubs.push(tunnel({x:sx,y:sy},{x:sx+Math.cos(a)*len,y:sy+Math.sin(a)*len*.6},[(rnd()-.5)*30,(rnd()-.5)*30]));
+    }
+    for(const st of stubs) roughTunnel(ctx,st,15);
     // 未來隧道:虛線放樣
     for(const k of ['frontA','frontB','frontC'])
       pathStroke(ctx,T[k],'rgba(111,167,155,.4)',3,[8,10]);
 
-    // 腔室
+    // 腔室:壓實土外圈+挖空內裡(徑向漸層)+粗糙壁緣+地面碎屑
     for(const c of chambers){
-      ctx.fillStyle='#31251A';
+      ctx.fillStyle='#332718';
+      blobPath(ctx,c.p.x,c.p.y,c.rx*1.12,c.ry*1.16,(c.p.x|0)+7);ctx.fill();
+      const cg=ctx.createRadialGradient(c.p.x,c.p.y+c.ry*.3,c.ry*.2,c.p.x,c.p.y,Math.max(c.rx,c.ry)*1.1);
+      cg.addColorStop(0,'#191108');cg.addColorStop(.75,'#241A0F');cg.addColorStop(1,'#2E2214');
+      ctx.fillStyle=cg;
       blobPath(ctx,c.p.x,c.p.y,c.rx,c.ry,c.p.x|0);ctx.fill();
-      ctx.strokeStyle='#4A3826';ctx.lineWidth=1.6;ctx.stroke();
+      ctx.strokeStyle='rgba(90,70,46,.5)';ctx.lineWidth=1.4;ctx.stroke();
+      // 壁緣小突粒
+      let ss=(c.p.x|0)+13; const rr=()=> (ss=(ss*16807)%2147483647)/2147483647;
+      for(let i=0;i<14;i++){
+        const a=rr()*Math.PI*2;
+        ctx.fillStyle='rgba(70,54,36,.7)';
+        ctx.beginPath();ctx.arc(c.p.x+Math.cos(a)*c.rx*.96,c.p.y+Math.sin(a)*c.ry*.96,1+rr()*2.2,0,7);ctx.fill();
+      }
+      // 地面碎屑
+      for(let i=0;i<10;i++){
+        ctx.fillStyle='rgba(110,86,58,.4)';
+        ctx.beginPath();ctx.arc(c.p.x+(rr()-.5)*c.rx*1.4,c.p.y+c.ry*(.45+rr()*.4),.8+rr()*1.4,0,7);ctx.fill();
+      }
     }
+    // 巢室內容物:蟻卵(女王室)/菌圃(真菌園)/糧堆(工蟻房)
+    {
+      let ss=99; const rr=()=> (ss=(ss*16807)%2147483647)/2147483647;
+      // 女王室右側:一窩蟻卵
+      for(let i=0;i<14;i++){
+        const ex=P.queen.x+34+rr()*40, ey=P.queen.y+8+rr()*24;
+        ctx.fillStyle='rgba(216,199,162,'+(0.5+rr()*.35)+')';
+        ctx.beginPath();ctx.ellipse(ex,ey,2.6+rr()*1.4,1.8+rr()*.9,rr()*3,0,7);ctx.fill();
+      }
+      // 真菌園:灰綠菌圃簇
+      for(let i=0;i<8;i++){
+        const fx=P.memory.x-40+rr()*80, fy=P.memory.y+6+rr()*26;
+        ctx.fillStyle='rgba(110,106,72,'+(0.35+rr()*.3)+')';
+        ctx.beginPath();
+        for(let k=0;k<5;k++){const a=k/5*Math.PI*2;
+          const px=fx+Math.cos(a)*(3+rr()*4), py=fy+Math.sin(a)*(2+rr()*3);
+          k?ctx.lineTo(px,py):ctx.moveTo(px,py);}
+        ctx.closePath();ctx.fill();
+      }
+      // 工蟻房右下:種子糧堆
+      for(let i=0;i<12;i++){
+        const gx2=P.workers.x+46+rr()*46, gy2=P.workers.y+18+rr()*22;
+        ctx.fillStyle='rgba(138,112,64,'+(0.5+rr()*.4)+')';
+        ctx.beginPath();ctx.ellipse(gx2,gy2,2.6+rr()*1.6,1.7+rr()*1,rr()*3,0,7);ctx.fill();
+      }
+      // 巢口土丘:挖出來的土堆在洞口兩側
+      for(let i=0;i<46;i++){
+        const side=rr()>.5?1:-1;
+        const mx=P.entry.x+side*(8+rr()*30), my=GROUND-rr()*10*(1-Math.abs(mx-P.entry.x)/45);
+        ctx.fillStyle='rgba(96,74,48,'+(0.5+rr()*.4)+')';
+        ctx.beginPath();ctx.arc(mx,my,1.2+rr()*2.4,0,7);ctx.fill();
+      }
+    }
+    // 閒置工蟻:巢裡總有幾隻停著不動的(無名牌,純場景)
+    drawAnt(ctx,P.queen.x+52,P.queen.y+24,2.9,0,CASTES.forager);
+    drawAnt(ctx,P.queen.x-60,P.queen.y+18,.4,0,CASTES.forager);
+    drawAnt(ctx,P.workers.x+30,P.workers.y-24,3.6,0,CASTES.forager);
+    drawAnt(ctx,P.memory.x+30,P.memory.y-14,2.2,0,CASTES.carrier);
+    drawAnt(ctx,P.grave.x+70,P.grave.y+20,1.2,0,CASTES.scout);
+    drawAnt(ctx,P.front.x-30,P.front.y+16,.8,0,CASTES.scout);
     // 預留巢室:只有放樣線
     for(const f of futures){
       ctx.save();ctx.setLineDash([7,8]);
@@ -578,13 +718,11 @@
       ctx.fillText(c.name,c.p.x,c.p.y+c.ry+37);
       ctx.textAlign='left';
     }
-    // 蟻后體檢卡(金額明示=Jesse 2026-08-28 裁決)
+    // 蟻后標示:純數字(Jesse 裁決)
     ctx.textAlign='center';
-    ctx.fillStyle='#E0B25C';ctx.font='600 13px "IBM Plex Mono",monospace';
-    const eqStr=(NEST_DATA.eq!=null)?(NEST_DATA.eq+' U'):('指數 '+NEST_DATA.idx);
-    ctx.fillText('后體重 '+eqStr,P.queen.x,P.queen.y-CASTES.queen.s*10-30);
-    ctx.fillStyle='#B78A45';ctx.font='500 10px "IBM Plex Mono",monospace';
-    ctx.fillText('指數 '+NEST_DATA.idx+'(基準100) · 量於 '+NEST_DATA.asOf,P.queen.x,P.queen.y-CASTES.queen.s*10-14);
+    ctx.fillStyle='#E0B25C';ctx.font='600 14px "IBM Plex Mono",monospace';
+    const eqStr=(NEST_DATA.eq!=null)?String(NEST_DATA.eq):String(NEST_DATA.idx);
+    ctx.fillText('蟻后 '+eqStr,P.queen.x,P.queen.y-CASTES.queen.s*10-18);
     ctx.textAlign='left';
 
     // 深度尺
