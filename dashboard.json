@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-28T23:19:52.994929+08:00",
+  "generated_at": "2026-08-29T00:20:15.172005+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -997,7 +997,7 @@
         "closed_ts": "2026-08-13T02:53:38.313134+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-28T15:19:15.809615+00:00",
+    "last_cycle_ts": "2026-08-28T16:18:50.658409+00:00",
     "stats": {
       "n": 32,
       "win_rate_pct": 31.2,
@@ -1010,7 +1010,7 @@
   "risk_circuit_breaker": {
     "killswitch": false,
     "daily_loss_limit_hit": false,
-    "daily_pnl_usdt": -4.222,
+    "daily_pnl_usdt": -7.6439,
     "daily_pnl_date": "2026-08-28"
   },
   "feature_flags": {
@@ -1021,60 +1021,37 @@
     "mode": "live",
     "open_positions": [
       {
-        "id": "strattl_ETHUSDT_1787860867",
-        "symbol": "ETH-USDT",
+        "id": "strattl_XRPUSDT_1787933273",
+        "symbol": "XRP-USDT",
         "direction": "LONG",
-        "entry": 2498.44,
-        "sl_price": 2448.91857143,
-        "tp_price": 2747.9071428571424,
-        "sl_dist": 49.521428571428714,
-        "qty": 0.03,
+        "entry": 1.4096,
+        "sl_price": 1.377242857142857,
+        "tp_price": 1.5713857142857144,
+        "sl_dist": 0.03235714285714297,
+        "qty": 57.0,
         "max_hold_h": 48,
         "strategy": "TL",
-        "fill_price": 2498.44,
-        "sig_key": "tl_ETH-USDT_2026-08-27 20:00:00",
-        "leverage": 31,
-        "sl_order_id": "2093081512639037440",
-        "opened_ts": "2026-08-27T20:01:19.616058+00:00",
-        "highest": 2518.0,
-        "lowest": 2498.44,
-        "breakeven_done": false,
-        "bars_elapsed": 19,
-        "last_checked_time": "2026-08-28 15:00:00",
-        "notion_page_id": "3c90a137-4574-81d3-aeeb-d3581157ef8f"
-      },
-      {
-        "id": "strattl_BTCUSDT_1787929258",
-        "symbol": "BTC-USDT",
-        "direction": "LONG",
-        "entry": 79730.2,
-        "sl_price": 78844.52857142857,
-        "tp_price": 84230.55714285714,
-        "sl_dist": 885.6714285714261,
-        "qty": 0.0021,
-        "max_hold_h": 48,
-        "strategy": "TL",
-        "fill_price": 79730.2,
-        "sig_key": "tl_BTC-USDT_2026-08-28 15:00:00",
-        "leverage": 42,
-        "sl_order_id": "2093353195178393600",
-        "opened_ts": "2026-08-28T15:01:08.775415+00:00",
-        "highest": 79730.2,
-        "lowest": 79730.2,
+        "fill_price": 1.4096,
+        "sig_key": "tl_XRP-USDT_2026-08-28 16:00:00",
+        "leverage": 28,
+        "sl_order_id": "2093370036932149248",
+        "opened_ts": "2026-08-28T16:08:04.338757+00:00",
+        "highest": 1.4096,
+        "lowest": 1.4096,
         "breakeven_done": false,
         "bars_elapsed": 0,
-        "last_checked_time": "2026-08-28T15:01:08.775415+00:00",
-        "notion_page_id": "3ca0a137-4574-812f-b78a-c9355f044a59"
+        "last_checked_time": "2026-08-28T16:08:04.338757+00:00",
+        "notion_page_id": "3ca0a137-4574-8138-916e-ccb6348cd008"
       }
     ],
-    "last_cycle_ts": "2026-08-28T15:18:38.666120+00:00",
+    "last_cycle_ts": "2026-08-28T16:19:20.661737+00:00",
     "stats": {
-      "n": 47,
-      "win_rate_pct": 14.9,
-      "ev_r": -0.381,
-      "total_pnl_usdt": -17.91,
+      "n": 49,
+      "win_rate_pct": 14.3,
+      "ev_r": -0.41,
+      "total_pnl_usdt": -20.1,
       "avg_win_usdt": 2.08,
-      "avg_loss_usdt": -0.81
+      "avg_loss_usdt": -0.83
     }
   },
   "tama_config": {
@@ -7083,6 +7060,10 @@
     {
       "ts": "2026-08-28T15:15:51.765404+00:00",
       "idx": 74.74
+    },
+    {
+      "ts": "2026-08-28T16:15:55.345670+00:00",
+      "idx": 74.02
     }
   ],
   "trades_public": [
@@ -7638,6 +7619,20 @@
       "strat": "TL",
       "dir": "LONG",
       "r": -1.047
+    },
+    {
+      "ts": "2026-08-28T15:42:44.903129+00:00",
+      "sym": "BTC-USDT",
+      "strat": "TL",
+      "dir": "LONG",
+      "r": -1.098
+    },
+    {
+      "ts": "2026-08-28T16:03:38.079224+00:00",
+      "sym": "ETH-USDT",
+      "strat": "TL",
+      "dir": "LONG",
+      "r": -1.092
     }
   ],
   "self_upgrades": [
