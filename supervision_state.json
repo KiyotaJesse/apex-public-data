@@ -1,11 +1,23 @@
 {
- "ts": "2026-08-28T09:05:02+00:00",
- "total": 44,
+ "ts": "2026-08-28T10:05:01+00:00",
+ "total": 45,
  "ok": 43,
- "bad": 0,
+ "bad": 1,
  "pending": 1,
- "need_you": 2,
+ "need_you": 4,
  "items": [
+  {
+   "id": "queen_weight",
+   "name": "蟻丘蟻后體重更新器",
+   "carrier": "local",
+   "group": "展示",
+   "purpose": "每日查BingX權益算指數, 更新蟻丘頁蟻后體型並推GitHub Pages(只推指數不推金額)",
+   "cadence": "每日 08:10",
+   "state": "error",
+   "detail": "未知 status_kind: local_file",
+   "last": null,
+   "next": null
+  },
   {
    "id": "d_loop",
    "name": "D 主迴圈(交易大腦)",
@@ -15,7 +27,7 @@
    "cadence": "60 秒",
    "state": "ok",
    "detail": "1 分鐘前",
-   "last": "2026-08-28T09:03:58Z",
+   "last": "2026-08-28T10:04:06Z",
    "next": null
   },
   {
@@ -27,7 +39,7 @@
    "cadence": "連續",
    "state": "ok",
    "detail": "7 分鐘前",
-   "last": "2026-08-28T08:57:42Z",
+   "last": "2026-08-28T09:57:52Z",
    "next": null
   },
   {
@@ -38,7 +50,7 @@
    "purpose": "交易系統本體在不在線",
    "cadence": "常駐",
    "state": "ok",
-   "detail": "live(18.8 小時前部署)",
+   "detail": "live(19.8 小時前部署)",
    "last": "2026-08-27T14:14:20.54773Z",
    "next": null
   },
@@ -50,7 +62,7 @@
    "purpose": "總指揮本體在不在線",
    "cadence": "常駐",
    "state": "ok",
-   "detail": "live(18.9 小時前部署)",
+   "detail": "live(19.9 小時前部署)",
    "last": "2026-08-27T14:13:59.764461Z",
    "next": null
   },
@@ -62,8 +74,8 @@
    "purpose": "每日盤口深度與未平倉量原始資料, T3 滑價防護與未來研究的原料",
    "cadence": "每日一檔",
    "state": "ok",
-   "detail": "最新檔 README_DATA_QUALITY.md(30 分鐘前寫入)",
-   "last": "2026-08-28T08:35:20Z",
+   "detail": "最新檔 README_DATA_QUALITY.md(29 分鐘前寫入)",
+   "last": "2026-08-28T09:36:21Z",
    "next": null
   },
   {
@@ -74,7 +86,7 @@
    "purpose": "同源 K 線庫(T1): 讓回測與實盤吃同一份資料",
    "cadence": "每日一檔",
    "state": "ok",
-   "detail": "最新檔 2026-08-27.json(10.7 小時前寫入)",
+   "detail": "最新檔 2026-08-27.json(11.7 小時前寫入)",
    "last": "2026-08-27T22:20:30Z",
    "next": null
   },
@@ -86,7 +98,7 @@
    "purpose": "同源 K 線庫(T1) 4 小時級別",
    "cadence": "每日一檔",
    "state": "ok",
-   "detail": "最新檔 2026-08-27.json(10.7 小時前寫入)",
+   "detail": "最新檔 2026-08-27.json(11.7 小時前寫入)",
    "last": "2026-08-27T22:20:56Z",
    "next": null
   },
@@ -99,7 +111,7 @@
    "cadence": "隨 config 變更 + 定期",
    "state": "ok",
    "detail": "46 分鐘前",
-   "last": "2026-08-28T08:18:33Z",
+   "last": "2026-08-28T09:18:44Z",
    "next": null
   },
   {
@@ -122,7 +134,7 @@
    "purpose": "每天早上的總體情勢與績效",
    "cadence": "每日 08:30",
    "state": "ok",
-   "detail": "8.5 小時前",
+   "detail": "9.5 小時前",
    "last": "2026-08-28T00:34:38.901331+00:00",
    "next": null
   },
@@ -134,7 +146,7 @@
    "purpose": "自動巡查系統異常並立案, 產出待裁決案件",
    "cadence": "每日 09:00",
    "state": "ok",
-   "detail": "8.0 小時前",
+   "detail": "9.0 小時前",
    "last": "2026-08-28T01:04:41.924421+00:00",
    "next": null
   },
@@ -146,7 +158,7 @@
    "purpose": "自動比較現役策略與挑戰者參數, 決定要不要換將",
    "cadence": "每日",
    "state": "ok",
-   "detail": "7.0 小時前",
+   "detail": "8.0 小時前",
    "last": "2026-08-28T02:04:46.996459+00:00",
    "next": null
   },
@@ -158,7 +170,7 @@
    "purpose": "依績效自動升降風險檔位",
    "cadence": "每日",
    "state": "ok",
-   "detail": "7.3 小時前",
+   "detail": "8.3 小時前",
    "last": "2026-08-28T01:44:44.750071+00:00",
    "next": null
   },
@@ -170,7 +182,7 @@
    "purpose": "查本機日檢出勤卡新鮮度; 電腦關機時的第三方見證",
    "cadence": "每日 10:30",
    "state": "ok",
-   "detail": "6.5 小時前",
+   "detail": "7.5 小時前",
    "last": "2026-08-28T02:34:48.952358+00:00",
    "next": null
   },
@@ -182,7 +194,7 @@
    "purpose": "把交易與事件蒸餾成長期記憶",
    "cadence": "每日 23:00",
    "state": "ok",
-   "detail": "18.0 小時前",
+   "detail": "19.0 小時前",
    "last": "2026-08-27T15:04:35.008351+00:00",
    "next": null
   },
@@ -206,7 +218,7 @@
    "purpose": "自動掃描程式碼缺陷並提出建議(預設只建議不套用)",
    "cadence": "每週一 09:15",
    "state": "ok",
-   "detail": "4.3 天前",
+   "detail": "4.4 天前",
    "last": "2026-08-24T01:17:40.162018+00:00",
    "next": null
   },
@@ -242,7 +254,7 @@
    "purpose": "8/10 盤口滿月提醒; 本機版的雲端平行備援",
    "cadence": "單次 2026-08-10 09:00",
    "state": "ok",
-   "detail": "18.3 天前",
+   "detail": "18.4 天前",
    "last": "2026-08-10T01:02:40.480976+00:00",
    "next": null
   },
@@ -254,7 +266,7 @@
    "purpose": "18 項防線證據日檢 + 出勤打卡到雲端",
    "cadence": "每日 08:50",
    "state": "ok",
-   "detail": "8.3 小時前",
+   "detail": "9.3 小時前",
    "last": "2026-08-28T00:50:01",
    "next": "2026-08-29T00:50:00"
   },
@@ -267,8 +279,8 @@
    "cadence": "每小時",
    "state": "ok",
    "detail": "0 分鐘前",
-   "last": "2026-08-28T09:05:02",
-   "next": "2026-08-28T10:05:00"
+   "last": "2026-08-28T10:05:01",
+   "next": "2026-08-28T11:05:00"
   },
   {
    "id": "task_livediag",
@@ -279,8 +291,8 @@
    "cadence": "每小時",
    "state": "ok",
    "detail": "5 分鐘前",
-   "last": "2026-08-28T09:00:01",
-   "next": "2026-08-28T10:00:00"
+   "last": "2026-08-28T10:00:01",
+   "next": "2026-08-28T11:00:00"
   },
   {
    "id": "task_scanner",
@@ -291,8 +303,8 @@
    "cadence": "每 15 分鐘",
    "state": "ok",
    "detail": "12 分鐘前",
-   "last": "2026-08-28T08:52:40",
-   "next": "2026-08-28T09:07:39"
+   "last": "2026-08-28T09:52:40",
+   "next": "2026-08-28T10:07:39"
   },
   {
    "id": "task_weekly_opt",
@@ -339,8 +351,8 @@
    "cadence": "每小時",
    "state": "ok",
    "detail": "45 分鐘前",
-   "last": "2026-08-28T08:20:01",
-   "next": "2026-08-28T09:20:00"
+   "last": "2026-08-28T09:20:01",
+   "next": "2026-08-28T10:20:00"
   },
   {
    "id": "task_throne_intel",
@@ -350,7 +362,7 @@
    "purpose": "每日情報蒐集(王座/情報院)",
    "cadence": "每日 09:05",
    "state": "ok",
-   "detail": "8.0 小時前",
+   "detail": "9.0 小時前",
    "last": "2026-08-28T01:05:01",
    "next": "2026-08-29T01:05:00"
   },
@@ -362,7 +374,7 @@
    "purpose": "每月 5-15 日盯營收公告",
    "cadence": "每日 09:30 +每 3 小時",
    "state": "ok",
-   "detail": "1.6 小時前",
+   "detail": "2.6 小時前",
    "last": "2026-08-28T07:30:02",
    "next": "2026-08-28T10:30:00"
   },
@@ -374,7 +386,7 @@
    "purpose": "一詮2486每日五訊號盯盤(268突破/250回測/233破壞/外資回補/融資接刀), 2026-08-28建, 取代已死的雲端routine",
    "cadence": "平日 21:45 +隔晨 08:40 補跑",
    "state": "ok",
-   "detail": "8.4 小時前",
+   "detail": "9.4 小時前",
    "last": "2026-08-28T00:40:00",
    "next": "2026-08-28T13:45:00"
   },
@@ -386,7 +398,7 @@
    "purpose": "每次推 master 跑決策層回歸測試",
    "cadence": "每次 push",
    "state": "ok",
-   "detail": "success(18.9 小時前)",
+   "detail": "success(19.9 小時前)",
    "last": "2026-08-27T14:12:41Z",
    "next": null
   },
@@ -398,7 +410,7 @@
    "purpose": "apex-commander 每次推 master 跑 39 項決策層回歸測試",
    "cadence": "每次 push",
    "state": "ok",
-   "detail": "success(7.9 小時前)",
+   "detail": "success(8.9 小時前)",
    "last": "2026-08-28T01:09:19Z",
    "next": null
   },
@@ -410,7 +422,7 @@
    "purpose": "apex-commander 推送前置檢查",
    "cadence": "每次 push",
    "state": "ok",
-   "detail": "success(18.9 小時前)",
+   "detail": "success(19.9 小時前)",
    "last": "2026-08-27T14:12:38Z",
    "next": null
   },
@@ -422,7 +434,7 @@
    "purpose": "每日抓 Binance 逐筆成交壓成 5m 微結構特徵(機器自學主力的原料庫)",
    "cadence": "每日 09:10",
    "state": "ok",
-   "detail": "7.9 小時前",
+   "detail": "8.9 小時前",
    "last": "2026-08-28T01:10:01",
    "next": "2026-08-29T01:10:00"
   },
@@ -446,7 +458,7 @@
    "purpose": "每日檢查, 距上次>=pool.review_days(旋鈕預設3天)才重審; 產 pool_tiers.json 給 D 端交易池與研究端共用",
    "cadence": "每日 09:20",
    "state": "ok",
-   "detail": "7.8 小時前",
+   "detail": "8.8 小時前",
    "last": "2026-08-28T01:20:01",
    "next": "2026-08-29T01:20:00"
   },
@@ -495,8 +507,8 @@
    "cadence": "每小時 :35",
    "state": "ok",
    "detail": "30 分鐘前",
-   "last": "2026-08-28T08:35:01",
-   "next": "2026-08-28T09:35:00"
+   "last": "2026-08-28T09:35:01",
+   "next": "2026-08-28T10:35:00"
   },
   {
    "id": "task_btc_bottom_watch",
@@ -507,8 +519,8 @@
    "cadence": "每小時 :05",
    "state": "ok",
    "detail": "0 分鐘前",
-   "last": "2026-08-28T09:05:02",
-   "next": "2026-08-28T10:05:00"
+   "last": "2026-08-28T10:05:01",
+   "next": "2026-08-28T11:05:00"
   },
   {
    "id": "task_venture_coach",
@@ -518,7 +530,7 @@
    "purpose": "開公司這件事有沒有停下來; 週一推進度、期限逼近或階段停滯 14 天才叫, 其餘靜默。專案獨立於 claude-assistant, 只在此掛號",
    "cadence": "每日 09:10",
    "state": "ok",
-   "detail": "7.9 小時前",
+   "detail": "8.9 小時前",
    "last": "2026-08-28T01:10:00",
    "next": "2026-08-29T01:10:00"
   },
@@ -530,12 +542,14 @@
    "purpose": "盯 2026-08-27 TP5R 切換後的 TL 實彈; 8筆失血提前叫/15-25-40筆里程碑判定綠黃紅; 紅燈附 revert 一鍵; 防回測-實彈落差(TL 前科 -0.63R)重演",
    "cadence": "每日 21:05",
    "state": "ok",
-   "detail": "17.6 小時前",
+   "detail": "18.6 小時前",
    "last": "2026-08-27T15:26:31",
    "next": "2026-08-28T13:05:00"
   }
  ],
- "unregistered": [],
+ "unregistered": [
+  "本機排程未列管: APEX_QueenWeight"
+ ],
  "decisions": [
   {
    "source": "LAPD 案件簿",
@@ -547,13 +561,13 @@
   {
    "id": "task_walkforward",
    "name": "月度 walk-forward",
-   "age_h": 97.8,
+   "age_h": 98.8,
    "summary": "TL 近季 -0.20R [NEGATIVE] · B1 近季 +0.25R [OK]"
   },
   {
    "id": "task_fleet",
    "name": "變體艦隊",
-   "age_h": 49.7,
+   "age_h": 50.7,
    "summary": "冠軍 b1_atrr11_volr15 全期 +0.47R / 近季 +0.54R (n=162 勝率 57.4%)  共 24 變體"
   },
   {
@@ -565,19 +579,19 @@
   {
    "id": "task_nc_scan",
    "name": "非加密資格鏈重掃",
-   "age_h": 120.8,
+   "age_h": 121.8,
    "summary": "非加密 7 檔掃 768 組合, 過關 0 個 (成本僅約7bps但無優勢)"
   },
   {
    "id": "task_pattern_fleet",
    "name": "型態艦隊(手繪四條件前進追蹤)",
-   "age_h": 17.3,
+   "age_h": 18.3,
    "summary": "見結果檔"
   },
   {
    "id": "task_tl_acceptance",
    "name": "TL 出場升級驗收哨兵",
-   "age_h": 16.8,
+   "age_h": 17.8,
    "summary": "見結果檔"
   }
  ],
