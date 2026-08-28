@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-28T21:19:27.387528+08:00",
+  "generated_at": "2026-08-28T22:19:38.745817+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -997,7 +997,7 @@
         "closed_ts": "2026-08-13T02:53:38.313134+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-28T13:19:05.781459+00:00",
+    "last_cycle_ts": "2026-08-28T14:18:33.381936+00:00",
     "stats": {
       "n": 32,
       "win_rate_pct": 31.2,
@@ -1010,7 +1010,7 @@
   "risk_circuit_breaker": {
     "killswitch": false,
     "daily_loss_limit_hit": false,
-    "daily_pnl_usdt": -0.3294,
+    "daily_pnl_usdt": -2.3826,
     "daily_pnl_date": "2026-08-28"
   },
   "feature_flags": {
@@ -1039,42 +1039,19 @@
         "highest": 2516.19,
         "lowest": 2498.44,
         "breakeven_done": false,
-        "bars_elapsed": 17,
-        "last_checked_time": "2026-08-28 13:00:00",
+        "bars_elapsed": 18,
+        "last_checked_time": "2026-08-28 14:00:00",
         "notion_page_id": "3c90a137-4574-81d3-aeeb-d3581157ef8f"
-      },
-      {
-        "id": "strattl_XRPUSDT_1787886014",
-        "symbol": "XRP-USDT",
-        "direction": "LONG",
-        "entry": 1.4328,
-        "sl_price": 1.4011285714285715,
-        "tp_price": 1.5911571428571427,
-        "sl_dist": 0.03167142857142857,
-        "qty": 59.0,
-        "max_hold_h": 48,
-        "strategy": "TL",
-        "fill_price": 1.4328,
-        "sig_key": "tl_XRP-USDT_2026-08-28 03:00:00",
-        "leverage": 29,
-        "sl_order_id": "2093171821595164672",
-        "opened_ts": "2026-08-28T03:00:25.977048+00:00",
-        "highest": 1.4328,
-        "lowest": 1.4328,
-        "breakeven_done": false,
-        "bars_elapsed": 10,
-        "last_checked_time": "2026-08-28 13:00:00",
-        "notion_page_id": "3ca0a137-4574-81d5-baf7-d9f94e52dd84"
       }
     ],
-    "last_cycle_ts": "2026-08-28T13:18:28.589798+00:00",
+    "last_cycle_ts": "2026-08-28T14:19:09.386364+00:00",
     "stats": {
-      "n": 45,
-      "win_rate_pct": 15.6,
-      "ev_r": -0.349,
-      "total_pnl_usdt": -15.72,
+      "n": 46,
+      "win_rate_pct": 15.2,
+      "ev_r": -0.367,
+      "total_pnl_usdt": -16.86,
       "avg_win_usdt": 2.08,
-      "avg_loss_usdt": -0.8
+      "avg_loss_usdt": -0.81
     }
   },
   "tama_config": {
@@ -7075,6 +7052,10 @@
     {
       "ts": "2026-08-28T13:15:48.438244+00:00",
       "idx": 75.08
+    },
+    {
+      "ts": "2026-08-28T14:15:51.134639+00:00",
+      "idx": 74.69
     }
   ],
   "trades_public": [
@@ -7616,6 +7597,13 @@
       "strat": "TL",
       "dir": "LONG",
       "r": -1.062
+    },
+    {
+      "ts": "2026-08-28T14:04:30.442482+00:00",
+      "sym": "XRP-USDT",
+      "strat": "TL",
+      "dir": "LONG",
+      "r": -1.144
     }
   ],
   "self_upgrades": [
