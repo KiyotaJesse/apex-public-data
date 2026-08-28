@@ -34,12 +34,14 @@
   canvas{display:block;width:100%;height:auto}
 
   .note{
-    position:absolute;width:min(300px,27%);
+    position:absolute;width:min(230px,18.5%);
     background:#EDE3CC;color:#3A2E1C;
-    padding:14px 16px 12px;font-size:14.5px;line-height:1.75;
+    padding:12px 14px 10px;font-size:13.5px;line-height:1.7;
     box-shadow:0 6px 18px rgba(0,0,0,.55);
     border-radius:1px;
+    transition:opacity .25s;
   }
+  .note:hover{opacity:.08}  /* 筆記擋到螞蟻時,滑上去就讓路 */
   .note::before{ /* 膠帶 */
     content:"";position:absolute;top:-9px;left:50%;transform:translateX(-50%) rotate(-2deg);
     width:64px;height:18px;background:rgba(217,180,110,.4);
@@ -50,7 +52,7 @@
     color:#8A6B3A;display:block;margin-bottom:5px;
   }
   .note.torn{clip-path:polygon(0 0,100% 0,100% 96%,94% 100%,88% 97%,70% 100%,52% 97%,30% 100%,12% 97%,0 100%)}
-  @media (max-width:760px){ .note{font-size:12px;width:34%;padding:10px 11px;line-height:1.6} }
+  @media (max-width:760px){ .note{font-size:11px;width:30%;padding:8px 9px;line-height:1.55} }
 
   footer{
     max-width:820px;margin:0 auto;padding:56px 24px 90px;
@@ -70,53 +72,54 @@
     本巢建於二〇二六年春。無中央大腦,靠<em>費洛蒙</em>行事——Telegram 推播、log、每六十秒揮發重讀的 config。
     以下剖面由淺入深,是實地觀察,不是想像圖:每一隻蟻都有程式實體,每一道疤都有事故日期,
     最深處的空房,是這座巢還沒長出來的部分。往下捲,就是往下挖。
+    蟻群名單每天清晨由監督台名冊自動重編——巢裡新增了什麼,隔天就多一隻蟻。筆記擋到螞蟻時,滑上去它會讓路。
   </p>
 </header>
 
 <div class="dig" id="dig">
   <canvas id="nest" width="1200" height="3000"></canvas>
 
-  <div class="note torn" style="left:2.5%;top:6.5%">
+  <div class="note torn" style="left:1%;top:6.5%">
     <span class="d">深度 0m · 巢口</span>
     整座巢只認一支手機的氣味。別的 Chat ID 來的費洛蒙,一律靜默忽略——這是巢規,不是禮貌。
   </div>
 
-  <div class="note" style="right:3%;top:11.5%;transform:rotate(.6deg)">
+  <div class="note" style="right:1%;top:10%;transform:rotate(.6deg)">
     <span class="d">深度 -0.4m · 女王室</span>
     這裡的女王不產卵,她產命令。真正產卵的是深處的選礦機——每小時一顆,絕大多數孵不出來。能孵出來的,要先過五道關,再過一道「血緣打臉關」。
   </div>
 
-  <div class="note torn" style="left:2%;top:24%;transform:rotate(-.8deg)">
+  <div class="note torn" style="left:1%;top:23.5%;transform:rotate(-.8deg)">
     <span class="d">深度 -1m · 工蟻房</span>
     覓食隊誠實紀錄:近三個月搬回 <b>−323 單位</b>的食物。真正撐住巢的,是一隻不在編制內的手動大螞蟻。角落蜷著的那隻沒有死——她在等冬天,多頭的天氣裡她的門全是關的。
   </div>
 
-  <div class="note" style="right:2.5%;top:20.5%;transform:rotate(-.5deg)">
+  <div class="note" style="right:1%;top:19.5%;transform:rotate(-.5deg)">
     <span class="d">06-29 · 醫護室</span>
     醫護蟻有前科:曾把兩個主檔整口咬掉。自那天起她只准隔著玻璃開藥單——只建議,不動手。四道牆,是那次留下的。
   </div>
 
-  <div class="note torn" style="left:33%;top:30.5%;transform:rotate(.4deg)">
+  <div class="note torn" style="left:1%;top:30%;transform:rotate(.4deg)">
     <span class="d">07-05 · 塌方修補處</span>
     巢災。FIL 房整間塌掉——爆倉線比我們以為的近得多,五十倍槓桿下,牆薄得只剩百分之一點五。此處的加固樑,就是那一夜補上的。
   </div>
 
-  <div class="note" style="right:4%;top:34%;transform:rotate(.7deg)">
+  <div class="note" style="right:1%;top:34.5%;transform:rotate(.7deg)">
     <span class="d">08-24 · 封死的暗房</span>
     幽靈倉。一隻沒登記的螞蟻——九十顆、五十倍——在名冊外活了四天,卡死整條隧道。自此查倉直接開燈看交易所,不信帳本。
   </div>
 
-  <div class="note torn" style="left:3%;top:41.5%;transform:rotate(-.6deg)">
+  <div class="note torn" style="left:1%;top:41.5%;transform:rotate(-.6deg)">
     <span class="d">深度 -1.8m · 真菌園</span>
     全巢最值錢的一間。食物會吃完,菌絲不會:事故、裁決、教訓,每天由搬運蟻運下來接種。再往下是檔案館,防的是同一件事——重挖已經挖過的土。
   </div>
 
-  <div class="note" style="right:3.5%;top:49.5%;transform:rotate(.5deg)">
+  <div class="note" style="right:1%;top:50.5%;transform:rotate(.5deg)">
     <span class="d">深度 -2.4m · 墳場</span>
     每一塊碑都是自己人立的。真蟻群靠費洛蒙揮發忘掉壞路徑;本巢靠這裡。忘記壞路徑的能力,比找到好路徑的能力貴——這是四季觀察下來,最確定的一條。
   </div>
 
-  <div class="note torn" style="left:4%;top:63%;transform:rotate(-.4deg)">
+  <div class="note torn" style="left:1%;top:63%;transform:rotate(-.4deg)">
     <span class="d">深度 -3m · 掘進面</span>
     巢還在往下長。偵察蟻晝夜輪班,每小時回報一次;三千七百餘個座標,大多是空土。下方几間房已經放樣,還沒住蟻——這座巢蓋房子從來不是為了現在。
   </div>
@@ -124,16 +127,17 @@
 
 <footer>
   <p>
-    觀察至此。剖面所繪均有實體:覓食蟻四、冬眠蟻一、偵察蟻三、兵蟻三、醫護蟻一、搬運蟻三;
-    墓碑十座,預留巢室四間。下一季的誌,會從掘進面接著寫。
+    觀察至此。剖面所繪均有實體,每隻蟻頭上掛著牠的程式名牌;蟻群名單與墓碑每天清晨由監督台名冊自動重編,
+    此後巢裡添了什麼、退役了什麼,這頁自己會長。下一季的誌,會從掘進面接著寫。
   </p>
   <div class="sig">RECORDED BY J. · RENDERED LIVE · 2026-08-28</div>
 </footer>
 
 <script>
 (() => {
-  // 蟻后體重:帳戶權益相對基準日的指數(100=基準)。每日由排程自動更新此行。
-  const QUEEN_WEIGHT={idx:100,asOf:'08-28'};//QW-MARKER
+  // 巢況資料:每日清晨由排程從監督台名冊+D端config自動重編此行。
+  // idx=帳戶權益指數(100=基準日) strategies=覓食蟻(on=false蜷著睡) groups=各群工蟻 retired=新墓碑
+  const NEST_DATA={"idx":100,"asOf":"08-28","strategies":[{"n":"B1","on":true},{"n":"TL","on":true},{"n":"RS","on":false},{"n":"SC1","on":true},{"n":"MRS","on":true},{"n":"AUTO×2","on":true}],"groups":{"展示":["蟻丘畫師"],"監控":["A迴圈"],"資料蒐集":["盤口OI","1H K線","4H K線","控制台快照","形態庫","幣池分層"],"例行報告":["晨報","LTM蒸餾","績效週報","月報","週日覆盤","OBI提醒"],"自我稽核":["LAPD","本機查勤","E稽核","驗證網","監督台"],"自適應決策":["L1換將","L2風險檔"],"研究":["LiveDiag","Scanner","週度優化","walk-fwd","變體艦隊","選礦機","非加密掃描","型態艦隊","極值盯盤","抄底盯盤"],"王座":["情報院","營收盯哨","2486哨兵"],"資料地基":["訂單流","盤口熟成","幣池重審"],"創業":["創業推播"],"風控":["TL驗收哨兵"]},"retired":["OBI提醒","雲端scanner","Jarvis"]};//NEST-MARKER
   const cv = document.getElementById('nest');
   const W = 1200, H = 3000;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -224,27 +228,51 @@
     sleeper:{s:1.35,color:'#7A6A50',dark:'#4A4030',gk:1.15,hk:1,mand:.8,antn:1,  leg:1,   stripes:2, folded:true},
   };
   // 蟻后隨帳戶肥瘦:立方根縮放(漲跌都看得出來但不會爆表),上下限保護
-  CASTES.queen.s = Math.min(4.6, Math.max(1.5, 2.7*Math.cbrt(Math.max(1,QUEEN_WEIGHT.idx)/100)));
+  CASTES.queen.s = Math.min(4.6, Math.max(1.5, 2.7*Math.cbrt(Math.max(1,NEST_DATA.idx)/100)));
   function mkAnt(route,caste,speed,opt={}){
     return {route,caste,speed,t:rnd(),dir:1,jig:rnd()*7,...opt};
   }
-  const ants=[
-    mkAnt(T.workersForage,'forager',.0016,{forager:true,luck:.25}),
-    mkAnt(T.workersForage,'forager',.0012,{forager:true,luck:.25}),
-    mkAnt(T.workersForage,'forager',.0019,{forager:true,luck:.25}),
-    mkAnt(T.workersForage,'forager',.0010,{forager:true,luck:.25}),
-    mkAnt(T.entryQueen,'forager',.0022),
-    mkAnt(seg(T.queenGuard,rev(T.queenGuard)),'guard',.0021),
-    mkAnt(seg(rev(T.queenWorkers),T.queenWorkers),'guard',.0016),
-    mkAnt(seg(T.workersMedic,rev(T.workersMedic)),'guard',.0018),
-    mkAnt(T.workersMedic,'medic',.0011),
-    mkAnt(T.workersMemory,'carrier',.0009,{carrier:true}),
-    mkAnt(T.queenMemory,'carrier',.0011,{carrier:true}),
-    mkAnt(T.memoryArchive,'carrier',.0008,{carrier:true}),
-    mkAnt(T.memoryFront,'scout',.0013),
-    mkAnt(seg(T.memoryFront,T.frontGrave),'scout',.0010),
-    mkAnt(T.frontA,'scout',.0016),
-  ];
+
+  // ---- 蟻群自動生成:名單來自 NEST_DATA,新功能登記名冊後隔天自動長出一隻蟻 ----
+  const G = NEST_DATA.groups||{};
+  const pick=(arr,i)=>arr[i%arr.length];
+  const ants=[], sleepers=[];
+  // 覓食蟻:現役策略(關閉的蜷在工蟻房睡)
+  const F_SPD=[.0016,.0012,.0019,.0010,.0014,.0018];
+  (NEST_DATA.strategies||[]).forEach((st,i)=>{
+    if(st.on) ants.push(mkAnt(T.workersForage,'forager',pick(F_SPD,i),{forager:true,luck:.25,label:st.n}));
+    else sleepers.push(st.n);
+  });
+  // 偵察蟻:研究群 → 掘進面各隧道輪派(含往墳場丟棄失敗樣本的那條)
+  const SCOUT_ROUTES=[T.memoryFront,seg(T.memoryFront,T.frontGrave),T.frontA,T.frontB,T.frontC];
+  (G['研究']||[]).forEach((n,i)=>
+    ants.push(mkAnt(pick(SCOUT_ROUTES,i),'scout',.0010+.0002*(i%5),{label:n})));
+  // 兵蟻:監控+稽核+風控 巡邏環線(E系列歸醫護)
+  const GUARD_ROUTES=[seg(T.queenGuard,rev(T.queenGuard)),seg(rev(T.queenWorkers),T.queenWorkers),
+                      seg(T.medicGhost,rev(T.medicGhost)),seg(T.workersMemory,rev(T.workersMemory))];
+  let gi=0;
+  [...(G['監控']||[]),...(G['自我稽核']||[]),...(G['風控']||[])].forEach(n=>{
+    if(/E稽核|偵錯/.test(n)) ants.push(mkAnt(T.workersMedic,'medic',.0011,{label:n}));
+    else ants.push(mkAnt(pick(GUARD_ROUTES,gi++),'guard',.0015+.0002*(gi%4),{label:n}));
+  });
+  // 搬運蟻:資料蒐集+資料地基+展示 → 真菌園/檔案館路線
+  const CARRY_ROUTES=[T.workersMemory,T.queenMemory,T.memoryArchive,T.memoryGrave];
+  let ci=0;
+  [...(G['資料蒐集']||[]),...(G['資料地基']||[]),...(G['展示']||[])].forEach(n=>
+    ants.push(mkAnt(pick(CARRY_ROUTES,ci++),'carrier',.0008+.00015*(ci%4),{carrier:true,label:n})));
+  // 信使蟻:例行報告 → 女王室與巢口之間送信(往地表送給 Jesse)
+  (G['例行報告']||[]).forEach((n,i)=>
+    ants.push(mkAnt(seg(rev(T.entryQueen),T.entryQueen),'forager',.0018+.0002*(i%3),{carrier:true,label:n})));
+  // 決策蟻:自適應決策 → 繞著蟻后打轉(orbit 於 frame 內另畫)
+  const orbiters=(G['自適應決策']||[]).map((n,i)=>({label:n,off:i*Math.PI}));
+  // 地表分巢:王座(股票)與創業 → 在地面上放牧
+  const surface=[...(G['王座']||[]).map(n=>({n,grp:'王座'})),...(G['創業']||[]).map(n=>({n,grp:'創業'}))];
+  const SURF=[[130,GROUND-6],[320,GROUND-6]];
+  surface.forEach((s,i)=>{
+    const a=SURF[0],b=SURF[1];
+    const pts=[];for(let k=0;k<=20;k++){const t=k/20;pts.push([a[0]+(b[0]-a[0])*t,a[1]]);}
+    ants.push(mkAnt(pts,'scout',.0012+.0003*(i%3),{label:s.n}));
+  });
 
   // ---- 手繪感的腔室輪廓 ----
   function blobPath(ctx,cx,cy,rx,ry,seed){
@@ -467,15 +495,20 @@
       ctx.textAlign='center';ctx.fillText('08-24 已封',g.x,g.y+48);ctx.textAlign='left';
     }
 
-    // 冬眠蟻的鼾聲(蟻本體改在動態層畫)
-    ctx.fillStyle='#7A6A50';ctx.font='12px "IBM Plex Mono",monospace';
-    ctx.fillText('z z',P.workers.x-88,P.workers.y+2);
+    // 地表分巢(王座/創業:不住這座巢,在地面放牧)
+    ctx.fillStyle='#2A2014';
+    ctx.beginPath();ctx.moveTo(110,GROUND);
+    ctx.quadraticCurveTo(225,GROUND-34,340,GROUND);ctx.closePath();ctx.fill();
+    ctx.strokeStyle='#4A3826';ctx.lineWidth=1.4;
+    ctx.beginPath();ctx.moveTo(110,GROUND);ctx.quadraticCurveTo(225,GROUND-34,340,GROUND);ctx.stroke();
+    ctx.fillStyle='#8F7E62';ctx.font='11px "IBM Plex Mono",monospace';
+    ctx.fillText('分巢(股票/創業)',168,GROUND-38);
 
-    // 墳場墓碑(真實名單)
-    const tombs=['OB','RS','Z訓練器','VB','時鐘','莊家4式','強平瀑布','EMA20','關鍵位','自動YT'];
+    // 墳場墓碑(基本名單+名冊裡新退役的自動立碑)
+    const tombs=['OB','RS','Z訓練器','VB','時鐘','莊家4式','強平瀑布','EMA20','關鍵位','自動YT',...(NEST_DATA.retired||[])];
     ctx.font='500 9px "IBM Plex Mono",monospace';
     tombs.forEach((t,i)=>{
-      const tx=P.grave.x-106+(i%5)*47, ty=P.grave.y-22+Math.floor(i/5)*34;
+      const tx=P.grave.x-106+(i%5)*47, ty=P.grave.y-32+Math.floor(i/5)*34;
       ctx.fillStyle='#4A3826';
       ctx.beginPath();
       ctx.moveTo(tx,ty+12);ctx.lineTo(tx,ty+2);
@@ -523,7 +556,7 @@
     // 蟻后體檢卡:只給指數,不給金額(巢規)
     ctx.textAlign='center';
     ctx.fillStyle='#B78A45';ctx.font='500 10px "IBM Plex Mono",monospace';
-    ctx.fillText('后體重指數 '+QUEEN_WEIGHT.idx+' · 量於 '+QUEEN_WEIGHT.asOf,P.queen.x,P.queen.y-CASTES.queen.s*10-16);
+    ctx.fillText('后體重指數 '+NEST_DATA.idx+' · 量於 '+NEST_DATA.asOf,P.queen.x,P.queen.y-CASTES.queen.s*10-16);
     ctx.textAlign='left';
 
     // 深度尺
@@ -568,8 +601,24 @@
     }
     // 蟻后(APEX-A):原地小幅轉頭、觸鬚輕擺
     drawAnt(ctx,P.queen.x,P.queen.y-4,-.12+(reduced?0:Math.sin(time*.0007)*.06),reduced?0:time*.004,CASTES.queen);
-    // 冬眠的 SC1:收足垂鬚
-    drawAnt(ctx,P.workers.x-70,P.workers.y+26,2.5,0,CASTES.sleeper);
+    // 冬眠蟻:被關掉的策略蜷在工蟻房睡(名單來自 NEST_DATA)
+    ctx.font='12px "IBM Plex Mono",monospace';
+    sleepers.forEach((n,i)=>{
+      const sx=P.workers.x-72+i*46, sy=P.workers.y+30;
+      drawAnt(ctx,sx,sy,2.5,0,CASTES.sleeper);
+      ctx.fillStyle='#7A6A50';
+      ctx.fillText('z z',sx-16,sy-16);
+      ctx.textAlign='center';ctx.font='9px "IBM Plex Mono",monospace';
+      ctx.fillText(n,sx,sy+18);ctx.textAlign='left';ctx.font='12px "IBM Plex Mono",monospace';
+    });
+    // 決策蟻(L1/L2):繞著蟻后打轉
+    orbiters.forEach(o=>{
+      const a=(reduced?o.off:time*.0004+o.off);
+      const ox=P.queen.x+Math.cos(a)*(96+CASTES.queen.s*8), oy=P.queen.y+Math.sin(a)*(50+CASTES.queen.s*5);
+      drawAnt(ctx,ox,oy,a+Math.PI/2,reduced?0:time*.022,CASTES.forager);
+      ctx.textAlign='center';ctx.fillStyle='rgba(230,214,184,.5)';ctx.font='9px "IBM Plex Mono",monospace';
+      ctx.fillText(o.label,ox,oy-14);ctx.textAlign='left';
+    });
     // 蟻群
     for(const a of ants){
       a.t+=a.speed*a.dir*(reduced?0:1);
@@ -585,6 +634,12 @@
       x+=Math.cos(ang+Math.PI/2)*wob;y+=Math.sin(ang+Math.PI/2)*wob;
       const c=CASTES[a.caste];
       drawAnt(ctx,x,y,ang,reduced?0:time*.022+a.jig*3,c);
+      // 名牌:每隻蟻是哪支程式,一眼認出
+      if(a.label){
+        ctx.textAlign='center';ctx.fillStyle='rgba(230,214,184,.5)';
+        ctx.font='9px "IBM Plex Mono",monospace';
+        ctx.fillText(a.label,x,y-13);ctx.textAlign='left';
+      }
       // 覓食蟻叼回的食物(咬在大顎上)
       if(a.forager&&a.dir<0&&a.has){
         ctx.fillStyle='#5E7A4A';
