@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-28T10:17:18.531017+08:00",
+  "generated_at": "2026-08-28T11:17:30.556748+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -997,7 +997,7 @@
         "closed_ts": "2026-08-13T02:53:38.313134+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-28T02:14:51.530021+00:00",
+    "last_cycle_ts": "2026-08-28T03:12:33.810636+00:00",
     "stats": {
       "n": 32,
       "win_rate_pct": 31.2,
@@ -1010,7 +1010,7 @@
   "risk_circuit_breaker": {
     "killswitch": false,
     "daily_loss_limit_hit": false,
-    "daily_pnl_usdt": 0.0,
+    "daily_pnl_usdt": -0.3294,
     "daily_pnl_date": "2026-08-28"
   },
   "feature_flags": {
@@ -1020,29 +1020,6 @@
   "strat_tl": {
     "mode": "live",
     "open_positions": [
-      {
-        "id": "strattl_BCHUSDT_1787842051",
-        "symbol": "BCH-USDT",
-        "direction": "LONG",
-        "entry": 270.82,
-        "sl_price": 265.3942857142857,
-        "tp_price": 287.1771428571428,
-        "sl_dist": 5.425714285714321,
-        "qty": 0.06,
-        "max_hold_h": 48,
-        "strategy": "TL",
-        "fill_price": 270.82,
-        "sig_key": "tl_BCH-USDT_2026-08-27 14:00:00",
-        "leverage": 31,
-        "sl_order_id": "2092987425579696128",
-        "opened_ts": "2026-08-27T14:47:42.482050+00:00",
-        "highest": 272.19,
-        "lowest": 270.82,
-        "breakeven_done": false,
-        "bars_elapsed": 12,
-        "last_checked_time": "2026-08-28 02:00:00",
-        "notion_page_id": "3c90a137-4574-81b0-aa5e-f58fc40eedbb"
-      },
       {
         "id": "strattl_ETHUSDT_1787860867",
         "symbol": "ETH-USDT",
@@ -1062,19 +1039,42 @@
         "highest": 2516.19,
         "lowest": 2498.44,
         "breakeven_done": false,
-        "bars_elapsed": 6,
-        "last_checked_time": "2026-08-28 02:00:00",
+        "bars_elapsed": 7,
+        "last_checked_time": "2026-08-28 03:00:00",
         "notion_page_id": "3c90a137-4574-81d3-aeeb-d3581157ef8f"
+      },
+      {
+        "id": "strattl_XRPUSDT_1787886014",
+        "symbol": "XRP-USDT",
+        "direction": "LONG",
+        "entry": 1.4328,
+        "sl_price": 1.4011285714285715,
+        "tp_price": 1.5911571428571427,
+        "sl_dist": 0.03167142857142857,
+        "qty": 59.0,
+        "max_hold_h": 48,
+        "strategy": "TL",
+        "fill_price": 1.4328,
+        "sig_key": "tl_XRP-USDT_2026-08-28 03:00:00",
+        "leverage": 29,
+        "sl_order_id": "2093171821595164672",
+        "opened_ts": "2026-08-28T03:00:25.977048+00:00",
+        "highest": 1.4328,
+        "lowest": 1.4328,
+        "breakeven_done": false,
+        "bars_elapsed": 0,
+        "last_checked_time": "2026-08-28T03:00:25.977048+00:00",
+        "notion_page_id": "3ca0a137-4574-81d5-baf7-d9f94e52dd84"
       }
     ],
-    "last_cycle_ts": "2026-08-28T02:14:57.530322+00:00",
+    "last_cycle_ts": "2026-08-28T03:11:32.760894+00:00",
     "stats": {
-      "n": 44,
-      "win_rate_pct": 15.9,
-      "ev_r": -0.333,
-      "total_pnl_usdt": -14.66,
+      "n": 45,
+      "win_rate_pct": 15.6,
+      "ev_r": -0.349,
+      "total_pnl_usdt": -15.72,
       "avg_win_usdt": 2.08,
-      "avg_loss_usdt": -0.79
+      "avg_loss_usdt": -0.8
     }
   },
   "tama_config": {
@@ -7027,6 +7027,10 @@
     {
       "ts": "2026-08-28T01:15:19.553075+00:00",
       "idx": 75.44
+    },
+    {
+      "ts": "2026-08-28T02:15:19.830394+00:00",
+      "idx": 75.3
     }
   ],
   "trades_public": [
@@ -7561,6 +7565,13 @@
       "strat": "TL",
       "dir": "LONG",
       "r": 0.742
+    },
+    {
+      "ts": "2026-08-28T02:17:05.332553+00:00",
+      "sym": "BCH-USDT",
+      "strat": "TL",
+      "dir": "LONG",
+      "r": -1.062
     }
   ],
   "self_upgrades": [
