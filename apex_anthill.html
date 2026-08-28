@@ -137,7 +137,7 @@
 (() => {
   // 巢況資料:每日清晨由排程從監督台名冊+D端config自動重編此行。
   // idx=帳戶權益指數(100=基準日) strategies=覓食蟻(on=false蜷著睡) groups=各群工蟻 retired=新墓碑
-  const NEST_DATA={"idx":100,"eq":378.4,"asOf":"08-28","strategies":[{"n":"B1","on":true},{"n":"TL","on":true},{"n":"RS","on":false},{"n":"SC1","on":true},{"n":"MRS","on":true},{"n":"AUTO×2","on":true}],"groups":{"展示":["蟻丘畫師"],"監控":["A迴圈"],"資料蒐集":["盤口OI","1H K線","4H K線","控制台快照","形態庫","幣池分層"],"例行報告":["晨報","LTM蒸餾","績效週報","月報","週日覆盤","OBI提醒"],"自我稽核":["LAPD","本機查勤","E稽核","驗證網","監督台"],"自適應決策":["L1換將","L2風險檔"],"研究":["LiveDiag","Scanner","週度優化","walk-fwd","變體艦隊","選礦機","非加密掃描","型態艦隊","極值盯盤","抄底盯盤"],"王座":["情報院","營收盯哨","2486哨兵"],"資料地基":["訂單流","盤口熟成","幣池重審"],"創業":["創業推播"],"風控":["TL驗收哨兵"]},"retired":["OBI提醒","雲端scanner","Jarvis"]};//NEST-MARKER
+  const NEST_DATA={"idx":99,"eq":374.6,"asOf":"08-28","strategies":[{"n":"B1","on":true},{"n":"TL","on":true},{"n":"RS","on":false},{"n":"SC1","on":true},{"n":"MRS","on":true},{"n":"AUTO×2","on":true}],"groups":{"展示":["蟻丘畫師"],"監控":["A迴圈"],"資料蒐集":["盤口OI","1H K線","4H K線","控制台快照","形態庫","幣池分層"],"例行報告":["晨報","LTM蒸餾","績效週報","月報","週日覆盤","OBI提醒"],"自我稽核":["LAPD","本機查勤","E稽核","驗證網","監督台"],"自適應決策":["L1換將","L2風險檔"],"研究":["LiveDiag","Scanner","週度優化","walk-fwd","變體艦隊","選礦機","非加密掃描","型態艦隊","極值盯盤","抄底盯盤"],"王座":["情報院","營收盯哨","2486哨兵"],"資料地基":["訂單流","盤口熟成","幣池重審"],"創業":["創業推播"],"風控":["TL驗收哨兵"]},"retired":["OBI提醒","雲端scanner","Jarvis"],"sick":[],"btc":{"chg":1.6},"pos":1,"sig":0,"hist":[99]};//NEST-MARKER
   const cv = document.getElementById('nest');
   const W = 1200, H = 3000;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -272,6 +272,11 @@
     const a=SURF[0],b=SURF[1];
     const pts=[];for(let k=0;k<=20;k++){const t=k/20;pts.push([a[0]+(b[0]-a[0])*t,a[1]]);}
     ants.push(mkAnt(pts,'scout',.0012+.0003*(i%3),{label:s.n}));
+  });
+  // 病蟻:監督台點名點到「該跑沒跑/出錯」的,凍在半路發紅光
+  const SICK=new Set(NEST_DATA.sick||[]);
+  ants.forEach((a,i)=>{
+    if(a.label&&SICK.has(a.label)){ a.sick=true; a.speed=0; a.t=.2+((i*37)%50)/100; }
   });
 
   // ---- 手繪感的腔室輪廓 ----
@@ -465,6 +470,21 @@
     ctx.fillStyle='rgba(230,214,184,.55)';
     for(const[sx,sy]of[[90,28],[310,50],[540,22],[770,42],[915,18],[1120,56],[430,78],[1035,88],[660,60]])
       ctx.fillRect(sx,sy,1.6,1.6);
+    // 地表天候=BTC 24h:漲=暖光,跌=烏雲(雨絲在動態層)
+    const chg=NEST_DATA.btc?NEST_DATA.btc.chg:null;
+    if(chg!==null&&chg>=1.5){
+      const glow=ctx.createRadialGradient(1050,20,10,1050,20,320);
+      glow.addColorStop(0,'rgba(224,158,60,.28)');glow.addColorStop(1,'rgba(224,158,60,0)');
+      ctx.fillStyle=glow;ctx.fillRect(0,0,W,GROUND);
+    }
+    if(chg!==null&&chg<=-1.5){
+      ctx.fillStyle='rgba(28,32,44,.55)';
+      for(const[cx2,cy2,cw]of[[260,40,150],[520,26,190],[860,44,170],[1080,30,120]]){
+        for(let k=0;k<4;k++){
+          ctx.beginPath();ctx.ellipse(cx2+k*cw*.22,cy2+(k%2)*8,cw*.3,20,0,0,7);ctx.fill();
+        }
+      }
+    }
     // 土壤:越深越黑
     const soil=ctx.createLinearGradient(0,GROUND,0,H);
     soil.addColorStop(0,'#241A11');soil.addColorStop(.55,'#1A1209');soil.addColorStop(1,'#0B0806');
@@ -706,6 +726,19 @@
     for(const[fx,fy]of[[P.forage.x-14,P.forage.y+2],[P.forage.x+6,P.forage.y-2],[P.forage.x+18,P.forage.y+4]]){
       ctx.beginPath();ctx.ellipse(fx,fy,3.4,2.2,.5,0,7);ctx.fill();
     }
+    // 覓食場即時況:BTC 天候+持倉+今日訊號(來自 galaxy_live,公開數據)
+    if(NEST_DATA.btc){
+      ctx.fillStyle='#B78A45';ctx.font='500 10px "IBM Plex Mono",monospace';
+      const wx=[];
+      wx.push('BTC '+(NEST_DATA.btc.chg>=0?'+':'')+NEST_DATA.btc.chg+'%');
+      wx.push('持倉 '+NEST_DATA.pos);
+      wx.push('今日訊號 '+NEST_DATA.sig);
+      ctx.fillText(wx.join(' · '),P.forage.x-110,P.forage.y+22);
+    }
+    // 持倉=正在覓食場搬食物的蟻(最多畫6隻)
+    for(let i=0;i<Math.min(NEST_DATA.pos||0,6);i++){
+      drawAnt(ctx,P.forage.x-30+i*22,P.forage.y+8,(i%2?2.8:.3),0,CASTES.forager);
+    }
     ctx.fillStyle='#8F7E62';ctx.font='11px "IBM Plex Mono",monospace';
     ctx.fillText('巢口',P.entry.x+16,GROUND-8);
 
@@ -722,8 +755,24 @@
     ctx.textAlign='center';
     ctx.fillStyle='#E0B25C';ctx.font='600 14px "IBM Plex Mono",monospace';
     const eqStr=(NEST_DATA.eq!=null)?String(NEST_DATA.eq):String(NEST_DATA.idx);
-    ctx.fillText('蟻后 '+eqStr,P.queen.x,P.queen.y-CASTES.queen.s*10-18);
+    const capY=P.queen.y-CASTES.queen.s*10-18;
+    ctx.fillText('蟻后 '+eqStr,P.queen.x,capY);
     ctx.textAlign='left';
+    // 成長紀錄:近30日體重小曲線(資料累積兩天後浮現)
+    const hist=NEST_DATA.hist||[];
+    if(hist.length>=2){
+      const hw=76,hh=16,hx0=P.queen.x-hw/2,hy0=capY-26;
+      const mn=Math.min(...hist),mx=Math.max(...hist),rg=(mx-mn)||1;
+      ctx.strokeStyle='rgba(183,138,69,.8)';ctx.lineWidth=1.2;
+      ctx.beginPath();
+      hist.forEach((v,i)=>{
+        const hx=hx0+i/(hist.length-1)*hw, hy=hy0+hh-(v-mn)/rg*hh;
+        i?ctx.lineTo(hx,hy):ctx.moveTo(hx,hy);
+      });
+      ctx.stroke();
+      ctx.fillStyle='#E0B25C';
+      ctx.beginPath();ctx.arc(hx0+hw,hy0+hh-(hist[hist.length-1]-mn)/rg*hh,2,0,7);ctx.fill();
+    }
 
     // 深度尺
     ctx.strokeStyle='rgba(138,116,85,.5)';ctx.lineWidth=1;
@@ -755,6 +804,25 @@
     ctx.beginPath();ctx.moveTo(P.jesse.x+14,P.jesse.y+14);
     ctx.quadraticCurveTo(380,40,P.entry.x-6,GROUND-4);ctx.stroke();
     ctx.restore();
+    // 雨絲:BTC 大跌日的地表天候
+    const chg2=NEST_DATA.btc?NEST_DATA.btc.chg:null;
+    if(chg2!==null&&chg2<=-1.5&&!reduced){
+      ctx.strokeStyle='rgba(150,170,200,.3)';ctx.lineWidth=1;
+      for(let i=0;i<36;i++){
+        const rx2=(i*137+time*.06)%W;
+        const ry2=(i*97+time*.22)%(GROUND-24);
+        ctx.beginPath();ctx.moveTo(rx2,ry2);ctx.lineTo(rx2-2,ry2+9);ctx.stroke();
+      }
+    }
+    // 蚯蚓:土裡的鄰居,緩慢蠕動
+    {
+      const wx0=170+(reduced?0:Math.sin(time*.00018)*26);
+      for(let k=9;k>=0;k--){
+        const wx=wx0+k*7, wy=1062+(reduced?0:Math.sin(time*.0025+k*.7)*4);
+        ctx.fillStyle=k===0?'#5A3A2E':'#6B4636';
+        ctx.beginPath();ctx.arc(wx,wy,k===0?3.4:3-k*.12,0,7);ctx.fill();
+      }
+    }
     // 掘進面的挖掘塵(在原地小顆粒)
     if(!reduced){
       ctx.fillStyle='rgba(111,167,155,.5)';
@@ -795,8 +863,14 @@
       const x=px+Math.cos(ang+Math.PI/2)*wob, y=py+Math.sin(ang+Math.PI/2)*wob;
       const c=CASTES[a.caste];
       drawAnt(ctx,x,y,ang,reduced?0:time*.022+a.jig*3,c);
+      // 病蟻:紅色脈動光圈,監督台紅燈的現場翻譯
+      if(a.sick){
+        ctx.strokeStyle='rgba(191,79,59,'+(reduced?.5:(.35+.3*Math.sin(time*.005)))+')';
+        ctx.lineWidth=1.6;
+        ctx.beginPath();ctx.arc(px,py,10*c.s,0,7);ctx.stroke();
+      }
       // 標本註記:每隻蟻是哪支程式;相鄰蟻上下交錯避免疊字
-      if(a.label) drawTag(ctx,px,py+(ai%2?26:-22),a.label,c.tagc,py);
+      if(a.label) drawTag(ctx,px,py+(ai%2?26:-22),(a.sick?'⚠ ':'')+a.label,a.sick?'#BF4F3B':c.tagc,py);
       // 覓食蟻叼回的食物(咬在大顎上)
       if(a.forager&&a.dir<0&&a.has){
         ctx.fillStyle='#8A7040';
