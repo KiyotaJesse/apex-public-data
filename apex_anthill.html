@@ -62,6 +62,23 @@
   .note.torn{clip-path:polygon(0 0,100% 0,100% 96%,94% 100%,88% 97%,70% 100%,52% 97%,30% 100%,12% 97%,0 100%)}
   @media (max-width:760px){ .note{font-size:11px;width:30%;padding:8px 9px;line-height:1.55} }
 
+  /* 檔案卡:點螞蟻彈出的標本紀錄 */
+  #dossier{
+    position:absolute;display:none;width:min(260px,46%);
+    background:#EDE3CC;color:#3A2E1C;
+    padding:12px 14px 10px;font-size:13px;line-height:1.65;
+    box-shadow:0 10px 26px rgba(0,0,0,.65);border-radius:2px;
+    transform:translate(-50%,14px);z-index:5;
+  }
+  #dossier .dn{font-weight:700;font-size:15px}
+  #dossier .dr{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.14em;color:#8A6B3A;margin-bottom:6px}
+  #dossier .dp{margin-bottom:4px}
+  #dossier .dc{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:#6E5B39}
+  #dossier .dx{
+    position:absolute;top:4px;right:8px;cursor:pointer;color:#8A6B3A;
+    font-size:15px;line-height:1;padding:4px;
+  }
+  #dossier .sickline{color:#A03B2A;font-weight:700}
   footer{
     max-width:820px;margin:0 auto;padding:56px 24px 90px;
     color:#9C8A68;font-size:15px;
@@ -84,6 +101,7 @@
 
 <div class="dig" id="dig">
   <canvas id="nest" width="1200" height="3000"></canvas>
+  <div id="dossier"></div>
 
   <div class="note torn" style="left:1%;top:6.5%">
     <span class="d">深度 0m · 巢口</span>
@@ -143,7 +161,7 @@
 (() => {
   // 巢況資料:每日清晨由排程從監督台名冊+D端config自動重編此行。
   // idx=帳戶權益指數(100=基準日) strategies=覓食蟻(on=false蜷著睡) groups=各群工蟻 retired=新墓碑
-  const NEST_DATA={"idx":98,"eq":370.9,"asOf":"08-29","strategies":[{"n":"B1","on":true,"w":0.33,"t":30},{"n":"TL","on":true,"w":0.18,"t":22},{"n":"RS","on":false,"w":0.4,"t":30},{"n":"SC1","on":true,"w":0.0,"t":7},{"n":"MRS","on":true,"w":0.18,"t":11},{"n":"AUTO×2","on":true}],"groups":{"展示":["蟻丘畫師"],"監控":["A迴圈"],"資料蒐集":["盤口OI","1H K線","4H K線","控制台快照","形態庫","幣池分層"],"例行報告":["晨報","LTM蒸餾","績效週報","月報","週日覆盤","OBI提醒"],"自我稽核":["LAPD","本機查勤","E稽核","驗證網","監督台"],"自適應決策":["L1換將","L2風險檔"],"研究":["LiveDiag","Scanner","週度優化","walk-fwd","變體艦隊","選礦機","非加密掃描","型態艦隊","極值盯盤","抄底盯盤"],"王座":["情報院","營收盯哨","2486哨兵"],"資料地基":["訂單流","盤口熟成","幣池重審"],"創業":["創業推播"],"風控":["TL驗收哨兵"]},"retired":["OBI提醒","雲端scanner","Jarvis"],"sick":[],"btc":{"chg":1.8},"pos":1,"sig":0,"hist":[99,98],"voice":{"n":"營收盯哨(分巢)","t":"每月五到十五號,我盯兩家公司的營收公告。數字出來前的安靜,最值得盯。"}};//NEST-MARKER
+  const NEST_DATA={"idx":96,"eq":361.8,"asOf":"08-29","strategies":[{"n":"B1","on":true,"w":0.33,"t":30},{"n":"TL","on":true,"w":0.18,"t":22},{"n":"RS","on":false,"w":0.4,"t":30},{"n":"SC1","on":true,"w":0.0,"t":7},{"n":"MRS","on":true,"w":0.18,"t":11},{"n":"AUTO×2","on":true}],"groups":{"展示":["蟻丘畫師"],"監控":["A迴圈"],"資料蒐集":["盤口OI","1H K線","4H K線","控制台快照","形態庫","幣池分層"],"例行報告":["晨報","LTM蒸餾","績效週報","月報","週日覆盤","OBI提醒"],"自我稽核":["LAPD","本機查勤","E稽核","驗證網","監督台"],"自適應決策":["L1換將","L2風險檔"],"研究":["LiveDiag","Scanner","週度優化","walk-fwd","變體艦隊","選礦機","非加密掃描","型態艦隊","極值盯盤","抄底盯盤"],"王座":["情報院","營收盯哨","2486哨兵"],"資料地基":["訂單流","盤口熟成","幣池重審"],"創業":["創業推播"],"風控":["TL驗收哨兵"]},"retired":["OBI提醒","雲端scanner","Jarvis"],"sick":[],"btc":{"chg":0.0},"pos":2,"sig":0,"hist":[99,96],"voice":{"n":"營收盯哨(分巢)","t":"每月五到十五號,我盯兩家公司的營收公告。數字出來前的安靜,最值得盯。"},"info":{"蟻丘畫師":{"p":"每日查BingX權益算指數, 更新蟻丘頁蟻后體型並推GitHub Pages(只推指數不推金額)","c":"每日 08:10"},"A迴圈":{"p":"價格/服務/心跳警報 + 星系圖資料產出","c":"連續"},"盤口OI":{"p":"每日盤口深度與未平倉量原始資料, T3 滑價防護與未來研究的原料","c":"每日一檔"},"1H K線":{"p":"同源 K 線庫(T1): 讓回測與實盤吃同一份資料","c":"每日一檔"},"4H K線":{"p":"同源 K 線庫(T1) 4 小時級別","c":"每日一檔"},"控制台快照":{"p":"控制台/指揮中心的即時資料源","c":"隨 config 變更 + 定期"},"形態庫":{"p":"狀態類比 kNN 的模型庫, 形態機率錐的原料","c":"不定期重建"},"晨報":{"p":"每天早上的總體情勢與績效","c":"每日 08:30"},"LAPD":{"p":"自動巡查系統異常並立案, 產出待裁決案件","c":"每日 09:00"},"L1換將":{"p":"自動比較現役策略與挑戰者參數, 決定要不要換將","c":"每日"},"L2風險檔":{"p":"依績效自動升降風險檔位","c":"每日"},"本機查勤":{"p":"查本機日檢出勤卡新鮮度; 電腦關機時的第三方見證","c":"每日 10:30"},"LTM蒸餾":{"p":"把交易與事件蒸餾成長期記憶","c":"每日 23:00"},"績效週報":{"p":"每週策略績效驗收","c":"每週日 20:00"},"E稽核":{"p":"自動掃描程式碼缺陷並提出建議(預設只建議不套用)","c":"每週一 09:15"},"月報":{"p":"每月總結","c":"每月 1 日 09:20"},"週日覆盤":{"p":"每週日晚上的交易覆盤參謀","c":"每週日 20:20"},"OBI提醒":{"p":"8/10 盤口滿月提醒; 本機版的雲端平行備援","c":"單次 2026-08-10 09:00"},"驗證網":{"p":"18 項防線證據日檢 + 出勤打卡到雲端","c":"每日 08:50"},"監督台":{"p":"照冊對帳全系統; 更新監督台頁面資料; 每天一則日報 + 新異常才推播","c":"每小時"},"LiveDiag":{"p":"每小時抓市場快照做逆向診斷","c":"每小時"},"Scanner":{"p":"本機訊號掃描","c":"每 15 分鐘"},"週度優化":{"p":"每週重跑參數 sweep","c":"每週一 00:10"},"walk-fwd":{"p":"滾動樣本外驗證, 抓策略衰退","c":"每週一 09:30"},"變體艦隊":{"p":"15 個策略變體離線並行回測, 找現役策略的改良版","c":"每週三 09:30"},"選礦機":{"p":"掃 26 族群+同源組合找新策略; 週上限 1 自動上線; 已裁決候選由裁決檔壓制; 影子轉正(前瞻n>=60/EV>=0.2/z>=2.5/齡30d 免G5G7)","c":"每 4 小時(2026-08-29 由每小時放寬"},"情報院":{"p":"每日情報蒐集(王座/情報院)","c":"每日 09:05"},"營收盯哨":{"p":"每月 5-15 日盯營收公告","c":"每日 09:30 +每 3 小時"},"2486哨兵":{"p":"一詮2486每日五訊號盯盤(268突破/250回測/233破壞/外資回補/融資接刀), 2026-08-28建, 取代已死的雲端routine","c":"平日 21:45 +隔晨 08:40 補跑"},"訂單流":{"p":"每日抓 Binance 逐筆成交壓成 5m 微結構特徵(機器自學主力的原料庫)","c":"每日 09:10"},"盤口熟成":{"p":"盯 orderbook_data 累積天數(滿90天通知可開工驗莊家行為)+蒐集器斷線立即警報","c":"每週一 09:10"},"幣池重審":{"p":"每日檢查, 距上次>=pool.review_days(旋鈕預設3天)才重審; 產 pool_tiers.json 給 D 端交易池與研究端共用","c":"每日 09:20"},"幣池分層":{"p":"D 端交易掃描與資料蒐集的池真相; 讀不到會 fail-safe 退回寫死 23 幣並告警","c":"每 3 天(旋鈕)"},"非加密掃描":{"p":"黃金/原油/指數/外匯跑完整資格鏈; 資料每週變長, 有組合過關才通知(首掃 512 組合 0 過關)","c":"每週六 10:30"},"型態艦隊":{"p":"手繪四條件型態 long_immediate 在台/港/日股的前進樣本追蹤(參數凍結, 只累積新訊號不重算歷史)","c":"每週三 10:30"},"極值盯盤":{"p":"每小時掃主池的力竭特徵(大振幅+爆量+反向長影線), 過賠率門檻且新鮮的推 TG; 觀察用非下單訊號","c":"每小時 :35"},"抄底盯盤":{"p":"盯 BTC 距歷史高點回撤, 觸及 -50%/-55%/-60%/-70% 時推一張帶清算價與目標價的執行卡; 未到門檻靜默","c":"每小時 :05"},"創業推播":{"p":"開公司這件事有沒有停下來; 週一推進度、期限逼近或階段停滯 14 天才叫, 其餘靜默。專案獨立於 claude-assistant, 只在此掛號","c":"每日 09:10"},"TL驗收哨兵":{"p":"盯 2026-08-27 TP5R 切換後的 TL 實彈; 8筆失血提前叫/15-25-40筆里程碑判定綠黃紅; 紅燈附 revert 一鍵; 防回測-實彈落差(TL 前科 -0.","c":"每日 21:05"},"B1":{"p":"VWAP 回落+跌勢空的主力覓食蟻; 裝了逐幣成本濾網後現役最健康","c":"D端 60 秒掃描"},"TL":{"p":"多指標順勢多; 2026-08-27 換 TP5R 寬止盈, 驗收哨兵盯場中","c":"D端 60 秒掃描"},"SC1":{"p":"空方策略; 熊市 regime 才出勤, 多頭時冬眠是設計不是故障","c":"D端 60 秒掃描"},"MRS":{"p":"VWAP 超漲回落空; bear 閘門管制出勤","c":"D端 60 秒掃描"},"RS":{"p":"相對強弱輪動; 已裁決退役——扣掉最強單腳後 EV 轉負, 留巢示課","c":"停用"},"AUTO":{"p":"通用策略引擎; 礦機過關的候選自動接管這個名額","c":"D端 60 秒掃描"},"蟻后":{"p":"帳戶權益本體; 她的體重就是巢的存糧, 每天量一次","c":"每日 08:10 量測"}}};//NEST-MARKER
   const cv = document.getElementById('nest');
   const W = 1200, H = 3000;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -821,7 +839,11 @@
 
   // ---- 動態層 ----
   const ctx=cv.getContext('2d');
+  const HITS=[];                 // 每幀重建:可點擊的蟻(檔案卡互動)
+  let MX=null,MY=null;           // 滑鼠在畫布座標系的位置(探照燈)
   function frame(time){
+    HITS.length=0;
+    HITS.push({x:P.queen.x,y:P.queen.y-4,label:'蟻后',role:'蟻后'});
     ctx.clearRect(0,0,W,H);
     ctx.drawImage(bg,0,0);
     // 活躍費洛蒙呼吸
@@ -873,6 +895,7 @@
       const sx=P.workers.x-72+i*52, sy=P.workers.y+28;
       drawAnt(ctx,sx,sy,2.5,0,CASTES.sleeper);
       drawTag(ctx,sx,sy+22,n+' · 休眠',CASTES.sleeper.tagc);
+      HITS.push({x:sx,y:sy,label:n,role:'冬眠蟻'});
     });
     // 決策蟻(L1/L2):繞著蟻后打轉
     orbiters.forEach(o=>{
@@ -880,6 +903,7 @@
       const ox=P.queen.x+Math.cos(a)*(96+CASTES.queen.s*8), oy=P.queen.y+Math.sin(a)*(50+CASTES.queen.s*5);
       drawAnt(ctx,ox,oy,a+Math.PI/2,reduced?0:time*.022,CASTES.forager);
       drawTag(ctx,ox,oy-18,o.label,CASTES.forager.tagc);
+      HITS.push({x:ox,y:oy,label:o.label,role:'決策蟻'});
     });
     // 蟻群
     ants.forEach((a,ai)=>{
@@ -903,7 +927,10 @@
         ctx.beginPath();ctx.arc(px,py,10*c.s,0,7);ctx.stroke();
       }
       // 標本註記:每隻蟻是哪支程式;相鄰蟻上下交錯避免疊字
-      if(a.label) drawTag(ctx,px,py+(ai%2?26:-22),(a.sick?'⚠ ':'')+a.label,a.sick?'#BF4F3B':c.tagc,py);
+      if(a.label){
+        drawTag(ctx,px,py+(ai%2?26:-22),(a.sick?'⚠ ':'')+a.label,a.sick?'#BF4F3B':c.tagc,py);
+        HITS.push({x:px,y:py,label:a.label,sick:a.sick});
+      }
       // 覓食蟻叼回的食物(咬在大顎上)
       if(a.forager&&a.dir<0&&a.has){
         ctx.fillStyle='#8A7040';
@@ -918,6 +945,17 @@
         ctx.restore();
       }
     });
+    // 探照燈:滑鼠是一盞琥珀提燈,深處的黑土照得亮
+    if(MX!==null){
+      ctx.save();ctx.globalCompositeOperation='lighter';
+      const lg=ctx.createRadialGradient(MX,MY,8,MX,MY,150);
+      lg.addColorStop(0,'rgba(224,168,80,.14)');
+      lg.addColorStop(.55,'rgba(190,140,66,.06)');
+      lg.addColorStop(1,'rgba(0,0,0,0)');
+      ctx.fillStyle=lg;
+      ctx.beginPath();ctx.arc(MX,MY,150,0,7);ctx.fill();
+      ctx.restore();
+    }
     if(!reduced)requestAnimationFrame(frame);
   }
 
@@ -926,6 +964,55 @@
     document.getElementById('vwho').textContent=NEST_DATA.voice.n||'某隻蟻';
     document.getElementById('vsay').textContent=NEST_DATA.voice.t;
   }
+
+  // ---- 互動:點螞蟻看檔案卡 + 滑鼠提燈 ----
+  const dossier=document.getElementById('dossier');
+  const ROLEOF={'蟻后':'蟻后'};
+  {
+    const rmap={'研究':'偵察蟻','監控':'兵蟻','自我稽核':'兵蟻','風控':'兵蟻','自適應決策':'決策蟻',
+                '資料蒐集':'搬運蟻','資料地基':'搬運蟻','例行報告':'信使蟻','王座':'地表分巢','創業':'地表分巢','展示':'畫師蟻'};
+    Object.entries(G).forEach(([g,list])=>{const r=rmap[g]||'工蟻';(list||[]).forEach(n=>ROLEOF[n]=r);});
+    (NEST_DATA.strategies||[]).forEach(s=>ROLEOF[s.n.split('×')[0]]=s.on?'覓食蟻':'冬眠蟻');
+  }
+  function cvPos(e){
+    const r=cv.getBoundingClientRect();
+    return [(e.clientX-r.left)*W/r.width,(e.clientY-r.top)*H/r.height];
+  }
+  function nearestHit(x,y){
+    let best=null,bd=34*34;
+    for(const h of HITS){
+      const d=(h.x-x)*(h.x-x)+(h.y-y)*(h.y-y);
+      if(d<bd){bd=d;best=h;}
+    }
+    return best;
+  }
+  cv.addEventListener('mousemove',e=>{
+    const p=cvPos(e); MX=p[0];MY=p[1];
+    cv.style.cursor=nearestHit(MX,MY)?'pointer':'default';
+    if(reduced){paintOnce();}
+  });
+  cv.addEventListener('mouseleave',()=>{MX=MY=null;cv.style.cursor='default';});
+  cv.addEventListener('click',e=>{
+    const p=cvPos(e), h=nearestHit(p[0],p[1]);
+    if(!h){dossier.style.display='none';return;}
+    const base=h.label.split(' ')[0];
+    const inf=(NEST_DATA.info||{})[base]||{};
+    const st=(NEST_DATA.strategies||[]).find(s=>s.n===base||s.n.split('×')[0]===base);
+    let status='';
+    if(h.sick) status='<div class="sickline">⚠ 監督台標紅:該跑沒跑或出錯,等修</div>';
+    else if(st&&st.w!=null) status='<div class="dc">近 '+(st.t||'?')+' 筆實彈勝率 '+Math.round(st.w*100)+'%</div>';
+    dossier.innerHTML='<span class="dx">✕</span>'
+      +'<div class="dn">'+h.label+'</div>'
+      +'<div class="dr">'+(h.role||ROLEOF[base]||'工蟻')+' · COLONY APEX</div>'
+      +'<div class="dp">'+(inf.p||'名冊沒寫牠的職掌——不代表牠沒在做事。')+'</div>'
+      +(inf.c?'<div class="dc">班表 '+inf.c+'</div>':'')
+      +status;
+    dossier.style.left=Math.min(88,Math.max(12,p[0]/W*100))+'%';
+    dossier.style.top=(p[1]/H*100)+'%';
+    dossier.style.display='block';
+    dossier.querySelector('.dx').onclick=()=>{dossier.style.display='none';};
+  });
+  function paintOnce(){frame(0);}
 
   function start(){paintStatic();frame(0);}
   if(document.fonts&&document.fonts.ready){document.fonts.ready.then(start);}
