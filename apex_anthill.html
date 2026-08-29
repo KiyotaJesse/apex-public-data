@@ -24,10 +24,18 @@
     font-family:"Noto Serif TC",serif;font-weight:600;font-size:17px;
     color:#B99F6F;margin-bottom:22px;
   }
-  .fieldnote-intro{
-    max-width:34em;font-size:16.5px;color:#C9B994;
+  /* 每日一蟻:當日受訪者的心聲 */
+  .voice{max-width:36em;margin-top:6px}
+  .voice-tag{
+    font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.22em;
+    color:#8A7455;margin-bottom:10px;
   }
-  .fieldnote-intro em{font-style:normal;color:#D99A3E}
+  .voice-tag span{color:#D99A3E}
+  .voice blockquote{
+    font-size:19px;line-height:1.9;color:#DCC9A2;
+    border-left:2px solid #6B5334;padding-left:18px;
+    text-wrap:balance;
+  }
 
   /* 剖面舞台:tall canvas + 釘在深度上的紙片筆記 */
   .dig{position:relative;width:100%;max-width:1200px;margin:40px auto 0}
@@ -68,12 +76,10 @@
   <div class="stamp">FIELD JOURNAL · COLONY “APEX” · 第 4 觀察季</div>
   <h1>蟻丘觀察誌</h1>
   <div class="subtitle">一座活的交易系統,以蟻群剖面記之</div>
-  <p class="fieldnote-intro">
-    本巢建於二〇二六年春。無中央大腦,靠<em>費洛蒙</em>行事——Telegram 推播、log、每六十秒揮發重讀的 config。
-    以下剖面由淺入深,是實地觀察,不是想像圖:每一隻蟻都有程式實體,每一道疤都有事故日期,
-    最深處的空房,是這座巢還沒長出來的部分。往下捲,就是往下挖。
-    蟻群名單每天清晨由監督台名冊自動重編——巢裡新增了什麼,隔天就多一隻蟻。筆記擋到螞蟻時,滑上去它會讓路。
-  </p>
+  <div class="voice">
+    <div class="voice-tag">本日受訪 · <span id="vwho">—</span></div>
+    <blockquote id="vsay">巢裡今天很安靜。</blockquote>
+  </div>
 </header>
 
 <div class="dig" id="dig">
@@ -137,7 +143,7 @@
 (() => {
   // 巢況資料:每日清晨由排程從監督台名冊+D端config自動重編此行。
   // idx=帳戶權益指數(100=基準日) strategies=覓食蟻(on=false蜷著睡) groups=各群工蟻 retired=新墓碑
-  const NEST_DATA={"idx":98,"eq":370.8,"asOf":"08-29","strategies":[{"n":"B1","on":true,"w":0.33,"t":30},{"n":"TL","on":true,"w":0.18,"t":22},{"n":"RS","on":false,"w":0.4,"t":30},{"n":"SC1","on":true,"w":0.0,"t":7},{"n":"MRS","on":true,"w":0.18,"t":11},{"n":"AUTO×2","on":true}],"groups":{"展示":["蟻丘畫師"],"監控":["A迴圈"],"資料蒐集":["盤口OI","1H K線","4H K線","控制台快照","形態庫","幣池分層"],"例行報告":["晨報","LTM蒸餾","績效週報","月報","週日覆盤","OBI提醒"],"自我稽核":["LAPD","本機查勤","E稽核","驗證網","監督台"],"自適應決策":["L1換將","L2風險檔"],"研究":["LiveDiag","Scanner","週度優化","walk-fwd","變體艦隊","選礦機","非加密掃描","型態艦隊","極值盯盤","抄底盯盤"],"王座":["情報院","營收盯哨","2486哨兵"],"資料地基":["訂單流","盤口熟成","幣池重審"],"創業":["創業推播"],"風控":["TL驗收哨兵"]},"retired":["OBI提醒","雲端scanner","Jarvis"],"sick":[],"btc":{"chg":1.8},"pos":1,"sig":0,"hist":[99,98]};//NEST-MARKER
+  const NEST_DATA={"idx":98,"eq":370.9,"asOf":"08-29","strategies":[{"n":"B1","on":true,"w":0.33,"t":30},{"n":"TL","on":true,"w":0.18,"t":22},{"n":"RS","on":false,"w":0.4,"t":30},{"n":"SC1","on":true,"w":0.0,"t":7},{"n":"MRS","on":true,"w":0.18,"t":11},{"n":"AUTO×2","on":true}],"groups":{"展示":["蟻丘畫師"],"監控":["A迴圈"],"資料蒐集":["盤口OI","1H K線","4H K線","控制台快照","形態庫","幣池分層"],"例行報告":["晨報","LTM蒸餾","績效週報","月報","週日覆盤","OBI提醒"],"自我稽核":["LAPD","本機查勤","E稽核","驗證網","監督台"],"自適應決策":["L1換將","L2風險檔"],"研究":["LiveDiag","Scanner","週度優化","walk-fwd","變體艦隊","選礦機","非加密掃描","型態艦隊","極值盯盤","抄底盯盤"],"王座":["情報院","營收盯哨","2486哨兵"],"資料地基":["訂單流","盤口熟成","幣池重審"],"創業":["創業推播"],"風控":["TL驗收哨兵"]},"retired":["OBI提醒","雲端scanner","Jarvis"],"sick":[],"btc":{"chg":1.8},"pos":1,"sig":0,"hist":[99,98],"voice":{"n":"營收盯哨(分巢)","t":"每月五到十五號,我盯兩家公司的營收公告。數字出來前的安靜,最值得盯。"}};//NEST-MARKER
   const cv = document.getElementById('nest');
   const W = 1200, H = 3000;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -913,6 +919,12 @@
       }
     });
     if(!reduced)requestAnimationFrame(frame);
+  }
+
+  // 每日一蟻:填入當日受訪者(由同步腳本每日輪選並寫進 NEST_DATA.voice)
+  if(NEST_DATA.voice&&NEST_DATA.voice.t){
+    document.getElementById('vwho').textContent=NEST_DATA.voice.n||'某隻蟻';
+    document.getElementById('vsay').textContent=NEST_DATA.voice.t;
   }
 
   function start(){paintStatic();frame(0);}
