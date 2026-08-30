@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-30T21:24:01.582345+08:00",
+  "generated_at": "2026-08-30T22:24:14.068588+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -997,7 +997,7 @@
         "closed_ts": "2026-08-13T02:53:38.313134+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-30T13:21:35.826321+00:00",
+    "last_cycle_ts": "2026-08-30T14:20:55.099794+00:00",
     "stats": {
       "n": 32,
       "win_rate_pct": 31.2,
@@ -1036,15 +1036,38 @@
         "leverage": 26,
         "sl_order_id": "2093384341291368448",
         "opened_ts": "2026-08-28T17:04:54.710478+00:00",
-        "highest": 11.465,
+        "highest": 11.553,
         "lowest": 11.462,
         "breakeven_done": false,
-        "bars_elapsed": 44,
-        "last_checked_time": "2026-08-30 13:00:00",
+        "bars_elapsed": 45,
+        "last_checked_time": "2026-08-30 14:00:00",
         "notion_page_id": "3ca0a137-4574-8177-b4b4-f70d3a4979a4"
+      },
+      {
+        "id": "strattl_XRPUSDT_1788096667",
+        "symbol": "XRP-USDT",
+        "direction": "LONG",
+        "entry": 1.3976,
+        "sl_price": 1.3875285714285712,
+        "tp_price": 1.474357142857143,
+        "sl_dist": 0.010071428571428731,
+        "qty": 123.0,
+        "max_hold_h": 48,
+        "strategy": "TL",
+        "fill_price": 1.3976,
+        "sig_key": "tl_XRP-USDT_2026-08-30 12:00:00",
+        "leverage": 44,
+        "sl_order_id": "2094055363900440576",
+        "opened_ts": "2026-08-30T13:31:18.871851+00:00",
+        "highest": 1.4082,
+        "lowest": 1.3976,
+        "breakeven_done": false,
+        "bars_elapsed": 1,
+        "last_checked_time": "2026-08-30 14:00:00",
+        "notion_page_id": "3cc0a137-4574-81c8-b7c0-e7817905a40f"
       }
     ],
-    "last_cycle_ts": "2026-08-30T13:21:36.178393+00:00",
+    "last_cycle_ts": "2026-08-30T14:21:01.100182+00:00",
     "stats": {
       "n": 51,
       "win_rate_pct": 13.7,
