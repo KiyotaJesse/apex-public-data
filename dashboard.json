@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-31T06:25:50.589907+08:00",
+  "generated_at": "2026-08-31T07:26:03.483392+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -997,7 +997,7 @@
         "closed_ts": "2026-08-13T02:53:38.313134+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-30T22:24:57.431984+00:00",
+    "last_cycle_ts": "2026-08-30T23:25:33.544914+00:00",
     "stats": {
       "n": 32,
       "win_rate_pct": 31.2,
@@ -1010,7 +1010,7 @@
   "risk_circuit_breaker": {
     "killswitch": false,
     "daily_loss_limit_hit": false,
-    "daily_pnl_usdt": -1.425,
+    "daily_pnl_usdt": -4.7375,
     "daily_pnl_date": "2026-08-30"
   },
   "feature_flags": {
@@ -1019,62 +1019,15 @@
   },
   "strat_tl": {
     "mode": "live",
-    "open_positions": [
-      {
-        "id": "strattl_BTCUSDT_1788127255",
-        "symbol": "BTC-USDT",
-        "direction": "LONG",
-        "entry": 78539.0,
-        "sl_price": 77876.64285714286,
-        "tp_price": 82356.58571428571,
-        "sl_dist": 662.3571428571449,
-        "qty": 0.0023,
-        "max_hold_h": 48,
-        "strategy": "TL",
-        "fill_price": 78539.0,
-        "sig_key": "tl_BTC-USDT_2026-08-30 21:00:00",
-        "leverage": 46,
-        "sl_order_id": "2094183673938673664",
-        "opened_ts": "2026-08-30T22:01:10.436536+00:00",
-        "highest": 78539.0,
-        "lowest": 78539.0,
-        "breakeven_done": false,
-        "bars_elapsed": 0,
-        "last_checked_time": "2026-08-30T22:01:10.436536+00:00",
-        "notion_page_id": "3cc0a137-4574-8172-a166-cd6379416a42"
-      },
-      {
-        "id": "strattl_LINKUSDT_1788127260",
-        "symbol": "LINK-USDT",
-        "direction": "LONG",
-        "entry": 11.502,
-        "sl_price": 11.298428571428571,
-        "tp_price": 12.60985714285714,
-        "sl_dist": 0.20357142857142918,
-        "qty": 8.1,
-        "max_hold_h": 48,
-        "strategy": "TL",
-        "fill_price": 11.502,
-        "sig_key": "tl_LINK-USDT_2026-08-30 21:00:00",
-        "leverage": 32,
-        "sl_order_id": "2094183692930482176",
-        "opened_ts": "2026-08-30T22:01:14.812218+00:00",
-        "highest": 11.502,
-        "lowest": 11.502,
-        "breakeven_done": false,
-        "bars_elapsed": 0,
-        "last_checked_time": "2026-08-30T22:01:14.812218+00:00",
-        "notion_page_id": "3cc0a137-4574-8136-a19b-f1a414e3a843"
-      }
-    ],
-    "last_cycle_ts": "2026-08-30T22:24:02.174597+00:00",
+    "open_positions": [],
+    "last_cycle_ts": "2026-08-30T23:24:34.741999+00:00",
     "stats": {
-      "n": 53,
-      "win_rate_pct": 15.1,
-      "ev_r": -0.427,
-      "total_pnl_usdt": -22.62,
+      "n": 55,
+      "win_rate_pct": 14.5,
+      "ev_r": -0.452,
+      "total_pnl_usdt": -24.88,
       "avg_win_usdt": 1.94,
-      "avg_loss_usdt": -0.85
+      "avg_loss_usdt": -0.86
     }
   },
   "tama_config": {
@@ -7272,6 +7225,10 @@
     {
       "ts": "2026-08-30T22:21:50.317430+00:00",
       "idx": 70.74
+    },
+    {
+      "ts": "2026-08-30T23:21:53.817285+00:00",
+      "idx": 70.59
     }
   ],
   "trades_public": [
@@ -7869,6 +7826,20 @@
       "strat": "TL",
       "dir": "LONG",
       "r": -1.221
+    },
+    {
+      "ts": "2026-08-30T23:23:32.736774+00:00",
+      "sym": "BTC-USDT",
+      "strat": "TL",
+      "dir": "LONG",
+      "r": -1.192
+    },
+    {
+      "ts": "2026-08-30T23:23:34.861997+00:00",
+      "sym": "LINK-USDT",
+      "strat": "TL",
+      "dir": "LONG",
+      "r": -1.073
     }
   ],
   "self_upgrades": [
