@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-31T00:24:41.070646+08:00",
+  "generated_at": "2026-08-31T01:24:52.738021+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -997,7 +997,7 @@
         "closed_ts": "2026-08-13T02:53:38.313134+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-30T16:20:45.451602+00:00",
+    "last_cycle_ts": "2026-08-30T17:24:21.605348+00:00",
     "stats": {
       "n": 32,
       "win_rate_pct": 31.2,
@@ -1010,7 +1010,7 @@
   "risk_circuit_breaker": {
     "killswitch": false,
     "daily_loss_limit_hit": false,
-    "daily_pnl_usdt": -1.9176,
+    "daily_pnl_usdt": -0.0843,
     "daily_pnl_date": "2026-08-30"
   },
   "feature_flags": {
@@ -1020,29 +1020,6 @@
   "strat_tl": {
     "mode": "live",
     "open_positions": [
-      {
-        "id": "strattl_LINKUSDT_1787936609",
-        "symbol": "LINK-USDT",
-        "direction": "LONG",
-        "entry": 11.462,
-        "sl_price": 11.169285714285715,
-        "tp_price": 12.925571428571425,
-        "sl_dist": 0.2927142857142844,
-        "qty": 6.3,
-        "max_hold_h": 48,
-        "strategy": "TL",
-        "fill_price": 11.462,
-        "sig_key": "tl_LINK-USDT_2026-08-28 17:00:00",
-        "leverage": 26,
-        "sl_order_id": "2093384341291368448",
-        "opened_ts": "2026-08-28T17:04:54.710478+00:00",
-        "highest": 11.625,
-        "lowest": 11.462,
-        "breakeven_done": false,
-        "bars_elapsed": 47,
-        "last_checked_time": "2026-08-30 16:00:00",
-        "notion_page_id": "3ca0a137-4574-8177-b4b4-f70d3a4979a4"
-      },
       {
         "id": "strattl_XRPUSDT_1788096667",
         "symbol": "XRP-USDT",
@@ -1059,21 +1036,21 @@
         "leverage": 44,
         "sl_order_id": "2094055363900440576",
         "opened_ts": "2026-08-30T13:31:18.871851+00:00",
-        "highest": 1.4082,
+        "highest": 1.4219,
         "lowest": 1.3976,
         "breakeven_done": false,
-        "bars_elapsed": 3,
-        "last_checked_time": "2026-08-30 16:00:00",
+        "bars_elapsed": 4,
+        "last_checked_time": "2026-08-30 17:00:00",
         "notion_page_id": "3cc0a137-4574-81c8-b7c0-e7817905a40f"
       }
     ],
-    "last_cycle_ts": "2026-08-30T16:20:51.452976+00:00",
+    "last_cycle_ts": "2026-08-30T17:24:33.606056+00:00",
     "stats": {
-      "n": 51,
-      "win_rate_pct": 13.7,
-      "ev_r": -0.438,
-      "total_pnl_usdt": -22.35,
-      "avg_win_usdt": 2.08,
+      "n": 52,
+      "win_rate_pct": 15.4,
+      "ev_r": -0.412,
+      "total_pnl_usdt": -21.4,
+      "avg_win_usdt": 1.94,
       "avg_loss_usdt": -0.84
     }
   },
@@ -7244,6 +7221,14 @@
     {
       "ts": "2026-08-30T15:21:33.896448+00:00",
       "idx": 71.03
+    },
+    {
+      "ts": "2026-08-30T16:21:36.404100+00:00",
+      "idx": 71.3
+    },
+    {
+      "ts": "2026-08-30T17:21:40.076695+00:00",
+      "idx": 71.64
     }
   ],
   "trades_public": [
@@ -7827,6 +7812,13 @@
       "strat": "TL",
       "dir": "LONG",
       "r": -1.194
+    },
+    {
+      "ts": "2026-08-30T17:00:25.453071+00:00",
+      "sym": "LINK-USDT",
+      "strat": "TL",
+      "dir": "LONG",
+      "r": 0.955
     }
   ],
   "self_upgrades": [
