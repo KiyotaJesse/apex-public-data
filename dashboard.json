@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-30T20:23:49.176209+08:00",
+  "generated_at": "2026-08-30T21:24:01.582345+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -997,7 +997,7 @@
         "closed_ts": "2026-08-13T02:53:38.313134+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-30T12:20:38.097931+00:00",
+    "last_cycle_ts": "2026-08-30T13:21:35.826321+00:00",
     "stats": {
       "n": 32,
       "win_rate_pct": 31.2,
@@ -1039,12 +1039,12 @@
         "highest": 11.465,
         "lowest": 11.462,
         "breakeven_done": false,
-        "bars_elapsed": 43,
-        "last_checked_time": "2026-08-30 12:00:00",
+        "bars_elapsed": 44,
+        "last_checked_time": "2026-08-30 13:00:00",
         "notion_page_id": "3ca0a137-4574-8177-b4b4-f70d3a4979a4"
       }
     ],
-    "last_cycle_ts": "2026-08-30T12:19:35.957805+00:00",
+    "last_cycle_ts": "2026-08-30T13:21:36.178393+00:00",
     "stats": {
       "n": 51,
       "win_rate_pct": 13.7,
@@ -1058,8 +1058,8 @@
     "current": {
       "_meta": {
         "desc": "APEX 控制台熱載入配置。改此檔 <=60 秒生效，無需重新部署。硬邊界見 tama_v5.py TAMA_CONFIG_BOUNDS。",
-        "updated": "2026-08-27T23:08:31.661832+08:00",
-        "by": "APEX-A L1冠軍挑戰者(Jesse 2026-08-03 全自動授權)"
+        "updated": "2026-08-30T21:18:16+08:00",
+        "by": "AUTO遷葬 push_d_auto_burial (Jesse 2026-08-30 裁決)"
       },
       "b1": {
         "live_enabled": true,
@@ -1120,17 +1120,22 @@
         "cooldown_h": 12,
         "regime_gate": true
       },
-      "auto_strategies": [
+      "auto_strategies": [],
+      "pool": {
+        "review_days": 3
+      },
+      "auto_verdicts": [
         {
-          "id": "AUTO_CS_RSI__70_COIL__0_6_CVD_Z___1_R",
-          "tf": "1h",
+          "id": "CS_RSI__70_COIL__0_6_CVD_Z___1_R",
+          "ts": "2026-08-20T14:23",
+          "verdict": "retired_manual_burial",
+          "reason": "遷葬(2026-08-30): 原手動下架繞過L2未寫前科 -- 2026-08-20 Jesse 裁決: 上線證據 ev_full=+0.396 由有缺陷的 sim_ratchet 算出(拖曳停損用拿不到的掛單價結算); 修正後重算 EV=+0.1773 n=74, 低於 EV_BAR 0.3",
+          "stats": {
+            "bt_ev": 0.3644,
+            "evidence_n": 74,
+            "live_trades": 0
+          },
           "side": "SHORT",
-          "sl_atr": 1.5,
-          "tp_atr": 3.0,
-          "max_hold_h": 72,
-          "regime_gate": null,
-          "max_positions": 2,
-          "exit": "ratchet",
           "entry": [
             [
               "rsi",
@@ -1147,38 +1152,19 @@
               "<=",
               -1.0
             ]
-          ],
-          "live_enabled": false,
-          "risk_pct": 0.005,
-          "leverage": 50,
-          "src": "prospector",
-          "added": "2026-08-12 21:24",
-          "evidence": {
-            "ev_full": 0.396,
-            "ev_h1": 0.1598,
-            "ev_h2": 0.6321,
-            "ev_recent_m": 1.0128,
-            "n": 74,
-            "win": 50.0
-          },
-          "state": "probe",
-          "probe_started": "2026-08-13T23:39",
-          "base_risk_pct": 0.005,
-          "bt_ev": 0.3644,
-          "_probe_note": "2026-08-13 納入 P4 探針管理: 此 spec 由舊資格鏈上線(n=74/舊成本假設), 新鏈因樣本不足(n=71<120, 近月n=7<12)不會放行。逐幣真實成本重測 EV_full=+0.3644R(僅縮水8%)故不逕行退場, 改由探針期用實彈檢驗。bt_ev 取 ev_full 而非近月(+0.965R, n=7 太薄不足為憑)。",
-          "_disabled_at": "2026-08-20 14:23",
-          "_disabled_reason": "2026-08-20 Jesse 裁決: 上線證據 ev_full=+0.396 由有缺陷的 sim_ratchet 算出(拖曳停損用拿不到的掛單價結算); 修正後重算 EV=+0.1773 n=74, 低於 EV_BAR 0.3"
+          ]
         },
         {
-          "id": "AUTO_CS_CVD_DIV__0_5_VOL_R__1_5_CVD_Z___1_BEAR_R",
-          "tf": "1h",
+          "id": "CS_CVD_DIV__0_5_VOL_R__1_5_CVD_Z___1_BEAR_R",
+          "ts": "2026-08-23T15:40",
+          "verdict": "retired_manual_burial",
+          "reason": "遷葬(2026-08-30): 原手動下架繞過L2未寫前科 -- 2026-08-23 裁決: 上線證據 ev_full=+0.3203 產生於 8/18, 早於 8/20 修掉 sim_ratchet 「拖曳停損用拿不到的掛單價結算」的高估。同一批樣本(n=266)用修正後模擬重算: ev_full=+0.0958(門檻0.30) / ev_h2=-0.1473 / WF 4折中2折為負(-0.219,-0.076) / ev_cost2x=-0.0452(需>0) / win=44.0%(需>=45) -- 核心五關全部不過。實彈零成交(strat_auto_ledger open=0 closed=0), 無損失。",
+          "stats": {
+            "bt_ev": 0.8489,
+            "evidence_n": 266,
+            "live_trades": 0
+          },
           "side": "SHORT",
-          "sl_atr": 1.5,
-          "tp_atr": 3.0,
-          "max_hold_h": 72,
-          "regime_gate": "bear",
-          "max_positions": 2,
-          "exit": "ratchet",
           "entry": [
             [
               "cvd_div",
@@ -1195,56 +1181,13 @@
               "<=",
               -1.0
             ]
-          ],
-          "live_enabled": false,
-          "risk_pct": 0.005,
-          "leverage": 50,
-          "state": "retired",
-          "probe_started": "2026-08-18T22:19",
-          "base_risk_pct": 0.005,
-          "bt_ev": 0.8489,
-          "src": "prospector",
-          "added": "2026-08-18 22:19",
-          "evidence": {
-            "ev_full": 0.3203,
-            "ev_h1": 0.4827,
-            "ev_h2": 0.0433,
-            "ev_recent_m": 0.8489,
-            "n": 266,
-            "win": 48.5,
-            "ev_cost2x": 0.1793,
-            "ev_ex_topq": 0.2413
-          },
-          "_disabled_at": "2026-08-23 15:40",
-          "_disabled_reason": "2026-08-23 裁決: 上線證據 ev_full=+0.3203 產生於 8/18, 早於 8/20 修掉 sim_ratchet 「拖曳停損用拿不到的掛單價結算」的高估。同一批樣本(n=266)用修正後模擬重算: ev_full=+0.0958(門檻0.30) / ev_h2=-0.1473 / WF 4折中2折為負(-0.219,-0.076) / ev_cost2x=-0.0452(需>0) / win=44.0%(需>=45) -- 核心五關全部不過。實彈零成交(strat_auto_ledger open=0 closed=0), 無損失。",
-          "_recheck_evidence": {
-            "ev_full": 0.0958,
-            "ev_h1": 0.2121,
-            "ev_h2": -0.1473,
-            "folds": [
-              0.2758,
-              0.1483,
-              -0.2185,
-              -0.0761
-            ],
-            "ev_recent_m": 0.6815,
-            "n_recent_m": 26,
-            "ev_cost2x": -0.0452,
-            "ev_ex_topq": 0.0276,
-            "win": 44.0,
-            "n": 266,
-            "core_gates_pass": false,
-            "by": "_recheck_live_auto.py 2026-08-23"
-          }
+          ]
         }
-      ],
-      "pool": {
-        "review_days": 3
-      }
+      ]
     },
     "applied": {
-      "applied_sha": "53b6524529e409c532611239eb5e6aab4135d798",
-      "applied_at": "2026-08-29T17:28:03.912970+00:00",
+      "applied_sha": "bd2088711a4d2234ff9dce1874581b3784bb00ea",
+      "applied_at": "2026-08-30T13:21:24.645395+00:00",
       "changes": [
         "b1.risk_pct: 0.02 -> 0.01",
         "b1.cycle_seconds: 300 -> 60",
@@ -1260,8 +1203,7 @@
         "sc.s2_enabled: True -> False",
         "mrs.live_enabled: False -> True",
         "mrs.risk_pct: 0.0075 -> 0.00375",
-        "global.same_dir_max: 3 -> 4",
-        "auto_strategies: 載入 2 個規格"
+        "global.same_dir_max: 3 -> 4"
       ]
     },
     "bounds": {
@@ -7259,6 +7201,18 @@
     {
       "ts": "2026-08-30T11:29:08.192500+00:00",
       "idx": 70.76
+    },
+    {
+      "ts": "2026-08-30T12:29:10.507702+00:00",
+      "idx": 70.83
+    },
+    {
+      "ts": "2026-08-30T13:19:53.617072+00:00",
+      "idx": 70.84
+    },
+    {
+      "ts": "2026-08-30T13:21:30.806300+00:00",
+      "idx": 70.85
     }
   ],
   "trades_public": [
