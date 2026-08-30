@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-31T04:25:24.609711+08:00",
+  "generated_at": "2026-08-31T05:25:38.768895+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -997,7 +997,7 @@
         "closed_ts": "2026-08-13T02:53:38.313134+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-30T20:25:12.986306+00:00",
+    "last_cycle_ts": "2026-08-30T21:24:56.029197+00:00",
     "stats": {
       "n": 32,
       "win_rate_pct": 31.2,
@@ -1010,7 +1010,7 @@
   "risk_circuit_breaker": {
     "killswitch": false,
     "daily_loss_limit_hit": false,
-    "daily_pnl_usdt": -0.0843,
+    "daily_pnl_usdt": -1.425,
     "daily_pnl_date": "2026-08-30"
   },
   "feature_flags": {
@@ -1019,39 +1019,15 @@
   },
   "strat_tl": {
     "mode": "live",
-    "open_positions": [
-      {
-        "id": "strattl_XRPUSDT_1788096667",
-        "symbol": "XRP-USDT",
-        "direction": "LONG",
-        "entry": 1.3976,
-        "sl_price": 1.3875285714285712,
-        "tp_price": 1.474357142857143,
-        "sl_dist": 0.010071428571428731,
-        "qty": 123.0,
-        "max_hold_h": 48,
-        "strategy": "TL",
-        "fill_price": 1.3976,
-        "sig_key": "tl_XRP-USDT_2026-08-30 12:00:00",
-        "leverage": 44,
-        "sl_order_id": "2094055363900440576",
-        "opened_ts": "2026-08-30T13:31:18.871851+00:00",
-        "highest": 1.4239,
-        "lowest": 1.3976,
-        "breakeven_done": false,
-        "bars_elapsed": 7,
-        "last_checked_time": "2026-08-30 20:00:00",
-        "notion_page_id": "3cc0a137-4574-81c8-b7c0-e7817905a40f"
-      }
-    ],
-    "last_cycle_ts": "2026-08-30T20:24:10.905573+00:00",
+    "open_positions": [],
+    "last_cycle_ts": "2026-08-30T21:24:06.222637+00:00",
     "stats": {
-      "n": 52,
-      "win_rate_pct": 15.4,
-      "ev_r": -0.412,
-      "total_pnl_usdt": -21.4,
+      "n": 53,
+      "win_rate_pct": 15.1,
+      "ev_r": -0.427,
+      "total_pnl_usdt": -22.62,
       "avg_win_usdt": 1.94,
-      "avg_loss_usdt": -0.84
+      "avg_loss_usdt": -0.85
     }
   },
   "tama_config": {
@@ -7241,6 +7217,10 @@
     {
       "ts": "2026-08-30T20:21:47.098826+00:00",
       "idx": 71.45
+    },
+    {
+      "ts": "2026-08-30T21:21:50.162108+00:00",
+      "idx": 70.91
     }
   ],
   "trades_public": [
@@ -7831,6 +7811,13 @@
       "strat": "TL",
       "dir": "LONG",
       "r": 0.955
+    },
+    {
+      "ts": "2026-08-30T21:02:04.916865+00:00",
+      "sym": "XRP-USDT",
+      "strat": "TL",
+      "dir": "LONG",
+      "r": -1.221
     }
   ],
   "self_upgrades": [
