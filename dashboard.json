@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-31T05:25:38.768895+08:00",
+  "generated_at": "2026-08-31T06:25:50.589907+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -997,7 +997,7 @@
         "closed_ts": "2026-08-13T02:53:38.313134+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-30T21:24:56.029197+00:00",
+    "last_cycle_ts": "2026-08-30T22:24:57.431984+00:00",
     "stats": {
       "n": 32,
       "win_rate_pct": 31.2,
@@ -1019,8 +1019,55 @@
   },
   "strat_tl": {
     "mode": "live",
-    "open_positions": [],
-    "last_cycle_ts": "2026-08-30T21:24:06.222637+00:00",
+    "open_positions": [
+      {
+        "id": "strattl_BTCUSDT_1788127255",
+        "symbol": "BTC-USDT",
+        "direction": "LONG",
+        "entry": 78539.0,
+        "sl_price": 77876.64285714286,
+        "tp_price": 82356.58571428571,
+        "sl_dist": 662.3571428571449,
+        "qty": 0.0023,
+        "max_hold_h": 48,
+        "strategy": "TL",
+        "fill_price": 78539.0,
+        "sig_key": "tl_BTC-USDT_2026-08-30 21:00:00",
+        "leverage": 46,
+        "sl_order_id": "2094183673938673664",
+        "opened_ts": "2026-08-30T22:01:10.436536+00:00",
+        "highest": 78539.0,
+        "lowest": 78539.0,
+        "breakeven_done": false,
+        "bars_elapsed": 0,
+        "last_checked_time": "2026-08-30T22:01:10.436536+00:00",
+        "notion_page_id": "3cc0a137-4574-8172-a166-cd6379416a42"
+      },
+      {
+        "id": "strattl_LINKUSDT_1788127260",
+        "symbol": "LINK-USDT",
+        "direction": "LONG",
+        "entry": 11.502,
+        "sl_price": 11.298428571428571,
+        "tp_price": 12.60985714285714,
+        "sl_dist": 0.20357142857142918,
+        "qty": 8.1,
+        "max_hold_h": 48,
+        "strategy": "TL",
+        "fill_price": 11.502,
+        "sig_key": "tl_LINK-USDT_2026-08-30 21:00:00",
+        "leverage": 32,
+        "sl_order_id": "2094183692930482176",
+        "opened_ts": "2026-08-30T22:01:14.812218+00:00",
+        "highest": 11.502,
+        "lowest": 11.502,
+        "breakeven_done": false,
+        "bars_elapsed": 0,
+        "last_checked_time": "2026-08-30T22:01:14.812218+00:00",
+        "notion_page_id": "3cc0a137-4574-8136-a19b-f1a414e3a843"
+      }
+    ],
+    "last_cycle_ts": "2026-08-30T22:24:02.174597+00:00",
     "stats": {
       "n": 53,
       "win_rate_pct": 15.1,
@@ -7221,6 +7268,10 @@
     {
       "ts": "2026-08-30T21:21:50.162108+00:00",
       "idx": 70.91
+    },
+    {
+      "ts": "2026-08-30T22:21:50.317430+00:00",
+      "idx": 70.74
     }
   ],
   "trades_public": [
