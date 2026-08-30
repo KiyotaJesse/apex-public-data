@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-30T14:22:38.487209+08:00",
+  "generated_at": "2026-08-30T15:22:52.520804+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -997,7 +997,7 @@
         "closed_ts": "2026-08-13T02:53:38.313134+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-30T06:22:19.009812+00:00",
+    "last_cycle_ts": "2026-08-30T07:22:00.926347+00:00",
     "stats": {
       "n": 32,
       "win_rate_pct": 31.2,
@@ -1039,12 +1039,35 @@
         "highest": 11.465,
         "lowest": 11.462,
         "breakeven_done": false,
-        "bars_elapsed": 37,
-        "last_checked_time": "2026-08-30 06:00:00",
+        "bars_elapsed": 38,
+        "last_checked_time": "2026-08-30 07:00:00",
         "notion_page_id": "3ca0a137-4574-8177-b4b4-f70d3a4979a4"
+      },
+      {
+        "id": "strattl_XRPUSDT_1788073214",
+        "symbol": "XRP-USDT",
+        "direction": "LONG",
+        "entry": 1.4008,
+        "sl_price": 1.3878142857142857,
+        "tp_price": 1.4669285714285716,
+        "sl_dist": 0.012985714285714378,
+        "qty": 136.0,
+        "max_hold_h": 48,
+        "strategy": "TL",
+        "fill_price": 1.4008,
+        "sig_key": "tl_XRP-USDT_2026-08-30 06:00:00",
+        "leverage": 46,
+        "sl_order_id": "2093956990086250496",
+        "opened_ts": "2026-08-30T07:00:24.768569+00:00",
+        "highest": 1.4008,
+        "lowest": 1.4008,
+        "breakeven_done": false,
+        "bars_elapsed": 0,
+        "last_checked_time": "2026-08-30T07:00:24.768569+00:00",
+        "notion_page_id": "3cc0a137-4574-819e-9236-e6b5e1bd83a2"
       }
     ],
-    "last_cycle_ts": "2026-08-30T06:21:16.424367+00:00",
+    "last_cycle_ts": "2026-08-30T07:20:59.293423+00:00",
     "stats": {
       "n": 50,
       "win_rate_pct": 14.0,
@@ -7235,6 +7258,10 @@
     {
       "ts": "2026-08-30T05:28:52.988790+00:00",
       "idx": 71.18
+    },
+    {
+      "ts": "2026-08-30T06:28:55.158077+00:00",
+      "idx": 71.22
     }
   ],
   "trades_public": [
