@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-31T20:28:37.900290+08:00",
+  "generated_at": "2026-08-31T21:28:50.413507+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -997,7 +997,7 @@
         "closed_ts": "2026-08-13T02:53:38.313134+00:00"
       }
     ],
-    "last_cycle_ts": "2026-08-31T12:25:49.739194+00:00",
+    "last_cycle_ts": "2026-08-31T13:25:19.764101+00:00",
     "stats": {
       "n": 32,
       "win_rate_pct": 31.2,
@@ -1039,12 +1039,35 @@
         "highest": 11.322,
         "lowest": 11.259,
         "breakeven_done": false,
-        "bars_elapsed": 6,
-        "last_checked_time": "2026-08-31 12:00:00",
+        "bars_elapsed": 7,
+        "last_checked_time": "2026-08-31 13:00:00",
         "notion_page_id": "3cd0a137-4574-81f5-aef7-d2ee9a6fa925"
+      },
+      {
+        "id": "strattl_ETHUSDT_1788181261",
+        "symbol": "ETH-USDT",
+        "direction": "LONG",
+        "entry": 2450.75,
+        "sl_price": 2404.8357142857144,
+        "tp_price": 2680.3214285714284,
+        "sl_dist": 45.9142857142856,
+        "qty": 0.04,
+        "max_hold_h": 48,
+        "strategy": "TL",
+        "fill_price": 2450.75,
+        "sig_key": "tl_ETH-USDT_2026-08-31 12:00:00",
+        "leverage": 32,
+        "sl_order_id": "2094414593845198848",
+        "opened_ts": "2026-08-31T13:18:46.010412+00:00",
+        "highest": 2450.75,
+        "lowest": 2450.75,
+        "breakeven_done": false,
+        "bars_elapsed": 0,
+        "last_checked_time": "2026-08-31T13:18:46.010412+00:00",
+        "notion_page_id": "3cd0a137-4574-8198-abf4-fae391d79d84"
       }
     ],
-    "last_cycle_ts": "2026-08-31T12:25:05.545431+00:00",
+    "last_cycle_ts": "2026-08-31T13:26:07.767461+00:00",
     "stats": {
       "n": 55,
       "win_rate_pct": 14.5,
@@ -7305,6 +7328,10 @@
     {
       "ts": "2026-08-31T12:22:41.003593+00:00",
       "idx": 70.94
+    },
+    {
+      "ts": "2026-08-31T13:22:44.625809+00:00",
+      "idx": 77.52
     }
   ],
   "trades_public": [
