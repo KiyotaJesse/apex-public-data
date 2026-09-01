@@ -97,6 +97,31 @@
   .ttbar input[type=range]{flex:1;accent-color:#D99A3E;background:transparent}
   .ttbar #ttlabel{min-width:190px;text-align:right;color:#B78A45}
 
+  /* 立體巢:第三維度 */
+  .solid{max-width:1200px;margin:70px auto 0;padding:0 20px}
+  .solid h2{
+    font-family:"Noto Serif TC",serif;font-weight:700;font-size:24px;color:#EFE3C6;margin-bottom:4px;
+  }
+  .solid .ssub{
+    font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.2em;color:#8A7455;margin-bottom:18px;
+  }
+  .solidwrap{
+    position:relative;border:1px solid #3A2C1E;background:#0E0A06;
+    cursor:grab;overflow:hidden;
+  }
+  .solidwrap.drag{cursor:grabbing}
+  .solidwrap canvas{display:block;width:100%;height:auto}
+  .solidhint{
+    position:absolute;left:14px;bottom:12px;
+    font-family:"IBM Plex Mono",monospace;font-size:11px;color:#6E5F49;letter-spacing:.06em;
+    pointer-events:none;
+  }
+  .solidaxis{
+    position:absolute;right:14px;top:12px;
+    font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:#8A7455;text-align:right;
+    pointer-events:none;line-height:1.7;
+  }
+
   /* 巢史編年室 */
   .chronicle{max-width:820px;margin:64px auto 0;padding:0 24px}
   .chronicle h2{
@@ -223,6 +248,16 @@
   </div>
 </div>
 
+<div class="solid">
+  <h2>立體巢</h2>
+  <div class="ssub">THE NEST IN THREE DIMENSIONS · 拖曳旋轉 · 滾輪縮放</div>
+  <div class="solidwrap" id="s3wrap">
+    <canvas id="nest3" width="1200" height="760"></canvas>
+    <div class="solidaxis" id="s3axis"></div>
+    <div class="solidhint">同一座巢,這次從外面看:剖面圖是它的一刀切面</div>
+  </div>
+</div>
+
 <div class="chronicle">
   <h2>巢史編年室</h2>
   <div class="csub">COLONY CHRONICLE · 建巢以來的大事,傷疤與勳章並列</div>
@@ -251,7 +286,7 @@
 (() => {
   // 巢況資料:每日清晨由排程從監督台名冊+D端config自動重編此行。
   // idx=帳戶權益指數(100=基準日) strategies=覓食蟻(on=false蜷著睡) groups=各群工蟻 retired=新墓碑
-  const NEST_DATA={"idx":88,"eq":331.4,"asOf":"09-01","weather":{"long":65.0,"short":44.0,"conf":{"TL":66.0,"B1":44.0,"MRS":44.0,"SC":44.0},"mega":27.1,"fng":62,"regime":"bull","stale":false},"strategies":[{"n":"B1","on":true},{"n":"TL","on":true},{"n":"RS","on":false},{"n":"SC1","on":true},{"n":"MRS","on":true}],"groups":{"展示":["蟻丘畫師"],"監控":["A迴圈","Deadloo"],"資料蒐集":["盤口OI","1H K線","4H K線","控制台快照","形態庫","幣池分層"],"例行報告":["晨報","LTM蒸餾","績效週報","月報","週日覆盤","OBI提醒"],"自我稽核":["API用量哨兵","LAPD","本機查勤","E稽核","驗證網","監督台","盤感計分器","衡"],"自適應決策":["L1換將","L2風險檔"],"研究":["LiveDiag","Scanner","週度優化","walk-fwd","變體艦隊","選礦機","非加密掃描","型態艦隊","極值盯盤","抄底盯盤","Neutron","鍛","巡","潛","風","探","信心度引擎"],"王座":["情報院","營收盯哨","2486哨兵"],"資料地基":["訂單流","盤口熟成","幣池重審"],"創業":["創業推播"],"風控":["TL驗收哨兵","帳","秤"]},"retired":["OBI提醒","雲端scanner","Jarvis"],"sick":[],"btc":{"chg":1.1},"pos":0,"sig":0,"hist":[82,82,83,83,82,82,84,69,68,68,66,13,13,13,13,13,13,13,13,13,13,17,20,20,101,99,96,95,90,88],"voice":{"n":"週日覆盤(信使蟻)","t":"我陪他覆盤每一筆交易。輸的單子比贏的值錢——前提是有人肯再看它一眼。"},"info":{"蟻丘畫師":{"p":"每日查BingX權益算指數, 更新蟻丘頁蟻后體型並推GitHub Pages(只推指數不推金額)","c":"每日 08:10"},"A迴圈":{"p":"價格/服務/心跳警報 + 星系圖資料產出","c":"連續"},"盤口OI":{"p":"每日盤口深度與未平倉量原始資料, T3 滑價防護與未來研究的原料","c":"每日一檔"},"1H K線":{"p":"同源 K 線庫(T1): 讓回測與實盤吃同一份資料","c":"每日一檔"},"4H K線":{"p":"同源 K 線庫(T1) 4 小時級別","c":"每日一檔"},"控制台快照":{"p":"控制台/指揮中心的即時資料源","c":"隨 config 變更 + 定期"},"形態庫":{"p":"狀態類比 kNN 的模型庫, 形態機率錐的原料","c":"不定期重建"},"晨報":{"p":"每天早上的總體情勢與績效","c":"每日 08:30"},"API用量哨兵":{"p":"每日餘額canary+API花費估計一行報, credit/billing 異常立即紅色警報","c":"每日 08:20"},"LAPD":{"p":"自動巡查系統異常並立案, 產出待裁決案件","c":"每日 09:00"},"L1換將":{"p":"自動比較現役策略與挑戰者參數, 決定要不要換將","c":"每日"},"L2風險檔":{"p":"依績效自動升降風險檔位","c":"每日"},"本機查勤":{"p":"查本機日檢出勤卡新鮮度; 電腦關機時的第三方見證","c":"每日 10:30"},"LTM蒸餾":{"p":"把交易與事件蒸餾成長期記憶","c":"每日 23:00"},"績效週報":{"p":"每週策略績效驗收","c":"每週日 20:00"},"E稽核":{"p":"自動掃描程式碼缺陷並提出建議(預設只建議不套用)","c":"每週一 09:15"},"月報":{"p":"每月總結","c":"每月 1 日 09:20"},"週日覆盤":{"p":"每週日晚上的交易覆盤參謀","c":"每週日 20:20"},"OBI提醒":{"p":"8/10 盤口滿月提醒; 本機版的雲端平行備援","c":"單次 2026-08-10 09:00"},"驗證網":{"p":"18 項防線證據日檢 + 出勤打卡到雲端","c":"每日 08:50"},"監督台":{"p":"照冊對帳全系統; 更新監督台頁面資料; 每天一則日報 + 新異常才推播","c":"每小時"},"LiveDiag":{"p":"每小時抓市場快照做逆向診斷","c":"每小時"},"Scanner":{"p":"本機訊號掃描","c":"每 15 分鐘"},"週度優化":{"p":"每週重跑參數 sweep","c":"每週一 00:10"},"walk-fwd":{"p":"滾動樣本外驗證, 抓策略衰退","c":"每週一 09:30"},"變體艦隊":{"p":"15 個策略變體離線並行回測, 找現役策略的改良版","c":"每週三 09:30"},"選礦機":{"p":"掃 26 族群+同源組合找新策略; 週上限 1 自動上線; 已裁決候選由裁決檔壓制; 影子轉正(前瞻n>=60/EV>=0.2/z>=2.5/齡30d 免G5G7)","c":"每 4 小時(2026-08-29 由每小時放寬"},"情報院":{"p":"每日情報蒐集(王座/情報院)","c":"每日 09:05"},"營收盯哨":{"p":"每月 5-15 日盯營收公告","c":"每日 09:30 +每 3 小時"},"2486哨兵":{"p":"一詮2486每日五訊號盯盤(268突破/250回測/233破壞/外資回補/融資接刀), 2026-08-28建, 取代已死的雲端routine","c":"平日 21:45 +隔晨 08:40 補跑"},"訂單流":{"p":"每日抓 Binance 逐筆成交壓成 5m 微結構特徵(機器自學主力的原料庫)","c":"每日 09:10"},"盤口熟成":{"p":"盯 orderbook_data 累積天數(滿90天通知可開工驗莊家行為)+蒐集器斷線立即警報","c":"每週一 09:10"},"幣池重審":{"p":"每日檢查, 距上次>=pool.review_days(旋鈕預設3天)才重審; 產 pool_tiers.json 給 D 端交易池與研究端共用","c":"每日 09:20"},"幣池分層":{"p":"D 端交易掃描與資料蒐集的池真相; 讀不到會 fail-safe 退回寫死 23 幣並告警","c":"每 3 天(旋鈕)"},"非加密掃描":{"p":"黃金/原油/指數/外匯跑完整資格鏈; 資料每週變長, 有組合過關才通知(首掃 512 組合 0 過關)","c":"每週六 10:30"},"型態艦隊":{"p":"手繪四條件型態 long_immediate 在台/港/日股的前進樣本追蹤(參數凍結, 只累積新訊號不重算歷史)","c":"每週三 10:30"},"極值盯盤":{"p":"每小時掃主池的力竭特徵(大振幅+爆量+反向長影線), 過賠率門檻且新鮮的推 TG; 觀察用非下單訊號","c":"每小時 :35"},"抄底盯盤":{"p":"盯 BTC 距歷史高點回撤, 觸及 -50%/-55%/-60%/-70% 時推一張帶清算價與目標價的執行卡; 未到門檻靜默","c":"每小時 :05"},"創業推播":{"p":"開公司這件事有沒有停下來; 週一推進度、期限逼近或階段停滯 14 天才叫, 其餘靜默。專案獨立於 claude-assistant, 只在此掛號","c":"每日 09:10"},"Neutron":{"p":"每 6 小時掃 Google News RSS 的 Rocket Lab Neutron 新料(首飛時程/結果/測試里程碑), 新文才推 TG(CRIT 不限量/INFO 每日 2","c":"每 6 小時(09:15 起)"},"TL驗收哨兵":{"p":"盯 2026-08-27 TP5R 切換後的 TL 實彈; 8筆失血提前叫/15-25-40筆里程碑判定綠黃紅; 紅燈附 revert 一鍵; 防回測-實彈落差(TL 前科 -0.","c":"每日 21:05"},"鍛":{"p":"特助蟻·審核/優化/進化已上線策略; 實績×回測對帳/出場閘門健檢/衰退偵測; 只建議不套用; 首日戰功=揪出TL的TP消費端從未接通","c":"隨叫隨到"},"巡":{"p":"特助蟻·全天候市況掃描: regime兩口徑/波動量能位階/異常幣偵測; 機械化身=信心度引擎的巡分項","c":"隨叫隨到"},"潛":{"p":"特助蟻·大錢動向: funding/OI位階/大單/免費鏈上訊號; 拿不到的維度明講無資料不用猜的","c":"隨叫隨到"},"風":{"p":"特助蟻·新聞與市場情緒+超大底五項評判(深度/恐慌/投降/籌碼/時間,>=80=候選); 連動20x抄底埋伏軌","c":"隨叫隨到"},"探":{"p":"特助蟻·環境×策略配對: 各現役策略信心度0-100拆解(趨勢40/波動25/籌碼20/情緒15); 信心度是建議層不自動改D端","c":"隨叫隨到"},"信心度引擎":{"p":"每小時算市況/籌碼/情緒/各策略信心度0-100+超大底五項評分; 跨信心帶或超大底變動才推TG; 建議層不自動改D端參數(自適應調參墳場裁決); 輸出供小飛機/抄底計畫讀","c":"每小時 :25"},"盤感計分器":{"p":"每週拿信心度引擎的前瞻日誌對BTC實際走勢打分(24h/72h方向命中+高低信心組校準); 盤感是算出來的; 樣本滿20筆才給正式評語; 沒新資料靜默","c":"每週日 20:30"},"帳":{"p":"每日拿交易所真相對帳本: 幽靈倉(帳外裸倉紅色)/孤兒帳面/收養紀錄/假R特徵; 前科=8/24幽靈倉+TRX假R; 首跑即抓到帳外BTC空單0.0965裸倉","c":"每日 08:05"},"衡":{"p":"每筆實單的真實成本法醫(income逐筆手續費+資金費換算bps), 逐幣累積對照D端成本表, 實測>假設1.5倍才叫; 滑價分解為v2待盤口對齊; 參謀化T3軌","c":"每日 09:40"},"秤":{"p":"每小時看整巢總曝險(含帳外手動倉): 同向注數+持倉相關性+有效注數N_eff; 同向>=4或名目與有效差>=1.5注才叫; 純建議層不擋單(8/28六連停損=同注下六次的解藥)","c":"每小時 :45"},"Deadloo":{"p":"常駐 http://127.0.0.1:8787。收各排程回報的「這輪實際產出」，抓 跑了但沒做事 的空轉（一般心跳監控看不到）。目前監看 極值盯盤器/BTC抄底盯盤器/選礦機/蟻","c":"常駐(登入時由看門狗拉起)"},"B1":{"p":"VWAP 回落+跌勢空的主力覓食蟻; 裝了逐幣成本濾網後現役最健康","c":"D端 60 秒掃描"},"TL":{"p":"多指標順勢多; 2026-08-27 換 TP5R 寬止盈, 驗收哨兵盯場中","c":"D端 60 秒掃描"},"SC1":{"p":"空方策略; 熊市 regime 才出勤, 多頭時冬眠是設計不是故障","c":"D端 60 秒掃描"},"MRS":{"p":"VWAP 超漲回落空; bear 閘門管制出勤","c":"D端 60 秒掃描"},"RS":{"p":"相對強弱輪動; 已裁決退役——扣掉最強單腳後 EV 轉負, 留巢示課","c":"停用"},"AUTO":{"p":"通用策略引擎; 礦機過關的候選自動接管這個名額","c":"D端 60 秒掃描"},"蟻后":{"p":"帳戶權益本體; 她的體重就是巢的存糧, 每天量一次","c":"每日 08:10 量測"},"育嬰房":{"p":"礦機的近礦影子在這裡孵前瞻紀錄; 攢滿 n>=60/EV>=0.2/z>=2.5/滿30天 即免 G5G7 轉正上場","c":"每 4 小時累積"}},"eggs":{"total":417,"list":[{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.12,"g":false},{"p":0.12,"g":false},{"p":0.12,"g":false},{"p":0.12,"g":false},{"p":0.12,"g":false},{"p":0.12,"g":false},{"p":0.12,"g":false},{"p":0.12,"g":false},{"p":0.12,"g":false},{"p":0.12,"g":false},{"p":0.12,"g":false},{"p":0.12,"g":false},{"p":0.12,"g":false},{"p":0.12,"g":false},{"p":0.12,"g":false},{"p":0.12,"g":false},{"p":0.12,"g":false},{"p":0.12,"g":false},{"p":0.12,"g":false},{"p":0.1,"g":false},{"p":0.1,"g":false},{"p":0.1,"g":false},{"p":0.1,"g":false},{"p":0.1,"g":false},{"p":0.1,"g":false},{"p":0.1,"g":false},{"p":0.1,"g":false},{"p":0.1,"g":false},{"p":0.1,"g":false},{"p":0.1,"g":false},{"p":0.08,"g":false},{"p":0.08,"g":false},{"p":0.08,"g":false},{"p":0.08,"g":false},{"p":0.08,"g":false},{"p":0.08,"g":false},{"p":0.08,"g":false},{"p":0.08,"g":false},{"p":0.08,"g":false},{"p":0.08,"g":false},{"p":0.08,"g":false},{"p":0.08,"g":false},{"p":0.08,"g":false},{"p":0.08,"g":false},{"p":0.07,"g":false},{"p":0.07,"g":false}]},"news":["蟻后 88(較昨日-2)","BTC 24h +1.1% · 持倉 0 · 今日訊號 0","TL驗收哨兵: TP5R 後 3 筆 EV-1.16","礦機頭牌「量價爆量突破」發現後驗證 4/8 筆","礦機上輪 09-01 04:31 掃畢 · 候選 0","監督台 54/58 全綠","BTC 距高點 -38% · 20x 埋伏軌 待命中"],"rings":[],"obits":{"OBI提醒":{"d":"","why":"已裁決退役(詳監督台名冊)"},"雲端scanner":{"d":"","why":"已裁決退役(詳監督台名冊)"},"Jarvis":{"d":"","why":"已裁決退役(詳監督台名冊)"},"OB":{"d":"2026-06-29","why":"原始策略被 B1 取代退役; 舊時代的第一隻覓食蟻"},"RS":{"d":"2026-08-13","why":"扣掉最強單腳(LINK)後 EV 轉負; 靠一隻腳站著的策略不能上場"},"Z訓練器":{"d":"2026-08-01","why":"ML 訓練器從未產出可用信號, 掛點全拆"},"VB":{"d":"2026-06","why":"波動突破維度全參數負 EV, 整條維度封存"},"時鐘":{"d":"2026-08-01","why":"UTC 時段效應證偽; 時間本身不是邊際"},"莊家4式":{"d":"2026-08-12","why":"四種主力手法毛 EV≈0 全被成本吃光; 等盤口資料熟成再驗"},"強平瀑布":{"d":"2026-08-13","why":"四連證偽; OI 判別器賺不回成本, 掛單被逆選擇獵殺"},"EMA20":{"d":"2026-08-13","why":"回踩效應是切點運氣, 無劑量反應; 隨機基準就有 48.2%"},"關鍵位":{"d":"2026-08-12","why":"反彈效應僅 +1pp 不可交易; 對照組沒對齊會造出假發現"},"自動YT":{"d":"2026-08-05","why":"全自動兒童頻道構想, 評估後不建議, 入墳防重挖"}},"mood":"又輕了一點。餓不死, 但別讓我習慣。","trophies":[],"duel":null,"newborn":null,"tl":[{"d":"07-04","i":135},{"d":"07-05","i":138},{"d":"07-06","i":137},{"d":"07-07","i":130},{"d":"07-08","i":121},{"d":"07-09","i":119},{"d":"07-10","i":99},{"d":"07-11","i":81},{"d":"07-12","i":93},{"d":"07-13","i":137},{"d":"07-14","i":122},{"d":"07-15","i":131},{"d":"07-16","i":126},{"d":"07-17","i":94},{"d":"07-18","i":95},{"d":"07-19","i":94},{"d":"07-20","i":88},{"d":"07-21","i":90},{"d":"07-22","i":90},{"d":"07-23","i":87},{"d":"07-24","i":89},{"d":"07-25","i":90},{"d":"07-26","i":90},{"d":"07-27","i":87},{"d":"07-28","i":84},{"d":"07-29","i":84},{"d":"07-30","i":84},{"d":"07-31","i":85},{"d":"08-01","i":95},{"d":"08-02","i":85},{"d":"08-03","i":82},{"d":"08-04","i":82},{"d":"08-05","i":83},{"d":"08-06","i":83},{"d":"08-07","i":82},{"d":"08-08","i":82},{"d":"08-09","i":84},{"d":"08-10","i":69},{"d":"08-11","i":68},{"d":"08-12","i":68},{"d":"08-13","i":66},{"d":"08-14","i":13},{"d":"08-15","i":13},{"d":"08-16","i":13},{"d":"08-17","i":13},{"d":"08-18","i":13},{"d":"08-19","i":13},{"d":"08-20","i":13},{"d":"08-21","i":13},{"d":"08-22","i":13},{"d":"08-23","i":13},{"d":"08-24","i":17},{"d":"08-25","i":20},{"d":"08-26","i":20},{"d":"08-27","i":101},{"d":"08-28","i":99},{"d":"08-29","i":96},{"d":"08-30","i":95},{"d":"08-31","i":90},{"d":"09-01","i":88}]};//NEST-MARKER
+  const NEST_DATA={"idx":122,"eq":461.4,"asOf":"09-01","weather":{"long":59.0,"short":44.0,"conf":{"TL":62.0,"B1":44.0,"MRS":44.0,"SC":45.0},"mega":27.3,"fng":69,"regime":"bull","stale":false},"strategies":[{"n":"B1","on":true},{"n":"TL","on":true},{"n":"RS","on":false},{"n":"SC1","on":true},{"n":"MRS","on":true},{"n":"AUTO","on":true}],"groups":{"展示":["蟻丘畫師"],"監控":["A迴圈","Deadloo"],"資料蒐集":["盤口OI","1H K線","4H K線","控制台快照","形態庫","幣池分層"],"例行報告":["晨報","LTM蒸餾","績效週報","月報","週日覆盤","OBI提醒"],"自我稽核":["API用量哨兵","LAPD","本機查勤","E稽核","驗證網","監督台","盤感計分器","衡"],"自適應決策":["L1換將","L2風險檔"],"研究":["LiveDiag","Scanner","週度優化","walk-fwd","變體艦隊","選礦機","非加密掃描","型態艦隊","極值盯盤","抄底盯盤","Neutron","鍛","巡","潛","風","探","信心度引擎"],"王座":["情報院","營收盯哨","2486哨兵"],"資料地基":["訂單流","盤口熟成","幣池重審"],"創業":["創業推播"],"風控":["TL驗收哨兵","帳","秤"]},"retired":["OBI提醒","雲端scanner","Jarvis"],"sick":[],"btc":{"chg":0.5},"pos":0,"sig":0,"hist":[82,82,83,83,82,82,84,69,68,68,66,13,13,13,13,13,13,13,13,13,13,17,20,20,101,99,96,95,90,122],"voice":{"n":"潛(偵察蟻)","t":"今天輪到我受訪?讓我想想⋯⋯算了,活兒還沒做完,先做活。"},"info":{"蟻丘畫師":{"p":"每日查BingX權益算指數, 更新蟻丘頁蟻后體型並推GitHub Pages(只推指數不推金額)","c":"每日 08:10"},"A迴圈":{"p":"價格/服務/心跳警報 + 星系圖資料產出","c":"連續"},"盤口OI":{"p":"每日盤口深度與未平倉量原始資料, T3 滑價防護與未來研究的原料","c":"每日一檔"},"1H K線":{"p":"同源 K 線庫(T1): 讓回測與實盤吃同一份資料","c":"每日一檔"},"4H K線":{"p":"同源 K 線庫(T1) 4 小時級別","c":"每日一檔"},"控制台快照":{"p":"控制台/指揮中心的即時資料源","c":"隨 config 變更 + 定期"},"形態庫":{"p":"狀態類比 kNN 的模型庫, 形態機率錐的原料","c":"不定期重建"},"晨報":{"p":"每天早上的總體情勢與績效","c":"每日 08:30"},"API用量哨兵":{"p":"每日餘額canary+API花費估計一行報, credit/billing 異常立即紅色警報","c":"每日 08:20"},"LAPD":{"p":"自動巡查系統異常並立案, 產出待裁決案件","c":"每日 09:00"},"L1換將":{"p":"自動比較現役策略與挑戰者參數, 決定要不要換將","c":"每日"},"L2風險檔":{"p":"依績效自動升降風險檔位","c":"每日"},"本機查勤":{"p":"查本機日檢出勤卡新鮮度; 電腦關機時的第三方見證","c":"每日 10:30"},"LTM蒸餾":{"p":"把交易與事件蒸餾成長期記憶","c":"每日 23:00"},"績效週報":{"p":"每週策略績效驗收","c":"每週日 20:00"},"E稽核":{"p":"自動掃描程式碼缺陷並提出建議(預設只建議不套用)","c":"每週一 09:15"},"月報":{"p":"每月總結","c":"每月 1 日 09:20"},"週日覆盤":{"p":"每週日晚上的交易覆盤參謀","c":"每週日 20:20"},"OBI提醒":{"p":"8/10 盤口滿月提醒; 本機版的雲端平行備援","c":"單次 2026-08-10 09:00"},"驗證網":{"p":"18 項防線證據日檢 + 出勤打卡到雲端","c":"每日 08:50"},"監督台":{"p":"照冊對帳全系統; 更新監督台頁面資料; 每天一則日報 + 新異常才推播","c":"每小時"},"LiveDiag":{"p":"每小時抓市場快照做逆向診斷","c":"每小時"},"Scanner":{"p":"本機訊號掃描","c":"每 15 分鐘"},"週度優化":{"p":"每週重跑參數 sweep","c":"每週一 00:10"},"walk-fwd":{"p":"滾動樣本外驗證, 抓策略衰退","c":"每週一 09:30"},"變體艦隊":{"p":"15 個策略變體離線並行回測, 找現役策略的改良版","c":"每週三 09:30"},"選礦機":{"p":"掃 26 族群+同源組合找新策略; 週上限 1 自動上線; 已裁決候選由裁決檔壓制; 影子轉正(前瞻n>=60/EV>=0.2/z>=2.5/齡30d 免G5G7)","c":"每 4 小時(2026-08-29 由每小時放寬"},"情報院":{"p":"每日情報蒐集(王座/情報院)","c":"每日 09:05"},"營收盯哨":{"p":"每月 5-15 日盯營收公告","c":"每日 09:30 +每 3 小時"},"2486哨兵":{"p":"一詮2486每日五訊號盯盤(268突破/250回測/233破壞/外資回補/融資接刀), 2026-08-28建, 取代已死的雲端routine","c":"平日 21:45 +隔晨 08:40 補跑"},"訂單流":{"p":"每日抓 Binance 逐筆成交壓成 5m 微結構特徵(機器自學主力的原料庫)","c":"每日 09:10"},"盤口熟成":{"p":"盯 orderbook_data 累積天數(滿90天通知可開工驗莊家行為)+蒐集器斷線立即警報","c":"每週一 09:10"},"幣池重審":{"p":"每日檢查, 距上次>=pool.review_days(旋鈕預設3天)才重審; 產 pool_tiers.json 給 D 端交易池與研究端共用","c":"每日 09:20"},"幣池分層":{"p":"D 端交易掃描與資料蒐集的池真相; 讀不到會 fail-safe 退回寫死 23 幣並告警","c":"每 3 天(旋鈕)"},"非加密掃描":{"p":"黃金/原油/指數/外匯跑完整資格鏈; 資料每週變長, 有組合過關才通知(首掃 512 組合 0 過關)","c":"每週六 10:30"},"型態艦隊":{"p":"手繪四條件型態 long_immediate 在台/港/日股的前進樣本追蹤(參數凍結, 只累積新訊號不重算歷史)","c":"每週三 10:30"},"極值盯盤":{"p":"每小時掃主池的力竭特徵(大振幅+爆量+反向長影線), 過賠率門檻且新鮮的推 TG; 觀察用非下單訊號","c":"每小時 :35"},"抄底盯盤":{"p":"盯 BTC 距歷史高點回撤, 觸及 -50%/-55%/-60%/-70% 時推一張帶清算價與目標價的執行卡; 未到門檻靜默","c":"每小時 :05"},"創業推播":{"p":"開公司這件事有沒有停下來; 週一推進度、期限逼近或階段停滯 14 天才叫, 其餘靜默。專案獨立於 claude-assistant, 只在此掛號","c":"每日 09:10"},"Neutron":{"p":"每 6 小時掃 Google News RSS 的 Rocket Lab Neutron 新料(首飛時程/結果/測試里程碑), 新文才推 TG(CRIT 不限量/INFO 每日 2","c":"每 6 小時(09:15 起)"},"TL驗收哨兵":{"p":"盯 2026-08-27 TP5R 切換後的 TL 實彈; 8筆失血提前叫/15-25-40筆里程碑判定綠黃紅; 紅燈附 revert 一鍵; 防回測-實彈落差(TL 前科 -0.","c":"每日 21:05"},"鍛":{"p":"特助蟻·審核/優化/進化已上線策略; 實績×回測對帳/出場閘門健檢/衰退偵測; 只建議不套用; 首日戰功=揪出TL的TP消費端從未接通","c":"隨叫隨到"},"巡":{"p":"特助蟻·全天候市況掃描: regime兩口徑/波動量能位階/異常幣偵測; 機械化身=信心度引擎的巡分項","c":"隨叫隨到"},"潛":{"p":"特助蟻·大錢動向: funding/OI位階/大單/免費鏈上訊號; 拿不到的維度明講無資料不用猜的","c":"隨叫隨到"},"風":{"p":"特助蟻·新聞與市場情緒+超大底五項評判(深度/恐慌/投降/籌碼/時間,>=80=候選); 連動20x抄底埋伏軌","c":"隨叫隨到"},"探":{"p":"特助蟻·環境×策略配對: 各現役策略信心度0-100拆解(趨勢40/波動25/籌碼20/情緒15); 信心度是建議層不自動改D端","c":"隨叫隨到"},"信心度引擎":{"p":"每小時算市況/籌碼/情緒/各策略信心度0-100+超大底五項評分; 跨信心帶或超大底變動才推TG; 建議層不自動改D端參數(自適應調參墳場裁決); 輸出供小飛機/抄底計畫讀","c":"每小時 :25"},"盤感計分器":{"p":"每週拿信心度引擎的前瞻日誌對BTC實際走勢打分(24h/72h方向命中+高低信心組校準); 盤感是算出來的; 樣本滿20筆才給正式評語; 沒新資料靜默","c":"每週日 20:30"},"帳":{"p":"每日拿交易所真相對帳本: 幽靈倉(帳外裸倉紅色)/孤兒帳面/收養紀錄/假R特徵; 前科=8/24幽靈倉+TRX假R; 首跑即抓到帳外BTC空單0.0965裸倉","c":"每日 08:05"},"衡":{"p":"每筆實單的真實成本法醫(income逐筆手續費+資金費換算bps), 逐幣累積對照D端成本表, 實測>假設1.5倍才叫; 滑價分解為v2待盤口對齊; 參謀化T3軌","c":"每日 09:40"},"秤":{"p":"每小時看整巢總曝險(含帳外手動倉): 同向注數+持倉相關性+有效注數N_eff; 同向>=4或名目與有效差>=1.5注才叫; 純建議層不擋單(8/28六連停損=同注下六次的解藥)","c":"每小時 :45"},"Deadloo":{"p":"常駐 http://127.0.0.1:8787。收各排程回報的「這輪實際產出」，抓 跑了但沒做事 的空轉（一般心跳監控看不到）。目前監看 極值盯盤器/BTC抄底盯盤器/選礦機/蟻","c":"常駐(登入時由看門狗拉起)"},"B1":{"p":"VWAP 回落+跌勢空的主力覓食蟻; 裝了逐幣成本濾網後現役最健康","c":"D端 60 秒掃描"},"TL":{"p":"多指標順勢多; 2026-08-27 換 TP5R 寬止盈, 驗收哨兵盯場中","c":"D端 60 秒掃描"},"SC1":{"p":"空方策略; 熊市 regime 才出勤, 多頭時冬眠是設計不是故障","c":"D端 60 秒掃描"},"MRS":{"p":"VWAP 超漲回落空; bear 閘門管制出勤","c":"D端 60 秒掃描"},"RS":{"p":"相對強弱輪動; 已裁決退役——扣掉最強單腳後 EV 轉負, 留巢示課","c":"停用"},"AUTO":{"p":"通用策略引擎; 礦機過關的候選自動接管這個名額","c":"D端 60 秒掃描"},"蟻后":{"p":"帳戶權益本體; 她的體重就是巢的存糧, 每天量一次","c":"每日 08:10 量測"},"育嬰房":{"p":"礦機的近礦影子在這裡孵前瞻紀錄; 攢滿 n>=60/EV>=0.2/z>=2.5/滿30天 即免 G5G7 轉正上場","c":"每 4 小時累積"}},"eggs":{"total":447,"list":[{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.13,"g":false},{"p":0.12,"g":false},{"p":0.12,"g":false},{"p":0.12,"g":false},{"p":0.12,"g":false},{"p":0.12,"g":false},{"p":0.12,"g":false},{"p":0.12,"g":false},{"p":0.12,"g":false},{"p":0.12,"g":false},{"p":0.12,"g":false},{"p":0.1,"g":false},{"p":0.1,"g":false},{"p":0.1,"g":false},{"p":0.1,"g":false},{"p":0.1,"g":false},{"p":0.1,"g":false},{"p":0.1,"g":false},{"p":0.1,"g":false},{"p":0.1,"g":false},{"p":0.1,"g":false},{"p":0.1,"g":false},{"p":0.1,"g":false},{"p":0.08,"g":false},{"p":0.08,"g":false},{"p":0.08,"g":false},{"p":0.08,"g":false}]},"news":["蟻后 122(較昨日+32)","BTC 24h +0.5% · 持倉 0 · 今日訊號 0","TL驗收哨兵: TP5R 後 3 筆 EV-1.16","礦機頭牌「量價爆量突破」發現後驗證 4/8 筆","礦機上輪 09-01 16:33 掃畢 · 候選 0","監督台 57/58 全綠","BTC 距高點 -38% · 20x 埋伏軌 待命中"],"rings":[],"obits":{"OBI提醒":{"d":"","why":"已裁決退役(詳監督台名冊)"},"雲端scanner":{"d":"","why":"已裁決退役(詳監督台名冊)"},"Jarvis":{"d":"","why":"已裁決退役(詳監督台名冊)"},"OB":{"d":"2026-06-29","why":"原始策略被 B1 取代退役; 舊時代的第一隻覓食蟻"},"RS":{"d":"2026-08-13","why":"扣掉最強單腳(LINK)後 EV 轉負; 靠一隻腳站著的策略不能上場"},"Z訓練器":{"d":"2026-08-01","why":"ML 訓練器從未產出可用信號, 掛點全拆"},"VB":{"d":"2026-06","why":"波動突破維度全參數負 EV, 整條維度封存"},"時鐘":{"d":"2026-08-01","why":"UTC 時段效應證偽; 時間本身不是邊際"},"莊家4式":{"d":"2026-08-12","why":"四種主力手法毛 EV≈0 全被成本吃光; 等盤口資料熟成再驗"},"強平瀑布":{"d":"2026-08-13","why":"四連證偽; OI 判別器賺不回成本, 掛單被逆選擇獵殺"},"EMA20":{"d":"2026-08-13","why":"回踩效應是切點運氣, 無劑量反應; 隨機基準就有 48.2%"},"關鍵位":{"d":"2026-08-12","why":"反彈效應僅 +1pp 不可交易; 對照組沒對齊會造出假發現"},"自動YT":{"d":"2026-08-05","why":"全自動兒童頻道構想, 評估後不建議, 入墳防重挖"}},"mood":"糧倉有進帳。我對運氣沒興趣, 讓我看見第二天。","trophies":[],"duel":null,"newborn":"AUTO","tl":[{"d":"07-04","i":135},{"d":"07-05","i":138},{"d":"07-06","i":137},{"d":"07-07","i":130},{"d":"07-08","i":121},{"d":"07-09","i":119},{"d":"07-10","i":99},{"d":"07-11","i":81},{"d":"07-12","i":93},{"d":"07-13","i":137},{"d":"07-14","i":122},{"d":"07-15","i":131},{"d":"07-16","i":126},{"d":"07-17","i":94},{"d":"07-18","i":95},{"d":"07-19","i":94},{"d":"07-20","i":88},{"d":"07-21","i":90},{"d":"07-22","i":90},{"d":"07-23","i":87},{"d":"07-24","i":89},{"d":"07-25","i":90},{"d":"07-26","i":90},{"d":"07-27","i":87},{"d":"07-28","i":84},{"d":"07-29","i":84},{"d":"07-30","i":84},{"d":"07-31","i":85},{"d":"08-01","i":95},{"d":"08-02","i":85},{"d":"08-03","i":82},{"d":"08-04","i":82},{"d":"08-05","i":83},{"d":"08-06","i":83},{"d":"08-07","i":82},{"d":"08-08","i":82},{"d":"08-09","i":84},{"d":"08-10","i":69},{"d":"08-11","i":68},{"d":"08-12","i":68},{"d":"08-13","i":66},{"d":"08-14","i":13},{"d":"08-15","i":13},{"d":"08-16","i":13},{"d":"08-17","i":13},{"d":"08-18","i":13},{"d":"08-19","i":13},{"d":"08-20","i":13},{"d":"08-21","i":13},{"d":"08-22","i":13},{"d":"08-23","i":13},{"d":"08-24","i":17},{"d":"08-25","i":20},{"d":"08-26","i":20},{"d":"08-27","i":101},{"d":"08-28","i":99},{"d":"08-29","i":96},{"d":"08-30","i":95},{"d":"08-31","i":90},{"d":"09-01","i":122}]};//NEST-MARKER
   const cv = document.getElementById('nest');
   const W = 1200, H = 3000;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1510,6 +1545,253 @@
     });
   }
   function paintOnce(){frame(0);}
+
+  // ══════════════════════════════════════════════════════════════════
+  // 維度進化(2026-09-01): 立體巢。手寫透視投影 + 畫家演算法, 零外部依賴。
+  // 剖面圖是這座巢的一刀切面; 這裡是同一座巢從外面看。
+  // 座標: y=深度(向下為正,地表=0), x/z=水平面。巢室繞巢軸散開成真正的立體結構。
+  // ══════════════════════════════════════════════════════════════════
+  (()=>{
+    const cv3=document.getElementById('nest3');
+    if(!cv3)return;
+    const g=cv3.getContext('2d');
+    const W3=1200,H3=760;
+    const DZ=0.42;                       // 深度壓縮(剖面 3000px 太高, 立體看要收)
+    const d3=v=>(v-GROUND)*DZ;           // 剖面 y -> 立體深度
+
+    // 巢室的立體佈局: r=離巢軸距離, az=繞巢軸的方位角
+    const C3=[
+      {k:'queen',  n:'女王室',   r:0,   az:0,    y:d3(P.queen.y),   rx:78, ry:46, c:'#3A2C1C'},
+      {k:'guard',  n:'兵蟻崗',   r:250, az:0.35, y:d3(P.guard.y),   rx:52, ry:33, c:'#33261A'},
+      {k:'medic',  n:'醫護室',   r:235, az:1.25, y:d3(P.medic.y),   rx:50, ry:33, c:'#33261A'},
+      {k:'workers',n:'工蟻房',   r:300, az:2.45, y:d3(P.workers.y), rx:92, ry:52, c:'#3A2C1C'},
+      {k:'memory', n:'真菌園',   r:170, az:3.65, y:d3(P.memory.y),  rx:78, ry:44, c:'#332A18'},
+      {k:'archive',n:'檔案館',   r:330, az:4.35, y:d3(P.archive.y), rx:58, ry:36, c:'#33261A'},
+      {k:'grave',  n:'墳場',     r:360, az:2.95, y:d3(P.grave.y),   rx:104,ry:48, c:'#241A12'},
+      {k:'front',  n:'掘進面',   r:110, az:5.25, y:d3(P.front.y),   rx:70, ry:42, c:'#33261A'},
+      {k:'nursery',n:'育嬰房',   r:310, az:5.85, y:d3(P.nursery.y), rx:76, ry:42, c:'#332A18'},
+    ];
+    const pos3={};
+    for(const c of C3){ c.x=c.r*Math.cos(c.az); c.z=c.r*Math.sin(c.az); pos3[c.k]={x:c.x,y:c.y,z:c.z}; }
+    const ENTRY={x:0,y:0,z:0}, FORAGE={x:430,y:-40,z:-260};
+    pos3.entry=ENTRY; pos3.forage=FORAGE;
+
+    // 立體隧道: 兩點之間帶弧度的曲線(中點外推, 才不會全是直線)
+    function tube(a,b,bulge){
+      const pts=[];
+      const mx=(a.x+b.x)/2*(1+(bulge||0)), my=(a.y+b.y)/2, mz=(a.z+b.z)/2*(1+(bulge||0));
+      for(let i=0;i<=22;i++){
+        const t=i/22,u=1-t;
+        pts.push({x:u*u*a.x+2*u*t*mx+t*t*b.x,
+                  y:u*u*a.y+2*u*t*my+t*t*b.y,
+                  z:u*u*a.z+2*u*t*mz+t*t*b.z});
+      }
+      return pts;
+    }
+    const T3=[
+      tube(ENTRY,pos3.queen,0), tube(pos3.queen,pos3.guard,.25),
+      tube(pos3.queen,pos3.medic,.2), tube(pos3.queen,pos3.workers,.15),
+      tube(pos3.workers,FORAGE,.4), tube(pos3.workers,pos3.memory,.2),
+      tube(pos3.queen,pos3.memory,.3), tube(pos3.memory,pos3.archive,.2),
+      tube(pos3.memory,pos3.grave,.25), tube(pos3.memory,pos3.front,.2),
+      tube(pos3.front,pos3.grave,.3), tube(pos3.front,pos3.nursery,.25),
+    ];
+
+    // 相機
+    const CAM={az:0.7,el:0.42,dist:1500,fov:1050};
+    let auto=true, lastDrag=0;
+    function proj(p){
+      const ca=Math.cos(CAM.az), sa=Math.sin(CAM.az);
+      const X=p.x*ca-p.z*sa, Zr=p.x*sa+p.z*ca;
+      const ce=Math.cos(CAM.el), se=Math.sin(CAM.el);
+      const Y=p.y*ce-Zr*se;
+      let Z=p.y*se+Zr*ce+CAM.dist;
+      if(Z<60)Z=60;
+      const s=CAM.fov/Z;
+      return {x:W3/2+X*s, y:H3*0.34+Y*s, s:s, z:Z};
+    }
+
+    // 立體螞蟻: 依透視縮放的小蟻(用 2D 的 drawAnt, 傳縮過的 caste)
+    const A3=[];
+    {
+      const paint=[['forager',4],['scout',5],['guard',3],['carrier',3],['medic',1]];
+      let ti=0;
+      for(const [caste,cnt] of paint){
+        for(let i=0;i<cnt;i++){
+          A3.push({route:T3[(ti++)%T3.length],caste:caste,
+                   t:((i*37+ti*13)%100)/100, dir:1,
+                   sp:.0009+((i*7+ti*3)%9)*.00012, jig:(i*29+ti*11)%628/100});
+        }
+      }
+    }
+
+    function drawGround(){
+      // 地表圓盤: 從外面看巢, 地面是一片有紋理的土
+      const R=760, seg=48;
+      const rim=[];
+      for(let i=0;i<=seg;i++){
+        const a=i/seg*Math.PI*2;
+        rim.push(proj({x:Math.cos(a)*R,y:0,z:Math.sin(a)*R}));
+      }
+      g.beginPath();g.moveTo(rim[0].x,rim[0].y);
+      for(const p of rim)g.lineTo(p.x,p.y);
+      g.closePath();
+      const gg=g.createLinearGradient(0,H3*0.1,0,H3*0.62);
+      gg.addColorStop(0,'#2B2015');gg.addColorStop(1,'#181009');
+      g.fillStyle=gg;g.fill();
+      g.strokeStyle='rgba(90,72,48,.6)';g.lineWidth=1.2;g.stroke();
+      // 同心紋理
+      for(const rr of [200,380,560]){
+        g.beginPath();
+        for(let i=0;i<=seg;i++){
+          const a=i/seg*Math.PI*2, p=proj({x:Math.cos(a)*rr,y:0,z:Math.sin(a)*rr});
+          i?g.lineTo(p.x,p.y):g.moveTo(p.x,p.y);
+        }
+        g.closePath();g.strokeStyle='rgba(90,72,48,.18)';g.lineWidth=1;g.stroke();
+      }
+      // 巢口土丘
+      const e=proj(ENTRY);
+      g.fillStyle='rgba(96,74,48,.75)';
+      g.beginPath();g.ellipse(e.x,e.y,26*e.s*1.6,10*e.s*1.6,0,0,7);g.fill();
+      g.fillStyle='#0B0805';
+      g.beginPath();g.ellipse(e.x,e.y,11*e.s*1.6,4.4*e.s*1.6,0,0,7);g.fill();
+      // 覓食場
+      const f=proj(FORAGE);
+      g.fillStyle='rgba(94,122,74,.5)';
+      g.beginPath();g.ellipse(f.x,f.y,54*f.s,20*f.s,0,0,7);g.fill();
+      g.fillStyle='#8F7E62';g.font='11px "IBM Plex Mono",monospace';g.textAlign='center';
+      g.fillText('覓食場',f.x,f.y-16*f.s);g.textAlign='left';
+    }
+
+    function frame3(time){
+      g.clearRect(0,0,W3,H3);
+      const sky=g.createLinearGradient(0,0,0,H3);
+      sky.addColorStop(0,'#0B0F1A');sky.addColorStop(.35,'#140E08');sky.addColorStop(1,'#080604');
+      g.fillStyle=sky;g.fillRect(0,0,W3,H3);
+      if(auto&&!reduced)CAM.az+=0.0016;
+
+      drawGround();
+
+      // 收集所有可畫物 -> 依相機距離由遠到近排序(畫家演算法)
+      const items=[];
+      for(const t of T3){
+        for(let i=0;i<t.length-1;i++){
+          const a=proj(t[i]), b=proj(t[i+1]);
+          items.push({z:(a.z+b.z)/2, kind:'tube', a:a, b:b});
+        }
+      }
+      for(const c of C3) items.push({z:proj(c).z, kind:'room', c:c});
+      for(const a of A3){
+        a.t+=a.sp*a.dir*(reduced?0:1)*PACE;
+        if(a.t>=1){a.t=1;a.dir=-1;}
+        if(a.t<=0){a.t=0;a.dir=1;}
+        const idx=a.t*(a.route.length-1);
+        const i=Math.min(Math.floor(idx),a.route.length-2), f=idx-i;
+        const p0=a.route[i], p1=a.route[i+1];
+        const wp={x:p0.x+(p1.x-p0.x)*f, y:p0.y+(p1.y-p0.y)*f, z:p0.z+(p1.z-p0.z)*f};
+        const sp=proj(wp);
+        const q0=proj(p0), q1=proj(p1);
+        items.push({z:sp.z, kind:'ant', p:sp, caste:a.caste,
+                    ang:Math.atan2(q1.y-q0.y,q1.x-q0.x)+(a.dir<0?Math.PI:0), jig:a.jig});
+      }
+      // 蟻后
+      items.push({z:proj(pos3.queen).z, kind:'queen', p:proj(pos3.queen)});
+      items.sort((m,n)=>n.z-m.z);
+
+      for(const it of items){
+        if(it.kind==='tube'){
+          const w=Math.max(1.2,17*((it.a.s+it.b.s)/2));
+          g.strokeStyle='#241A0F';g.lineWidth=w+3;g.lineCap='round';
+          g.beginPath();g.moveTo(it.a.x,it.a.y);g.lineTo(it.b.x,it.b.y);g.stroke();
+          g.strokeStyle='#100A06';g.lineWidth=w;
+          g.beginPath();g.moveTo(it.a.x,it.a.y);g.lineTo(it.b.x,it.b.y);g.stroke();
+        }else if(it.kind==='room'){
+          const c=it.c, p=proj(c);
+          // 壓實土外殼
+          g.fillStyle='rgba(48,37,24,.95)';
+          g.beginPath();g.ellipse(p.x,p.y,c.rx*p.s*1.15,c.ry*p.s*1.2,0,0,7);g.fill();
+          const rg=g.createRadialGradient(p.x,p.y+c.ry*p.s*.3,c.ry*p.s*.2,p.x,p.y,c.rx*p.s*1.05);
+          rg.addColorStop(0,'#120C07');rg.addColorStop(.7,'#1E1509');rg.addColorStop(1,c.c);
+          g.fillStyle=rg;
+          g.beginPath();g.ellipse(p.x,p.y,c.rx*p.s,c.ry*p.s,0,0,7);g.fill();
+          g.strokeStyle='rgba(110,88,58,.55)';g.lineWidth=1.1;g.stroke();
+          // 內容物提示
+          if(c.k==='grave'){
+            g.fillStyle='rgba(120,104,80,.85)';
+            for(let i=0;i<6;i++){
+              const tx=p.x+(i-2.5)*15*p.s, ty=p.y-2*p.s;
+              g.fillRect(tx,ty-8*p.s,4*p.s,9*p.s);
+            }
+          }else if(c.k==='nursery'){
+            const eg=(NEST_DATA.eggs&&NEST_DATA.eggs.list)||[];
+            for(let i=0;i<Math.min(18,eg.length);i++){
+              const ex=p.x+((i%6)-2.5)*11*p.s, ey=p.y+(((i/6)|0)-1)*9*p.s;
+              g.fillStyle='rgba(216,199,162,'+(0.2+0.5*(eg[i].p||0))+')';
+              g.beginPath();g.ellipse(ex,ey,3.4*p.s,2.4*p.s,.3,0,7);g.fill();
+            }
+          }
+          g.fillStyle='#CDBB96';g.font=Math.max(9,13*p.s)+'px "LXGW WenKai TC",serif';
+          g.textAlign='center';
+          g.fillText(c.n,p.x,p.y+c.ry*p.s+16*p.s+10);
+          g.textAlign='left';
+        }else if(it.kind==='ant'){
+          const base=CASTES[it.caste];
+          const sc=Math.max(.35,base.s*it.p.s*1.35);
+          drawAnt(g,it.p.x,it.p.y,it.ang,reduced?0:performance.now()*.022+it.jig*3,
+                  Object.assign({},base,{s:sc}));
+        }else if(it.kind==='queen'){
+          const sc=Math.max(.8,CASTES.queen.s*it.p.s*1.2);
+          drawAnt(g,it.p.x,it.p.y,-0.2,reduced?0:performance.now()*.004,
+                  Object.assign({},CASTES.queen,{s:sc}));
+          g.fillStyle='#E0B25C';g.font='600 '+Math.max(10,13*it.p.s)+'px "IBM Plex Mono",monospace';
+          g.textAlign='center';
+          g.fillText('蟻后 '+((NEST_DATA.eq!=null)?NEST_DATA.eq:NEST_DATA.idx),
+                     it.p.x,it.p.y-26*it.p.s-8);
+          g.textAlign='left';
+        }
+      }
+      // 深度標尺(巢軸)
+      g.strokeStyle='rgba(138,116,85,.35)';g.lineWidth=1;g.setLineDash([4,6]);
+      const top=proj({x:0,y:0,z:0}), bot=proj({x:0,y:d3(2900),z:0});
+      g.beginPath();g.moveTo(top.x,top.y);g.lineTo(bot.x,bot.y);g.stroke();
+      g.setLineDash([]);
+      if(!reduced)requestAnimationFrame(frame3);
+    }
+
+    // 互動: 拖曳旋轉 / 滾輪縮放 / 放手三秒後自轉
+    const wrap=document.getElementById('s3wrap');
+    let dragging=false,lx=0,ly=0;
+    wrap.addEventListener('pointerdown',e=>{
+      dragging=true;auto=false;lx=e.clientX;ly=e.clientY;
+      wrap.classList.add('drag');wrap.setPointerCapture(e.pointerId);
+    });
+    wrap.addEventListener('pointermove',e=>{
+      if(!dragging)return;
+      CAM.az+=(e.clientX-lx)*0.006;
+      CAM.el=Math.max(-0.15,Math.min(1.15,CAM.el+(e.clientY-ly)*0.004));
+      lx=e.clientX;ly=e.clientY;
+      if(reduced)frame3(0);
+    });
+    const endDrag=()=>{dragging=false;wrap.classList.remove('drag');lastDrag=performance.now();
+      setTimeout(()=>{if(performance.now()-lastDrag>2900)auto=true;},3000);};
+    wrap.addEventListener('pointerup',endDrag);
+    wrap.addEventListener('pointercancel',endDrag);
+    wrap.addEventListener('wheel',e=>{
+      e.preventDefault();
+      CAM.dist=Math.max(700,Math.min(2600,CAM.dist+e.deltaY*1.1));
+      if(reduced)frame3(0);
+    },{passive:false});
+
+    // 方位讀數
+    const axis=document.getElementById('s3axis');
+    setInterval(()=>{
+      if(!axis)return;
+      axis.innerHTML='方位 '+Math.round((CAM.az*180/Math.PI)%360)+'°　俯角 '
+        +Math.round(CAM.el*180/Math.PI)+'°<br>深度 0 ~ '+Math.round((2900-GROUND)/10)+' 單位';
+    },400);
+
+    frame3(0);
+  })();
 
   function start(){paintStatic();frame(0);}
   if(document.fonts&&document.fonts.ready){document.fonts.ready.then(start);}
