@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-02T15:35:57.787180+08:00",
+  "generated_at": "2026-09-02T16:36:06.467370+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
     "closed_trades": [],
-    "last_cycle_ts": "2026-09-02T07:35:42.721483+00:00",
+    "last_cycle_ts": "2026-09-02T08:33:32.749242+00:00",
     "stats": {
       "n": 0,
       "win_rate_pct": 0.0,
@@ -27,7 +27,7 @@
   "strat_tl": {
     "mode": "live",
     "open_positions": [],
-    "last_cycle_ts": "2026-09-02T07:34:54.710595+00:00",
+    "last_cycle_ts": "2026-09-02T08:32:38.746261+00:00",
     "stats": {
       "n": 0,
       "win_rate_pct": 0.0,
@@ -41,8 +41,8 @@
     "current": {
       "_meta": {
         "desc": "APEX 控制台熱載入配置。改此檔 <=60 秒生效，無需重新部署。硬邊界見 tama_v5.py TAMA_CONFIG_BOUNDS。",
-        "updated": "2026-08-30T21:18:16+08:00",
-        "by": "策略選礦機自動上線(三關通過, Jesse 2026-08-03 全自動授權)"
+        "updated": "2026-09-02T16:33:00+08:00",
+        "by": "三年樣本外重驗裁決: MRS 下架 + TL 降權重 (Jesse 2026-09-01)"
       },
       "b1": {
         "live_enabled": true,
@@ -61,7 +61,7 @@
         "live_enabled": true,
         "risk_pct": 0.005,
         "leverage": 50,
-        "max_positions": 2,
+        "max_positions": 1,
         "max_hold_h": 48,
         "cycle_seconds": 60,
         "regime_gate": true,
@@ -91,7 +91,7 @@
         "s3_enabled": true
       },
       "mrs": {
-        "live_enabled": true,
+        "live_enabled": false,
         "risk_pct": 0.00375,
         "leverage": 50,
         "max_positions": 2,
@@ -218,10 +218,11 @@
       ]
     },
     "applied": {
-      "applied_sha": "b50ae7b2a5549f6b59d2cc56e34973f65559ea48",
-      "applied_at": "2026-09-01T07:13:24.625762+00:00",
+      "applied_sha": "9caed9a5290df9c168f0ef3ab5139c00002ef9c3",
+      "applied_at": "2026-09-02T08:33:40.767492+00:00",
       "changes": [
-        "auto_strategies: 載入 1 個規格"
+        "tl.max_positions: 2 -> 1",
+        "mrs.live_enabled: True -> False"
       ]
     },
     "bounds": {
@@ -659,6 +660,10 @@
     {
       "ts": "2026-09-02T07:07:39.583131+00:00",
       "idx": 163.63
+    },
+    {
+      "ts": "2026-09-02T08:07:45.784399+00:00",
+      "idx": 157.92
     }
   ],
   "trades_public": [],
