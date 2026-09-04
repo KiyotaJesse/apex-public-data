@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-09-04T22:36:43.129790+08:00",
-  "ts": "2026-09-04 22:36:43",
+  "generated_at": "2026-09-04T22:46:44.474635+08:00",
+  "ts": "2026-09-04 22:46:44",
   "btc": {
-    "price": 79309.0,
-    "change_24h": 0.6,
-    "status_str": "$79,309.00  ▲0.6%"
+    "price": 79197.0,
+    "change_24h": 0.8,
+    "status_str": "$79,197.00  ▼0.8%"
   },
   "xrp": {
-    "price": 1.41,
-    "change_24h": 0.8,
-    "status_str": "$1.41  ▲0.8%"
+    "price": 1.39,
+    "change_24h": 1.7,
+    "status_str": "$1.39  ▼1.7%"
   },
   "fear_greed": {
     "value": 50,
@@ -21,15 +21,15 @@
     "system_status": {
       "render": "✅ 運行中（更新 2026-08-29 17:19） [部署 OK 2026-08-29 17:18]",
       "render_a": "✅ 運行中（更新 2026-08-29 17:19）",
-      "github": "✅ 最新 commit 118.6h 前",
+      "github": "✅ 最新 commit 119.6h 前",
       "telegram": "運行中",
-      "btc": "$79,309.00  ▲0.6%",
-      "xrp": "$1.41  ▲0.8%",
+      "btc": "$79,197.00  ▼0.8%",
+      "xrp": "$1.39  ▼1.7%",
       "twii": "台股 46,551  ▲1.51%",
-      "spx": "S&P500 7,735  ▼0.16%",
-      "nasdaq": "NASDAQ 26,574  ▼0.04%",
-      "dji": "道瓊 53,517  ▼0.32%",
-      "D_scan": "✅ 運行中 [策略B 13:43UTC]"
+      "spx": "S&P500 7,720  ▼0.36%",
+      "nasdaq": "NASDAQ 26,507  ▼0.29%",
+      "dji": "道瓊 53,404  ▼0.52%",
+      "D_scan": "✅ 運行中 [策略B 14:43UTC]"
     }
   },
   "today": {
@@ -37,9 +37,6 @@
     "alerts": 9
   },
   "bingx": {
-    "open_positions": 1,
-    "pnl_24h_pct": 20.84,
-    "upnl_pct": 46.88,
-    "status": "online"
+    "error": "'NoneType' object has no attribute 'get'"
   }
 }
