@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-06T23:56:34.856160+08:00",
+  "generated_at": "2026-09-07T00:56:45.600915+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
     "closed_trades": [],
-    "last_cycle_ts": "2026-09-06T15:56:07.197061+00:00",
+    "last_cycle_ts": "2026-09-06T16:53:42.692493+00:00",
     "stats": {
       "n": 0,
       "win_rate_pct": 0.0,
@@ -27,7 +27,7 @@
   "strat_tl": {
     "mode": "live",
     "open_positions": [],
-    "last_cycle_ts": "2026-09-06T15:55:29.735059+00:00",
+    "last_cycle_ts": "2026-09-06T16:52:46.846560+00:00",
     "stats": {
       "n": 0,
       "win_rate_pct": 0.0,
@@ -42,7 +42,7 @@
       "_meta": {
         "desc": "APEX 控制台熱載入配置。改此檔 <=60 秒生效，無需重新部署。硬邊界見 tama_v5.py TAMA_CONFIG_BOUNDS。",
         "updated": "2026-09-02T16:33:00+08:00",
-        "by": "三年樣本外重驗裁決: MRS 下架 + TL 降權重 (Jesse 2026-09-01)"
+        "by": "策略選礦機自動上線(三關通過, Jesse 2026-08-03 全自動授權)"
       },
       "b1": {
         "live_enabled": true,
@@ -151,6 +151,54 @@
             "ev_cost2x": 0.1657,
             "ev_ex_topq": 0.2961
           }
+        },
+        {
+          "id": "AUTO_CL_VOL_DRY__0_3_VOL_R__1_5_ATR_R__1_2_BULL_TP4R",
+          "tf": "1h",
+          "side": "LONG",
+          "sl_atr": 1.5,
+          "tp_atr": 6.0,
+          "max_hold_h": 48,
+          "regime_gate": "bull",
+          "max_positions": 2,
+          "exit": "fixed",
+          "entry": [
+            [
+              "vol_dry",
+              "<=",
+              0.3
+            ],
+            [
+              "vol_r",
+              ">=",
+              1.5
+            ],
+            [
+              "atr_r",
+              ">=",
+              1.2
+            ]
+          ],
+          "bt_engine_ver": "2026-08-23.wfsim-fill",
+          "live_enabled": true,
+          "risk_pct": 0.005,
+          "leverage": 50,
+          "state": "probe",
+          "probe_started": "2026-09-07T00:43",
+          "base_risk_pct": 0.005,
+          "bt_ev": 1.7834,
+          "src": "prospector",
+          "added": "2026-09-07 00:43",
+          "evidence": {
+            "ev_full": 0.7422,
+            "ev_h1": 0.0174,
+            "ev_h2": 0.9395,
+            "ev_recent_m": 1.7834,
+            "n": 188,
+            "win": 43.1,
+            "ev_cost2x": 0.6302,
+            "ev_ex_topq": 0.4543
+          }
         }
       ],
       "pool": {
@@ -218,25 +266,10 @@
       ]
     },
     "applied": {
-      "applied_sha": "9caed9a5290df9c168f0ef3ab5139c00002ef9c3",
-      "applied_at": "2026-09-05T16:26:40.830088+00:00",
+      "applied_sha": "df004f11268619a14823934d92a2f611f624ebeb",
+      "applied_at": "2026-09-06T16:44:22.046531+00:00",
       "changes": [
-        "b1.risk_pct: 0.02 -> 0.01",
-        "b1.cycle_seconds: 300 -> 60",
-        "b1.maker_wait_s: 20 -> 30",
-        "tl.risk_pct: 0.02 -> 0.005",
-        "tl.max_positions: 2 -> 1",
-        "tl.lock_r: 2.5 -> 0.0",
-        "tl.rr: 3.0 -> 5.0",
-        "b1.atr_r_thr: 1.1 -> 0.0",
-        "b1.volr_thr: 1.2 -> 1.5",
-        "tl.cycle_seconds: 900 -> 60",
-        "sc.live_enabled: False -> True",
-        "sc.risk_pct: 0.01 -> 0.005",
-        "sc.s2_enabled: True -> False",
-        "mrs.risk_pct: 0.0075 -> 0.00375",
-        "global.same_dir_max: 3 -> 4",
-        "auto_strategies: 載入 1 個規格"
+        "auto_strategies: 載入 2 個規格"
       ]
     },
     "bounds": {
@@ -1094,6 +1127,10 @@
     {
       "ts": "2026-09-06T15:27:53.696709+00:00",
       "idx": 245.09
+    },
+    {
+      "ts": "2026-09-06T16:27:56.765895+00:00",
+      "idx": 247.59
     }
   ],
   "trades_public": [],
