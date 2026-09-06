@@ -1,6 +1,6 @@
 {
-"idx": 156,
-"eq": 800.0,
+"idx": 157,
+"eq": 802.5,
 "asOf": "09-07",
 "weather": {
 "long": 58.0,
@@ -166,7 +166,7 @@
 144,
 149,
 150,
-156
+157
 ],
 "voice": {
 "n": "盤口熟成(搬運蟻)",
@@ -182,7 +182,7 @@
 "s": "observing"
 },
 "v": [
-"我每天量一次蟻后、點一次名,把整座巢畫給地表看。今天蟻后 156。畫得誠實,比畫得好看難。"
+"我每天量一次蟻后、點一次名,把整座巢畫給地表看。今天蟻后 157。畫得誠實,比畫得好看難。"
 ]
 },
 "A迴圈": {
@@ -887,7 +887,7 @@
 "p": "帳戶權益本體; 她的體重就是巢的存糧, 每天量一次",
 "c": "每日 08:10 量測",
 "v": [
-"我的體重就是巢的存糧:156。別安慰我,把糧搬回來。",
+"我的體重就是巢的存糧:157。別安慰我,把糧搬回來。",
 "整座巢圍著我轉,但我清楚得很:沒有覓食線,王座只是一把會餓死的椅子。"
 ]
 },
@@ -1142,7 +1142,7 @@
 ]
 },
 "news": [
-"蟻后 156(較昨日+6)",
+"蟻后 157(較昨日+7)",
 "BTC 24h +0.4% · 持倉 0 · 今日訊號 0",
 "TL驗收哨兵: 接線後重起算, 樣本累積中",
 "礦機頭牌「量價爆量突破」發現後驗證 10/8 筆",
@@ -1233,9 +1233,9 @@
 },
 {
 "n": "礦機口糧",
-"v": 0.83,
+"v": 0.82,
 "ok": true,
-"k": "1h",
+"k": "2h",
 "t": "上輪 09-07 00:43 掃畢 · 每 4 小時開工, 電腦休眠會斷糧"
 },
 {
@@ -1422,8 +1422,8 @@
 "c": 11
 }
 ],
-"built": "09-07 02:09",
-"synced": "09-07 02:09",
+"built": "09-07 02:12",
+"synced": "09-07 02:13",
 "open": 9,
 "overdue": 0
 },
@@ -1848,12 +1848,114 @@
 "graded": [],
 "fate": "死",
 "ftot": -70.0
+},
+{
+"id": "volume_climax_short",
+"n": "量能高潮反轉·空",
+"tf": "1h",
+"side": "SHORT",
+"st": "學員",
+"k": 0,
+"w": 0,
+"mn": 0,
+"mr": 0.0,
+"born": "2026-09-07",
+"lesson": "量能高潮: 爆量(>=3 倍均量)但收在上影線下(刺破前高又收回)=賣壓高潮偽裝成突破, 反手做空(fade)。",
+"src": "https://chartscout.io/chart-patterns-and-volume-analysis",
+"graded": [],
+"fate": "續留",
+"ftot": -21.8
+},
+{
+"id": "pullback_trend_long",
+"n": "回檔續勢·多",
+"tf": "4h",
+"side": "LONG",
+"st": "學員",
+"k": 0,
+"w": 0,
+"mn": 0,
+"mr": 0.0,
+"born": "2026-09-07",
+"lesson": "多頭趨勢(ema50>ema200)裡等回檔: RSI 回到 45 以下且量能枯竭(回檔縮量), 進場順勢。三根回檔 adapted 成量縮+RSI 回落。",
+"src": "https://medium.com/@FMZQuant/advanced-pullback-trading-triangle-breakout-with-volume-price",
+"graded": [],
+"fate": "續留",
+"ftot": -3.6
+},
+{
+"id": "sweep_long",
+"n": "流動性掃蕩·多",
+"tf": "1h",
+"side": "LONG",
+"st": "學員",
+"k": 0,
+"w": 0,
+"mn": 0,
+"mr": 0.0,
+"born": "2026-09-07",
+"lesson": "ICT 流動性掃蕩: 價格用長下影線掃過前低(掃掉停損)後收回並放量, 於收回做多, 止損放掃蕩低點下。刺破深度 >=0.8ATR + 量 >=1.5 倍 adapted。",
+"src": "https://dailypriceaction.com/blog/liquidity-sweep-reversals/",
+"graded": [],
+"fate": "續留",
+"ftot": -21.3
+},
+{
+"id": "sweep_short",
+"n": "流動性掃蕩·空",
+"tf": "1h",
+"side": "SHORT",
+"st": "學員",
+"k": 0,
+"w": 0,
+"mn": 0,
+"mr": 0.0,
+"born": "2026-09-07",
+"lesson": "鏡像: 掃過前高後收回並放量, 做空。",
+"src": "https://dailypriceaction.com/blog/liquidity-sweep-reversals/",
+"graded": [],
+"fate": "續留",
+"ftot": -7.4
+},
+{
+"id": "cvd_div_long",
+"n": "CVD背離·多",
+"tf": "1h",
+"side": "LONG",
+"st": "學員",
+"k": 0,
+"w": 0,
+"mn": 0,
+"mr": 0.0,
+"born": "2026-09-07",
+"lesson": "價低但累積成交量差(CVD)相對強=吸籌背離, 在偏離 VWAP 下方時做多。文獻要求加濾網(支撐/吸收), 這裡用 VWAP 偏離當濾網 adapted。",
+"src": "https://medium.com/@FMZQuant/cvd-divergence-quantitative-trading-strategy-7f50e3f1451a",
+"graded": [],
+"fate": "死",
+"ftot": -75.6
+},
+{
+"id": "cvd_div_short",
+"n": "CVD背離·空",
+"tf": "1h",
+"side": "SHORT",
+"st": "學員",
+"k": 0,
+"w": 0,
+"mn": 0,
+"mr": 0.0,
+"born": "2026-09-07",
+"lesson": "鏡像: 價高籌碼弱=派發背離, 偏離 VWAP 上方做空。",
+"src": "https://medium.com/@FMZQuant/cvd-divergence-quantitative-trading-strategy-7f50e3f1451a",
+"graded": [],
+"fate": "續留",
+"ftot": -22.1
 }
 ],
 "graves": {},
-"updated": "09-07 02:09",
+"updated": "09-07 02:16",
 "rehearsal": {
-"asof": "2026-09-07 02:08",
+"asof": "2026-09-07 02:17",
 "since": "2026-06-06"
 }
 },
@@ -2199,7 +2301,7 @@
 },
 {
 "d": "2026-09-07",
-"t": "第 66 日。蟻后體重 156, 較昨日重 6。地表 BTC 一日 +0.4%。覓食隊未出動(2 支冬眠: RS、MRS)。地面上仍掛著飼主自己的 1 筆手動倉(BTC-USDT), 覓食隊依令按兵不動。無病蟻。糧倉短缺: API 餘額。礦機上一輪空手而回。 巢健康 90。明日一鏟: 警報 P1 BTC-USDT: [帳] 帳外倉: BTC-USDT LONG 數量0.1935 且無SL掛單(裸; 決定積壓 2 件: TG 今日一卡按一下就消"
+"t": "第 66 日。蟻后體重 157, 較昨日重 7。地表 BTC 一日 +0.4%。覓食隊未出動(2 支冬眠: RS、MRS)。地面上仍掛著飼主自己的 1 筆手動倉(BTC-USDT), 覓食隊依令按兵不動。無病蟻。糧倉短缺: API 餘額。礦機上一輪空手而回。 巢健康 90。明日一鏟: 警報 P1 BTC-USDT: [帳] 帳外倉: BTC-USDT LONG 數量0.1935 且無SL掛單(裸; 決定積壓 2 件: TG 今日一卡按一下就消 巢自記進化 7 處: 學院入學: cvd_div_long、學院入學: cvd_div_short、學院入學: pullback_trend_long。"
 }
 ],
 "tl": [
@@ -2465,12 +2567,12 @@
 },
 {
 "d": "09-07",
-"i": 156,
+"i": 157,
 "h": 90,
 "a": "P1",
 "p": [],
 "s": 0,
-"st": 14,
+"st": 20,
 "g": 0,
 "r": 1
 }
@@ -2504,7 +2606,7 @@
 "workers": 6,
 "nursery": 2,
 "grave": 2,
-"academy": 2,
+"academy": 4,
 "mine": 3,
 "scars": 2
 },
@@ -2513,6 +2615,41 @@
 "d": "2026-09-07",
 "k": "base",
 "t": "進化帳起算: 63 隻蟻, 13 座墓, 29 道疤, 14 學員"
+},
+{
+"d": "2026-09-07",
+"k": "student",
+"t": "學院入學: cvd_div_long"
+},
+{
+"d": "2026-09-07",
+"k": "student",
+"t": "學院入學: cvd_div_short"
+},
+{
+"d": "2026-09-07",
+"k": "student",
+"t": "學院入學: pullback_trend_long"
+},
+{
+"d": "2026-09-07",
+"k": "student",
+"t": "學院入學: sweep_long"
+},
+{
+"d": "2026-09-07",
+"k": "student",
+"t": "學院入學: sweep_short"
+},
+{
+"d": "2026-09-07",
+"k": "student",
+"t": "學院入學: volume_climax_short"
+},
+{
+"d": "2026-09-07",
+"k": "unlock",
+"t": "影子學院擴建(第 2 級 -> 第 4 級)"
 }
 ],
 "evolution_log": [
@@ -2520,6 +2657,41 @@
 "d": "2026-09-07",
 "k": "base",
 "t": "進化帳起算: 63 隻蟻, 13 座墓, 29 道疤, 14 學員"
+},
+{
+"d": "2026-09-07",
+"k": "student",
+"t": "學院入學: cvd_div_long"
+},
+{
+"d": "2026-09-07",
+"k": "student",
+"t": "學院入學: cvd_div_short"
+},
+{
+"d": "2026-09-07",
+"k": "student",
+"t": "學院入學: pullback_trend_long"
+},
+{
+"d": "2026-09-07",
+"k": "student",
+"t": "學院入學: sweep_long"
+},
+{
+"d": "2026-09-07",
+"k": "student",
+"t": "學院入學: sweep_short"
+},
+{
+"d": "2026-09-07",
+"k": "student",
+"t": "學院入學: volume_climax_short"
+},
+{
+"d": "2026-09-07",
+"k": "unlock",
+"t": "影子學院擴建(第 2 級 -> 第 4 級)"
 }
 ],
 "health_hist": [
