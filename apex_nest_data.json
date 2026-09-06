@@ -1,6 +1,6 @@
 {
-"idx": 153,
-"eq": 785.5,
+"idx": 155,
+"eq": 794.8,
 "asOf": "09-07",
 "weather": {
 "long": 58.0,
@@ -166,7 +166,7 @@
 144,
 149,
 150,
-153
+155
 ],
 "voice": {
 "n": "盤口熟成(搬運蟻)",
@@ -182,7 +182,7 @@
 "s": "observing"
 },
 "v": [
-"我每天量一次蟻后、點一次名,把整座巢畫給地表看。今天蟻后 153。畫得誠實,比畫得好看難。"
+"我每天量一次蟻后、點一次名,把整座巢畫給地表看。今天蟻后 155。畫得誠實,比畫得好看難。"
 ]
 },
 "A迴圈": {
@@ -817,7 +817,7 @@
 "p": "每隻蟻 30 天達成率 vs 名冊 slo_pct(預設 95); 超支才 TG; 隨監督台每小時點名累積",
 "c": "每小時(隨 supervisor)",
 "slo": {
-"a": 91.67,
+"a": 92.31,
 "t": 95.0,
 "s": "observing"
 },
@@ -887,7 +887,7 @@
 "p": "帳戶權益本體; 她的體重就是巢的存糧, 每天量一次",
 "c": "每日 08:10 量測",
 "v": [
-"我的體重就是巢的存糧:153。別安慰我,把糧搬回來。",
+"我的體重就是巢的存糧:155。別安慰我,把糧搬回來。",
 "整座巢圍著我轉,但我清楚得很:沒有覓食線,王座只是一把會餓死的椅子。"
 ]
 },
@@ -1142,7 +1142,7 @@
 ]
 },
 "news": [
-"蟻后 153(較昨日+3)",
+"蟻后 155(較昨日+5)",
 "BTC 24h +0.4% · 持倉 0 · 今日訊號 0",
 "TL驗收哨兵: 接線後重起算, 樣本累積中",
 "礦機頭牌「量價爆量突破」發現後驗證 10/8 筆",
@@ -1229,11 +1229,11 @@
 "v": 0.2,
 "ok": true,
 "k": "18/90",
-"t": "熟成 18/90 日 · 1 小時前補貨"
+"t": "熟成 18/90 日 · 0 小時前補貨"
 },
 {
 "n": "礦機口糧",
-"v": 0.85,
+"v": 0.84,
 "ok": true,
 "k": "1h",
 "t": "上輪 09-07 00:43 掃畢 · 每 4 小時開工, 電腦休眠會斷糧"
@@ -1315,7 +1315,49 @@
 "week": "2026-W37",
 "deployed": [
 "AUTO_CL_VOL_DRY__0_3_VOL_R__1_5_ATR_R__1_2_BULL_TP4R"
+],
+"lineages": {
+"total": 348,
+"members": 601,
+"top": [
+{
+"k": "L|none|R|brk_high*>+coil>=+ema_rel>",
+"n": 2,
+"pn": 75,
+"ps": 11.3
+},
+{
+"k": "L|bull|F|cvd_z>=+impact>=",
+"n": 3,
+"pn": 73,
+"ps": 9.9
+},
+{
+"k": "L|bull|R|brk_high*>+coil>=+ema_rel>",
+"n": 1,
+"pn": 57,
+"ps": 6.0
+},
+{
+"k": "L|bull|F|impact>=",
+"n": 2,
+"pn": 53,
+"ps": 39.0
+},
+{
+"k": "L|bull|F|vol_dry<=+vol_r>=",
+"n": 2,
+"pn": 50,
+"ps": 51.0
+},
+{
+"k": "L|bull|F|vol_dry<=+vol_dry<=+vol_r>=",
+"n": 2,
+"pn": 50,
+"ps": 51.0
+}
 ]
+}
 },
 "decisions": [
 {
@@ -1380,8 +1422,8 @@
 "c": 11
 }
 ],
-"built": "09-07 02:02",
-"synced": "09-07 02:02",
+"built": "09-07 02:04",
+"synced": "09-07 02:04",
 "open": 9,
 "overdue": 0
 },
@@ -1582,7 +1624,9 @@
 "born": "2026-09-06",
 "lesson": "Turtle/Donchian: 收盤突破 55 根高點做多, ATR 定止損。原版用 2N 止損與加碼, 這裡固定 1.5ATR 止損/4R 停利, 無加碼(adapted)。",
 "src": "https://www.odaily.news/en/post/5205696",
-"graded": []
+"graded": [],
+"fate": "續留",
+"ftot": 60.5
 },
 {
 "id": "turtle55_short",
@@ -1597,7 +1641,9 @@
 "born": "2026-09-06",
 "lesson": "Turtle 空方: 收盤跌破 55 根低點做空。同上 adapted。",
 "src": "https://www.odaily.news/en/post/5205696",
-"graded": []
+"graded": [],
+"fate": "續留",
+"ftot": -29.5
 },
 {
 "id": "donchian20_long",
@@ -1612,7 +1658,9 @@
 "born": "2026-09-06",
 "lesson": "戰術版 20 根突破(特徵庫只有 25/55 視窗, 用 25 adapted), 加 BTC 多頭閘門(文獻建議只順大勢做)。",
 "src": "https://www.altrady.com/blog/crypto-trading-strategies/donchian-channel-strategy",
-"graded": []
+"graded": [],
+"fate": "續留",
+"ftot": 155.5
 },
 {
 "id": "connors_rsi_long",
@@ -1627,7 +1675,9 @@
 "born": "2026-09-06",
 "lesson": "Connors RSI(2)<5 且價在 200MA 上做多, RSI>65 出場, 原版不設停損。特徵庫只有 RSI(14), 改 rsi<=25 + ema50>ema200; 出場改 2R/1.5ATR 止損(adapted, 且 Connors 說停損傷績效, 這是刻意違背以符合巢規)。",
 "src": "https://www.quantifiedstrategies.com/rsi-2-strategy/",
-"graded": []
+"graded": [],
+"fate": "死",
+"ftot": -46.2
 },
 {
 "id": "bb_rsi_long",
@@ -1642,7 +1692,9 @@
 "born": "2026-09-06",
 "lesson": "價跌破下軌且 RSI<30 買回歸。下軌用 VWAP 偏離 -2ATR 代替(adapted)。文獻警告: 強趨勢裡會被輾。",
 "src": "https://www.capmint.com/learn/videos/bollinger-bands-rsi-combo-strategy",
-"graded": []
+"graded": [],
+"fate": "續留",
+"ftot": 43.4
 },
 {
 "id": "bb_rsi_short",
@@ -1657,7 +1709,9 @@
 "born": "2026-09-06",
 "lesson": "鏡像空方。",
 "src": "https://www.capmint.com/learn/videos/bollinger-bands-rsi-combo-strategy",
-"graded": []
+"graded": [],
+"fate": "續留",
+"ftot": -167.2
 },
 {
 "id": "squeeze_long",
@@ -1672,7 +1726,9 @@
 "born": "2026-09-06",
 "lesson": "BB/KC 擠壓(波動壓縮)後收盤突破做多。壓縮用 coil 分位>=0.7 代替 BB 在 KC 內(adapted)。",
 "src": "https://trendspider.com/learning-center/bb-kc-squeeze-a-powerful-indicator-for-trading-ran",
-"graded": []
+"graded": [],
+"fate": "續留",
+"ftot": 2.6
 },
 {
 "id": "squeeze_short",
@@ -1687,7 +1743,9 @@
 "born": "2026-09-06",
 "lesson": "鏡像空方。",
 "src": "https://trendspider.com/learning-center/bb-kc-squeeze-a-powerful-indicator-for-trading-ran",
-"graded": []
+"graded": [],
+"fate": "續留",
+"ftot": -4.2
 },
 {
 "id": "funding_crowded_short",
@@ -1702,7 +1760,9 @@
 "born": "2026-09-06",
 "lesson": "資金費率持續極高=多頭擁擠, 配合價格偏離 VWAP 做空吃反轉+收資金費。",
 "src": "https://daytrading.co/educational/crypto-perpetual-futures-funding-rates/",
-"graded": []
+"graded": [],
+"fate": "續留",
+"ftot": -40.5
 },
 {
 "id": "funding_cold_long",
@@ -1717,7 +1777,9 @@
 "born": "2026-09-06",
 "lesson": "鏡像: 費率極低=空頭擁擠, 偏離 VWAP 下方做多。",
 "src": "https://daytrading.co/educational/crypto-perpetual-futures-funding-rates/",
-"graded": []
+"graded": [],
+"fate": "死",
+"ftot": -31.3
 },
 {
 "id": "ema_momentum_long",
@@ -1732,7 +1794,9 @@
 "born": "2026-09-06",
 "lesson": "EMA 快線在慢線上(用 ema50-ema200>0 代替 20/50 金叉 adapted)+放量突破近高, 順勢追。",
 "src": "https://www.fmz.com/lang/en/strategy/502917",
-"graded": []
+"graded": [],
+"fate": "續留",
+"ftot": 7.5
 },
 {
 "id": "volume_breakout_long",
@@ -1747,7 +1811,9 @@
 "born": "2026-09-06",
 "lesson": "Larry Williams 式: 放量(2 倍均量)突破前高進場。",
 "src": "https://github.com/SC4RECOIN/simple-crypto-breakout-strategy",
-"graded": []
+"graded": [],
+"fate": "續留",
+"ftot": 30.8
 },
 {
 "id": "fakeout_short",
@@ -1762,7 +1828,9 @@
 "born": "2026-09-06",
 "lesson": "ORB fakeout: 刺破前高又收回=假突破, 反手做空。刺破深度 trap_hi>=0.5ATR。",
 "src": "https://in.tradingview.com/scripts/openingrange/",
-"graded": []
+"graded": [],
+"fate": "死",
+"ftot": -74.1
 },
 {
 "id": "spring_long",
@@ -1777,11 +1845,17 @@
 "born": "2026-09-06",
 "lesson": "鏡像: 跌破前低又收回(Wyckoff spring)做多。",
 "src": "https://audacity.capital/trading-guides/opening-range-breakout-strategy/",
-"graded": []
+"graded": [],
+"fate": "死",
+"ftot": -70.0
 }
 ],
 "graves": {},
-"updated": "09-07 02:03"
+"updated": "09-07 02:05",
+"rehearsal": {
+"asof": "2026-09-07 02:08",
+"since": "2026-06-06"
+}
 },
 "alerts": {
 "ts": "09-07T01:56",
@@ -2125,7 +2199,7 @@
 },
 {
 "d": "2026-09-07",
-"t": "第 66 日。蟻后體重 153, 較昨日重 3。地表 BTC 一日 +0.4%。覓食隊未出動(2 支冬眠: RS、MRS)。地面上仍掛著飼主自己的 1 筆手動倉(BTC-USDT), 覓食隊依令按兵不動。無病蟻。糧倉短缺: API 餘額。礦機上一輪空手而回。 巢健康 90。明日一鏟: 警報 P1 BTC-USDT: [帳] 帳外倉: BTC-USDT LONG 數量0.1935 且無SL掛單(裸; 決定積壓 2 件: TG 今日一卡按一下就消"
+"t": "第 66 日。蟻后體重 155, 較昨日重 5。地表 BTC 一日 +0.4%。覓食隊未出動(2 支冬眠: RS、MRS)。地面上仍掛著飼主自己的 1 筆手動倉(BTC-USDT), 覓食隊依令按兵不動。無病蟻。糧倉短缺: API 餘額。礦機上一輪空手而回。 巢健康 90。明日一鏟: 警報 P1 BTC-USDT: [帳] 帳外倉: BTC-USDT LONG 數量0.1935 且無SL掛單(裸; 決定積壓 2 件: TG 今日一卡按一下就消"
 }
 ],
 "tl": [
@@ -2391,7 +2465,7 @@
 },
 {
 "d": "09-07",
-"i": 153,
+"i": 155,
 "h": 90,
 "a": "P1",
 "p": [],
