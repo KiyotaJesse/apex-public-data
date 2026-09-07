@@ -1,10 +1,10 @@
 # APEX 蟻穴公開資料
 
-- 頁面: https://kiyotajesse.github.io/apex-public-data/apex_anthill.html
-- 資料: https://kiyotajesse.github.io/apex-public-data/apex_nest_data.json (每日 08:10 由 queen_weight.py 產出; 頁面與 JSON 同一份)
+- 頁面: https://kiyotajesse.github.io/apex-public-data/apex_colony666.html
+- 資料: https://kiyotajesse.github.io/apex-public-data/apex_colony666_data.json (每日 08:10 由 queen_weight.py 產出; 頁面與 JSON 同一份)
 - 監督台: supervision_state.json
 
-## apex_nest_data.json 主要欄位
+## apex_colony666_data.json 主要欄位
 | 欄位 | 內容 |
 |---|---|
 | idx / eq / asOf | 蟻后指數(8/28=100, 出入金不算) / 權益 / 量測日 |
