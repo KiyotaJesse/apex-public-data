@@ -3242,6 +3242,8 @@
         if(j&&Array.isArray(j.items)){remote=j.items.slice();layout();if(reduced)paint();}
       }).catch(()=>{});
     }
+    // 除錯鉤子: 面板隱藏時 rAF 不跑, 驗證用手動推幀(window.__boardTick(dt) 回傳已寫足跡數)
+    window.__boardTick=(dt)=>{step(dt||.05);paint();return rows.reduce((s,r)=>s+r.done.reduce((a,b)=>a+b,0),0);};
     const boot=()=>{layout();tPrev=performance.now();frameB(tPrev);};
     if(document.fonts&&document.fonts.ready)document.fonts.ready.then(boot);else boot();
     setInterval(()=>{saveLocal(loadLocal());layout();if(reduced)paint();},60000);
