@@ -3073,9 +3073,10 @@
 </script>
 <script>
 (()=>{
-  // 蟻群留言板(2026-09-10 Jesse:「字跡用小螞蟻在上面爬留下來的痕跡當字, 存在 12 小時後自動刪除」)
-  // 來源三路: (1) 08:10 快照 NEST_DATA.board (2) 每小時 board_push.py 推的 apex_colony666_board.json (3) 訪客留言(localStorage, 只在這台瀏覽器)
-  // 過期由頁面自己算: 每則 ts 起 12 小時, 不到期的足跡隨年齡淡出, 到期消失; 訪客留言到期也從 localStorage 清掉。
+  // 蟻群留言板 v2 (2026-09-10 Jesse:「字跡用小螞蟻在上面爬留下來的痕跡當字」;「不像螞蟻在爬」-> 重寫)
+  // 每則訊息 = 一條沿筆畫串起來的路徑; 幾隻書記蟻各分一段, 真的沿路走, 走過的地方留下成對足跡, 字就這樣被「寫」出來。
+  // 寫完的蟻走出泥板; 每則留一隻巡邏蟻慢慢重走。每則活 12 小時, 足跡隨年齡淡出後散掉。
+  // 來源三路: (1) 08:10 快照 NEST_DATA.board (2) 每小時 apex_colony666_board.json (3) 訪客留言(localStorage, 只在這台瀏覽器)
   try{
     const TTL=12*3600*1000, KEY='apex_board_local_v1';
     const cv=document.getElementById('boardcv'); if(!cv) return;
@@ -3093,7 +3094,7 @@
       const seen=new Set();
       return m.filter(x=>{const k=x.ts+'|'+x.t;if(seen.has(k))return false;seen.add(k);return true;}).slice(0,6);
     }
-    // 足跡取樣: 字先畫到離屏畫布, 取像素成點(欄優先 -> 螞蟻由左往右沿筆畫爬)
+    // ---- 字 -> 路徑: 離屏畫字, 取像素點, 最近鄰串成一條連續路徑(螞蟻沿筆畫走, 不跳格) ----
     const off=document.createElement('canvas'), octx=off.getContext('2d',{willReadFrequently:true});
     const cache=new Map();
     function trail(text,size){
@@ -3102,75 +3103,148 @@
       octx.clearRect(0,0,off.width,off.height);
       octx.fillStyle='#fff';octx.font='700 '+size+'px "LXGW WenKai TC","Noto Serif TC",serif';octx.textBaseline='middle';
       octx.fillText(text,6,off.height/2);
-      const img=octx.getImageData(0,0,off.width,off.height).data, pts=[];
-      const step=Math.max(2,Math.round(size/11));
+      const img=octx.getImageData(0,0,off.width,off.height).data, raw=[];
+      const step=3;
       seed=11;
-      for(let x=0;x<off.width;x+=step)for(let y=0;y<off.height;y+=step){
-        if(img[(y*off.width+x)*4+3]>110) pts.push([x+(rnd()-.5)*step*.9,y+(rnd()-.5)*step*.9]);
+      for(let y=0;y<off.height;y+=step)for(let x=0;x<off.width;x+=step){
+        if(img[(y*off.width+x)*4+3]>110) raw.push([x+(rnd()-.5)*1.4,y+(rnd()-.5)*1.4]);
       }
-      const r={pts,w:off.width,h:off.height}; cache.set(k,r); return r;
+      // 最近鄰串接: 從最左的點開始, 每次走到最近的沒走過的點; 距離太遠代表換筆畫(標 j=1, 蟻會小跑步過去)
+      const n=raw.length, used=new Uint8Array(n), path=[];
+      if(n){
+        let cur=0; for(let i=1;i<n;i++) if(raw[i][0]<raw[cur][0]) cur=i;
+        used[cur]=1; path.push({x:raw[cur][0],y:raw[cur][1],j:0});
+        for(let c=1;c<n;c++){
+          let best=-1,bd=1e9; const px=raw[cur][0],py=raw[cur][1];
+          for(let i=0;i<n;i++){ if(used[i])continue; const dx=raw[i][0]-px,dy=raw[i][1]-py; const d=dx*dx+dy*dy; if(d<bd){bd=d;best=i;} }
+          used[best]=1; cur=best; path.push({x:raw[best][0],y:raw[best][1],j:bd>(step*4)*(step*4)?1:0});
+        }
+      }
+      const r={path,w:off.width,h:off.height}; cache.set(k,r); return r;
     }
-    // 小蟻(足跡版): 三節身 + 六足
-    function ant(x,y,ang,ph,s,col){
-      ctx.save();ctx.translate(x,y);ctx.rotate(ang);ctx.strokeStyle=col;ctx.fillStyle=col;ctx.lineWidth=.5*s;ctx.lineCap='round';
-      for(let i=0;i<3;i++)for(const sd of[-1,1]){const o=Math.sin(ph+(i%2?0:Math.PI))*.8*s;ctx.beginPath();ctx.moveTo((i-1)*1.1*s,sd*.6*s);ctx.lineTo((i-1)*1.1*s+o,sd*2.2*s);ctx.stroke();}
-      for(const d of [[-1.6,1.3],[0,.9],[1.5,1.0]]){ctx.beginPath();ctx.ellipse(d[0]*s,0,d[1]*s,.75*s,0,0,7);ctx.fill();}
+    // ---- 蟻(足跡版): 腹/胸/頭三節, 觸角, 六足三角步態; 腳只在移動時擺 ----
+    function drawAnt(x,y,ang,ph,s,alpha){
+      const col='rgba(214,196,160,'+alpha.toFixed(2)+')', dark='rgba(120,98,66,'+alpha.toFixed(2)+')';
+      ctx.save();ctx.translate(x,y);ctx.rotate(ang);ctx.lineCap='round';
+      ctx.strokeStyle=dark;ctx.lineWidth=.45*s;
+      for(let i=0;i<3;i++)for(const sd of[-1,1]){
+        const tri=((i+(sd>0?1:0))%2)?0:Math.PI;
+        const sw=Math.sin(ph+tri)*1.1*s;
+        const ax=(i-1)*.75*s, ay=sd*.45*s;
+        const fx=ax+[-1.3,-.1,1.2][i]*s+sw, fy=sd*(2.3+(i===1?.3:0))*s;
+        const kx=(ax+fx)/2+.25*s, ky=sd*1.35*s;
+        ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(kx,ky);ctx.lineTo(fx,fy);ctx.stroke();
+      }
+      ctx.strokeStyle=col;ctx.lineWidth=.35*s;
+      for(const sd of[-1,1]){ctx.beginPath();ctx.moveTo(1.6*s,sd*.25*s);ctx.quadraticCurveTo(2.6*s,sd*.9*s,3.1*s,sd*1.7*s);ctx.stroke();}
+      ctx.fillStyle=col;
+      ctx.beginPath();ctx.ellipse(-1.9*s,0,1.55*s,.9*s,0,0,7);ctx.fill();
+      ctx.beginPath();ctx.ellipse(-.1*s,0,.8*s,.6*s,0,0,7);ctx.fill();
+      ctx.beginPath();ctx.ellipse(1.35*s,0,.7*s,.62*s,0,0,7);ctx.fill();
       ctx.restore();
     }
-    let rows=[], walkers=[];
+    // ---- 版面與蟻的狀態 ----
+    let rows=[], tPrev=0, t0=performance.now();
     function layout(){
-      const list=all(); rows=[]; walkers=[];
+      const list=all(); const old=new Map(rows.map(r=>[r.m.ts+'|'+r.m.t,r]));
+      rows=[];
       const H=Math.max(120,40+list.length*44); if(cv.height!==H)cv.height=H;
       const emp=document.getElementById('bempty'); if(emp)emp.hidden=list.length>0;
       list.forEach((m,i)=>{
+        const key=m.ts+'|'+m.t, prev=old.get(key);
         const tr=trail(String(m.t||'').slice(0,40),26);
-        const age=now()-pt(m.ts), life=Math.max(0,1-age/TTL);
-        rows.push({m,tr,life,x:150,y:22+i*44});
-        const n=Math.max(1,Math.min(3,Math.round(life*3)));
-        for(let k=0;k<n;k++)walkers.push({row:rows.length-1,i:Math.floor(rnd()*Math.max(1,tr.pts.length)),sp:.6+rnd()*.9,ph:rnd()*6.28});
+        const life=Math.max(0,1-(now()-pt(m.ts))/TTL);
+        const x=150, y=22+i*44, scale=Math.min(1,(cv.width-x-16)/tr.w);
+        if(prev){prev.life=life;prev.y=y;prev.scale=scale;rows.push(prev);return;}
+        const N=tr.path.length, K=N?Math.max(1,Math.min(4,Math.round(N/180))):0;
+        const ants=[]; seed=17+i;
+        for(let k=0;k<K;k++){
+          const a=Math.floor(N*k/K), b=Math.floor(N*(k+1)/K);
+          ants.push({a,b,i:a,st:'write',sp:11+rnd()*5,ph:rnd()*6.28,ang:0,x:0,y:0,wait:i*1.2+k*.6,fade:1});
+        }
+        rows.push({m,tr,life,x,y,scale,ants,done:new Uint8Array(N),patrol:null});
       });
     }
     function rel(ms){const h=Math.floor(ms/3600e3),mn=Math.floor(ms/60e3)%60;return h?(h+' 小時前'):(mn+' 分前');}
-    function paint(t){
+    function step(dt){
+      for(const r of rows){
+        const P=r.tr.path, N=P.length; if(!N)continue;
+        let allDone=true;
+        for(const a of r.ants){
+          if(a.st==='write'){
+            allDone=false;
+            if(a.wait>0){a.wait-=dt;continue;}
+            const prevI=Math.floor(a.i);
+            a.i+=a.sp*dt;
+            for(let k=prevI;k<Math.min(Math.floor(a.i),a.b);k++) r.done[k]=1;
+            if(a.i>=a.b-1){a.st='leave';a.i=a.b-1;const p=P[Math.max(0,Math.min(N-1,Math.floor(a.i)))];a.x=p.x;a.y=p.y;a.ang=(rnd()-.5)*.6;a.fade=1;continue;}
+            const p=P[Math.floor(a.i)], q=P[Math.min(N-1,Math.floor(a.i)+2)];
+            const tgt=Math.atan2(q.y-p.y,q.x-p.x);
+            let d=tgt-a.ang; while(d>Math.PI)d-=2*Math.PI; while(d<-Math.PI)d+=2*Math.PI;
+            a.ang+=d*Math.min(1,dt*9);
+            a.x=p.x+(q.x-p.x)*(a.i-Math.floor(a.i))*.5; a.y=p.y+(q.y-p.y)*(a.i-Math.floor(a.i))*.5;
+            a.ph+=a.sp*dt*.9;
+          }else if(a.st==='leave'){
+            a.x+=Math.cos(a.ang)*40*dt; a.y+=Math.sin(a.ang)*40*dt; a.ph+=36*dt*.9; a.fade-=dt*.7;
+            if(a.fade<=0)a.st='gone';
+          }
+        }
+        if(allDone&&!r.patrol){seed=23;r.patrol={i:Math.floor(rnd()*N),sp:4.5,ph:0,ang:0,x:P[0].x,y:P[0].y};}
+        if(r.patrol){
+          const a=r.patrol; a.i=(a.i+a.sp*dt)%N;
+          const p=P[Math.floor(a.i)], q=P[(Math.floor(a.i)+2)%N];
+          const tgt=Math.atan2(q.y-p.y,q.x-p.x);
+          let d=tgt-a.ang; while(d>Math.PI)d-=2*Math.PI; while(d<-Math.PI)d+=2*Math.PI;
+          a.ang+=d*Math.min(1,dt*6); a.x=p.x; a.y=p.y; a.ph+=a.sp*dt*.9;
+        }
+      }
+    }
+    function paint(){
       ctx.fillStyle='#1B120A';ctx.fillRect(0,0,cv.width,cv.height);
       ctx.strokeStyle='#2A1E12';ctx.lineWidth=1;
       for(let y=8;y<cv.height;y+=44){ctx.beginPath();ctx.moveTo(140,y+36.5);ctx.lineTo(cv.width-12,y+36.5);ctx.stroke();}
-      seed=7;
       for(const r of rows){
-        const a=.15+.85*r.life;
-        ctx.font='10.5px "IBM Plex Mono",monospace';ctx.textBaseline='middle';ctx.fillStyle='rgba(138,116,85,'+a.toFixed(2)+')';
+        const P=r.tr.path, N=P.length, al=.15+.85*r.life, sc=r.scale;
+        ctx.font='10.5px "IBM Plex Mono",monospace';ctx.textBaseline='middle';ctx.fillStyle='rgba(138,116,85,'+al.toFixed(2)+')';
         ctx.fillText((r.m.who||'蟻')+' · '+rel(now()-pt(r.m.ts)),12,r.y+r.tr.h/2);
-        const scale=Math.min(1,(cv.width-r.x-16)/r.tr.w);
-        for(const p of r.tr.pts){
-          ctx.fillStyle='rgba(224,178,92,'+(a*(.55+.45*rnd())).toFixed(2)+')';
-          ctx.beginPath();ctx.arc(r.x+p[0]*scale,r.y+p[1]*scale,.9,0,7);ctx.fill();
+        // 足跡: 成對小點, 左右交替落在路徑兩側
+        ctx.fillStyle='rgba(224,178,92,'+(al*.85).toFixed(2)+')';
+        for(let k=0;k<N;k++){
+          if(!r.done[k]&&!reduced)continue;
+          const p=P[k], q=P[Math.min(N-1,k+1)];
+          const dx=q.x-p.x, dy=q.y-p.y, L=Math.hypot(dx,dy)||1, sd=(k%2?1:-1);
+          const ox=-dy/L*sd*1.1, oy=dx/L*sd*1.1;
+          ctx.beginPath();ctx.arc(r.x+(p.x+ox)*sc,r.y+(p.y+oy)*sc,.75,0,7);ctx.fill();
         }
-      }
-      for(const w of walkers){
-        const r=rows[w.row]; if(!r||!r.tr.pts.length)continue;
-        const scale=Math.min(1,(cv.width-r.x-16)/r.tr.w);
-        if(!reduced)w.i=(w.i+w.sp*.6)%r.tr.pts.length;
-        const p=r.tr.pts[Math.floor(w.i)], q=r.tr.pts[(Math.floor(w.i)+3)%r.tr.pts.length];
-        ant(r.x+p[0]*scale,r.y+p[1]*scale,Math.atan2(q[1]-p[1],q[0]-p[0]),t/90+w.ph,1.6,'rgba(205,185,152,'+(.35+.65*r.life).toFixed(2)+')');
+        if(reduced)continue;
+        for(const a of r.ants){
+          if(a.st==='gone'||(a.st==='write'&&a.wait>0))continue;
+          drawAnt(r.x+a.x*sc,r.y+a.y*sc,a.ang,a.ph,1.55,Math.max(0,Math.min(1,a.fade))*(.4+.6*r.life));
+        }
+        if(r.patrol)drawAnt(r.x+r.patrol.x*sc,r.y+r.patrol.y*sc,r.patrol.ang,r.patrol.ph,1.45,.45+.45*r.life);
       }
     }
-    function frameB(t){paint(t||0);if(!reduced)requestAnimationFrame(frameB);}
+    function frameB(t){
+      const dt=Math.min(.05,Math.max(0,(t-tPrev)/1000)); tPrev=t;
+      if(!reduced)step(dt);
+      paint();
+      if(!reduced)requestAnimationFrame(frameB);
+    }
     const form=document.getElementById('bform'), inp=document.getElementById('binput');
     if(form)form.addEventListener('submit',e=>{
       e.preventDefault();
       const v=(inp.value||'').trim().slice(0,40); if(!v)return;
       const a=loadLocal(); a.push({ts:new Date().toISOString(),who:'訪客',t:v}); saveLocal(a);
-      inp.value=''; layout(); if(reduced)paint(0);
+      inp.value=''; layout(); if(reduced)paint();
     });
-    // 每小時推的板子(github.io 上才抓; 本機檔案沒有就用快照)
     if(/^https?:/.test(location.protocol)){
       fetch('apex_colony666_board.json?_='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(j=>{
-        if(j&&Array.isArray(j.items)){remote=j.items.slice();layout();if(reduced)paint(0);}
+        if(j&&Array.isArray(j.items)){remote=j.items.slice();layout();if(reduced)paint();}
       }).catch(()=>{});
     }
-    const boot=()=>{layout();frameB(0);};
+    const boot=()=>{layout();tPrev=performance.now();frameB(tPrev);};
     if(document.fonts&&document.fonts.ready)document.fonts.ready.then(boot);else boot();
-    setInterval(()=>{saveLocal(loadLocal());layout();if(reduced)paint(0);},60000);
+    setInterval(()=>{saveLocal(loadLocal());layout();if(reduced)paint();},60000);
   }catch(_e){console.error('蟻群留言板',_e);}
 })();
 </script>
