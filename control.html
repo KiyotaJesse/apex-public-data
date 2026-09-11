@@ -89,6 +89,7 @@ const META={
   ['regime_gate','BTC大盤閘門','熊市才放行做空(7/26實證+0.24R)','bool',0],
   ['atr_r_thr','ATR比率門檻','8/2體檢atr_r雙驗證,0=停用','float',0,0,3.0,0.1],
   ['volr_thr','量能比門檻','進場需量能達均量倍數,1.0=停用','float',0,1.0,2.5,0.1],
+  ['max_cost_bps','成本上限(bps)','逐幣往返成本超過此值不進場(8/26上線後B1由0轉+0.21R);config未設時D端預設15','num',0,5,999,1,15],
   ['maker_first','限價搶maker','先掛限價省手續費,未成交改市價;關=直接市價','bool',0],
   ['maker_wait_s','限價等待(秒)','等越久越省手續費,但掃描迴圈會被卡住同樣秒數;0=直接市價','int',0,0,30,2]]},
  tl:{name:'TL 順勢回踩做多',rows:[
@@ -117,6 +118,8 @@ const META={
   ['sl_atr','止損ATR倍數','驗證值1.5','float',0,0.8,2.5,0.1],
   ['max_hold_h','最長持倉(小時)','到時強制平倉','int',0,12,168,12],
   ['cooldown_h','同幣冷卻(小時)','','int',0,1,48,1],
+  ['regime_gate','BTC大盤閘門','熊市才放行做空(8/23加上,MRS的黃燈補丁)','bool',0],
+  ['max_cost_bps','成本上限(bps)','逐幣往返成本超過此值不進場;config未設時D端預設999(等於不限)','num',0,5,999,1,999],
   ['cycle_seconds','掃描週期(秒)','','int',0,300,7200,300]]},
  sc:{name:'SC 空方家族 S1/S2/S3',rows:[
   ['live_enabled','實盤開關','目前 paper,開=真金上陣','bool',1],
@@ -126,6 +129,7 @@ const META={
   ['s1_enabled','S1 崩盤捕手','熊市閘門內4h跌破Donchian55','bool',0],
   ['s2_enabled','S2 過熱獵人','無閘門,cvd_z+vwap_dev過熱空','bool',0],
   ['s3_enabled','S3 高頻跌破','熊市閘門內1h跌破Donchian20','bool',0],
+  ['max_cost_bps','成本上限(bps)','逐幣往返成本超過此值不進場;config未設時D端預設999(等於不限)','num',0,5,999,1,999],
   ['cycle_seconds','掃描週期(秒)','','int',0,300,7200,300]]},
  global:{name:'全域風控',rows:[
   ['same_dir_max','同方向倉位上限','跨策略合計','int',0,1,6,1],
@@ -171,8 +175,10 @@ function render(){
   if(sect==='global')mode=c.killswitch?'<span class="mode off" style="color:var(--bear);border-color:var(--bear)">HALTED</span>':'<span class="mode live">ARMED</span>';
   card.innerHTML='<div class="chd"><b>'+m.name+'</b>'+mode+'</div>';
   for(const row of m.rows){
-   const[key,label,hint,kind,dgr,lo,hi,step]=row;
-   const full=sect+'.'+key;const cur=PEND[full]!==undefined?PEND[full]:BASE[full];
+   const[key,label,hint,kind,dgr,lo,hi,step,dflt]=row;
+   const full=sect+'.'+key;let cur=PEND[full]!==undefined?PEND[full]:BASE[full];
+   // config 沒有這個鍵時(D 端吃環境變數預設)退回列上的預設值, 不能讓 undefined 炸掉整頁
+   if(cur===undefined||cur===null)cur=(dflt!==undefined?dflt:(kind==='bool'?false:lo));
    const div=document.createElement('div');div.className='row'+(PEND[full]!==undefined?' changed':'')+(key==='killswitch'?' ks':'');
    let ctl='';
    if(kind==='bool'){
