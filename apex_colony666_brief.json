@@ -1,0 +1,157 @@
+{
+ "ts": "2026-09-12T11:10:07",
+ "data_ts": "2026-09-12T11:10:07",
+ "data_age_h": 0.0,
+ "stale": false,
+ "verdict": {
+  "word": "要動",
+  "tone": "red",
+  "why": "警報 P0 還開著: BTC-USDT: 2 隻蟻同時點名(帳/秤)",
+  "fired": [
+   "警報 P0 還開著: BTC-USDT: 2 隻蟻同時點名(帳/秤)",
+   "你有事項 1 天內到期"
+  ],
+  "n_red": 1,
+  "n_amber": 1
+ },
+ "numbers": [
+  {
+   "k": "巢健康度",
+   "v": "90",
+   "unit": "/100",
+   "tone": "green",
+   "sub": "扣分: 警報 P0 -10"
+  },
+  {
+   "k": "本月策略 R",
+   "v": "0",
+   "unit": "筆",
+   "tone": "grey",
+   "sub": "2026-09 本月還沒有已平倉的實彈單"
+  },
+  {
+   "k": "蟻口出勤",
+   "v": "59/92",
+   "unit": "(64%)",
+   "tone": "green",
+   "sub": "0 紅燈; 沒打卡的是週/月排程, 今天本來就不跑"
+  }
+ ],
+ "jesse": [
+  {
+   "id": "AI025",
+   "title": "到交易所替手動倉 BTC-USDT_LONG 掛止損(reduce-only stop)",
+   "due": "2026-09-13",
+   "due_in": 1,
+   "late": false,
+   "howto": "到 BingX App 手動處理(機器不准動錢, 這件只有你能做)"
+  },
+  {
+   "id": "AI026",
+   "title": "手動倉 BTC-USDT_LONG 逼近爆倉: 加保證金或減倉",
+   "due": "2026-09-13",
+   "due_in": 1,
+   "late": false,
+   "howto": "到 BingX App 手動處理(機器不准動錢, 這件只有你能做)"
+  },
+  {
+   "id": "AI023",
+   "title": "Render D 環境變數 CB_AUTO_RELEASE_HOURS=72（裁決D001; 需 push_d_circuit_split ",
+   "due": "2026-09-19",
+   "due_in": 7,
+   "late": false,
+   "howto": "Render 面板 -> 該服務 Environment 改變數 -> Manual Deploy"
+  },
+  {
+   "id": "AI027",
+   "title": "重生缺口: 異地備份只有 7 個 .py, 巢的程式碼靠 git, 但本機 267 檔未提交(最後 commit 9/7)",
+   "due": "2026-09-19",
+   "due_in": 7,
+   "late": false,
+   "howto": "重生演練 9/12 通過, 但只證明『狀態/記憶』還原得回來。程式碼不在備份 zip 裡(時光機刻意只打狀態), bootstrap 清單也"
+  },
+  {
+   "id": "AI028",
+   "title": "名冊 _status_kinds 文件漏記 roster(10 列在用, supervisor.py:284 有實作)",
+   "due": "2026-09-19",
+   "due_in": 7,
+   "late": false,
+   "howto": "registry_io.validate 目前用 IMPLEMENTED_UNDECLARED_KINDS={'roster'} 放行; 文"
+  },
+  {
+   "id": "AI029",
+   "title": "註銷 GROQ_API_KEY(語音轉文字服務; 程式碼已在 WO-33 拆除)",
+   "due": "2026-09-19",
+   "due_in": 7,
+   "late": false,
+   "howto": "PowerShell 到 C:\\claude-assistant 跑: python push_a_wo33.py --push"
+  },
+  {
+   "id": "AI031",
+   "title": "Render 帳號 2FA 確認已開啟",
+   "due": "2026-09-19",
+   "due_in": 7,
+   "late": false,
+   "howto": "Render 面板 -> 該服務 Environment 改變數 -> Manual Deploy"
+  },
+  {
+   "id": "AI003",
+   "title": "手動 BTC 倉結束後跑 push_d_circuit_split.py --push(熔斷分帳+解除路徑)",
+   "due": "2026-09-20",
+   "due_in": 8,
+   "late": false,
+   "howto": "PowerShell 到 C:\\claude-assistant 跑: python push_d_circuit_split.py --push"
+  },
+  {
+   "id": "AI030",
+   "title": "BingX API 綁定 IP 白名單(D 端下單金鑰)",
+   "due": "2026-09-26",
+   "due_in": 14,
+   "late": false,
+   "howto": "到 BingX App 手動處理(機器不准動錢, 這件只有你能做)"
+  },
+  {
+   "id": "AI032",
+   "title": "補填 key_ledger.json 的 last_rotated(密鑰 14 把 unknown)",
+   "due": "2026-09-26",
+   "due_in": 14,
+   "late": false,
+   "howto": "python key_ledger.py 每日 08:30 盤點, 但上次輪換日只有 TELEGRAM_TOKEN / GITHUB_TOK"
+  }
+ ],
+ "auto": {
+  "decided_24h": 2,
+  "decided": [
+   {
+    "id": "D001",
+    "q": "熔斷自動解除要不要開？停滿幾小時後讓系統自己以當時策略權益重設峰值復機",
+    "choice": "B"
+   },
+   {
+    "id": "D002",
+    "q": "TL 要不要轉影子(只算不下單)？三年樣本外 -0.124R、相對隨機 -0.003，高 EV 主要是多頭 beta",
+    "choice": "A"
+   }
+  ],
+  "repaired_24h": 5,
+  "crit_24h": 5,
+  "next": {
+   "id": "D014",
+   "due": "2026-09-15",
+   "q": "手動倉總曝險超過策略權益 -- 要不要開加倉鎖(手動倉超標時禁止再加碼)?",
+   "rec": "A"
+  },
+  "line": "近 24 小時: 自動裁決 2 件、自動修復/回滾 5 件。下一個自動到期 D014(2026-09-15), 沒人異議就採建議 A。"
+ },
+ "caveats": [],
+ "src": {
+  "nest": "queen_weight 鏈內 nest",
+  "actions": "actions.json",
+  "decisions": "decisions.json",
+  "attendance": "supervision_state.json @ 2026-09-12T03:05",
+  "events": "events.jsonl",
+  "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
+  "rules": "brief_rules.json v1.0"
+ },
+ "rules_version": "1.0"
+}
