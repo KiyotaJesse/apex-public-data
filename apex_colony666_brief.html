@@ -1,0 +1,156 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>APEX 戰情 10 秒版</title>
+<style>
+:root{
+  --bg:#100C08; --ink:#DFD2B4; --dim:#8A7455; --line:#32261A; --paper:#171009;
+  --red:#D9553E; --amber:#D99A3E; --green:#7FA05A; --grey:#6E6252;
+  --mono:"Cascadia Mono","Consolas",ui-monospace,monospace;
+  --sans:"Segoe UI","Microsoft JhengHei","PingFang TC","Noto Sans TC",system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;
+     -webkit-text-size-adjust:100%}
+.wrap{max-width:720px;margin:0 auto;padding:18px 18px 40px}
+.top{display:flex;justify-content:space-between;align-items:baseline;
+     font-family:var(--mono);font-size:10.5px;letter-spacing:.22em;color:var(--dim);
+     border-bottom:1px solid var(--line);padding-bottom:8px}
+.top .stale{color:var(--red)}
+.cell{border-bottom:1px solid var(--line);padding:14px 0}
+.lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.22em;color:var(--dim);
+     display:block;margin-bottom:8px}
+.verdict{display:flex;align-items:center;gap:16px}
+.word{font-size:clamp(46px,15vw,72px);font-weight:800;line-height:.95;letter-spacing:.04em}
+.word.red{color:var(--red)} .word.amber{color:var(--amber)} .word.green{color:var(--green)}
+.why{font-size:14px;color:#C2B291;flex:1;min-width:0}
+.why .more{display:block;color:var(--dim);font-size:12px;margin-top:4px}
+.nums{display:flex;gap:10px}
+.num{flex:1;min-width:0;border-left:2px solid var(--line);padding-left:10px}
+.num.red{border-color:var(--red)} .num.amber{border-color:var(--amber)}
+.num.green{border-color:var(--green)} .num.grey{border-color:var(--grey)}
+.num .k{font-size:11.5px;color:var(--dim)}
+.num .v{font-family:var(--mono);font-size:clamp(21px,6.4vw,28px);font-weight:600;
+        line-height:1.25;white-space:nowrap}
+.num.red .v{color:var(--red)} .num.amber .v{color:var(--amber)}
+.num.green .v{color:var(--green)} .num.grey .v{color:#9C8E78}
+.num .u{font-size:11px;color:var(--dim);font-weight:400}
+.num .s{font-size:10.5px;color:var(--dim);line-height:1.45;margin-top:3px}
+.todo{list-style:none}
+.todo li{padding:11px 0;border-top:1px dashed var(--line)}
+.todo li:first-child{border-top:0}
+.todo .t{font-size:28px;font-weight:700;line-height:1.3;letter-spacing:.01em}
+.todo .m{font-family:var(--mono);font-size:11.5px;color:var(--dim);margin-top:5px}
+.todo .m b{color:var(--amber);font-weight:600}
+.todo li.late .m b{color:var(--red)}
+.none{font-size:28px;font-weight:700;color:var(--green);line-height:1.3}
+details.rest{margin-top:10px;border-top:1px dashed var(--line);padding-top:8px}
+details.rest>summary{font-family:var(--mono);font-size:11.5px;color:var(--dim);
+  cursor:pointer;list-style:none;padding:2px 0}
+details.rest>summary::before{content:"＋ ";color:var(--amber)}
+details[open].rest>summary::before{content:"－ "}
+details.rest>summary::-webkit-details-marker{display:none}
+.auto{font-size:13.5px;color:#B8A886}
+.foot{font-family:var(--mono);font-size:10.5px;color:var(--dim);padding-top:12px;line-height:1.7}
+.foot.stale{color:var(--red)}
+.foot a{color:var(--dim)}
+.cav{margin-top:6px;color:#7A6A52}
+.state{padding:48px 4px;font-size:14px;color:var(--dim);font-family:var(--mono)}
+.state b{display:block;font-size:19px;color:var(--ink);font-family:var(--sans);margin-bottom:6px}
+pre#raw{display:none;white-space:pre-wrap;word-break:break-all;font-family:var(--mono);
+        font-size:11px;color:#9C8E78;background:var(--paper);padding:12px;margin-top:16px;
+        border:1px solid var(--line);max-height:60vh;overflow:auto}
+@media(max-width:420px){
+  .wrap{padding:12px 14px 28px}
+  .cell{padding:12px 0}
+  .nums{gap:8px}
+  .todo .t,.none{font-size:28px}
+  .verdict{gap:12px}
+}
+</style>
+<div class="wrap" id="app">
+  <div class="state" id="loading"><b>讀取中</b>apex_brief.json</div>
+</div>
+<pre id="raw"></pre>
+<script>
+var EMBED={"ts":"2026-09-12T11:10:07","data_ts":"2026-09-12T11:10:07","data_age_h":0.0,"stale":false,"verdict":{"word":"要動","tone":"red","why":"警報 P0 還開著: BTC-USDT: 2 隻蟻同時點名(帳/秤)","fired":["警報 P0 還開著: BTC-USDT: 2 隻蟻同時點名(帳/秤)","你有事項 1 天內到期"],"n_red":1,"n_amber":1},"numbers":[{"k":"巢健康度","v":"90","unit":"/100","tone":"green","sub":"扣分: 警報 P0 -10"},{"k":"本月策略 R","v":"0","unit":"筆","tone":"grey","sub":"2026-09 本月還沒有已平倉的實彈單"},{"k":"蟻口出勤","v":"59/92","unit":"(64%)","tone":"green","sub":"0 紅燈; 沒打卡的是週/月排程, 今天本來就不跑"}],"jesse":[{"id":"AI025","title":"到交易所替手動倉 BTC-USDT_LONG 掛止損(reduce-only stop)","due":"2026-09-13","due_in":1,"late":false,"howto":"到 BingX App 手動處理(機器不准動錢, 這件只有你能做)"},{"id":"AI026","title":"手動倉 BTC-USDT_LONG 逼近爆倉: 加保證金或減倉","due":"2026-09-13","due_in":1,"late":false,"howto":"到 BingX App 手動處理(機器不准動錢, 這件只有你能做)"},{"id":"AI023","title":"Render D 環境變數 CB_AUTO_RELEASE_HOURS=72（裁決D001; 需 push_d_circuit_split ","due":"2026-09-19","due_in":7,"late":false,"howto":"Render 面板 -> 該服務 Environment 改變數 -> Manual Deploy"},{"id":"AI027","title":"重生缺口: 異地備份只有 7 個 .py, 巢的程式碼靠 git, 但本機 267 檔未提交(最後 commit 9/7)","due":"2026-09-19","due_in":7,"late":false,"howto":"重生演練 9/12 通過, 但只證明『狀態/記憶』還原得回來。程式碼不在備份 zip 裡(時光機刻意只打狀態), bootstrap 清單也"},{"id":"AI028","title":"名冊 _status_kinds 文件漏記 roster(10 列在用, supervisor.py:284 有實作)","due":"2026-09-19","due_in":7,"late":false,"howto":"registry_io.validate 目前用 IMPLEMENTED_UNDECLARED_KINDS={'roster'} 放行; 文"},{"id":"AI029","title":"註銷 GROQ_API_KEY(語音轉文字服務; 程式碼已在 WO-33 拆除)","due":"2026-09-19","due_in":7,"late":false,"howto":"PowerShell 到 C:\\claude-assistant 跑: python push_a_wo33.py --push"},{"id":"AI031","title":"Render 帳號 2FA 確認已開啟","due":"2026-09-19","due_in":7,"late":false,"howto":"Render 面板 -> 該服務 Environment 改變數 -> Manual Deploy"},{"id":"AI003","title":"手動 BTC 倉結束後跑 push_d_circuit_split.py --push(熔斷分帳+解除路徑)","due":"2026-09-20","due_in":8,"late":false,"howto":"PowerShell 到 C:\\claude-assistant 跑: python push_d_circuit_split.py --push"},{"id":"AI030","title":"BingX API 綁定 IP 白名單(D 端下單金鑰)","due":"2026-09-26","due_in":14,"late":false,"howto":"到 BingX App 手動處理(機器不准動錢, 這件只有你能做)"},{"id":"AI032","title":"補填 key_ledger.json 的 last_rotated(密鑰 14 把 unknown)","due":"2026-09-26","due_in":14,"late":false,"howto":"python key_ledger.py 每日 08:30 盤點, 但上次輪換日只有 TELEGRAM_TOKEN / GITHUB_TOK"}],"auto":{"decided_24h":2,"decided":[{"id":"D001","q":"熔斷自動解除要不要開？停滿幾小時後讓系統自己以當時策略權益重設峰值復機","choice":"B"},{"id":"D002","q":"TL 要不要轉影子(只算不下單)？三年樣本外 -0.124R、相對隨機 -0.003，高 EV 主要是多頭 beta","choice":"A"}],"repaired_24h":5,"crit_24h":5,"next":{"id":"D014","due":"2026-09-15","q":"手動倉總曝險超過策略權益 -- 要不要開加倉鎖(手動倉超標時禁止再加碼)?","rec":"A"},"line":"近 24 小時: 自動裁決 2 件、自動修復/回滾 5 件。下一個自動到期 D014(2026-09-15), 沒人異議就採建議 A。"},"caveats":[],"src":{"nest":"queen_weight 鏈內 nest","actions":"actions.json","decisions":"decisions.json","attendance":"supervision_state.json @ 2026-09-12T03:05","events":"events.jsonl","month_r":"tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)","rules":"brief_rules.json v1.0"},"rules_version":"1.0"};
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){
+  return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c];});}
+function state(title,body){
+  document.getElementById("app").innerHTML=
+    '<div class="state"><b>'+esc(title)+'</b>'+esc(body)+'</div>';
+}
+function dueTxt(it){
+  var d=it.due_in;
+  if(d<0) return "逾期 "+(-d)+" 天";
+  if(d===0) return "今天到期";
+  if(d>900) return "沒設到期日";
+  return d+" 天後到期";
+}
+function item(it){
+  return '<li'+(it.late?' class="late"':'')+'><div class="t">'+esc(it.title)+'</div>'+
+         '<div class="m"><b>'+esc(dueTxt(it))+'</b> · '+esc(it.due)+' · '+esc(it.id)+
+         '<br>'+esc(it.howto)+'</div></li>';
+}
+function render(b,how){
+  if(!b||!b.verdict){state("沒有資料","apex_brief.json 是空的或格式不對, 跑 build_brief.py 重產");return;}
+  var v=b.verdict, ns=b.numbers||[], js=b.jesse||[], au=b.auto||{};
+  // 資料時間同時放頂欄(首屏看得到)與頁腳; 過期標紅 -- 這頁是靜態的, 08:10 才更新
+  var h='<div class="top"><span>APEX 戰情 10 秒版</span><span'+(b.stale?' class="stale"':'')+
+        '>資料 '+esc((b.data_ts||"?").slice(5,16))+(b.stale?' 已過期':'')+'</span></div>';
+  h+='<div class="cell"><span class="lbl">今天要不要理它</span><div class="verdict">'+
+     '<div class="word '+esc(v.tone)+'">'+esc(v.word)+'</div><div class="why">'+esc(v.why)+
+     (v.fired&&v.fired.length>1?'<span class="more">另外 '+(v.fired.length-1)+' 條: '+esc(v.fired.slice(1,3).join(" / "))+'</span>':'')+
+     '</div></div></div>';
+  h+='<div class="cell"><span class="lbl">三個數字</span><div class="nums">';
+  for(var i=0;i<ns.length;i++){var n=ns[i];
+    h+='<div class="num '+esc(n.tone)+'"><div class="k">'+esc(n.k)+'</div>'+
+       '<div class="v">'+esc(n.v)+'<span class="u"> '+esc(n.unit)+'</span></div>'+
+       '<div class="s">'+esc(n.sub)+'</div></div>';}
+  h+='</div></div>';
+  h+='<div class="cell"><span class="lbl">你要做的</span>';
+  if(!js.length){h+='<div class="none">你不用做任何事</div>';}
+  else{
+    // 手機一屏優先: 最急的兩件全尺寸, 其餘收進摺疊(展開後同字級)
+    var TOP=2;
+    h+='<ul class="todo">'+js.slice(0,TOP).map(item).join("")+'</ul>';
+    if(js.length>TOP){
+      h+='<details class="rest"><summary>還有 '+(js.length-TOP)+' 件（最近一件 '+
+         esc(js[TOP].due)+'）</summary><ul class="todo">'+
+         js.slice(TOP).map(item).join("")+'</ul></details>';}
+  }
+  h+='</div>';
+  h+='<div class="cell"><span class="lbl">系統自己會做的</span><div class="auto">'+esc(au.line||"")+'</div></div>';
+  var st=b.stale?" stale":"";
+  h+='<div class="foot'+st+'">資料時間 '+esc(b.data_ts||"?")+
+     (b.data_age_h!=null?"（"+b.data_age_h+" 小時前）":"")+
+     ' · 本頁靜態, 每日 08:10 隨蟻丘更新 · 產生 '+esc((b.ts||"").replace("T"," "))+
+     ' · 來源 '+esc(how);
+  if(b.caveats&&b.caveats.length){h+='<div class="cav">※ '+esc(b.caveats.join(" ／ "))+'</div>';}
+  h+='</div>';
+  document.getElementById("app").innerHTML=h;
+  if(/[?&]debug=1/.test(location.search)){
+    var r=document.getElementById("raw");r.style.display="block";
+    r.textContent=JSON.stringify(b,null,1);}
+}
+(function(){
+  var done=false;
+  function fallback(why){
+    if(done)return; done=true;
+    if(EMBED&&EMBED.verdict){render(EMBED,"內嵌快照("+why+")");}
+    else{state("讀不到資料",why+"; 內嵌快照也是空的。到 C:\\apex_artifacts 跑 python build_brief.py");}
+  }
+  var t=setTimeout(function(){fallback("讀 json 逾時");},4000);
+  // json 檔名跟著頁面檔名走(apex_brief.html -> apex_brief.json; 公開推成 apex_colony666_brief.html 就找 apex_colony666_brief.json)
+  var jn="apex_brief.json";
+  try{
+    jn=(location.pathname.split("/").pop()||"apex_brief.html").replace(/\.html?$/i,"")+".json";
+    if(!/\.json$/.test(jn)||jn===".json") jn="apex_brief.json";
+    fetch(jn,{cache:"no-store"}).then(function(r){
+      if(!r.ok)throw new Error("HTTP "+r.status); return r.json();
+    }).then(function(j){
+      if(done)return; done=true; clearTimeout(t); render(j,jn);
+    })["catch"](function(e){clearTimeout(t);fallback(String(e.message||e));});
+  }catch(e){clearTimeout(t);fallback("瀏覽器不支援 fetch");}
+})();
+</script>
