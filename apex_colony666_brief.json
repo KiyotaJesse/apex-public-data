@@ -1,6 +1,6 @@
 {
- "ts": "2026-09-16T00:05:08",
- "data_ts": "2026-09-16T00:05:06",
+ "ts": "2026-09-16T00:07:39",
+ "data_ts": "2026-09-16T00:07:38",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
@@ -36,7 +36,7 @@
   },
   {
    "k": "蟻口出勤",
-   "v": "0/106",
+   "v": "0/108",
    "unit": "(0%)",
    "tone": "amber",
    "sub": "紅燈 2 隻: 生(重生演練蟻)、收(價值收據蟻)"
@@ -200,14 +200,78 @@
    "ts_utc": "2026-09-15T16:03"
   }
  },
+ "north_star": {
+  "ts": "2026-09-16T00:04:24",
+  "age_h": 0.1,
+  "stale": false,
+  "risk_light": "red",
+  "risk_why": "手動倉裸倉警報 11次(上限 0)、最大 24h 權益跌幅 45.2%(上限 20.0)、熔斷 1次(上限 1)",
+  "risk_items": [
+   {
+    "k": "手動倉裸倉警報",
+    "v": 11,
+    "unit": "次",
+    "breach": true
+   },
+   {
+    "k": "最大 24h 權益跌幅",
+    "v": 45.2,
+    "unit": "%",
+    "breach": true
+   },
+   {
+    "k": "熔斷",
+    "v": 1,
+    "unit": "次",
+    "breach": true
+   }
+  ],
+  "risk_path": "風險儀 3 項超標(手動倉裸倉警報 11次(上限 0)、最大 24h 權益跌幅 45.2%(上限 20.0)、熔斷 1次(上限 1)) -> 三個里程碑的預估日已各自往後推。",
+  "milestones": [
+   {
+    "id": "M1",
+    "name": "第一支樣本外為正的策略",
+    "pct": 0,
+    "note": "影子追蹤 3 支規格, 尚無結算樣本(追蹤中 8 筆)",
+    "status": "unknown",
+    "est": "未知",
+    "jesse": "2026-11-30",
+    "delta": "無預估日",
+    "path": "M1 最短路徑: 影子在追 3 支規格、8 筆在途, 還沒有任何一筆前瞻結算; 最快的一支還差 30 筆(回填 6 筆只驗引擎不計分), 先等它們到期結算。"
+   },
+   {
+    "id": "M2",
+    "name": "月 R 連三個月為正",
+    "pct": 0,
+    "note": "本月 0 筆, 無法評",
+    "status": "unknown",
+    "est": "未知",
+    "jesse": "2027-02-28",
+    "delta": "無預估日",
+    "path": "M2 最短路徑: 本月 0 筆平倉, 無法評 —— M2 的瓶頸不是勝率是『沒有單』, 要先有會進場的策略(等 M1); 交易目前是全停狀態(killswitch=on), 不解除就不會有新單。"
+   },
+   {
+    "id": "M3",
+    "name": "策略權益 ×10",
+    "pct": 0,
+    "note": "權益 236 / 目標 2361(起算 2026-09-16)",
+    "status": "ahead",
+    "est": "2029-03-07",
+    "jesse": "2029-05-31",
+    "delta": "提前 85 天",
+    "path": "M3 最短路徑: 五本實彈帳本 0 筆已平倉, 沒有真實斜率可外推 —— M3 是 M2 的結果, 這個月唯一能做的是把 M1 往前推。"
+   }
+  ]
+ },
  "caveats": [],
  "src": {
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-09-15T15:05",
+  "attendance": "supervision_state.json @ 2026-09-15T16:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
+  "north_star": "goal_state.json @ 2026-09-16T00:04:24",
   "rules": "brief_rules.json v1.0"
  },
  "rules_version": "1.0"
