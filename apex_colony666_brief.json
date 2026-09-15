@@ -1,14 +1,14 @@
 {
- "ts": "2026-09-15T23:01:18",
- "data_ts": "2026-09-15T23:01:18",
+ "ts": "2026-09-15T23:11:07",
+ "data_ts": "2026-09-15T23:11:06",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
   "word": "要動",
   "tone": "red",
-  "why": "警報 P0 還開著: 權益 24h 內下跌 62%",
+  "why": "警報 P1 還開著: BTC-USDT: 2 隻蟻同時點名(巡/帳)",
   "fired": [
-   "警報 P0 還開著: 權益 24h 內下跌 62%",
+   "警報 P1 還開著: BTC-USDT: 2 隻蟻同時點名(巡/帳)",
    "巢健康度 62 低於 70",
    "巢健康度 62 低於 85",
    "待決事項 1 天內自動裁決",
@@ -24,7 +24,7 @@
    "v": "62",
    "unit": "/100",
    "tone": "red",
-   "sub": "扣分: 警報 P0 -10、逾期行動 6 件 -10"
+   "sub": "扣分: 警報 P1 -10、逾期行動 6 件 -10"
   },
   {
    "k": "本月策略 R",
@@ -35,8 +35,8 @@
   },
   {
    "k": "蟻口出勤",
-   "v": "67/106",
-   "unit": "(63%)",
+   "v": "68/106",
+   "unit": "(64%)",
    "tone": "amber",
    "sub": "紅燈 2 隻: 生(重生演練蟻)、收(價值收據蟻)"
   }
@@ -129,6 +129,14 @@
    "due_in": 13,
    "late": false,
    "howto": "衡(exec_quality.py)已備好: 帳本任一筆出現 sig_price/limit_price/entry_ref 就自動開始算滑"
+  },
+  {
+   "id": "AI045",
+   "title": "名冊 7 項補 output 結果檔路徑(task_livediag/scanner/weekly_opt/throne x3/board_",
+   "due": "2026-10-15",
+   "due_in": 30,
+   "late": false,
+   "howto": "supervision_registry.json 是禁改共用檔; 內容與證據在 _wo/WO-46_register.json。補完把 s"
   }
  ],
  "auto": {
@@ -163,7 +171,7 @@
    "universe_fresh": 454,
    "stale_excluded": 12,
    "ts_utc": "2026-09-15T14:35",
-   "age_h": 0.4
+   "age_h": 0.6
   },
   "forecast": {
    "pending": 669,
@@ -179,7 +187,7 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-09-15T14:59",
+  "attendance": "supervision_state.json @ 2026-09-15T15:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
   "rules": "brief_rules.json v1.0"
