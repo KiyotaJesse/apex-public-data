@@ -1,31 +1,34 @@
 {
- "ts": "2026-09-14T15:20:50",
- "data_ts": "2026-09-14T15:20:49",
+ "ts": "2026-09-15T15:21:59",
+ "data_ts": "2026-09-15T15:21:55",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
   "word": "要動",
   "tone": "red",
-  "why": "巢健康度 38 低於 70",
+  "why": "警報 P0 還開著: BTC-USDT: 2 隻蟻同時點名(帳/秤)",
   "fired": [
-   "巢健康度 38 低於 70",
+   "警報 P0 還開著: BTC-USDT: 2 隻蟻同時點名(帳/秤)",
+   "你有 1 件行動項目逾期",
+   "巢健康度 23 低於 70",
    "你有事項今天到期",
-   "巢健康度 38 低於 85",
+   "巢健康度 23 低於 85",
    "你有事項 0 天內到期",
-   "待決事項 1 天內自動裁決",
+   "待決事項 0 天內自動裁決",
    "SLO 超支 1 項",
-   "有 3 件行動項目逾期(我的)"
+   "有 6 件行動項目逾期(我的)",
+   "糧倉 1 項偏低"
   ],
-  "n_red": 2,
-  "n_amber": 5
+  "n_red": 4,
+  "n_amber": 6
  },
  "numbers": [
   {
    "k": "巢健康度",
-   "v": "38",
+   "v": "23",
    "unit": "/100",
    "tone": "red",
-   "sub": "扣分: 逾期行動 3 件 -10、SLO 超支 VELA夜班 -10"
+   "sub": "扣分: 警報 P0 -10、缺糧 礦機口糧 -5"
   },
   {
    "k": "本月策略 R",
@@ -36,10 +39,10 @@
   },
   {
    "k": "蟻口出勤",
-   "v": "67/106",
-   "unit": "(63%)",
-   "tone": "red",
-   "sub": "紅燈 3 隻: 生(重生演練蟻)、蒐(非加密K線蒐集蟻)、收(價值收據蟻)"
+   "v": "0/106",
+   "unit": "(0%)",
+   "tone": "amber",
+   "sub": "紅燈 2 隻: 生(重生演練蟻)、收(價值收據蟻)"
   }
  ],
  "jesse": [
@@ -47,15 +50,15 @@
    "id": "AI035",
    "title": "到交易所替手動倉 NCSKGOOGL2USD-USDT_LONG 掛止損(reduce-only stop)",
    "due": "2026-09-14",
-   "due_in": 0,
-   "late": false,
+   "due_in": -1,
+   "late": true,
    "howto": "到 BingX App 手動處理(機器不准動錢, 這件只有你能做)"
   },
   {
    "id": "AI023",
    "title": "Render D 環境變數 CB_AUTO_RELEASE_HOURS=72（裁決D001; 需 push_d_circuit_split ",
    "due": "2026-09-19",
-   "due_in": 5,
+   "due_in": 4,
    "late": false,
    "howto": "Render 面板 -> 該服務 Environment 改變數 -> Manual Deploy"
   },
@@ -63,7 +66,7 @@
    "id": "AI028",
    "title": "名冊 _status_kinds 文件漏記 roster(10 列在用, supervisor.py:284 有實作)",
    "due": "2026-09-19",
-   "due_in": 5,
+   "due_in": 4,
    "late": false,
    "howto": "registry_io.validate 目前用 IMPLEMENTED_UNDECLARED_KINDS={'roster'} 放行; 文"
   },
@@ -71,7 +74,7 @@
    "id": "AI029",
    "title": "註銷 GROQ_API_KEY(語音轉文字服務; 程式碼已在 WO-33 拆除)",
    "due": "2026-09-19",
-   "due_in": 5,
+   "due_in": 4,
    "late": false,
    "howto": "PowerShell 到 C:\\claude-assistant 跑: python push_a_wo33.py --push"
   },
@@ -79,7 +82,7 @@
    "id": "AI031",
    "title": "Render 帳號 2FA 確認已開啟",
    "due": "2026-09-19",
-   "due_in": 5,
+   "due_in": 4,
    "late": false,
    "howto": "Render 面板 -> 該服務 Environment 改變數 -> Manual Deploy"
   },
@@ -87,7 +90,7 @@
    "id": "AI034",
    "title": "本機 .env 的 APEX_API_KEY 仍是 apex_a.py:146 的 _INSECURE_KEY 預設值 -> 改成隨機值",
    "due": "2026-09-19",
-   "due_in": 5,
+   "due_in": 4,
    "late": false,
    "howto": "後果: 異地備份把含這個值的 9 個檔踢出 code zip(apex_a.py/_d_live_tama_v5.py/tama_v5_sn"
   },
@@ -95,7 +98,7 @@
    "id": "AI003",
    "title": "手動 BTC 倉結束後跑 push_d_circuit_split.py --push(熔斷分帳+解除路徑)",
    "due": "2026-09-20",
-   "due_in": 6,
+   "due_in": 5,
    "late": false,
    "howto": "PowerShell 到 C:\\claude-assistant 跑: python push_d_circuit_split.py --push"
   },
@@ -103,7 +106,7 @@
    "id": "AI039",
    "title": "換發 Telegram bot token(甲級): verify_matrix.log 曾有兩個明文 token(本機, 未進 git, ",
    "due": "2026-09-21",
-   "due_in": 7,
+   "due_in": 6,
    "late": false,
    "howto": "來源 incident_drills_2026-09-14; 細節看 actions.json 這筆的 source"
   },
@@ -111,7 +114,7 @@
    "id": "AI030",
    "title": "BingX API 綁定 IP 白名單(D 端下單金鑰)",
    "due": "2026-09-26",
-   "due_in": 12,
+   "due_in": 11,
    "late": false,
    "howto": "到 BingX App 手動處理(機器不准動錢, 這件只有你能做)"
   },
@@ -119,7 +122,7 @@
    "id": "AI032",
    "title": "補填 key_ledger.json 的 last_rotated(密鑰 14 把 unknown)",
    "due": "2026-09-26",
-   "due_in": 12,
+   "due_in": 11,
    "late": false,
    "howto": "python key_ledger.py 每日 08:30 盤點, 但上次輪換日只有 TELEGRAM_TOKEN / GITHUB_TOK"
   },
@@ -127,7 +130,7 @@
    "id": "AI037",
    "title": "D 端帳本補 sig_price 欄位(進場訊號價), 讓衡量得到滑價",
    "due": "2026-09-28",
-   "due_in": 14,
+   "due_in": 13,
    "late": false,
    "howto": "衡(exec_quality.py)已備好: 帳本任一筆出現 sig_price/limit_price/entry_ref 就自動開始算滑"
   }
@@ -136,31 +139,37 @@
   "decided_24h": 0,
   "decided": [],
   "repaired_24h": 0,
-  "crit_24h": 8,
+  "crit_24h": 3,
   "next": {
    "id": "D014",
    "due": "2026-09-15",
    "q": "手動倉總曝險超過策略權益 -- 要不要開加倉鎖(手動倉超標時禁止再加碼)?",
    "rec": "A"
   },
-  "line": "近 24 小時: 自動裁決 0 件、自動修復/回滾 0 件。下一個自動到期 D014(2026-09-15), 沒人異議就採建議 A。成形雷達: 成形中 0 檔／已成形 0 檔(全條件 0)(跨 0 市場; 宇宙 0 檔, 休市排除 427)。預言帳：358 則前瞻在等結算、持牌 0／預言者 56。",
+  "line": "近 24 小時: 自動裁決 0 件、自動修復/回滾 0 件。下一個自動到期 D014(2026-09-15), 沒人異議就採建議 A。成形雷達: 成形中 456 檔／已成形 114 檔(全條件 22)(跨 5 市場; 宇宙 442 檔, 休市排除 11)(雷達 16 小時沒更新)。預言帳：633 則前瞻在等結算、持牌 0／預言者 88。",
   "radar": {
-   "forming": 0,
-   "fired": 0,
-   "fired_full": 0,
-   "markets": [],
-   "universe_fresh": 0,
-   "stale_excluded": 427,
-   "ts_utc": "2026-09-14T06:49",
-   "age_h": 0.5
+   "forming": 456,
+   "fired": 114,
+   "fired_full": 22,
+   "markets": [
+    "commodity",
+    "crypto",
+    "fx",
+    "index",
+    "stock"
+   ],
+   "universe_fresh": 442,
+   "stale_excluded": 11,
+   "ts_utc": "2026-09-14T15:35",
+   "age_h": 15.8
   },
   "forecast": {
-   "pending": 358,
+   "pending": 633,
    "licensed": 0,
-   "forecasters": 56,
-   "n_forecasts": 450,
-   "n_resolved": 92,
-   "asOf": "2026-09-14T06:49:49"
+   "forecasters": 88,
+   "n_forecasts": 1024,
+   "n_resolved": 391,
+   "asOf": "2026-09-15T07:21:59"
   }
  },
  "caveats": [],
@@ -168,7 +177,7 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-09-14T07:18",
+  "attendance": "supervision_state.json @ 2026-09-14T16:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
   "rules": "brief_rules.json v1.0"
