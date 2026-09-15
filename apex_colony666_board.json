@@ -1,7 +1,32 @@
 {
-"ts": "2026-09-15T23:01:24",
+"ts": "2026-09-15T23:11:12",
 "ttl_h": 12,
 "items": [
+{
+"ts": "2026-09-15T23:05:25+08:00",
+"who": "蟻",
+"t": "✅ [驗證網] 監督台: 0.0h 前 104/106 運轉, 1 件待辦"
+},
+{
+"ts": "2026-09-15T23:05:24+08:00",
+"who": "蟻",
+"t": "[驗證網] 本機排程: 缺:APEX_LiveDiag_Hourly,APEX_"
+},
+{
+"ts": "2026-09-15T23:05:19+08:00",
+"who": "蟻",
+"t": "[SLO] VELA 副駕夜間建置(獨立專案 C:/vela) 錯誤預算超支: "
+},
+{
+"ts": "2026-09-15T23:04:14+08:00",
+"who": "apex_common_test",
+"t": "[TG fail NoneType] x"
+},
+{
+"ts": "2026-09-15T23:04:11+08:00",
+"who": "apex_common_test",
+"t": "[TG fail RuntimeError] WO-46 等價測試, 非真警報"
+},
 {
 "ts": "2026-09-15T23:00:35+08:00",
 "who": "apex_common_test",
@@ -36,31 +61,6 @@
 "ts": "2026-09-15T22:40:51+08:00",
 "who": "apex_common_test",
 "t": "[TG fail RuntimeError] WO-46 等價測試, 非真警報"
-},
-{
-"ts": "2026-09-15T22:38:57+08:00",
-"who": "apex_common_test",
-"t": "[TG fail NoneType] x"
-},
-{
-"ts": "2026-09-15T22:38:54+08:00",
-"who": "apex_common_test",
-"t": "[TG fail RuntimeError] WO-46 等價測試, 非真警報"
-},
-{
-"ts": "2026-09-15T22:36:55+08:00",
-"who": "apex_common_test",
-"t": "[TG fail NoneType] x"
-},
-{
-"ts": "2026-09-15T22:36:53+08:00",
-"who": "apex_common_test",
-"t": "[TG fail RuntimeError] WO-46 等價測試, 非真警報"
-},
-{
-"ts": "2026-09-15T22:35:33+08:00",
-"who": "蟻",
-"t": "[雷] NCSKCRCL2USD-USDT 對 B1(live) 條件 100%"
 }
 ]
 }
