@@ -1,6 +1,6 @@
 {
- "ts": "2026-09-16T15:37:32",
- "data_ts": "2026-09-16T15:37:31",
+ "ts": "2026-09-16T15:51:46",
+ "data_ts": "2026-09-16T15:51:45",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
@@ -142,16 +142,16 @@
   "decided_24h": 0,
   "decided": [],
   "repaired_24h": 0,
-  "crit_24h": 1,
+  "crit_24h": 0,
   "next": {
    "id": "D018",
    "due": "2026-09-16",
    "q": "本週憲法提案是否採納（2026-37，1 條：公理參 加細則: 同一事件 key 一週內 warn/crit ）",
    "rec": ""
   },
-  "line": "近 24 小時: 自動裁決 0 件、自動修復/回滾 0 件。下一個自動到期 D018(2026-09-16), 沒人異議就採建議 ?。成形雷達: 成形中 402 檔／已成形 79 檔(全條件 4)(跨 5 市場; 宇宙 386 檔, 休市排除 212)。預言帳：687 則前瞻在等結算、持牌 0／預言者 101。消息：近 24h 646 則／高重要 16 則／最新一則「BOJ expected to hike rates by 25 basis p」。影子: 追蹤中 8 單／已結 0 單(另回填 6 單不計成績)；還沒有任何規格結算出前瞻樣本(最快的離 n=30 還差 30 筆)。",
+  "line": "近 24 小時: 自動裁決 0 件、自動修復/回滾 0 件。下一個自動到期 D018(2026-09-16), 沒人異議就採建議 ?。成形雷達: 成形中 397 檔／已成形 79 檔(全條件 4)(跨 5 市場; 宇宙 386 檔, 休市排除 212)。預言帳：702 則前瞻在等結算、持牌 0／預言者 108。消息：近 24h 641 則／高重要 16 則／最新一則「BOJ expected to hike rates by 25 basis p」。今日事件：3 件(最重要 美國 Core Retail Sal 20:30)／黑窗中：否。影子: 追蹤中 8 單／已結 0 單(另回填 6 單不計成績)；還沒有任何規格結算出前瞻樣本(最快的離 n=30 還差 30 筆)。",
   "radar": {
-   "forming": 402,
+   "forming": 397,
    "fired": 79,
    "fired_full": 4,
    "markets": [
@@ -163,16 +163,16 @@
    ],
    "universe_fresh": 386,
    "stale_excluded": 212,
-   "ts_utc": "2026-09-16T07:35",
-   "age_h": 0.0
+   "ts_utc": "2026-09-16T07:40",
+   "age_h": 0.2
   },
   "forecast": {
-   "pending": 687,
+   "pending": 702,
    "licensed": 0,
-   "forecasters": 101,
-   "n_forecasts": 1676,
-   "n_resolved": 989,
-   "asOf": "2026-09-16T06:40:03"
+   "forecasters": 108,
+   "n_forecasts": 1747,
+   "n_resolved": 1045,
+   "asOf": "2026-09-16T07:40:05"
   },
   "shadow": {
    "n_open": 8,
@@ -189,16 +189,16 @@
    },
    "eta_promo": "2027-04-14",
    "opens_per_day_7d": 1.1,
-   "ts_utc": "2026-09-16T06:40"
+   "ts_utc": "2026-09-16T07:40"
   },
   "news": {
-   "n_24h": 646,
+   "n_24h": 641,
    "n_hi": 16,
    "by_category": {
-    "macro": 120,
-    "crypto": 244,
+    "macro": 118,
+    "crypto": 242,
     "stock": 90,
-    "commodity_fx": 192
+    "commodity_fx": 191
    },
    "sources_green": 33,
    "sources_red": 0,
@@ -208,12 +208,37 @@
     "src": "cnbc_top",
     "ts": "2026-09-16T06:53:09Z"
    },
-   "run_at": "2026-09-16T07:36:03"
+   "run_at": "2026-09-16T07:48:01"
+  },
+  "calendar": {
+   "n_today": 3,
+   "n_tomorrow": 3,
+   "n_next7d": 9,
+   "n_week_high": 2,
+   "in_blackout": false,
+   "blackout_event": null,
+   "blackout_markets": [],
+   "head": {
+    "ts_taipei": "2026-09-16 20:30",
+    "ts_utc": "2026-09-16T12:30:00Z",
+    "name": "美國 Core Retail Sales",
+    "importance": 2,
+    "category": "macro",
+    "markets": [
+     "all"
+    ],
+    "symbols": [],
+    "confirmed": false,
+    "source": "nasdaq_econ",
+    "blackout": "1.0h/1.0h"
+   },
+   "age_h": 0.0,
+   "ts": "2026-09-16T07:50:46"
   }
  },
  "north_star": {
   "ts": "2026-09-16T14:29:27",
-  "age_h": 1.1,
+  "age_h": 1.4,
   "stale": false,
   "risk_light": "red",
   "risk_why": "手動倉裸倉警報 11次(上限 0)、最大 24h 權益跌幅 45.2%(上限 20.0)、熔斷 1次(上限 1)",
@@ -282,7 +307,8 @@
   "attendance": "supervision_state.json @ 2026-09-16T07:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
-  "news": "news_board.json @ 2026-09-16T07:36:03",
+  "calendar": "calendar_board.json @ 2026-09-16T07:50:46",
+  "news": "news_board.json @ 2026-09-16T07:48:01",
   "north_star": "goal_state.json @ 2026-09-16T14:29:27",
   "rules": "brief_rules.json v1.0"
  },
