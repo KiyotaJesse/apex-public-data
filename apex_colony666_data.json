@@ -2,7 +2,7 @@
 "idx": 46,
 "eq": 236.1,
 "asOf": "09-16",
-"ts": "2026-09-16T19:47:55+08:00",
+"ts": "2026-09-16T19:51:26+08:00",
 "weather": {
 "long": 53.0,
 "short": 55.0,
@@ -119,7 +119,8 @@
 "自適應決策": [
 "L1換將",
 "L2風險檔",
-"晉"
+"晉",
+"壓"
 ],
 "研究": [
 "LiveDiag",
@@ -229,8 +230,8 @@
 46
 ],
 "voice": {
-"n": "L2風險檔(決策蟻)",
-"t": "賺了加檔,虧了減檔,我只認績效不認心情。巢的油門在我腳下,煞車也是。"
+"n": "A迴圈(兵蟻)",
+"t": "我是全巢的神經,價格、心跳、警報都從我身上過。我不睡,是因為地表那個人要睡。"
 },
 "info": {
 "蟻丘畫師": {
@@ -1343,6 +1344,10 @@
 "p": "每週把 _bak 超過 14 天的備份(含 self_check 子目錄、registry_io 的 .bad_ 屍體)zip 冷藏到 C:/apex_cold 並記帳; 密鑰命中",
 "c": "每週日 04:45"
 },
+"壓": {
+"p": "候選規格上實盤前的最後一關: 對 to_promo_n==0 且贏隨機 p95 的規格(含已提案待決)跑六項壓力測試(標的集中度/時間切片/regime/成本x2/出場形狀/100",
+"c": "每日 08:15"
+},
 "B1": {
 "p": "VWAP 回落+跌勢空的主力覓食蟻; 裝了逐幣成本濾網後現役最健康",
 "c": "D端 60 秒掃描",
@@ -1996,8 +2001,8 @@
 "c": 47
 }
 ],
-"built": "09-16 18:23",
-"synced": "09-16 18:23",
+"built": "09-16 19:48",
+"synced": "09-16 19:48",
 "open": 28,
 "overdue": 6
 },
@@ -2551,7 +2556,7 @@
 }
 ],
 "graves": {},
-"updated": "09-16 18:24",
+"updated": "09-16 19:49",
 "rehearsal": {
 "asof": "2026-09-14 15:30",
 "since": "2026-06-14"
@@ -2803,7 +2808,7 @@
 "d": "09-16",
 "dt": "2026-09-16",
 "cls": "bad",
-"t": "<b>入墳·Jesse「消息面即時蒐集加強，第一次全權交給 Fable」。</b>誕生·新蟻誕生: 北;誕生·新蟻誕生: 影;誕生·新蟻誕生: 聞…等 9 件",
+"t": "<b>入墳·Jesse「消息面即時蒐集加強，第一次全權交給 Fable」。</b>誕生·新蟻誕生: 北;誕生·新蟻誕生: 影;誕生·新蟻誕生: 聞…等 11 件",
 "src": "auto",
 "ids": [
 "news_intelligence_2026-09-16"
@@ -3171,7 +3176,7 @@
 },
 {
 "d": "2026-09-16",
-"t": "第 75 日。週三, 空頭天, 恐貪 51, 雲厚。蟻后體重 46, 與昨日相同。地表 BTC 一日 +1.2%。覓食隊已 2 天按兵不動(2 支冬眠: RS、MRS)。無病蟻。糧倉充足, 熟成 32/90 日。礦機上一輪空手而回。 巢健康 72。明日一鏟: VELA夜班 錯誤預算超支: 修牠或在名冊降 slo_pct; 行動項目逾期 6 件: 今天關掉一件(python actions.py list) 巢自記進化 14 處: 新蟻誕生: 北、新蟻誕生: 影、巢健康 62 -> 49。"
+"t": "第 75 日。週三, 空頭天, 恐貪 51, 雲厚。蟻后體重 46, 與昨日相同。地表 BTC 一日 +1.2%。覓食隊已 2 天按兵不動(2 支冬眠: RS、MRS)。無病蟻。糧倉充足, 熟成 32/90 日。礦機上一輪空手而回。 巢健康 72。明日一鏟: VELA夜班 錯誤預算超支: 修牠或在名冊降 slo_pct; 行動項目逾期 6 件: 今天關掉一件(python actions.py list) 巢自記進化 15 處: 新蟻誕生: 北、新蟻誕生: 影、巢健康 62 -> 49。"
 }
 ],
 "tl": [
@@ -3557,7 +3562,7 @@
 "st": 20,
 "g": 0,
 "r": 0,
-"n": 114
+"n": 115
 }
 ],
 "health": {
@@ -3588,6 +3593,26 @@
 }
 ],
 "board": [
+{
+"ts": "2026-09-16T19:51:24+08:00",
+"who": "蟻",
+"t": "候選 cL_brk_high25>0+ema_rel>0+coil>=0.6|R"
+},
+{
+"ts": "2026-09-16T19:49:20+08:00",
+"who": "蟻",
+"t": "08:10 鏈 roster_lint 回傳 rc=1 (跑了 2s), 去看 "
+},
+{
+"ts": "2026-09-16T19:48:52+08:00",
+"who": "蟻",
+"t": "[北·北極星] 失敗風險儀 3 項超標: 手動倉裸倉警報 11次(上限 0)、最"
+},
+{
+"ts": "2026-09-16T19:48:36+08:00",
+"who": "蟻",
+"t": "[北·北極星] 失敗風險儀 3 項超標: 手動倉裸倉警報 11次(上限 0)、最"
+},
 {
 "ts": "2026-09-16T19:46:36+08:00",
 "who": "蟻",
@@ -3627,26 +3652,6 @@
 "ts": "2026-09-16T19:35:36+08:00",
 "who": "蟻",
 "t": "[雷] NCSINIKKEI2252USD-USDT 對 cS_vwap_dev"
-},
-{
-"ts": "2026-09-16T19:35:36+08:00",
-"who": "蟻",
-"t": "[雷] NCSINIKKEI2252USD-USDT 對 cS_vwap_dev"
-},
-{
-"ts": "2026-09-16T19:35:36+08:00",
-"who": "蟻",
-"t": "[雷] NCSISP5002USD-USDT 對 cS_vwap_dev>=1."
-},
-{
-"ts": "2026-09-16T19:35:36+08:00",
-"who": "蟻",
-"t": "[雷] NCSISP5002USD-USDT 對 cS_vwap_dev>=1."
-},
-{
-"ts": "2026-09-16T19:35:36+08:00",
-"who": "蟻",
-"t": "[雷] NCSISP5002USD-USDT 對 cS_vwap_dev>=1+"
 }
 ],
 "autonomy": {
@@ -3793,9 +3798,9 @@
 "blocked_on_jesse": []
 },
 "ledgers": {
-"asOf": "2026-09-16T19:47:55",
+"asOf": "2026-09-16T19:51:26",
 "judge": {
-"run_at": "2026-09-16T18:24:19",
+"run_at": "2026-09-16T19:49:17",
 "src": "outcomes",
 "by_kind": [
 {
@@ -3890,17 +3895,17 @@
 "events": {
 "h24": {
 "crit": 0,
-"warn": 63,
+"warn": 67,
 "info": 447,
-"suppressed": 400,
-"n": 510
+"suppressed": 403,
+"n": 514
 },
 "d7": {
 "crit": 22,
-"warn": 258,
+"warn": 262,
 "info": 1718,
-"suppressed": 1573,
-"n": 1998
+"suppressed": 1576,
+"n": 2002
 },
 "top_keys": [
 {
@@ -3930,6 +3935,38 @@
 }
 ],
 "latest": [
+{
+"ts": "2026-09-16T19:51",
+"source": "stress_test",
+"key": "stress_fail",
+"level": "warn",
+"suppressed": true,
+"text": "候選 cL_brk_high25>0+ema_rel>0+coil>=0.6|R(crypto) 壓力測試未過: (d)"
+},
+{
+"ts": "2026-09-16T19:49",
+"source": "queen_chain",
+"key": "rc_roster_lint",
+"level": "warn",
+"suppressed": false,
+"text": "08:10 鏈 roster_lint 回傳 rc=1 (跑了 2s), 去看 roster_lint 的結果檔"
+},
+{
+"ts": "2026-09-16T19:48",
+"source": "goal_tracker",
+"key": "goal_risk",
+"level": "warn",
+"suppressed": true,
+"text": "[北·北極星] 失敗風險儀 3 項超標: 手動倉裸倉警報 11次(上限 0)、最大 24h 權益跌幅 45.2%(上限 "
+},
+{
+"ts": "2026-09-16T19:48",
+"source": "goal_tracker",
+"key": "goal_risk",
+"level": "warn",
+"suppressed": true,
+"text": "[北·北極星] 失敗風險儀 3 項超標: 手動倉裸倉警報 11次(上限 0)、最大 24h 權益跌幅 45.2%(上限 "
+},
 {
 "ts": "2026-09-16T19:46",
 "source": "stress_test",
@@ -3961,38 +3998,6 @@
 "level": "info",
 "suppressed": true,
 "text": "[雷] NCSIEWJ2USD-USDT 對 cS_vwap_dev>=1+coil>=0.6+fund_pct>=0."
-},
-{
-"ts": "2026-09-16T19:35",
-"source": "formation_radar",
-"key": "formation_fired:NCSIEWJ2USD-USDT|cS_vwap_dev>=1+coil>=0.6+fund_pct>=0.7|bear|TP4R@lt20",
-"level": "info",
-"suppressed": true,
-"text": "[雷] NCSIEWJ2USD-USDT 對 cS_vwap_dev>=1+coil>=0.6+fund_pct>=0."
-},
-{
-"ts": "2026-09-16T19:35",
-"source": "formation_radar",
-"key": "formation_fired:NCSINIKKEI2252USD-USDT|cS_vwap_dev>=1.5+coil>=0.6+fund_pct>=0.7|bear|TP4R",
-"level": "info",
-"suppressed": true,
-"text": "[雷] NCSINIKKEI2252USD-USDT 對 cS_vwap_dev>=1.5+coil>=0.6+fund"
-},
-{
-"ts": "2026-09-16T19:35",
-"source": "formation_radar",
-"key": "formation_fired:NCSINIKKEI2252USD-USDT|cS_vwap_dev>=1.5+coil>=0.6+fund_pct>=0.7|bear|TP4R@lt20",
-"level": "info",
-"suppressed": true,
-"text": "[雷] NCSINIKKEI2252USD-USDT 對 cS_vwap_dev>=1.5+coil>=0.6+fund"
-},
-{
-"ts": "2026-09-16T19:35",
-"source": "formation_radar",
-"key": "formation_fired:NCSINIKKEI2252USD-USDT|cS_vwap_dev>=1+coil>=0.6+fund_pct>=0.7|bear|TP4R",
-"level": "info",
-"suppressed": true,
-"text": "[雷] NCSINIKKEI2252USD-USDT 對 cS_vwap_dev>=1+coil>=0.6+fund_p"
 }
 ]
 },
@@ -4254,14 +4259,14 @@
 "d": "2026-09-16",
 "k": "birth",
 "t": "新蟻誕生: 輪"
+},
+{
+"d": "2026-09-16",
+"k": "birth",
+"t": "新蟻誕生: 壓"
 }
 ],
 "evolution_log": [
-{
-"d": "2026-09-13",
-"k": "birth",
-"t": "新蟻誕生: 衛"
-},
 {
 "d": "2026-09-13",
 "k": "birth",
@@ -4556,6 +4561,11 @@
 "d": "2026-09-16",
 "k": "birth",
 "t": "新蟻誕生: 輪"
+},
+{
+"d": "2026-09-16",
+"k": "birth",
+"t": "新蟻誕生: 壓"
 }
 ],
 "health_hist": [
