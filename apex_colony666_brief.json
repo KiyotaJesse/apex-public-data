@@ -1,6 +1,6 @@
 {
- "ts": "2026-09-17T17:34:55",
- "data_ts": "2026-09-17T17:34:54",
+ "ts": "2026-09-17T17:48:53",
+ "data_ts": "2026-09-17T17:48:52",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
@@ -36,8 +36,8 @@
   },
   {
    "k": "蟻口出勤",
-   "v": "73/117",
-   "unit": "(62%)",
+   "v": "74/118",
+   "unit": "(63%)",
    "tone": "red",
    "sub": "紅燈 3 隻: 生(重生演練蟻)、收(價值收據蟻)、影(影蟻)"
   }
@@ -151,11 +151,11 @@
    "q": "本週憲法提案是否採納（2026-37，1 條：公理參 加細則: 同一事件 key 一週內 warn/crit ）",
    "rec": ""
   },
-  "line": "近 24 小時: 自動裁決 0 件、自動修復/回滾 0 件。下一個自動到期 D018(2026-09-16), 沒人異議就採建議 ?。成形雷達: 成形中 426 檔／已成形 54 檔(全條件 1)(跨 5 市場; 宇宙 374 檔, 休市排除 224)。預言帳：764 則前瞻在等結算、持牌 0／預言者 112。消息：近 24h 1062 則／高重要 13 則／最新一則「Revolut hackers demand $3 million in Mon」｜實證：9 類消息裡 0 類會動價格、3 類不會、6 類樣本不足(事件 n=141)。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 124 單／已結 1003 單(live 0＋登記日回填 1003)(另樣本內回填 6 單不計成績)／45 個規格在追；最接近晉升的 cL_cvd_div<=-0.3+fund_pct<=0(crypto) 已達 n=34 EV=+0.696R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=1 EV-1.083、TL n=16 EV+0.040、MRS n=2 EV+0.442、SC1 n=0、SC3 n=23 EV-0.463；最差 B1(-1.083R)、最好 MRS(+0.442R)；合計 42 筆 EV-0.243R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。",
+  "line": "近 24 小時: 自動裁決 0 件、自動修復/回滾 0 件。下一個自動到期 D018(2026-09-16), 沒人異議就採建議 ?。成形雷達: 成形中 479 檔／已成形 69 檔(全條件 31)(跨 5 市場; 宇宙 375 檔, 休市排除 222)。預言帳：797 則前瞻在等結算、持牌 0／預言者 112。消息：近 24h 1056 則／高重要 13 則／最新一則「Revolut hackers demand $3 million in Mon」｜實證：9 類消息裡 0 類會動價格、3 類不會、6 類樣本不足(事件 n=141)。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 124 單／已結 1003 單(live 0＋登記日回填 1003)(另樣本內回填 6 單不計成績)／45 個規格在追；最接近晉升的 cL_cvd_div<=-0.3+fund_pct<=0(crypto) 已達 n=34 EV=+0.696R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=1 EV-1.083、TL n=16 EV+0.040、MRS n=2 EV+0.442、SC1 n=0、SC3 n=23 EV-0.463；最差 B1(-1.083R)、最好 MRS(+0.442R)；合計 42 筆 EV-0.243R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=0、淨EV 無、可交易率 無事件(0/0)。",
   "radar": {
-   "forming": 426,
-   "fired": 54,
-   "fired_full": 1,
+   "forming": 479,
+   "fired": 69,
+   "fired_full": 31,
    "markets": [
     "commodity",
     "crypto",
@@ -163,18 +163,18 @@
     "index",
     "stock"
    ],
-   "universe_fresh": 374,
-   "stale_excluded": 224,
-   "ts_utc": "2026-09-17T08:35",
-   "age_h": 1.0
+   "universe_fresh": 375,
+   "stale_excluded": 222,
+   "ts_utc": "2026-09-17T09:35",
+   "age_h": 0.2
   },
   "forecast": {
-   "pending": 764,
+   "pending": 797,
    "licensed": 0,
    "forecasters": 112,
-   "n_forecasts": 2493,
-   "n_resolved": 1729,
-   "asOf": "2026-09-17T08:40:05"
+   "n_forecasts": 2591,
+   "n_resolved": 1794,
+   "asOf": "2026-09-17T09:40:04"
   },
   "shadow": {
    "n_open": 124,
@@ -235,15 +235,15 @@
    "ts_utc": "2026-09-16T15:40"
   },
   "news": {
-   "n_24h": 1062,
+   "n_24h": 1056,
    "n_hi": 13,
    "by_category": {
-    "crypto": 312,
-    "macro": 182,
-    "stock": 304,
-    "commodity_fx": 264
+    "crypto": 308,
+    "macro": 185,
+    "stock": 303,
+    "commodity_fx": 260
    },
-   "sources_green": 33,
+   "sources_green": 34,
    "sources_red": 0,
    "top": {
     "t": "Revolut hackers demand $3 million in Monero, threaten to sell customer data",
@@ -251,7 +251,7 @@
     "src": "coindesk",
     "ts": "2026-09-16T19:07:34Z"
    },
-   "run_at": "2026-09-17T09:33:02",
+   "run_at": "2026-09-17T09:48:02",
    "impact": {
     "line": "｜實證：9 類消息裡 0 類會動價格、3 類不會、6 類樣本不足(事件 n=141)",
     "n_topics": 9,
@@ -274,13 +274,13 @@
    "blackout_event": null,
    "blackout_markets": [],
    "head": null,
-   "age_h": 2.3,
+   "age_h": 2.5,
    "ts": "2026-09-17T07:17:15"
   },
   "live_shadow": {
    "window": {
     "from": "2026-09-01",
-    "to": "2026-09-17T08:45"
+    "to": "2026-09-17T09:45"
    },
    "n_closed": 42,
    "n_open": 10,
@@ -292,7 +292,7 @@
     "pf": 0.692,
     "sum_r": -10.211
    },
-   "ts": "2026-09-17T08:45",
+   "ts": "2026-09-17T09:45",
    "per": {
     "B1": {
      "n": 1,
@@ -303,7 +303,7 @@
     "TL": {
      "n": 16,
      "ev": 0.0404,
-     "z": -0.95,
+     "z": -0.92,
      "n_open": 0
     },
     "MRS": {
@@ -321,15 +321,43 @@
     "SC3": {
      "n": 23,
      "ev": -0.4634,
-     "z": -1.97,
+     "z": -1.9,
      "n_open": 0
     }
    }
+  },
+  "delist_shadow": {
+   "forward": {
+    "n": 0,
+    "n_untradable": 0,
+    "ev": null,
+    "median_r": null,
+    "win": null,
+    "t": null,
+    "tradable_rate": null,
+    "lag_min_median": null,
+    "sl_rate": null,
+    "funding_missing": 0
+   },
+   "backfill": {
+    "n": 0,
+    "n_untradable": 10,
+    "ev": null,
+    "median_r": null,
+    "win": null,
+    "t": null,
+    "tradable_rate": 0.0,
+    "lag_min_median": null,
+    "sl_rate": null,
+    "funding_missing": 0
+   },
+   "n_open": 0,
+   "ts": "2026-09-17T09:48:13Z"
   }
  },
  "north_star": {
   "ts": "2026-09-17T15:17:16",
-  "age_h": 2.3,
+  "age_h": 2.5,
   "stale": false,
   "risk_light": "red",
   "risk_why": "手動倉裸倉警報 11次(上限 0)、最大 24h 權益跌幅 45.2%(上限 20.0)、熔斷 1次(上限 1)",
@@ -395,11 +423,11 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-09-17T09:05",
+  "attendance": "supervision_state.json @ 2026-09-17T09:38",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
   "calendar": "calendar_board.json @ 2026-09-17T07:17:15",
-  "news": "news_board.json @ 2026-09-17T09:33:02",
+  "news": "news_board.json @ 2026-09-17T09:48:02",
   "north_star": "goal_state.json @ 2026-09-17T15:17:16",
   "rules": "brief_rules.json v1.0"
  },
