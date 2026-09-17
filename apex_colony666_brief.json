@@ -1,30 +1,31 @@
 {
- "ts": "2026-09-16T19:58:30",
- "data_ts": "2026-09-16T19:58:29",
+ "ts": "2026-09-17T15:17:22",
+ "data_ts": "2026-09-17T15:17:19",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
   "word": "要動",
   "tone": "red",
-  "why": "巢健康度 66 低於 70",
+  "why": "巢健康度 49 低於 70",
   "fired": [
-   "巢健康度 66 低於 70",
-   "巢健康度 66 低於 85",
-   "你有事項 2 天內到期",
+   "巢健康度 49 低於 70",
+   "巢健康度 49 低於 85",
+   "你有事項 1 天內到期",
    "待決事項 0 天內自動裁決",
    "SLO 超支 1 項",
-   "有 6 件行動項目逾期(我的)"
+   "有 6 件行動項目逾期(我的)",
+   "糧倉 1 項偏低"
   ],
   "n_red": 1,
-  "n_amber": 5
+  "n_amber": 6
  },
  "numbers": [
   {
    "k": "巢健康度",
-   "v": "66",
+   "v": "49",
    "unit": "/100",
    "tone": "red",
-   "sub": "扣分: 逾期行動 6 件 -10、SLO 超支 VELA夜班 -10"
+   "sub": "扣分: 缺糧 礦機口糧 -5、逾期行動 6 件 -10"
   },
   {
    "k": "本月策略 R",
@@ -35,8 +36,8 @@
   },
   {
    "k": "蟻口出勤",
-   "v": "76/114",
-   "unit": "(67%)",
+   "v": "0/117",
+   "unit": "(0%)",
    "tone": "amber",
    "sub": "紅燈 2 隻: 生(重生演練蟻)、收(價值收據蟻)"
   }
@@ -46,7 +47,7 @@
    "id": "AI043",
    "title": "/control 設 manual_add_lock=1(旋鈕若不存在, 先在 D 端新增再部署)",
    "due": "2026-09-18",
-   "due_in": 2,
+   "due_in": 1,
    "late": false,
    "howto": "Telegram 小飛機 /control 或 /deploy, 走三綠"
   },
@@ -54,7 +55,7 @@
    "id": "AI023",
    "title": "Render D 環境變數 CB_AUTO_RELEASE_HOURS=72（裁決D001; 需 push_d_circuit_split ",
    "due": "2026-09-19",
-   "due_in": 3,
+   "due_in": 2,
    "late": false,
    "howto": "Render 面板 -> 該服務 Environment 改變數 -> Manual Deploy"
   },
@@ -62,7 +63,7 @@
    "id": "AI028",
    "title": "名冊 _status_kinds 文件漏記 roster(10 列在用, supervisor.py:284 有實作)",
    "due": "2026-09-19",
-   "due_in": 3,
+   "due_in": 2,
    "late": false,
    "howto": "registry_io.validate 目前用 IMPLEMENTED_UNDECLARED_KINDS={'roster'} 放行; 文"
   },
@@ -70,7 +71,7 @@
    "id": "AI029",
    "title": "註銷 GROQ_API_KEY(語音轉文字服務; 程式碼已在 WO-33 拆除)",
    "due": "2026-09-19",
-   "due_in": 3,
+   "due_in": 2,
    "late": false,
    "howto": "PowerShell 到 C:\\claude-assistant 跑: python push_a_wo33.py --push"
   },
@@ -78,7 +79,7 @@
    "id": "AI031",
    "title": "Render 帳號 2FA 確認已開啟",
    "due": "2026-09-19",
-   "due_in": 3,
+   "due_in": 2,
    "late": false,
    "howto": "Render 面板 -> 該服務 Environment 改變數 -> Manual Deploy"
   },
@@ -86,7 +87,7 @@
    "id": "AI034",
    "title": "本機 .env 的 APEX_API_KEY 仍是 apex_a.py:146 的 _INSECURE_KEY 預設值 -> 改成隨機值",
    "due": "2026-09-19",
-   "due_in": 3,
+   "due_in": 2,
    "late": false,
    "howto": "後果: 異地備份把含這個值的 9 個檔踢出 code zip(apex_a.py/_d_live_tama_v5.py/tama_v5_sn"
   },
@@ -94,7 +95,7 @@
    "id": "AI003",
    "title": "手動 BTC 倉結束後跑 push_d_circuit_split.py --push(熔斷分帳+解除路徑)",
    "due": "2026-09-20",
-   "due_in": 4,
+   "due_in": 3,
    "late": false,
    "howto": "PowerShell 到 C:\\claude-assistant 跑: python push_d_circuit_split.py --push"
   },
@@ -102,7 +103,7 @@
    "id": "AI039",
    "title": "換發 Telegram bot token(甲級): verify_matrix.log 曾有兩個明文 token(本機, 未進 git, ",
    "due": "2026-09-21",
-   "due_in": 5,
+   "due_in": 4,
    "late": false,
    "howto": "來源 incident_drills_2026-09-14; 細節看 actions.json 這筆的 source"
   },
@@ -110,7 +111,7 @@
    "id": "AI030",
    "title": "BingX API 綁定 IP 白名單(D 端下單金鑰)",
    "due": "2026-09-26",
-   "due_in": 10,
+   "due_in": 9,
    "late": false,
    "howto": "到 BingX App 手動處理(機器不准動錢, 這件只有你能做)"
   },
@@ -118,7 +119,7 @@
    "id": "AI032",
    "title": "補填 key_ledger.json 的 last_rotated(密鑰 14 把 unknown)",
    "due": "2026-09-26",
-   "due_in": 10,
+   "due_in": 9,
    "late": false,
    "howto": "python key_ledger.py 每日 08:30 盤點, 但上次輪換日只有 TELEGRAM_TOKEN / GITHUB_TOK"
   },
@@ -126,7 +127,7 @@
    "id": "AI037",
    "title": "D 端帳本補 sig_price 欄位(進場訊號價), 讓衡量得到滑價",
    "due": "2026-09-28",
-   "due_in": 12,
+   "due_in": 11,
    "late": false,
    "howto": "衡(exec_quality.py)已備好: 帳本任一筆出現 sig_price/limit_price/entry_ref 就自動開始算滑"
   },
@@ -134,7 +135,7 @@
    "id": "AI045",
    "title": "名冊 7 項補 output 結果檔路徑(task_livediag/scanner/weekly_opt/throne x3/board_",
    "due": "2026-10-15",
-   "due_in": 29,
+   "due_in": 28,
    "late": false,
    "howto": "supervision_registry.json 是禁改共用檔; 內容與證據在 _wo/WO-46_register.json。補完把 s"
   }
@@ -150,35 +151,36 @@
    "q": "本週憲法提案是否採納（2026-37，1 條：公理參 加細則: 同一事件 key 一週內 warn/crit ）",
    "rec": ""
   },
-  "line": "近 24 小時: 自動裁決 0 件、自動修復/回滾 0 件。下一個自動到期 D018(2026-09-16), 沒人異議就採建議 ?。成形雷達: 成形中 521 檔／已成形 70 檔(全條件 9)(跨 4 市場; 宇宙 391 檔, 休市排除 205)。預言帳：867 則前瞻在等結算、持牌 0／預言者 111。消息：近 24h 905 則／高重要 18 則／最新一則「Degraded Performance — Customer Support 」｜實證：9 類消息裡 0 類會動價格、3 類不會、6 類樣本不足(事件 n=141)。今日事件：3 件(最重要 美國 Core Retail Sal 20:30)／黑窗中：否。影子: 追蹤中 130 單／已結 997 單(live 0＋登記日回填 997)(另樣本內回填 6 單不計成績)／45 個規格在追；最接近晉升的 cL_cvd_div<=-0.3+fund_pct<=0(crypto) 已達 n=34 EV=+0.696R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=1 EV-1.083、TL n=16 EV+0.040、MRS n=2 EV+0.442、SC1 n=0、SC3 n=7 EV-0.025；最差 B1(-1.083R)、最好 MRS(+0.442R)；合計 26 筆 EV+0.010R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。",
+  "line": "近 24 小時: 自動裁決 0 件、自動修復/回滾 0 件。下一個自動到期 D018(2026-09-16), 沒人異議就採建議 ?。成形雷達: 成形中 556 檔／已成形 117 檔(全條件 22)(跨 5 市場; 宇宙 459 檔, 休市排除 13)(雷達 16 小時沒更新)。預言帳：964 則前瞻在等結算、持牌 0／預言者 112。消息：近 24h 1195 則／高重要 21 則／最新一則「Degraded Performance — Customer Support 」｜實證：9 類消息裡 0 類會動價格、3 類不會、6 類樣本不足(事件 n=141)。影子: 追蹤中 124 單／已結 1003 單(live 0＋登記日回填 1003)(另樣本內回填 6 單不計成績)／45 個規格在追；最接近晉升的 cL_cvd_div<=-0.3+fund_pct<=0(crypto) 已達 n=34 EV=+0.696R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=1 EV-1.083、TL n=16 EV+0.040、MRS n=2 EV+0.442、SC1 n=0、SC3 n=8 EV-0.185；最差 B1(-1.083R)、最好 MRS(+0.442R)；合計 27 筆 EV-0.038R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。",
   "radar": {
-   "forming": 521,
-   "fired": 70,
-   "fired_full": 9,
+   "forming": 556,
+   "fired": 117,
+   "fired_full": 22,
    "markets": [
     "commodity",
+    "crypto",
     "fx",
     "index",
     "stock"
    ],
-   "universe_fresh": 391,
-   "stale_excluded": 205,
-   "ts_utc": "2026-09-16T11:35",
-   "age_h": 0.4
+   "universe_fresh": 459,
+   "stale_excluded": 13,
+   "ts_utc": "2026-09-16T15:35",
+   "age_h": 15.7
   },
   "forecast": {
-   "pending": 867,
+   "pending": 964,
    "licensed": 0,
-   "forecasters": 111,
-   "n_forecasts": 2034,
-   "n_resolved": 1167,
-   "asOf": "2026-09-16T11:40:04"
+   "forecasters": 112,
+   "n_forecasts": 2335,
+   "n_resolved": 1371,
+   "asOf": "2026-09-16T15:40:07"
   },
   "shadow": {
-   "n_open": 130,
-   "n_closed": 997,
+   "n_open": 124,
+   "n_closed": 1003,
    "n_live": 0,
-   "n_post_reg": 997,
+   "n_post_reg": 1003,
    "n_backfill": 6,
    "n_specs": 45,
    "best": {
@@ -197,7 +199,7 @@
      "n_live": 0,
      "n_post_reg": 34,
      "ev": 0.6964,
-     "random_z": 2.41,
+     "random_z": 2.66,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": true
@@ -209,37 +211,37 @@
      "n_live": 0,
      "n_post_reg": 74,
      "ev": 0.0983,
-     "random_z": 1.72,
+     "random_z": 1.6,
      "to_promo_n": 0,
      "eta": null,
-     "beats_p95": true
+     "beats_p95": false
     },
     {
      "spec": "cL_brk_high25>0+ema_rel>0+coil>=0.6|R",
      "market": "stock",
-     "n": 241,
+     "n": 245,
      "n_live": 0,
-     "n_post_reg": 241,
-     "ev": -0.0205,
-     "random_z": 0.28,
+     "n_post_reg": 245,
+     "ev": -0.0387,
+     "random_z": -0.1,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": false
     }
    ],
    "eta_promo": null,
-   "opens_per_day": 43.1,
+   "opens_per_day": 42.7,
    "rate_days": 14,
-   "ts_utc": "2026-09-16T11:40"
+   "ts_utc": "2026-09-16T15:40"
   },
   "news": {
-   "n_24h": 905,
-   "n_hi": 18,
+   "n_24h": 1195,
+   "n_hi": 21,
    "by_category": {
-    "crypto": 304,
-    "macro": 164,
-    "stock": 197,
-    "commodity_fx": 240
+    "crypto": 344,
+    "macro": 204,
+    "stock": 342,
+    "commodity_fx": 305
    },
    "sources_green": 33,
    "sources_red": 0,
@@ -249,7 +251,7 @@
     "src": "coinbase_status",
     "ts": "2026-09-16T09:58:04Z"
    },
-   "run_at": "2026-09-16T11:48:01",
+   "run_at": "2026-09-16T16:03:02",
    "impact": {
     "line": "｜實證：9 類消息裡 0 類會動價格、3 類不會、6 類樣本不足(事件 n=141)",
     "n_topics": 9,
@@ -263,47 +265,23 @@
     "ts": "2026-09-16T08:24:07"
    }
   },
-  "calendar": {
-   "n_today": 3,
-   "n_tomorrow": 3,
-   "n_next7d": 9,
-   "n_week_high": 2,
-   "in_blackout": false,
-   "blackout_event": null,
-   "blackout_markets": [],
-   "head": {
-    "ts_taipei": "2026-09-16 20:30",
-    "ts_utc": "2026-09-16T12:30:00Z",
-    "name": "美國 Core Retail Sales",
-    "importance": 2,
-    "category": "macro",
-    "markets": [
-     "all"
-    ],
-    "symbols": [],
-    "confirmed": false,
-    "source": "nasdaq_econ",
-    "blackout": "1.0h/1.0h"
-   },
-   "age_h": 1.6,
-   "ts": "2026-09-16T10:20:01"
-  },
+  "calendar": null,
   "live_shadow": {
    "window": {
     "from": "2026-09-01",
-    "to": "2026-09-16T11:48"
+    "to": "2026-09-16T15:45"
    },
-   "n_closed": 26,
-   "n_open": 26,
+   "n_closed": 27,
+   "n_open": 25,
    "pooled": {
-    "n": 26,
-    "ev": 0.0104,
-    "sd": 1.6868,
-    "win_pct": 34.6,
-    "pf": 1.015,
-    "sum_r": 0.27
+    "n": 27,
+    "ev": -0.0382,
+    "sd": 1.6731,
+    "win_pct": 33.3,
+    "pf": 0.948,
+    "sum_r": -1.031
    },
-   "ts": "2026-09-16T11:48",
+   "ts": "2026-09-16T15:45",
    "per": {
     "B1": {
      "n": 1,
@@ -314,7 +292,7 @@
     "TL": {
      "n": 16,
      "ev": 0.0404,
-     "z": -0.77,
+     "z": -0.86,
      "n_open": 0
     },
     "MRS": {
@@ -330,17 +308,17 @@
      "n_open": 2
     },
     "SC3": {
-     "n": 7,
-     "ev": -0.0253,
+     "n": 8,
+     "ev": -0.1847,
      "z": null,
-     "n_open": 16
+     "n_open": 15
     }
    }
   }
  },
  "north_star": {
-  "ts": "2026-09-16T19:48:52",
-  "age_h": 0.2,
+  "ts": "2026-09-17T15:17:16",
+  "age_h": 0.0,
   "stale": false,
   "risk_light": "red",
   "risk_why": "手動倉裸倉警報 11次(上限 0)、最大 24h 權益跌幅 45.2%(上限 20.0)、熔斷 1次(上限 1)",
@@ -369,13 +347,13 @@
    {
     "id": "M1",
     "name": "第一支樣本外為正的策略",
-    "pct": 100.0,
-    "note": "最佳規格 34/30 筆",
-    "status": "achieved",
-    "est": "2026-09-30",
+    "pct": 60.0,
+    "note": "最佳規格 34/30 筆; 壓測七項 未過; 待決成立 否",
+    "status": "ahead",
+    "est": "2026-10-07",
     "jesse": "2026-11-30",
-    "delta": "提前 61 天",
-    "path": "M1 已達標: 把 cL_cvd_div<=-0.3+fund_pct<=0.3|bull|TP4R@lt2 送晉升流程(過五關 -> 提案 -> D 端部署)。 待決 D026 2026-09-23 到期(建議 A), 壓力測試 PASS(n=34 EV=0.6964) -- 到期無異議即成立。"
+    "delta": "提前 54 天",
+    "path": "M1 最短路徑: D027 2026-09-23 到期, 建議 B, 壓力測試 FAIL((d) 成本壓力、(f) 隨機基準、(g) 三年樣本外) -- 到期無異議即成立, 成立後才進晉升產線。"
    },
    {
     "id": "M2",
@@ -383,9 +361,9 @@
     "pct": 0,
     "note": "本月 0 筆, 無法評",
     "status": "ahead",
-    "est": "2027-01-15",
+    "est": "2027-02-21",
     "jesse": "2027-02-28",
-    "delta": "提前 44 天",
+    "delta": "提前 7 天",
     "path": "M2 最短路徑: 本月 0 筆平倉, 無法評 —— M2 的瓶頸不是勝率是『沒有單』, 要先有會進場的策略(等 M1); 交易目前是全停狀態(killswitch=on), 不解除就不會有新單。"
    },
    {
@@ -394,9 +372,9 @@
     "pct": 0,
     "note": "權益 236 / 目標 2361(起算 2026-09-16)",
     "status": "ahead",
-    "est": "2029-03-07",
+    "est": "2029-03-08",
     "jesse": "2029-05-31",
-    "delta": "提前 85 天",
+    "delta": "提前 84 天",
     "path": "M3 最短路徑: 五本實彈帳本 0 筆已平倉, 沒有真實斜率可外推 —— M3 是 M2 的結果, 這個月唯一能做的是把 M1 往前推。"
    }
   ]
@@ -406,12 +384,12 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-09-16T11:05",
+  "attendance": "supervision_state.json @ 2026-09-16T16:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
-  "calendar": "calendar_board.json @ 2026-09-16T10:20:01",
-  "news": "news_board.json @ 2026-09-16T11:48:01",
-  "north_star": "goal_state.json @ 2026-09-16T19:48:52",
+  "calendar": "calendar_board.json @ 無",
+  "news": "news_board.json @ 2026-09-16T16:03:02",
+  "north_star": "goal_state.json @ 2026-09-17T15:17:16",
   "rules": "brief_rules.json v1.0"
  },
  "rules_version": "1.0"
