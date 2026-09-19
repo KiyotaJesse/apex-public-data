@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-19T09:52:47.405267+08:00",
+  "generated_at": "2026-09-19T10:00:56.286576+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
     "closed_trades": [],
-    "last_cycle_ts": "2026-09-19T01:50:22.905600+00:00",
+    "last_cycle_ts": "2026-09-19T01:58:43.395055+00:00",
     "stats": {
       "n": 0,
       "win_rate_pct": 0.0,
@@ -27,7 +27,7 @@
   "strat_tl": {
     "mode": "live",
     "open_positions": [],
-    "last_cycle_ts": "2026-09-19T01:49:57.935493+00:00",
+    "last_cycle_ts": "2026-09-19T01:58:18.099472+00:00",
     "stats": {
       "n": 0,
       "win_rate_pct": 0.0,
@@ -42,7 +42,7 @@
       "_meta": {
         "desc": "APEX 控制台熱載入配置。改此檔 <=60 秒生效，無需重新部署。硬邊界見 tama_v5.py TAMA_CONFIG_BOUNDS。",
         "updated": "2026-09-02T16:33:00+08:00",
-        "by": "策略選礦機自動上線(三關通過, Jesse 2026-08-03 全自動授權)"
+        "by": "APEX-A L1冠軍挑戰者(Jesse 2026-08-03 全自動授權)"
       },
       "b1": {
         "live_enabled": true,
@@ -52,8 +52,8 @@
         "daily_loss_limit_pct": 0.1,
         "cycle_seconds": 60,
         "regime_gate": true,
-        "atr_r_thr": 0.0,
-        "volr_thr": 1.5,
+        "atr_r_thr": 1.1,
+        "volr_thr": 1.2,
         "maker_first": true,
         "maker_wait_s": 30
       },
