@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-20T21:58:57.487799+08:00",
+  "generated_at": "2026-09-20T22:59:10.649479+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
     "closed_trades": [],
-    "last_cycle_ts": "2026-09-20T13:58:53.190400+00:00",
+    "last_cycle_ts": "2026-09-20T14:58:58.510222+00:00",
     "stats": {
       "n": 0,
       "win_rate_pct": 0.0,
@@ -46,12 +46,12 @@
         "highest": 752.56,
         "lowest": 752.48,
         "breakeven_done": false,
-        "bars_elapsed": 1,
-        "last_checked_time": "2026-09-20 13:00:00",
+        "bars_elapsed": 2,
+        "last_checked_time": "2026-09-20 14:00:00",
         "notion_page_id": null
       }
     ],
-    "last_cycle_ts": "2026-09-20T13:58:04.351791+00:00",
+    "last_cycle_ts": "2026-09-20T14:58:03.668825+00:00",
     "stats": {
       "n": 1,
       "win_rate_pct": 100.0,
@@ -66,7 +66,7 @@
       "_meta": {
         "desc": "APEX 控制台熱載入配置。改此檔 <=60 秒生效，無需重新部署。硬邊界見 tama_v5.py TAMA_CONFIG_BOUNDS。",
         "updated": "2026-09-02T16:33:00+08:00",
-        "by": "APEX-A L1冠軍挑戰者(Jesse 2026-08-03 全自動授權)"
+        "by": "選礦機探針期自動下架(probe_guard)"
       },
       "b1": {
         "live_enabled": true,
@@ -156,7 +156,7 @@
             ]
           ],
           "bt_engine_ver": "2026-08-23.wfsim-fill",
-          "live_enabled": true,
+          "live_enabled": false,
           "risk_pct": 0.005,
           "leverage": 50,
           "state": "probe",
@@ -174,7 +174,9 @@
             "win": 34.5,
             "ev_cost2x": 0.1657,
             "ev_ex_topq": 0.2961
-          }
+          },
+          "revert_reason": "連 3 筆虧損累計 -2.75R <= -2.50R",
+          "reverted_at": "2026-09-20T22:52"
         },
         {
           "id": "AUTO_CL_VOL_DRY__0_3_VOL_R__1_5_ATR_R__1_2_BULL_TP4R",
@@ -286,14 +288,50 @@
               -1.0
             ]
           ]
+        },
+        {
+          "id": "AUTO_CL_IMPACT__1_5_CVD_Z__1_VOL_DRY__0_4_BULL_TP4R",
+          "ts": "2026-09-20T22:52",
+          "verdict": "reverted_probe_guard",
+          "reason": "連 3 筆虧損累計 -2.75R <= -2.50R",
+          "stats": {
+            "n": 6,
+            "ev": 0.5023,
+            "cum_r": 3.014,
+            "last3": [
+              -1.078,
+              -1.246,
+              -0.427
+            ],
+            "probe_started": "2026-09-01T15:12",
+            "bt_ev": 0.684
+          },
+          "side": "LONG",
+          "entry": [
+            [
+              "impact",
+              ">=",
+              1.5
+            ],
+            [
+              "cvd_z",
+              ">=",
+              1.0
+            ],
+            [
+              "vol_dry",
+              "<=",
+              0.4
+            ]
+          ]
         }
       ]
     },
     "applied": {
-      "applied_sha": "1cf8daa0f57a24070b46ea020d6ea9d62294b9db",
-      "applied_at": "2026-09-20T02:01:22.214002+00:00",
+      "applied_sha": "e9f65e8634df5aec8bede19adbc3a32a91ef0f52",
+      "applied_at": "2026-09-20T14:52:46.104787+00:00",
       "changes": [
-        "b1.volr_thr: 1.2 -> 1.5"
+        "auto_strategies: 載入 2 個規格"
       ]
     },
     "bounds": {
@@ -2496,6 +2534,10 @@
     {
       "ts": "2026-09-20T13:36:41.613703+00:00",
       "idx": 95.5
+    },
+    {
+      "ts": "2026-09-20T14:36:45.948830+00:00",
+      "idx": 92.97
     }
   ],
   "trades_public": [
