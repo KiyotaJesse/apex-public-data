@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-20T11:57:21.630386+08:00",
+  "generated_at": "2026-09-20T12:57:30.095689+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
     "closed_trades": [],
-    "last_cycle_ts": "2026-09-20T03:56:21.794413+00:00",
+    "last_cycle_ts": "2026-09-20T04:56:30.719254+00:00",
     "stats": {
       "n": 0,
       "win_rate_pct": 0.0,
@@ -26,8 +26,32 @@
   },
   "strat_tl": {
     "mode": "live",
-    "open_positions": [],
-    "last_cycle_ts": "2026-09-20T03:55:29.315071+00:00",
+    "open_positions": [
+      {
+        "id": "strattl_BCHUSDT_1789876843",
+        "symbol": "BCH-USDT",
+        "direction": "LONG",
+        "entry": 245.31,
+        "sl_price": 238.83857142857144,
+        "tp_price": 278.9871428571428,
+        "sl_dist": 6.471428571428561,
+        "qty": 0.22,
+        "max_hold_h": 48,
+        "strategy": "TL",
+        "fill_price": 245.31,
+        "sig_key": "tl_BCH-USDT_2026-09-20 03:00:00",
+        "leverage": 25,
+        "sl_order_id": "2101521955680780288",
+        "opened_ts": "2026-09-20T04:00:53.093427+00:00",
+        "highest": 245.31,
+        "lowest": 245.31,
+        "breakeven_done": false,
+        "bars_elapsed": 0,
+        "last_checked_time": "2026-09-20T04:00:53.093427+00:00",
+        "notion_page_id": null
+      }
+    ],
+    "last_cycle_ts": "2026-09-20T04:55:35.881798+00:00",
     "stats": {
       "n": 0,
       "win_rate_pct": 0.0,
@@ -2432,6 +2456,10 @@
     {
       "ts": "2026-09-20T03:36:09.350936+00:00",
       "idx": 97.05
+    },
+    {
+      "ts": "2026-09-20T04:36:13.072688+00:00",
+      "idx": 97.06
     }
   ],
   "trades_public": [],
