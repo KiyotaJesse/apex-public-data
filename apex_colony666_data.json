@@ -2073,14 +2073,14 @@
 "v": 0.43,
 "ok": true,
 "k": "39/90",
-"t": "熟成 39/90 日 · 1 小時前補貨"
+"t": "熟成 39/90 日 · 0 小時前補貨"
 },
 {
 "n": "礦機口糧",
-"v": 0.32,
+"v": 0.9,
 "ok": true,
-"k": "6h",
-"t": "上輪 09-25 19:19 掃畢 · 每 4 小時開工, 電腦休眠會斷糧"
+"k": "1h",
+"t": "上輪 09-26 01:27 掃畢 · 每 4 小時開工, 電腦休眠會斷糧"
 },
 {
 "n": "磁碟",
@@ -2092,14 +2092,14 @@
 {
 "n": "API 餘額",
 "v": 0.0,
-"t": "餘額耗盡(canary 400) · AI 功能停擺, 交易不受影響 · 17 小時前補貨 · 哨兵每日 08:20 探餘額",
+"t": "餘額耗盡(canary 400) · AI 功能停擺, 交易不受影響 · 18 小時前補貨 · 哨兵每日 08:20 探餘額",
 "ok": false,
 "k": "耗盡",
 "mute": true
 }
 ],
 "mine": {
-"run_at": "09-25 19:19",
+"run_at": "09-26 01:27",
 "levels": [
 {
 "tf": "1h",
@@ -2115,8 +2115,8 @@
 {
 "tf": "4h",
 "scanned": 35496,
-"n_min": 15444,
-"ev": 19905,
+"n_min": 15564,
+"ev": 19806,
 "core": 0,
 "g7": 0,
 "g5": 0,
@@ -2870,7 +2870,7 @@
 }
 },
 "alerts": {
-"ts": "09-26T00:52",
+"ts": "09-26T01:52",
 "top": "",
 "events": [],
 "stale": false
@@ -4094,12 +4094,12 @@
 }
 ],
 "health": {
-"score": 26,
+"score": 38,
 "why": [
 "逾期行動 32 件 -10",
 "SLO 超支 VELA夜班、影、關 -30",
 "日檢紅 2(未認領: 控制台同步、選礦機新鮮度) -16",
-"Deadloop 異常 4(策略選礦機、選礦機血緣防線、選礦機資料完整度) -18"
+"Deadloop 異常 1(籃(籃蟻)) -6"
 ],
 "prev": 11,
 "streak": {}
@@ -4123,64 +4123,64 @@
 ],
 "board": [
 {
-"ts": "2026-09-26T01:22:25+08:00",
+"ts": "2026-09-26T02:18:26+08:00",
 "who": "蟻",
-"t": "[蟻穴] 主頁每小時刷新失敗(連續 1 輪): RuntimeError: 母本"
+"t": "[聞] 重要度 85 commodity_fx/guidance GEOPOL "
 },
 {
-"ts": "2026-09-26T01:05:25+08:00",
+"ts": "2026-09-26T02:05:21+08:00",
 "who": "蟻",
-"t": "[SLO] 境(情境壓力測試蟻) 錯誤預算超支: 達成 86.5% / 目標 9"
+"t": "[SLO] 本輪 超支 1 隻 / 預警 0 隻 / 離線排除壞點 198 次 "
 },
 {
-"ts": "2026-09-26T01:05:25+08:00",
+"ts": "2026-09-26T02:05:21+08:00",
 "who": "蟻",
-"t": "slo 60 秒內 6 則, 之後靜音"
+"t": "[SLO] VELA 副駕夜間建置(獨立專案 C:/vela) 錯誤預算回到目標"
 },
 {
-"ts": "2026-09-26T01:05:25+08:00",
+"ts": "2026-09-26T02:05:21+08:00",
 "who": "蟻",
-"t": "[SLO] 覆(研究再現性守衛蟻) 錯誤預算超支: 達成 87.2% / 目標 "
+"t": "[SLO] 守關(停用條件看守蟻) 錯誤預算回到目標內"
 },
 {
-"ts": "2026-09-26T01:05:25+08:00",
+"ts": "2026-09-26T02:05:21+08:00",
 "who": "蟻",
-"t": "[SLO] 費(手續費盯哨蟻) 錯誤預算超支: 達成 86.4% / 目標 95"
+"t": "[SLO] 容(資本容量蟻) 錯誤預算回到目標內"
 },
 {
-"ts": "2026-09-26T01:05:25+08:00",
+"ts": "2026-09-26T02:05:21+08:00",
 "who": "蟻",
-"t": "[SLO] 譜(資料血緣蟻) 錯誤預算超支: 達成 86.4% / 目標 95%"
+"t": "[SLO] 歸(損益歸因蟻) 錯誤預算回到目標內"
 },
 {
-"ts": "2026-09-26T01:05:25+08:00",
+"ts": "2026-09-26T02:05:21+08:00",
 "who": "蟻",
-"t": "[SLO] 漂(漂移偵測蟻) 錯誤預算超支: 達成 86.3% / 目標 95%"
+"t": "[SLO] 境(情境壓力測試蟻) 錯誤預算回到目標內"
 },
 {
-"ts": "2026-09-26T01:05:24+08:00",
+"ts": "2026-09-26T02:05:21+08:00",
 "who": "蟻",
-"t": "[SLO] 歸(損益歸因蟻) 錯誤預算超支: 達成 86.5% / 目標 95%"
+"t": "[SLO] 覆(研究再現性守衛蟻) 錯誤預算回到目標內"
 },
 {
-"ts": "2026-09-26T01:05:23+08:00",
+"ts": "2026-09-26T02:05:21+08:00",
 "who": "蟻",
-"t": "[SLO] 容(資本容量蟻) 錯誤預算超支: 達成 86.5% / 目標 95%"
+"t": "[SLO] 費(手續費盯哨蟻) 錯誤預算回到目標內"
 },
 {
-"ts": "2026-09-26T01:05:22+08:00",
+"ts": "2026-09-26T02:05:21+08:00",
 "who": "蟻",
-"t": "[SLO] 守關(停用條件看守蟻) 錯誤預算超支: 達成 86.5% / 目標 "
+"t": "[SLO] 譜(資料血緣蟻) 錯誤預算回到目標內"
 },
 {
-"ts": "2026-09-26T01:05:21+08:00",
+"ts": "2026-09-26T02:05:21+08:00",
 "who": "蟻",
-"t": "[SLO] 影(影蟻) 錯誤預算超支: 達成 90.1% / 目標 95% (壞"
+"t": "[SLO] 漂(漂移偵測蟻) 錯誤預算回到目標內"
 },
 {
-"ts": "2026-09-26T01:05:20+08:00",
+"ts": "2026-09-26T01:35:38+08:00",
 "who": "蟻",
-"t": "[SLO] VELA 副駕夜間建置(獨立專案 C:/vela) 錯誤預算超支: "
+"t": "[雷] 本輪 79 個(標的,規格)新成形, 共 41 檔標的; 前 5: NC"
 }
 ],
 "autonomy": {
@@ -4327,7 +4327,7 @@
 "blocked_on_jesse": []
 },
 "ledgers": {
-"asOf": "2026-09-26T01:25:06",
+"asOf": "2026-09-26T02:20:02",
 "judge": {
 "run_at": "2026-09-25T08:12:44",
 "src": "outcomes",
@@ -4431,17 +4431,17 @@
 "events": {
 "h24": {
 "crit": 1,
-"warn": 223,
-"info": 40,
-"suppressed": 109,
-"n": 264
+"warn": 212,
+"info": 52,
+"suppressed": 103,
+"n": 265
 },
 "d7": {
 "crit": 9,
-"warn": 1155,
-"info": 325,
+"warn": 1153,
+"info": 336,
 "suppressed": 550,
-"n": 1489
+"n": 1498
 },
 "top_keys": [
 {
@@ -4452,7 +4452,7 @@
 {
 "source": "slo",
 "key": "shadow_tracker",
-"n": 91
+"n": 90
 },
 {
 "source": "formation_radar",
@@ -4462,85 +4462,85 @@
 {
 "source": "slo",
 "key": "kill_watch",
-"n": 79
+"n": 80
 },
 {
 "source": "slo",
 "key": "capacity_model",
-"n": 79
+"n": 80
 }
 ],
 "latest": [
 {
-"ts": "2026-09-26T01:22",
-"source": "board_push",
-"key": "nest_hourly_fail",
-"level": "warn",
+"ts": "2026-09-26T02:18",
+"source": "news_collector",
+"key": "hi_guidance_GEOPOL",
+"level": "info",
 "suppressed": false,
-"text": "[蟻穴] 主頁每小時刷新失敗(連續 1 輪): RuntimeError: 母本 110 秒前剛被別人改過(queen_"
+"text": "[聞] 重要度 85 commodity_fx/guidance GEOPOL | EIA increases glob"
 },
 {
-"ts": "2026-09-26T01:05",
+"ts": "2026-09-26T02:05",
 "source": "slo",
-"key": "scenario_stress",
-"level": "warn",
-"suppressed": true,
-"text": "[SLO] 境(情境壓力測試蟻) 錯誤預算超支: 達成 86.5% / 目標 95% (壞 17/126 次)"
+"key": "__tick__",
+"level": "info",
+"suppressed": false,
+"text": "[SLO] 本輪 超支 1 隻 / 預警 0 隻 / 離線排除壞點 198 次 / 送出 0 則"
 },
 {
-"ts": "2026-09-26T01:05",
+"ts": "2026-09-26T02:05",
 "source": "slo",
-"key": "__burst__",
-"level": "warn",
-"suppressed": true,
-"text": "slo 60 秒內 6 則, 之後靜音"
+"key": "task_vela_nightly",
+"level": "info",
+"suppressed": false,
+"text": "[SLO] VELA 副駕夜間建置(獨立專案 C:/vela) 錯誤預算回到目標內"
 },
 {
-"ts": "2026-09-26T01:05",
+"ts": "2026-09-26T02:05",
 "source": "slo",
-"key": "repro_check",
-"level": "warn",
-"suppressed": true,
-"text": "[SLO] 覆(研究再現性守衛蟻) 錯誤預算超支: 達成 87.2% / 目標 95% (壞 16/125 次)"
+"key": "kill_watch",
+"level": "info",
+"suppressed": false,
+"text": "[SLO] 守關(停用條件看守蟻) 錯誤預算回到目標內"
 },
 {
-"ts": "2026-09-26T01:05",
+"ts": "2026-09-26T02:05",
 "source": "slo",
-"key": "fee_watch",
-"level": "warn",
-"suppressed": true,
-"text": "[SLO] 費(手續費盯哨蟻) 錯誤預算超支: 達成 86.4% / 目標 95% (壞 17/125 次)"
+"key": "capacity_model",
+"level": "info",
+"suppressed": false,
+"text": "[SLO] 容(資本容量蟻) 錯誤預算回到目標內"
 },
 {
-"ts": "2026-09-26T01:05",
-"source": "slo",
-"key": "data_lineage",
-"level": "warn",
-"suppressed": true,
-"text": "[SLO] 譜(資料血緣蟻) 錯誤預算超支: 達成 86.4% / 目標 95% (壞 17/125 次)"
-},
-{
-"ts": "2026-09-26T01:05",
-"source": "slo",
-"key": "drift_watch",
-"level": "warn",
-"suppressed": true,
-"text": "[SLO] 漂(漂移偵測蟻) 錯誤預算超支: 達成 86.3% / 目標 95% (壞 17/124 次)"
-},
-{
-"ts": "2026-09-26T01:05",
+"ts": "2026-09-26T02:05",
 "source": "slo",
 "key": "pnl_attribution",
-"level": "warn",
+"level": "info",
 "suppressed": false,
-"text": "[SLO] 歸(損益歸因蟻) 錯誤預算超支: 達成 86.5% / 目標 95% (壞 17/126 次)"
+"text": "[SLO] 歸(損益歸因蟻) 錯誤預算回到目標內"
+},
+{
+"ts": "2026-09-26T02:05",
+"source": "slo",
+"key": "scenario_stress",
+"level": "info",
+"suppressed": false,
+"text": "[SLO] 境(情境壓力測試蟻) 錯誤預算回到目標內"
+},
+{
+"ts": "2026-09-26T02:05",
+"source": "slo",
+"key": "repro_check",
+"level": "info",
+"suppressed": false,
+"text": "[SLO] 覆(研究再現性守衛蟻) 錯誤預算回到目標內"
 }
 ]
 },
 "forecast": {
-"asOf": "2026-09-25T16:40:08",
-"n_forecasts": 12466,
-"n_prospective_total": 10409,
+"asOf": "2026-09-25T17:40:06",
+"n_forecasts": 12541,
+"n_prospective_total": 10491,
 "n_backfill_total": 57,
 "licensed": 1,
 "n_rows": 206,
@@ -4553,8 +4553,8 @@
 "n_pro": 5,
 "n_bf": 0,
 "hit_rate": 0.8,
-"voice_rate": 0.7191,
-"shrunk_skill": 0.3987,
+"voice_rate": 0.7217,
+"shrunk_skill": 0.3997,
 "p_fam": 1.0,
 "licensed": false,
 "event_driven": true,
@@ -4567,7 +4567,7 @@
 "n_pro": 22,
 "n_bf": 0,
 "hit_rate": 0.7273,
-"voice_rate": 0.7191,
+"voice_rate": 0.7217,
 "shrunk_skill": 0.1764,
 "p_fam": 1.0,
 "licensed": false,
@@ -4581,26 +4581,12 @@
 "n_pro": 73,
 "n_bf": 0,
 "hit_rate": 0.6986,
-"voice_rate": 0.2508,
+"voice_rate": 0.2499,
 "shrunk_skill": 0.4559,
 "p_fam": 0.0,
 "licensed": true,
 "event_driven": true,
 "blocked": ""
-},
-{
-"who": "formation_radar:TL",
-"type": "direction",
-"market": "crypto",
-"n_pro": 15,
-"n_bf": 0,
-"hit_rate": 0.6,
-"voice_rate": 0.6937,
-"shrunk_skill": 0.1361,
-"p_fam": 1.0,
-"licensed": false,
-"event_driven": true,
-"blocked": "前瞻樣本不足（n_prospective=15 < 50）"
 },
 {
 "who": "formation_radar:cL_cvd_div<=-0.3+fund_pct<=0.3+vol_dry<=0.4|bull|TP4R",
@@ -4609,7 +4595,7 @@
 "n_pro": 6,
 "n_bf": 0,
 "hit_rate": 0.0,
-"voice_rate": 0.3994,
+"voice_rate": 0.3929,
 "shrunk_skill": 0.2,
 "p_fam": 1.0,
 "licensed": false,
@@ -4623,7 +4609,7 @@
 "n_pro": 2,
 "n_bf": 0,
 "hit_rate": 1.0,
-"voice_rate": 0.2891,
+"voice_rate": 0.2949,
 "shrunk_skill": 0.2567,
 "p_fam": 1.0,
 "licensed": false,
@@ -4633,16 +4619,16 @@
 {
 "who": "formation_radar:TL",
 "type": "direction",
-"market": "fx",
-"n_pro": 113,
+"market": "crypto",
+"n_pro": 16,
 "n_bf": 0,
-"hit_rate": 0.5044,
-"voice_rate": 0.6937,
-"shrunk_skill": 0.1002,
+"hit_rate": 0.5625,
+"voice_rate": 0.6962,
+"shrunk_skill": 0.103,
 "p_fam": 1.0,
 "licensed": false,
 "event_driven": true,
-"blocked": "族內多重性校正後不顯著（p_fam=1.0，m=172）"
+"blocked": "前瞻樣本不足（n_prospective=16 < 50）"
 },
 {
 "who": "formation_radar:MRS",
@@ -4651,7 +4637,7 @@
 "n_pro": 28,
 "n_bf": 0,
 "hit_rate": 0.5,
-"voice_rate": 0.2508,
+"voice_rate": 0.2499,
 "shrunk_skill": 0.2745,
 "p_fam": 0.228285,
 "licensed": false,
@@ -4665,7 +4651,7 @@
 "n_pro": 9,
 "n_bf": 0,
 "hit_rate": 0.7778,
-"voice_rate": 0.2891,
+"voice_rate": 0.2949,
 "shrunk_skill": 0.2229,
 "p_fam": 1.0,
 "licensed": false,
@@ -4679,12 +4665,26 @@
 "n_pro": 9,
 "n_bf": 0,
 "hit_rate": 0.7778,
-"voice_rate": 0.2891,
+"voice_rate": 0.2949,
 "shrunk_skill": 0.2229,
 "p_fam": 1.0,
 "licensed": false,
 "event_driven": true,
 "blocked": "前瞻樣本不足（n_prospective=9 < 50）"
+},
+{
+"who": "formation_radar:TL",
+"type": "direction",
+"market": "fx",
+"n_pro": 114,
+"n_bf": 0,
+"hit_rate": 0.5,
+"voice_rate": 0.6962,
+"shrunk_skill": 0.0854,
+"p_fam": 1.0,
+"licensed": false,
+"event_driven": true,
+"blocked": "族內多重性校正後不顯著（p_fam=1.0，m=172）"
 },
 {
 "who": "formation_radar:AUTO_CL_VOL_DRY__0_3_VOL_R__1_5_ATR_R__1_2_BULL_TP4R",
@@ -4693,7 +4693,7 @@
 "n_pro": 3,
 "n_bf": 0,
 "hit_rate": 0.0,
-"voice_rate": 0.2054,
+"voice_rate": 0.2035,
 "shrunk_skill": 0.2857,
 "p_fam": 1.0,
 "licensed": false,
@@ -4707,7 +4707,7 @@
 "n_pro": 8,
 "n_bf": 0,
 "hit_rate": 0.75,
-"voice_rate": 0.2891,
+"voice_rate": 0.2949,
 "shrunk_skill": 0.1935,
 "p_fam": 1.0,
 "licensed": false,
@@ -5127,32 +5127,32 @@
 "alerts": {
 "n": "警報",
 "h": 1,
-"ts": "2026-09-26T00:52:48+08:00"
+"ts": "2026-09-26T01:52:48+08:00"
 },
 "sick": {
 "n": "病蟻",
 "h": 1,
-"ts": "2026-09-26T01:05:01+08:00"
+"ts": "2026-09-26T02:05:01+08:00"
 },
 "pantry": {
 "n": "糧倉",
 "h": 1,
-"ts": "2026-09-26T01:05:01+08:00"
+"ts": "2026-09-26T02:05:01+08:00"
 },
 "health": {
 "n": "巢健康",
 "h": 1,
-"ts": "2026-09-26T01:05:01+08:00"
+"ts": "2026-09-26T02:05:01+08:00"
 },
 "decisions": {
 "n": "待裁",
 "h": 1,
-"ts": "2026-09-26T01:25:05+08:00"
+"ts": "2026-09-26T02:20:01+08:00"
 },
 "market": {
 "n": "BTC/持倉",
 "h": 1,
-"ts": "2026-09-26T01:23:02+08:00"
+"ts": "2026-09-26T02:13:11+08:00"
 },
 "weather": {
 "n": "巢外天氣",
@@ -5162,22 +5162,22 @@
 "strategies": {
 "n": "策略蟻",
 "h": 1,
-"ts": "2026-09-26T01:25:05+08:00"
+"ts": "2026-09-26T02:20:01+08:00"
 },
 "ledgers": {
 "n": "成績單",
 "h": 1,
-"ts": "2026-09-26T01:25:05+08:00"
+"ts": "2026-09-26T02:20:01+08:00"
 },
 "board": {
 "n": "留言板",
 "h": 1,
-"ts": "2026-09-26T01:25:05+08:00"
+"ts": "2026-09-26T02:20:01+08:00"
 },
 "mine": {
 "n": "礦機",
 "h": 8,
-"ts": "2026-09-25T19:19:00+08:00"
+"ts": "2026-09-26T01:27:00+08:00"
 },
 "academy": {
 "n": "學院",
@@ -5192,10 +5192,10 @@
 "notes": {
 "n": "便利貼",
 "h": 1,
-"ts": "2026-09-26T01:25:07+08:00"
+"ts": "2026-09-26T02:20:03+08:00"
 }
 },
-"live_ts": "2026-09-26T01:25:05+08:00",
+"live_ts": "2026-09-26T02:20:01+08:00",
 "notes": [
 {
 "id": "gate",
@@ -5208,33 +5208,33 @@
 "stale": false,
 "hash": "ca3e2303e96f",
 "last_changed": "2026-09-26T01:24:17+08:00",
-"shown_at": "2026-09-26T01:25:07+08:00"
+"shown_at": "2026-09-26T02:20:03+08:00"
 },
 {
 "id": "queen",
 "d": "深度 -0.4m · 女王室",
 "kind": "live",
-"text": "這裡的女王不產卵,她產命令。真正產卵的是深處的選礦機——名冊寫每 8 小時一窩,上一窩在 09-25 19:19。本週新登記候選 0 顆,最近一窩過完全部關卡的 0 顆。能孵出來的,要先過五道關,再過一道「血緣打臉關」。",
-"ts": "2026-09-25T19:19:00+08:00",
+"text": "這裡的女王不產卵,她產命令。真正產卵的是深處的選礦機——名冊寫每 8 小時一窩,上一窩在 09-26 01:27。本週新登記候選 0 顆,最近一窩過完全部關卡的 0 顆。能孵出來的,要先過五道關,再過一道「血緣打臉關」。",
+"ts": "2026-09-26T01:27:00+08:00",
 "period_h": 8.0,
 "src": "strategy_prospector_result.json · candidate_registry.json · supervision_registry.json",
 "stale": false,
-"hash": "fff2cd58829e",
-"last_changed": "2026-09-26T01:24:17+08:00",
-"shown_at": "2026-09-26T01:25:07+08:00"
+"hash": "d53e7425f840",
+"last_changed": "2026-09-26T02:20:03+08:00",
+"shown_at": "2026-09-26T02:20:03+08:00"
 },
 {
 "id": "worker",
 "d": "深度 -1m · 工蟻房",
 "kind": "live",
 "text": "覓食隊誠實紀錄:近 30 天搬回 +4.1R(17 趟),近 90 天 +4.1R(17 趟,帳本最早只記到 09-19)。其中 AUTO +0.2R/15、TL +3.9R/2。現在開著門的:B1、SC1、AUTO·衝量·籌碼、AUTO·量枯·爆量。角落蜷著的 B1、SC1 沒有死——多頭的天氣裡她的門是關的,她在等天氣翻面。",
-"ts": "2026-09-26T01:25:05+08:00",
+"ts": "2026-09-26T02:20:01+08:00",
 "period_h": 1,
 "src": "tama_memory.json(D 帳本) · tama_config.json",
 "stale": false,
 "hash": "5b285b200b2c",
 "last_changed": "2026-09-26T01:24:17+08:00",
-"shown_at": "2026-09-26T01:25:07+08:00"
+"shown_at": "2026-09-26T02:20:03+08:00"
 },
 {
 "id": "clinic",
@@ -5247,7 +5247,7 @@
 "stale": false,
 "hash": "c21ad7845daa",
 "last_changed": "2026-09-26T01:24:17+08:00",
-"shown_at": "2026-09-26T01:25:07+08:00"
+"shown_at": "2026-09-26T02:20:03+08:00"
 },
 {
 "id": "collapse",
@@ -5260,7 +5260,7 @@
 "stale": false,
 "hash": "7c0d5a1a19b2",
 "last_changed": "2026-09-26T01:24:17+08:00",
-"shown_at": "2026-09-26T01:25:07+08:00"
+"shown_at": "2026-09-26T02:20:03+08:00"
 },
 {
 "id": "darkroom",
@@ -5273,7 +5273,7 @@
 "stale": false,
 "hash": "ee4e9754f2c7",
 "last_changed": "2026-09-26T01:24:17+08:00",
-"shown_at": "2026-09-26T01:25:07+08:00"
+"shown_at": "2026-09-26T02:20:03+08:00"
 },
 {
 "id": "fungus",
@@ -5286,7 +5286,7 @@
 "stale": false,
 "hash": "2bd55f2fe0b0",
 "last_changed": "2026-09-26T01:24:17+08:00",
-"shown_at": "2026-09-26T01:25:07+08:00"
+"shown_at": "2026-09-26T02:20:03+08:00"
 },
 {
 "id": "grave",
@@ -5299,33 +5299,33 @@
 "stale": false,
 "hash": "c62a6209393b",
 "last_changed": "2026-09-26T01:24:17+08:00",
-"shown_at": "2026-09-26T01:25:07+08:00"
+"shown_at": "2026-09-26T02:20:03+08:00"
 },
 {
 "id": "face",
 "d": "深度 -3m · 掘進面",
 "kind": "live",
-"text": "巢還在往下長。偵察蟻這個月翻過 76,032 個座標(1 窩,自 09-25 起記)。最近一窩 76,032 個,全是空土。下方幾間房已經放樣,還沒住蟻——這座巢蓋房子從來不是為了現在。",
-"ts": "2026-09-25T19:19:00+08:00",
+"text": "巢還在往下長。偵察蟻這個月翻過 152,064 個座標(2 窩,自 09-25 起記)。最近一窩 76,032 個,全是空土。下方幾間房已經放樣,還沒住蟻——這座巢蓋房子從來不是為了現在。",
+"ts": "2026-09-26T01:27:00+08:00",
 "period_h": 8.0,
 "src": "strategy_prospector_result.json(funnel)",
 "stale": false,
-"hash": "d6514856b9c6",
-"last_changed": "2026-09-26T01:24:17+08:00",
-"shown_at": "2026-09-26T01:25:07+08:00"
+"hash": "a35d12c1fc7a",
+"last_changed": "2026-09-26T02:20:03+08:00",
+"shown_at": "2026-09-26T02:20:03+08:00"
 },
 {
 "id": "weekly",
-"d": "巢口公告 · 本週新事 · 18/24",
+"d": "巢口公告 · 本週新事 · 19/24",
 "kind": "rotate",
-"text": "墳場新立一塊碑:「月末/月初效應」——這條路以後不用再挖。(09-23)",
-"ts": "2026-09-26T01:25:07+08:00",
+"text": "墳場新立一塊碑:「型態」——這條路以後不用再挖。(09-23)",
+"ts": "2026-09-26T02:20:03+08:00",
 "period_h": 24,
 "src": "graveyard_signatures.json",
 "stale": false,
 "hash": "a7ceafdc7672",
 "last_changed": "2026-09-26T01:24:17+08:00",
-"shown_at": "2026-09-26T01:25:07+08:00"
+"shown_at": "2026-09-26T02:20:03+08:00"
 }
 ],
 "_doc": "APEX 蟻穴公開資料; 完整鏈每日 08:10 由 queen_weight.py 產出, 每小時 :20 由 board_push.py (nest_hourly) 重算 fresh 列出的區塊; 各區塊資料時間見 fresh; 金額 eq 為 Jesse 2026-08-28 裁決公開"
