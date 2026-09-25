@@ -252,7 +252,7 @@
 ],
 "sick": [],
 "btc": {
-"chg": 0.7
+"chg": 0.0
 },
 "pos": 2,
 "sig": 0,
@@ -2073,11 +2073,11 @@
 "v": 0.43,
 "ok": true,
 "k": "39/90",
-"t": "熟成 39/90 日 · 0 小時前補貨"
+"t": "熟成 39/90 日 · 1 小時前補貨"
 },
 {
 "n": "礦機口糧",
-"v": 0.56,
+"v": 0.55,
 "ok": true,
 "k": "4h",
 "t": "上輪 09-25 19:19 掃畢 · 每 4 小時開工, 電腦休眠會斷糧"
@@ -2291,7 +2291,7 @@
 },
 "mailbox": {
 "sent": "08:12",
-"open": 83,
+"open": 89,
 "answered": 8,
 "buttons": true
 },
@@ -4123,6 +4123,11 @@
 ],
 "board": [
 {
+"ts": "2026-09-25T23:18:10+08:00",
+"who": "蟻",
+"t": "[聞] 重要度 70 stock/other GBPUSD | 8-K - St"
+},
+{
 "ts": "2026-09-25T23:07:51+08:00",
 "who": "蟻",
 "t": "[律] I7 告警噪音(單一來源不得壟斷): 近 24h 257 筆事件裡 sl"
@@ -4176,11 +4181,6 @@
 "ts": "2026-09-25T23:06:13+08:00",
 "who": "graveyard_guard",
 "t": "⛔ [墳場回讀] selftest: nc_session_hour_long "
-},
-{
-"ts": "2026-09-25T23:05:24+08:00",
-"who": "蟻",
-"t": "[SLO] 境(情境壓力測試蟻) 錯誤預算超支: 達成 86.3% / 目標 9"
 }
 ],
 "autonomy": {
@@ -4327,7 +4327,7 @@
 "blocked_on_jesse": []
 },
 "ledgers": {
-"asOf": "2026-09-25T23:16:19",
+"asOf": "2026-09-25T23:20:02",
 "judge": {
 "run_at": "2026-09-25T08:12:44",
 "src": "outcomes",
@@ -4432,16 +4432,16 @@
 "h24": {
 "crit": 1,
 "warn": 222,
-"info": 35,
+"info": 36,
 "suppressed": 110,
-"n": 258
+"n": 259
 },
 "d7": {
 "crit": 9,
 "warn": 1137,
-"info": 319,
+"info": 320,
 "suppressed": 538,
-"n": 1465
+"n": 1466
 },
 "top_keys": [
 {
@@ -4471,6 +4471,14 @@
 }
 ],
 "latest": [
+{
+"ts": "2026-09-25T23:18",
+"source": "news_collector",
+"key": "hi_other_GBPUSD",
+"level": "info",
+"suppressed": false,
+"text": "[聞] 重要度 70 stock/other GBPUSD | 8-K - Sterling Real Estate T"
+},
 {
 "ts": "2026-09-25T23:07",
 "source": "invariant_watch",
@@ -4526,14 +4534,6 @@
 "level": "warn",
 "suppressed": false,
 "text": "⛔ [墳場回讀] selftest: liq_cascade_long 命中 liq_cascade_verdict_2"
-},
-{
-"ts": "2026-09-25T23:06",
-"source": "graveyard_guard",
-"key": "graveyard_guard",
-"level": "warn",
-"suppressed": false,
-"text": "⛔ [墳場回讀] selftest: sm_stop_hunt_short 命中 smart_money_pattern"
 }
 ]
 },
@@ -5147,12 +5147,12 @@
 "decisions": {
 "n": "待裁",
 "h": 1,
-"ts": "2026-09-25T23:16:18+08:00"
+"ts": "2026-09-25T23:20:01+08:00"
 },
 "market": {
 "n": "BTC/持倉",
 "h": 1,
-"ts": "2026-09-25T23:07:56+08:00"
+"ts": "2026-09-25T23:17:57+08:00"
 },
 "weather": {
 "n": "巢外天氣",
@@ -5162,17 +5162,17 @@
 "strategies": {
 "n": "策略蟻",
 "h": 1,
-"ts": "2026-09-25T23:16:18+08:00"
+"ts": "2026-09-25T23:20:01+08:00"
 },
 "ledgers": {
 "n": "成績單",
 "h": 1,
-"ts": "2026-09-25T23:16:18+08:00"
+"ts": "2026-09-25T23:20:01+08:00"
 },
 "board": {
 "n": "留言板",
 "h": 1,
-"ts": "2026-09-25T23:16:18+08:00"
+"ts": "2026-09-25T23:20:01+08:00"
 },
 "mine": {
 "n": "礦機",
@@ -5190,6 +5190,6 @@
 "ts": "2026-09-25T08:10:04+08:00"
 }
 },
-"live_ts": "2026-09-25T23:16:18+08:00",
+"live_ts": "2026-09-25T23:20:01+08:00",
 "_doc": "APEX 蟻穴公開資料; 完整鏈每日 08:10 由 queen_weight.py 產出, 每小時 :20 由 board_push.py (nest_hourly) 重算 fresh 列出的區塊; 各區塊資料時間見 fresh; 金額 eq 為 Jesse 2026-08-28 裁決公開"
 }
