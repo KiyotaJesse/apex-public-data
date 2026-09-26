@@ -740,24 +740,25 @@ function applyLiveData(d){
   const tsEl   = document.getElementById('live-ts');
 
   if(btcEl && d.btc){
-    const chg = d.btc.change_24h;
-    const sign = chg>=0?'+':'';
-    btcEl.textContent = d.btc.price? `$${d.btc.price.toLocaleString()} (${sign}${chg.toFixed(1)}%)` : '—';
-    btcEl.style.color = chg>=0?'#00ff99':'#ff4466';
+    const chg = (typeof d.btc.change_24h==='number')?d.btc.change_24h:null;
+    const sign = (chg!==null&&chg>=0)?'+':'';
+    btcEl.textContent = (typeof d.btc.price==='number')? `$${d.btc.price.toLocaleString()}`+(chg!==null?` (${sign}${chg.toFixed(1)}%)`:'') : '讀不到';
+    btcEl.style.color = chg===null?'#8a8a8a':(chg>=0?'#00ff99':'#ff4466');
 
     // 動畫：BTC 節點大小隨波動放大
     const bNode=nMap['btc'];
     if(bNode){const baseSz=NODES.find(n=>n.id==='btc')?.sz||8; bNode._liveScale=1+Math.min(Math.abs(chg)/5,.5)*.4;}
   }
   if(xrpEl && d.xrp){
-    const chg = d.xrp.change_24h;
-    const sign = chg>=0?'+':'';
-    xrpEl.textContent = d.xrp.price? `$${d.xrp.price.toFixed(4)} (${sign}${chg.toFixed(1)}%)` : '—';
-    xrpEl.style.color = chg>=0?'#00ff99':'#ff4466';
+    const chg = (typeof d.xrp.change_24h==='number')?d.xrp.change_24h:null;
+    const sign = (chg!==null&&chg>=0)?'+':'';
+    xrpEl.textContent = (typeof d.xrp.price==='number')? `$${d.xrp.price.toFixed(4)}`+(chg!==null?` (${sign}${chg.toFixed(1)}%)`:'') : '讀不到';
+    xrpEl.style.color = chg===null?'#8a8a8a':(chg>=0?'#00ff99':'#ff4466');
     const xNode=nMap['xrp'];
     if(xNode){xNode._liveScale=1+Math.min(Math.abs(chg)/5,.5)*.4;}
   }
-  if(fgiEl && d.fear_greed){
+  if(fgiEl && d.fear_greed && typeof d.fear_greed.value!=='number'){fgiEl.textContent='讀不到';fgiEl.style.color='#8a8a8a';}
+     else if(fgiEl && d.fear_greed){
     const v=d.fear_greed.value;
     fgiEl.textContent=`${v} — ${d.fear_greed.label}`;
     fgiEl.style.color=v<=30?'#ff4466':v>=70?'#ffaa00':'#00ff99';
