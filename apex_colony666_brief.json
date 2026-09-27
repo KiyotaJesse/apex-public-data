@@ -1,15 +1,15 @@
 {
- "ts": "2026-09-27T20:20:05",
- "data_ts": "2026-09-27T20:20:01",
+ "ts": "2026-09-27T21:20:04",
+ "data_ts": "2026-09-27T21:20:01",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
   "word": "要動",
   "tone": "red",
-  "why": "巢健康度 58 低於 70",
+  "why": "巢健康度 46 低於 70",
   "fired": [
-   "巢健康度 58 低於 70",
-   "巢健康度 58 低於 85",
+   "巢健康度 46 低於 70",
+   "巢健康度 46 低於 85",
    "你有事項 1 天內到期",
    "待決事項 1 天內自動裁決",
    "SLO 超支 1 項",
@@ -21,7 +21,7 @@
  "numbers": [
   {
    "k": "巢健康度",
-   "v": "58",
+   "v": "46",
    "unit": "/100",
    "tone": "red",
    "sub": "扣分: 逾期行動 35 件 -10、SLO 超支 影 -10"
@@ -35,8 +35,8 @@
   },
   {
    "k": "蟻口出勤",
-   "v": "91/145",
-   "unit": "(63%)",
+   "v": "94/145",
+   "unit": "(65%)",
    "tone": "amber",
    "sub": "紅燈 2 隻: 生(重生演練蟻)、收(價值收據蟻)"
   }
@@ -144,35 +144,34 @@
    "q": "礦機每 4h 跑一次吃掉全巢 85% CPU(4842/5669 分/月)且 ROI 0.109 倒數第二, 要不要降頻或縮候選空間",
    "rec": "B"
   },
-  "line": "近 24 小時: 自動裁決 13 件、自動修復/回滾 0 件。下一個自動到期 D021(2026-09-28), 沒人異議就採建議 B。成形雷達: 成形中 279 檔／已成形 106 檔(全條件 13)(跨 5 市場; 宇宙 335 檔, 休市排除 349)。預言帳：2529 則前瞻在等結算、持牌 4／預言者 209。消息：近 24h 492 則／高重要 1 則／最新一則「Bitget hacker moves $83 million in stole」｜實證：16 類消息裡 0 類會動價格、6 類不會、10 類樣本不足(事件 n=509)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 30 則發言、提到 EWT×11／GEOPOL×4／META×4、淨多空 +0.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 380 單／已結 1718 單(live 596＋登記日回填 1122)(另樣本內回填 6 單不計成績)／76 個規格在追；最接近晉升的 cL_impact>=1.5+cvd_z>=1+vol_(crypto) 已達 n=76 EV=+0.795R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=28 EV-0.881、SC1 n=5 EV-1.065、SC3 n=40 EV-0.305；最差 SC1(-1.065R)、最好 TL(+0.040R)；合計 95 筆 EV-0.501R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=0、淨EV 無、可交易率 無事件(0/0)。",
+  "line": "近 24 小時: 自動裁決 13 件、自動修復/回滾 0 件。下一個自動到期 D021(2026-09-28), 沒人異議就採建議 B。成形雷達: 成形中 270 檔／已成形 98 檔(全條件 15)(跨 4 市場; 宇宙 336 檔, 休市排除 349)。預言帳：2537 則前瞻在等結算、持牌 4／預言者 209。消息：近 24h 536 則／高重要 0 則／最新一則「The 10-year Treasury yield is at its hig」｜實證：16 類消息裡 0 類會動價格、6 類不會、10 類樣本不足(事件 n=509)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 28 則發言、提到 EWT×11／GEOPOL×4／META×4、淨多空 +0.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 378 單／已結 1720 單(live 598＋登記日回填 1122)(另樣本內回填 6 單不計成績)／76 個規格在追；最接近晉升的 cL_impact>=1.5+cvd_z>=1+vol_(crypto) 已達 n=76 EV=+0.795R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=28 EV-0.881、SC1 n=5 EV-1.065、SC3 n=40 EV-0.305；最差 SC1(-1.065R)、最好 TL(+0.040R)；合計 95 筆 EV-0.501R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=0、淨EV 無、可交易率 無事件(0/0)。",
   "radar": {
-   "forming": 279,
-   "fired": 106,
-   "fired_full": 13,
+   "forming": 270,
+   "fired": 98,
+   "fired_full": 15,
    "markets": [
     "commodity",
     "crypto",
-    "fx",
     "index",
     "stock"
    ],
-   "universe_fresh": 335,
+   "universe_fresh": 336,
    "stale_excluded": 349,
-   "ts_utc": "2026-09-27T11:35",
+   "ts_utc": "2026-09-27T12:35",
    "age_h": 0.8
   },
   "forecast": {
-   "pending": 2529,
+   "pending": 2537,
    "licensed": 4,
    "forecasters": 209,
-   "n_forecasts": 15985,
-   "n_resolved": 13456,
-   "asOf": "2026-09-27T11:40:07"
+   "n_forecasts": 16066,
+   "n_resolved": 13529,
+   "asOf": "2026-09-27T12:40:08"
   },
   "shadow": {
-   "n_open": 380,
-   "n_closed": 1718,
-   "n_live": 596,
+   "n_open": 378,
+   "n_closed": 1720,
+   "n_live": 598,
    "n_post_reg": 1122,
    "n_backfill": 6,
    "n_specs": 76,
@@ -192,7 +191,7 @@
      "n_live": 48,
      "n_post_reg": 28,
      "ev": 0.7951,
-     "random_z": 4.68,
+     "random_z": 4.54,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": true
@@ -204,7 +203,7 @@
      "n_live": 46,
      "n_post_reg": 23,
      "ev": 0.7715,
-     "random_z": 5.01,
+     "random_z": 5.22,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": true
@@ -216,35 +215,35 @@
      "n_live": 5,
      "n_post_reg": 34,
      "ev": 0.7318,
-     "random_z": 3.45,
+     "random_z": 3.04,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": true
     }
    ],
    "eta_promo": null,
-   "opens_per_day": 79.1,
+   "opens_per_day": 78.9,
    "rate_days": 14,
-   "ts_utc": "2026-09-27T11:40"
+   "ts_utc": "2026-09-27T12:40"
   },
   "news": {
-   "n_24h": 492,
-   "n_hi": 1,
+   "n_24h": 536,
+   "n_hi": 0,
    "by_category": {
-    "crypto": 276,
-    "macro": 70,
+    "macro": 66,
     "stock": 4,
-    "commodity_fx": 142
+    "commodity_fx": 178,
+    "crypto": 288
    },
    "sources_green": 35,
    "sources_red": 0,
    "top": {
-    "t": "Bitget hacker moves $83 million in stolen XRP that Ripple cannot freeze",
-    "imp": 80,
-    "src": "coindesk",
-    "ts": "2026-09-26T12:56:41Z"
+    "t": "The 10-year Treasury yield is at its highest in nearly two decades. How we got here",
+    "imp": 67,
+    "src": "cnbc_top",
+    "ts": "2026-09-26T13:30:06Z"
    },
-   "run_at": "2026-09-27T12:18:01",
+   "run_at": "2026-09-27T13:18:01",
    "impact": {
     "line": "｜實證：16 類消息裡 0 類會動價格、6 類不會、10 類樣本不足(事件 n=509)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 16,
@@ -258,8 +257,8 @@
     "ts": "2026-09-26T20:30:13"
    },
    "trump": {
-    "line": "｜川普：近 24h 30 則發言、提到 EWT×11／GEOPOL×4／META×4、淨多空 +0.0",
-    "n_24h": 30,
+    "line": "｜川普：近 24h 28 則發言、提到 EWT×11／GEOPOL×4／META×4、淨多空 +0.0",
+    "n_24h": 28,
     "net_long_24h": 0,
     "top_symbols": [
      {
@@ -298,7 +297,7 @@
       "short": 0
      }
     ],
-    "run_at": "2026-09-27T12:09:01"
+    "run_at": "2026-09-27T13:09:01"
    }
   },
   "calendar": {
@@ -310,13 +309,13 @@
    "blackout_event": null,
    "blackout_markets": [],
    "head": null,
-   "age_h": 2.0,
+   "age_h": 3.0,
    "ts": "2026-09-27T10:20:01"
   },
   "live_shadow": {
    "window": {
     "from": "2026-09-01",
-    "to": "2026-09-27T11:45"
+    "to": "2026-09-27T12:45"
    },
    "n_closed": 95,
    "n_open": 0,
@@ -328,7 +327,7 @@
     "pf": 0.434,
     "sum_r": -47.587
    },
-   "ts": "2026-09-27T11:45",
+   "ts": "2026-09-27T12:45",
    "per": {
     "B1": {
      "n": 6,
@@ -394,12 +393,12 @@
     "funding_missing": 0
    },
    "n_open": 0,
-   "ts": "2026-09-27T12:10:04Z"
+   "ts": "2026-09-27T13:10:01Z"
   }
  },
  "north_star": {
   "ts": "2026-09-27T08:00:02",
-  "age_h": 12.3,
+  "age_h": 13.3,
   "stale": false,
   "risk_light": "red",
   "risk_why": "手動倉裸倉警報 5次(上限 0)、最大 24h 權益跌幅 55.8%(上限 20.0)、熔斷 5次(上限 1)",
@@ -465,11 +464,11 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-09-27T12:05",
+  "attendance": "supervision_state.json @ 2026-09-27T13:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
   "calendar": "calendar_board.json @ 2026-09-27T10:20:01",
-  "news": "news_board.json @ 2026-09-27T12:18:01",
+  "news": "news_board.json @ 2026-09-27T13:18:01",
   "north_star": "goal_state.json @ 2026-09-27T08:00:02",
   "rules": "brief_rules.json v1.0"
  },
