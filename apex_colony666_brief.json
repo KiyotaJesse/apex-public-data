@@ -1,15 +1,15 @@
 {
- "ts": "2026-09-27T12:20:04",
- "data_ts": "2026-09-27T12:20:01",
+ "ts": "2026-09-27T13:20:04",
+ "data_ts": "2026-09-27T13:20:01",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
   "word": "要動",
   "tone": "red",
-  "why": "巢健康度 58 低於 70",
+  "why": "巢健康度 46 低於 70",
   "fired": [
-   "巢健康度 58 低於 70",
-   "巢健康度 58 低於 85",
+   "巢健康度 46 低於 70",
+   "巢健康度 46 低於 85",
    "你有事項 1 天內到期",
    "待決事項 1 天內自動裁決",
    "SLO 超支 1 項",
@@ -21,7 +21,7 @@
  "numbers": [
   {
    "k": "巢健康度",
-   "v": "58",
+   "v": "46",
    "unit": "/100",
    "tone": "red",
    "sub": "扣分: 逾期行動 35 件 -10、SLO 超支 影 -10"
@@ -35,8 +35,8 @@
   },
   {
    "k": "蟻口出勤",
-   "v": "87/145",
-   "unit": "(60%)",
+   "v": "90/145",
+   "unit": "(62%)",
    "tone": "amber",
    "sub": "紅燈 2 隻: 生(重生演練蟻)、收(價值收據蟻)"
   }
@@ -60,7 +60,7 @@
   }
  ],
  "auto": {
-  "decided_24h": 17,
+  "decided_24h": 13,
   "decided": [
    {
     "id": "D019",
@@ -126,26 +126,6 @@
     "id": "D132",
     "q": "WO-129 影子側 degraded 登記規則 SHADOW_DEGRADED_REG 要不要開(degraded 登",
     "choice": "B"
-   },
-   {
-    "id": "D152",
-    "q": "[自治藍圖 R2-2] L2 改寫：刪兩條升檔路徑、查削減天花板、B1 基準 0.02→層級上限、探針畢業改 N* 一次",
-    "choice": ""
-   },
-   {
-    "id": "D153",
-    "q": "[自治藍圖 R3-4] A 12 小時自改迴圈（apex_a.py:8668/9106/12091）加程式碼層硬禁",
-    "choice": ""
-   },
-   {
-    "id": "D154",
-    "q": "[自治藍圖 R3-2] L-param：15 個 D 常數搬設定鍵＋D 寫 RENDER_GIT_COMMIT＋CI 對",
-    "choice": ""
-   },
-   {
-    "id": "D155",
-    "q": "[自治藍圖 R2-5] 在役收斂為層級 P：B1 1%x5→0.5%x1、SC 休眠、AUTO 轉影子",
-    "choice": ""
    }
   ],
   "repaired_24h": 0,
@@ -156,30 +136,29 @@
    "q": "礦機每 4h 跑一次吃掉全巢 85% CPU(4842/5669 分/月)且 ROI 0.109 倒數第二, 要不要降頻或縮候選空間",
    "rec": "B"
   },
-  "line": "近 24 小時: 自動裁決 17 件、自動修復/回滾 0 件。下一個自動到期 D021(2026-09-28), 沒人異議就採建議 B。成形雷達: 成形中 212 檔／已成形 122 檔(全條件 5)(跨 5 市場; 宇宙 343 檔, 休市排除 341)。預言帳：2442 則前瞻在等結算、持牌 4／預言者 209。消息：近 24h 576 則／高重要 3 則／最新一則「Bitget hacker moves $83 million in stole」｜實證：16 類消息裡 0 類會動價格、6 類不會、10 類樣本不足(事件 n=509)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 36 則發言、提到 EWT×6／META×4／TARIFF×4、淨多空 +0.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 386 單／已結 1707 單(live 585＋登記日回填 1122)(另樣本內回填 6 單不計成績)／76 個規格在追；最接近晉升的 cL_impact>=1.5+cvd_z>=1+vol_(crypto) 已達 n=75 EV=+0.753R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=28 EV-0.881、SC1 n=5 EV-1.065、SC3 n=40 EV-0.305；最差 SC1(-1.065R)、最好 TL(+0.040R)；合計 95 筆 EV-0.501R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=0、淨EV 無、可交易率 無事件(0/0)。",
+  "line": "近 24 小時: 自動裁決 13 件、自動修復/回滾 0 件。下一個自動到期 D021(2026-09-28), 沒人異議就採建議 B。成形雷達: 成形中 203 檔／已成形 121 檔(全條件 8)(跨 4 市場; 宇宙 342 檔, 休市排除 342)。預言帳：2448 則前瞻在等結算、持牌 5／預言者 209。消息：近 24h 594 則／高重要 2 則／最新一則「Bitget hacker moves $83 million in stole」｜實證：16 類消息裡 0 類會動價格、6 類不會、10 類樣本不足(事件 n=509)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 36 則發言、提到 EWT×6／META×4／TARIFF×4、淨多空 +0.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 386 單／已結 1707 單(live 585＋登記日回填 1122)(另樣本內回填 6 單不計成績)／76 個規格在追；最接近晉升的 cL_impact>=1.5+cvd_z>=1+vol_(crypto) 已達 n=75 EV=+0.753R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=28 EV-0.881、SC1 n=5 EV-1.065、SC3 n=40 EV-0.305；最差 SC1(-1.065R)、最好 TL(+0.040R)；合計 95 筆 EV-0.501R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=0、淨EV 無、可交易率 無事件(0/0)。",
   "radar": {
-   "forming": 212,
-   "fired": 122,
-   "fired_full": 5,
+   "forming": 203,
+   "fired": 121,
+   "fired_full": 8,
    "markets": [
     "commodity",
     "crypto",
-    "fx",
     "index",
     "stock"
    ],
-   "universe_fresh": 343,
-   "stale_excluded": 341,
-   "ts_utc": "2026-09-27T03:35",
+   "universe_fresh": 342,
+   "stale_excluded": 342,
+   "ts_utc": "2026-09-27T04:35",
    "age_h": 0.8
   },
   "forecast": {
-   "pending": 2442,
-   "licensed": 4,
+   "pending": 2448,
+   "licensed": 5,
    "forecasters": 209,
-   "n_forecasts": 15322,
-   "n_resolved": 12880,
-   "asOf": "2026-09-27T03:40:07"
+   "n_forecasts": 15399,
+   "n_resolved": 12951,
+   "asOf": "2026-09-27T04:40:08"
   },
   "shadow": {
    "n_open": 386,
@@ -204,7 +183,7 @@
      "n_live": 47,
      "n_post_reg": 28,
      "ev": 0.7531,
-     "random_z": 4.35,
+     "random_z": 4.6,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": true
@@ -216,7 +195,7 @@
      "n_live": 5,
      "n_post_reg": 34,
      "ev": 0.7318,
-     "random_z": 2.96,
+     "random_z": 3.24,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": true
@@ -228,7 +207,7 @@
      "n_live": 45,
      "n_post_reg": 23,
      "ev": 0.7248,
-     "random_z": 3.81,
+     "random_z": 4.22,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": true
@@ -237,16 +216,16 @@
    "eta_promo": null,
    "opens_per_day": 78.9,
    "rate_days": 14,
-   "ts_utc": "2026-09-27T03:40"
+   "ts_utc": "2026-09-27T04:40"
   },
   "news": {
-   "n_24h": 576,
-   "n_hi": 3,
+   "n_24h": 594,
+   "n_hi": 2,
    "by_category": {
-    "crypto": 287,
-    "macro": 61,
+    "crypto": 300,
+    "macro": 65,
     "commodity_fx": 224,
-    "stock": 4
+    "stock": 5
    },
    "sources_green": 35,
    "sources_red": 0,
@@ -256,7 +235,7 @@
     "src": "coindesk",
     "ts": "2026-09-26T12:56:41Z"
    },
-   "run_at": "2026-09-27T04:18:01",
+   "run_at": "2026-09-27T05:18:01",
    "impact": {
     "line": "｜實證：16 類消息裡 0 類會動價格、6 類不會、10 類樣本不足(事件 n=509)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 16,
@@ -310,7 +289,7 @@
       "short": 0
      }
     ],
-    "run_at": "2026-09-27T04:09:01"
+    "run_at": "2026-09-27T05:09:01"
    }
   },
   "calendar": {
@@ -322,13 +301,13 @@
    "blackout_event": null,
    "blackout_markets": [],
    "head": null,
-   "age_h": 2.0,
+   "age_h": 3.0,
    "ts": "2026-09-27T02:20:01"
   },
   "live_shadow": {
    "window": {
     "from": "2026-09-01",
-    "to": "2026-09-27T03:45"
+    "to": "2026-09-27T04:45"
    },
    "n_closed": 95,
    "n_open": 0,
@@ -340,7 +319,7 @@
     "pf": 0.434,
     "sum_r": -47.587
    },
-   "ts": "2026-09-27T03:45",
+   "ts": "2026-09-27T04:45",
    "per": {
     "B1": {
      "n": 6,
@@ -406,12 +385,12 @@
     "funding_missing": 0
    },
    "n_open": 0,
-   "ts": "2026-09-27T04:10:01Z"
+   "ts": "2026-09-27T05:10:01Z"
   }
  },
  "north_star": {
   "ts": "2026-09-27T08:00:02",
-  "age_h": 4.3,
+  "age_h": 5.3,
   "stale": false,
   "risk_light": "red",
   "risk_why": "手動倉裸倉警報 5次(上限 0)、最大 24h 權益跌幅 55.8%(上限 20.0)、熔斷 5次(上限 1)",
@@ -477,11 +456,11 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-09-27T04:05",
+  "attendance": "supervision_state.json @ 2026-09-27T05:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
   "calendar": "calendar_board.json @ 2026-09-27T02:20:01",
-  "news": "news_board.json @ 2026-09-27T04:18:01",
+  "news": "news_board.json @ 2026-09-27T05:18:01",
   "north_star": "goal_state.json @ 2026-09-27T08:00:02",
   "rules": "brief_rules.json v1.0"
  },
