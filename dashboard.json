@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-28T23:59:38.139256+08:00",
-  "published_at": "2026-09-29T00:02:13.083483+08:00",
+  "generated_at": "2026-09-29T00:59:53.844980+08:00",
+  "published_at": "2026-09-29T01:02:24.649776+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
     "closed_trades": [],
-    "last_cycle_ts": "2026-09-28T15:58:48.994546+00:00",
+    "last_cycle_ts": "2026-09-28T16:59:53.844980+00:00",
     "stats": {
       "n": 0,
       "win_rate_pct": 0.0,
@@ -28,7 +28,7 @@
   "strat_tl": {
     "mode": "disabled",
     "open_positions": [],
-    "last_cycle_ts": "2026-09-28T15:59:38.139436+00:00",
+    "last_cycle_ts": "2026-09-28T16:58:52.412082+00:00",
     "stats": {
       "n": 2,
       "win_rate_pct": 100.0,
@@ -43,7 +43,7 @@
       "_meta": {
         "desc": "APEX 控制台熱載入配置。改此檔 <=60 秒生效，無需重新部署。硬邊界見 tama_v5.py TAMA_CONFIG_BOUNDS。",
         "updated": "2026-09-28T20:09:45+08:00",
-        "by": "set_d_cfg global.cb_auto_release_h=72.0 (D001/AI023)"
+        "by": "選礦機探針期自動下架(probe_guard)"
       },
       "b1": {
         "live_enabled": true,
@@ -186,7 +186,7 @@
             ]
           ],
           "bt_engine_ver": "2026-08-23.wfsim-fill",
-          "live_enabled": true,
+          "live_enabled": false,
           "risk_pct": 0.005,
           "leverage": 50,
           "state": "probe",
@@ -204,7 +204,9 @@
             "win": 43.1,
             "ev_cost2x": 0.6302,
             "ev_ex_topq": 0.4543
-          }
+          },
+          "revert_reason": "探針期 6 筆 EV -0.736R <= -0.50R(崩盤門檻)",
+          "reverted_at": "2026-09-29T00:20"
         }
       ],
       "pool": {
@@ -304,29 +306,52 @@
               0.4
             ]
           ]
+        },
+        {
+          "id": "AUTO_CL_VOL_DRY__0_3_VOL_R__1_5_ATR_R__1_2_BULL_TP4R",
+          "ts": "2026-09-29T00:20",
+          "verdict": "reverted_probe_guard",
+          "reason": "探針期 6 筆 EV -0.736R <= -0.50R(崩盤門檻)",
+          "stats": {
+            "n": 6,
+            "ev": -0.7363,
+            "cum_r": -4.418,
+            "last3": [
+              -1.251,
+              -0.17,
+              -1.071
+            ],
+            "probe_started": "2026-09-07T00:43",
+            "bt_ev": 1.7834,
+            "streak_mode": "tp_scaled",
+            "streak_thr": -6.0,
+            "tp_r": 4.0
+          },
+          "side": "LONG",
+          "entry": [
+            [
+              "vol_dry",
+              "<=",
+              0.3
+            ],
+            [
+              "vol_r",
+              ">=",
+              1.5
+            ],
+            [
+              "atr_r",
+              ">=",
+              1.2
+            ]
+          ]
         }
       ]
     },
     "applied": {
-      "applied_sha": "647f89149ee044a1a6196ffef7e35054e88438cb",
-      "applied_at": "2026-09-28T12:10:02.347350+00:00",
+      "applied_sha": "f0a47d3fa4f0d8f23687a971eca05a14cdf320d6",
+      "applied_at": "2026-09-28T16:20:17.800711+00:00",
       "changes": [
-        "b1.risk_pct: 0.02 -> 0.01",
-        "b1.cycle_seconds: 300 -> 60",
-        "b1.maker_wait_s: 20 -> 30",
-        "tl.live_enabled: True -> False",
-        "tl.risk_pct: 0.02 -> 0.005",
-        "tl.max_positions: 2 -> 1",
-        "tl.lock_r: 2.5 -> 0.0",
-        "tl.rr: 3.0 -> 5.0",
-        "b1.volr_thr: 1.2 -> 1.5",
-        "tl.cycle_seconds: 900 -> 60",
-        "sc.live_enabled: False -> True",
-        "sc.risk_pct: 0.01 -> 0.005",
-        "sc.s2_enabled: True -> False",
-        "sc.s3_enabled: True -> False",
-        "mrs.risk_pct: 0.0075 -> 0.00375",
-        "global.same_dir_max: 3 -> 4",
         "auto_strategies: 載入 2 個規格"
       ]
     },
@@ -3317,6 +3342,10 @@
     },
     {
       "ts": "2026-09-28T15:47:21.838339+00:00",
+      "idx": 57.54
+    },
+    {
+      "ts": "2026-09-28T16:47:22.105524+00:00",
       "idx": 57.54
     }
   ],
