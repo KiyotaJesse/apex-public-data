@@ -1,6 +1,6 @@
 {
- "ts": "2026-09-28T08:10:05",
- "data_ts": "2026-09-28T08:10:04",
+ "ts": "2026-09-28T08:20:05",
+ "data_ts": "2026-09-28T08:20:02",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
@@ -12,12 +12,11 @@
    "你有事項今天到期",
    "巢健康度 57 低於 85",
    "你有事項 0 天內到期",
-   "待決事項 0 天內自動裁決",
    "SLO 超支 1 項",
    "有 40 件行動項目逾期(我的)"
   ],
   "n_red": 2,
-  "n_amber": 5
+  "n_amber": 4
  },
  "numbers": [
   {
@@ -69,83 +68,48 @@
   }
  ],
  "auto": {
-  "decided_24h": 13,
+  "decided_24h": 6,
   "decided": [
    {
-    "id": "D019",
-    "q": "非加密 美股 市場組合 cS_vwap_dev>=2+cvd_z<=-1+impact>=1|TP6R 過五關+隨機基準",
-    "choice": "A"
-   },
-   {
-    "id": "D020",
-    "q": "非加密 美股 市場組合 cS_brk_low25<0+coil>=0.6+atr_r>=1.2|TP4R 過五關+隨機基",
-    "choice": "A"
-   },
-   {
-    "id": "D046",
-    "q": "E1 重複事件: slo/task_vela_nightly 近 30 天叫了 102 次(16 次被限流) 要不要建檢",
-    "choice": "A"
-   },
-   {
-    "id": "D047",
-    "q": "E1 重複事件: formation_radar/__burst__ 近 30 天叫了 66 次(66 次被限流) 要不",
-    "choice": "A"
-   },
-   {
-    "id": "D048",
-    "q": "E1 重複事件: kline15_collect/kline15_parity_fail 近 30 天叫了 25 次(2",
-    "choice": "A"
-   },
-   {
-    "id": "D106",
-    "q": "要不要翻開 LIVE_SHADOW_NC=1(役每小時多記一本美股前瞻影子帳, 只記帳不下單, 每輪 +8s)? --d",
-    "choice": "A"
-   },
-   {
-    "id": "D113",
-    "q": "cluster_stats.deff_max『物理上界』註解錯(M26): 4 格 inflation 超過它; 正解是",
-    "choice": "A"
-   },
-   {
-    "id": "D115",
-    "q": "墳場要不要新增兩條 advise 簽名(10/01 升 block): astro_calendar_verdict(月",
-    "choice": "A"
-   },
-   {
-    "id": "D123",
-    "q": "停用條件觸發: MRS 的規則 MRS_dd_p95 -- dd_30d_vs_backtest_p95 現值 0.25",
-    "choice": "A"
-   },
-   {
-    "id": "D124",
-    "q": "BingX 逐筆成交(/quote/trades, 帶 isBuyerMaker, 無歷史)要不要開蒐集(main 前 ",
-    "choice": "A"
-   },
-   {
-    "id": "D128",
-    "q": "fix3 熔斷歸屬校正: 峰值地板 _CB_MANUAL_SEED3.peak_floor 取 308.9656(虛增前",
-    "choice": "A"
-   },
-   {
-    "id": "D130",
-    "q": "WO-127 近礦通道要不要開 p95 挑法＋血緣代謝(解 610/600 撞頂, 缺口#3 可偵測下限)? 代謝年齡關",
-    "choice": "A"
-   },
-   {
-    "id": "D132",
-    "q": "WO-129 影子側 degraded 登記規則 SHADOW_DEGRADED_REG 要不要開(degraded 登",
+    "id": "D021",
+    "q": "礦機每 4h 跑一次吃掉全巢 85% CPU(4842/5669 分/月)且 ROI 0.109 倒數第二, 要不要降頻",
     "choice": "B"
+   },
+   {
+    "id": "D053",
+    "q": "影子晉升: cL_impact>=1.5+cvd_z>=1+vol_dry<=0.4|bull|TP4R 在 crypt",
+    "choice": "B"
+   },
+   {
+    "id": "D056",
+    "q": "影子晉升: cL_impact>=1.5+cvd_z>=1+vol_dry<=0.4|bull|TP4R@lt20 在 ",
+    "choice": "B"
+   },
+   {
+    "id": "D141",
+    "q": "Deadloop 已退役『籃』的 check 要不要暫停(健康分每天白扣 6 分)?",
+    "choice": "A"
+   },
+   {
+    "id": "D149",
+    "q": "[自治藍圖 R5B-01] D127 復機保護期風險減半會在 C1 生效前過期（9/24 10:55 起 7 天）",
+    "choice": "A"
+   },
+   {
+    "id": "D151",
+    "q": "[自治藍圖 C3/R4-4] 誤派清理：12 件 Claude 做不到的依能力重派、手動倉 5+7 件結案",
+    "choice": "A"
    }
   ],
   "repaired_24h": 0,
-  "crit_24h": 4,
+  "crit_24h": 1,
   "next": {
-   "id": "D021",
-   "due": "2026-09-28",
-   "q": "礦機每 4h 跑一次吃掉全巢 85% CPU(4842/5669 分/月)且 ROI 0.109 倒數第二, 要不要降頻或縮候選空間",
-   "rec": "B"
+   "id": "D064",
+   "due": "2026-09-30",
+   "q": "火力台隨機基準 faction.random_spec 讀 rv.COST_BPS(中位 17.1bps), 而 rq.simulate 讀",
+   "rec": "A"
   },
-  "line": "近 24 小時: 自動裁決 13 件、自動修復/回滾 0 件。下一個自動到期 D021(2026-09-28), 沒人異議就採建議 B。成形雷達: 成形中 249 檔／已成形 206 檔(全條件 15)(跨 5 市場; 宇宙 408 檔, 休市排除 277)。預言帳：2312 則前瞻在等結算、持牌 6／預言者 209。消息：近 24h 610 則／高重要 2 則／最新一則「Stock futures slip after winning week on」｜實證：16 類消息裡 0 類會動價格、6 類不會、10 類樣本不足(事件 n=509)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 25 則發言、提到 EWT×10／GEOPOL×5／WTI×4、淨多空 +0.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 317 單／已結 1801 單(live 679＋登記日回填 1122)(另樣本內回填 6 單不計成績)／76 個規格在追；最接近晉升的 cL_impact>=1.5+cvd_z>=1+vol_(crypto) 已達 n=71 EV=+0.806R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=28 EV-0.881、SC1 n=5 EV-1.065、SC3 n=40 EV-0.305；最差 SC1(-1.065R)、最好 TL(+0.040R)；合計 95 筆 EV-0.501R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=0、淨EV 無、可交易率 無事件(0/0)。",
+  "line": "近 24 小時: 自動裁決 6 件、自動修復/回滾 0 件。下一個自動到期 D064(2026-09-30), 沒人異議就採建議 A。成形雷達: 成形中 249 檔／已成形 206 檔(全條件 15)(跨 5 市場; 宇宙 408 檔, 休市排除 277)。預言帳：2312 則前瞻在等結算、持牌 6／預言者 209。消息：近 24h 606 則／高重要 4 則／最新一則「Minutes of the Monetary Policy Meeting o」｜實證：16 類消息裡 0 類會動價格、6 類不會、10 類樣本不足(事件 n=509)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 25 則發言、提到 EWT×10／GEOPOL×5／WTI×4、淨多空 +0.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 317 單／已結 1801 單(live 679＋登記日回填 1122)(另樣本內回填 6 單不計成績)／76 個規格在追；最接近晉升的 cL_impact>=1.5+cvd_z>=1+vol_(crypto) 已達 n=71 EV=+0.806R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=28 EV-0.881、SC1 n=5 EV-1.065、SC3 n=40 EV-0.305；最差 SC1(-1.065R)、最好 TL(+0.040R)；合計 95 筆 EV-0.501R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=0、淨EV 無、可交易率 無事件(0/0)。",
   "radar": {
    "forming": 249,
    "fired": 206,
@@ -160,7 +124,7 @@
    "universe_fresh": 408,
    "stale_excluded": 277,
    "ts_utc": "2026-09-27T23:35",
-   "age_h": 0.6
+   "age_h": 0.8
   },
   "forecast": {
    "pending": 2312,
@@ -229,23 +193,23 @@
    "ts_utc": "2026-09-27T23:40"
   },
   "news": {
-   "n_24h": 610,
-   "n_hi": 2,
+   "n_24h": 606,
+   "n_hi": 4,
    "by_category": {
-    "macro": 62,
+    "commodity_fx": 233,
+    "macro": 63,
     "stock": 10,
-    "crypto": 306,
-    "commodity_fx": 232
+    "crypto": 300
    },
    "sources_green": 35,
    "sources_red": 0,
    "top": {
-    "t": "Stock futures slip after winning week on Wall Street: Live updates",
-    "imp": 70,
-    "src": "cnbc_top",
-    "ts": "2026-09-27T22:17:51Z"
+    "t": "Minutes of the Monetary Policy Meeting on July 30 and 31, 2026",
+    "imp": 74,
+    "src": "boj_news",
+    "ts": "2026-09-27T23:50:00Z"
    },
-   "run_at": "2026-09-28T00:03:02",
+   "run_at": "2026-09-28T00:18:02",
    "impact": {
     "line": "｜實證：16 類消息裡 0 類會動價格、6 類不會、10 類樣本不足(事件 n=509)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 16,
@@ -311,7 +275,7 @@
    "blackout_event": null,
    "blackout_markets": [],
    "head": null,
-   "age_h": 1.8,
+   "age_h": 2.0,
    "ts": "2026-09-27T22:20:01"
   },
   "live_shadow": {
@@ -400,7 +364,7 @@
  },
  "north_star": {
   "ts": "2026-09-28T08:00:02",
-  "age_h": 0.2,
+  "age_h": 0.3,
   "stale": false,
   "risk_light": "red",
   "risk_why": "手動倉裸倉警報 6次(上限 0)、最大 24h 權益跌幅 55.8%(上限 20.0)、熔斷 5次(上限 1)",
@@ -470,7 +434,7 @@
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
   "calendar": "calendar_board.json @ 2026-09-27T22:20:01",
-  "news": "news_board.json @ 2026-09-28T00:03:02",
+  "news": "news_board.json @ 2026-09-28T00:18:02",
   "north_star": "goal_state.json @ 2026-09-28T08:00:02",
   "rules": "brief_rules.json v1.0"
  },
