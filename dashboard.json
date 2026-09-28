@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-28T19:58:41.377675+08:00",
-  "published_at": "2026-09-28T20:01:24.135823+08:00",
+  "generated_at": "2026-09-28T20:58:40.683886+08:00",
+  "published_at": "2026-09-28T21:01:36.660566+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
     "closed_trades": [],
-    "last_cycle_ts": "2026-09-28T11:57:58.735564+00:00",
+    "last_cycle_ts": "2026-09-28T12:58:40.683886+00:00",
     "stats": {
       "n": 0,
       "win_rate_pct": 0.0,
@@ -28,7 +28,7 @@
   "strat_tl": {
     "mode": "disabled",
     "open_positions": [],
-    "last_cycle_ts": "2026-09-28T11:58:41.377865+00:00",
+    "last_cycle_ts": "2026-09-28T12:57:50.309789+00:00",
     "stats": {
       "n": 2,
       "win_rate_pct": 100.0,
@@ -42,8 +42,8 @@
     "current": {
       "_meta": {
         "desc": "APEX 控制台熱載入配置。改此檔 <=60 秒生效，無需重新部署。硬邊界見 tama_v5.py TAMA_CONFIG_BOUNDS。",
-        "updated": "2026-09-22T23:51:41+08:00",
-        "by": "恢復 IMPACT 規格 (Jesse 2026-09-22, 探針守衛誤殺)"
+        "updated": "2026-09-28T20:09:45+08:00",
+        "by": "set_d_cfg global.cb_auto_release_h=72.0 (D001/AI023)"
       },
       "b1": {
         "live_enabled": true,
@@ -72,7 +72,8 @@
       "global": {
         "same_dir_max": 4,
         "total_drawdown_halt_pct": 0.25,
-        "killswitch": false
+        "killswitch": false,
+        "cb_auto_release_h": 72.0
       },
       "rs": {
         "live_enabled": false,
@@ -307,8 +308,8 @@
       ]
     },
     "applied": {
-      "applied_sha": "d8941fa2c91e0fa9bbc5740f5533645043dfb899",
-      "applied_at": "2026-09-28T03:46:40.667814+00:00",
+      "applied_sha": "647f89149ee044a1a6196ffef7e35054e88438cb",
+      "applied_at": "2026-09-28T12:10:02.347350+00:00",
       "changes": [
         "b1.risk_pct: 0.02 -> 0.01",
         "b1.cycle_seconds: 300 -> 60",
@@ -3300,6 +3301,10 @@
     },
     {
       "ts": "2026-09-28T11:47:10.144510+00:00",
+      "idx": 57.78
+    },
+    {
+      "ts": "2026-09-28T12:47:14.344842+00:00",
       "idx": 57.78
     }
   ],
