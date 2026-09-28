@@ -1,6 +1,6 @@
 {
- "ts": "2026-09-28T21:20:05",
- "data_ts": "2026-09-28T21:20:01",
+ "ts": "2026-09-28T22:20:04",
+ "data_ts": "2026-09-28T22:20:01",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
@@ -9,14 +9,12 @@
   "why": "巢健康度 58 低於 70",
   "fired": [
    "巢健康度 58 低於 70",
-   "你有事項今天到期",
    "巢健康度 58 低於 85",
-   "你有事項 0 天內到期",
    "SLO 超支 1 項",
-   "有 16 件行動項目逾期(我的)"
+   "有 9 件行動項目逾期(我的)"
   ],
-  "n_red": 2,
-  "n_amber": 4
+  "n_red": 1,
+  "n_amber": 3
  },
  "numbers": [
   {
@@ -24,14 +22,14 @@
    "v": "58",
    "unit": "/100",
    "tone": "red",
-   "sub": "扣分: 逾期行動 16 件 -10、SLO 超支 影 -10"
+   "sub": "扣分: 逾期行動 9 件 -10、SLO 超支 影 -10"
   },
   {
    "k": "本月策略 R",
-   "v": "+5.07",
+   "v": "+4.00",
    "unit": "R",
    "tone": "green",
-   "sub": "22 筆 / 09-18~09-27"
+   "sub": "23 筆 / 09-18~09-28"
   },
   {
    "k": "蟻口出勤",
@@ -42,14 +40,6 @@
   }
  ],
  "jesse": [
-  {
-   "id": "AI037",
-   "title": "D 端帳本補 sig_price 欄位(進場訊號價), 讓衡量得到滑價",
-   "due": "2026-09-28",
-   "due_in": 0,
-   "late": false,
-   "howto": "衡(exec_quality.py)已備好: 帳本任一筆出現 sig_price/limit_price/entry_ref 就自動開始算滑"
-  },
   {
    "id": "AI045",
    "title": "名冊 7 項補 output 結果檔路徑(task_livediag/scanner/weekly_opt/throne x3/board_",
@@ -101,11 +91,11 @@
    "q": "火力台隨機基準 faction.random_spec 讀 rv.COST_BPS(中位 17.1bps), 而 rq.simulate 讀",
    "rec": "A"
   },
-  "line": "近 24 小時: 自動裁決 6 件、自動修復/回滾 0 件。下一個自動到期 D064(2026-09-30), 沒人異議就採建議 A。成形雷達: 成形中 248 檔／已成形 246 檔(全條件 25)(跨 5 市場; 宇宙 405 檔, 休市排除 276)。預言帳：2374 則前瞻在等結算、持牌 6／預言者 209。消息：近 24h 916 則／高重要 8 則／最新一則「Chainlink updates its crypto bridge tech」｜實證：16 類消息裡 0 類會動價格、6 類不會、10 類樣本不足(事件 n=509)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 48 則發言、提到 ANTHROPIC×22／GOLD×8／TARIFF×7、淨多空 +0.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 304 單／已結 1823 單(live 701＋登記日回填 1122)(另樣本內回填 6 單不計成績)／77 個規格在追；最接近晉升的 cL_impact>=1.5+cvd_z>=1+vol_(crypto) 已達 n=73 EV=+0.797R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=28 EV-0.881、SC1 n=5 EV-1.065、SC3 n=40 EV-0.305；最差 SC1(-1.065R)、最好 TL(+0.040R)；合計 95 筆 EV-0.501R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=0、淨EV 無、可交易率 無事件(0/0)。",
+  "line": "近 24 小時: 自動裁決 6 件、自動修復/回滾 0 件。下一個自動到期 D064(2026-09-30), 沒人異議就採建議 A。成形雷達: 成形中 288 檔／已成形 290 檔(全條件 51)(跨 5 市場; 宇宙 405 檔, 休市排除 276)。預言帳：2369 則前瞻在等結算、持牌 6／預言者 209。消息：近 24h 910 則／高重要 7 則／最新一則「Chainlink updates its crypto bridge tech」｜實證：16 類消息裡 0 類會動價格、6 類不會、10 類樣本不足(事件 n=509)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 45 則發言、提到 ANTHROPIC×22／GOLD×9／TARIFF×8、淨多空 +0.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 306 單／已結 1823 單(live 701＋登記日回填 1122)(另樣本內回填 6 單不計成績)／77 個規格在追；最接近晉升的 cL_impact>=1.5+cvd_z>=1+vol_(crypto) 已達 n=73 EV=+0.797R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=28 EV-0.881、SC1 n=5 EV-1.065、SC3 n=40 EV-0.305；最差 SC1(-1.065R)、最好 TL(+0.040R)；合計 95 筆 EV-0.501R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=0、淨EV 無、可交易率 無事件(0/0)。",
   "radar": {
-   "forming": 248,
-   "fired": 246,
-   "fired_full": 25,
+   "forming": 288,
+   "fired": 290,
+   "fired_full": 51,
    "markets": [
     "commodity",
     "crypto",
@@ -115,19 +105,19 @@
    ],
    "universe_fresh": 405,
    "stale_excluded": 276,
-   "ts_utc": "2026-09-28T12:35",
+   "ts_utc": "2026-09-28T13:35",
    "age_h": 0.8
   },
   "forecast": {
-   "pending": 2374,
+   "pending": 2369,
    "licensed": 6,
    "forecasters": 209,
-   "n_forecasts": 17963,
-   "n_resolved": 15589,
-   "asOf": "2026-09-28T12:40:08"
+   "n_forecasts": 18042,
+   "n_resolved": 15673,
+   "asOf": "2026-09-28T13:40:07"
   },
   "shadow": {
-   "n_open": 304,
+   "n_open": 306,
    "n_closed": 1823,
    "n_live": 701,
    "n_post_reg": 1122,
@@ -149,7 +139,7 @@
      "n_live": 50,
      "n_post_reg": 23,
      "ev": 0.797,
-     "random_z": 4.88,
+     "random_z": 4.78,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": true
@@ -161,7 +151,7 @@
      "n_live": 53,
      "n_post_reg": 28,
      "ev": 0.7934,
-     "random_z": 5.11,
+     "random_z": 4.98,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": true
@@ -173,25 +163,25 @@
      "n_live": 6,
      "n_post_reg": 34,
      "ev": 0.7076,
-     "random_z": 3.2,
+     "random_z": 3.22,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": true
     }
    ],
    "eta_promo": null,
-   "opens_per_day": 76.2,
+   "opens_per_day": 75.9,
    "rate_days": 14,
-   "ts_utc": "2026-09-28T12:40"
+   "ts_utc": "2026-09-28T13:40"
   },
   "news": {
-   "n_24h": 916,
-   "n_hi": 8,
+   "n_24h": 910,
+   "n_hi": 7,
    "by_category": {
-    "crypto": 415,
-    "commodity_fx": 358,
-    "stock": 51,
-    "macro": 92
+    "crypto": 413,
+    "commodity_fx": 350,
+    "stock": 61,
+    "macro": 86
    },
    "sources_green": 35,
    "sources_red": 0,
@@ -201,7 +191,7 @@
     "src": "coindesk",
     "ts": "2026-09-28T12:30:00Z"
    },
-   "run_at": "2026-09-28T13:18:01",
+   "run_at": "2026-09-28T14:18:01",
    "impact": {
     "line": "｜實證：16 類消息裡 0 類會動價格、6 類不會、10 類樣本不足(事件 n=509)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 16,
@@ -215,8 +205,8 @@
     "ts": "2026-09-26T20:30:13"
    },
    "trump": {
-    "line": "｜川普：近 24h 48 則發言、提到 ANTHROPIC×22／GOLD×8／TARIFF×7、淨多空 +0.0",
-    "n_24h": 48,
+    "line": "｜川普：近 24h 45 則發言、提到 ANTHROPIC×22／GOLD×9／TARIFF×8、淨多空 +0.0",
+    "n_24h": 45,
     "net_long_24h": 0.0,
     "top_symbols": [
      {
@@ -228,52 +218,52 @@
      },
      {
       "symbol": "GOLD",
-      "n": 8,
-      "net": 3.3,
-      "long": 8,
+      "n": 9,
+      "net": 3.6,
+      "long": 9,
       "short": 0
      },
      {
       "symbol": "TARIFF",
-      "n": 7,
+      "n": 8,
       "net": 0.0,
       "long": 0,
       "short": 0
      },
      {
       "symbol": "FXI",
-      "n": 7,
-      "net": -2.92,
+      "n": 8,
+      "net": -3.22,
       "long": 0,
-      "short": 7
+      "short": 8
      },
      {
-      "symbol": "WTI",
-      "n": 5,
+      "symbol": "EWT",
+      "n": 3,
       "net": 0.0,
       "long": 0,
       "short": 0
      }
     ],
-    "run_at": "2026-09-28T13:09:01"
+    "run_at": "2026-09-28T14:09:01"
    }
   },
   "calendar": {
    "n_today": 0,
    "n_tomorrow": 1,
-   "n_next7d": 11,
+   "n_next7d": 12,
    "n_week_high": 3,
    "in_blackout": false,
    "blackout_event": null,
    "blackout_markets": [],
    "head": null,
-   "age_h": 3.0,
-   "ts": "2026-09-28T10:20:02"
+   "age_h": 0.0,
+   "ts": "2026-09-28T14:20:02"
   },
   "live_shadow": {
    "window": {
     "from": "2026-09-01",
-    "to": "2026-09-28T12:45"
+    "to": "2026-09-28T13:45"
    },
    "n_closed": 95,
    "n_open": 0,
@@ -285,7 +275,7 @@
     "pf": 0.434,
     "sum_r": -47.587
    },
-   "ts": "2026-09-28T12:45",
+   "ts": "2026-09-28T13:45",
    "per": {
     "B1": {
      "n": 6,
@@ -351,12 +341,12 @@
     "funding_missing": 0
    },
    "n_open": 0,
-   "ts": "2026-09-28T13:10:02Z"
+   "ts": "2026-09-28T14:10:04Z"
   }
  },
  "north_star": {
   "ts": "2026-09-28T08:00:02",
-  "age_h": 13.3,
+  "age_h": 14.3,
   "stale": false,
   "risk_light": "red",
   "risk_why": "手動倉裸倉警報 6次(上限 0)、最大 24h 權益跌幅 55.8%(上限 20.0)、熔斷 5次(上限 1)",
@@ -422,11 +412,11 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-09-28T13:05",
+  "attendance": "supervision_state.json @ 2026-09-28T14:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
-  "calendar": "calendar_board.json @ 2026-09-28T10:20:02",
-  "news": "news_board.json @ 2026-09-28T13:18:01",
+  "calendar": "calendar_board.json @ 2026-09-28T14:20:02",
+  "news": "news_board.json @ 2026-09-28T14:18:01",
   "north_star": "goal_state.json @ 2026-09-28T08:00:02",
   "rules": "brief_rules.json v1.0"
  },
