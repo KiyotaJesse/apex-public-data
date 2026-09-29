@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-29T23:13:42.458511+08:00",
-  "published_at": "2026-09-29T23:16:51.377606+08:00",
+  "generated_at": "2026-09-29T23:50:48.207891+08:00",
+  "published_at": "2026-09-29T23:51:39.524870+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
     "closed_trades": [],
-    "last_cycle_ts": "2026-09-29T15:13:42.458511+00:00",
+    "last_cycle_ts": "2026-09-29T15:50:48.207891+00:00",
     "stats": {
       "n": 0,
       "win_rate_pct": 0.0,
@@ -18,7 +18,7 @@
   "risk_circuit_breaker": {
     "killswitch": false,
     "daily_loss_limit_hit": false,
-    "daily_pnl_usdt": -0.8067,
+    "daily_pnl_usdt": -1.7582,
     "daily_pnl_date": "2026-09-29"
   },
   "feature_flags": {
@@ -28,7 +28,7 @@
   "strat_tl": {
     "mode": "disabled",
     "open_positions": [],
-    "last_cycle_ts": "2026-09-29T15:12:40.643581+00:00",
+    "last_cycle_ts": "2026-09-29T15:49:51.882749+00:00",
     "stats": {
       "n": 2,
       "win_rate_pct": 100.0,
@@ -350,10 +350,24 @@
     },
     "applied": {
       "applied_sha": "a7ef2d90220178bc545f2e0da588cc1b129a239d",
-      "applied_at": "2026-09-29T14:46:10.194351+00:00",
+      "applied_at": "2026-09-29T15:22:07.589767+00:00",
       "changes": [
-        "b1.risk_pct: 0.01 -> 0.0025",
-        "sc.risk_pct: 0.005 -> 0.00125",
+        "b1.risk_pct: 0.02 -> 0.0025",
+        "b1.cycle_seconds: 300 -> 60",
+        "b1.maker_wait_s: 20 -> 30",
+        "tl.live_enabled: True -> False",
+        "tl.risk_pct: 0.02 -> 0.005",
+        "tl.max_positions: 2 -> 1",
+        "tl.lock_r: 2.5 -> 0.0",
+        "tl.rr: 3.0 -> 5.0",
+        "b1.volr_thr: 1.2 -> 1.5",
+        "tl.cycle_seconds: 900 -> 60",
+        "sc.live_enabled: False -> True",
+        "sc.risk_pct: 0.01 -> 0.00125",
+        "sc.s2_enabled: True -> False",
+        "sc.s3_enabled: True -> False",
+        "mrs.risk_pct: 0.0075 -> 0.00375",
+        "global.same_dir_max: 3 -> 4",
         "auto_strategies: 載入 2 個規格"
       ]
     },
@@ -3437,6 +3451,10 @@
     {
       "ts": "2026-09-29T14:48:37.051459+00:00",
       "idx": 60.81
+    },
+    {
+      "ts": "2026-09-29T15:22:11.470642+00:00",
+      "idx": 78.27
     }
   ],
   "trades_public": [
