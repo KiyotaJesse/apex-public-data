@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-29T22:04:35.549726+08:00",
-  "published_at": "2026-09-29T22:06:56.094768+08:00",
+  "generated_at": "2026-09-29T23:04:20.673637+08:00",
+  "published_at": "2026-09-29T23:07:08.793540+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
     "closed_trades": [],
-    "last_cycle_ts": "2026-09-29T14:04:35.549726+00:00",
+    "last_cycle_ts": "2026-09-29T15:04:20.673637+00:00",
     "stats": {
       "n": 0,
       "win_rate_pct": 0.0,
@@ -28,7 +28,7 @@
   "strat_tl": {
     "mode": "disabled",
     "open_positions": [],
-    "last_cycle_ts": "2026-09-29T14:03:43.832137+00:00",
+    "last_cycle_ts": "2026-09-29T15:03:18.732576+00:00",
     "stats": {
       "n": 2,
       "win_rate_pct": 100.0,
@@ -42,12 +42,12 @@
     "current": {
       "_meta": {
         "desc": "APEX 控制台熱載入配置。改此檔 <=60 秒生效，無需重新部署。硬邊界見 tama_v5.py TAMA_CONFIG_BOUNDS。",
-        "updated": "2026-09-28T20:09:45+08:00",
-        "by": "選礦機探針期自動下架(probe_guard)"
+        "updated": "2026-09-29T22:46:07+08:00",
+        "by": "set_d_cfg auto:AUTO_CL_IMPACT__1_5_CVD_Z__1_VOL_DRY__0_4_BULL_TP4R.risk_pct=0.00125 (D041)"
       },
       "b1": {
         "live_enabled": true,
-        "risk_pct": 0.01,
+        "risk_pct": 0.0025,
         "leverage": 50,
         "max_positions": 5,
         "daily_loss_limit_pct": 0.1,
@@ -84,7 +84,7 @@
       },
       "sc": {
         "live_enabled": true,
-        "risk_pct": 0.005,
+        "risk_pct": 0.00125,
         "leverage": 50,
         "max_positions": 4,
         "cycle_seconds": 900,
@@ -135,7 +135,7 @@
           ],
           "bt_engine_ver": "2026-08-23.wfsim-fill",
           "live_enabled": true,
-          "risk_pct": 0.005,
+          "risk_pct": 0.00125,
           "leverage": 50,
           "state": "probe",
           "probe_started": "2026-09-01T15:12",
@@ -349,9 +349,11 @@
       ]
     },
     "applied": {
-      "applied_sha": "f0a47d3fa4f0d8f23687a971eca05a14cdf320d6",
-      "applied_at": "2026-09-28T16:20:17.800711+00:00",
+      "applied_sha": "a7ef2d90220178bc545f2e0da588cc1b129a239d",
+      "applied_at": "2026-09-29T14:46:10.194351+00:00",
       "changes": [
+        "b1.risk_pct: 0.01 -> 0.0025",
+        "sc.risk_pct: 0.005 -> 0.00125",
         "auto_strategies: 載入 2 個規格"
       ]
     },
@@ -3431,6 +3433,10 @@
     {
       "ts": "2026-09-29T13:48:33.349775+00:00",
       "idx": 54.95
+    },
+    {
+      "ts": "2026-09-29T14:48:37.051459+00:00",
+      "idx": 60.81
     }
   ],
   "trades_public": [
