@@ -1,6 +1,6 @@
 {
- "ts": "2026-09-29T20:20:05",
- "data_ts": "2026-09-29T20:20:02",
+ "ts": "2026-09-29T21:20:06",
+ "data_ts": "2026-09-29T21:20:02",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
@@ -37,8 +37,8 @@
   },
   {
    "k": "蟻口出勤",
-   "v": "64/144",
-   "unit": "(44%)",
+   "v": "65/144",
+   "unit": "(45%)",
    "tone": "red",
    "sub": "紅燈 12 隻: 決策知識庫同步(Noti、Time Machine、異地備份蟻(時光機 ->"
   }
@@ -72,11 +72,11 @@
    "q": "火力台隨機基準 faction.random_spec 讀 rv.COST_BPS(中位 17.1bps), 而 rq.simulate 讀",
    "rec": "A"
   },
-  "line": "近 24 小時: 自動裁決 0 件、自動修復/回滾 1 件。下一個自動到期 D064(2026-09-30), 沒人異議就採建議 A。成形雷達: 成形中 104 檔／已成形 206 檔(全條件 30)(跨 5 市場; 宇宙 396 檔, 休市排除 285)。預言帳：2144 則前瞻在等結算、持牌 7／預言者 209。消息：近 24h 974 則／高重要 18 則／最新一則「8-K - HAIN CELESTIAL GROUP INC (00009104」｜實證：16 類消息裡 0 類會動價格、6 類不會、10 類樣本不足(事件 n=509)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 25 則發言、提到 ANTHROPIC×6／TARIFF×5／EWT×4、淨多空 +0.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 310 單／已結 1893 單(live 771＋登記日回填 1122)(另樣本內回填 6 單不計成績)／77 個規格在追；最接近晉升的 cL_impact>=1.5+cvd_z>=1+vol_(crypto) 已達 n=73 EV=+0.797R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=28 EV-0.881、SC1 n=5 EV-1.065、SC3 n=40 EV-0.305；最差 SC1(-1.065R)、最好 TL(+0.040R)；合計 95 筆 EV-0.501R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=0、淨EV 無、可交易率 無事件(0/0)。",
+  "line": "近 24 小時: 自動裁決 0 件、自動修復/回滾 1 件。下一個自動到期 D064(2026-09-30), 沒人異議就採建議 A。成形雷達: 成形中 124 檔／已成形 210 檔(全條件 44)(跨 5 市場; 宇宙 396 檔, 休市排除 285)。預言帳：2148 則前瞻在等結算、持牌 5／預言者 209。消息：近 24h 1001 則／高重要 18 則／最新一則「8-K - HAIN CELESTIAL GROUP INC (00009104」｜實證：16 類消息裡 0 類會動價格、6 類不會、10 類樣本不足(事件 n=509)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 26 則發言、提到 ANTHROPIC×6／TARIFF×5／EWT×4、淨多空 +0.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 308 單／已結 1895 單(live 773＋登記日回填 1122)(另樣本內回填 6 單不計成績)／77 個規格在追；最接近晉升的 cL_impact>=1.5+cvd_z>=1+vol_(crypto) 已達 n=73 EV=+0.797R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=28 EV-0.881、SC1 n=5 EV-1.065、SC3 n=40 EV-0.305；最差 SC1(-1.065R)、最好 TL(+0.040R)；合計 95 筆 EV-0.501R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=0、淨EV 無、可交易率 無事件(0/0)。",
   "radar": {
-   "forming": 104,
-   "fired": 206,
-   "fired_full": 30,
+   "forming": 124,
+   "fired": 210,
+   "fired_full": 44,
    "markets": [
     "commodity",
     "crypto",
@@ -86,21 +86,21 @@
    ],
    "universe_fresh": 396,
    "stale_excluded": 285,
-   "ts_utc": "2026-09-29T11:35",
+   "ts_utc": "2026-09-29T12:35",
    "age_h": 0.8
   },
   "forecast": {
-   "pending": 2144,
-   "licensed": 7,
+   "pending": 2148,
+   "licensed": 5,
    "forecasters": 209,
-   "n_forecasts": 19535,
-   "n_resolved": 17391,
-   "asOf": "2026-09-29T11:40:08"
+   "n_forecasts": 19599,
+   "n_resolved": 17451,
+   "asOf": "2026-09-29T12:40:07"
   },
   "shadow": {
-   "n_open": 310,
-   "n_closed": 1893,
-   "n_live": 771,
+   "n_open": 308,
+   "n_closed": 1895,
+   "n_live": 773,
    "n_post_reg": 1122,
    "n_backfill": 6,
    "n_specs": 77,
@@ -120,7 +120,7 @@
      "n_live": 50,
      "n_post_reg": 23,
      "ev": 0.797,
-     "random_z": 4.73,
+     "random_z": 4.58,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": true
@@ -132,7 +132,7 @@
      "n_live": 59,
      "n_post_reg": 28,
      "ev": 0.7509,
-     "random_z": 4.51,
+     "random_z": 4.67,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": true
@@ -144,7 +144,7 @@
      "n_live": 6,
      "n_post_reg": 34,
      "ev": 0.7076,
-     "random_z": 3.09,
+     "random_z": 3.0,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": true
@@ -153,16 +153,16 @@
    "eta_promo": null,
    "opens_per_day": 79.2,
    "rate_days": 14,
-   "ts_utc": "2026-09-29T11:40"
+   "ts_utc": "2026-09-29T12:40"
   },
   "news": {
-   "n_24h": 974,
+   "n_24h": 1001,
    "n_hi": 18,
    "by_category": {
-    "stock": 132,
-    "crypto": 408,
-    "macro": 118,
-    "commodity_fx": 316
+    "stock": 129,
+    "crypto": 416,
+    "macro": 124,
+    "commodity_fx": 332
    },
    "sources_green": 35,
    "sources_red": 0,
@@ -172,7 +172,7 @@
     "src": "sec_edgar_8k",
     "ts": "2026-09-28T20:16:05Z"
    },
-   "run_at": "2026-09-29T12:18:02",
+   "run_at": "2026-09-29T13:18:02",
    "impact": {
     "line": "｜實證：16 類消息裡 0 類會動價格、6 類不會、10 類樣本不足(事件 n=509)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 16,
@@ -186,8 +186,8 @@
     "ts": "2026-09-26T20:30:13"
    },
    "trump": {
-    "line": "｜川普：近 24h 25 則發言、提到 ANTHROPIC×6／TARIFF×5／EWT×4、淨多空 +0.0",
-    "n_24h": 25,
+    "line": "｜川普：近 24h 26 則發言、提到 ANTHROPIC×6／TARIFF×5／EWT×4、淨多空 +0.0",
+    "n_24h": 26,
     "net_long_24h": 0,
     "top_symbols": [
      {
@@ -226,7 +226,7 @@
       "short": 0
      }
     ],
-    "run_at": "2026-09-29T12:09:02"
+    "run_at": "2026-09-29T13:09:02"
    }
   },
   "calendar": {
@@ -238,13 +238,13 @@
    "blackout_event": null,
    "blackout_markets": [],
    "head": null,
-   "age_h": 2.0,
+   "age_h": 3.0,
    "ts": "2026-09-29T10:20:02"
   },
   "live_shadow": {
    "window": {
     "from": "2026-09-01",
-    "to": "2026-09-29T11:45"
+    "to": "2026-09-29T12:45"
    },
    "n_closed": 95,
    "n_open": 0,
@@ -256,7 +256,7 @@
     "pf": 0.434,
     "sum_r": -47.587
    },
-   "ts": "2026-09-29T11:45",
+   "ts": "2026-09-29T12:45",
    "per": {
     "B1": {
      "n": 6,
@@ -322,12 +322,12 @@
     "funding_missing": 0
    },
    "n_open": 0,
-   "ts": "2026-09-29T12:10:02Z"
+   "ts": "2026-09-29T13:10:02Z"
   }
  },
  "north_star": {
   "ts": "2026-09-29T08:00:03",
-  "age_h": 12.3,
+  "age_h": 13.3,
   "stale": false,
   "risk_light": "red",
   "risk_why": "手動倉裸倉警報 6次(上限 0)、最大 24h 權益跌幅 55.8%(上限 20.0)、熔斷 5次(上限 1)",
@@ -393,11 +393,11 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-09-29T12:05",
+  "attendance": "supervision_state.json @ 2026-09-29T13:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
   "calendar": "calendar_board.json @ 2026-09-29T10:20:02",
-  "news": "news_board.json @ 2026-09-29T12:18:02",
+  "news": "news_board.json @ 2026-09-29T13:18:02",
   "north_star": "goal_state.json @ 2026-09-29T08:00:03",
   "rules": "brief_rules.json v1.0"
  },
