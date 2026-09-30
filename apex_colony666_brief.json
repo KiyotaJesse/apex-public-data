@@ -1,17 +1,17 @@
 {
- "ts": "2026-09-30T16:20:05",
- "data_ts": "2026-09-30T16:20:02",
+ "ts": "2026-09-30T17:20:05",
+ "data_ts": "2026-09-30T17:20:02",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
   "word": "要動",
   "tone": "red",
-  "why": "警報 P0 還開著: BTC-USDT: 1 隻蟻同時點名(秤)",
+  "why": "警報 P1 還開著: BTC-USDT: 1 隻蟻同時點名(秤)",
   "fired": [
-   "警報 P0 還開著: BTC-USDT: 1 隻蟻同時點名(秤)",
-   "巢健康度 64 低於 70",
+   "警報 P1 還開著: BTC-USDT: 1 隻蟻同時點名(秤)",
+   "巢健康度 46 低於 70",
    "你有事項今天到期",
-   "巢健康度 64 低於 85",
+   "巢健康度 46 低於 85",
    "你有事項 0 天內到期",
    "待決事項 0 天內自動裁決",
    "SLO 超支 1 項",
@@ -23,10 +23,10 @@
  "numbers": [
   {
    "k": "巢健康度",
-   "v": "64",
+   "v": "46",
    "unit": "/100",
    "tone": "red",
-   "sub": "扣分: 警報 P0 -10、逾期行動 8 件 -10"
+   "sub": "扣分: 警報 P1 -10、逾期行動 8 件 -10"
   },
   {
    "k": "本月策略 R",
@@ -196,18 +196,18 @@
    }
   ],
   "repaired_24h": 0,
-  "crit_24h": 5,
+  "crit_24h": 4,
   "next": {
    "id": "D173",
    "due": "2026-09-30",
    "q": "本週憲法提案是否採納（2026-39，2 條：公理貳 加細則: SLO 超支期間暫停『新蟻上線』, 只准修既有；公理參 加細則: 同一事件 ",
    "rec": ""
   },
-  "line": "近 24 小時: 自動裁決 26 件、自動修復/回滾 0 件。下一個自動到期 D173(2026-09-30), 沒人異議就採建議 ?。成形雷達: 成形中 101 檔／已成形 238 檔(全條件 44)(跨 5 市場; 宇宙 399 檔, 休市排除 286)。預言帳：2327 則前瞻在等結算、持牌 6／預言者 209。消息：近 24h 1034 則／高重要 17 則／最新一則「Pinterest (PINS) Announces Visual Search」｜實證：16 類消息裡 0 類會動價格、6 類不會、10 類樣本不足(事件 n=509)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 19 則發言、提到 META×3／ANTHROPIC×3／EWT×2、淨多空 +0.0。今日事件：5 件(最重要 美國 Core PCE Price  20:30)／黑窗中：否。影子: 追蹤中 350 單／已結 1938 單(live 816＋登記日回填 1122)(另樣本內回填 6 單不計成績)／77 個規格在追；最接近晉升的 cL_impact>=1.5+cvd_z>=1+vol_(crypto) 已達 n=73 EV=+0.797R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=28 EV-0.881、SC1 n=5 EV-1.065、SC3 n=40 EV-0.305；最差 SC1(-1.065R)、最好 TL(+0.040R)；合計 95 筆 EV-0.501R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=0、淨EV 無、可交易率 無事件(0/0)。",
+  "line": "近 24 小時: 自動裁決 26 件、自動修復/回滾 0 件。下一個自動到期 D173(2026-09-30), 沒人異議就採建議 ?。成形雷達: 成形中 125 檔／已成形 279 檔(全條件 84)(跨 5 市場; 宇宙 402 檔, 休市排除 283)。預言帳：2321 則前瞻在等結算、持牌 7／預言者 209。消息：近 24h 1076 則／高重要 16 則／最新一則「OpenAI seeks $30 in funding at whopping 」｜實證：16 類消息裡 0 類會動價格、6 類不會、10 類樣本不足(事件 n=509)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 18 則發言、提到 META×3／ANTHROPIC×3／EWT×2、淨多空 +0.0。今日事件：5 件(最重要 美國 Core PCE Price  20:30)／黑窗中：否。影子: 追蹤中 351 單／已結 1938 單(live 816＋登記日回填 1122)(另樣本內回填 6 單不計成績)／77 個規格在追；最接近晉升的 cL_impact>=1.5+cvd_z>=1+vol_(crypto) 已達 n=73 EV=+0.797R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=28 EV-0.881、SC1 n=5 EV-1.065、SC3 n=40 EV-0.305；最差 SC1(-1.065R)、最好 TL(+0.040R)；合計 95 筆 EV-0.501R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=0、淨EV 無、可交易率 無事件(0/0)。",
   "radar": {
-   "forming": 101,
-   "fired": 238,
-   "fired_full": 44,
+   "forming": 125,
+   "fired": 279,
+   "fired_full": 84,
    "markets": [
     "commodity",
     "crypto",
@@ -215,21 +215,21 @@
     "index",
     "stock"
    ],
-   "universe_fresh": 399,
-   "stale_excluded": 286,
-   "ts_utc": "2026-09-30T07:35",
+   "universe_fresh": 402,
+   "stale_excluded": 283,
+   "ts_utc": "2026-09-30T08:35",
    "age_h": 0.8
   },
   "forecast": {
-   "pending": 2327,
-   "licensed": 6,
+   "pending": 2321,
+   "licensed": 7,
    "forecasters": 209,
-   "n_forecasts": 20868,
-   "n_resolved": 18541,
-   "asOf": "2026-09-30T07:40:09"
+   "n_forecasts": 20938,
+   "n_resolved": 18617,
+   "asOf": "2026-09-30T08:40:09"
   },
   "shadow": {
-   "n_open": 350,
+   "n_open": 351,
    "n_closed": 1938,
    "n_live": 816,
    "n_post_reg": 1122,
@@ -251,7 +251,7 @@
      "n_live": 50,
      "n_post_reg": 23,
      "ev": 0.797,
-     "random_z": 5.02,
+     "random_z": 4.79,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": true
@@ -263,7 +263,7 @@
      "n_live": 6,
      "n_post_reg": 34,
      "ev": 0.7076,
-     "random_z": 3.09,
+     "random_z": 2.93,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": true
@@ -275,7 +275,7 @@
      "n_live": 62,
      "n_post_reg": 28,
      "ev": 0.6889,
-     "random_z": 4.22,
+     "random_z": 4.16,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": true
@@ -284,26 +284,26 @@
    "eta_promo": null,
    "opens_per_day": 82.6,
    "rate_days": 14,
-   "ts_utc": "2026-09-30T07:40"
+   "ts_utc": "2026-09-30T08:40"
   },
   "news": {
-   "n_24h": 1034,
-   "n_hi": 17,
+   "n_24h": 1076,
+   "n_hi": 16,
    "by_category": {
-    "stock": 176,
-    "crypto": 400,
-    "macro": 138,
-    "commodity_fx": 320
+    "crypto": 421,
+    "stock": 174,
+    "macro": 141,
+    "commodity_fx": 340
    },
    "sources_green": 40,
    "sources_red": 0,
    "top": {
-    "t": "Pinterest (PINS) Announces Visual Search Ads. Can Shopping Interest Bring More Revenue?",
+    "t": "OpenAI seeks $30 in funding at whopping $1.4 trillion valuation after delaying IPO",
     "imp": 80,
-    "src": "yahoo_finance",
-    "ts": "2026-09-29T19:33:02Z"
+    "src": "coindesk",
+    "ts": "2026-09-30T08:50:22Z"
    },
-   "run_at": "2026-09-30T08:18:02",
+   "run_at": "2026-09-30T09:18:02",
    "impact": {
     "line": "｜實證：16 類消息裡 0 類會動價格、6 類不會、10 類樣本不足(事件 n=509)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 16,
@@ -317,8 +317,8 @@
     "ts": "2026-09-26T20:30:13"
    },
    "trump": {
-    "line": "｜川普：近 24h 19 則發言、提到 META×3／ANTHROPIC×3／EWT×2、淨多空 +0.0",
-    "n_24h": 19,
+    "line": "｜川普：近 24h 18 則發言、提到 META×3／ANTHROPIC×3／EWT×2、淨多空 +0.0",
+    "n_24h": 18,
     "net_long_24h": 0,
     "top_symbols": [
      {
@@ -357,7 +357,7 @@
       "short": 0
      }
     ],
-    "run_at": "2026-09-30T08:09:02"
+    "run_at": "2026-09-30T09:09:02"
    }
   },
   "calendar": {
@@ -382,13 +382,13 @@
     "source": "nasdaq_econ",
     "blackout": "2.0h/1.0h"
    },
-   "age_h": 2.0,
+   "age_h": 3.0,
    "ts": "2026-09-30T06:20:02"
   },
   "live_shadow": {
    "window": {
     "from": "2026-09-01",
-    "to": "2026-09-30T07:45"
+    "to": "2026-09-30T08:45"
    },
    "n_closed": 95,
    "n_open": 0,
@@ -400,7 +400,7 @@
     "pf": 0.434,
     "sum_r": -47.587
    },
-   "ts": "2026-09-30T07:45",
+   "ts": "2026-09-30T08:45",
    "per": {
     "B1": {
      "n": 6,
@@ -466,12 +466,12 @@
     "funding_missing": 0
    },
    "n_open": 0,
-   "ts": "2026-09-30T08:10:07Z"
+   "ts": "2026-09-30T09:10:04Z"
   }
  },
  "north_star": {
   "ts": "2026-09-30T08:00:03",
-  "age_h": 8.3,
+  "age_h": 9.3,
   "stale": false,
   "risk_light": "red",
   "risk_why": "手動倉裸倉警報 9次(上限 0)、最大 24h 權益跌幅 55.8%(上限 20.0)、熔斷 5次(上限 1)",
@@ -537,11 +537,11 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-09-30T08:05",
+  "attendance": "supervision_state.json @ 2026-09-30T09:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
   "calendar": "calendar_board.json @ 2026-09-30T06:20:02",
-  "news": "news_board.json @ 2026-09-30T08:18:02",
+  "news": "news_board.json @ 2026-09-30T09:18:02",
   "north_star": "goal_state.json @ 2026-09-30T08:00:03",
   "rules": "brief_rules.json v1.0"
  },
