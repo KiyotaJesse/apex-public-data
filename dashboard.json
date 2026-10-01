@@ -1,24 +1,70 @@
 {
-  "generated_at": "2026-10-01T18:59:10.584932+08:00",
-  "published_at": "2026-10-01T19:00:41.506942+08:00",
+  "generated_at": "2026-10-01T19:59:18.041090+08:00",
+  "published_at": "2026-10-01T20:00:54.489018+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
-    "closed_trades": [],
-    "last_cycle_ts": "2026-10-01T10:59:10.584932+00:00",
+    "closed_trades": [
+      {
+        "id": "stratb_TRXUSDT_1790852603",
+        "symbol": "TRX-USDT",
+        "dir": "SHORT",
+        "sig_entry": 0.33228,
+        "sig_price": 0.33228,
+        "fill_price": 0.33176,
+        "fill_px": 0.33176,
+        "qty": 305.0,
+        "notional_usdt": 101.1868,
+        "margin_usdt": 2.0237,
+        "leverage": 50,
+        "risk_usdt": 0.2516,
+        "sl_price": 0.33310271,
+        "sl_dist": 0.0008227142857142941,
+        "sl_order_id": "2105614692399022080",
+        "open_order_id": "2105614691736961024",
+        "lowest": 0.33157,
+        "breakeven_done": false,
+        "sig_bar_time": "2026-10-01 10:00:00",
+        "entry_bar_time": "2026-10-01 10:00:00",
+        "last_checked_time": "2026-10-01 11:00:00",
+        "bars_elapsed": 1,
+        "opened_ts": "2026-10-01T11:03:57.617445+00:00",
+        "status": "open",
+        "notion_page_id": null,
+        "exit_price": 0.33308,
+        "exit_reason": "sl_hit",
+        "realized_r": -2.0077,
+        "pnl_usdt": -0.4026,
+        "outcome": "LOSS",
+        "closed_ts": "2026-10-01T11:13:00.719543+00:00",
+        "order_type": "MARKET",
+        "sig_bar_open": "2026-10-01 10:00:00",
+        "entry_slip_bps": 15.65,
+        "exit_px_estimated": false,
+        "exit_px_source": "sl_fill",
+        "exit_price_real": 0.33308,
+        "fee_usdt_real": -0.1014,
+        "fund_usdt_real": 0.0,
+        "exch_rows": 3,
+        "pnl_usdt_exch": -0.4026,
+        "pnl_usdt_net": -0.504,
+        "realized_r_real": -2.0085
+      }
+    ],
+    "last_cycle_ts": "2026-10-01T11:58:29.147883+00:00",
     "stats": {
-      "n": 0,
+      "n": 1,
       "win_rate_pct": 0.0,
-      "ev_r": 0.0,
-      "total_pnl_usdt": 0.0,
-      "avg_win_usdt": 0.0,
-      "avg_loss_usdt": 0.0
+      "ev_r": -1.6,
+      "total_pnl_usdt": -0.4,
+      "avg_win_usdt": 0,
+      "avg_loss_usdt": -0.4
     }
   },
   "risk_circuit_breaker": {
     "killswitch": false,
     "daily_loss_limit_hit": false,
-    "daily_pnl_usdt": 0.0,
+    "daily_pnl_usdt": -0.4026,
     "daily_pnl_date": "2026-10-01"
   },
   "feature_flags": {
@@ -28,7 +74,7 @@
   "strat_tl": {
     "mode": "disabled",
     "open_positions": [],
-    "last_cycle_ts": "2026-10-01T10:58:56.263962+00:00",
+    "last_cycle_ts": "2026-10-01T11:59:18.041279+00:00",
     "stats": {
       "n": 2,
       "win_rate_pct": 100.0,
@@ -3627,6 +3673,10 @@
     {
       "ts": "2026-10-01T10:24:30.898868+00:00",
       "idx": 32.63
+    },
+    {
+      "ts": "2026-10-01T11:24:37.127997+00:00",
+      "idx": 32.47
     }
   ],
   "trades_public": [
@@ -3643,6 +3693,13 @@
       "strat": "TL",
       "dir": "LONG",
       "r": 3.621
+    },
+    {
+      "ts": "2026-10-01T11:13:00.719543+00:00",
+      "sym": "TRX-USDT",
+      "strat": "B1",
+      "dir": "SHORT",
+      "r": -2.0077
     }
   ],
   "self_upgrades": [
