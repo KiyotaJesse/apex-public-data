@@ -1,29 +1,30 @@
 {
- "ts": "2026-10-01T23:20:05",
- "data_ts": "2026-10-01T23:20:01",
+ "ts": "2026-10-02T00:20:05",
+ "data_ts": "2026-10-02T00:20:01",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
   "word": "要動",
   "tone": "red",
-  "why": "巢健康度 64 低於 70",
+  "why": "警報 P1 還開著: SOL-USDT: 1 隻蟻同時點名(秤)",
   "fired": [
-   "巢健康度 64 低於 70",
-   "巢健康度 64 低於 85",
+   "警報 P1 還開著: SOL-USDT: 1 隻蟻同時點名(秤)",
+   "巢健康度 54 低於 70",
+   "巢健康度 54 低於 85",
    "待決事項 0 天內自動裁決",
    "SLO 超支 1 項",
    "有 9 件行動項目逾期(我的)"
   ],
-  "n_red": 1,
+  "n_red": 2,
   "n_amber": 4
  },
  "numbers": [
   {
    "k": "巢健康度",
-   "v": "64",
+   "v": "54",
    "unit": "/100",
    "tone": "red",
-   "sub": "扣分: 逾期行動 9 件 -10、SLO 超支 影 -10"
+   "sub": "扣分: 警報 P1 -10、逾期行動 9 件 -10"
   },
   {
    "k": "本月策略 R",
@@ -34,7 +35,7 @@
   },
   {
    "k": "蟻口出勤",
-   "v": "144/144",
+   "v": "145/145",
    "unit": "(100%)",
    "tone": "green",
    "sub": "0 紅燈; 沒打卡的是週/月排程, 今天本來就不跑"
@@ -133,11 +134,11 @@
    "q": "本週憲法提案是否採納（2026-39，2 條：公理貳 加細則: SLO 超支期間暫停『新蟻上線』, 只准修既有；公理參 加細則: 同一事件 ",
    "rec": ""
   },
-  "line": "近 24 小時: 自動裁決 16 件、自動修復/回滾 0 件。下一個自動到期 D173(2026-09-30), 沒人異議就採建議 ?。成形雷達: 成形中 200 檔／已成形 543 檔(全條件 65)(跨 5 市場; 宇宙 488 檔, 休市排除 87)。預言帳：2029 則前瞻在等結算、持牌 5／預言者 211。消息：近 24h 1066 則／高重要 14 則／最新一則「SEC Charges Meyer Global Management and 」｜實證：16 類消息裡 0 類會動價格、6 類不會、10 類樣本不足(事件 n=509)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 43 則發言、提到 241NATGAS×8／NATGAS×8／TARIFF×4、淨多空 +0.0。今日事件：0 件(無)／黑窗中：是（美國 ISM Manufacturi）。影子: 追蹤中 382 單／已結 2007 單(live 885＋登記日回填 1122)(另樣本內回填 6 單不計成績)／77 個規格在追；最接近晉升的 cL_impact>=1.5+cvd_z>=1+vol_(crypto) 已達 n=73 EV=+0.797R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=28 EV-0.881、SC1 n=5 EV-1.065、SC3 n=40 EV-0.305；最差 SC1(-1.065R)、最好 TL(+0.040R)；合計 95 筆 EV-0.501R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=0、淨EV 無、可交易率 無事件(0/0)。",
+  "line": "近 24 小時: 自動裁決 16 件、自動修復/回滾 0 件。下一個自動到期 D173(2026-09-30), 沒人異議就採建議 ?。成形雷達: 成形中 206 檔／已成形 507 檔(全條件 50)(跨 5 市場; 宇宙 488 檔, 休市排除 87)。預言帳：2032 則前瞻在等結算、持牌 7／預言者 211。消息：近 24h 1019 則／高重要 12 則／最新一則「SEC Charges Meyer Global Management and 」｜實證：16 類消息裡 0 類會動價格、6 類不會、10 類樣本不足(事件 n=509)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 46 則發言、提到 241NATGAS×8／NATGAS×8／TARIFF×4、淨多空 +1.0。今日事件：0 件(無)／黑窗中：是（美國 ISM Manufacturi）。影子: 追蹤中 381 單／已結 2008 單(live 886＋登記日回填 1122)(另樣本內回填 6 單不計成績)／77 個規格在追；最接近晉升的 cL_impact>=1.5+cvd_z>=1+vol_(crypto) 已達 n=73 EV=+0.797R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=28 EV-0.881、SC1 n=5 EV-1.065、SC3 n=40 EV-0.305；最差 SC1(-1.065R)、最好 TL(+0.040R)；合計 95 筆 EV-0.501R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=0、淨EV 無、可交易率 無事件(0/0)。",
   "radar": {
-   "forming": 200,
-   "fired": 543,
-   "fired_full": 65,
+   "forming": 206,
+   "fired": 507,
+   "fired_full": 50,
    "markets": [
     "commodity",
     "crypto",
@@ -147,21 +148,21 @@
    ],
    "universe_fresh": 488,
    "stale_excluded": 87,
-   "ts_utc": "2026-10-01T14:35",
+   "ts_utc": "2026-10-01T15:35",
    "age_h": 0.8
   },
   "forecast": {
-   "pending": 2029,
-   "licensed": 5,
+   "pending": 2032,
+   "licensed": 7,
    "forecasters": 211,
-   "n_forecasts": 22837,
-   "n_resolved": 20808,
-   "asOf": "2026-10-01T14:40:09"
+   "n_forecasts": 22899,
+   "n_resolved": 20867,
+   "asOf": "2026-10-01T15:40:10"
   },
   "shadow": {
-   "n_open": 382,
-   "n_closed": 2007,
-   "n_live": 885,
+   "n_open": 381,
+   "n_closed": 2008,
+   "n_live": 886,
    "n_post_reg": 1122,
    "n_backfill": 6,
    "n_specs": 77,
@@ -181,7 +182,7 @@
      "n_live": 50,
      "n_post_reg": 23,
      "ev": 0.797,
-     "random_z": 4.34,
+     "random_z": 4.28,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": true
@@ -193,7 +194,7 @@
      "n_live": 6,
      "n_post_reg": 34,
      "ev": 0.7076,
-     "random_z": 3.05,
+     "random_z": 2.93,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": true
@@ -205,7 +206,7 @@
      "n_live": 62,
      "n_post_reg": 28,
      "ev": 0.6889,
-     "random_z": 4.74,
+     "random_z": 4.82,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": true
@@ -214,16 +215,16 @@
    "eta_promo": null,
    "opens_per_day": 87.6,
    "rate_days": 14,
-   "ts_utc": "2026-10-01T14:40"
+   "ts_utc": "2026-10-01T15:40"
   },
   "news": {
-   "n_24h": 1066,
-   "n_hi": 14,
+   "n_24h": 1019,
+   "n_hi": 12,
    "by_category": {
-    "stock": 180,
-    "crypto": 426,
-    "macro": 171,
-    "commodity_fx": 289
+    "stock": 189,
+    "crypto": 395,
+    "commodity_fx": 273,
+    "macro": 162
    },
    "sources_green": 40,
    "sources_red": 0,
@@ -233,7 +234,7 @@
     "src": "sec_press",
     "ts": "2026-09-30T18:30:01Z"
    },
-   "run_at": "2026-10-01T15:18:01",
+   "run_at": "2026-10-01T16:18:01",
    "impact": {
     "line": "｜實證：16 類消息裡 0 類會動價格、6 類不會、10 類樣本不足(事件 n=509)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 16,
@@ -247,9 +248,9 @@
     "ts": "2026-09-26T20:30:13"
    },
    "trump": {
-    "line": "｜川普：近 24h 43 則發言、提到 241NATGAS×8／NATGAS×8／TARIFF×4、淨多空 +0.0",
-    "n_24h": 43,
-    "net_long_24h": 0.0,
+    "line": "｜川普：近 24h 46 則發言、提到 241NATGAS×8／NATGAS×8／TARIFF×4、淨多空 +1.0",
+    "n_24h": 46,
+    "net_long_24h": 1.0,
     "top_symbols": [
      {
       "symbol": "241NATGAS",
@@ -280,14 +281,14 @@
       "short": 0
      },
      {
-      "symbol": "ANTHROPIC",
+      "symbol": "BA",
       "n": 2,
-      "net": -0.53,
-      "long": 0,
-      "short": 1
+      "net": 2.0,
+      "long": 2,
+      "short": 0
      }
     ],
-    "run_at": "2026-10-01T15:09:01"
+    "run_at": "2026-10-01T16:09:01"
    }
   },
   "calendar": {
@@ -301,13 +302,13 @@
     "all"
    ],
    "head": null,
-   "age_h": 1.0,
+   "age_h": 2.0,
    "ts": "2026-10-01T14:20:02"
   },
   "live_shadow": {
    "window": {
     "from": "2026-09-01",
-    "to": "2026-10-01T14:45"
+    "to": "2026-10-01T15:45"
    },
    "n_closed": 95,
    "n_open": 0,
@@ -319,7 +320,7 @@
     "pf": 0.434,
     "sum_r": -47.587
    },
-   "ts": "2026-10-01T14:45",
+   "ts": "2026-10-01T15:45",
    "per": {
     "B1": {
      "n": 6,
@@ -385,12 +386,12 @@
     "funding_missing": 0
    },
    "n_open": 0,
-   "ts": "2026-10-01T15:10:03Z"
+   "ts": "2026-10-01T16:10:04Z"
   }
  },
  "north_star": {
   "ts": "2026-10-01T08:00:03",
-  "age_h": 15.3,
+  "age_h": 16.3,
   "stale": false,
   "risk_light": "red",
   "risk_why": "手動倉裸倉警報 9次(上限 0)、最大 24h 權益跌幅 55.8%(上限 20.0)、熔斷 4次(上限 1)",
@@ -456,11 +457,11 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-10-01T15:05",
+  "attendance": "supervision_state.json @ 2026-10-01T16:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
   "calendar": "calendar_board.json @ 2026-10-01T14:20:02",
-  "news": "news_board.json @ 2026-10-01T15:18:01",
+  "news": "news_board.json @ 2026-10-01T16:18:01",
   "north_star": "goal_state.json @ 2026-10-01T08:00:03",
   "rules": "brief_rules.json v1.0"
  },
