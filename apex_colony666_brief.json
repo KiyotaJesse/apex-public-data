@@ -1,6 +1,6 @@
 {
- "ts": "2026-10-02T08:10:06",
- "data_ts": "2026-10-02T08:10:04",
+ "ts": "2026-10-02T08:20:05",
+ "data_ts": "2026-10-02T08:20:02",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
@@ -41,87 +41,47 @@
  ],
  "jesse": [],
  "auto": {
-  "decided_24h": 16,
+  "decided_24h": 8,
   "decided": [
    {
-    "id": "D017",
-    "q": "1d 礦軸在現行五關下結構性 0 過關(近月 n>=12 等於要週頻>=2.8, 1d 最佳組合週頻 1.1): 維持還",
+    "id": "D134",
+    "q": "成本閘門口徑統一: D 端 _cost_gate_ok 用 8/30 盤口表(價差+手續費, 7~47bps, 9 檔<",
     "choice": "A"
    },
    {
-    "id": "D026",
-    "q": "影子晉升: cL_cvd_div<=-0.3+fund_pct<=0.3|bull|TP4R@lt20 在 crypto",
+    "id": "D135",
+    "q": "季度基差資料(binance_basis, 23 檔 54k 列)用途註記改『carry(H16)專用, regime ",
+    "choice": "A"
+   },
+   {
+    "id": "D136",
+    "q": "熔斷 strat_eq_hist 開倉路徑寫入不節流: fix5 後心跳每小時 1 筆但開倉嘗試路徑照舊每次寫, 實測 ",
+    "choice": "A"
+   },
+   {
+    "id": "D137",
+    "q": "川普牌照計分榜過期時要不要停止加分(confidence_engine.py:592 不看新舊)?",
+    "choice": "A"
+   },
+   {
+    "id": "D138",
+    "q": "成形雷達結果檔要不要加 btc_stale 旗標(formation_radar.py:606/763 只寫 log)?",
+    "choice": "A"
+   },
+   {
+    "id": "D142",
+    "q": "公開頁 command.html / jarvis.html 無任何入口連結且 jarvis 已壞, 要不要下架?",
+    "choice": "A"
+   },
+   {
+    "id": "D177",
+    "q": "停用條件觸發: AUTO 的規則 AUTO_stress_fail -- stress_n_fail 現值 7 > 門檻",
+    "choice": "A"
+   },
+   {
+    "id": "D181",
+    "q": "保護期屆滿恢復原檔位: 2026-09-24T10:55 復機已滿 7 天(16 筆, 累計 -10.98R, 最大回撤",
     "choice": "B"
-   },
-   {
-    "id": "D027",
-    "q": "影子晉升: cL_brk_high25>0+ema_rel>0+coil>=0.6|R 在 crypto 市場前瞻 74",
-    "choice": "B"
-   },
-   {
-    "id": "D107",
-    "q": "promotion_pipeline.norm_market 不認得 'us'(forecast_adapters 用 ",
-    "choice": "A"
-   },
-   {
-    "id": "D108",
-    "q": "H17 主腿進場要不要從『公告後第一根已收盤 1h 棒』(實測中位 2.0h)改成 τ=20 分? 同批 60 件 +0",
-    "choice": "C"
-   },
-   {
-    "id": "D111",
-    "q": "TL+美股/指數(用美股指數當閘門)要不要開前瞻影子觀察帳(TL|ndx n=814 EV +0.108 贏 p95 但",
-    "choice": "A"
-   },
-   {
-    "id": "D112",
-    "q": "外匯(NCFX)要不要封門入墳場 advise? 停損只 0.12-0.33% 寬, 往返成本吃掉 1R 的 22.9-",
-    "choice": "A"
-   },
-   {
-    "id": "D116",
-    "q": "N1 底部分析 n1_analysis.py 三個 bug(曆日 252 當 12m/類比 n 是 6 叢非 737 日",
-    "choice": "B"
-   },
-   {
-    "id": "D117",
-    "q": "btc_bottom_watch.py 的卡片與註解要不要寫明『20x 埋伏正 EV 前提＝BTC 年漂移 ≥+2.3%",
-    "choice": "A"
-   },
-   {
-    "id": "D118",
-    "q": "H17 啟用閘檢查器 _wo/h17_enable_check.py 要不要排程化(每日跑, 只在綠燈數變化時 noti",
-    "choice": "A"
-   },
-   {
-    "id": "D121",
-    "q": "影子晉升: cL_vol_dry<=0.4+cvd_z>=1+vol_dry<=0.4|R 在 crypto 市場前瞻 ",
-    "choice": "B"
-   },
-   {
-    "id": "D122",
-    "q": "影子晉升: cL_vol_dry<=0.4+cvd_z>=1|R 在 crypto 市場前瞻 30 筆 EV +0.69",
-    "choice": "B"
-   },
-   {
-    "id": "D125",
-    "q": "Binance futures/data/basis 全史回補(2019-12 起, 22 檔約 220 請求一分鐘; ",
-    "choice": "A"
-   },
-   {
-    "id": "D126",
-    "q": "FRED 補 WTREGEN(TGA)/VIXCLS/SOFR 並用 SOFR 扣 carry 年化(§7.4 +5.5",
-    "choice": "A"
-   },
-   {
-    "id": "D129",
-    "q": "fix3 歸屬: RS 帳本 history 內 paper:true 紙上單區間是否也算「策略區間」(不排除為手動)?",
-    "choice": "A"
-   },
-   {
-    "id": "D162",
-    "q": "[自治藍圖 R3-3] 修復員三動作上線（本機，先 --dry 7 天）",
-    "choice": "A"
    }
   ],
   "repaired_24h": 0,
@@ -132,7 +92,7 @@
    "q": "本週憲法提案是否採納（2026-39，2 條：公理貳 加細則: SLO 超支期間暫停『新蟻上線』, 只准修既有；公理參 加細則: 同一事件 ",
    "rec": ""
   },
-  "line": "近 24 小時: 自動裁決 16 件、自動修復/回滾 0 件。下一個自動到期 D173(2026-09-30), 沒人異議就採建議 ?。成形雷達: 成形中 204 檔／已成形 380 檔(全條件 62)(跨 5 市場; 宇宙 508 檔, 休市排除 69)。預言帳：2093 則前瞻在等結算、持牌 6／預言者 212。消息：近 24h 1057 則／高重要 12 則／最新一則「The hidden silver lining of high interes」｜實證：16 類消息裡 0 類會動價格、6 類不會、10 類樣本不足(事件 n=509)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 44 則發言、提到 TARIFF×4／GOLD×4／241NATGAS×4、淨多空 +2.0。今日事件：5 件(最重要 美國 Nonfarm Payroll 20:30)／黑窗中：是（BingX 維護公告）。影子: 追蹤中 409 單／已結 2057 單(live 935＋登記日回填 1122)(另樣本內回填 6 單不計成績)／77 個規格在追；最接近晉升的 cL_impact>=1.5+cvd_z>=1+vol_(crypto) 已達 n=73 EV=+0.797R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=28 EV-0.881、SC1 n=5 EV-1.065、SC3 n=40 EV-0.305；最差 SC1(-1.065R)、最好 TL(+0.040R)；合計 95 筆 EV-0.501R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=0、淨EV 無、可交易率 無事件(0/0)。",
+  "line": "近 24 小時: 自動裁決 8 件、自動修復/回滾 0 件。下一個自動到期 D173(2026-09-30), 沒人異議就採建議 ?。成形雷達: 成形中 204 檔／已成形 380 檔(全條件 62)(跨 5 市場; 宇宙 508 檔, 休市排除 69)。預言帳：2093 則前瞻在等結算、持牌 6／預言者 212。消息：近 24h 1048 則／高重要 13 則／最新一則「The hidden silver lining of high interes」｜實證：16 類消息裡 0 類會動價格、6 類不會、10 類樣本不足(事件 n=509)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 44 則發言、提到 TARIFF×4／GOLD×4／241NATGAS×4、淨多空 +2.0。今日事件：5 件(最重要 美國 Nonfarm Payroll 20:30)／黑窗中：是（BingX 維護公告）。影子: 追蹤中 409 單／已結 2057 單(live 935＋登記日回填 1122)(另樣本內回填 6 單不計成績)／77 個規格在追；最接近晉升的 cL_impact>=1.5+cvd_z>=1+vol_(crypto) 已達 n=73 EV=+0.797R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=28 EV-0.881、SC1 n=5 EV-1.065、SC3 n=40 EV-0.305；最差 SC1(-1.065R)、最好 TL(+0.040R)；合計 95 筆 EV-0.501R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=0、淨EV 無、可交易率 無事件(0/0)。",
   "radar": {
    "forming": 204,
    "fired": 380,
@@ -147,7 +107,7 @@
    "universe_fresh": 508,
    "stale_excluded": 69,
    "ts_utc": "2026-10-01T23:35",
-   "age_h": 0.6
+   "age_h": 0.8
   },
   "forecast": {
    "pending": 2093,
@@ -216,13 +176,13 @@
    "ts_utc": "2026-10-01T23:40"
   },
   "news": {
-   "n_24h": 1057,
-   "n_hi": 12,
+   "n_24h": 1048,
+   "n_hi": 13,
    "by_category": {
     "stock": 193,
-    "crypto": 422,
-    "macro": 132,
-    "commodity_fx": 310
+    "crypto": 418,
+    "commodity_fx": 310,
+    "macro": 127
    },
    "sources_green": 40,
    "sources_red": 0,
@@ -232,7 +192,7 @@
     "src": "marketwatch_top",
     "ts": "2026-10-01T21:27:00Z"
    },
-   "run_at": "2026-10-02T00:03:02",
+   "run_at": "2026-10-02T00:18:02",
    "impact": {
     "line": "｜實證：16 類消息裡 0 類會動價格、6 類不會、10 類樣本不足(事件 n=509)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 16,
@@ -313,7 +273,7 @@
     "source": "nasdaq_econ",
     "blackout": "2.0h/1.0h"
    },
-   "age_h": 1.8,
+   "age_h": 2.0,
    "ts": "2026-10-01T22:20:01"
   },
   "live_shadow": {
@@ -402,7 +362,7 @@
  },
  "north_star": {
   "ts": "2026-10-02T08:00:03",
-  "age_h": 0.2,
+  "age_h": 0.3,
   "stale": false,
   "risk_light": "red",
   "risk_why": "手動倉裸倉警報 9次(上限 0)、最大 24h 權益跌幅 55.8%(上限 20.0)、熔斷 4次(上限 1)",
@@ -472,7 +432,7 @@
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
   "calendar": "calendar_board.json @ 2026-10-01T22:20:01",
-  "news": "news_board.json @ 2026-10-02T00:03:02",
+  "news": "news_board.json @ 2026-10-02T00:18:02",
   "north_star": "goal_state.json @ 2026-10-02T08:00:03",
   "rules": "brief_rules.json v1.0"
  },
