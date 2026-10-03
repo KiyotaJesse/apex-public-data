@@ -2125,7 +2125,7 @@
 },
 {
 "n": "礦機口糧",
-"v": 0.25,
+"v": 0.23,
 "ok": true,
 "k": "7h",
 "t": "上輪 10-03 01:23 掃畢 · 每 4 小時開工, 電腦休眠會斷糧"
@@ -2313,11 +2313,11 @@
 "tables": [
 {
 "n": "裁決錄",
-"c": 164
+"c": 171
 },
 {
 "n": "墳場",
-"c": 33
+"c": 34
 },
 {
 "n": "事故簿",
@@ -2333,20 +2333,20 @@
 },
 {
 "n": "行動項目",
-"c": 112
+"c": 114
 }
 ],
-"built": "10-02 08:11",
-"synced": "10-02 08:13",
-"open": 26,
+"built": "10-03 08:11",
+"synced": "10-03 08:12",
+"open": 27,
 "overdue": 8
 },
 "mailbox": {
-"sent": "",
+"sent": "08:13",
 "open": 1,
 "answered": 19,
 "buttons": true,
-"auto_open": 36,
+"auto_open": 27,
 "open_ids": [
 "D173"
 ]
@@ -3077,7 +3077,7 @@
 }
 ],
 "graves": {},
-"updated": "10-02 08:14",
+"updated": "10-03 08:12",
 "rehearsal": {
 "asof": "2026-09-28 08:12",
 "since": "2026-06-28"
@@ -4555,7 +4555,7 @@
 "why": [
 "警報 P0 -10",
 "逾期行動 8 件 -10",
-"日檢 31h 未更新(不採用) -5"
+"日檢 32h 未更新(不採用) -5"
 ],
 "prev": 75,
 "streak": {}
@@ -4579,64 +4579,64 @@
 ],
 "board": [
 {
-"ts": "2026-10-03T08:00:03+08:00",
+"ts": "2026-10-03T08:19:42+08:00",
 "who": "蟻",
-"t": "[北·北極星] 失敗風險儀 3 項超標: 手動倉裸倉警報 9次(上限 0)、最大"
+"t": "候選 cL_vol_dry<=0.4+cvd_z>=1|R(crypto) 壓力"
 },
 {
-"ts": "2026-10-03T07:35:36+08:00",
+"ts": "2026-10-03T08:18:35+08:00",
 "who": "蟻",
-"t": "[雷] 本輪 24 個(標的,規格)新成形, 共 13 檔標的; 前 5: NC"
+"t": "候選 cL_vol_dry<=0.4+cvd_z>=1+vol_dry<=0.4"
 },
 {
-"ts": "2026-10-03T06:41:16+08:00",
+"ts": "2026-10-03T08:17:25+08:00",
 "who": "蟻",
-"t": "[影] 候選前瞻翻負: cS_vwap_dev>=2+cvd_z<=-1+imp"
+"t": "候選 cL_vol_dry<=0.3+vol_r>=1.5+atr_r>=1.2"
 },
 {
-"ts": "2026-10-03T06:40:28+08:00",
+"ts": "2026-10-03T08:17:00+08:00",
 "who": "蟻",
-"t": "譜(資料血緣): 名冊在案卻過期 >3 天 4 個: _wo/_sbx_inte"
+"t": "候選 cL_impact>=1.5+cvd_z>=1+vol_dry<=0.4|"
 },
 {
-"ts": "2026-10-03T06:35:44+08:00",
+"ts": "2026-10-03T08:16:13+08:00",
 "who": "蟻",
-"t": "[雷] 本輪 36 個(標的,規格)新成形, 共 20 檔標的; 前 5: NC"
+"t": "候選 cL_cvd_div<=-0.3+fund_pct<=0.3|bull|T"
 },
 {
-"ts": "2026-10-03T06:18:13+08:00",
+"ts": "2026-10-03T08:15:41+08:00",
 "who": "蟻",
-"t": "[聞] 重要度 85 commodity_fx/regulation_enfor"
+"t": "候選 cL_impact>=1.5+cvd_z>=1+vol_dry<=0.4|"
 },
 {
-"ts": "2026-10-03T06:18:13+08:00",
+"ts": "2026-10-03T08:13:09+08:00",
 "who": "蟻",
-"t": "[聞] 重要度 79 stock/listing_delisting LISTI"
+"t": "08:10 鏈 roster_lint 回傳 rc=1 (跑了 4s), 去看 "
 },
 {
-"ts": "2026-10-03T06:18:13+08:00",
+"ts": "2026-10-03T08:12:59+08:00",
 "who": "蟻",
-"t": "[聞] 重要度 70 commodity_fx/rate_decision - "
+"t": "自動裁決 D158（到期 2026-10-03 無異議）"
 },
 {
-"ts": "2026-10-03T06:10:03+08:00",
+"ts": "2026-10-03T08:12:59+08:00",
 "who": "蟻",
-"t": "冊: 合約名單變動 254 筆 -- NCCOALUMINIUM2USD-USD"
+"t": "auto_decide 60 秒內 6 則, 之後靜音"
 },
 {
-"ts": "2026-10-03T06:05:21+08:00",
+"ts": "2026-10-03T08:12:59+08:00",
 "who": "蟻",
-"t": "[SLO] 本輪 超支 0 隻 / 預警 1 隻 / 離線排除壞點 197 次 "
+"t": "自動裁決 D159（到期 2026-10-03 無異議）"
 },
 {
-"ts": "2026-10-03T05:41:21+08:00",
+"ts": "2026-10-03T08:12:59+08:00",
 "who": "蟻",
-"t": "[影] 候選前瞻翻負: cL_impact_ma>=1+vol_r>=1.5+a"
+"t": "自動裁決 D160（到期 2026-10-03 無異議）"
 },
 {
-"ts": "2026-10-03T05:35:45+08:00",
+"ts": "2026-10-03T08:12:59+08:00",
 "who": "蟻",
-"t": "[雷] 本輪 82 個(標的,規格)新成形, 共 41 檔標的; 前 5: NC"
+"t": "自動裁決 D161（到期 2026-10-03 無異議）"
 }
 ],
 "autonomy": {
@@ -4783,9 +4783,9 @@
 "blocked_on_jesse": []
 },
 "ledgers": {
-"asOf": "2026-10-03T08:10:05",
+"asOf": "2026-10-03T08:20:02",
 "judge": {
-"run_at": "2026-10-02T08:14:13",
+"run_at": "2026-10-03T08:13:04",
 "src": "outcomes",
 "by_kind": [
 {
@@ -4810,7 +4810,7 @@
 "last_full_run": "2026-09-27T08:12:30+08:00"
 },
 "outcomes": {
-"open": 208,
+"open": 217,
 "closed": 13,
 "by_kind": {
 "l2_downgrade": {
@@ -4835,7 +4835,7 @@
 "unknown": 0
 },
 "auto_decide": {
-"open": 120,
+"open": 129,
 "closed": 0,
 "hit": 0,
 "miss": 0,
@@ -4887,17 +4887,17 @@
 "events": {
 "h24": {
 "crit": 0,
-"warn": 40,
-"info": 70,
-"suppressed": 17,
-"n": 110
+"warn": 41,
+"info": 68,
+"suppressed": 18,
+"n": 109
 },
 "d7": {
 "crit": 11,
-"warn": 297,
-"info": 570,
-"suppressed": 124,
-"n": 878
+"warn": 296,
+"info": 565,
+"suppressed": 122,
+"n": 872
 },
 "top_keys": [
 {
@@ -4928,68 +4928,68 @@
 ],
 "latest": [
 {
-"ts": "2026-10-03T08:00",
-"source": "goal_tracker",
-"key": "goal_risk",
+"ts": "2026-10-03T08:19",
+"source": "stress_test",
+"key": "stress_fail",
+"level": "warn",
+"suppressed": true,
+"text": "候選 cL_vol_dry<=0.4+cvd_z>=1|R(crypto) 壓力測試未過: (g) 三年樣本外、(h) "
+},
+{
+"ts": "2026-10-03T08:18",
+"source": "stress_test",
+"key": "stress_fail",
+"level": "warn",
+"suppressed": true,
+"text": "候選 cL_vol_dry<=0.4+cvd_z>=1+vol_dry<=0.4|R(crypto) 壓力測試未過: ("
+},
+{
+"ts": "2026-10-03T08:17",
+"source": "stress_test",
+"key": "stress_fail",
+"level": "warn",
+"suppressed": true,
+"text": "候選 cL_vol_dry<=0.3+vol_r>=1.5+atr_r>=1.2|bu(crypto) 壓力測試未過: "
+},
+{
+"ts": "2026-10-03T08:17",
+"source": "stress_test",
+"key": "stress_fail",
+"level": "warn",
+"suppressed": true,
+"text": "候選 cL_impact>=1.5+cvd_z>=1+vol_dry<=0.4|bul(crypto) 壓力測試未過: "
+},
+{
+"ts": "2026-10-03T08:16",
+"source": "stress_test",
+"key": "stress_fail",
+"level": "warn",
+"suppressed": true,
+"text": "候選 cL_cvd_div<=-0.3+fund_pct<=0.3|bull|TP4R(crypto) 壓力測試未過: "
+},
+{
+"ts": "2026-10-03T08:15",
+"source": "stress_test",
+"key": "stress_fail",
 "level": "warn",
 "suppressed": false,
-"text": "[北·北極星] 失敗風險儀 3 項超標: 手動倉裸倉警報 9次(上限 0)、最大 24h 權益跌幅 55.8%(上限 2"
+"text": "候選 cL_impact>=1.5+cvd_z>=1+vol_dry<=0.4|bul(crypto) 壓力測試未過: "
 },
 {
-"ts": "2026-10-03T07:35",
-"source": "formation_radar",
-"key": "formation_fired_digest",
-"level": "info",
-"suppressed": false,
-"text": "[雷] 本輪 24 個(標的,規格)新成形, 共 13 檔標的; 前 5: NCSKBUDUSDT-USDT x3(LO"
-},
-{
-"ts": "2026-10-03T06:41",
-"source": "shadow_tracker",
-"key": "shadow_negative:cS_vwap_dev>=2+cvd_z<=-1+impact>=1|TP6R|stock",
+"ts": "2026-10-03T08:13",
+"source": "queen_chain",
+"key": "rc_roster_lint",
 "level": "warn",
 "suppressed": false,
-"text": "[影] 候選前瞻翻負: cS_vwap_dev>=2+cvd_z<=-1+impact>=1|TP6R(stock) 前"
+"text": "08:10 鏈 roster_lint 回傳 rc=1 (跑了 4s), 去看 roster_lint 的結果檔"
 },
 {
-"ts": "2026-10-03T06:40",
-"source": "data_lineage",
-"key": "data_lineage_gap",
+"ts": "2026-10-03T08:12",
+"source": "auto_decide",
+"key": "D158",
 "level": "warn",
-"suppressed": false,
-"text": "譜(資料血緣): 名冊在案卻過期 >3 天 4 個: _wo/_sbx_integrity_0929/t_act/act"
-},
-{
-"ts": "2026-10-03T06:35",
-"source": "formation_radar",
-"key": "formation_fired_digest",
-"level": "info",
-"suppressed": false,
-"text": "[雷] 本輪 36 個(標的,規格)新成形, 共 20 檔標的; 前 5: NCSKCDNS2USD-USDT x3(L"
-},
-{
-"ts": "2026-10-03T06:18",
-"source": "news_collector",
-"key": "hi_regulation_enforcement_CFTC",
-"level": "info",
-"suppressed": false,
-"text": "[聞] 重要度 85 commodity_fx/regulation_enforcement CFTC | CFTC S"
-},
-{
-"ts": "2026-10-03T06:18",
-"source": "news_collector",
-"key": "hi_listing_delisting_LISTING",
-"level": "info",
-"suppressed": false,
-"text": "[聞] 重要度 79 stock/listing_delisting LISTING | 8-K - Healthcar"
-},
-{
-"ts": "2026-10-03T06:18",
-"source": "news_collector",
-"key": "hi_rate_decision_-",
-"level": "info",
-"suppressed": false,
-"text": "[聞] 重要度 70 commodity_fx/rate_decision - | Transcript of the "
+"suppressed": true,
+"text": "⚖️ 自動裁決 D158（到期 2026-10-03 無異議）"
 }
 ]
 },
@@ -5619,12 +5619,12 @@
 "decisions": {
 "n": "待裁",
 "h": 1,
-"ts": "2026-10-03T08:10:06+08:00"
+"ts": "2026-10-03T08:20:01+08:00"
 },
 "market": {
 "n": "BTC/持倉",
 "h": 1,
-"ts": "2026-10-03T08:10:06+08:00"
+"ts": "2026-10-03T08:14:36+08:00"
 },
 "weather": {
 "n": "巢外天氣",
@@ -5634,17 +5634,17 @@
 "strategies": {
 "n": "策略蟻",
 "h": 1,
-"ts": "2026-10-03T08:10:06+08:00"
+"ts": "2026-10-03T08:20:01+08:00"
 },
 "ledgers": {
 "n": "成績單",
 "h": 1,
-"ts": "2026-10-03T08:10:06+08:00"
+"ts": "2026-10-03T08:20:01+08:00"
 },
 "board": {
 "n": "留言板",
 "h": 1,
-"ts": "2026-10-03T08:10:06+08:00"
+"ts": "2026-10-03T08:20:01+08:00"
 },
 "mine": {
 "n": "礦機",
@@ -5654,7 +5654,7 @@
 "academy": {
 "n": "學院",
 "h": 24,
-"ts": "2026-10-02T08:14:01+08:00"
+"ts": "2026-10-03T08:12:54+08:00"
 },
 "daily": {
 "n": "日誌/進化/編年",
@@ -5664,10 +5664,10 @@
 "notes": {
 "n": "便利貼",
 "h": 1,
-"ts": null
+"ts": "2026-10-03T08:20:03+08:00"
 }
 },
-"live_ts": "2026-10-03T08:10:06+08:00",
+"live_ts": "2026-10-03T08:20:01+08:00",
 "notes": [
 {
 "id": "gate",
@@ -5680,7 +5680,7 @@
 "stale": false,
 "hash": "ca3e2303e96f",
 "last_changed": "2026-09-26T01:24:17+08:00",
-"shown_at": "2026-10-03T08:10:06+08:00"
+"shown_at": "2026-10-03T08:20:03+08:00"
 },
 {
 "id": "queen",
@@ -5693,20 +5693,20 @@
 "stale": false,
 "hash": "0fda113b5d4d",
 "last_changed": "2026-10-03T02:20:03+08:00",
-"shown_at": "2026-10-03T08:10:06+08:00"
+"shown_at": "2026-10-03T08:20:03+08:00"
 },
 {
 "id": "worker",
 "d": "深度 -1m · 工蟻房",
 "kind": "live",
 "text": "覓食隊誠實紀錄:近 30 天搬回 -1.3R(27 趟),近 90 天 -1.3R(27 趟,帳本最早只記到 09-19)。其中 AUTO -3.2R/24、TL +3.9R/2、B1 -2.0R/1。現在開著門的:B1、SC1、AUTO·衝量·籌碼。角落蜷著的 B1、SC1 沒有死——多頭的天氣裡她的門是關的,她在等天氣翻面。",
-"ts": "2026-10-03T08:10:06+08:00",
+"ts": "2026-10-03T08:20:01+08:00",
 "period_h": 1,
 "src": "tama_memory.json(D 帳本) · tama_config.json",
 "stale": false,
 "hash": "ca6cb00fcfda",
 "last_changed": "2026-10-01T19:20:04+08:00",
-"shown_at": "2026-10-03T08:10:06+08:00"
+"shown_at": "2026-10-03T08:20:03+08:00"
 },
 {
 "id": "clinic",
@@ -5719,7 +5719,7 @@
 "stale": false,
 "hash": "c21ad7845daa",
 "last_changed": "2026-09-26T01:24:17+08:00",
-"shown_at": "2026-10-03T08:10:06+08:00"
+"shown_at": "2026-10-03T08:20:03+08:00"
 },
 {
 "id": "collapse",
@@ -5732,7 +5732,7 @@
 "stale": false,
 "hash": "7c0d5a1a19b2",
 "last_changed": "2026-09-26T01:24:17+08:00",
-"shown_at": "2026-10-03T08:10:06+08:00"
+"shown_at": "2026-10-03T08:20:03+08:00"
 },
 {
 "id": "darkroom",
@@ -5745,33 +5745,33 @@
 "stale": false,
 "hash": "ee4e9754f2c7",
 "last_changed": "2026-09-26T01:24:17+08:00",
-"shown_at": "2026-10-03T08:10:06+08:00"
+"shown_at": "2026-10-03T08:20:03+08:00"
 },
 {
 "id": "fungus",
 "d": "深度 -1.8m · 真菌園",
 "kind": "live",
-"text": "全巢最值錢的一間。食物會吃完,菌絲不會:菌庫現有 388 份記憶,本週新接種事故 3 件、裁決 60 件。再往下是檔案館,防的是同一件事——重挖已經挖過的土。",
-"ts": "2026-10-02T08:11:00+08:00",
+"text": "全巢最值錢的一間。食物會吃完,菌絲不會:菌庫現有 397 份記憶,本週新接種事故 3 件、裁決 67 件。再往下是檔案館,防的是同一件事——重挖已經挖過的土。",
+"ts": "2026-10-03T08:11:00+08:00",
 "period_h": 24,
 "src": "decision_kb.json · 記憶檔目錄(*.md)",
 "stale": false,
-"hash": "1790463e13d8",
-"last_changed": "2026-10-03T00:20:04+08:00",
-"shown_at": "2026-10-03T08:10:06+08:00"
+"hash": "295d29b0bf08",
+"last_changed": "2026-10-03T08:20:03+08:00",
+"shown_at": "2026-10-03T08:20:03+08:00"
 },
 {
 "id": "grave",
 "d": "深度 -2.4m · 墳場",
 "kind": "live",
 "text": "每一塊碑都是自己人立的。墳場現有 32 塊碑(12 塊封死路口、20 塊只立警示),新礦進門前都要先對過一遍。最新一塊是「資金費率觸頂反向=H15 資金費極端反向同構」(09-26)。忘記壞路徑的能力,比找到好路徑的能力貴。",
-"ts": "2026-10-02T08:11:00+08:00",
+"ts": "2026-10-03T08:11:00+08:00",
 "period_h": 24,
 "src": "graveyard_signatures.json · decision_kb.json(心跳)",
 "stale": false,
 "hash": "df82e6ccf7e7",
 "last_changed": "2026-09-26T22:20:03+08:00",
-"shown_at": "2026-10-03T08:10:06+08:00"
+"shown_at": "2026-10-03T08:20:03+08:00"
 },
 {
 "id": "face",
@@ -5784,25 +5784,25 @@
 "stale": false,
 "hash": "99c24b6d8e92",
 "last_changed": "2026-10-03T02:20:03+08:00",
-"shown_at": "2026-10-03T08:10:06+08:00"
+"shown_at": "2026-10-03T08:20:03+08:00"
 },
 {
 "id": "weekly",
 "d": "巢口公告 · 本週新事 · 4/9",
 "kind": "rotate",
 "text": "裁蟻自動拍板 D181:保護期屆滿恢復原檔位: 2026-09-24T10:55 復機已滿 7 天(16 筆, …——採「續留半檔再觀察 7 天」。(10-02)",
-"ts": "2026-10-03T08:10:06+08:00",
+"ts": "2026-10-03T08:20:03+08:00",
 "period_h": 24,
 "src": "decisions.json",
 "stale": false,
 "hash": "3fc6f700ceab",
 "last_changed": "2026-10-03T00:20:04+08:00",
-"shown_at": "2026-10-03T08:10:06+08:00"
+"shown_at": "2026-10-03T08:20:03+08:00"
 }
 ],
 "roster": {
 "v": 1,
-"ts": "2026-10-03T08:10:06+08:00",
+"ts": "2026-10-03T08:20:03+08:00",
 "n": 146,
 "depts": [
 {
@@ -6331,5 +6331,5 @@
 ],
 "src": "supervision_registry.json x research/autonomy/departments.json"
 },
-"_doc": "APEX 蟻穴公開資料; 每日 08:10 由 queen_weight.py 產出; 金額 eq 為 Jesse 2026-08-28 裁決公開"
+"_doc": "APEX 蟻穴公開資料; 完整鏈每日 08:10 由 queen_weight.py 產出, 每小時 :20 由 board_push.py (nest_hourly) 重算 fresh 列出的區塊; 各區塊資料時間見 fresh; 金額 eq 為 Jesse 2026-08-28 裁決公開"
 }
