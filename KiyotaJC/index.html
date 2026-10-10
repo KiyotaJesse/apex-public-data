@@ -1,0 +1,841 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>SPEEDIO 報價器</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+:root{
+  --bk:"S0pD";
+  --bg:#EEF1F0; --surface:#FFFFFF; --surface2:#F6F8F7; --line:#D5DCD9; --ink:#15201D; --muted:#5B6965;
+  --accent:#0C6964; --accent-soft:#DCEEEC; --accent-ink:#FFFFFF;
+  --warn:#9A6400; --warn-bg:#FFF3D9; --bad:#B3261E; --good:#1F7A3A;
+  --font:"Noto Sans TC",system-ui,"Microsoft JhengHei",sans-serif;
+  --display:"Barlow Condensed","Noto Sans TC",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1514; --surface:#172020; --surface2:#1C2726; --line:#2C3A38; --ink:#E3ECE9; --muted:#8FA09B;
+    --accent:#45B8B0; --accent-soft:#1D3533; --accent-ink:#0B1413;
+    --warn:#F0B64A; --warn-bg:#2E2513; --bad:#FF8A80; --good:#6FCF8A; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1514; --surface:#172020; --surface2:#1C2726; --line:#2C3A38; --ink:#E3ECE9; --muted:#8FA09B;
+  --accent:#45B8B0; --accent-soft:#1D3533; --accent-ink:#0B1413;
+  --warn:#F0B64A; --warn-bg:#2E2513; --bad:#FF8A80; --good:#6FCF8A; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:14px;line-height:1.5}
+.wrap{max-width:1280px;margin:0 auto;padding-inline:16px;padding-block:20px 60px}
+header.top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 24px;border-bottom:2px solid var(--ink);padding-bottom:12px;margin-bottom:18px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--display);font-weight:700;font-size:34px;line-height:1;margin:4px 0 0;letter-spacing:.01em;text-wrap:balance}
+h1 small{font-family:var(--font);font-size:14px;font-weight:500;color:var(--muted);margin-left:8px}
+[hidden]{display:none!important}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px}
+button,.btn{font:inherit;font-size:13px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:6px;padding:6px 12px;cursor:pointer;line-height:1.3}
+button:hover{border-color:var(--accent)}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+button.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:500}
+button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+button.ghost{border-color:transparent;background:transparent;color:var(--muted);padding:2px 6px}
+button.ghost:hover{color:var(--bad)}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:20px;align-items:start}
+@media (max-width:900px){.grid{grid-template-columns:minmax(0,1fr)}}
+section.blk{background:var(--surface);border:1px solid var(--line);border-radius:8px;margin-bottom:14px;overflow:hidden}
+.blk>h2{font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:.02em;margin:0;padding:10px 14px;background:var(--surface2);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:8px}
+.blk>h2 .cnt{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--accent)}
+.row{display:grid;grid-template-columns:22px minmax(0,1fr) 110px 110px 64px;gap:4px 10px;align-items:center;padding:7px 14px;border-top:1px solid var(--line)}
+.row:first-of-type{border-top:0}
+.row.head{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.04em;padding-block:5px;background:var(--surface)}
+.row.sel{background:var(--accent-soft)}
+.row .nm{min-width:0}
+.row .nm .note{display:block;font-size:12px;color:var(--muted)}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.row .num.u{color:var(--muted)}
+.row input[type=checkbox],.row input[type=radio]{width:16px;height:16px;accent-color:var(--accent);margin:0}
+.qty{width:56px;font:inherit;font-family:var(--mono);padding:2px 4px;border:1px solid var(--line);border-radius:4px;background:var(--surface);color:var(--ink);text-align:right}
+.edit input.ed{width:100%;font:inherit;padding:3px 6px;border:1px dashed var(--accent);border-radius:4px;background:var(--surface);color:var(--ink)}
+.edit input.ed.n{font-family:var(--mono);text-align:right}
+.addrow{padding:8px 14px;border-top:1px solid var(--line)}
+@media (max-width:620px){
+  .row{grid-template-columns:22px minmax(0,1fr) 92px;}
+  .row .num.u,.row .qcell,.row.head .hu,.row.head .hq{display:none}
+  .row .qcell.show{display:block;grid-column:2}
+}
+aside.sum{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px);background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+@media (max-width:900px){aside.sum{position:static}}
+.sum h2{font-family:var(--display);font-size:20px;font-weight:700;margin:0;padding:12px 14px;background:var(--ink);color:var(--bg);letter-spacing:.02em}
+.sum .sec{padding:12px 14px;border-top:1px solid var(--line)}
+.kv{display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:baseline}
+.kv .k{color:var(--muted);font-size:13px}
+.big{font-family:var(--display);font-size:30px;font-weight:700;line-height:1.1}
+.set{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.set label{min-width:0;display:flex;flex-direction:column;gap:3px;font-size:12px;color:var(--muted)}
+.set input,.set select{width:100%;min-width:0;font:inherit;font-family:var(--mono);font-size:13px;padding:5px 8px;border:1px solid var(--line);border-radius:5px;background:var(--surface);color:var(--ink)}
+.lines{max-height:280px;overflow:auto;font-size:12.5px}
+.lines .ln{display:grid;grid-template-columns:1fr auto;gap:8px;padding:3px 0;border-bottom:1px dotted var(--line)}
+.warns{display:flex;flex-direction:column;gap:6px}
+.wn{background:var(--warn-bg);color:var(--warn);border-radius:6px;padding:7px 10px;font-size:12.5px;display:flex;gap:8px;justify-content:space-between;align-items:center}
+.wn.bad{color:var(--bad)}
+.wn button{font-size:12px;padding:2px 8px;flex:none}
+.ok{color:var(--good);font-size:12.5px}
+.pill{display:inline-block;font-family:var(--mono);font-size:11px;padding:1px 7px;border-radius:99px;background:var(--accent-soft);color:var(--accent);margin-left:6px;vertical-align:middle}
+.editbar{display:none;background:var(--warn-bg);color:var(--warn);padding:8px 12px;border-radius:6px;margin-bottom:14px;font-size:13px}
+body.editing .editbar{display:block}
+.foot{font-size:12px;color:var(--muted);margin-top:18px}
+dialog{border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);max-width:min(680px,calc(100vw - 32px));width:100%}
+dialog textarea{width:100%;height:260px;font-family:var(--mono);font-size:12px;background:var(--surface2);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:8px}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:8px 16px;border-radius:6px;font-size:13px;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.show{opacity:1}
+@media (prefers-reduced-motion:reduce){.toast{transition:none}}
+</style>
+<style>
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px}
+@media (max-width:520px){.cards{grid-template-columns:1fr 1fr;gap:12px}}
+.card{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;aspect-ratio:1/1;text-align:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px;cursor:pointer;color:var(--ink);font:inherit;transition:border-color .15s,transform .15s,box-shadow .15s}
+.card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 10px 24px rgba(12,105,100,.16)}
+.card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.card .sl{font-family:var(--display);font-size:clamp(64px,13vw,120px);font-weight:700;line-height:.82;color:var(--accent);letter-spacing:-.01em}
+.card .sn{font-family:var(--display);font-size:19px;font-weight:600;letter-spacing:.02em}
+.card .ss,.card .sm,.card .meter,.card .ms{display:none}
+.row{grid-template-columns:22px minmax(0,1fr) 140px 64px}
+@media (max-width:620px){.row{grid-template-columns:22px minmax(0,1fr) 110px}.row .qcell{display:none}.row .qcell.show{display:block;grid-column:2}}
+.tabs{display:flex;gap:4px;margin-bottom:16px;border-bottom:1px solid var(--line)}
+.tabs button{border:0;border-bottom:3px solid transparent;border-radius:0;background:transparent;font-family:var(--display);font-size:18px;font-weight:600;padding:6px 14px;color:var(--muted)}
+.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+.etable{width:100%;border-collapse:collapse}
+.etable th{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--muted);text-align:left;padding:6px 10px;border-bottom:1px solid var(--line);background:var(--surface)}
+.etable td{padding:5px 10px;border-top:1px solid var(--line);vertical-align:middle}
+.etable td.pc{width:170px}
+.etable td.dl{width:60px;text-align:right}
+.etable input{width:100%;font:inherit;padding:5px 8px;border:1px solid var(--line);border-radius:5px;background:var(--surface);color:var(--ink)}
+.etable input.pr{font-family:var(--mono);text-align:right;font-weight:500}
+.etable input.nt{font-size:12px;color:var(--muted)}
+.etable input.changed{border-color:var(--accent);background:var(--accent-soft)}
+.etable tr.miss input.pr{border-color:var(--warn);background:var(--warn-bg)}
+.scroll{overflow-x:auto}
+.etable .nmcell{min-width:220px}
+.gname{font:inherit;font-family:var(--display);font-size:19px;font-weight:600;border:1px dashed transparent;background:transparent;color:var(--ink);padding:0 4px;border-radius:4px;min-width:0;width:100%}
+.gname:hover,.gname:focus{border-color:var(--line)}
+.ebar{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:end;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px;margin-bottom:14px}
+.ebar label{display:flex;flex-direction:column;gap:3px;font-size:12px;color:var(--muted)}
+.ebar input,.ebar select{font:inherit;font-family:var(--mono);font-size:13px;padding:5px 8px;border:1px solid var(--line);border-radius:5px;background:var(--surface);color:var(--ink);width:120px}
+.ebar .sp{flex:1}
+.search{width:220px!important;font-family:var(--font)!important}
+</style>
+<style>
+.dwrap{display:grid;grid-template-columns:320px minmax(0,1fr);gap:20px;align-items:start}
+@media (max-width:1000px){.dwrap{grid-template-columns:minmax(0,1fr)}}
+.dform{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;gap:8px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px)}
+@media (max-width:1000px){.dform{position:static}}
+.dform label{display:flex;flex-direction:column;gap:2px;font-size:12px;color:var(--muted)}
+.dform input,.dform textarea{font:inherit;font-size:13px;padding:5px 8px;border:1px solid var(--line);border-radius:5px;background:var(--surface);color:var(--ink);width:100%}
+.dform textarea{min-height:60px;resize:vertical}
+.dform .two{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.dform h3{margin:6px 0 0;font-family:var(--display);font-size:16px;color:var(--ink)}
+.paperbox{overflow-x:auto;background:#8a918f;border-radius:8px;padding:20px}
+/* 報價單本體：固定白紙黑字，不跟深色主題 */
+.doc{width:210mm;min-height:297mm;margin:0 auto;background:#fff;color:#111;padding:14mm 14mm 12mm;font-family:"Segoe UI",Arial,"Microsoft JhengHei","Noto Sans TC",sans-serif;font-size:10.5pt;line-height:1.35;box-shadow:0 2px 12px rgba(0,0,0,.25);display:flex;flex-direction:column}
+.doc .lh{display:grid;grid-template-columns:24mm 1fr;gap:5mm;align-items:center}
+.doc .lh img{width:24mm;height:auto;display:block}
+.doc .co{font-family:"Consolas","Courier New",monospace;font-size:20pt;letter-spacing:.04em;line-height:1.1}
+.doc .ad{font-family:"Times New Roman",serif;font-size:8.5pt;margin-top:1.5mm}
+.doc .date{text-align:right;margin-top:5mm;text-decoration:underline;text-underline-offset:2px}
+.doc .to{display:grid;grid-template-columns:30mm 1fr;margin-top:3mm;align-items:baseline}
+.doc .to b{font-size:12pt}
+.doc .terms{display:grid;grid-template-columns:30mm 3mm 1fr;font-size:9.5pt;margin-top:2mm;row-gap:.5mm}
+.doc .terms span:nth-child(3n){font-size:8.5pt;text-transform:uppercase}
+.doc table{width:100%;border-collapse:collapse;margin-top:6mm;font-variant-numeric:tabular-nums}
+.doc th,.doc td{padding:.9mm 1.2mm;vertical-align:top}
+.doc .dh td{font-weight:700;border-bottom:1px dashed #555}
+.doc .r{text-align:right;white-space:nowrap}
+.doc .c{text-align:center;white-space:nowrap}
+.doc .model td{font-weight:700;font-size:11pt;padding-top:3mm}
+.doc .sect td{font-weight:700;padding-top:2.5mm}
+.doc .opt td{font-size:9.5pt;padding-block:.5mm}
+.doc .opt td.n{width:8mm;text-align:right;padding-right:2mm}
+.doc .tot td{border-top:1px solid #333;padding-top:1.5mm}
+.doc .tot .lbl{font-family:"Times New Roman",serif;text-align:left}
+.doc .best td{background:#c8c8c8;font-weight:700;font-family:"Times New Roman",serif}
+.doc .incl{margin-top:5mm;font-size:9.5pt}
+.doc .incl ol{margin:1mm 0 0;padding-left:8mm}
+.doc .sig{margin-top:auto;padding-top:12mm;display:flex;flex-direction:column;align-items:flex-end;gap:3mm}
+.doc .sig b{letter-spacing:.06em}
+.doc .sig span{border-bottom:1px solid #111;min-width:55mm;text-align:center;padding-bottom:1mm}
+/* 見積依頼書（詢價） */
+.inq{width:210mm;min-height:297mm;margin:0 auto;background:#fff;color:#111;padding:14mm 16mm 14mm;font-family:"Yu Gothic","Meiryo","Noto Sans JP","Microsoft JhengHei","Noto Sans TC",sans-serif;font-size:10.5pt;line-height:1.55;box-shadow:0 2px 12px rgba(0,0,0,.25);display:flex;flex-direction:column}
+.inq .hd{display:grid;grid-template-columns:1fr auto;gap:4mm;align-items:start}
+.inq .hd .attn{font-size:11pt}
+.inq .hd .attn b{font-size:12pt;letter-spacing:.04em}
+.inq .hd .meta{display:grid;grid-template-columns:auto auto;column-gap:3mm;row-gap:1mm;font-size:10pt;white-space:nowrap}
+.inq h2{text-align:center;font-size:20pt;letter-spacing:.5em;margin:8mm 0 7mm;font-weight:700;text-indent:.5em}
+.inq .sec{font-weight:700;margin:5mm 0 2mm;font-size:11pt}
+.inq .kv{display:grid;grid-template-columns:38mm 1fr;row-gap:1.2mm;column-gap:3mm}
+.inq .kv span:nth-child(odd){white-space:nowrap}
+.inq .kv span:nth-child(even){border-bottom:1px solid #999;min-height:1.5em;padding-left:1mm}
+.inq .mdl{display:grid;grid-template-columns:38mm 1fr auto;column-gap:3mm;align-items:baseline}
+.inq .mdl b{font-size:11.5pt}
+.inq .mdl .q{white-space:nowrap}
+.inq ol.spec{margin:1mm 0 0;padding-left:0;list-style:none;columns:1}
+.inq ol.spec li{display:grid;grid-template-columns:8mm 1fr;padding:.4mm 0 .4mm 6mm;font-size:10pt}
+.inq ol.spec li span:first-child{text-align:right;padding-right:2mm}
+.inq .foot{margin-top:auto;padding-top:6mm;font-size:8.5pt;color:#555;text-align:right}
+@media print{
+  @page{size:A4;margin:0}
+  html,body{background:#fff!important;margin:0;padding:0}
+  .wrap{padding:0!important;max-width:none}
+  .wrap>*:not(#pageS),#pageS>*:not(#pageD):not(#pageI),.dform,dialog,.toast{display:none!important}
+  .inq{box-shadow:none;margin:0;min-height:297mm}
+  .dwrap{display:block}
+  .paperbox{padding:0;background:none;overflow:visible;border-radius:0}
+  .doc{box-shadow:none;margin:0;height:297mm;min-height:0;overflow:hidden}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <div class="eyebrow">Brother SPEEDIO · 本體＋選配 · 日圓未稅</div>
+      <h1 id="hTitle">SPEEDIO 報價器</h1>
+    </div>
+    <div class="toolbar" id="qTools" hidden>
+      <button id="btnDoc" type="button" class="primary">產生報價單</button>
+      <button id="btnCopy" type="button">複製明細（貼到 Excel）</button>
+      <button id="btnClear" type="button">清空選配</button>
+    </div>
+    <div class="toolbar" id="hTools">
+      <button type="button" id="btnExport" class="primary">存檔（產生要傳的檔案）</button>
+      <button type="button" id="btnBackupH">備份／還原全部價格</button>
+    </div>
+  </header>
+
+  <!-- 首頁 -->
+  <div id="pageH">
+    <p style="margin:0 0 14px;color:var(--muted)">選擇系列，進入該系列的機型與選配報價。</p>
+    <div class="cards" id="cards"></div>
+  </div>
+
+  <!-- 系列頁 -->
+  <div id="pageS" hidden>
+    <div class="crumb"><button type="button" id="btnHome">← 全部系列</button></div>
+    <nav class="tabs" role="tablist">
+      <button type="button" role="tab" id="tabQ" aria-selected="true">報價</button>
+      <button type="button" role="tab" id="tabD" aria-selected="false">報價單</button>
+      <button type="button" role="tab" id="tabI" aria-selected="false">詢價</button>
+      <button type="button" role="tab" id="tabE" aria-selected="false">價格編輯</button>
+    </nav>
+    <p class="srcnote" id="srcNote"></p>
+
+    <div id="pageQ">
+      <div class="grid">
+        <main id="main"></main>
+        <aside class="sum">
+          <h2>報價</h2>
+          <div class="sec">
+            <div class="kv">
+              <span class="k">TOTAL PRICE</span><span class="num" id="tTotal">–</span>
+              <span class="k"><label for="disc">DISCOUNT</label></span><span><input id="disc" type="number" step="10000" min="0" class="qty" style="width:130px" value="0"></span>
+              <span class="k">BEST PRICE</span><span class="big num" id="tBest">–</span>
+            </div>
+          </div>
+          <div class="sec">
+            <div class="eyebrow" style="margin-bottom:6px">提醒</div>
+            <div class="warns" id="warns"></div>
+          </div>
+          <div class="sec">
+            <div class="eyebrow" style="margin-bottom:6px">明細 <span id="lnCount"></span></div>
+            <div class="lines" id="lines"></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <div id="pageE" hidden>
+      <div class="ebar">
+        <label for="bulk">本系列全部價格調整 %<input id="bulk" type="number" step="0.5" placeholder="例：5 或 -3"></label>
+        <button type="button" id="btnBulk">套用調整</button>
+        <label for="q">搜尋項目<input id="q" class="search" type="search" placeholder="輸入名稱，例如 ATC"></label>
+        <span class="sp"></span>
+        <button type="button" id="btnBackup">備份／還原</button>
+        <button type="button" id="btnReset">還原本系列預設</button>
+        <button type="button" id="btnAuth">更改帳號密碼</button>
+      </div>
+      <p style="margin:0 0 12px;font-size:13px;color:var(--muted)">點格子打價格，按 Enter 跳下一格，自動存檔。<b style="color:var(--warn)">黃色＝還沒填價格</b>；填 0 表示免費／隨機附贈。機型也在最上面的「機型」分類裡新增。</p>
+      <div id="editList"></div>
+      <button type="button" id="btnAddGroup" style="margin-bottom:14px">＋ 新增分類</button>
+    </div>
+<div id="pageD" hidden>
+  <div class="dwrap">
+    <div class="dform">
+      <button type="button" class="primary" id="btnPrint">列印／存成 PDF</button>
+      <h3>客戶與條件</h3>
+      <label>To messers.（客戶名稱）<input id="d_to" data-k="to"></label>
+      <div class="two">
+        <label>DATE<input id="d_date" data-k="date"></label>
+        <label>機台數量（SET）<input id="d_mq" data-k="mq" type="number" min="1"></label>
+      </div>
+      <label>Delivery Place<input id="d_dp" data-k="dp"></label>
+      <label>Time of Shipment<input id="d_ts" data-k="ts"></label>
+      <label>Price Valid<input id="d_pv" data-k="pv"></label>
+      <label>Terms of Payment<input id="d_tp" data-k="tp"></label>
+      <label>Packing<input id="d_pk" data-k="pk"></label>
+      <label>Insurance Covered<input id="d_in" data-k="ins"></label>
+      <h3>機型與價格</h3>
+      <label>MODEL 描述（空白＝自動）<input id="d_md" data-k="md"></label>
+      <div class="two">
+        <label>DISCOUNT<input id="d_disc" type="number" step="10000" min="0"></label>
+        <label>或直接填 BEST PRICE<input id="d_best" type="number" step="10000" min="0"></label>
+      </div>
+      <label>* 以上報價未包含（一行一項）<textarea id="d_incl" data-k="incl" placeholder="例：OMC-N310 (油霧回收機)"></textarea></label>
+      <label>備註（一行一項）<textarea id="d_note" data-k="note" placeholder="例：安裝試車費用另計"></textarea></label>
+      <label>簽名列<input id="d_sig" data-k="sig"></label>
+      <p style="margin:0;font-size:12px;color:var(--muted)">選配清單和價格取自「報價」分頁的勾選。價格為 0 的附贈品只列數量、不列價格。</p>
+    </div>
+    <div class="paperbox"><div class="doc" id="doc"></div></div>
+  </div>
+</div>
+<div id="pageI" hidden>
+  <div class="dwrap">
+    <div class="dform iform">
+      <button type="button" class="primary" id="btnPrintI">列印／存成 PDF</button>
+      <h3>收件與日期</h3>
+      <label>ATTN（公司・擔當）<input id="i_attn" data-i="attn" placeholder="ブラザー工業　柴田"></label>
+      <div class="two">
+        <label>Date<input id="i_date" data-i="date"></label>
+        <label>営業担当者<input id="i_rep" data-i="rep"></label>
+      </div>
+      <h3>引合ユーザー様情報</h3>
+      <label>会社名（中文）<input id="i_cn" data-i="cn"></label>
+      <label>会社名（英文）<input id="i_en" data-i="en"></label>
+      <label>住所（中文）<input id="i_adc" data-i="adc"></label>
+      <label>住所（英文）<input id="i_ade" data-i="ade"></label>
+      <h3>見積依頼内容</h3>
+      <label>引合機種（空白＝自動）<input id="i_md" data-i="md"></label>
+      <div class="two">
+        <label>規格說明（空白＝自動）<input id="i_sp" data-i="sp" placeholder="(20,000RPM, 28ATC, 220V, 60HZ)"></label>
+        <label>台數<input id="i_qty" data-i="qty" type="number" min="1"></label>
+      </div>
+      <label>仕様（一行一項；空白＝自動帶入報價分頁勾選的選配）<textarea id="i_spec" data-i="spec" style="min-height:110px"></textarea></label>
+      <label>ユーザー様希望納期<input id="i_dl" data-i="dl"></label>
+      <h3>追加情報</h3>
+      <label>引合ユーザー様の業界<input id="i_ind" data-i="ind"></label>
+      <label>加工ワーク名称<input id="i_wk" data-i="wk"></label>
+      <label>加工ワークの材質<input id="i_mat" data-i="mat"></label>
+      <label>会社の規模<input id="i_sz" data-i="sz"></label>
+      <label>取引のきっかけ<input id="i_why" data-i="why"></label>
+      <div class="two">
+        <label>FANUC 社の設備<select id="i_fan" data-i="fan" style="font:inherit;font-size:13px;padding:5px 8px;border:1px solid var(--line);border-radius:5px;background:var(--surface);color:var(--ink)"><option value="">未填</option><option value="有">有</option><option value="無">無</option></select></label>
+        <label>台数<input id="i_fq" data-i="fq" type="number" min="0"></label>
+      </div>
+      <p style="margin:0;font-size:12px;color:var(--muted)">機種與仕様預設取自「報價」分頁的勾選，可在此覆寫。</p>
+    </div>
+    <div class="paperbox"><div class="inq" id="inq"></div></div>
+  </div>
+</div>
+  </div>
+
+  <p class="foot" style="text-align:center;margin-top:8px;letter-spacing:.03em">Design by Kiyota JC</p>
+</div>
+
+<dialog id="dlg">
+  <h3 style="margin:0 0 6px;font-family:var(--display);font-size:20px">備份／還原價格（全部系列）</h3>
+  <p style="margin:0 0 8px;font-size:13px;color:var(--muted)">「複製」會把全部系列的價格和項目複製成一段文字，存到記事本就是備份。要還原時，把那段文字貼進下面的框框（或選擇存好的檔案），再按「套用」。</p>
+  <textarea id="dlgText" spellcheck="false"></textarea>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;justify-content:space-between">
+    <input type="file" id="dlgFile" accept=".json,.txt" style="font-size:12px;max-width:100%">
+    <div style="display:flex;gap:8px">
+      <button id="dlgCopy" type="button">複製</button>
+      <button id="dlgApply" type="button" class="primary">套用</button>
+      <button id="dlgClose" type="button">關閉</button>
+    </div>
+  </div>
+  <div id="dlgMsg" style="font-size:12px;margin-top:6px;color:var(--bad)"></div>
+</dialog>
+<dialog id="xdlg">
+  <h3 style="margin:0 0 6px;font-family:var(--display);font-size:20px">存檔（產生要傳的檔案）</h3>
+  <p style="margin:0 0 10px;font-size:13px;color:var(--muted)">會下載一個 HTML 檔，裡面就是你「現在這一刻」的全部價格。這一份就是你要傳出去的檔案——用 LINE、Email 或隨身碟傳給對方，對方雙擊就能用，不用安裝。之後價格有改，再存一次、傳新的那份即可。</p>
+  <label style="display:flex;flex-direction:column;gap:3px;font-size:12px;color:var(--muted)">檔名（建議用英文，避免亂碼）<input id="xname" style="font:inherit;font-size:13px;padding:5px 8px;border:1px solid var(--line);border-radius:5px;background:var(--surface);color:var(--ink)"></label>
+  <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px">
+    <button id="xgo" type="button" class="primary">下載檔案</button>
+    <button id="xclose" type="button">關閉</button>
+  </div>
+  <div id="xmsg" style="font-size:12px;margin-top:6px;color:var(--muted)"></div>
+</dialog>
+<dialog id="adlg">
+  <h3 id="aTitle" style="margin:0 0 6px;font-family:var(--display);font-size:20px">管理員登入</h3>
+  <p id="aHint" style="margin:0 0 10px;font-size:13px;color:var(--muted)"></p>
+  <form id="aForm" method="dialog" style="display:flex;flex-direction:column;gap:8px">
+    <label style="display:flex;flex-direction:column;gap:3px;font-size:12px;color:var(--muted)">帳號<input id="aUser" autocomplete="username" required style="font:inherit;font-size:13px;padding:5px 8px;border:1px solid var(--line);border-radius:6px;background:var(--surface2);color:var(--ink)"></label>
+    <label style="display:flex;flex-direction:column;gap:3px;font-size:12px;color:var(--muted)">密碼<input id="aPass" type="password" autocomplete="current-password" required style="font:inherit;font-size:13px;padding:5px 8px;border:1px solid var(--line);border-radius:6px;background:var(--surface2);color:var(--ink)"></label>
+    <label id="aPass2Wrap" hidden style="display:flex;flex-direction:column;gap:3px;font-size:12px;color:var(--muted)">再輸入一次密碼<input id="aPass2" type="password" autocomplete="new-password" style="font:inherit;font-size:13px;padding:5px 8px;border:1px solid var(--line);border-radius:6px;background:var(--surface2);color:var(--ink)"></label>
+    <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:4px">
+      <button id="aGo" type="submit" class="primary">確定</button>
+      <button id="aCancel" type="button">取消</button>
+    </div>
+  </form>
+  <div id="aMsg" style="font-size:12px;margin-top:6px;color:var(--bad)"></div>
+</dialog>
+<div class="toast" id="toast"></div>
+
+<script id="seed" type="application/json">{"version": 3, "_b":"S0pD", "_k":[75,74,67], "series": [{"id": "S", "name": "S 系列", "sub": "小型綜合加工機（立式）", "models": "S300 · S500 · S700 · S1000", "src": "選配單價取自你的 S700Xd2 報價範本與報價單規格.xlsm", "groups": [{"id": "base", "name": "機型", "type": "radio", "items": [{"id": "S300", "name": "S300Xd2", "p": null}, {"id": "S500", "name": "S500Xd2", "p": null}, {"id": "S700", "name": "S700Xd2", "p": 8000000, "note": "12,000rpm・14ATC・220V 60Hz"}, {"id": "S1000", "name": "S1000Xd2", "p": null}]}, {"id": "S_spd", "name": "主軸轉速", "type": "radio", "items": [{"id": "S_s_std", "name": "標準轉速", "p": 0}, {"id": "S_s_16k", "name": "16,000 rpm", "p": 300000}, {"id": "S_s_20k", "name": "20,000 rpm", "p": 450000}, {"id": "S_s_27k", "name": "27,000 rpm", "p": 700000}]}, {"id": "S_atc", "name": "ATC 刀倉", "type": "radio", "items": [{"id": "S_a_14", "name": "14把（標準）", "p": 0}, {"id": "S_a_21", "name": "21把仕樣", "p": 400000}, {"id": "S_a_28", "name": "28把仕樣", "p": 1000000}]}, {"id": "S_sp", "name": "主軸・行程", "type": "check", "items": [{"id": "S_hitq", "name": "HIGH-TORQUE SPEC（主軸高扭力式樣）", "p": 300000}, {"id": "S_bt2", "name": "BT DUAL CONTACT（二面拘束主軸）含刀具洗淨", "p": null}, {"id": "S_hc150", "name": "HIGH COLUMN 150mm（主軸加高150mm）", "p": 150000, "x": "S_hc"}, {"id": "S_hc250", "name": "HIGH COLUMN 250mm（主軸加高250mm）", "p": 250000, "x": "S_hc"}, {"id": "S_z380", "name": "Z軸行程 380mm", "p": 300000}, {"id": "S_ovr", "name": "SPINDLE OVERRIDE（主軸速率調整）", "p": 50000}]}, {"id": "S_std", "name": "隨機附贈（台製）", "type": "check", "items": [{"id": "S_ind", "name": "INDICATOR LIGHT（三色燈）", "p": 0, "note": "隨機附贈"}, {"id": "S_wl", "name": "WORK LIGHT（工作燈）", "p": 0, "note": "隨機附贈"}, {"id": "S_tank", "name": "COOLANT UNIT TANK 150L（水箱）", "p": 0, "note": "隨機附贈"}, {"id": "S_plc", "name": "BUILT IN PLC FUNCTION（內建PLC）", "p": 0, "note": "標準"}]}, {"id": "S_opt", "name": "選配", "type": "check", "items": [{"id": "S_mpg", "name": "MANUAL PULSE GENERATOR（手動脈波控制器）", "p": 200000}, {"id": "S_grs", "name": "AUTOMATIC GREASE LUBRICATOR（自動打黃油裝置）", "p": 250000}, {"id": "S_top", "name": "TOP COVER（天井護蓋）", "p": 150000}, {"id": "S_sw8", "name": "SWITCH PANEL 8 HOLES（預留孔數8穴）", "p": 50000, "x": "S_sw"}, {"id": "S_sw10", "name": "SWITCH PANEL 10 HOLES（預留孔數10穴）", "p": 50000, "x": "S_sw"}, {"id": "S_door", "name": "AUTOMATIC DOORS（自動門）", "p": null}, {"id": "S_sdoor", "name": "SIDE DOOR（側門）", "p": null}, {"id": "S_brk", "name": "TOOL BREAKAGE DETECTION（刀具折損檢知）", "p": null}, {"id": "S_ts27", "name": "RENISHAW TS27R（量刀器）", "p": 350000}, {"id": "S_mist", "name": "SHOWA CRM-H04FD（油霧回收機）", "p": 400000}, {"id": "S_tr", "name": "TRANSFORMER 380-220V（變壓器）", "p": null}, {"id": "S_pack", "name": "ALL STEEL PACKING（無木材包裝）", "p": 100000}]}, {"id": "S_nc", "name": "NC 功能", "type": "check", "items": [{"id": "S_hp", "name": "HIGH ACCURACY MODE BII（高精度模式BII）", "p": 100000}, {"id": "S_sub", "name": "SUBMICRON COMMAND（次微米指令）", "p": 100000}, {"id": "S_mem", "name": "MEMORY CAPACITY 3GB（記憶容量擴充）", "p": null}, {"id": "S_ex32", "name": "STANDARD EXIO BOARD 32/32（I/O機板）", "p": null, "x": "S_ex"}, {"id": "S_ex64", "name": "EXPANSION EXIO BOARD 64/64（I/O機板）", "p": null, "x": "S_ex"}]}, {"id": "S_rot", "name": "第四軸", "type": "check", "items": [{"id": "S_b1", "name": "B-AXIS CODE 1 AXIS（1軸用配線）", "p": 50000, "x": "S_bc"}, {"id": "S_b2", "name": "B-AXIS CODE 2 AXES（2軸用配線）", "p": 100000, "x": "S_bc"}, {"id": "S_t200sp", "name": "T-200Ad＋SP（四軸＋尾座）", "p": 1300000}, {"id": "S_t200", "name": "ROTARY TABLE T-200A 右手系（第四軸）", "p": null}, {"id": "S_sup", "name": "SUPPORT TABLE（尾座）", "p": null}, {"id": "S_base", "name": "迴轉基座組", "p": null}]}]}, {"id": "R", "name": "R 系列", "sub": "雙交換工作台（Pallet Changer）", "models": "R450 · R650", "src": "選配項目比照 S 系列，價格待填", "groups": [{"id": "base", "name": "機型", "type": "radio", "items": [{"id": "R450", "name": "R450Xd2", "p": null}, {"id": "R650", "name": "R650Xd2", "p": null}]}, {"id": "R_spd", "name": "主軸轉速", "type": "radio", "items": [{"id": "R_s_std", "name": "標準轉速", "p": 0}, {"id": "R_s_16k", "name": "16,000 rpm", "p": null}, {"id": "R_s_20k", "name": "20,000 rpm", "p": null}, {"id": "R_s_27k", "name": "27,000 rpm", "p": null}]}, {"id": "R_atc", "name": "ATC 刀倉", "type": "radio", "items": [{"id": "R_a_14", "name": "14把（標準）", "p": 0}, {"id": "R_a_21", "name": "21把仕樣", "p": null}, {"id": "R_a_28", "name": "28把仕樣", "p": null}]}, {"id": "R_sp", "name": "主軸・行程", "type": "check", "items": [{"id": "R_hitq", "name": "HIGH-TORQUE SPEC（主軸高扭力式樣）", "p": null}, {"id": "R_bt2", "name": "BT DUAL CONTACT（二面拘束主軸）含刀具洗淨", "p": null}, {"id": "R_hc150", "name": "HIGH COLUMN 150mm（主軸加高150mm）", "p": null, "x": "R_hc"}, {"id": "R_hc250", "name": "HIGH COLUMN 250mm（主軸加高250mm）", "p": null, "x": "R_hc"}, {"id": "R_z380", "name": "Z軸行程 380mm", "p": null}, {"id": "R_ovr", "name": "SPINDLE OVERRIDE（主軸速率調整）", "p": null}]}, {"id": "R_std", "name": "隨機附贈（台製）", "type": "check", "items": [{"id": "R_ind", "name": "INDICATOR LIGHT（三色燈）", "p": 0, "note": "隨機附贈"}, {"id": "R_wl", "name": "WORK LIGHT（工作燈）", "p": 0, "note": "隨機附贈"}, {"id": "R_tank", "name": "COOLANT UNIT TANK 150L（水箱）", "p": 0, "note": "隨機附贈"}, {"id": "R_plc", "name": "BUILT IN PLC FUNCTION（內建PLC）", "p": 0, "note": "標準"}]}, {"id": "R_opt", "name": "選配", "type": "check", "items": [{"id": "R_mpg", "name": "MANUAL PULSE GENERATOR（手動脈波控制器）", "p": null}, {"id": "R_grs", "name": "AUTOMATIC GREASE LUBRICATOR（自動打黃油裝置）", "p": null}, {"id": "R_top", "name": "TOP COVER（天井護蓋）", "p": null}, {"id": "R_sw8", "name": "SWITCH PANEL 8 HOLES（預留孔數8穴）", "p": null, "x": "R_sw"}, {"id": "R_sw10", "name": "SWITCH PANEL 10 HOLES（預留孔數10穴）", "p": null, "x": "R_sw"}, {"id": "R_door", "name": "AUTOMATIC DOORS（自動門）", "p": null}, {"id": "R_sdoor", "name": "SIDE DOOR（側門）", "p": null}, {"id": "R_brk", "name": "TOOL BREAKAGE DETECTION（刀具折損檢知）", "p": null}, {"id": "R_ts27", "name": "RENISHAW TS27R（量刀器）", "p": null}, {"id": "R_mist", "name": "SHOWA CRM-H04FD（油霧回收機）", "p": null}, {"id": "R_tr", "name": "TRANSFORMER 380-220V（變壓器）", "p": null}, {"id": "R_pack", "name": "ALL STEEL PACKING（無木材包裝）", "p": null}]}, {"id": "R_nc", "name": "NC 功能", "type": "check", "items": [{"id": "R_hp", "name": "HIGH ACCURACY MODE BII（高精度模式BII）", "p": null}, {"id": "R_sub", "name": "SUBMICRON COMMAND（次微米指令）", "p": null}, {"id": "R_mem", "name": "MEMORY CAPACITY 3GB（記憶容量擴充）", "p": null}, {"id": "R_ex32", "name": "STANDARD EXIO BOARD 32/32（I/O機板）", "p": null, "x": "R_ex"}, {"id": "R_ex64", "name": "EXPANSION EXIO BOARD 64/64（I/O機板）", "p": null, "x": "R_ex"}]}, {"id": "R_rot", "name": "第四軸", "type": "check", "items": [{"id": "R_b1", "name": "B-AXIS CODE 1 AXIS（1軸用配線）", "p": null, "x": "R_bc"}, {"id": "R_b2", "name": "B-AXIS CODE 2 AXES（2軸用配線）", "p": null, "x": "R_bc"}, {"id": "R_t200sp", "name": "T-200Ad＋SP（四軸＋尾座）", "p": null}, {"id": "R_t200", "name": "ROTARY TABLE T-200A 右手系（第四軸）", "p": null}, {"id": "R_sup", "name": "SUPPORT TABLE（尾座）", "p": null}, {"id": "R_base", "name": "迴轉基座組", "p": null}]}]}, {"id": "W", "name": "W 系列", "sub": "長行程工作台", "models": "W1000 · W1000-5AX", "src": "Brother 2026年4月價格表・參考使用者價格", "groups": [{"id": "base", "name": "本體", "type": "radio", "items": [{"id": "b_std", "name": "SPEEDIO W1000Xd2", "note": "BT主軸・12,000轉・ATC 14支・標準主軸馬達（含機械護罩、主軸端面空氣吹淨）", "p": 9570000}, {"id": "b_5ax", "name": "SPEEDIO W1000Xd2-5AX", "note": "同動5軸控制（含刀尖點控制、記憶體擴充3GB、次微米指令、傾斜面座標設定）", "p": 10950000}]}, {"id": "spd", "name": "主軸轉速", "type": "radio", "items": [{"id": "s_12k", "name": "12,000轉（標準）", "p": 0}, {"id": "s_20k", "name": "20,000轉", "note": "CTS規格時部分被削材無法乾式加工", "p": 740000}, {"id": "s_10k", "name": "10,000轉 高扭力", "note": "高扭力馬達僅有10,000轉規格", "p": 650000}]}, {"id": "atc", "name": "ATC 刀具數", "type": "radio", "items": [{"id": "a_14", "name": "14支（標準）", "p": 0}, {"id": "a_21", "name": "21支", "p": 600000}, {"id": "a_28", "name": "28支", "p": 1340000}]}, {"id": "spt", "name": "主軸型式", "type": "radio", "items": [{"id": "p_bt", "name": "BT主軸（標準）", "p": 0}, {"id": "p_bt2", "name": "BT兩面拘束主軸", "note": "需一併安排刀具洗淨", "p": 180000}]}, {"id": "cts", "name": "貫穿主軸切削液（CTS）", "type": "radio", "items": [{"id": "c_no", "name": "無（標準）", "p": 0}, {"id": "c_3", "name": "CTS 耐壓3MPa", "note": "含專用主軸、中空主軸馬達；配管另計", "p": 510000}, {"id": "c_7", "name": "CTS 耐壓7MPa", "note": "含專用主軸、中空主軸馬達；配管另計", "p": 610000}]}, {"id": "tank", "name": "切削液槽", "type": "check", "items": [{"id": "t_200", "name": "切削液槽 200L", "p": 532000, "x": "tank"}, {"id": "t_200c", "name": "切削液槽 200L 附1.5MPa CTS用泵浦・旋風分離過濾器", "p": 971000, "x": "tank"}, {"id": "t_2s", "name": "2段式排屑機槽 500L", "note": "鉸鏈＋刮板式", "p": 3444000, "x": "tank"}, {"id": "t_2so", "name": "2段式排屑機槽 500L 附撇油器", "note": "鉸鏈＋刮板式", "p": 3628000, "x": "tank"}, {"id": "t_2sc", "name": "2段式排屑機槽 500L 附1.5MPa CTS泵浦・旋風分離過濾器", "note": "鉸鏈＋刮板式", "p": 4074000, "x": "tank"}, {"id": "t_2sco", "name": "2段式排屑機槽 500L 附1.5MPa CTS泵浦・旋風分離過濾器・撇油器", "note": "鉸鏈＋刮板式", "p": 4258000, "x": "tank"}, {"id": "t_1s", "name": "1段式排屑機槽 500L", "note": "刮板式", "p": 2918000, "x": "tank"}, {"id": "t_1so", "name": "1段式排屑機槽 500L 附撇油器", "note": "刮板式", "p": 3102000, "x": "tank"}, {"id": "t_1sc", "name": "1段式排屑機槽 500L 附1.5MPa CTS泵浦・旋風分離過濾器", "note": "刮板式", "p": 3548000, "x": "tank"}, {"id": "t_1sco", "name": "1段式排屑機槽 500L 附1.5MPa CTS泵浦・旋風分離過濾器・撇油器", "note": "刮板式", "p": 3732000, "x": "tank"}, {"id": "t_cable", "name": "排屑機用電纜", "p": 6400}]}, {"id": "cool", "name": "切削液相關", "type": "check", "items": [{"id": "k_col", "name": "立柱部切削液噴嘴", "p": 172000}, {"id": "k_head", "name": "主軸頭部切削液噴嘴", "p": 273000}, {"id": "k_sh200", "name": "沖屑淋浴 200L用", "p": 71000, "x": "shower"}, {"id": "k_shcv", "name": "沖屑淋浴 排屑機用", "p": 125000, "x": "shower"}, {"id": "k_p3", "name": "CTS用配管 耐壓3MPa", "p": 153000, "x": "pipe"}, {"id": "k_p3r", "name": "CTS用配管 耐壓3MPa 附逆流型洗淨系統", "note": "僅在不使用Brother標準切削液槽時可選", "p": 315000, "x": "pipe"}, {"id": "k_p7", "name": "CTS用配管 耐壓7MPa", "note": "標準搭載壓力開關、切削液閥、吐出用電磁閥", "p": 208000, "x": "pipe"}, {"id": "k_wair", "name": "空氣輔助式刀具洗淨", "p": 336000, "x": "wash"}, {"id": "k_w15", "name": "泵浦直結式刀具洗淨（1.5MPa CTS用）", "note": "僅選CTS時可選", "p": 198000, "x": "wash"}, {"id": "k_w70", "name": "泵浦直結式刀具洗淨（7.0MPa CTS用）", "note": "僅選CTS時可選", "p": 263000, "x": "wash"}, {"id": "k_gun", "name": "洗淨槍", "p": 37000}, {"id": "k_jig", "name": "治具淋浴閥", "p": 48000}, {"id": "k_bask", "name": "切屑用網籃", "note": "2個一組之價格", "p": 74000, "q": true}]}, {"id": "col", "name": "高立柱・護罩", "type": "check", "items": [{"id": "h_150", "name": "高立柱 150mm", "p": 260000, "x": "hicol"}, {"id": "h_250", "name": "高立柱 250mm", "p": 366000, "x": "hicol"}, {"id": "h_350", "name": "高立柱 350mm", "p": 427000, "x": "hicol"}, {"id": "h_top", "name": "頂蓋", "p": 111000}, {"id": "h_side", "name": "側面護罩 採光型 單面", "note": "單側1片之價格，兩側請選2片", "p": 70000, "q": true}]}, {"id": "lamp", "name": "機內燈・號誌燈・給油", "type": "check", "items": [{"id": "l_inl", "name": "機內燈 1燈 左側", "p": 84000}, {"id": "l_inr", "name": "機內燈 1燈 右側", "p": 84000}, {"id": "l_s1", "name": "號誌燈 1燈", "p": 66000, "x": "sig"}, {"id": "l_s2", "name": "號誌燈 2燈", "p": 73000, "x": "sig"}, {"id": "l_s3", "name": "號誌燈 3燈", "p": 88000, "x": "sig"}, {"id": "l_oil", "name": "自動油潤滑", "p": 263000, "x": "lub"}, {"id": "l_grs", "name": "自動油脂潤滑", "p": 263000, "x": "lub"}]}, {"id": "door", "name": "自動門", "type": "check", "items": [{"id": "d_auto", "name": "自動門 附開關面板10孔", "p": 347000}, {"id": "d_area", "name": "區域感測器", "p": 420000}, {"id": "d_p8", "name": "開關面板 8孔", "p": 28000}, {"id": "d_p10", "name": "開關面板 10孔", "p": 14000}]}, {"id": "io", "name": "週邊機器連接", "type": "check", "items": [{"id": "i_ex1", "name": "EXIO基板 輸入32/輸出32 第1片追加用", "p": 82000}, {"id": "i_ex2", "name": "EXIO基板 輸入32/輸出32 第2片追加用", "p": 82000}, {"id": "i_ccm", "name": "CC-Link 主站", "p": 231000, "x": "net"}, {"id": "i_ccr", "name": "CC-Link 遠端裝置站", "p": 126000, "x": "net"}, {"id": "i_dn", "name": "Device Net 從站", "p": 126000, "x": "net"}, {"id": "i_pb", "name": "PROFIBUS DP 從站", "p": 126000, "x": "net"}, {"id": "i_pn", "name": "PROFINET 從站", "p": 231000, "x": "net"}, {"id": "i_eip", "name": "EtherNet/IP 從站", "p": 231000, "x": "net"}, {"id": "i_plc", "name": "PLC程式編輯軟體 D00/C00/B00用", "p": 105000}, {"id": "i_plcm", "name": "PLC系統說明書（選配）D00用", "p": 8300, "q": true}]}, {"id": "nc", "name": "NC 功能", "type": "check", "items": [{"id": "n_mem", "name": "記憶體容量擴充 3GB", "p": 53000, "in5": true}, {"id": "n_sub", "name": "次微米指令", "note": "僅NC語言；搭載後無法使用對話功能", "p": 105000, "in5": true}, {"id": "n_hp", "name": "高精度模式BⅡ 先讀1000區塊 附平滑路徑補正", "p": 105000}, {"id": "n_int", "name": "中斷型巨集", "note": "僅NC語言", "p": 53000}, {"id": "n_rfo", "name": "旋轉治具偏置（Rotary Fixture Offset）", "note": "僅NC語言", "p": 53000}, {"id": "n_inv", "name": "漸開線插補", "note": "僅NC語言", "p": 53000}, {"id": "n_tilt", "name": "傾斜面座標設定", "note": "僅NC語言", "p": 53000, "in5": true}, {"id": "n_chat", "name": "顫振診斷支援", "p": 53000}]}, {"id": "pwr", "name": "電源", "type": "check", "items": [{"id": "w_100l", "name": "控制盤內用100V插座 自動油潤滑用 國內向", "p": 13000}, {"id": "w_100", "name": "控制盤內用100V插座 國內向", "p": 63000}, {"id": "w_200cn", "name": "控制盤內用200V插座 中國向", "p": 13000}, {"id": "w_50a", "name": "電源擴充 50A", "p": 105000, "x": "p50"}, {"id": "w_50eu", "name": "電源擴充 50A 歐洲/巴西向", "p": 137000, "x": "p50"}, {"id": "w_t11", "name": "變壓器箱 11.4KVA", "p": 303000, "x": "tr"}, {"id": "w_t19", "name": "變壓器箱 19KVA", "p": 651000, "x": "tr"}]}, {"id": "oth", "name": "其他", "type": "check", "items": [{"id": "o_mist", "name": "油霧收集器", "note": "僅出貨時設定；設置於控制盤上，需要頂蓋", "p": 650000}, {"id": "o_prb", "name": "觸發式探針 附基本量測軟體", "note": "僅出貨時設定", "p": 1230000, "x": "probe"}, {"id": "o_prb2", "name": "觸發式探針 附附加軸旋轉中心量測軟體", "note": "僅出貨時設定", "p": 1680000, "x": "probe"}, {"id": "o_ball", "name": "量測用基準球", "p": 240000}, {"id": "o_color", "name": "指定顏色", "p": 310000}, {"id": "o_mpg", "name": "手動脈波產生器 附致能開關 附連接器・掛勾", "p": 158000}, {"id": "o_mpgc", "name": "手動脈波產生器 致能開關用 連接器", "p": 23000}, {"id": "o_mpgch", "name": "手動脈波產生器 致能開關用 連接器・掛勾", "p": 26000}, {"id": "o_rs", "name": "RS232C 25針連接器 控制盤側面", "p": 17000}, {"id": "o_brk", "name": "接觸式刀具折損檢測", "p": 88000}, {"id": "o_ovr", "name": "主軸倍率（Override）", "p": 69000}, {"id": "o_rdy", "name": "運轉準備電路", "p": 126000}, {"id": "o_grip", "name": "握把護罩 刀庫14/21/28支用", "p": 1400, "q": true}, {"id": "o_key", "name": "鑰匙型資料保護開關", "p": 2100}, {"id": "o_mark", "name": "原點對合標記", "p": 21000}, {"id": "o_cdoor", "name": "控制盤門（折疊門）", "note": "裝排屑機時可防止與排屑機干涉", "p": 44000}, {"id": "o_seal", "name": "零件密封", "p": 34000}, {"id": "o_man", "name": "使用說明書一式", "note": "日・英・簡中・繁中・韓・葡", "p": 38000, "q": true}, {"id": "o_rem", "name": "遠端支援套件＋遠端支援服務", "note": "僅限日本國內", "p": 30000, "x": "rem"}, {"id": "o_rem2", "name": "遠端支援套件（附主軸感測器）＋遠端支援服務", "note": "僅限日本國內", "p": 180000, "x": "rem"}]}, {"id": "rot", "name": "旋轉工作台", "type": "check", "items": [{"id": "r_r", "name": "旋轉工作台 T-200Ad 右手系", "note": "含本體（附夾持）、放大器、附加軸電纜1軸用", "p": 1066000, "x": "rt"}, {"id": "r_l", "name": "旋轉工作台 T-200Ad 左手系", "note": "含本體（附夾持）、放大器、附加軸電纜1軸用", "p": 1066000, "x": "rt"}, {"id": "r_sc", "name": "T-200A/Ad 共用 支撐工作台 附夾持", "p": 331000, "x": "sup"}, {"id": "r_sn", "name": "T-200A/Ad 共用 支撐工作台 無夾持", "p": 200000, "x": "sup"}, {"id": "r_sub", "name": "T-200A/Ad 共用 副板", "note": "旋轉工作台、支撐工作台各需1片", "p": 69000, "q": true}, {"id": "r_sub2", "name": "T-200A/Ad 共用 支撐用副板 2片組", "p": 151000}, {"id": "r_rj", "name": "T-200A/Ad 共用 旋轉接頭 6P", "p": 336000}, {"id": "r_man", "name": "T-200Ad 使用說明書", "p": 2700, "q": true}, {"id": "r_c1", "name": "附加軸電纜 1軸用", "note": "他社／Brother旋轉台用", "p": 37000, "x": "axc"}, {"id": "r_c2", "name": "附加軸電纜 2軸用", "note": "傾斜工作台用", "p": 74000, "x": "axc"}]}]}, {"id": "U", "name": "U 系列", "sub": "多面加工・5軸", "models": "U500 · U500-100T", "src": "選配項目取自 U500 受注管理票，價格待填", "groups": [{"id": "base", "name": "機型", "type": "radio", "items": [{"id": "U500", "name": "U500Xd2", "p": null, "note": "參考：2023年 U500Xd1-5AX RD（16,000rpm・28ATC・CTS）成交 ¥14,000,000"}, {"id": "U500T", "name": "U500Xd2 100T", "p": null}]}, {"id": "U_opt", "name": "選配", "type": "check", "items": [{"id": "U_tank", "name": "切削液槽 150L 附1.5MPa CTS泵浦・旋風分離過濾器", "p": null}, {"id": "U_head", "name": "主軸頭部切削液噴嘴", "p": null}, {"id": "U_chip", "name": "沖屑淋浴（Chip Shower）", "p": null}, {"id": "U_grs", "name": "自動油脂潤滑", "p": null}, {"id": "U_p3", "name": "CTS用配管 耐壓3.0MPa", "p": null}, {"id": "U_top", "name": "頂蓋", "p": null}, {"id": "U_door", "name": "自動門 附開關面板10孔", "p": null}, {"id": "U_mpg", "name": "手動脈波產生器 附致能開關", "p": null}, {"id": "U_mpgc", "name": "手動脈波產生器 致能開關用 連接器・掛勾", "p": null}, {"id": "U_brk", "name": "接觸式刀具折損檢測", "p": null}, {"id": "U_ex1", "name": "EXIO基板 輸入32/輸出32 第1片追加用", "p": null}, {"id": "U_hp", "name": "高精度模式BⅡ 先讀1000區塊 附平滑路徑補正", "p": null}, {"id": "U_rfo", "name": "旋轉治具偏置（Rotary Fixture Offset）", "p": null}, {"id": "U_rj", "name": "旋轉接頭", "p": null}, {"id": "U_rs", "name": "RS232C 25針連接器 控制盤側面", "p": null}, {"id": "U_ovr", "name": "主軸倍率（Spindle Override）", "p": null}, {"id": "U_key", "name": "鑰匙型資料保護開關", "p": null}, {"id": "U_ind", "name": "三色燈", "p": null, "note": "現地調達"}, {"id": "U_wl", "name": "工作燈", "p": null, "note": "現地調達"}]}]}, {"id": "M", "name": "M 系列", "sub": "車銑複合", "models": "M200 · M300", "src": "選配項目比照 S 系列，價格待填", "groups": [{"id": "base", "name": "機型", "type": "radio", "items": [{"id": "M200", "name": "M200Xd1", "p": null}, {"id": "M300", "name": "M300Xd1", "p": null}]}, {"id": "M_spd", "name": "主軸轉速", "type": "radio", "items": [{"id": "M_s_std", "name": "標準轉速", "p": 0}, {"id": "M_s_16k", "name": "16,000 rpm", "p": null}, {"id": "M_s_20k", "name": "20,000 rpm", "p": null}, {"id": "M_s_27k", "name": "27,000 rpm", "p": null}]}, {"id": "M_atc", "name": "ATC 刀倉", "type": "radio", "items": [{"id": "M_a_14", "name": "14把（標準）", "p": 0}, {"id": "M_a_21", "name": "21把仕樣", "p": null}, {"id": "M_a_28", "name": "28把仕樣", "p": null}]}, {"id": "M_sp", "name": "主軸・行程", "type": "check", "items": [{"id": "M_hitq", "name": "HIGH-TORQUE SPEC（主軸高扭力式樣）", "p": null}, {"id": "M_bt2", "name": "BT DUAL CONTACT（二面拘束主軸）含刀具洗淨", "p": null}, {"id": "M_hc150", "name": "HIGH COLUMN 150mm（主軸加高150mm）", "p": null, "x": "M_hc"}, {"id": "M_hc250", "name": "HIGH COLUMN 250mm（主軸加高250mm）", "p": null, "x": "M_hc"}, {"id": "M_z380", "name": "Z軸行程 380mm", "p": null}, {"id": "M_ovr", "name": "SPINDLE OVERRIDE（主軸速率調整）", "p": null}]}, {"id": "M_std", "name": "隨機附贈（台製）", "type": "check", "items": [{"id": "M_ind", "name": "INDICATOR LIGHT（三色燈）", "p": 0, "note": "隨機附贈"}, {"id": "M_wl", "name": "WORK LIGHT（工作燈）", "p": 0, "note": "隨機附贈"}, {"id": "M_tank", "name": "COOLANT UNIT TANK 150L（水箱）", "p": 0, "note": "隨機附贈"}, {"id": "M_plc", "name": "BUILT IN PLC FUNCTION（內建PLC）", "p": 0, "note": "標準"}]}, {"id": "M_opt", "name": "選配", "type": "check", "items": [{"id": "M_mpg", "name": "MANUAL PULSE GENERATOR（手動脈波控制器）", "p": null}, {"id": "M_grs", "name": "AUTOMATIC GREASE LUBRICATOR（自動打黃油裝置）", "p": null}, {"id": "M_top", "name": "TOP COVER（天井護蓋）", "p": null}, {"id": "M_sw8", "name": "SWITCH PANEL 8 HOLES（預留孔數8穴）", "p": null, "x": "M_sw"}, {"id": "M_sw10", "name": "SWITCH PANEL 10 HOLES（預留孔數10穴）", "p": null, "x": "M_sw"}, {"id": "M_door", "name": "AUTOMATIC DOORS（自動門）", "p": null}, {"id": "M_sdoor", "name": "SIDE DOOR（側門）", "p": null}, {"id": "M_brk", "name": "TOOL BREAKAGE DETECTION（刀具折損檢知）", "p": null}, {"id": "M_ts27", "name": "RENISHAW TS27R（量刀器）", "p": null}, {"id": "M_mist", "name": "SHOWA CRM-H04FD（油霧回收機）", "p": null}, {"id": "M_tr", "name": "TRANSFORMER 380-220V（變壓器）", "p": null}, {"id": "M_pack", "name": "ALL STEEL PACKING（無木材包裝）", "p": null}]}, {"id": "M_nc", "name": "NC 功能", "type": "check", "items": [{"id": "M_hp", "name": "HIGH ACCURACY MODE BII（高精度模式BII）", "p": null}, {"id": "M_sub", "name": "SUBMICRON COMMAND（次微米指令）", "p": null}, {"id": "M_mem", "name": "MEMORY CAPACITY 3GB（記憶容量擴充）", "p": null}, {"id": "M_ex32", "name": "STANDARD EXIO BOARD 32/32（I/O機板）", "p": null, "x": "M_ex"}, {"id": "M_ex64", "name": "EXPANSION EXIO BOARD 64/64（I/O機板）", "p": null, "x": "M_ex"}]}]}, {"id": "H", "name": "H / HU 系列", "sub": "臥式綜合加工機", "models": "H550 · HU550", "src": "選配項目比照 S 系列，價格待填", "groups": [{"id": "base", "name": "機型", "type": "radio", "items": [{"id": "H550", "name": "H550Xd1", "p": null}, {"id": "HU550", "name": "HU550", "p": null}]}, {"id": "H_spd", "name": "主軸轉速", "type": "radio", "items": [{"id": "H_s_std", "name": "標準轉速", "p": 0}, {"id": "H_s_16k", "name": "16,000 rpm", "p": null}, {"id": "H_s_20k", "name": "20,000 rpm", "p": null}, {"id": "H_s_27k", "name": "27,000 rpm", "p": null}]}, {"id": "H_atc", "name": "ATC 刀倉", "type": "radio", "items": [{"id": "H_a_14", "name": "14把（標準）", "p": 0}, {"id": "H_a_21", "name": "21把仕樣", "p": null}, {"id": "H_a_28", "name": "28把仕樣", "p": null}]}, {"id": "H_sp", "name": "主軸・行程", "type": "check", "items": [{"id": "H_hitq", "name": "HIGH-TORQUE SPEC（主軸高扭力式樣）", "p": null}, {"id": "H_bt2", "name": "BT DUAL CONTACT（二面拘束主軸）含刀具洗淨", "p": null}, {"id": "H_hc150", "name": "HIGH COLUMN 150mm（主軸加高150mm）", "p": null, "x": "H_hc"}, {"id": "H_hc250", "name": "HIGH COLUMN 250mm（主軸加高250mm）", "p": null, "x": "H_hc"}, {"id": "H_z380", "name": "Z軸行程 380mm", "p": null}, {"id": "H_ovr", "name": "SPINDLE OVERRIDE（主軸速率調整）", "p": null}]}, {"id": "H_std", "name": "隨機附贈（台製）", "type": "check", "items": [{"id": "H_ind", "name": "INDICATOR LIGHT（三色燈）", "p": 0, "note": "隨機附贈"}, {"id": "H_wl", "name": "WORK LIGHT（工作燈）", "p": 0, "note": "隨機附贈"}, {"id": "H_tank", "name": "COOLANT UNIT TANK 150L（水箱）", "p": 0, "note": "隨機附贈"}, {"id": "H_plc", "name": "BUILT IN PLC FUNCTION（內建PLC）", "p": 0, "note": "標準"}]}, {"id": "H_opt", "name": "選配", "type": "check", "items": [{"id": "H_mpg", "name": "MANUAL PULSE GENERATOR（手動脈波控制器）", "p": null}, {"id": "H_grs", "name": "AUTOMATIC GREASE LUBRICATOR（自動打黃油裝置）", "p": null}, {"id": "H_top", "name": "TOP COVER（天井護蓋）", "p": null}, {"id": "H_sw8", "name": "SWITCH PANEL 8 HOLES（預留孔數8穴）", "p": null, "x": "H_sw"}, {"id": "H_sw10", "name": "SWITCH PANEL 10 HOLES（預留孔數10穴）", "p": null, "x": "H_sw"}, {"id": "H_door", "name": "AUTOMATIC DOORS（自動門）", "p": null}, {"id": "H_sdoor", "name": "SIDE DOOR（側門）", "p": null}, {"id": "H_brk", "name": "TOOL BREAKAGE DETECTION（刀具折損檢知）", "p": null}, {"id": "H_ts27", "name": "RENISHAW TS27R（量刀器）", "p": null}, {"id": "H_mist", "name": "SHOWA CRM-H04FD（油霧回收機）", "p": null}, {"id": "H_tr", "name": "TRANSFORMER 380-220V（變壓器）", "p": null}, {"id": "H_pack", "name": "ALL STEEL PACKING（無木材包裝）", "p": null}]}, {"id": "H_nc", "name": "NC 功能", "type": "check", "items": [{"id": "H_hp", "name": "HIGH ACCURACY MODE BII（高精度模式BII）", "p": null}, {"id": "H_sub", "name": "SUBMICRON COMMAND（次微米指令）", "p": null}, {"id": "H_mem", "name": "MEMORY CAPACITY 3GB（記憶容量擴充）", "p": null}, {"id": "H_ex32", "name": "STANDARD EXIO BOARD 32/32（I/O機板）", "p": null, "x": "H_ex"}, {"id": "H_ex64", "name": "EXPANSION EXIO BOARD 64/64（I/O機板）", "p": null, "x": "H_ex"}]}, {"id": "H_rot", "name": "第四軸", "type": "check", "items": [{"id": "H_b1", "name": "B-AXIS CODE 1 AXIS（1軸用配線）", "p": null, "x": "H_bc"}, {"id": "H_b2", "name": "B-AXIS CODE 2 AXES（2軸用配線）", "p": null, "x": "H_bc"}, {"id": "H_t200sp", "name": "T-200Ad＋SP（四軸＋尾座）", "p": null}, {"id": "H_t200", "name": "ROTARY TABLE T-200A 右手系（第四軸）", "p": null}, {"id": "H_sup", "name": "SUPPORT TABLE（尾座）", "p": null}, {"id": "H_base", "name": "迴轉基座組", "p": null}]}]}], "stamp": "base-20260929", "readonly": false}</script>
+<script>
+const SRC="<!doctype html>\n"+document.documentElement.outerHTML;
+const _r=String.fromCharCode(75,74,67), _rb="S0pD";
+function _mark(o){try{if(!o||typeof o!=="object")return o;o._b=_rb;o._k=[75,74,67];if(Array.isArray(o.series))o.series.forEach(x=>{if(x&&typeof x==="object")x._b=_rb;});}catch(e){}return o;}
+const DEFAULT=JSON.parse(document.getElementById("seed").textContent);
+
+const LS_DATA="speedio.data.v3", LS_STATE="speedio.state.v3";
+const clone=o=>JSON.parse(JSON.stringify(o));
+function lsGet(k){try{const v=localStorage.getItem(k);return v?JSON.parse(v):null}catch(e){return null}}
+function lsSet(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+
+let data=lsGet(LS_DATA);
+if(data&&!data.stamp) data.stamp=DEFAULT.stamp;            // 本機舊資料：保留
+if(data&&data.stamp!==DEFAULT.stamp) data=null;             // 收到新匯出的檔案：用檔案內的價格
+if(data) data.readonly=DEFAULT.readonly;
+if(data&&DEFAULT.auth) data.auth=DEFAULT.auth;          // 檔案內的鎖優先
+_mark(data);
+if(!data){ data=clone(DEFAULT);
+  const old=lsGet("w1000q.data.v2"); // 沿用上一版 W1000 的修改
+  if(old&&Array.isArray(old.groups)){ const w=data.series.find(s=>s.id==="W"); if(w){ w.groups=old.groups; } }
+}
+let st=Object.assign({sel:{},qty:{},disc:{},view:"H",sid:null,tab:"Q"},lsGet(LS_STATE)||{});
+if(!st.disc||typeof st.disc!=="object") st.disc={};
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const save=()=>lsSet(LS_STATE,st), saveData=()=>lsSet(LS_DATA,data);
+const S=()=>data.series.find(s=>s.id===st.sid)||data.series[0];
+const allItems=(ser)=>(ser||S()).groups.flatMap(g=>g.items.map(i=>Object.assign({g},i)));
+const find=id=>allItems().find(i=>i.id===id);
+const has=id=>!!st.sel[id];
+const anyX=x=>allItems().some(i=>i.x===x&&has(i.id));
+const qty=id=>Math.max(1,parseInt(st.qty[id]||1,10)||1);
+const isNum=v=>v!==null&&v!==undefined&&v!==""&&!isNaN(+v);
+const fmt=v=>"¥ "+Math.round(+v||0).toLocaleString("en-US");
+function initRadios(){data.series.forEach(s=>s.groups.forEach(g=>{if(g.type==="radio"&&g.items.length&&!g.items.some(i=>st.sel[i.id]))st.sel[g.items[0].id]=true}))}
+initRadios();
+
+/* ---------- 首頁 ---------- */
+function renderH(){
+  const box=$("#cards"); box.innerHTML="";
+  data.series.forEach(s=>{
+    const items=allItems(s), filled=items.filter(i=>isNum(i.p)).length;
+    const models=(s.groups.find(g=>g.id==="base")||{items:[]}).items.map(i=>i.name).join(" · ");
+    const b=document.createElement("button"); b.type="button"; b.className="card"; b.title=s.name+(models?"（"+models+"）":"");
+    b.innerHTML=`<span class="sl">${esc(s.id)}</span><span class="sn">${esc(s.name)}</span>`;
+    b.addEventListener("click",()=>go(s.id,"Q"));
+    box.appendChild(b);
+  });
+}
+
+/* ---------- 報價頁 ---------- */
+function renderQ(){
+  const main=$("#main"); main.innerHTML="";
+  S().groups.forEach(g=>{
+    if(!g.items.length) return;
+    const sec=document.createElement("section"); sec.className="blk";
+    const n=g.type==="check"?g.items.filter(i=>has(i.id)).length:0;
+    sec.innerHTML=`<h2><span>${esc(g.name)}${g.type==="radio"?'<span class="pill">單選</span>':""}</span><span class="cnt">${n?n+" 項":""}</span></h2>`;
+    g.items.forEach(it=>{
+      const sel=has(it.id), r=document.createElement("div");
+      r.className="row"+(sel?" sel":"");
+      const t=g.type==="radio"?"radio":"checkbox";
+      const add=g.type==="radio"&&g.id!=="base";
+      let price;
+      if(!isNum(it.p)) price='<span class="pend">待填價格</span>';
+      else if(+it.p===0) price=add?"—":(g.id==="base"?"—":"附贈");
+      else price=(add?"+ ":"")+fmt(it.p);
+      const showQ=g.type==="check"&&sel;
+      r.innerHTML=`<input type="${t}" name="g_${esc(g.id)}" id="c_${esc(it.id)}" ${sel?"checked":""}>
+        <label class="nm" for="c_${esc(it.id)}">${esc(it.name)}${it.note?`<span class="note">${esc(it.note)}</span>`:""}</label>
+        <span class="num">${price}</span>
+        <span class="qcell${showQ?" show":""}">${showQ?`<input class="qty" type="number" min="1" value="${qty(it.id)}" aria-label="數量">`:""}</span>`;
+      r.querySelector("input").addEventListener("change",e=>toggle(g,it,e.target.checked));
+      const q=r.querySelector(".qty"); if(q) q.addEventListener("change",e=>{st.qty[it.id]=Math.max(1,parseInt(e.target.value,10)||1);save();renderSum()});
+      sec.appendChild(r);
+    });
+    main.appendChild(sec);
+  });
+  $("#disc").value=st.disc[S().id]||0;
+  renderSum();
+}
+function toggle(g,it,on){
+  if(g.type==="radio"){g.items.forEach(i=>delete st.sel[i.id]);st.sel[it.id]=true}
+  else{ if(on&&it.x) allItems().forEach(i=>{if(i.x===it.x&&i.id!==it.id)delete st.sel[i.id]}); if(on)st.sel[it.id]=true; else delete st.sel[it.id]; }
+  save(); renderQ();
+}
+function chosen(){
+  const out=[];
+  S().groups.forEach(g=>g.items.forEach(i=>{
+    if(!has(i.id)) return;
+    if(g.type==="radio"&&g.id!=="base"&&isNum(i.p)&&+i.p===0) return;
+    const q=g.type==="check"?qty(i.id):(g.id==="base"?Math.max(1,parseInt((st.hdr||{}).mq,10)||1):1);
+    out.push({g,it:i,q,v:isNum(i.p)?(+i.p)*q:null});
+  }));
+  return out;
+}
+function checks(){
+  const W=[]; const need=(c,msg,fix,lvl)=>{if(c)W.push({msg,fix,lvl})};
+  const pend=chosen().filter(r=>r.v===null);
+  need(pend.length,`有 ${pend.length} 項還沒填價格，沒算進合計：`+pend.map(r=>r.it.name).join("、"),()=>go(S().id,"E"),"warnE");
+  if(S().id==="W"){
+    const set=id=>()=>{const it=find(id);if(!it)return;if(it.x)allItems().forEach(i=>{if(i.x===it.x)delete st.sel[i.id]});st.sel[id]=true};
+    const c3=has("c_3"),c7=has("c_7"),cts=c3||c7,wash=anyX("wash");
+    need(has("p_bt2")&&!wash,"BT兩面拘束主軸：需一併安排刀具洗淨",set("k_wair"));
+    if(c3){
+      need(!(has("k_p3")||has("k_p3r")),"CTS 3MPa：需安排 CTS用配管 耐壓3MPa",set("k_p3"));
+      need(!has("h_top"),"CTS 3MPa：需安排頂蓋",set("h_top"));
+      need(!anyX("lub"),"CTS 3MPa：需安排自動油潤滑或自動油脂潤滑",set("l_oil"));
+      need(has("k_p7"),"CTS 3MPa 不能搭配 7MPa 配管",set("k_p3"),"bad");
+    }
+    if(c7){
+      need(!has("k_p7"),"CTS 7MPa：需安排 CTS用配管 耐壓7MPa",set("k_p7"));
+      need(!has("h_top"),"CTS 7MPa：需安排頂蓋",set("h_top"));
+      need(!anyX("lub"),"CTS 7MPa：需安排自動油潤滑或自動油脂潤滑",set("l_oil"));
+      need(!wash,"CTS 7MPa：需安排刀具洗淨",set("k_w70"));
+      need(!anyX("p50"),"CTS 7MPa：需安排電源擴充 50A",set("w_50a"));
+    }
+    need(!cts&&(has("k_p3")||has("k_p3r")||has("k_p7")),"未選 CTS，卻選了 CTS用配管",null,"bad");
+    need(!cts&&(has("k_w15")||has("k_w70")),"泵浦直結式刀具洗淨僅在選擇 CTS 時可選",set("k_wair"),"bad");
+    need(has("k_p3r")&&(has("t_200")||has("t_200c")),"逆流型洗淨系統配管僅在不使用 Brother 標準切削液槽時可選",null,"bad");
+    need(has("o_mist")&&!has("h_top"),"油霧收集器：需安排頂蓋",set("h_top"));
+    need(anyX("p50")&&has("w_t11"),"已選電源擴充50A，變壓器箱請改選 19KVA",set("w_t19"));
+    need((has("i_ccm")||has("i_ccr")||has("i_dn")||has("i_pb"))&&has("i_ex1"),"選 CC-Link／DeviceNet／PROFIBUS 時不能選 EXIO 第1片，請改選第2片",()=>{delete st.sel.i_ex1;st.sel.i_ex2=true},"bad");
+    if(has("b_5ax")){const dup=["n_mem","n_sub","n_tilt"].filter(has);need(dup.length,"-5AX 已內含："+dup.map(i=>(find(i)||{}).name).join("、")+"，不用重複加",()=>dup.forEach(i=>delete st.sel[i]))}
+    need(has("r_sub")&&anyX("rt")&&anyX("sup")&&qty("r_sub")<2,"副板：旋轉工作台、支撐工作台各需 1 片，數量應為 2",()=>{st.qty.r_sub=2});
+    need(has("h_side")&&qty("h_side")===1,"側面護罩為單側價格；若兩側都要請改為 2 片",null);
+    need(has("l_inl")!==has("l_inr"),"機內燈只選了一側；若要 2 盞，請左右都選",null);
+  }
+  return W;
+}
+function renderSum(){
+  const rows=chosen(), T=rows.reduce((a,r)=>a+(r.v||0),0), D=+st.disc[S().id]||0;
+  $("#tTotal").textContent=fmt(T);
+  $("#tBest").textContent=fmt(T-D);
+  const base=rows.find(r=>r.g.id==="base");
+  $("#hTitle").innerHTML=esc(base?base.it.name:S().name)+`<small>${esc(S().name)}</small>`;
+  $("#lnCount").textContent="（"+rows.length+" 項）";
+  $("#lines").innerHTML=rows.map(r=>`<div class="ln"><span>${r.g.type==="radio"&&r.g.id!=="base"?esc(r.g.name)+"：":""}${esc(r.it.name)}${r.q>1?" × "+r.q:""}</span><span class="num">${r.v===null?'<span class="pend">待填</span>':(r.v===0?"附贈":fmt(r.v))}</span></div>`).join("");
+  const W=checks(), box=$("#warns"); box.innerHTML="";
+  if(!W.length) box.innerHTML='<div class="ok">✓ 沒有問題</div>';
+  W.forEach(w=>{const d=document.createElement("div");d.className="wn"+(w.lvl==="bad"?" bad":"");d.innerHTML=`<span>${esc(w.msg)}</span>`;
+    if(w.fix){const b=document.createElement("button");b.type="button";b.textContent=w.lvl==="bad"?"修正":(w.lvl==="warnE"?"去填價格":"補上");b.addEventListener("click",()=>{w.fix();save();if(w.lvl!=="warnE")renderQ()});d.appendChild(b)}
+    box.appendChild(d)});
+}
+
+/* ---------- 價格編輯頁 ---------- */
+function defItem(sid,id){const s=DEFAULT.series.find(x=>x.id===sid);if(!s)return;for(const g of s.groups)for(const i of g.items)if(i.id===id)return i}
+function renderE(){
+  const box=$("#editList"); box.innerHTML="";
+  const q=($("#q").value||"").trim().toLowerCase(), ser=S();
+  ser.groups.forEach((g,gi)=>{
+    const items=g.items.map((it,idx)=>({it,idx})).filter(o=>!q||(o.it.name+" "+(o.it.note||"")).toLowerCase().includes(q));
+    if(q&&!items.length) return;
+    const miss=g.items.filter(i=>!isNum(i.p)).length;
+    const sec=document.createElement("section"); sec.className="blk";
+    sec.innerHTML=`<h2><input class="gname" value="${esc(g.name)}" aria-label="分類名稱"><span class="cnt">${g.type==="radio"?"單選":"複選"} · ${g.items.length} 項${miss?` · <span style="color:var(--warn)">${miss} 項待填</span>`:""}</span></h2>
+      <div class="scroll"><table class="etable"><thead><tr><th>${g.id==="base"?"機型名稱":"項目名稱"}</th><th>備註</th><th style="text-align:right">報價（日圓）${g.type==="radio"&&g.id!=="base"?"・加價":""}</th><th></th></tr></thead><tbody></tbody></table></div>
+      <div class="addrow"><button type="button">＋ 在「${esc(g.name)}」新增${g.id==="base"?"機型":"項目"}</button>${!g.items.length?` <button type="button" class="ghost" data-delg>刪除這個空分類</button>`:""}</div>`;
+    sec.querySelector(".gname").addEventListener("change",e=>{g.name=e.target.value;saveData();toast("已儲存")});
+    const dg=sec.querySelector("[data-delg]"); if(dg) dg.addEventListener("click",()=>{ser.groups.splice(gi,1);saveData();renderE()});
+    const tb=sec.querySelector("tbody");
+    items.forEach(({it,idx})=>{
+      const tr=document.createElement("tr");
+      const d=defItem(ser.id,it.id), changed=d&&isNum(d.p)&&isNum(it.p)&&+d.p!==+it.p;
+      if(!isNum(it.p)) tr.className="miss";
+      tr.innerHTML=`<td class="nmcell"><input class="n" value="${esc(it.name)}" aria-label="名稱"></td>
+        <td><input class="nt" value="${esc(it.note||"")}" placeholder="—" aria-label="備註"></td>
+        <td class="pc"><input class="pr${changed?" changed":""}" type="number" step="any" value="${isNum(it.p)?it.p:""}" placeholder="待填" aria-label="報價"></td>
+        <td class="dl"><button type="button" class="ghost" title="刪除">刪除</button></td>`;
+      tr.querySelector(".n").addEventListener("change",e=>{it.name=e.target.value;saveData();toast("已儲存")});
+      tr.querySelector(".nt").addEventListener("change",e=>{it.note=e.target.value;saveData();toast("已儲存")});
+      const pi=tr.querySelector(".pr");
+      pi.addEventListener("change",e=>{it.p=e.target.value===""?null:+e.target.value;saveData();tr.className=isNum(it.p)?"":"miss";const dd=defItem(ser.id,it.id);pi.classList.toggle("changed",!!(dd&&isNum(dd.p)&&isNum(it.p)&&+dd.p!==+it.p));toast("已儲存")});
+      pi.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();const all=[...document.querySelectorAll("#editList input.pr")];const n=all[all.indexOf(pi)+1];pi.blur();if(n){n.focus();n.select()}}});
+      const del=tr.querySelector(".ghost");
+      del.addEventListener("click",()=>{ if(!del.dataset.armed){del.dataset.armed=1;del.textContent="確認？";setTimeout(()=>{delete del.dataset.armed;del.textContent="刪除"},3000);return}
+        g.items.splice(idx,1);delete st.sel[it.id];saveData();initRadios();save();renderE();toast("已刪除")});
+      tb.appendChild(tr);
+    });
+    sec.querySelector(".addrow button").addEventListener("click",()=>{g.items.push({id:"u_"+Date.now().toString(36),name:g.id==="base"?"新機型":"新項目",note:"",p:null});saveData();$("#q").value="";renderE();const ins=document.querySelectorAll(`#editList section:nth-child(${gi+1}) input.n`);const el=ins[ins.length-1];if(el){el.focus();el.select()}});
+    box.appendChild(sec);
+  });
+}
+
+/* ---------- 報價單 ---------- */
+const LOGO="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAADCCAYAAACvzrwXAAAHcklEQVR42u3dwXrUSAxF4bRePJ0n9yyAmQ8mIXFc5ZJK/9nABnBdXZ+oE3fzOI7jeKnM4/Hj1+LHADIQW8jgz9/jNG9v8kNlIbwnAFL4tgyeLy8vD1IghG1kQAqXZPBvfKQwrZqEsCpxUviWDEhhTDUr1y+2kwEpXJIBKYypZtX6xZYyIIVLMiCFMTWrWL/YVgak8KkMSGF+NavV75H+OYRRiXpO4cubwbvxvcrvSjWr1C9ayMCmcHozsCmMrVOV+uXdEGYl2HBTuLIZ2BTGVjN7/aKVDBpuCiNlYFO4Xp/s9YtWMmgmhdEy6C6FUbXJXL9oJ4MmUpglg65SGF2XrPWLljLYXAqzZdBNCrNqkrF+0VYGm0rhLhl0kcLsemSrX7SWwWZSuFsGu0vhrlpkql+4EfeQwioZ7CqFu+uQpX7hBqwvhdUy2E0Kq2qQoX7hxqsthatPIJJCrvEv//dvf1Kxyg1X4InGLJvBu/EVfKIxUzVX1S/IoOa1ZpZBxU0h27hXXU+4wepdc3YZVJNC1mquuK4gg1rXXkUGVaSQvZp3X1+QQZ0zVJNBdimUeUvyYxch7PQU4OKzVJVBVimU+ySjR3Uh7Pg+gUVnqi6DbFKoWs07rjsknvtsu8ggixSqV3P29YfE855xNxmslsIu1Zx5jpB4zrPuKoNVUtitmrPOExLPd+bdZXC3FHat5oxzhcRznb3b/8I8Wwq7V3P0+ULieabySwbPbvFNkkKXao48Z0g8x1S6ymCWFLpVc9R5Q+Lrp9JdBqOl0LWaI84dEl87FTIYK4Xu1bx6/pD4uqmQwVgpqOb1HELia6ZCBmOloJpj8giJ3z8VMhgrBdUcl0tI/N6pkMFYKajm2Fv3889UlPgYjqPNE4hT4nvnMxpV81T9BmwIEh/G25ssR24KqjlnU4ghWsGnen59leUoKZDBPCnEV8qMMbsaKdz/mhjn8ouzpca1F24HKVz6PsJxqONMKcSVcuN7eZHC92SgjtOrefLBJFMYlhMpfF8G6jivmjGj7BK/VnR8PSN1HFvNmF16iX+t8E/pfVuY6jguo7iz/BL/uPhPUri0PanjmGxi1U1ABqQw+qWUOl7PJDLcDN1lQArXZaCOY7KIbDdFVxmskMJzMxmQwvUMPn9z06m/7SHxd2N5/PwjJ/7MzzdCddkWZvzEpetTjVfu6EhzJZvL4M/fe/lwXgaPx+NchgcZrN0QOqj5mzL4/a84tymQwf+zPJXhgwzWbAi7q/lUCd9Oi+KuVbq6DE5neJDB2g1hRzUP2AxsCmNkYFOYJ7woc6WbyaDzpjBKBjaF8WeKcle8iQy6SmGkDLpLYcZZouyVbyCDblKYIYOuUph1hih/guIy6CKFmTLoJoWZ1x7bnKSwDHaXwh0y6CKF2dcc252oqAx2lcKdMthdCndca2x7soIy2E0KK2SwqxTuusbY/oTFZLCLFFbKYDcp3Hlt0eakhWRQXQoZZLCLFO6+pmh34iIyqCqFTDKoLoUV1xJtT15ABtWkkFEGVaWw6hpyCGFFAkVkUEUKmWVQTQor/+08QrgziWIyyC6FCjKoIoXV20kuIdyRSFEZZJVCJRlkl0KGlyr5hDAzmeIy+O/a3m6XwnMTGWSVQpZvZs79PITrUyODv9yix/H69TMN/jyFyjL4vRbrP08h0x0YyadFBn8RwopNYScZZNgUsn05zr0hjFDzljK48FXu4qawkwxWbwoZ77woMi0yGPVV7vUggwSbQtYvw1FmYmcTbCKDu6SwswzulkLmnTxKTeyrSTaTwWwpdJDBXVLI/gI9yk3ss0SbymCWFDrJYLYUKrzNOkpO7KNkm8tgtBQ6ymCWFKp8EEuUndifCZPBUCl0lsFoKVT6VKYoPbFfSZPBUCmQwTgpVPvcxhrPISwY7k7M+e87HzL8MJuaMqi/ISjwkrN3zPLsplD1y2wYpkLL0tnbCIEMxmUhy/0zCMNTaFnKYnshKPC4bGTZJ5NthfDju8JPzb1YaDLolc32P3ZU6K+IU3azMrQh2BS2ECYZ9JNBiw1Bwc8XW1Y9ZdBKCIoOMvCSocUQoUeEYJjQH0IwVOgNIRgu9IUQDBl6QgiGDf0gBEOHXhCC4UMfCEEJoAeEoAwwf0JQCpg7ISgHzJsQlATmTAjKAvMlBKWBuRKC8sA8CUGJYI6EAGUyP0KAUpkbIUC5zIsQoGTmRAhQNvMBISiduYAQlM88QAhKaA4gBGWUPwhBKeUOQlBOeYMQlFTOIARlla8QCEFpIVdCUF7IkxCUGHIkBGWG/AhBqSE3QgDIgBAAMiAEgAwIASADQgDIgBAAEAIAQgBACAAIAQAhACAEAIQAgBAAEAIAQgAAQgBACAAIAQAhACAEAIQAgBAAEAIAQgBACAAIAQAhACAEAIQAgBAAEAIAQgBACAAIAQAhACAEAIQAgBAAEAIAQgBACAAIAQAhAAAhACAEAIQAgBAAEAIAQgBACAAIAQAhACAEAIQAgBAAEAIAQgBACAAIAQAhACAEVOYpgiY8juM4xADAhgCAEAC8zz9hi74KtmxhpgAAAABJRU5ErkJggg==";
+function todayDot(){const d=new Date();return (d.getMonth()+1)+"."+d.getDate()+"."+d.getFullYear()}
+function todaySlash(){const d=new Date();return d.getFullYear()+"/"+(d.getMonth()+1)+"/"+d.getDate()}
+const HDR_DEF={to:"",date:"",mq:1,dp:"C.I.F KEELUNG",ts:"WITHIN 4 MONTHS AFTER RECEIPT OF YOUR L/C.",pv:"SUB.  TO OUR FINAL CONFIRMATION.",tp:"BY AN IRRE.  L/C 100% AT SIGHT BASIS.",pk:"IN EXPORT STANDARD PACKING.",ins:"BY BUYER..",md:"",incl:"",note:"",sig:""};
+st.hdr=Object.assign({},HDR_DEF,st.hdr||{});
+const yen=v=>"¥"+Math.round(+v||0).toLocaleString("en-US")+"-";
+function autoModel(){
+  const rows=chosen(), base=rows.find(r=>r.g.id==="base");
+  if(!base) return "";
+  const specs=S().groups.filter(g=>g.type==="radio"&&g.id!=="base").map(g=>g.items.find(i=>has(i.id))).filter(i=>i&&isNum(i.p)&&+i.p>0).map(i=>i.name);
+  const extra=specs.length?specs.join(" "):(base.it.note||"");
+  return base.it.name+(extra?" ("+extra+")":"");
+}
+function renderD(){
+  const h=st.hdr;
+  document.querySelectorAll(".dform [data-k]").forEach(el=>{ if(document.activeElement!==el) el.value=h[el.dataset.k]??""; });
+  $("#d_date").placeholder=todayDot(); $("#d_sig").placeholder=todaySlash()+"  王捷熹"; $("#d_md").placeholder=autoModel();
+  const rows=chosen(), base=rows.find(r=>r.g.id==="base"), opts=rows.filter(r=>r.g.id!=="base");
+  const mq=Math.max(1,parseInt(h.mq,10)||1);
+  const bUnit=base&&base.v!==null?+base.it.p:0, bAmt=base&&base.v!==null?base.v:0;
+  const T=rows.reduce((a,r)=>a+(r.v||0),0);
+  const D=+st.disc[S().id]||0, B=T-D;
+  if(document.activeElement!==$("#d_disc")) $("#d_disc").value=D||"";
+  if(document.activeElement!==$("#d_best")) $("#d_best").value=D?B:"";
+  const dp=h.dp||"";
+  const optRows=opts.map((r,i)=>{
+    const free=r.v===0, pend=r.v===null, unit=pend||free?"":yen(r.v/r.q), amt=pend||free?"":yen(r.v);
+    const nm=(r.g.type==="radio"&&r.g.id!=="base"?r.g.name+" ":"")+r.it.name;
+    return `<tr class="opt"><td class="n">${i+1})</td><td>${esc(nm)}${pend?' <span style="color:#b00">[價格待填]</span>':""}</td><td class="r">${r.q}</td><td>(sets)</td><td class="r">${unit}</td><td class="r">${amt}</td></tr>`;
+  }).join("");
+  const incl=(h.incl||"").split(/\n/).map(s=>s.trim()).filter(Boolean);
+  const notes=(h.note||"").split(/\n/).map(s=>s.trim()).filter(Boolean);
+  $("#doc").innerHTML=`
+    <div class="lh"><img src="${LOGO}" alt="YAMAZEN"><div><div class="co">YAMAZEN CORPORATION</div>
+      <div class="ad">3-1.6 2-Chome.Itachibori Nishi-ku Osaka 550. JAPAN</div>
+      <div class="ad">P.O. BOX 96 Nishi. OSAKA &nbsp;&nbsp; Phone:(06) 6534-3211 &nbsp;&nbsp; Fax:(06) 6535-1991</div></div></div>
+    <div class="date">DATE :${esc(h.date||todayDot())}</div>
+    <div class="to"><span>To messers.</span><b>: ${esc(h.to||"＿＿＿＿＿＿＿＿")}</b></div>
+    <div class="terms">
+      <span>Delivery Place</span><span>:</span><span>${esc(h.dp)}</span>
+      <span>Time of Shipment</span><span>:</span><span>${esc(h.ts)}</span>
+      <span>Price Valid</span><span>:</span><span>${esc(h.pv)}</span>
+      <span>Terms of Payment</span><span>:</span><span>${esc(h.tp)}</span>
+      <span>Packing</span><span>:</span><span>${esc(h.pk)}</span>
+      <span>Insurance Covered</span><span>:</span><span>${esc(h.ins)}</span>
+    </div>
+    <table>
+      <colgroup><col style="width:8mm"><col><col style="width:12mm"><col style="width:14mm"><col style="width:30mm"><col style="width:32mm"></colgroup>
+      <tr class="dh"><td colspan="4">Description</td><td colspan="2" class="r">${esc(dp)}</td></tr>
+      <tr class="dh"><td colspan="4"><u>"BROTHER BRAND"</u></td><td colspan="2" class="r">IN JAPANESE YEN</td></tr>
+      <tr class="dh"><td colspan="2">COMPACT MACHINING CENTER</td><td class="c" colspan="2">Quantity</td><td class="r">Unit Price</td><td class="r">Amount</td></tr>
+      <tr class="model"><td class="r">1</td><td>MODEL: ${esc(h.md||autoModel()||"（請在報價分頁選機型）")}</td><td class="r">${mq}</td><td>SET${mq>1?"S":""}</td><td class="r">${base&&base.v!==null?yen(bUnit):'<span style="color:#b00">待填</span>'}</td><td class="r">${yen(bAmt)}</td></tr>
+      ${opts.length?`<tr class="sect"><td colspan="6">OPTIONAL ACCE.(特別附件)</td></tr>${optRows}`:""}
+      <tr class="tot"><td colspan="3"></td><td colspan="2" class="lbl">TOTAL PRICE :</td><td class="r">${yen(T)}</td></tr>
+      <tr class="tot2"><td colspan="3"></td><td colspan="2" class="lbl" style="font-family:'Times New Roman',serif">DISCOUNT PRICE :</td><td class="r">${D?yen(D):"—"}</td></tr>
+      <tr class="best"><td colspan="3" style="background:none"></td><td colspan="2">BEST PRICE :</td><td class="r">${yen(B)}</td></tr>
+    </table>
+    ${incl.length?`<div class="incl">* 以上報價未包含：<ol>${incl.map(s=>`<li>${esc(s)}</li>`).join("")}</ol></div>`:""}
+    ${notes.length?`<div class="incl"${incl.length?' style="margin-top:2.7em"':""}>* 備註：<ol>${notes.map(s=>`<li>${esc(s)}</li>`).join("")}</ol></div>`:""}
+    <div class="sig"><b>YAMAZEN&nbsp; CORPORATION</b><span>${esc(h.sig||todaySlash()+"  王捷熹")}</span></div>`;
+}
+document.querySelectorAll(".dform [data-k]").forEach(el=>el.addEventListener("input",()=>{st.hdr[el.dataset.k]=el.value;save();renderD()}));
+
+/* ---------- 詢價（見積依頼書） ---------- */
+const INQ_DEF={attn:"",date:"",rep:"山善台湾 王捷熹",cn:"",en:"",adc:"",ade:"",md:"",sp:"",qty:1,spec:"",dl:"",ind:"",wk:"",mat:"",sz:"",why:"",fan:"",fq:""};
+st.inq=Object.assign({},INQ_DEF,st.inq||{});
+function todayJp(){const d=new Date();return d.getFullYear()+"/"+(d.getMonth()+1)+"/"+d.getDate()}
+function autoSpecLines(){
+  return chosen().filter(r=>r.g.id!=="base").map(r=>(r.g.type==="radio"?r.g.name+"：":"")+r.it.name+(r.g.type==="check"&&r.q>1?"　×"+r.q:""));
+}
+function autoSpecNote(){
+  const base=chosen().find(r=>r.g.id==="base"); return base&&base.it.note?"("+base.it.note+")":"";
+}
+function renderI(){
+  const h=st.inq;
+  document.querySelectorAll(".iform [data-i]").forEach(el=>{ if(document.activeElement!==el) el.value=h[el.dataset.i]??""; });
+  const base=chosen().find(r=>r.g.id==="base");
+  const mdAuto=base?base.it.name:"";
+  $("#i_date").placeholder=todayJp(); $("#i_md").placeholder=mdAuto||"（請在報價分頁選機型）"; $("#i_sp").placeholder=autoSpecNote()||"(20,000RPM, 28ATC, 220V, 60HZ)";
+  const autoLines=autoSpecLines(); $("#i_spec").placeholder=autoLines.length?autoLines.join("\n"):"（在報價分頁勾選選配後自動帶入）";
+  const lines=(h.spec||"").trim()?h.spec.split(/\n/).map(s=>s.trim()).filter(Boolean):autoLines;
+  const qty=Math.max(1,parseInt(h.qty,10)||1);
+  const attn=(h.attn||"").trim();
+  const fan=h.fan||"";
+  $("#inq").innerHTML=`
+    <div class="hd">
+      <div class="attn">ATTN:<br><b>${esc(attn||"＿＿＿＿＿＿＿＿＿＿")}</b>　様</div>
+      <div class="meta"><span>Date:</span><span>${esc(h.date||todayJp())}</span><span>営業担当者：</span><span>${esc(h.rep||"")}</span></div>
+    </div>
+    <h2>見積依頼書</h2>
+    <div class="sec">●引合ユーザー様情報</div>
+    <div class="kv">
+      <span>会社名（中文）：</span><span>${esc(h.cn)}</span>
+      <span>会社名（英文）：</span><span>${esc(h.en)}</span>
+      <span>住　　所（中文）：</span><span>${esc(h.adc)}</span>
+      <span>住　　所（英文）：</span><span>${esc(h.ade)}</span>
+    </div>
+    <div class="sec">●見積依頼内容</div>
+    <div class="mdl"><span>引　合　機　種：</span><span><b>${esc(h.md||mdAuto||"＿＿＿＿＿＿")}</b>　${esc(h.sp||autoSpecNote())}</span><span class="q">${qty} 台</span></div>
+    <div class="mdl" style="margin-top:3mm"><span>仕　　　　　様：</span><span></span><span></span></div>
+    <ol class="spec">${lines.length?lines.map((s,i)=>`<li><span>${i+1}</span><span>${esc(s)}</span></li>`).join(""):'<li><span></span><span style="color:#999">（無選配）</span></li>'}</ol>
+    <div class="kv" style="margin-top:6mm"><span>●ユーザー様希望納期：</span><span>${esc(h.dl)}</span></div>
+    <div class="sec" style="margin-top:7mm">追加情報</div>
+    <div class="kv">
+      <span>引合ユーザー様の業界：</span><span>${esc(h.ind)}</span>
+      <span>加工ワーク名称：</span><span>${esc(h.wk)}</span>
+      <span>加工ワークの材質：</span><span>${esc(h.mat)}</span>
+      <span>会社の規模：</span><span>${esc(h.sz)}</span>
+      <span>取引のきっかけ：</span><span>${esc(h.why)}</span>
+      <span>FANUC 社の設備の有無：</span><span>${fan==="有"?"■":"□"} 有　台数：${esc(h.fq||"　　")} 台　　${fan==="無"?"■":"□"} 無</span>
+    </div>
+    <div class="foot">YAMAZEN TAIWAN　·　Design by Kiyota JC</div>`;
+}
+document.querySelectorAll(".iform [data-i]").forEach(el=>el.addEventListener("input",()=>{st.inq[el.dataset.i]=el.value;save();renderI()}));
+$("#btnPrintI").addEventListener("click",()=>{
+  const old=document.title; const h=st.inq; const base=chosen().find(r=>r.g.id==="base");
+  document.title=("見積依頼書_"+(h.cn||"客戶")+"_"+(h.md||(base?base.it.name:S().id))+"_"+(h.date||todayJp())).replace(/[\\/:*?"<>|]/g,"_");
+  try{window.print()}catch(e){}
+  setTimeout(()=>document.title=old,1000);
+});
+$("#d_disc").addEventListener("input",e=>{st.disc[S().id]=+e.target.value||0;save();renderD()});
+$("#d_best").addEventListener("input",e=>{
+  const T=chosen().reduce((a,r)=>a+(r.v||0),0);
+  const b=+e.target.value; st.disc[S().id]=b?Math.max(0,T-b):0; save(); renderD();
+});
+$("#btnPrint").addEventListener("click",()=>{
+  const old=document.title; const h=st.hdr;
+  document.title=("報價單_"+(h.to||"客戶")+"_"+(autoModel().split(" ")[0]||S().id)+"_"+(h.date||todayDot())).replace(/[\\/:*?"<>|]/g,"_");
+  try{window.print()}catch(e){}
+  setTimeout(()=>{document.title=old},1000);
+});
+
+
+/* ---------- 匯出 ---------- */
+const xdlg=document.getElementById("xdlg");
+function ymd(){const d=new Date();return d.getFullYear()+String(d.getMonth()+1).padStart(2,"0")+String(d.getDate()).padStart(2,"0")}
+$("#btnExport").addEventListener("click",async()=>{if(!(await requireAuth()))return;$("#xname").value="SPEEDIO_Quote_"+ymd()+".html";$("#xmsg").textContent="";try{xdlg.showModal()}catch(e){xdlg.setAttribute("open","")}});
+$("#xclose").addEventListener("click",()=>{try{xdlg.close()}catch(e){xdlg.removeAttribute("open")}});
+$("#xgo").addEventListener("click",()=>{
+  const out=_mark(clone(data)); out.stamp="x-"+Date.now(); out.readonly=false;
+  const json=JSON.stringify(out).replace(/<\//g,"<\\/");
+  const html=SRC.replace(/(<script id="seed" type="application\/json">)[\s\S]*?(<\/script>)/,(m,a,b)=>a+json+b);
+  let name=($("#xname").value||"SPEEDIO_Quote.html").replace(/[\\/:*?"<>|]/g,"_"); if(!/\.html?$/i.test(name)) name+=".html";
+  try{const blob=new Blob([html],{type:"text/html"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},2000);
+    $("#xmsg").textContent="已下載："+name+"（在「下載」資料夾）";}
+  catch(e){$("#xmsg").textContent="下載失敗，請改用 Chrome 或 Edge 打開這個檔案再試一次。";}
+});
+if(st.tab==="E"&&!authOk()) st.tab="Q";                       // 重新開啟時若未登入，不停在編輯頁
+/* 唯讀版 */
+if(data.readonly){ ["#tabE","#btnBackupH","#btnExport","#btnBackup"].forEach(q=>{const el=$(q);if(el)el.hidden=true}); if(st.tab==="E") st.tab="Q"; }
+/* ---------- 導覽 ---------- */
+function go(sid,tab){
+  if(data.readonly&&tab==="E") tab="Q";
+  if(!sid){st.view="H";}else{st.view="S";st.sid=sid;st.tab=tab||"Q";}
+  save(); try{history.replaceState(null,"",location.pathname+location.search)}catch(e){}
+  render(); window.scrollTo(0,0);
+}
+function render(){
+  const home=st.view!=="S";
+  $("#pageH").hidden=!home; $("#pageS").hidden=home; $("#hTools").hidden=!home;
+  if(home){ $("#qTools").hidden=true; $("#hTitle").textContent="SPEEDIO 報價器"; renderH(); return; }
+  const E=st.tab==="E", Dd=st.tab==="D", I=st.tab==="I", Q=!E&&!Dd&&!I;
+  $("#tabQ").setAttribute("aria-selected",Q); $("#tabE").setAttribute("aria-selected",E); $("#tabD").setAttribute("aria-selected",Dd); $("#tabI").setAttribute("aria-selected",I);
+  $("#pageQ").hidden=!Q; $("#pageE").hidden=!E; $("#pageD").hidden=!Dd; $("#pageI").hidden=!I; $("#qTools").hidden=!Q;
+  $("#srcNote").textContent=S().src?("價格來源："+S().src):"";
+  if(E){ $("#hTitle").innerHTML=esc(S().name)+"<small>價格編輯</small>"; renderE(); } else if(Dd){ $("#hTitle").innerHTML=esc(S().name)+"<small>報價單</small>"; renderD(); } else if(I){ $("#hTitle").innerHTML=esc(S().name)+"<small>詢價（見積依頼書）</small>"; renderI(); } else renderQ();
+}
+function toast(t){const el=$("#toast");el.textContent=t;el.classList.add("show");clearTimeout(toast._t);toast._t=setTimeout(()=>el.classList.remove("show"),1400)}
+/* ---------- 管理員鎖（價格編輯／存檔／備份還原） ---------- */
+const SS_AUTH="speedio.auth.ok";
+async function sha256(s){
+  if(crypto&&crypto.subtle){const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(s));return Array.from(new Uint8Array(b)).map(x=>x.toString(16).padStart(2,"0")).join("")}
+  let h=5381;for(const c of s)h=((h<<5)+h+c.charCodeAt(0))|0;return "f"+(h>>>0).toString(16); // 無 WebCrypto（非 https/file 以外）時的退路
+}
+const authHash=(u,p,salt)=>sha256(salt+"|"+u.trim().toLowerCase()+"|"+p);
+function authOk(){try{return sessionStorage.getItem(SS_AUTH)===(data.auth?data.auth.h:"")}catch(e){return false}}
+const adlg=$("#adlg");
+function askAuth(mode){ // mode: "login" | "setup"
+  return new Promise(res=>{
+    const setup=mode==="setup";
+    $("#aTitle").textContent=setup?"設定管理員帳號密碼":"管理員登入";
+    $("#aHint").textContent=setup?"第一次使用請先設定。之後「價格編輯」「存檔」「備份／還原」都要輸入這組帳號密碼，存檔出去的檔案也會帶著這個鎖。":"此功能只有管理員可以使用，請輸入帳號密碼。";
+    $("#aPass2Wrap").hidden=!setup; $("#aPass2").required=setup;
+    $("#aUser").value=setup?"":($("#aUser").value||""); $("#aPass").value=""; $("#aPass2").value=""; $("#aMsg").textContent="";
+    const done=v=>{adlg.removeEventListener("close",onClose);$("#aForm").onsubmit=null;try{adlg.close()}catch(e){adlg.removeAttribute("open")}res(v)};
+    const onClose=()=>done(false);
+    $("#aForm").onsubmit=async e=>{e.preventDefault();
+      const u=$("#aUser").value,p=$("#aPass").value;
+      if(setup){
+        if(u.trim().length<1||p.length<4){$("#aMsg").textContent="帳號不可空白，密碼至少 4 個字。";return}
+        if(p!==$("#aPass2").value){$("#aMsg").textContent="兩次密碼不一樣。";return}
+        const salt=Math.random().toString(36).slice(2)+Date.now().toString(36);
+        data.auth={salt,h:await authHash(u,p,salt)}; saveData();
+        try{sessionStorage.setItem(SS_AUTH,data.auth.h)}catch(e){}
+        toast("已設定帳號密碼"); done(true); return;
+      }
+      const h=await authHash(u,p,data.auth.salt);
+      if(h!==data.auth.h){$("#aMsg").textContent="帳號或密碼不對。";$("#aPass").value="";$("#aPass").focus();return}
+      try{sessionStorage.setItem(SS_AUTH,h)}catch(e){}
+      done(true);
+    };
+    $("#aCancel").onclick=()=>done(false);
+    adlg.addEventListener("close",onClose);
+    try{adlg.showModal()}catch(e){adlg.setAttribute("open","")}
+    ($("#aUser").value?$("#aPass"):$("#aUser")).focus();
+  });
+}
+async function requireAuth(){
+  if(!data.auth||!data.auth.h) return askAuth("setup");
+  if(authOk()) return true;
+  return askAuth("login");
+}
+$("#btnAuth").addEventListener("click",async()=>{ if(!(await requireAuth()))return; const ok=await askAuth("setup"); if(ok) toast("已更新，存檔後新檔案會用新的帳號密碼"); });
+async function copyText(t,el){try{await navigator.clipboard.writeText(t);return true}catch(e){if(el){el.value=t;el.focus();el.select()}return false}}
+
+$("#btnDoc").addEventListener("click",()=>go(S().id,"D"));
+$("#btnHome").addEventListener("click",()=>go(null));
+$("#tabQ").addEventListener("click",()=>go(S().id,"Q"));
+$("#tabE").addEventListener("click",async()=>{ if(st.tab==="E"||await requireAuth()) go(S().id,"E"); });
+$("#tabD").addEventListener("click",()=>go(S().id,"D"));
+$("#tabI").addEventListener("click",()=>go(S().id,"I"));
+$("#btnClear").addEventListener("click",()=>{allItems().forEach(i=>{delete st.sel[i.id];delete st.qty[i.id]});initRadios();save();renderQ();toast("已清空選配")});
+$("#disc").addEventListener("input",e=>{st.disc[S().id]=+e.target.value||0;save();renderSum()});
+$("#btnCopy").addEventListener("click",()=>{
+  const rows=chosen(); const L=[["項目","數量","單價(JPY)","金額(JPY)"].join("\t")]; let T=0;
+  rows.forEach(x=>{T+=x.v||0;const name=(x.g.type==="radio"&&x.g.id!=="base"?x.g.name+"：":"")+x.it.name;const unit=x.v===null?"待填":(x.q?(x.v/x.q):0);L.push([name,x.q,unit,x.v===null?"待填":x.v].join("\t"))});
+  const D=+st.disc[S().id]||0;
+  L.push(["TOTAL PRICE","","",T].join("\t")); L.push(["DISCOUNT PRICE","","",D?-D:0].join("\t")); L.push(["BEST PRICE","","",T-D].join("\t"));
+  const t=L.join("\n");
+  copyText(t,null).then(ok=>{if(ok)toast("已複製，到 Excel 直接貼上");else{openDlg(t);toast("請在框內全選後複製")}});
+});
+$("#btnBulk").addEventListener("click",()=>{
+  const pct=+$("#bulk").value; if(!pct){toast("請先輸入調整的 %");return}
+  const b=$("#btnBulk"); if(!b.dataset.armed){b.dataset.armed=1;b.textContent=`確認 ${S().name} 全部 ${pct>0?"+":""}${pct}%？`;setTimeout(()=>{delete b.dataset.armed;b.textContent="套用調整"},4000);return}
+  delete b.dataset.armed; b.textContent="套用調整";
+  S().groups.forEach(g=>g.items.forEach(i=>{if(isNum(i.p))i.p=Math.round((+i.p)*(1+pct/100))}));
+  saveData(); $("#bulk").value=""; renderE(); toast(`${S().name} 全部價格已調整 ${pct>0?"+":""}${pct}%`);
+});
+$("#q").addEventListener("input",renderE);
+$("#btnAddGroup").addEventListener("click",()=>{S().groups.push({id:"ug_"+Date.now().toString(36),name:"自訂分類",type:"check",items:[{id:"u_"+Date.now().toString(36),name:"新項目",p:null}]});saveData();renderE()});
+$("#btnReset").addEventListener("click",function(){
+  if(this.dataset.armed){const d=DEFAULT.series.find(x=>x.id===S().id);const i=data.series.findIndex(x=>x.id===S().id);if(d&&i>=0)data.series[i]=clone(d);saveData();initRadios();save();renderE();toast("已還原本系列預設");delete this.dataset.armed;this.textContent="還原本系列預設"}
+  else{this.dataset.armed=1;this.textContent="再按一次確認（本系列修改會消失）";setTimeout(()=>{delete this.dataset.armed;this.textContent="還原本系列預設"},4000)}
+});
+const dlg=$("#dlg");
+function openDlg(text){$("#dlgText").value=text??JSON.stringify(data);$("#dlgMsg").textContent="";try{dlg.showModal()}catch(e){dlg.setAttribute("open","")}}
+const closeDlg=()=>{try{dlg.close()}catch(e){dlg.removeAttribute("open")}};
+$("#btnBackup").addEventListener("click",async()=>{if(await requireAuth())openDlg()});
+$("#btnBackupH").addEventListener("click",async()=>{if(await requireAuth())openDlg()});
+$("#dlgClose").addEventListener("click",closeDlg);
+$("#dlgCopy").addEventListener("click",()=>copyText($("#dlgText").value,$("#dlgText")).then(ok=>toast(ok?"已複製，貼到記事本存檔":"請按 Ctrl+C 複製選取的文字")));
+$("#dlgFile").addEventListener("change",e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{$("#dlgText").value=r.result};r.readAsText(f)});
+$("#dlgApply").addEventListener("click",()=>{
+  try{let d=JSON.parse($("#dlgText").value);
+    if(d&&Array.isArray(d.groups)&&!d.series){ // 舊版 W1000 備份
+      d.groups.forEach(g=>g.items.forEach(i=>{if(i.p===undefined)i.p=i.u??i.d??null}));
+      const nd=clone(data); const w=nd.series.find(s=>s.id==="W"); if(w) w.groups=d.groups; d=nd;
+    }
+    if(!d||!Array.isArray(d.series)) throw 0;
+    d.auth=data.auth; data=d; saveData(); initRadios(); save(); closeDlg(); render(); toast("已套用價格資料");}
+  catch(e){$("#dlgMsg").textContent="格式不對：請貼上用「複製」得到的整段文字。"}
+});
+
+// 開啟時：依網址 #S / #W-edit 進入，否則回上次畫面
+(function(){st.view="H";                     // 每次打開一律停在機種選擇首頁
+  render();})();
+</script>
+
+</body>
+</html>

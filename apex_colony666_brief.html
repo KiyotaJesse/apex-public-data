@@ -1,0 +1,201 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>APEX 戰情 10 秒版</title>
+<style>
+:root{
+  --bg:#100C08; --ink:#DFD2B4; --dim:#8A7455; --line:#32261A; --paper:#171009;
+  --red:#D9553E; --amber:#D99A3E; --green:#7FA05A; --grey:#6E6252;
+  --mono:"Cascadia Mono","Consolas",ui-monospace,monospace;
+  --sans:"Segoe UI","Microsoft JhengHei","PingFang TC","Noto Sans TC",system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;
+     -webkit-text-size-adjust:100%}
+.wrap{max-width:720px;margin:0 auto;padding:18px 18px 40px}
+.top{display:flex;justify-content:space-between;align-items:baseline;
+     font-family:var(--mono);font-size:10.5px;letter-spacing:.22em;color:var(--dim);
+     border-bottom:1px solid var(--line);padding-bottom:8px}
+.top .stale{color:var(--red)}
+.cell{border-bottom:1px solid var(--line);padding:14px 0}
+.lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.22em;color:var(--dim);
+     display:block;margin-bottom:8px}
+.verdict{display:flex;align-items:center;gap:16px}
+.word{font-size:clamp(46px,15vw,72px);font-weight:800;line-height:.95;letter-spacing:.04em}
+.word.red{color:var(--red)} .word.amber{color:var(--amber)} .word.green{color:var(--green)}
+.why{font-size:14px;color:#C2B291;flex:1;min-width:0}
+.why .more{display:block;color:var(--dim);font-size:12px;margin-top:4px}
+.nums{display:flex;gap:10px}
+.num{flex:1;min-width:0;border-left:2px solid var(--line);padding-left:10px}
+.num.red{border-color:var(--red)} .num.amber{border-color:var(--amber)}
+.num.green{border-color:var(--green)} .num.grey{border-color:var(--grey)}
+.num .k{font-size:11.5px;color:var(--dim)}
+.num .v{font-family:var(--mono);font-size:clamp(21px,6.4vw,28px);font-weight:600;
+        line-height:1.25;white-space:nowrap}
+.num.red .v{color:var(--red)} .num.amber .v{color:var(--amber)}
+.num.green .v{color:var(--green)} .num.grey .v{color:#9C8E78}
+.num .u{font-size:11px;color:var(--dim);font-weight:400}
+.num .s{font-size:10.5px;color:var(--dim);line-height:1.45;margin-top:3px}
+.todo{list-style:none}
+.todo li{padding:11px 0;border-top:1px dashed var(--line)}
+.todo li:first-child{border-top:0}
+.todo .t{font-size:28px;font-weight:700;line-height:1.3;letter-spacing:.01em}
+.todo .m{font-family:var(--mono);font-size:11.5px;color:var(--dim);margin-top:5px}
+.todo .m b{color:var(--amber);font-weight:600}
+.todo li.late .m b{color:var(--red)}
+.none{font-size:28px;font-weight:700;color:var(--green);line-height:1.3}
+details.rest{margin-top:10px;border-top:1px dashed var(--line);padding-top:8px}
+details.rest>summary{font-family:var(--mono);font-size:11.5px;color:var(--dim);
+  cursor:pointer;list-style:none;padding:2px 0}
+details.rest>summary::before{content:"＋ ";color:var(--amber)}
+details[open].rest>summary::before{content:"－ "}
+details.rest>summary::-webkit-details-marker{display:none}
+.auto{font-size:13.5px;color:#B8A886}
+/* WO-48 北極星(格 5): 三條進度條 + 風險儀燈。手機一屏優先, 細節收進 details。 */
+.ns{display:flex;flex-direction:column;gap:9px}
+.ns .bar{display:block}
+.ns .bh{display:flex;justify-content:space-between;gap:8px;font-size:11.5px;color:var(--dim);
+        align-items:baseline}
+.ns .bh b{color:var(--ink);font-weight:600;font-size:12.5px}
+.ns .bh .dl{font-family:var(--mono);white-space:nowrap}
+.ns .track{height:7px;background:var(--paper);border:1px solid var(--line);margin-top:4px;
+           position:relative;overflow:hidden}
+.ns .fill{position:absolute;inset:0 auto 0 0;background:var(--grey)}
+.ns .bar.ahead .fill{background:var(--green)} .ns .bar.ahead .dl{color:var(--green)}
+.ns .bar.late .fill{background:var(--red)} .ns .bar.late .dl{color:var(--red)}
+.ns .bar.achieved .fill{background:var(--green)}
+.ns .sub{font-size:10.5px;color:var(--dim);margin-top:3px;font-family:var(--mono)}
+.ns-risk{display:flex;align-items:center;gap:8px;font-size:12px;color:#B8A886;margin-bottom:2px}
+.ns-risk .dot{width:9px;height:9px;border-radius:50%;background:var(--grey);flex:none}
+.ns-risk.red .dot{background:var(--red)} .ns-risk.amber .dot{background:var(--amber)}
+.ns-risk.green .dot{background:var(--green)}
+.ns-path{font-size:12.5px;color:#B8A886;line-height:1.65}
+.ns-path li{margin:6px 0;list-style:none}
+.foot{font-family:var(--mono);font-size:10.5px;color:var(--dim);padding-top:12px;line-height:1.7}
+.foot.stale{color:var(--red)}
+.foot a{color:var(--dim)}
+.cav{margin-top:6px;color:#7A6A52}
+.state{padding:48px 4px;font-size:14px;color:var(--dim);font-family:var(--mono)}
+.state b{display:block;font-size:19px;color:var(--ink);font-family:var(--sans);margin-bottom:6px}
+pre#raw{display:none;white-space:pre-wrap;word-break:break-all;font-family:var(--mono);
+        font-size:11px;color:#9C8E78;background:var(--paper);padding:12px;margin-top:16px;
+        border:1px solid var(--line);max-height:60vh;overflow:auto}
+@media(max-width:420px){
+  .wrap{padding:12px 14px 28px}
+  .cell{padding:12px 0}
+  .nums{gap:8px}
+  .todo .t,.none{font-size:28px}
+  .verdict{gap:12px}
+}
+</style>
+<div class="wrap" id="app">
+  <div class="state" id="loading"><b>讀取中</b>apex_brief.json</div>
+</div>
+<pre id="raw"></pre>
+<script>
+var EMBED={"ts":"2026-10-10T15:20:05","data_ts":"2026-10-10T15:20:02","data_age_h":0.0,"stale":false,"verdict":{"word":"看看","tone":"amber","why":"你有事項 2 天內到期","fired":["你有事項 2 天內到期","待決事項 0 天內自動裁決","糧倉 1 項偏低"],"n_red":0,"n_amber":3},"numbers":[{"k":"巢健康度","v":"87","unit":"/100","tone":"amber","sub":"扣分: 缺糧 礦機口糧 -5、日檢紅 1(未認領: BingX通道) -8"},{"k":"本月策略 R","v":"-3.16","unit":"R","tone":"grey","sub":"2 筆 / 10-01~10-04(樣本 <5, 不代表什麼)"},{"k":"蟻口出勤","v":"153/153","unit":"(100%)","tone":"green","sub":"0 紅燈; 沒打卡的是週/月排程, 今天本來就不跑"}],"jesse":[{"id":"AI140","title":"Render 帳號確認 2FA 已開(AI031)","due":"2026-10-12","due_in":2,"late":false,"howto":"Render 面板 -> 該服務 Environment 改變數 -> Manual Deploy"},{"id":"AI141","title":"BingX 下單 API 金鑰綁 IP 白名單(AI030)","due":"2026-10-12","due_in":2,"late":false,"howto":"到 BingX App 手動處理(機器不准動錢, 這件只有你能做)"},{"id":"AI142","title":"換發 Telegram bot token(AI039,甲級換金鑰)","due":"2026-10-12","due_in":2,"late":false,"howto":"來源 jesse_todo_2026-10-05; 細節看 actions.json 這筆的 source"},{"id":"AI143","title":"Google 服務帳號金鑰 google_service_account.json 停用或刪金鑰(AI060,甲級)","due":"2026-10-12","due_in":2,"late":false,"howto":"來源 jesse_todo_2026-10-05; 細節看 actions.json 這筆的 source"},{"id":"AI144","title":"到 Groq 後台註銷 GROQ_API_KEY(AI029,程式已不用)","due":"2026-10-12","due_in":2,"late":false,"howto":"來源 jesse_todo_2026-10-05; 細節看 actions.json 這筆的 source"},{"id":"AI146","title":"VELA 編劇室排程 vela-writers-room 停不停(你 9/29 改做電音)","due":"2026-10-12","due_in":2,"late":false,"howto":"到期無異議=停用(不刪)"}],"auto":{"decided_24h":4,"decided":[{"id":"D163","q":"[自治藍圖 G2] 營運部蟻口上限 35%（現 48.3%）","choice":"A"},{"id":"D164","q":"[自治藍圖 R4-3] 董事會一頁取代今日一卡的 TG 按鈕","choice":"A"},{"id":"D165","q":"非加密 商品 市場組合 cS_vwap_dev>=1+vol_r>=1.5+atr_r>=1.2|TP4R 過五關+隨機","choice":"A"},{"id":"D166","q":"執行層省手續費: 把 D 端 B1 的『掛訊號價 20 秒後轉市價』推廣到所有策略進場(掛 x=0, 一筆不放), 每筆","choice":"A"}],"repaired_24h":0,"crit_24h":1,"next":{"id":"D173","due":"2026-09-30","q":"本週憲法提案是否採納（2026-39，2 條：公理貳 加細則: SLO 超支期間暫停『新蟻上線』, 只准修既有；公理參 加細則: 同一事件 ","rec":""},"line":"近 24 小時: 自動裁決 4 件、自動修復/回滾 0 件。下一個自動到期 D173(2026-09-30), 沒人異議就採建議 ?。成形雷達: 成形中 125 檔／已成形 44 檔(全條件 14)(跨 5 市場; 宇宙 357 檔, 休市排除 358)。預言帳：2158 則前瞻在等結算、持牌 5／預言者 233。消息：近 24h 955 則／高重要 12 則／最新一則「Binance Alpha Will Remove SUP, CUDIS, PY」(來源 1 個停抓中)｜實證：17 類消息裡 0 類會動價格、8 類不會、9 類樣本不足(事件 n=701)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 21 則發言、提到 GEOPOL×5／FOMC×2／WTI×2、淨多空 +2.9。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 161 單／已結 3089 單(live 1967＋登記日回填 1122)(另樣本內回填 6 單不計成績)／89 個規格在追；最接近晉升的 cL_impact>=1.5+cvd_z>=1+vol_(crypto) 已達 n=98 EV=+0.859R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=28 EV-0.881、SC1 n=5 EV-1.065、SC3 n=43 EV-0.372；最差 SC1(-1.065R)、最好 TL(+0.040R)；合計 98 筆 EV-0.524R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=0、淨EV 無、可交易率 無事件(0/0)。","radar":{"forming":125,"fired":44,"fired_full":14,"markets":["commodity","crypto","fx","index","stock"],"universe_fresh":357,"stale_excluded":358,"ts_utc":"2026-10-10T06:35","age_h":0.8},"forecast":{"pending":2158,"licensed":5,"forecasters":233,"n_forecasts":36861,"n_resolved":34703,"asOf":"2026-10-10T06:40:14"},"shadow":{"n_open":161,"n_closed":3089,"n_live":1967,"n_post_reg":1122,"n_backfill":6,"n_specs":89,"best":{"spec":"cL_impact>=1.5+cvd_z>=1+vol_dry<=0.4|bull|TP","market":"crypto","n":98,"ev":0.859,"to_promo_n":0,"beats_p95":false},"nearest":[{"spec":"cL_impact>=1.5+cvd_z>=1+vol_dry<=0.4|bull|TP","market":"crypto","n":98,"n_live":75,"n_post_reg":23,"ev":0.859,"random_z":1.6,"to_promo_n":0,"eta":null,"beats_p95":false},{"spec":"cL_vol_dry<=0.3+vol_r>=1.5+atr_r>=1.2|bull|T","market":"crypto","n":64,"n_live":53,"n_post_reg":11,"ev":0.7125,"random_z":1.49,"to_promo_n":0,"eta":null,"beats_p95":false},{"spec":"cL_cvd_div<=-0.3+fund_pct<=0.3|bull|TP4R@lt2","market":"crypto","n":40,"n_live":6,"n_post_reg":34,"ev":0.7076,"random_z":1.31,"to_promo_n":0,"eta":null,"beats_p95":false}],"eta_promo":null,"opens_per_day":75.1,"rate_days":14,"ts_utc":"2026-10-10T06:40"},"news":{"n_24h":955,"n_hi":12,"by_category":{"crypto":438,"macro":152,"stock":91,"commodity_fx":274},"sources_green":39,"sources_red":1,"top":{"t":"Binance Alpha Will Remove SUP, CUDIS, PYTHIA, BLUM, KIN, DN, GAIA, STRIKE, CDL, KO, VRA, EPT, SLX (SLIMEX), CAI (2026-10-09)","imp":90,"src":"binance_delist","ts":"2026-10-09T08:00:05Z"},"run_at":"2026-10-10T07:18:01","impact":{"line":"｜實證：17 類消息裡 0 類會動價格、8 類不會、9 類樣本不足(事件 n=701)；黑窗 差異落在噪音裡, 黑窗沒有證據","n_topics":17,"n_moves":0,"n_insufficient":9,"blackout":{"status":"ok","delta_ev":-0.0715,"reading":"差異落在噪音裡, 黑窗沒有證據"},"ts":"2026-10-03T20:30:17"},"trump":{"line":"｜川普：近 24h 21 則發言、提到 GEOPOL×5／FOMC×2／WTI×2、淨多空 +2.9","n_24h":21,"net_long_24h":2.85,"top_symbols":[{"symbol":"GEOPOL","n":5,"net":1.85,"long":2,"short":0},{"symbol":"FOMC","n":2,"net":-0.31,"long":0,"short":1},{"symbol":"WTI","n":2,"net":0.0,"long":0,"short":0},{"symbol":"INDA","n":1,"net":1.0,"long":1,"short":0},{"symbol":"META","n":1,"net":0.0,"long":0,"short":0}],"run_at":"2026-10-10T07:09:01"}},"calendar":{"n_today":0,"n_tomorrow":0,"n_next7d":20,"n_week_high":2,"in_blackout":false,"blackout_event":null,"blackout_markets":[],"head":null,"age_h":1.0,"ts":"2026-10-10T06:20:02"},"live_shadow":{"window":{"from":"2026-09-01","to":"2026-10-10T06:45"},"n_closed":98,"n_open":67,"pooled":{"n":98,"ev":-0.5244,"sd":1.2567,"win_pct":22.4,"pf":0.416,"sum_r":-51.388},"ts":"2026-10-10T06:45","per":{"B1":{"n":6,"ev":-1.007,"z":null,"n_open":0},"TL":{"n":16,"ev":0.0404,"z":null,"n_open":0},"MRS":{"n":28,"ev":-0.8807,"z":-2.62,"n_open":0},"SC1":{"n":5,"ev":-1.0649,"z":null,"n_open":15},"SC3":{"n":43,"ev":-0.3723,"z":-0.14,"n_open":52}}},"delist_shadow":{"forward":{"n":0,"n_untradable":0,"ev":null,"median_r":null,"win":null,"t":null,"tradable_rate":null,"tradable_den":0,"tradable_rate_30d":null,"tradable_den_30d":0,"lag_min_median":null,"sl_rate":null,"funding_missing":0},"backfill":{"n":0,"n_untradable":10,"ev":null,"median_r":null,"win":null,"t":null,"tradable_rate":0.0,"tradable_den":10,"tradable_rate_30d":null,"tradable_den_30d":0,"lag_min_median":null,"sl_rate":null,"funding_missing":0},"n_open":0,"ts":"2026-10-10T07:10:03Z"}},"north_star":{"ts":"2026-10-10T08:00:02","age_h":7.3,"stale":false,"risk_light":"red","risk_why":"最大 24h 權益跌幅 93.8%(上限 20.0)、熔斷 1次(上限 1)","risk_items":[{"k":"手動倉裸倉警報","v":0,"unit":"次","breach":false},{"k":"最大 24h 權益跌幅","v":93.8,"unit":"%","breach":true},{"k":"熔斷","v":1,"unit":"次","breach":true}],"risk_path":"風險儀 2 項超標(最大 24h 權益跌幅 93.8%(上限 20.0)、熔斷 1次(上限 1)) -> 三個里程碑的預估日已各自往後推。","milestones":[{"id":"M1","name":"第一支樣本外為正的策略","pct":60.0,"note":"最佳規格 98/30 筆; 壓測七項 未過; 待決成立 否","status":"unknown","est":"未知","jesse":"2026-11-30","delta":"無預估日","path":"M1 最短路徑: 最接近晉升的是 cL_impact>=1.5+cvd_z>=1+vol_(crypto) -- 還差 0 筆(目前 98 筆 EV +0.859, 預估 未知)。"},{"id":"M2","name":"月 R 連三個月為正","pct":0,"note":"本月 2 筆 -3.16R／連正 0/3 月","status":"unknown","est":"未知","jesse":"2027-02-28","delta":"無預估日","path":"M2 最短路徑: 本月 2 筆 -3.16R, 連正 0/3 月; 還缺 3 個正月(預估 未知)。"},{"id":"M3","name":"策略權益 ×10","pct":0,"note":"權益 11 / 目標 2361(起算 2026-09-16)","status":"late","est":"2032-04-02","jesse":"2029-05-31","delta":"延後 1037 天","path":"M3 最短路徑: 以目前斜率永不達標(近 90 天 -2.48R, 月報酬 -1.7%) —— M3 是 M2 的結果, 這個月唯一能做的是把 M1 往前推。"}]},"caveats":[],"src":{"nest":"queen_weight 鏈內 nest","actions":"actions.json","decisions":"decisions.json","attendance":"supervision_state.json @ 2026-10-10T07:05","events":"events.jsonl","month_r":"tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)","calendar":"calendar_board.json @ 2026-10-10T06:20:02","news":"news_board.json @ 2026-10-10T07:18:01","north_star":"goal_state.json @ 2026-10-10T08:00:02","rules":"brief_rules.json v1.0"},"rules_version":"1.0"};
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){
+  return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c];});}
+function state(title,body){
+  document.getElementById("app").innerHTML=
+    '<div class="state"><b>'+esc(title)+'</b>'+esc(body)+'</div>';
+}
+function dueTxt(it){
+  var d=it.due_in;
+  if(d<0) return "逾期 "+(-d)+" 天";
+  if(d===0) return "今天到期";
+  if(d>900) return "沒設到期日";
+  return d+" 天後到期";
+}
+function item(it){
+  return '<li'+(it.late?' class="late"':'')+'><div class="t">'+esc(it.title)+'</div>'+
+         '<div class="m"><b>'+esc(dueTxt(it))+'</b> · '+esc(it.due)+' · '+esc(it.id)+
+         '<br>'+esc(it.howto)+'</div></li>';
+}
+function render(b,how){
+  if(!b||!b.verdict){state("沒有資料","apex_brief.json 是空的或格式不對, 跑 build_brief.py 重產");return;}
+  var v=b.verdict, ns=b.numbers||[], js=b.jesse||[], au=b.auto||{};
+  // 資料時間同時放頂欄(首屏看得到)與頁腳; 過期標紅 -- 這頁是靜態的, 08:10 才更新
+  var fc=au.forecast||null;
+  var h='<div class="top"><span>APEX 戰情 10 秒版</span>'+
+        (fc?'<span>持牌 '+esc(fc.licensed)+'</span>':'')+
+        '<span'+(b.stale?' class="stale"':'')+
+        '>資料 '+esc((b.data_ts||"?").slice(5,16))+(b.stale?' 已過期':'')+'</span></div>';
+  h+='<div class="cell"><span class="lbl">今天要不要理它</span><div class="verdict">'+
+     '<div class="word '+esc(v.tone)+'">'+esc(v.word)+'</div><div class="why">'+esc(v.why)+
+     (v.fired&&v.fired.length>1?'<span class="more">另外 '+(v.fired.length-1)+' 條: '+esc(v.fired.slice(1,3).join(" / "))+'</span>':'')+
+     '</div></div></div>';
+  h+='<div class="cell"><span class="lbl">三個數字</span><div class="nums">';
+  for(var i=0;i<ns.length;i++){var n=ns[i];
+    h+='<div class="num '+esc(n.tone)+'"><div class="k">'+esc(n.k)+'</div>'+
+       '<div class="v">'+esc(n.v)+'<span class="u"> '+esc(n.unit)+'</span></div>'+
+       '<div class="s">'+esc(n.sub)+'</div></div>';}
+  h+='</div></div>';
+  h+='<div class="cell"><span class="lbl">你要做的</span>';
+  if(!js.length){h+='<div class="none">你不用做任何事</div>';}
+  else{
+    // 手機一屏優先: 最急的兩件全尺寸, 其餘收進摺疊(展開後同字級)
+    var TOP=2;
+    h+='<ul class="todo">'+js.slice(0,TOP).map(item).join("")+'</ul>';
+    if(js.length>TOP){
+      h+='<details class="rest"><summary>還有 '+(js.length-TOP)+' 件（最近一件 '+
+         esc(js[TOP].due)+'）</summary><ul class="todo">'+
+         js.slice(TOP).map(item).join("")+'</ul></details>';}
+  }
+  h+='</div>';
+  h+='<div class="cell"><span class="lbl">系統自己會做的</span><div class="auto">'+esc(au.line||"")+'</div></div>';
+  // WO-48 格 5 北極星: 三條進度條(M1/M2/M3)常駐, 風險儀一行, 最短路徑收進摺疊
+  var g=b.north_star;
+  if(g&&g.milestones&&g.milestones.length){
+    h+='<div class="cell"><span class="lbl">北極星'+(g.stale?'（'+g.age_h+' 小時沒更新）':'')+
+       '</span>';
+    h+='<div class="ns-risk '+esc(g.risk_light)+'"><span class="dot"></span>失敗風險儀：'+
+       esc(g.risk_why||'—')+'</div>';
+    h+='<div class="ns">';
+    for(var k=0;k<g.milestones.length;k++){var m=g.milestones[k];
+      var w=Math.max(0,Math.min(100,Number(m.pct)||0));
+      h+='<div class="bar '+esc(m.status)+'"><div class="bh"><b>'+esc(m.id)+' '+esc(m.name)+'</b>'+
+         '<span class="dl">'+esc(m.est)+'　'+esc(m.delta)+'</span></div>'+
+         '<div class="track"><div class="fill" style="width:'+w+'%"></div></div>'+
+         '<div class="sub">'+esc(m.note)+'（'+w+'%／Jesse '+esc(m.jesse)+'）</div></div>';}
+    h+='</div>';
+    h+='<details class="rest"><summary>本週最短路徑（'+g.milestones.length+' 條）</summary>'+
+       '<ul class="ns-path">';
+    for(var k2=0;k2<g.milestones.length;k2++){
+      h+='<li>'+esc(g.milestones[k2].path)+'</li>';}
+    if(g.risk_path){h+='<li>'+esc(g.risk_path)+'</li>';}
+    h+='</ul></details></div>';
+  }
+  var st=b.stale?" stale":"";
+  h+='<div class="foot'+st+'">資料時間 '+esc(b.data_ts||"?")+
+     (b.data_age_h!=null?"（"+b.data_age_h+" 小時前）":"")+
+     ' · 本頁靜態, 每日 08:10 隨蟻丘更新 · 產生 '+esc((b.ts||"").replace("T"," "))+
+     ' · 來源 '+esc(how);
+  if(b.caveats&&b.caveats.length){h+='<div class="cav">※ '+esc(b.caveats.join(" ／ "))+'</div>';}
+  h+='</div>';
+  document.getElementById("app").innerHTML=h;
+  if(/[?&]debug=1/.test(location.search)){
+    var r=document.getElementById("raw");r.style.display="block";
+    r.textContent=JSON.stringify(b,null,1);}
+}
+(function(){
+  var done=false;
+  function fallback(why){
+    if(done)return; done=true;
+    if(EMBED&&EMBED.verdict){render(EMBED,"內嵌快照("+why+")");}
+    else{state("讀不到資料",why+"; 內嵌快照也是空的。到 C:\\apex_artifacts 跑 python build_brief.py");}
+  }
+  var t=setTimeout(function(){fallback("讀 json 逾時");},4000);
+  // json 檔名跟著頁面檔名走(apex_brief.html -> apex_brief.json; 公開推成 apex_colony666_brief.html 就找 apex_colony666_brief.json)
+  var jn="apex_brief.json";
+  try{
+    jn=(location.pathname.split("/").pop()||"apex_brief.html").replace(/\.html?$/i,"")+".json";
+    if(!/\.json$/.test(jn)||jn===".json") jn="apex_brief.json";
+    fetch(jn,{cache:"no-store"}).then(function(r){
+      if(!r.ok)throw new Error("HTTP "+r.status); return r.json();
+    }).then(function(j){
+      if(done)return; done=true; clearTimeout(t); render(j,jn);
+    })["catch"](function(e){clearTimeout(t);fallback(String(e.message||e));});
+  }catch(e){clearTimeout(t);fallback("瀏覽器不支援 fetch");}
+})();
+</script>

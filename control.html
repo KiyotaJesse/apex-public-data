@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<title>APEX 控制甲板</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+:root{--bg:#0C1117;--panel:#131A23;--panel2:#1A2330;--line:#263140;--ink:#E8EDF4;--ink2:#8C9BAD;--ink3:#5A6879;
+--gold:#D9A441;--bull:#35B98F;--bear:#E15A6E;--glow:rgba(217,164,65,.14)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans TC","Microsoft JhengHei",-apple-system,sans-serif;padding:14px 12px 96px}
+.hd{display:flex;align-items:center;gap:10px;margin-bottom:4px}
+.hd h1{font-size:17px;margin:0;letter-spacing:.06em}
+.hd .led{width:9px;height:9px;border-radius:50%;background:var(--ink3)}
+.hd .led.ok{background:var(--bull);box-shadow:0 0 8px var(--bull)}
+.hd .led.wait{background:var(--gold);box-shadow:0 0 8px var(--gold)}
+.sub{font-size:11px;color:var(--ink3);font-family:Consolas,monospace;margin-bottom:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;margin-bottom:12px;overflow:hidden}
+.chd{display:flex;align-items:center;gap:10px;padding:11px 14px;background:var(--panel2);border-bottom:1px solid var(--line)}
+.chd b{font-size:14px;letter-spacing:.04em}
+.chd .mode{margin-left:auto;font-size:10.5px;letter-spacing:.1em;padding:2px 10px;border:1px solid;border-radius:99px}
+.mode.live{color:var(--bull);border-color:var(--bull)}
+.mode.off{color:var(--ink3);border-color:var(--ink3)}
+.mode.paper{color:var(--gold);border-color:var(--gold)}
+.row{display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:center;padding:11px 14px;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:none}
+.row.changed{background:var(--glow)}
+.lb{font-size:13px}
+.lb small{display:block;font-size:10.5px;color:var(--ink3);margin-top:1px}
+.lb .dgr{color:var(--bear);font-size:10px;border:1px solid var(--bear);border-radius:3px;padding:0 4px;margin-left:6px;vertical-align:1px}
+.val{font-family:Consolas,monospace;font-size:14px;text-align:right;min-width:74px}
+.val input[type=number]{width:76px;background:var(--panel2);border:1px solid var(--line);border-radius:6px;color:var(--ink);font:inherit;text-align:right;padding:5px 7px;outline:none}
+.val input:focus{border-color:var(--gold)}
+.sld{grid-column:1/3}
+input[type=range]{width:100%;accent-color:var(--gold);height:22px}
+.tgl{position:relative;width:52px;height:28px;background:var(--line);border-radius:99px;cursor:pointer;transition:.18s}
+.tgl.on{background:var(--bull)}
+.tgl i{position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;transition:.18s}
+.tgl.on i{left:27px}
+.ks .tgl.on{background:var(--bear)}
+.bar{position:fixed;left:0;right:0;bottom:0;background:var(--panel2);border-top:1px solid var(--gold);padding:12px 14px;display:flex;align-items:center;gap:12px}
+.bar .n{font-size:13px;color:var(--ink2)}
+.bar .n b{color:var(--gold);font-size:16px}
+.btn{margin-left:auto;background:var(--gold);color:#141414;border:none;border-radius:8px;font-size:14.5px;font-weight:700;padding:11px 26px;letter-spacing:.06em}
+.btn:disabled{background:var(--line);color:var(--ink3)}
+.btn2{background:none;border:1px solid var(--ink3);color:var(--ink2);border-radius:8px;font-size:13px;padding:10px 16px}
+.mask{position:fixed;inset:0;background:rgba(0,0,0,.72);display:none;align-items:flex-end;z-index:50}
+.mask.show{display:flex}
+.sheet{background:var(--panel);border-top:2px solid var(--gold);border-radius:14px 14px 0 0;width:100%;max-height:72vh;overflow:auto;padding:18px 16px 22px}
+.sheet h3{margin:0 0 10px;font-size:15px}
+.diff{font-family:Consolas,monospace;font-size:13px;line-height:2;margin-bottom:14px}
+.diff .d{color:var(--bear);font-weight:700}
+.warn{font-size:12px;color:var(--bear);border:1px solid var(--bear);border-radius:8px;padding:8px 12px;margin-bottom:14px;display:none}
+.warn.show{display:block}
+.note{font-size:11.5px;color:var(--ink3);margin:4px 2px 14px;line-height:1.7}
+.ro{background:var(--bear);color:#fff;font-size:12px;padding:8px 12px;border-radius:8px;margin-bottom:12px;display:none}
+</style>
+</head>
+<body>
+<div class="hd"><div class="led" id="led"></div><h1>APEX 控制甲板</h1><span class="sub" id="syncst"></span></div>
+<div class="sub" id="meta">載入配置中…</div>
+<div class="ro" id="ro">⚠️ 非 Telegram 環境:唯讀模式(調整送出需從 /control 開啟)</div>
+<div id="cards"></div>
+<div class="note">每項參數都有寫死在交易引擎裡的硬邊界(這個介面繞不過)。送出後 D 於 ≤60 秒熱載入生效,無需重啟;生效後上方燈號轉綠並收到 Telegram 通知。標 <span style="color:var(--bear)">危</span> 的項目改動會直接影響實盤風險。</div>
+<div class="bar"><span class="n">待送出 <b id="cnt">0</b> 項</span><button class="btn2" id="reset">還原</button><button class="btn" id="send" disabled>送出變更</button></div>
+<div class="mask" id="mask"><div class="sheet">
+<h3>⚠️ 確認變更</h3>
+<div class="warn" id="dwarn">包含高風險項目(實盤開關/槓桿/killswitch),請逐項確認後再送出。</div>
+<div class="diff" id="diff"></div>
+<button class="btn" id="go" style="width:100%">確認送出 → D 60秒內生效</button>
+<button class="btn2" id="back" style="width:100%;margin-top:8px">返回修改</button>
+</div></div>
+<script>
+const TG=window.Telegram&&window.Telegram.WebApp;
+const canSend=!!(TG&&typeof TG.sendData==="function");
+if(TG){TG.ready();TG.expand();}
+if(!canSend)document.getElementById('ro').style.display='block';
+const META={
+ pool:{name:'幣池分層',rows:[
+  ['review_days','重審週期(天)','幣池多久重篩一次;移出主池只擋新進場,持倉照原策略出場','int',1,1,14,1],
+ ]},
+ b1:{name:'B1 盤整破位做空',rows:[
+  ['live_enabled','實盤開關','關=停止新開倉(舊倉照管)','bool',1],
+  ['risk_pct','單筆風險','每筆最多虧損佔權益比例','pct',1,0.0001,0.02,0.0001],
+  ['leverage','槓桿上限','實際會依爆倉線動態下調','int',1,1,50,1],
+  ['max_positions','最大同時持倉','0=只平不開','int',0,0,5,1],
+  ['daily_loss_limit_pct','當日虧損熔斷','當日虧到此比例自動停','pct',0,0.005,0.10,0.005],
+  ['cycle_seconds','掃描週期(秒)','越短越即時、API消耗越大','int',0,60,3600,30],
+  ['regime_gate','BTC大盤閘門','熊市才放行做空(7/26實證+0.24R)','bool',0],
+  ['atr_r_thr','ATR比率門檻','8/2體檢atr_r雙驗證,0=停用','float',0,0,3.0,0.1],
+  ['volr_thr','量能比門檻','進場需量能達均量倍數,1.0=停用','float',0,1.0,2.5,0.1],
+  ['max_cost_bps','成本上限(bps)','逐幣往返成本超過此值不進場(8/26上線後B1由0轉+0.21R);config未設時D端預設15','num',0,5,999,1,15],
+  ['maker_first','限價搶maker','先掛限價省手續費,未成交改市價;關=直接市價','bool',0],
+  ['maker_wait_s','限價等待(秒)','等越久越省手續費,但掃描迴圈會被卡住同樣秒數;0=直接市價','int',0,0,30,2]]},
+ tl:{name:'TL 順勢回踩做多',rows:[
+  ['live_enabled','實盤開關','','bool',1],
+  ['risk_pct','單筆風險','目前降檔中(walk-forward近季EV轉負)','pct',1,0.0001,0.02,0.0001],
+  ['leverage','槓桿上限','','int',1,1,50,1],
+  ['max_positions','最大同時持倉','','int',0,0,5,1],
+  ['max_hold_h','最長持倉(小時)','到時強制平倉','int',0,4,168,4],
+  ['cycle_seconds','掃描週期(秒)','','int',0,60,7200,60],
+  ['regime_gate','BTC大盤閘門','多頭才放行做多','bool',0],
+  ['rr','TP 賠率(R)','出場置換實驗 2026-08-27: 5.0 最穩健(+0.148R/筆)','num',0,1.0,10.0,0.5],
+  ['lock_r','鎖利觸發(R)','0=不鎖利(與 rr=5 成對); 2.5=舊設計','num',0,0,5,0.5],
+  ['max_cost_bps','成本上限(bps)','逐幣往返成本超過此值不進場;config未設時D端預設15','num',0,5,999,1,15],
+  ['early_be_r','早保本(R)','0=停用; 8/14 早保本反事實與既有裁決衝突, 未裁決前勿動','num',2,0,3,0.25,0],
+  ['be_floor_r','保本地板(R)','0=停用','num',2,0,3,0.25,0],
+  ['lock_floor_r','鎖利地板(R)','鎖利觸發後最少保住的 R; D 端預設 1.0','num',2,0,3,0.25,1.0],
+  ['trail_buf','拖曳緩衝','0=停用拖曳(8/23 裁決: 拖曳是 EV 殺手)','num',4,0,0.02,0.001,0]]},
+ rs:{name:'RS 相對強弱輪動',rows:[
+  ['live_enabled','實盤開關','目前 paper 觀察中,開=真金上陣','bool',1],
+  ['risk_pct','單筆風險','','pct',1,0.0001,0.02,0.0001],
+  ['leverage','槓桿上限','','int',1,1,50,1],
+  ['max_positions','最大同時持倉','','int',0,0,3,1],
+  ['cycle_seconds','掃描週期(秒)','RS本質低頻,建議≥3600','int',0,600,86400,600]]},
+ mrs:{name:'MRS 超漲回落做空',rows:[
+  ['live_enabled','實盤開關','目前 paper,開=真金上陣','bool',1],
+  ['risk_pct','單筆風險','三階段驗證建議起步0.75%','pct',1,0.0001,0.02,0.0001],
+  ['leverage','槓桿上限','實際依爆倉線動態下調','int',1,1,50,1],
+  ['max_positions','最大同時持倉','','int',0,0,4,1],
+  ['vd_thr','VWAP偏離門檻','進場需vwap_dev≥此值(驗證值2.5)','float',0,1.5,4.0,0.25],
+  ['rsi_thr','RSI門檻','進場需RSI≥此值(驗證值75)','float',0,60,90,1],
+  ['sl_atr','止損ATR倍數','驗證值1.5','float',0,0.8,2.5,0.1],
+  ['max_hold_h','最長持倉(小時)','到時強制平倉','int',0,12,168,12],
+  ['cooldown_h','同幣冷卻(小時)','','int',0,1,48,1],
+  ['regime_gate','BTC大盤閘門','熊市才放行做空(8/23加上,MRS的黃燈補丁)','bool',0],
+  ['max_cost_bps','成本上限(bps)','逐幣往返成本超過此值不進場;config未設時D端預設999(等於不限)','num',0,5,999,1,999],
+  ['cycle_seconds','掃描週期(秒)','','int',0,300,7200,300]]},
+ sc:{name:'SC 空方家族 S1/S2/S3',rows:[
+  ['live_enabled','實盤開關','目前 paper,開=真金上陣','bool',1],
+  ['risk_pct','單筆風險','子策略配比S1x1/S2x0.75/S3x0.5','pct',1,0.0001,0.02,0.0001],
+  ['leverage','槓桿上限','','int',1,1,50,1],
+  ['max_positions','最大同時持倉','','int',0,0,6,1],
+  ['s1_enabled','S1 崩盤捕手','熊市閘門內4h跌破Donchian55','bool',0],
+  ['s2_enabled','S2 過熱獵人','無閘門,cvd_z+vwap_dev過熱空','bool',0],
+  ['s3_enabled','S3 高頻跌破','熊市閘門內1h跌破Donchian20','bool',0],
+  ['max_cost_bps','成本上限(bps)','逐幣往返成本超過此值不進場;config未設時D端預設999(等於不限)','num',0,5,999,1,999],
+  ['cycle_seconds','掃描週期(秒)','','int',0,300,7200,300]]},
+ global:{name:'全域風控',rows:[
+  ['same_dir_max','同方向倉位上限','跨策略合計','int',0,1,6,1],
+  ['total_drawdown_halt_pct','總回撤熔斷','距峰值回撤達此比例全停','pct',0,0.05,0.30,0.01],
+  ['maker_entry_all','全策略限價進場','D166: 開=各策略先掛訊號價,等下一格秒數未成交就撤單改市價補足(一筆不放);關=舊行為。config未設時以D環境變數MAKER_ENTRY_ALL為準(預設關),這格會顯示關','bool',1],
+  ['maker_entry_wait_s','全策略限價等待(秒)','D166: 越久越省手續費、進場越慢;只在上一格開時有作用;config未設時D端預設20','int',0,5,60,5,20],
+  ['killswitch','🔴 KILLSWITCH 全系統急停','開=立即停止所有策略開倉','bool',1]]}
+};
+let CFG=null,BASE={},PEND={};
+const fmt=(k,v,kind)=>kind==='pct'?(v*100).toFixed(2).replace(/\.?0+$/,'')+'%':String(v);
+async function load(){
+ try{
+  // 2026-08-08: 改讀 raw —— 同源 ./dashboard.json 要等 Pages 建置成功才更新,
+  // 星系圖同樣情形實測落後 20 分鐘, 面板顯示舊參數會讓人誤判「調了沒生效」。
+  // raw 直接讀 repo 內容不經建置; 已帶 ?t= 時間戳, max-age=300 快取擋不住。
+  const DASH='https://raw.githubusercontent.com/KiyotaJesse/apex-public-data/main/dashboard.json';
+  const r=await fetch(DASH+'?t='+Date.now(),{cache:'no-store'});
+  const d=await r.json();const tc=d.tama_config||{};CFG=tc.current||{};
+  const ap=tc.applied||{};
+  document.getElementById('meta').textContent='最後變更: '+((CFG._meta||{}).updated||'?').slice(0,16)+' · '+((CFG._meta||{}).by||'').slice(0,42);
+  const fresh=ap.applied_at&&(Date.now()-new Date(ap.applied_at).getTime()<15*60*1000);
+  const led=document.getElementById('led');led.className='led '+(ap.applied_sha?'ok':'wait');
+  document.getElementById('syncst').textContent=ap.applied_sha?('已生效 '+String(ap.applied_sha).slice(0,7)):'待同步';
+  BASE={};
+  for(const sect in META)for(const row of META[sect].rows)BASE[sect+'.'+row[0]]=(CFG[sect]||{})[row[0]];
+  render();
+ }catch(e){
+  document.getElementById('meta').textContent='⚠ 無法取得線上配置(顯示預設值,唯讀): '+String(e).slice(0,60);
+  CFG={b1:{live_enabled:true,risk_pct:0.02,leverage:50,max_positions:5,daily_loss_limit_pct:0.10,cycle_seconds:60},
+       tl:{live_enabled:true,risk_pct:0.01,leverage:50,max_positions:2,max_hold_h:48,cycle_seconds:60,rr:3.0,lock_r:2.5},
+       rs:{live_enabled:false,risk_pct:0.01,leverage:50,max_positions:3,cycle_seconds:3600},
+       global:{same_dir_max:3,total_drawdown_halt_pct:0.25,killswitch:false},_meta:{}};
+  BASE={};
+  for(const sect in META)for(const row of META[sect].rows)BASE[sect+'.'+row[0]]=(CFG[sect]||{})[row[0]];
+  render();
+ }
+}
+function render(){
+ const box=document.getElementById('cards');box.innerHTML='';
+ for(const sect in META){
+  const m=META[sect];const c=CFG[sect]||{};
+  const card=document.createElement('div');card.className='card';
+  let mode='';
+  if('live_enabled' in c)mode=c.live_enabled?'<span class="mode live">LIVE</span>':((sect==='rs'||sect==='mrs'||sect==='sc')?'<span class="mode paper">PAPER</span>':'<span class="mode off">OFF</span>');
+  if(sect==='global')mode=c.killswitch?'<span class="mode off" style="color:var(--bear);border-color:var(--bear)">HALTED</span>':'<span class="mode live">ARMED</span>';
+  card.innerHTML='<div class="chd"><b>'+m.name+'</b>'+mode+'</div>';
+  for(const row of m.rows){
+   const[key,label,hint,kind,dgr,lo,hi,step,dflt]=row;
+   const full=sect+'.'+key;let cur=PEND[full]!==undefined?PEND[full]:BASE[full];
+   // config 沒有這個鍵時(D 端吃環境變數預設)退回列上的預設值, 不能讓 undefined 炸掉整頁
+   if(cur===undefined||cur===null)cur=(dflt!==undefined?dflt:(kind==='bool'?false:lo));
+   const div=document.createElement('div');div.className='row'+(PEND[full]!==undefined?' changed':'')+(key==='killswitch'?' ks':'');
+   let ctl='';
+   if(kind==='bool'){
+    ctl='<div class="tgl'+(cur?' on':'')+'" data-k="'+full+'"><i></i></div>';
+   }else{
+    const disp=kind==='pct'?(cur*100):cur;
+    const dlo=kind==='pct'?lo*100:lo,dhi=kind==='pct'?hi*100:hi,dstep=kind==='pct'?step*100:step;
+    ctl='<div class="val"><input type="number" data-k="'+full+'" data-kind="'+kind+'" min="'+dlo+'" max="'+dhi+'" step="'+dstep+'" value="'+(+disp.toFixed(4))+'">'+(kind==='pct'?' %':'')+'</div>';
+    div.innerHTML='<div class="lb">'+label+(dgr?'<span class="dgr">危</span>':'')+'<small>'+(hint||('範圍 '+dlo+'~'+dhi))+' · 硬邊界 '+dlo+'~'+dhi+(kind==='pct'?'%':'')+'</small></div>'+ctl
+     +'<div class="sld"><input type="range" data-r="'+full+'" data-kind="'+kind+'" min="'+dlo+'" max="'+dhi+'" step="'+dstep+'" value="'+disp+'"></div>';
+    card.appendChild(div);continue;
+   }
+   div.innerHTML='<div class="lb">'+label+(dgr?'<span class="dgr">危</span>':'')+'<small>'+(hint||'')+'</small></div>'+ctl;
+   card.appendChild(div);
+  }
+  box.appendChild(card);
+ }
+ box.querySelectorAll('.tgl').forEach(t=>t.onclick=()=>{const k=t.dataset.k;setVal(k,!(PEND[k]!==undefined?PEND[k]:BASE[k]))});
+ box.querySelectorAll('input[type=number]').forEach(inp=>inp.onchange=()=>{
+  let v=parseFloat(inp.value);if(isNaN(v))return;
+  v=Math.min(+inp.max,Math.max(+inp.min,v));
+  setVal(inp.dataset.k,inp.dataset.kind==='pct'?v/100:(inp.dataset.kind==='int'?Math.round(v):v));});
+ box.querySelectorAll('input[type=range]').forEach(sl=>sl.oninput=()=>{
+  let v=parseFloat(sl.value);
+  setVal(sl.dataset.r,sl.dataset.kind==='pct'?v/100:(sl.dataset.kind==='int'?Math.round(v):v));});
+}
+function setVal(k,v){
+ if(v===BASE[k]||(typeof v==='number'&&Math.abs(v-BASE[k])<1e-9))delete PEND[k];else PEND[k]=v;
+ render();sync();
+}
+function sync(){
+ const n=Object.keys(PEND).length;
+ document.getElementById('cnt').textContent=n;
+ document.getElementById('send').disabled=!n||!canSend;
+}
+document.getElementById('reset').onclick=()=>{PEND={};render();sync()};
+document.getElementById('send').onclick=()=>{
+ const DGR=new Set();
+ for(const s in META)for(const r of META[s].rows)if(r[4])DGR.add(s+'.'+r[0]);
+ let hasD=false,html='';
+ for(const k in PEND){
+  const kind=(()=>{for(const s in META)for(const r of META[s].rows)if(s+'.'+r[0]===k)return r[3];return 'raw'})();
+  const d=DGR.has(k);if(d)hasD=true;
+  html+=(d?'<span class="d">⚠ ':'<span>')+k+'</span>: '+fmt(k,BASE[k],kind)+' → <b>'+fmt(k,PEND[k],kind)+'</b><br>';
+ }
+ document.getElementById('diff').innerHTML=html;
+ document.getElementById('dwarn').className='warn'+(hasD?' show':'');
+ document.getElementById('mask').className='mask show';
+};
+document.getElementById('back').onclick=()=>document.getElementById('mask').className='mask';
+document.getElementById('go').onclick=()=>{
+ if(!canSend)return;
+ TG.sendData(JSON.stringify({action:'set_config',changes:PEND}));
+};
+load();
+</script>
+</body>
+</html>
