@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-10T15:54:08.170673+08:00",
-  "published_at": "2026-10-10T15:56:25.172235+08:00",
+  "generated_at": "2026-10-10T16:21:06.907141+08:00",
+  "published_at": "2026-10-10T16:21:56.863669+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -25,7 +25,7 @@
         "bars_elapsed": 1
       }
     ],
-    "last_cycle_ts": "2026-10-10T07:54:08.170673+00:00",
+    "last_cycle_ts": "2026-10-10T08:21:06.907141+00:00",
     "stats": {
       "n": 1,
       "win_rate_pct": 0.0,
@@ -45,7 +45,7 @@
   "strat_tl": {
     "mode": "disabled",
     "open_positions": [],
-    "last_cycle_ts": "2026-10-10T07:53:25.539016+00:00",
+    "last_cycle_ts": "2026-10-10T08:20:24.301520+00:00",
     "stats": {
       "n": 2,
       "win_rate_pct": 100.0,
@@ -364,11 +364,10 @@
       ]
     },
     "applied": {
-      "applied_sha": "6c3e55ecc50ab5c7e755c8734be4d90864d69b71",
-      "applied_at": "2026-10-09T10:24:25.692700+00:00",
+      "applied_sha": "1a5bf6c4a5b47c204be0b1aedf6d4b03aa010da4",
+      "applied_at": "2026-10-10T07:56:55.949713+00:00",
       "changes": [
-        "sc.live_enabled: True -> False",
-        "auto_strategies: 載入 2 個規格"
+        "global.maker_entry_all: False -> True"
       ]
     },
     "bounds": {
