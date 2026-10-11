@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-11T09:24:44.738731+08:00",
-  "published_at": "2026-10-11T09:25:09.197665+08:00",
+  "generated_at": "2026-10-11T09:58:17.232275+08:00",
+  "published_at": "2026-10-11T10:01:23.012902+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -25,7 +25,7 @@
         "bars_elapsed": 1
       }
     ],
-    "last_cycle_ts": "2026-10-11T01:24:44.738731+00:00",
+    "last_cycle_ts": "2026-10-11T01:58:17.232275+00:00",
     "stats": {
       "n": 1,
       "win_rate_pct": 0.0,
@@ -45,7 +45,7 @@
   "strat_tl": {
     "mode": "disabled",
     "open_positions": [],
-    "last_cycle_ts": "2026-10-11T01:23:50.145753+00:00",
+    "last_cycle_ts": "2026-10-11T01:57:22.652094+00:00",
     "stats": {
       "n": 2,
       "win_rate_pct": 100.0,
@@ -57,7 +57,7 @@
       "_meta": {
         "desc": "APEX 控制台熱載入配置。改此檔 <=60 秒生效，無需重新部署。硬邊界見 tama_v5.py TAMA_CONFIG_BOUNDS。",
         "updated": "2026-10-10T15:56:21.333918+08:00",
-        "by": "控制台 Telegram user 7702310838"
+        "by": "APEX-A L1冠軍挑戰者(Jesse 2026-08-03 全自動授權)"
       },
       "b1": {
         "live_enabled": true,
@@ -68,7 +68,7 @@
         "cycle_seconds": 60,
         "regime_gate": true,
         "atr_r_thr": 1.1,
-        "volr_thr": 1.5,
+        "volr_thr": 1.2,
         "maker_first": true,
         "maker_wait_s": 30
       },
@@ -4555,6 +4555,10 @@
     },
     {
       "ts": "2026-10-11T00:37:43.024566+00:00",
+      "idx": 3.42
+    },
+    {
+      "ts": "2026-10-11T01:37:43.980292+00:00",
       "idx": 3.42
     }
   ],
