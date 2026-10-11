@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-11T09:58:17.232275+08:00",
-  "published_at": "2026-10-11T10:01:23.012902+08:00",
+  "generated_at": "2026-10-11T10:21:54.658571+08:00",
+  "published_at": "2026-10-11T10:25:17.360209+08:00",
   "real_trading_strategy_b": {
     "mode": "live",
     "open_positions": [],
@@ -25,7 +25,7 @@
         "bars_elapsed": 1
       }
     ],
-    "last_cycle_ts": "2026-10-11T01:58:17.232275+00:00",
+    "last_cycle_ts": "2026-10-11T02:21:11.148770+00:00",
     "stats": {
       "n": 1,
       "win_rate_pct": 0.0,
@@ -45,7 +45,7 @@
   "strat_tl": {
     "mode": "disabled",
     "open_positions": [],
-    "last_cycle_ts": "2026-10-11T01:57:22.652094+00:00",
+    "last_cycle_ts": "2026-10-11T02:21:18.060449+00:00",
     "stats": {
       "n": 2,
       "win_rate_pct": 100.0,
@@ -364,10 +364,10 @@
       ]
     },
     "applied": {
-      "applied_sha": "1a5bf6c4a5b47c204be0b1aedf6d4b03aa010da4",
-      "applied_at": "2026-10-10T07:56:55.949713+00:00",
+      "applied_sha": "18d209ee5e12bf2b8748ef92faf4fe15f910b63d",
+      "applied_at": "2026-10-11T02:01:50.931034+00:00",
       "changes": [
-        "global.maker_entry_all: False -> True"
+        "b1.volr_thr: 1.5 -> 1.2"
       ]
     },
     "bounds": {
