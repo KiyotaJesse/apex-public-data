@@ -1,27 +1,28 @@
 {
- "ts": "2026-10-12T09:20:04",
- "data_ts": "2026-10-12T09:20:01",
+ "ts": "2026-10-12T10:20:04",
+ "data_ts": "2026-10-12T10:20:01",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
   "word": "要動",
   "tone": "red",
-  "why": "你有事項今天到期",
+  "why": "巢健康度 65 低於 70",
   "fired": [
+   "巢健康度 65 低於 70",
    "你有事項今天到期",
    "病蟻 1 隻(排程紅燈)",
-   "巢健康度 71 低於 85",
+   "巢健康度 65 低於 85",
    "你有事項 0 天內到期",
    "待決事項 0 天內自動裁決",
    "SLO 超支 1 項"
   ],
-  "n_red": 2,
+  "n_red": 3,
   "n_amber": 4
  },
  "numbers": [
   {
    "k": "巢健康度",
-   "v": "71",
+   "v": "65",
    "unit": "/100",
    "tone": "red",
    "sub": "扣分: 病蟻 1 隻 -15、日檢紅 1(未認領: BingX通道) -8"
@@ -35,7 +36,7 @@
   },
   {
    "k": "蟻口出勤",
-   "v": "159/161",
+   "v": "160/161",
    "unit": "(99%)",
    "tone": "amber",
    "sub": "紅燈 1 隻: CI 回歸測試(A re"
@@ -102,11 +103,11 @@
    "q": "本週憲法提案是否採納（2026-39，2 條：公理貳 加細則: SLO 超支期間暫停『新蟻上線』, 只准修既有；公理參 加細則: 同一事件 ",
    "rec": ""
   },
-  "line": "近 24 小時: 自動裁決 0 件、自動修復/回滾 0 件。下一個自動到期 D173(2026-09-30), 沒人異議就採建議 ?。成形雷達: 成形中 425 檔／已成形 61 檔(全條件 47)(跨 5 市場; 宇宙 431 檔, 休市排除 286)。預言帳：1889 則前瞻在等結算、持牌 4／預言者 236。消息：近 24h 566 則／高重要 2 則／最新一則「We’re about to get a huge read on whethe」(來源 1 個停抓中)｜實證：11 類消息裡 0 類會動價格、0 類不會、11 類樣本不足(事件 n=74)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 21 則發言、提到 WTI×3／GEOPOL×1／GOLD×1、淨多空 +0.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 123 單／已結 3195 單(live 2073＋登記日回填 1122)(另樣本內回填 6 單不計成績)／89 個規格在追；最接近晉升的 cL_impact>=1.5+cvd_z>=1+vol_(crypto) 已達 n=98 EV=+0.859R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=28 EV-0.881、SC1 n=19 EV-1.032、SC3 n=95 EV-0.422；最差 SC1(-1.032R)、最好 TL(+0.040R)；合計 164 筆 EV-0.548R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=0、淨EV 無、可交易率 無事件(0/0)。",
+  "line": "近 24 小時: 自動裁決 0 件、自動修復/回滾 0 件。下一個自動到期 D173(2026-09-30), 沒人異議就採建議 ?。成形雷達: 成形中 532 檔／已成形 167 檔(全條件 121)(跨 5 市場; 宇宙 432 檔, 休市排除 285)。預言帳：1906 則前瞻在等結算、持牌 4／預言者 237。消息：近 24h 549 則／高重要 2 則／最新一則「We’re about to get a huge read on whethe」(來源 1 個停抓中)｜實證：11 類消息裡 0 類會動價格、0 類不會、11 類樣本不足(事件 n=74)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 17 則發言、提到 WTI×3／GEOPOL×1／GOLD×1、淨多空 +0.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 211 單／已結 3201 單(live 2079＋登記日回填 1122)(另樣本內回填 6 單不計成績)／89 個規格在追；最接近晉升的 cL_impact>=1.5+cvd_z>=1+vol_(crypto) 已達 n=98 EV=+0.859R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=28 EV-0.881、SC1 n=19 EV-1.032、SC3 n=95 EV-0.422；最差 SC1(-1.032R)、最好 TL(+0.040R)；合計 164 筆 EV-0.548R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=0、淨EV 無、可交易率 無事件(0/0)。",
   "radar": {
-   "forming": 425,
-   "fired": 61,
-   "fired_full": 47,
+   "forming": 532,
+   "fired": 167,
+   "fired_full": 121,
    "markets": [
     "commodity",
     "crypto",
@@ -114,23 +115,23 @@
     "index",
     "stock"
    ],
-   "universe_fresh": 431,
-   "stale_excluded": 286,
-   "ts_utc": "2026-10-12T00:35",
+   "universe_fresh": 432,
+   "stale_excluded": 285,
+   "ts_utc": "2026-10-12T01:35",
    "age_h": 0.8
   },
   "forecast": {
-   "pending": 1889,
+   "pending": 1906,
    "licensed": 4,
-   "forecasters": 236,
-   "n_forecasts": 38602,
-   "n_resolved": 36713,
-   "asOf": "2026-10-12T00:40:12"
+   "forecasters": 237,
+   "n_forecasts": 38664,
+   "n_resolved": 36758,
+   "asOf": "2026-10-12T01:40:10"
   },
   "shadow": {
-   "n_open": 123,
-   "n_closed": 3195,
-   "n_live": 2073,
+   "n_open": 211,
+   "n_closed": 3201,
+   "n_live": 2079,
    "n_post_reg": 1122,
    "n_backfill": 6,
    "n_specs": 89,
@@ -162,7 +163,7 @@
      "n_live": 53,
      "n_post_reg": 11,
      "ev": 0.7125,
-     "random_z": 1.54,
+     "random_z": 1.55,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": false
@@ -181,18 +182,18 @@
     }
    ],
    "eta_promo": null,
-   "opens_per_day": 71.7,
+   "opens_per_day": 78.1,
    "rate_days": 14,
-   "ts_utc": "2026-10-12T00:40"
+   "ts_utc": "2026-10-12T01:40"
   },
   "news": {
-   "n_24h": 566,
+   "n_24h": 549,
    "n_hi": 2,
    "by_category": {
     "stock": 5,
-    "macro": 62,
-    "crypto": 295,
-    "commodity_fx": 204
+    "macro": 59,
+    "crypto": 292,
+    "commodity_fx": 193
    },
    "sources_green": 39,
    "sources_red": 1,
@@ -202,7 +203,7 @@
     "src": "marketwatch_top",
     "ts": "2026-10-11T14:00:00Z"
    },
-   "run_at": "2026-10-12T01:18:01",
+   "run_at": "2026-10-12T02:18:01",
    "impact": {
     "line": "｜實證：11 類消息裡 0 類會動價格、0 類不會、11 類樣本不足(事件 n=74)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 11,
@@ -216,8 +217,8 @@
     "ts": "2026-10-10T20:30:12"
    },
    "trump": {
-    "line": "｜川普：近 24h 21 則發言、提到 WTI×3／GEOPOL×1／GOLD×1、淨多空 +0.0",
-    "n_24h": 21,
+    "line": "｜川普：近 24h 17 則發言、提到 WTI×3／GEOPOL×1／GOLD×1、淨多空 +0.0",
+    "n_24h": 17,
     "net_long_24h": 0.0,
     "top_symbols": [
      {
@@ -242,7 +243,7 @@
       "short": 0
      }
     ],
-    "run_at": "2026-10-12T01:09:01"
+    "run_at": "2026-10-12T02:09:01"
    }
   },
   "calendar": {
@@ -254,13 +255,13 @@
    "blackout_event": null,
    "blackout_markets": [],
    "head": null,
-   "age_h": 3.0,
-   "ts": "2026-10-11T22:20:01"
+   "age_h": 0.0,
+   "ts": "2026-10-12T02:20:01"
   },
   "live_shadow": {
    "window": {
     "from": "2026-09-01",
-    "to": "2026-10-12T00:45"
+    "to": "2026-10-12T01:45"
    },
    "n_closed": 164,
    "n_open": 6,
@@ -272,7 +273,7 @@
     "pf": 0.384,
     "sum_r": -89.8
    },
-   "ts": "2026-10-12T00:45",
+   "ts": "2026-10-12T01:45",
    "per": {
     "B1": {
      "n": 6,
@@ -289,19 +290,19 @@
     "MRS": {
      "n": 28,
      "ev": -0.8807,
-     "z": -2.82,
+     "z": -2.8,
      "n_open": 5
     },
     "SC1": {
      "n": 19,
      "ev": -1.0317,
-     "z": -2.62,
+     "z": -2.73,
      "n_open": 1
     },
     "SC3": {
      "n": 95,
      "ev": -0.4225,
-     "z": -0.35,
+     "z": -0.47,
      "n_open": 0
     }
    }
@@ -338,12 +339,12 @@
     "funding_missing": 0
    },
    "n_open": 0,
-   "ts": "2026-10-12T01:10:04Z"
+   "ts": "2026-10-12T02:10:03Z"
   }
  },
  "north_star": {
   "ts": "2026-10-12T08:00:02",
-  "age_h": 1.3,
+  "age_h": 2.3,
   "stale": false,
   "risk_light": "red",
   "risk_why": "最大 24h 權益跌幅 93.8%(上限 20.0)、熔斷 1次(上限 1)",
@@ -409,11 +410,11 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-10-12T01:05",
+  "attendance": "supervision_state.json @ 2026-10-12T02:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
-  "calendar": "calendar_board.json @ 2026-10-11T22:20:01",
-  "news": "news_board.json @ 2026-10-12T01:18:01",
+  "calendar": "calendar_board.json @ 2026-10-12T02:20:01",
+  "news": "news_board.json @ 2026-10-12T02:18:01",
   "north_star": "goal_state.json @ 2026-10-12T08:00:02",
   "rules": "brief_rules.json v1.0"
  },
