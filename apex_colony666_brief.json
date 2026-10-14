@@ -1,6 +1,6 @@
 {
- "ts": "2026-10-14T13:20:05",
- "data_ts": "2026-10-14T13:20:01",
+ "ts": "2026-10-14T14:20:05",
+ "data_ts": "2026-10-14T14:20:01",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
@@ -113,10 +113,10 @@
    "q": "停用條件觸發: SC 的規則 SC_drift_ks -- drift_ks_p 現值 4e-06 < 門檻 0.01 (n=95)。要不要",
    "rec": "A"
   },
-  "line": "近 24 小時: 自動裁決 5 件、自動修復/回滾 0 件。下一個自動到期 D227(2026-10-15), 沒人異議就採建議 A。成形雷達: 成形中 152 檔／已成形 11 檔(全條件 9)(跨 5 市場; 宇宙 414 檔, 休市排除 313)。預言帳：1846 則前瞻在等結算、持牌 7／預言者 239。消息：近 24h 1079 則／高重要 20 則／最新一則「Bitcoin climbs toward $84,000 after Fed’」(來源 2 個停抓中)｜實證：11 類消息裡 0 類會動價格、0 類不會、11 類樣本不足(事件 n=74)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 44 則發言、提到 EWT×9／WTI×5／GOLD×1、淨多空 -2.0。今日事件：5 件(最重要 美國 CPI 20:30)／黑窗中：否。影子: 追蹤中 667 單／已結 3305 單(live 2183＋登記日回填 1122)(另樣本內回填 6 單不計成績)／92 個規格在追；最接近晉升的 cL_impact>=1.5+cvd_z>=1+vol_(crypto) 已達 n=98 EV=+0.859R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=29 EV-0.846、SC1 n=20 EV-1.033、SC3 n=95 EV-0.422；最差 SC1(-1.033R)、最好 TL(+0.040R)；合計 166 筆 EV-0.546R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=0、淨EV 無、可交易率 無事件(0/0)。",
+  "line": "近 24 小時: 自動裁決 5 件、自動修復/回滾 0 件。下一個自動到期 D227(2026-10-15), 沒人異議就採建議 A。成形雷達: 成形中 128 檔／已成形 9 檔(全條件 9)(跨 5 市場; 宇宙 414 檔, 休市排除 313)。預言帳：1852 則前瞻在等結算、持牌 7／預言者 239。消息：近 24h 1047 則／高重要 22 則／最新一則「Gate to Delist 22 Coins Including XFI an」(來源 2 個停抓中)｜實證：11 類消息裡 0 類會動價格、0 類不會、11 類樣本不足(事件 n=74)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 45 則發言、提到 EWT×9／WTI×5／GOLD×1、淨多空 -2.0。今日事件：5 件(最重要 美國 CPI 20:30)／黑窗中：否。影子: 追蹤中 668 單／已結 3305 單(live 2183＋登記日回填 1122)(另樣本內回填 6 單不計成績)／92 個規格在追；最接近晉升的 cL_impact>=1.5+cvd_z>=1+vol_(crypto) 已達 n=98 EV=+0.859R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=29 EV-0.846、SC1 n=20 EV-1.033、SC3 n=95 EV-0.422；最差 SC1(-1.033R)、最好 TL(+0.040R)；合計 166 筆 EV-0.546R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=0、淨EV 無、可交易率 0%(0/1)。",
   "radar": {
-   "forming": 152,
-   "fired": 11,
+   "forming": 128,
+   "fired": 9,
    "fired_full": 9,
    "markets": [
     "commodity",
@@ -127,19 +127,19 @@
    ],
    "universe_fresh": 414,
    "stale_excluded": 313,
-   "ts_utc": "2026-10-14T04:35",
+   "ts_utc": "2026-10-14T05:35",
    "age_h": 0.8
   },
   "forecast": {
-   "pending": 1846,
+   "pending": 1852,
    "licensed": 7,
    "forecasters": 239,
-   "n_forecasts": 41228,
-   "n_resolved": 39382,
-   "asOf": "2026-10-14T04:40:19"
+   "n_forecasts": 41247,
+   "n_resolved": 39395,
+   "asOf": "2026-10-14T05:40:12"
   },
   "shadow": {
-   "n_open": 667,
+   "n_open": 668,
    "n_closed": 3305,
    "n_live": 2183,
    "n_post_reg": 1122,
@@ -173,7 +173,7 @@
      "n_live": 53,
      "n_post_reg": 11,
      "ev": 0.7125,
-     "random_z": 1.33,
+     "random_z": 1.34,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": false
@@ -185,7 +185,7 @@
      "n_live": 6,
      "n_post_reg": 34,
      "ev": 0.7076,
-     "random_z": 1.22,
+     "random_z": 1.2,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": false
@@ -194,26 +194,26 @@
    "eta_promo": null,
    "opens_per_day": 101.9,
    "rate_days": 14,
-   "ts_utc": "2026-10-14T04:40"
+   "ts_utc": "2026-10-14T05:40"
   },
   "news": {
-   "n_24h": 1079,
-   "n_hi": 20,
+   "n_24h": 1047,
+   "n_hi": 22,
    "by_category": {
-    "crypto": 478,
+    "crypto": 462,
     "stock": 163,
-    "macro": 118,
-    "commodity_fx": 320
+    "macro": 115,
+    "commodity_fx": 307
    },
    "sources_green": 38,
    "sources_red": 2,
    "top": {
-    "t": "Bitcoin climbs toward $84,000 after Fed’s Williams sees no rate hikes in 2027",
-    "imp": 80,
-    "src": "coindesk",
-    "ts": "2026-10-14T03:50:54Z"
+    "t": "Gate to Delist 22 Coins Including XFI and MAIGA",
+    "imp": 90,
+    "src": "gate_delist",
+    "ts": "2026-10-14T06:10:36Z"
    },
-   "run_at": "2026-10-14T05:18:01",
+   "run_at": "2026-10-14T06:18:01",
    "impact": {
     "line": "｜實證：11 類消息裡 0 類會動價格、0 類不會、11 類樣本不足(事件 n=74)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 11,
@@ -227,8 +227,8 @@
     "ts": "2026-10-10T20:30:12"
    },
    "trump": {
-    "line": "｜川普：近 24h 44 則發言、提到 EWT×9／WTI×5／GOLD×1、淨多空 -2.0",
-    "n_24h": 44,
+    "line": "｜川普：近 24h 45 則發言、提到 EWT×9／WTI×5／GOLD×1、淨多空 -2.0",
+    "n_24h": 45,
     "net_long_24h": -2.0,
     "top_symbols": [
      {
@@ -267,7 +267,7 @@
       "short": 1
      }
     ],
-    "run_at": "2026-10-14T05:09:01"
+    "run_at": "2026-10-14T06:09:01"
    }
   },
   "calendar": {
@@ -292,13 +292,13 @@
     "source": "nasdaq_econ",
     "blackout": "2.0h/1.0h"
    },
-   "age_h": 3.0,
-   "ts": "2026-10-14T02:20:02"
+   "age_h": 0.0,
+   "ts": "2026-10-14T06:20:01"
   },
   "live_shadow": {
    "window": {
     "from": "2026-09-01",
-    "to": "2026-10-14T04:45"
+    "to": "2026-10-14T05:45"
    },
    "n_closed": 166,
    "n_open": 69,
@@ -310,7 +310,7 @@
     "pf": 0.382,
     "sum_r": -90.727
    },
-   "ts": "2026-10-14T04:45",
+   "ts": "2026-10-14T05:45",
    "per": {
     "B1": {
      "n": 6,
@@ -347,15 +347,15 @@
   "delist_shadow": {
    "forward": {
     "n": 0,
-    "n_untradable": 0,
+    "n_untradable": 1,
     "ev": null,
     "median_r": null,
     "win": null,
     "t": null,
-    "tradable_rate": null,
-    "tradable_den": 0,
-    "tradable_rate_30d": null,
-    "tradable_den_30d": 0,
+    "tradable_rate": 0.0,
+    "tradable_den": 1,
+    "tradable_rate_30d": 0.0,
+    "tradable_den_30d": 1,
     "lag_min_median": null,
     "sl_rate": null,
     "funding_missing": 0
@@ -376,12 +376,12 @@
     "funding_missing": 0
    },
    "n_open": 0,
-   "ts": "2026-10-14T05:10:04Z"
+   "ts": "2026-10-14T06:10:05Z"
   }
  },
  "north_star": {
   "ts": "2026-10-14T08:00:02",
-  "age_h": 5.3,
+  "age_h": 6.3,
   "stale": false,
   "risk_light": "red",
   "risk_why": "最大 24h 權益跌幅 93.8%(上限 20.0)、熔斷 1次(上限 1)",
@@ -447,11 +447,11 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-10-14T05:05",
+  "attendance": "supervision_state.json @ 2026-10-14T06:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
-  "calendar": "calendar_board.json @ 2026-10-14T02:20:02",
-  "news": "news_board.json @ 2026-10-14T05:18:01",
+  "calendar": "calendar_board.json @ 2026-10-14T06:20:01",
+  "news": "news_board.json @ 2026-10-14T06:18:01",
   "north_star": "goal_state.json @ 2026-10-14T08:00:02",
   "rules": "brief_rules.json v1.0"
  },
