@@ -4,15 +4,15 @@
 "asOf": "10-16",
 "ts": "2026-10-16T15:03:54+08:00",
 "weather": {
-"long": 49.0,
-"short": 60.0,
+"long": 39.0,
+"short": 70.0,
 "conf": {
-"TL": 39,
-"B1": 46,
-"MRS": 37,
-"SC": 38
+"TL": 36,
+"B1": 53,
+"MRS": 42,
+"SC": 43
 },
-"mega": 25.9,
+"mega": 26.0,
 "fng": 63,
 "regime": "mixed-regime",
 "stale": false
@@ -279,7 +279,7 @@
 "歸"
 ],
 "btc": {
-"chg": 1.4
+"chg": 1.3
 },
 "pos": 0,
 "sig": 0,
@@ -2286,22 +2286,22 @@
 },
 {
 "n": "礦機口糧",
-"v": 0.25,
+"v": 0.24,
 "ok": true,
-"k": "131h",
+"k": "132h",
 "t": "上輪 10-11 05:17 掃畢 · 名冊容忍 174h(每週日 04:00 開工), 電腦休眠會斷糧"
 },
 {
 "n": "磁碟",
 "v": 1.0,
 "ok": true,
-"k": "511GB",
-"t": "C: 剩 511 GB (共 999 GB); <10GB 缺糧, log 輪替每日 08:10"
+"k": "510GB",
+"t": "C: 剩 510 GB (共 999 GB); <10GB 缺糧, log 輪替每日 08:10"
 },
 {
 "n": "API 餘額",
 "v": 0.0,
-"t": "餘額耗盡(canary 400) · AI 功能停擺, 交易不受影響 · 8 小時前補貨 · 哨兵每日 08:20 探餘額",
+"t": "餘額耗盡(canary 400) · AI 功能停擺, 交易不受影響 · 9 小時前補貨 · 哨兵每日 08:20 探餘額",
 "ok": false,
 "k": "耗盡",
 "mute": true
@@ -2503,8 +2503,8 @@
 ],
 "built": "10-16 15:07",
 "synced": "10-16 15:09",
-"open": 71,
-"overdue": 11
+"open": 70,
+"overdue": 10
 },
 "mailbox": {
 "sent": "15:10",
@@ -3247,7 +3247,7 @@
 }
 },
 "alerts": {
-"ts": "10-16T15:54",
+"ts": "10-16T16:54",
 "top": "",
 "events": [],
 "stale": false
@@ -4960,7 +4960,7 @@
 "score": 0,
 "why": [
 "病蟻 3 隻 -45",
-"逾期行動 11 件 -10",
+"逾期行動 10 件 -10",
 "SLO 超支 E稽核、分期工程每日開、算得對不對週稽 -30",
 "日檢紅 2(未認領: 雲端排程點名、BingX通道) -16",
 "Deadloop 異常 2(VELA 夜班蟻(每日 03:30)、跡 24h 觀測率>=0.8) -12",
@@ -4983,64 +4983,64 @@
 ],
 "board": [
 {
-"ts": "2026-10-16T16:15:23+08:00",
-"who": "graveyard_guard",
-"t": "⛔ [墳場回讀] selftest: cS_hod_extreme>=0.9|b"
-},
-{
-"ts": "2026-10-16T16:15:21+08:00",
-"who": "graveyard_guard",
-"t": "⛔ [墳場回讀] selftest: intraday_tod_filter_s"
-},
-{
-"ts": "2026-10-16T16:15:18+08:00",
-"who": "graveyard_guard",
-"t": "⛔ [墳場回讀] selftest: us_session_breakout_l"
-},
-{
-"ts": "2026-10-16T16:15:16+08:00",
-"who": "graveyard_guard",
-"t": "⛔ [墳場回讀] selftest: cL_weekday_bias>=1|bu"
-},
-{
-"ts": "2026-10-16T16:15:12+08:00",
-"who": "graveyard_guard",
-"t": "⛔ [墳場回讀] selftest: ema20_pullback_long 命"
-},
-{
-"ts": "2026-10-16T16:15:10+08:00",
-"who": "graveyard_guard",
-"t": "⛔ [墳場回讀] selftest: liq_cascade_long 命中 l"
-},
-{
-"ts": "2026-10-16T16:15:06+08:00",
-"who": "graveyard_guard",
-"t": "⛔ [墳場回讀] selftest: sm_stop_hunt_short 命中"
-},
-{
-"ts": "2026-10-16T16:15:03+08:00",
-"who": "graveyard_guard",
-"t": "⛔ [墳場回讀] selftest: cL_key_level_bounce|b"
-},
-{
-"ts": "2026-10-16T16:14:59+08:00",
-"who": "graveyard_guard",
-"t": "⛔ [墳場回讀] selftest: nc_overnight_session_"
-},
-{
-"ts": "2026-10-16T16:14:56+08:00",
-"who": "graveyard_guard",
-"t": "⛔ [墳場回讀] selftest: nc_session_hour_long "
-},
-{
-"ts": "2026-10-16T16:10:07+08:00",
+"ts": "2026-10-16T17:10:03+08:00",
 "who": "蟻",
 "t": "汰/binance_leg: 1 件事件結算不出來(可結算分母 9) -- QU"
 },
 {
-"ts": "2026-10-16T16:05:27+08:00",
+"ts": "2026-10-16T17:05:21+08:00",
 "who": "蟻",
-"t": "恢復正常: flag:蟻穴頁資料停在 #-#(今天 #-#), #:# 同步沒推"
+"t": "恢復正常: flag:長駐行程未列管: main.js 已跑 # 分鐘"
+},
+{
+"ts": "2026-10-16T17:05:21+08:00",
+"who": "蟻",
+"t": "恢復正常: flag:長駐行程未列管: node.exe\"  \"C: 已跑 # "
+},
+{
+"ts": "2026-10-16T17:05:21+08:00",
+"who": "蟻",
+"t": "恢復正常: flag:名冊自檢: 外腦: 半途帳(/halfway) 週期「每次"
+},
+{
+"ts": "2026-10-16T17:05:21+08:00",
+"who": "蟻",
+"t": "恢復正常: flag:名冊自檢: 外腦: 想法簿(/idea) 週期「每次開對話"
+},
+{
+"ts": "2026-10-16T17:05:21+08:00",
+"who": "蟻",
+"t": "恢復正常: flag:長駐行程未列管: np 已跑 # 分鐘"
+},
+{
+"ts": "2026-10-16T17:03:10+08:00",
+"who": "蟻",
+"t": "[聞] 重要度 70 macro/other GDP | U.S. Intern"
+},
+{
+"ts": "2026-10-16T16:55:05+08:00",
+"who": "蟻",
+"t": "汰/binance_leg: 1 件事件結算不出來(可結算分母 9) -- QU"
+},
+{
+"ts": "2026-10-16T16:40:04+08:00",
+"who": "蟻",
+"t": "汰/binance_leg: 1 件事件結算不出來(可結算分母 9) -- QU"
+},
+{
+"ts": "2026-10-16T16:25:12+08:00",
+"who": "蟻",
+"t": "[律] I5 恢復: 不安全方向 0/23 檔; 安全方向 8 檔只記錄: AA"
+},
+{
+"ts": "2026-10-16T16:25:05+08:00",
+"who": "蟻",
+"t": "汰/binance_leg: 1 件事件結算不出來(可結算分母 9) -- QU"
+},
+{
+"ts": "2026-10-16T16:15:23+08:00",
+"who": "graveyard_guard",
+"t": "⛔ [墳場回讀] selftest: cS_hod_extreme>=0.9|b"
 }
 ],
 "autonomy": {
@@ -5187,7 +5187,7 @@
 "blocked_on_jesse": []
 },
 "ledgers": {
-"asOf": "2026-10-16T16:20:02",
+"asOf": "2026-10-16T17:20:02",
 "judge": {
 "run_at": "2026-10-16T15:10:05",
 "src": "outcomes",
@@ -5314,17 +5314,17 @@
 "events": {
 "h24": {
 "crit": 1,
-"warn": 99,
-"info": 36,
+"warn": 93,
+"info": 38,
 "suppressed": 45,
-"n": 136
+"n": 132
 },
 "d7": {
 "crit": 9,
-"warn": 556,
-"info": 691,
-"suppressed": 268,
-"n": 1256
+"warn": 560,
+"info": 697,
+"suppressed": 272,
+"n": 1266
 },
 "top_keys": [
 {
@@ -5340,7 +5340,7 @@
 {
 "source": "delist_shadow",
 "key": "delist_shadow_binance_gap",
-"n": 66
+"n": 70
 },
 {
 "source": "graveyard_guard",
@@ -5355,80 +5355,94 @@
 ],
 "latest": [
 {
-"ts": "2026-10-16T16:15",
-"source": "graveyard_guard",
-"key": "graveyard_guard",
+"ts": "2026-10-16T17:10",
+"source": "delist_shadow",
+"key": "delist_shadow_binance_gap",
 "level": "warn",
-"suppressed": false,
-"text": "⛔ [墳場回讀] selftest: cS_hod_extreme>=0.9|bear 命中 strategy_rese"
+"suppressed": true,
+"text": "汰/binance_leg: 1 件事件結算不出來(可結算分母 9) -- QUICK-USDT"
 },
 {
-"ts": "2026-10-16T16:15",
-"source": "graveyard_guard",
-"key": "graveyard_guard",
-"level": "warn",
+"ts": "2026-10-16T17:05",
+"source": "supervisor",
+"key": "flag:長駐行程未列管: main.js 已跑 # 分鐘",
+"level": "info",
 "suppressed": false,
-"text": "⛔ [墳場回讀] selftest: intraday_tod_filter_short 命中 strategy_res"
+"text": "恢復正常: flag:長駐行程未列管: main.js 已跑 # 分鐘"
 },
 {
-"ts": "2026-10-16T16:15",
-"source": "graveyard_guard",
-"key": "graveyard_guard",
-"level": "warn",
+"ts": "2026-10-16T17:05",
+"source": "supervisor",
+"key": "flag:長駐行程未列管: node.exe\"  \"C: 已跑 # 分鐘",
+"level": "info",
 "suppressed": false,
-"text": "⛔ [墳場回讀] selftest: us_session_breakout_long 命中 strategy_rese"
+"text": "恢復正常: flag:長駐行程未列管: node.exe\"  \"C: 已跑 # 分鐘"
 },
 {
-"ts": "2026-10-16T16:15",
-"source": "graveyard_guard",
-"key": "graveyard_guard",
-"level": "warn",
+"ts": "2026-10-16T17:05",
+"source": "supervisor",
+"key": "flag:名冊自檢: 外腦: 半途帳(/halfway) 週期「每次開對話(SessionStart hook)＋每日 #:#(隨 queen_weight 的 outer_brain_tick)」但容忍 #h(合理 #.#-#h) -- ",
+"level": "info",
 "suppressed": false,
-"text": "⛔ [墳場回讀] selftest: cL_weekday_bias>=1|bull 命中 strategy_resea"
+"text": "恢復正常: flag:名冊自檢: 外腦: 半途帳(/halfway) 週期「每次開對話(SessionStart hoo"
 },
 {
-"ts": "2026-10-16T16:15",
-"source": "graveyard_guard",
-"key": "graveyard_guard",
-"level": "warn",
+"ts": "2026-10-16T17:05",
+"source": "supervisor",
+"key": "flag:名冊自檢: 外腦: 想法簿(/idea) 週期「每次開對話(SessionStart hook)＋每日 #:#(隨 queen_weight 的 outer_brain_tick)」但容忍 #h(合理 #.#-#h) -- 週期改",
+"level": "info",
 "suppressed": false,
-"text": "⛔ [墳場回讀] selftest: ema20_pullback_long 命中 ema20_pullback_ver"
+"text": "恢復正常: flag:名冊自檢: 外腦: 想法簿(/idea) 週期「每次開對話(SessionStart hook)＋"
 },
 {
-"ts": "2026-10-16T16:15",
-"source": "graveyard_guard",
-"key": "graveyard_guard",
-"level": "warn",
+"ts": "2026-10-16T17:05",
+"source": "supervisor",
+"key": "flag:長駐行程未列管: np 已跑 # 分鐘",
+"level": "info",
 "suppressed": false,
-"text": "⛔ [墳場回讀] selftest: liq_cascade_long 命中 liq_cascade_verdict_2"
+"text": "恢復正常: flag:長駐行程未列管: np 已跑 # 分鐘"
 },
 {
-"ts": "2026-10-16T16:15",
-"source": "graveyard_guard",
-"key": "graveyard_guard",
-"level": "warn",
+"ts": "2026-10-16T17:03",
+"source": "news_collector",
+"key": "hi_other_GDP",
+"level": "info",
 "suppressed": false,
-"text": "⛔ [墳場回讀] selftest: sm_stop_hunt_short 命中 smart_money_pattern"
+"text": "[聞] 重要度 70 macro/other GDP | U.S. International Transactions"
 },
 {
-"ts": "2026-10-16T16:15",
-"source": "graveyard_guard",
-"key": "graveyard_guard",
+"ts": "2026-10-16T16:55",
+"source": "delist_shadow",
+"key": "delist_shadow_binance_gap",
 "level": "warn",
-"suppressed": false,
-"text": "⛔ [墳場回讀] selftest: cL_key_level_bounce|bull 命中 key_levels_ve"
+"suppressed": true,
+"text": "汰/binance_leg: 1 件事件結算不出來(可結算分母 9) -- QUICK-USDT"
 }
 ]
 },
 "forecast": {
-"asOf": "2026-10-16T07:40:12",
-"n_forecasts": 41791,
-"n_prospective_total": 38045,
+"asOf": "2026-10-16T08:40:14",
+"n_forecasts": 41817,
+"n_prospective_total": 38069,
 "n_backfill_total": 57,
 "licensed": 3,
 "n_rows": 246,
 "expected_null_licensed": 24.6,
 "rows": [
+{
+"who": "formation_radar:SC1",
+"type": "direction",
+"market": "us",
+"n_pro": 1,
+"n_bf": 0,
+"hit_rate": 0.0,
+"voice_rate": 0.2906,
+"shrunk_skill": 0.4,
+"p_fam": 1.0,
+"licensed": false,
+"event_driven": true,
+"blocked": "前瞻樣本不足（n_prospective=1 < 50）"
+},
 {
 "who": "formation_radar:TL",
 "type": "direction",
@@ -5436,7 +5450,7 @@
 "n_pro": 71,
 "n_bf": 0,
 "hit_rate": 0.6056,
-"voice_rate": 0.6006,
+"voice_rate": 0.5996,
 "shrunk_skill": 0.1491,
 "p_fam": 1.0,
 "licensed": false,
@@ -5450,7 +5464,7 @@
 "n_pro": 30,
 "n_bf": 0,
 "hit_rate": 0.8,
-"voice_rate": 0.3136,
+"voice_rate": 0.313,
 "shrunk_skill": 0.2412,
 "p_fam": 0.34196,
 "licensed": false,
@@ -5464,7 +5478,7 @@
 "n_pro": 7,
 "n_bf": 0,
 "hit_rate": 0.7143,
-"voice_rate": 0.2412,
+"voice_rate": 0.2404,
 "shrunk_skill": 0.2266,
 "p_fam": 1.0,
 "licensed": false,
@@ -5478,7 +5492,7 @@
 "n_pro": 20,
 "n_bf": 0,
 "hit_rate": 0.65,
-"voice_rate": 0.3392,
+"voice_rate": 0.3387,
 "shrunk_skill": 0.155,
 "p_fam": 1.0,
 "licensed": false,
@@ -5492,7 +5506,7 @@
 "n_pro": 13,
 "n_bf": 0,
 "hit_rate": 0.6923,
-"voice_rate": 0.2525,
+"voice_rate": 0.2521,
 "shrunk_skill": 0.2012,
 "p_fam": 1.0,
 "licensed": false,
@@ -5506,7 +5520,7 @@
 "n_pro": 13,
 "n_bf": 0,
 "hit_rate": 0.6923,
-"voice_rate": 0.2508,
+"voice_rate": 0.2504,
 "shrunk_skill": 0.2012,
 "p_fam": 1.0,
 "licensed": false,
@@ -5520,12 +5534,26 @@
 "n_pro": 77,
 "n_bf": 0,
 "hit_rate": 0.8312,
-"voice_rate": 0.2026,
+"voice_rate": 0.2023,
 "shrunk_skill": 0.2466,
 "p_fam": 0.00021,
 "licensed": true,
 "event_driven": true,
 "blocked": ""
+},
+{
+"who": "formation_radar:SC1",
+"type": "direction",
+"market": "crypto",
+"n_pro": 8,
+"n_bf": 0,
+"hit_rate": 0.0,
+"voice_rate": 0.2906,
+"shrunk_skill": 0.1667,
+"p_fam": 1.0,
+"licensed": false,
+"event_driven": true,
+"blocked": "前瞻樣本不足（n_prospective=8 < 50）"
 },
 {
 "who": "formation_radar:cL_impact>=1.5+cvd_z>=1|bull|TP4R|4h",
@@ -5534,7 +5562,7 @@
 "n_pro": 31,
 "n_bf": 0,
 "hit_rate": 0.7097,
-"voice_rate": 0.3289,
+"voice_rate": 0.3283,
 "shrunk_skill": 0.1378,
 "p_fam": 1.0,
 "licensed": false,
@@ -5548,26 +5576,12 @@
 "n_pro": 279,
 "n_bf": 0,
 "hit_rate": 0.4444,
-"voice_rate": 0.6006,
+"voice_rate": 0.5996,
 "shrunk_skill": 0.0678,
 "p_fam": 1.0,
 "licensed": false,
 "event_driven": true,
 "blocked": "族內多重性校正後不顯著（p_fam=1.0，m=210）"
-},
-{
-"who": "formation_radar:cS_brk_low25<0+coil>=0.6+atr_r>=1.2|TP4R",
-"type": "direction",
-"market": "fx",
-"n_pro": 2,
-"n_bf": 0,
-"hit_rate": 0.0,
-"voice_rate": 0.0989,
-"shrunk_skill": 0.3333,
-"p_fam": 1.0,
-"licensed": false,
-"event_driven": true,
-"blocked": "前瞻樣本不足（n_prospective=2 < 50）"
 },
 {
 "who": "formation_radar:cS_trap_hi>=0.5+fund_pct>=0.7|TP3R@lt20",
@@ -5576,26 +5590,12 @@
 "n_pro": 5,
 "n_bf": 0,
 "hit_rate": 0.6,
-"voice_rate": 0.2472,
+"voice_rate": 0.2482,
 "shrunk_skill": 0.1331,
 "p_fam": 1.0,
 "licensed": false,
 "event_driven": true,
 "blocked": "前瞻樣本不足（n_prospective=5 < 50）"
-},
-{
-"who": "formation_radar:cL_impact_ma>=1+vol_r>=1.5+atr_r>=1.2|TP4R",
-"type": "direction",
-"market": "si",
-"n_pro": 2,
-"n_bf": 0,
-"hit_rate": 1.0,
-"voice_rate": 0.1374,
-"shrunk_skill": 0.2292,
-"p_fam": 1.0,
-"licensed": false,
-"event_driven": true,
-"blocked": "前瞻樣本不足（n_prospective=2 < 50）"
 }
 ]
 }
@@ -6078,52 +6078,52 @@
 "alerts": {
 "n": "警報",
 "h": 1,
-"ts": "2026-10-16T15:54:42+08:00"
+"ts": "2026-10-16T16:54:42+08:00"
 },
 "sick": {
 "n": "病蟻",
 "h": 1,
-"ts": "2026-10-16T16:05:02+08:00"
+"ts": "2026-10-16T17:05:02+08:00"
 },
 "pantry": {
 "n": "糧倉",
 "h": 1,
-"ts": "2026-10-16T16:05:02+08:00"
+"ts": "2026-10-16T17:05:02+08:00"
 },
 "health": {
 "n": "巢健康",
 "h": 1,
-"ts": "2026-10-16T16:05:02+08:00"
+"ts": "2026-10-16T17:05:02+08:00"
 },
 "decisions": {
 "n": "待裁",
 "h": 1,
-"ts": "2026-10-16T16:20:01+08:00"
+"ts": "2026-10-16T17:20:01+08:00"
 },
 "market": {
 "n": "BTC/持倉",
 "h": 1,
-"ts": "2026-10-16T16:14:14+08:00"
+"ts": "2026-10-16T17:14:23+08:00"
 },
 "weather": {
 "n": "巢外天氣",
 "h": 1,
-"ts": "2026-10-16T15:25:04+08:00"
+"ts": "2026-10-16T16:25:06+08:00"
 },
 "strategies": {
 "n": "策略蟻",
 "h": 1,
-"ts": "2026-10-16T16:20:01+08:00"
+"ts": "2026-10-16T17:20:01+08:00"
 },
 "ledgers": {
 "n": "成績單",
 "h": 1,
-"ts": "2026-10-16T16:20:01+08:00"
+"ts": "2026-10-16T17:20:01+08:00"
 },
 "board": {
 "n": "留言板",
 "h": 1,
-"ts": "2026-10-16T16:20:01+08:00"
+"ts": "2026-10-16T17:20:01+08:00"
 },
 "mine": {
 "n": "礦機",
@@ -6143,10 +6143,10 @@
 "notes": {
 "n": "便利貼",
 "h": 1,
-"ts": "2026-10-16T16:20:04+08:00"
+"ts": "2026-10-16T17:20:03+08:00"
 }
 },
-"live_ts": "2026-10-16T16:20:01+08:00",
+"live_ts": "2026-10-16T17:20:01+08:00",
 "notes": [
 {
 "id": "gate",
@@ -6159,7 +6159,7 @@
 "stale": false,
 "hash": "ca3e2303e96f",
 "last_changed": "2026-09-26T01:24:17+08:00",
-"shown_at": "2026-10-16T16:20:04+08:00"
+"shown_at": "2026-10-16T17:20:03+08:00"
 },
 {
 "id": "queen",
@@ -6172,20 +6172,20 @@
 "stale": true,
 "hash": "da002fb145ed",
 "last_changed": "2026-10-11T05:20:03+08:00",
-"shown_at": "2026-10-16T16:20:04+08:00"
+"shown_at": "2026-10-16T17:20:03+08:00"
 },
 {
 "id": "worker",
 "d": "深度 -1m · 工蟻房",
 "kind": "live",
 "text": "覓食隊誠實紀錄:近 30 天搬回 -5.1R(30 趟),近 90 天 -5.1R(30 趟,帳本最早只記到 09-19)。其中 AUTO -4.4R/25、B1 -4.6R/3、TL +3.9R/2。現在開著門的:B1。今天的天氣判讀缺席,誰該蜷在角落先不說。",
-"ts": "2026-10-16T16:20:01+08:00",
+"ts": "2026-10-16T17:20:01+08:00",
 "period_h": 1,
 "src": "tama_memory.json(D 帳本) · tama_config.json",
 "stale": false,
 "hash": "f7b209af50e8",
 "last_changed": "2026-10-16T15:20:04+08:00",
-"shown_at": "2026-10-16T16:20:04+08:00"
+"shown_at": "2026-10-16T17:20:03+08:00"
 },
 {
 "id": "clinic",
@@ -6198,7 +6198,7 @@
 "stale": false,
 "hash": "c21ad7845daa",
 "last_changed": "2026-09-26T01:24:17+08:00",
-"shown_at": "2026-10-16T16:20:04+08:00"
+"shown_at": "2026-10-16T17:20:03+08:00"
 },
 {
 "id": "collapse",
@@ -6211,7 +6211,7 @@
 "stale": false,
 "hash": "7c0d5a1a19b2",
 "last_changed": "2026-09-26T01:24:17+08:00",
-"shown_at": "2026-10-16T16:20:04+08:00"
+"shown_at": "2026-10-16T17:20:03+08:00"
 },
 {
 "id": "darkroom",
@@ -6224,20 +6224,20 @@
 "stale": false,
 "hash": "ee4e9754f2c7",
 "last_changed": "2026-09-26T01:24:17+08:00",
-"shown_at": "2026-10-16T16:20:04+08:00"
+"shown_at": "2026-10-16T17:20:03+08:00"
 },
 {
 "id": "fungus",
 "d": "深度 -1.8m · 真菌園",
 "kind": "live",
-"text": "全巢最值錢的一間。食物會吃完,菌絲不會:菌庫現有 488 份記憶,本週新接種事故 4 件、裁決 28 件。再往下是檔案館,防的是同一件事——重挖已經挖過的土。",
+"text": "全巢最值錢的一間。食物會吃完,菌絲不會:菌庫現有 490 份記憶,本週新接種事故 4 件、裁決 28 件。再往下是檔案館,防的是同一件事——重挖已經挖過的土。",
 "ts": "2026-10-16T15:07:00+08:00",
 "period_h": 24,
 "src": "decision_kb.json · 記憶檔目錄(*.md)",
 "stale": false,
-"hash": "502aaa6ceeae",
-"last_changed": "2026-10-16T15:20:04+08:00",
-"shown_at": "2026-10-16T16:20:04+08:00"
+"hash": "415975bde3e1",
+"last_changed": "2026-10-16T17:20:03+08:00",
+"shown_at": "2026-10-16T17:20:03+08:00"
 },
 {
 "id": "grave",
@@ -6250,7 +6250,7 @@
 "stale": false,
 "hash": "df82e6ccf7e7",
 "last_changed": "2026-09-26T22:20:03+08:00",
-"shown_at": "2026-10-16T16:20:04+08:00"
+"shown_at": "2026-10-16T17:20:03+08:00"
 },
 {
 "id": "face",
@@ -6263,25 +6263,25 @@
 "stale": true,
 "hash": "2ea1748dcbe8",
 "last_changed": "2026-10-11T05:20:03+08:00",
-"shown_at": "2026-10-16T16:20:04+08:00"
+"shown_at": "2026-10-16T17:20:03+08:00"
 },
 {
 "id": "weekly",
-"d": "巢口公告 · 本週新事 · 5/23",
+"d": "巢口公告 · 本週新事 · 6/23",
 "kind": "rotate",
-"text": "新蟻「APEX 防呆 mod」上崗,編進「資安」組,排班「常駐」。(10-12)",
-"ts": "2026-10-16T16:20:04+08:00",
+"text": "新蟻「外腦: 半途帳」上崗,編進「提醒」組,排班「每次開對話」。(10-12)",
+"ts": "2026-10-16T17:20:03+08:00",
 "period_h": 24,
 "src": "supervision_registry.json",
 "stale": false,
 "hash": "41701dc19511",
 "last_changed": "2026-10-16T15:20:04+08:00",
-"shown_at": "2026-10-16T16:20:04+08:00"
+"shown_at": "2026-10-16T17:20:03+08:00"
 }
 ],
 "roster": {
 "v": 1,
-"ts": "2026-10-16T16:20:04+08:00",
+"ts": "2026-10-16T17:20:03+08:00",
 "n": 162,
 "depts": [
 {
