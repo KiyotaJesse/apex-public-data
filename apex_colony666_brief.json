@@ -1,6 +1,6 @@
 {
- "ts": "2026-10-16T18:20:05",
- "data_ts": "2026-10-16T18:20:01",
+ "ts": "2026-10-16T19:20:06",
+ "data_ts": "2026-10-16T19:20:01",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
@@ -159,11 +159,11 @@
    "q": "非加密 美股 市場組合 cS_brk_low25<0+coil>=0.6+impact>=1|TP3R 過五關+隨機基準(EV+0.42 n",
    "rec": "A"
   },
-  "line": "近 24 小時: 自動裁決 1 件、自動修復/回滾 0 件。下一個自動到期 D183(2026-10-17), 沒人異議就採建議 A。成形雷達: 成形中 89 檔／已成形 38 檔(全條件 31)(跨 5 市場; 宇宙 444 檔, 休市排除 287)。預言帳：725 則前瞻在等結算、持牌 3／預言者 246。消息：近 24h 794 則／高重要 8 則／最新一則「Canton Deposits and Withdrawals Maintena」(來源 2 個停抓中)｜實證：11 類消息裡 0 類會動價格、0 類不會、11 類樣本不足(事件 n=74)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 21 則發言、提到 TSLA×3／GEOPOL×1／AAPL×1、淨多空 +0.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 180 單／已結 3938 單(live 2816＋登記日回填 1122)(另樣本內回填 6 單不計成績)／101 個規格在追；最接近晉升的 cS_brk_low25<0+coil>=0.6+imp(stock) 已達 n=87 EV=+1.627R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=35 EV-0.640、SC1 n=20 EV-1.033、SC3 n=161 EV-0.103；最差 SC1(-1.033R)、最好 TL(+0.040R)；合計 238 筆 EV-0.274R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 50%(1/2)。",
+  "line": "近 24 小時: 自動裁決 1 件、自動修復/回滾 0 件。下一個自動到期 D183(2026-10-17), 沒人異議就採建議 A。成形雷達: 成形中 108 檔／已成形 22 檔(全條件 17)(跨 5 市場; 宇宙 444 檔, 休市排除 287)。預言帳：737 則前瞻在等結算、持牌 4／預言者 246。消息：近 24h 866 則／高重要 9 則／最新一則「Scammer gets scammed in Ledger spy-chip 」(來源 2 個停抓中)｜實證：11 類消息裡 0 類會動價格、0 類不會、11 類樣本不足(事件 n=74)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 21 則發言、提到 TSLA×3／GEOPOL×1／AAPL×1、淨多空 +0.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 177 單／已結 3944 單(live 2822＋登記日回填 1122)(另樣本內回填 6 單不計成績)／101 個規格在追；最接近晉升的 cS_brk_low25<0+coil>=0.6+imp(stock) 已達 n=87 EV=+1.627R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=35 EV-0.640、SC1 n=20 EV-1.033、SC3 n=161 EV-0.103；最差 SC1(-1.033R)、最好 TL(+0.040R)；合計 238 筆 EV-0.274R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 50%(1/2)。",
   "radar": {
-   "forming": 89,
-   "fired": 38,
-   "fired_full": 31,
+   "forming": 108,
+   "fired": 22,
+   "fired_full": 17,
    "markets": [
     "commodity",
     "crypto",
@@ -173,21 +173,21 @@
    ],
    "universe_fresh": 444,
    "stale_excluded": 287,
-   "ts_utc": "2026-10-16T09:35",
+   "ts_utc": "2026-10-16T10:35",
    "age_h": 0.8
   },
   "forecast": {
-   "pending": 725,
-   "licensed": 3,
+   "pending": 737,
+   "licensed": 4,
    "forecasters": 246,
-   "n_forecasts": 41868,
-   "n_resolved": 41143,
-   "asOf": "2026-10-16T09:40:13"
+   "n_forecasts": 41910,
+   "n_resolved": 41173,
+   "asOf": "2026-10-16T10:40:13"
   },
   "shadow": {
-   "n_open": 180,
-   "n_closed": 3938,
-   "n_live": 2816,
+   "n_open": 177,
+   "n_closed": 3944,
+   "n_live": 2822,
    "n_post_reg": 1122,
    "n_backfill": 6,
    "n_specs": 101,
@@ -238,28 +238,28 @@
     }
    ],
    "eta_promo": null,
-   "opens_per_day": 96.8,
+   "opens_per_day": 96.9,
    "rate_days": 14,
-   "ts_utc": "2026-10-16T09:40"
+   "ts_utc": "2026-10-16T10:40"
   },
   "news": {
-   "n_24h": 794,
-   "n_hi": 8,
+   "n_24h": 866,
+   "n_hi": 9,
    "by_category": {
-    "crypto": 343,
-    "macro": 119,
-    "commodity_fx": 260,
-    "stock": 72
+    "crypto": 381,
+    "commodity_fx": 286,
+    "macro": 125,
+    "stock": 74
    },
    "sources_green": 38,
    "sources_red": 2,
    "top": {
-    "t": "Canton Deposits and Withdrawals Maintenance",
+    "t": "Scammer gets scammed in Ledger spy-chip exploit, loses almost $5 million in bitcoin",
     "imp": 80,
-    "src": "kraken_status",
-    "ts": "2026-10-15T16:39:13Z"
+    "src": "coindesk",
+    "ts": "2026-10-16T10:24:30Z"
    },
-   "run_at": "2026-10-16T10:18:01",
+   "run_at": "2026-10-16T11:18:01",
    "impact": {
     "line": "｜實證：11 類消息裡 0 類會動價格、0 類不會、11 類樣本不足(事件 n=74)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 11,
@@ -313,7 +313,7 @@
       "short": 1
      }
     ],
-    "run_at": "2026-10-16T10:09:01"
+    "run_at": "2026-10-16T11:09:02"
    }
   },
   "calendar": {
@@ -325,13 +325,13 @@
    "blackout_event": null,
    "blackout_markets": [],
    "head": null,
-   "age_h": 0.0,
+   "age_h": 1.0,
    "ts": "2026-10-16T10:20:01"
   },
   "live_shadow": {
    "window": {
     "from": "2026-09-01",
-    "to": "2026-10-16T09:45"
+    "to": "2026-10-16T10:45"
    },
    "n_closed": 238,
    "n_open": 27,
@@ -343,7 +343,7 @@
     "pf": 0.636,
     "sum_r": -65.086
    },
-   "ts": "2026-10-16T09:45",
+   "ts": "2026-10-16T10:45",
    "per": {
     "B1": {
      "n": 6,
@@ -409,12 +409,12 @@
     "funding_missing": 0
    },
    "n_open": 0,
-   "ts": "2026-10-16T10:10:04Z"
+   "ts": "2026-10-16T11:10:04Z"
   }
  },
  "north_star": {
   "ts": "2026-10-16T15:04:06",
-  "age_h": 3.3,
+  "age_h": 4.3,
   "stale": false,
   "risk_light": "red",
   "risk_why": "最大 24h 權益跌幅 93.8%(上限 20.0)、熔斷 1次(上限 1)",
@@ -480,11 +480,11 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-10-16T10:05",
+  "attendance": "supervision_state.json @ 2026-10-16T11:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
   "calendar": "calendar_board.json @ 2026-10-16T10:20:01",
-  "news": "news_board.json @ 2026-10-16T10:18:01",
+  "news": "news_board.json @ 2026-10-16T11:18:01",
   "north_star": "goal_state.json @ 2026-10-16T15:04:06",
   "rules": "brief_rules.json v1.0"
  },
