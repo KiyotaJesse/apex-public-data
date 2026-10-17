@@ -1,6 +1,6 @@
 {
- "ts": "2026-10-17T17:20:06",
- "data_ts": "2026-10-17T17:20:02",
+ "ts": "2026-10-17T18:20:06",
+ "data_ts": "2026-10-17T18:20:02",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
@@ -191,11 +191,11 @@
    "q": "shadow_forward 規則命中率 0%(n=15), 要不要降權?",
    "rec": "A"
   },
-  "line": "近 24 小時: 自動裁決 9 件、自動修復/回滾 0 件。下一個自動到期 D214(2026-10-18), 沒人異議就採建議 A。成形雷達: 成形中 123 檔／已成形 11 檔(全條件 11)(跨 4 市場; 宇宙 386 檔, 休市排除 348)。預言帳：735 則前瞻在等結算、持牌 6／預言者 251。消息：近 24h 678 則／高重要 6 則／最新一則「8-K - Apollo Commercial Real Estate Fina」(來源 2 個停抓中)｜實證：11 類消息裡 0 類會動價格、0 類不會、11 類樣本不足(事件 n=74)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 21 則發言、提到 GOLD×3／TSLA×2／META×1、淨多空 +0.9。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 205 單／已結 3995 單(live 2873＋登記日回填 1122)(另樣本內回填 5 單不計成績)／102 個規格在追；最接近晉升的 cS_brk_low25<0+coil>=0.6+imp(stock) 已達 n=92 EV=+1.480R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=35 EV-0.640、SC1 n=20 EV-1.033、SC3 n=177 EV-0.092；最差 SC1(-1.033R)、最好 TL(+0.040R)；合計 254 筆 EV-0.255R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 50%(1/2)。",
+  "line": "近 24 小時: 自動裁決 9 件、自動修復/回滾 0 件。下一個自動到期 D214(2026-10-18), 沒人異議就採建議 A。成形雷達: 成形中 135 檔／已成形 14 檔(全條件 14)(跨 4 市場; 宇宙 386 檔, 休市排除 348)。預言帳：720 則前瞻在等結算、持牌 6／預言者 252。消息：近 24h 709 則／高重要 7 則／最新一則「8-K - Apollo Commercial Real Estate Fina」(來源 1 個停抓中)｜實證：11 類消息裡 0 類會動價格、0 類不會、11 類樣本不足(事件 n=74)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 21 則發言、提到 GOLD×3／TSLA×2／META×1、淨多空 +0.9。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 199 單／已結 4001 單(live 2879＋登記日回填 1122)(另樣本內回填 5 單不計成績)／102 個規格在追；最接近晉升的 cS_brk_low25<0+coil>=0.6+imp(stock) 已達 n=92 EV=+1.480R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=35 EV-0.640、SC1 n=20 EV-1.033、SC3 n=177 EV-0.092；最差 SC1(-1.033R)、最好 TL(+0.040R)；合計 254 筆 EV-0.255R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 50%(1/2)。",
   "radar": {
-   "forming": 123,
-   "fired": 11,
-   "fired_full": 11,
+   "forming": 135,
+   "fired": 14,
+   "fired_full": 14,
    "markets": [
     "commodity",
     "crypto",
@@ -204,21 +204,21 @@
    ],
    "universe_fresh": 386,
    "stale_excluded": 348,
-   "ts_utc": "2026-10-17T08:35",
+   "ts_utc": "2026-10-17T09:35",
    "age_h": 0.8
   },
   "forecast": {
-   "pending": 735,
+   "pending": 720,
    "licensed": 6,
-   "forecasters": 251,
-   "n_forecasts": 42192,
-   "n_resolved": 41457,
-   "asOf": "2026-10-17T08:40:14"
+   "forecasters": 252,
+   "n_forecasts": 42213,
+   "n_resolved": 41493,
+   "asOf": "2026-10-17T09:40:13"
   },
   "shadow": {
-   "n_open": 205,
-   "n_closed": 3995,
-   "n_live": 2873,
+   "n_open": 199,
+   "n_closed": 4001,
+   "n_live": 2879,
    "n_post_reg": 1122,
    "n_backfill": 5,
    "n_specs": 102,
@@ -269,28 +269,28 @@
     }
    ],
    "eta_promo": null,
-   "opens_per_day": 96.4,
+   "opens_per_day": 96.2,
    "rate_days": 14,
-   "ts_utc": "2026-10-17T08:40"
+   "ts_utc": "2026-10-17T09:40"
   },
   "news": {
-   "n_24h": 678,
-   "n_hi": 6,
+   "n_24h": 709,
+   "n_hi": 7,
    "by_category": {
-    "stock": 61,
+    "stock": 75,
     "crypto": 309,
-    "macro": 76,
-    "commodity_fx": 232
+    "macro": 77,
+    "commodity_fx": 248
    },
-   "sources_green": 38,
-   "sources_red": 2,
+   "sources_green": 39,
+   "sources_red": 1,
    "top": {
     "t": "8-K - Apollo Commercial Real Estate Finance, Inc. (0001467760) (Filer)",
     "imp": 83,
     "src": "sec_edgar_8k",
     "ts": "2026-10-16T21:09:24Z"
    },
-   "run_at": "2026-10-17T09:18:02",
+   "run_at": "2026-10-17T10:18:02",
    "impact": {
     "line": "｜實證：11 類消息裡 0 類會動價格、0 類不會、11 類樣本不足(事件 n=74)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 11,
@@ -337,7 +337,7 @@
       "short": 0
      }
     ],
-    "run_at": "2026-10-17T09:09:02"
+    "run_at": "2026-10-17T10:09:02"
    }
   },
   "calendar": {
@@ -349,13 +349,13 @@
    "blackout_event": null,
    "blackout_markets": [],
    "head": null,
-   "age_h": 3.0,
-   "ts": "2026-10-17T06:20:02"
+   "age_h": 0.0,
+   "ts": "2026-10-17T10:20:02"
   },
   "live_shadow": {
    "window": {
     "from": "2026-09-01",
-    "to": "2026-10-17T08:45"
+    "to": "2026-10-17T09:45"
    },
    "n_closed": 254,
    "n_open": 13,
@@ -367,7 +367,7 @@
     "pf": 0.656,
     "sum_r": -64.835
    },
-   "ts": "2026-10-17T08:45",
+   "ts": "2026-10-17T09:45",
    "per": {
     "B1": {
      "n": 6,
@@ -433,12 +433,12 @@
     "funding_missing": 0
    },
    "n_open": 0,
-   "ts": "2026-10-17T09:10:05Z"
+   "ts": "2026-10-17T10:10:07Z"
   }
  },
  "north_star": {
   "ts": "2026-10-17T13:35:06",
-  "age_h": 3.8,
+  "age_h": 4.8,
   "stale": false,
   "risk_light": "red",
   "risk_why": "最大 24h 權益跌幅 93.8%(上限 20.0)、熔斷 1次(上限 1)",
@@ -504,11 +504,11 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-10-17T09:05",
+  "attendance": "supervision_state.json @ 2026-10-17T10:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
-  "calendar": "calendar_board.json @ 2026-10-17T06:20:02",
-  "news": "news_board.json @ 2026-10-17T09:18:02",
+  "calendar": "calendar_board.json @ 2026-10-17T10:20:02",
+  "news": "news_board.json @ 2026-10-17T10:18:02",
   "north_star": "goal_state.json @ 2026-10-17T13:35:06",
   "rules": "brief_rules.json v1.0"
  },
