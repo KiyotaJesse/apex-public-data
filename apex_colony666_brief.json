@@ -1,22 +1,22 @@
 {
- "ts": "2026-10-16T23:20:05",
- "data_ts": "2026-10-16T23:20:01",
+ "ts": "2026-10-17T13:35:14",
+ "data_ts": "2026-10-17T13:35:11",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
   "word": "要動",
   "tone": "red",
-  "why": "你有 6 件行動項目逾期",
+  "why": "你有 7 件行動項目逾期",
   "fired": [
-   "你有 6 件行動項目逾期",
-   "巢健康度 0 低於 70",
+   "你有 7 件行動項目逾期",
+   "巢健康度 17 低於 70",
    "你有事項今天到期",
-   "病蟻 3 隻(排程紅燈)",
-   "巢健康度 0 低於 85",
+   "病蟻 4 隻(排程紅燈)",
+   "巢健康度 17 低於 85",
    "你有事項 0 天內到期",
-   "待決事項 1 天內自動裁決",
+   "待決事項 0 天內自動裁決",
    "SLO 超支 6 項",
-   "有 10 件行動項目逾期(我的)"
+   "有 12 件行動項目逾期(我的)"
   ],
   "n_red": 4,
   "n_amber": 5
@@ -24,10 +24,10 @@
  "numbers": [
   {
    "k": "巢健康度",
-   "v": "0",
+   "v": "17",
    "unit": "/100",
    "tone": "red",
-   "sub": "扣分: 病蟻 3 隻 -45、逾期行動 10 件 -10"
+   "sub": "扣分: 病蟻 4 隻 -45、逾期行動 12 件 -10"
   },
   {
    "k": "本月策略 R",
@@ -40,8 +40,8 @@
    "k": "蟻口出勤",
    "v": "158/161",
    "unit": "(98%)",
-   "tone": "red",
-   "sub": "紅燈 3 隻: E 偵錯小組稽核、TamaScanner 、CI 回歸測試(A re"
+   "tone": "grey",
+   "sub": "監督台停更 14 小時, 出勤數是舊的"
   }
  ],
  "jesse": [
@@ -49,7 +49,7 @@
    "id": "AI140",
    "title": "Render 帳號確認 2FA 已開(AI031)",
    "due": "2026-10-12",
-   "due_in": -4,
+   "due_in": -5,
    "late": true,
    "howto": "Render 面板 -> 該服務 Environment 改變數 -> Manual Deploy"
   },
@@ -57,7 +57,7 @@
    "id": "AI141",
    "title": "BingX 下單 API 金鑰綁 IP 白名單(AI030)",
    "due": "2026-10-12",
-   "due_in": -4,
+   "due_in": -5,
    "late": true,
    "howto": "到 BingX App 手動處理(機器不准動錢, 這件只有你能做)"
   },
@@ -65,7 +65,7 @@
    "id": "AI142",
    "title": "換發 Telegram bot token(AI039,甲級換金鑰)",
    "due": "2026-10-12",
-   "due_in": -4,
+   "due_in": -5,
    "late": true,
    "howto": "自動裁決制接手 2026-10-13(原 owner=Jesse 逾期) | 限本人 2026-10-15(owner Claude->Je"
   },
@@ -73,7 +73,7 @@
    "id": "AI143",
    "title": "Google 服務帳號金鑰 google_service_account.json 停用或刪金鑰(AI060,甲級)",
    "due": "2026-10-12",
-   "due_in": -4,
+   "due_in": -5,
    "late": true,
    "howto": "自動裁決制接手 2026-10-13(原 owner=Jesse 逾期) | 限本人 2026-10-15(owner Claude->Je"
   },
@@ -81,7 +81,7 @@
    "id": "AI144",
    "title": "到 Groq 後台註銷 GROQ_API_KEY(AI029,程式已不用)",
    "due": "2026-10-12",
-   "due_in": -4,
+   "due_in": -5,
    "late": true,
    "howto": "自動裁決制接手 2026-10-13(原 owner=Jesse 逾期) | 限本人 2026-10-15(owner Claude->Je"
   },
@@ -89,7 +89,7 @@
    "id": "AI215",
    "title": "推 A 端 CI 修法(兩支測試檔)讓 master CI 轉綠",
    "due": "2026-10-15",
-   "due_in": -1,
+   "due_in": -2,
    "late": true,
    "howto": "工單 _wo/WO_ci_red_1013.md；遠端 clone 驗證 141/141；推送被分類器擋需 Jesse | 限本人 2026"
   },
@@ -97,15 +97,15 @@
    "id": "AI216",
    "title": "啟用 S1013 前瞻影子帳排程(簽憲法閘豁免或等 SLO 回 95%)",
    "due": "2026-10-16",
-   "due_in": 0,
-   "late": false,
+   "due_in": -1,
+   "late": true,
    "howto": "python -X utf8 _wo/apply_s1013_shadow_schedule.py --apply --const-exem"
   },
   {
    "id": "AI226",
    "title": "settings.local.json 權限白名單含明文 TG token(+2 份備份/proposed): 換發 token 後清除",
    "due": "2026-10-17",
-   "due_in": 1,
+   "due_in": 0,
    "late": false,
    "howto": "D223-P1 代理發現; secret_scan_gate 也命中 .claude/settings.local.json.bak_202"
   },
@@ -113,7 +113,7 @@
    "id": "AI233",
    "title": "Anthropic API 額度耗盡: A 端情報書/週日覆盤/E稽核 400 credit too low(10/11 起)——到 con",
    "due": "2026-10-17",
-   "due_in": 1,
+   "due_in": 0,
    "late": false,
    "howto": "證據: A 記憶 degraded.晨報 10-16T00:34 / 週日覆盤 10-11T12:21 皆 'credit balance "
   },
@@ -121,7 +121,7 @@
    "id": "AI234",
    "title": "推 A 的 CI 測試修正: python _wo/push_a_ci_fix_1016.py --push(CI 自 10/12 連紅 4",
    "due": "2026-10-17",
-   "due_in": 1,
+   "due_in": 0,
    "late": false,
    "howto": "PowerShell 到 C:\\claude-assistant 跑: python push_a_ci_fix_1016.py --push"
   },
@@ -129,7 +129,7 @@
    "id": "AI236",
    "title": "開排程器事件紀錄(系統管理員 PowerShell): wevtutil sl Microsoft-Windows-TaskSchedule",
    "due": "2026-10-17",
-   "due_in": 1,
+   "due_in": 0,
    "late": false,
    "howto": "10/16 查: Get-WinEvent -ListLog 回 IsEnabled=False"
   },
@@ -137,7 +137,7 @@
    "id": "AI195",
    "title": "D226 若採建議：外層 .claude/settings.local.json 也套同一份 hooks（P005 一行貼，完整合併檔整檔覆",
    "due": "2026-10-19",
-   "due_in": 3,
+   "due_in": 2,
    "late": false,
    "howto": "proposed P005（來源 _wo/proposed/settings_local_outer_merged.json＝外層原 per"
   }
@@ -159,7 +159,7 @@
    "q": "非加密 美股 市場組合 cS_brk_low25<0+coil>=0.6+impact>=1|TP3R 過五關+隨機基準(EV+0.42 n",
    "rec": "A"
   },
-  "line": "近 24 小時: 自動裁決 1 件、自動修復/回滾 0 件。下一個自動到期 D183(2026-10-17), 沒人異議就採建議 A。成形雷達: 成形中 432 檔／已成形 143 檔(全條件 117)(跨 5 市場; 宇宙 535 檔, 休市排除 97)。預言帳：781 則前瞻在等結算、持牌 7／預言者 246。消息：近 24h 905 則／高重要 8 則／最新一則「Scammer gets scammed in Ledger spy-chip 」(來源 2 個停抓中)｜實證：11 類消息裡 0 類會動價格、0 類不會、11 類樣本不足(事件 n=74)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 18 則發言、提到 TSLA×2／GOLD×1／GEOPOL×1、淨多空 +0.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 167 單／已結 3973 單(live 2851＋登記日回填 1122)(另樣本內回填 6 單不計成績)／101 個規格在追；最接近晉升的 cS_brk_low25<0+coil>=0.6+imp(stock) 已達 n=91 EV=+1.509R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=35 EV-0.640、SC1 n=20 EV-1.033、SC3 n=161 EV-0.103；最差 SC1(-1.033R)、最好 TL(+0.040R)；合計 238 筆 EV-0.274R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 50%(1/2)。",
+  "line": "近 24 小時: 自動裁決 1 件、自動修復/回滾 0 件。下一個自動到期 D183(2026-10-17), 沒人異議就採建議 A。成形雷達: 成形中 432 檔／已成形 143 檔(全條件 117)(跨 5 市場; 宇宙 535 檔, 休市排除 97)(雷達 15 小時沒更新)。預言帳：781 則前瞻在等結算、持牌 7／預言者 246。消息：近 24h 508 則／高重要 7 則／最新一則「8-K - Apollo Commercial Real Estate Fina」(來源 2 個停抓中)｜實證：11 類消息裡 0 類會動價格、0 類不會、11 類樣本不足(事件 n=74)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 23 則發言、提到 GOLD×3／TSLA×2／GEOPOL×1、淨多空 +0.9。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 167 單／已結 3973 單(live 2851＋登記日回填 1122)(另樣本內回填 6 單不計成績)／101 個規格在追；最接近晉升的 cS_brk_low25<0+coil>=0.6+imp(stock) 已達 n=91 EV=+1.509R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=35 EV-0.640、SC1 n=20 EV-1.033、SC3 n=161 EV-0.103；最差 SC1(-1.033R)、最好 TL(+0.040R)；合計 238 筆 EV-0.274R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 50%(1/2)。",
   "radar": {
    "forming": 432,
    "fired": 143,
@@ -174,7 +174,7 @@
    "universe_fresh": 535,
    "stale_excluded": 97,
    "ts_utc": "2026-10-16T14:35",
-   "age_h": 0.8
+   "age_h": 15.0
   },
   "forecast": {
    "pending": 781,
@@ -243,23 +243,23 @@
    "ts_utc": "2026-10-16T14:40"
   },
   "news": {
-   "n_24h": 905,
-   "n_hi": 8,
+   "n_24h": 508,
+   "n_hi": 7,
    "by_category": {
-    "crypto": 385,
-    "stock": 86,
-    "commodity_fx": 307,
-    "macro": 127
+    "stock": 57,
+    "crypto": 235,
+    "macro": 82,
+    "commodity_fx": 134
    },
    "sources_green": 38,
    "sources_red": 2,
    "top": {
-    "t": "Scammer gets scammed in Ledger spy-chip exploit, loses almost $5 million in bitcoin",
-    "imp": 80,
-    "src": "coindesk",
-    "ts": "2026-10-16T10:24:30Z"
+    "t": "8-K - Apollo Commercial Real Estate Finance, Inc. (0001467760) (Filer)",
+    "imp": 83,
+    "src": "sec_edgar_8k",
+    "ts": "2026-10-16T21:09:24Z"
    },
-   "run_at": "2026-10-16T15:18:02",
+   "run_at": "2026-10-17T05:33:02",
    "impact": {
     "line": "｜實證：11 類消息裡 0 類會動價格、0 類不會、11 類樣本不足(事件 n=74)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 11,
@@ -273,10 +273,17 @@
     "ts": "2026-10-10T20:30:12"
    },
    "trump": {
-    "line": "｜川普：近 24h 18 則發言、提到 TSLA×2／GOLD×1／GEOPOL×1、淨多空 +0.0",
-    "n_24h": 18,
-    "net_long_24h": 0,
+    "line": "｜川普：近 24h 23 則發言、提到 GOLD×3／TSLA×2／GEOPOL×1、淨多空 +0.9",
+    "n_24h": 23,
+    "net_long_24h": 0.93,
     "top_symbols": [
+     {
+      "symbol": "GOLD",
+      "n": 3,
+      "net": 1.8,
+      "long": 3,
+      "short": 0
+     },
      {
       "symbol": "TSLA",
       "n": 2,
@@ -285,48 +292,27 @@
       "short": 0
      },
      {
-      "symbol": "GOLD",
-      "n": 1,
-      "net": 0.45,
-      "long": 1,
-      "short": 0
-     },
-     {
       "symbol": "GEOPOL",
-      "n": 1,
-      "net": 0.0,
-      "long": 0,
-      "short": 0
-     },
-     {
-      "symbol": "AAPL",
-      "n": 1,
-      "net": 0.0,
-      "long": 0,
-      "short": 0
-     },
-     {
-      "symbol": "NVDA",
       "n": 1,
       "net": 0.0,
       "long": 0,
       "short": 0
      }
     ],
-    "run_at": "2026-10-16T15:09:02"
+    "run_at": "2026-10-17T05:35:04"
    }
   },
   "calendar": {
    "n_today": 0,
-   "n_tomorrow": 1,
-   "n_next7d": 31,
+   "n_tomorrow": 0,
+   "n_next7d": 30,
    "n_week_high": 0,
    "in_blackout": false,
    "blackout_event": null,
    "blackout_markets": [],
    "head": null,
-   "age_h": 1.0,
-   "ts": "2026-10-16T14:20:01"
+   "age_h": 0.0,
+   "ts": "2026-10-17T05:35:04"
   },
   "live_shadow": {
    "window": {
@@ -409,12 +395,12 @@
     "funding_missing": 0
    },
    "n_open": 0,
-   "ts": "2026-10-16T15:10:03Z"
+   "ts": "2026-10-16T15:25:04Z"
   }
  },
  "north_star": {
-  "ts": "2026-10-16T15:04:06",
-  "age_h": 8.3,
+  "ts": "2026-10-17T13:35:06",
+  "age_h": 0.0,
   "stale": false,
   "risk_light": "red",
   "risk_why": "最大 24h 權益跌幅 93.8%(上限 20.0)、熔斷 1次(上限 1)",
@@ -444,23 +430,23 @@
     "id": "M1",
     "name": "第一支樣本外為正的策略",
     "pct": 60.0,
-    "note": "最佳規格 84/30 筆; 壓測七項 未過; 待決成立 否",
-    "status": "ahead",
-    "est": "2026-11-05",
+    "note": "最佳規格 91/30 筆; 壓測七項 未過; 待決成立 否",
+    "status": "unknown",
+    "est": "未知",
     "jesse": "2026-11-30",
-    "delta": "提前 25 天",
-    "path": "M1 最短路徑: D229 2026-10-22 到期, 建議 A, 壓力測試尚未測到(壓 stress_test 還沒跑或這案不在名單) -- 到期無異議即成立, 成立後才進晉升產線。"
+    "delta": "無預估日",
+    "path": "M1 最短路徑: 最接近晉升的是 cS_brk_low25<0+coil>=0.6+imp(stock) -- 還差 0 筆(目前 91 筆 EV +1.509, 預估 未知)。"
    },
    {
     "id": "M2",
     "name": "月 R 連三個月為正",
     "pct": 0,
     "note": "本月 4 筆 -5.77R／連正 0/3 月",
-    "status": "late",
-    "est": "2027-03-22",
+    "status": "unknown",
+    "est": "未知",
     "jesse": "2027-02-28",
-    "delta": "延後 22 天",
-    "path": "M2 最短路徑: 本月 4 筆 -5.77R, 連正 0/3 月; 還缺 3 個正月(預估 2027-03-22)。"
+    "delta": "無預估日",
+    "path": "M2 最短路徑: 本月 4 筆 -5.77R, 連正 0/3 月; 還缺 3 個正月(預估 未知)。"
    },
    {
     "id": "M3",
@@ -468,9 +454,9 @@
     "pct": 0,
     "note": "權益達目標 0%(起算 2026-09-16)",
     "status": "late",
-    "est": "2032-04-09",
+    "est": "2032-04-11",
     "jesse": "2029-05-31",
-    "delta": "延後 1044 天",
+    "delta": "延後 1046 天",
     "path": "M3 最短路徑: 以目前斜率永不達標(近 90 天 -5.09R, 月報酬 -3.4%) —— M3 是 M2 的結果, 這個月唯一能做的是把 M1 往前推。"
    }
   ]
@@ -483,9 +469,9 @@
   "attendance": "supervision_state.json @ 2026-10-16T15:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
-  "calendar": "calendar_board.json @ 2026-10-16T14:20:01",
-  "news": "news_board.json @ 2026-10-16T15:18:02",
-  "north_star": "goal_state.json @ 2026-10-16T15:04:06",
+  "calendar": "calendar_board.json @ 2026-10-17T05:35:04",
+  "news": "news_board.json @ 2026-10-17T05:33:02",
+  "north_star": "goal_state.json @ 2026-10-17T13:35:06",
   "rules": "brief_rules.json v1.0"
  },
  "rules_version": "1.0"
