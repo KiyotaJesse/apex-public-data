@@ -2478,7 +2478,7 @@
 "tables": [
 {
 "n": "裁決錄",
-"c": 228
+"c": 238
 },
 {
 "n": "墳場",
@@ -2490,28 +2490,28 @@
 },
 {
 "n": "策略手冊",
-"c": 70
+"c": 71
 },
 {
 "n": "專案紀錄",
-"c": 125
+"c": 130
 },
 {
 "n": "行動項目",
-"c": 218
+"c": 239
 }
 ],
-"built": "10-17 13:39",
-"synced": "10-17 13:40",
-"open": 57,
+"built": "10-18 08:12",
+"synced": "10-18 08:15",
+"open": 64,
 "overdue": 17
 },
 "mailbox": {
-"sent": "",
+"sent": "08:19",
 "open": 0,
 "answered": 29,
 "buttons": true,
-"auto_open": 39,
+"auto_open": 36,
 "open_ids": []
 },
 "scars": [
@@ -2790,8 +2790,8 @@
 "st": "學員",
 "k": 1,
 "w": 0,
-"mn": 25,
-"mr": -5.56,
+"mn": 26,
+"mr": -6.58,
 "born": "2026-09-06",
 "lesson": "Turtle 空方: 收盤跌破 55 根低點做空。同上 adapted。",
 "src": "https://www.odaily.news/en/post/5205696",
@@ -2838,8 +2838,8 @@
 "st": "學員",
 "k": 1,
 "w": 0,
-"mn": 64,
-"mr": -4.77,
+"mn": 66,
+"mr": -0.82,
 "born": "2026-09-06",
 "lesson": "Connors RSI(2)<5 且價在 200MA 上做多, RSI>65 出場, 原版不設停損。特徵庫只有 RSI(14), 改 rsi<=25 + ema50>ema200; 出場改 2R/1.5ATR 止損(adapted, 且 Connors 說停損傷績效, 這是刻意違背以符合巢規)。",
 "src": "https://www.quantifiedstrategies.com/rsi-2-strategy/",
@@ -2862,8 +2862,8 @@
 "st": "學員",
 "k": 0,
 "w": 1,
-"mn": 168,
-"mr": -1.78,
+"mn": 170,
+"mr": 2.14,
 "born": "2026-09-06",
 "lesson": "價跌破下軌且 RSI<30 買回歸。下軌用 VWAP 偏離 -2ATR 代替(adapted)。文獻警告: 強趨勢裡會被輾。",
 "src": "https://www.capmint.com/learn/videos/bollinger-bands-rsi-combo-strategy",
@@ -2886,8 +2886,8 @@
 "st": "學員",
 "k": 1,
 "w": 0,
-"mn": 99,
-"mr": -8.4,
+"mn": 101,
+"mr": -7.75,
 "born": "2026-09-06",
 "lesson": "鏡像空方。",
 "src": "https://www.capmint.com/learn/videos/bollinger-bands-rsi-combo-strategy",
@@ -2982,8 +2982,8 @@
 "st": "學員",
 "k": 0,
 "w": 1,
-"mn": 51,
-"mr": 10.85,
+"mn": 59,
+"mr": 17.44,
 "born": "2026-09-06",
 "lesson": "鏡像: 費率極低=空頭擁擠, 偏離 VWAP 下方做多。",
 "src": "https://daytrading.co/educational/crypto-perpetual-futures-funding-rates/",
@@ -3030,8 +3030,8 @@
 "st": "學員",
 "k": 0,
 "w": 1,
-"mn": 75,
-"mr": -38.17,
+"mn": 82,
+"mr": -39.6,
 "born": "2026-09-06",
 "lesson": "Larry Williams 式: 放量(2 倍均量)突破前高進場。",
 "src": "https://github.com/SC4RECOIN/simple-crypto-breakout-strategy",
@@ -3054,8 +3054,8 @@
 "st": "學員",
 "k": 1,
 "w": 0,
-"mn": 44,
-"mr": 8.8,
+"mn": 47,
+"mr": 14.58,
 "born": "2026-09-06",
 "lesson": "ORB fakeout: 刺破前高又收回=假突破, 反手做空。刺破深度 trap_hi>=0.5ATR。",
 "src": "https://in.tradingview.com/scripts/openingrange/",
@@ -3126,8 +3126,8 @@
 "st": "學員",
 "k": 0,
 "w": 1,
-"mn": 82,
-"mr": -13.26,
+"mn": 83,
+"mr": -10.47,
 "born": "2026-09-07",
 "lesson": "多頭趨勢(ema50>ema200)裡等回檔: RSI 回到 45 以下且量能枯竭(回檔縮量), 進場順勢。三根回檔 adapted 成量縮+RSI 回落。",
 "src": "https://medium.com/@FMZQuant/advanced-pullback-trading-triangle-breakout-with-volume-price",
@@ -3240,7 +3240,7 @@
 }
 ],
 "graves": {},
-"updated": "10-17 13:40",
+"updated": "10-18 08:15",
 "rehearsal": {
 "asof": "2026-10-12 08:14",
 "since": "2026-07-12"
@@ -5022,64 +5022,64 @@
 ],
 "board": [
 {
-"ts": "2026-10-18T08:10:03+08:00",
+"ts": "2026-10-18T08:19:59+08:00",
 "who": "蟻",
-"t": "汰/binance_leg: 1 件事件結算不出來(可結算分母 9) -- QU"
+"t": "08:10 鏈 drill_ant 跑了 156s (>120s), 全鏈 29"
 },
 {
-"ts": "2026-10-18T08:05:23+08:00",
+"ts": "2026-10-18T08:19:58+08:00",
 "who": "蟻",
-"t": "[SLO] 本輪 超支 6 隻 / 預警 0 隻 / 離線排除壞點 160 次 "
+"t": "08:10 鏈 roster_lint 回傳 rc=1 (跑了 4s), 去看 "
 },
 {
-"ts": "2026-10-18T08:05:22+08:00",
+"ts": "2026-10-18T08:19:15+08:00",
 "who": "蟻",
-"t": "[SLO 每日摘要] 真超支 6 隻(已排除本機離線); 近 24h 狀態轉換 "
+"t": "自我健檢自動修 3 件: claude-assistant/_desk_task"
 },
 {
-"ts": "2026-10-18T08:00:02+08:00",
+"ts": "2026-10-18T08:19:05+08:00",
 "who": "蟻",
-"t": "[北·北極星] 失敗風險儀 2 項超標: 最大 24h 權益跌幅 93.8%(上"
+"t": "自我健檢: deps 有 1 個問題(sentry_sdk…)"
 },
 {
-"ts": "2026-10-18T07:55:04+08:00",
+"ts": "2026-10-18T08:18:53+08:00",
 "who": "蟻",
-"t": "汰/binance_leg: 1 件事件結算不出來(可結算分母 9) -- QU"
+"t": "自我健檢: compile 有 7 個問題(claude-assistant/t"
 },
 {
-"ts": "2026-10-18T07:41:00+08:00",
+"ts": "2026-10-18T08:16:54+08:00",
 "who": "蟻",
-"t": "[影] 候選前瞻翻負: cL_vol_dry<=0.4+cvd_z>=1|R(c"
+"t": "候選 cL_vol_dry<=0.3+vol_r>=1.5+atr_r>=1.2"
 },
 {
-"ts": "2026-10-18T07:40:59+08:00",
+"ts": "2026-10-18T08:16:08+08:00",
 "who": "蟻",
-"t": "[影] 候選前瞻翻負: cL_vol_dry<=0.4+cvd_z>=1+vol"
+"t": "⛏ 礦: 挖到 153 個重複模式, 提 3 條待決"
 },
 {
-"ts": "2026-10-18T07:40:28+08:00",
+"ts": "2026-10-18T08:16:04+08:00",
 "who": "蟻",
-"t": "形態命中 46(可交易 46): 美股 AEHR 滑坡放量, 美股 AGPU 滑"
+"t": "候選 cL_impact>=1.5+cvd_z>=1+vol_dry<=0.4|"
 },
 {
-"ts": "2026-10-18T07:40:06+08:00",
+"ts": "2026-10-18T08:15:57+08:00",
 "who": "蟻",
-"t": "汰/binance_leg: 1 件事件結算不出來(可結算分母 9) -- QU"
+"t": "[稽核] 隨機基準樣本數存疑的列 209（門檻 200）"
 },
 {
-"ts": "2026-10-18T07:25:04+08:00",
+"ts": "2026-10-18T08:15:54+08:00",
 "who": "蟻",
-"t": "汰/binance_leg: 1 件事件結算不出來(可結算分母 9) -- QU"
+"t": "[稽核] 結算重算一致率 100.00%（可審 200 / 不可審 0）"
 },
 {
-"ts": "2026-10-18T07:10:03+08:00",
+"ts": "2026-10-18T08:15:54+08:00",
 "who": "蟻",
-"t": "汰/binance_leg: 1 件事件結算不出來(可結算分母 9) -- QU"
+"t": "[稽核] 榜面計數與帳重算不符：1 列不一致、0 列榜上缺"
 },
 {
-"ts": "2026-10-18T06:55:05+08:00",
+"ts": "2026-10-18T08:15:51+08:00",
 "who": "蟻",
-"t": "汰/binance_leg: 1 件事件結算不出來(可結算分母 9) -- QU"
+"t": "判官蟻: 結案 56 筆, 回填 0, 提案 0(無)"
 }
 ],
 "autonomy": {
@@ -5226,11 +5226,27 @@
 "blocked_on_jesse": []
 },
 "ledgers": {
-"asOf": "2026-10-18T08:10:04",
+"asOf": "2026-10-18T08:20:02",
 "judge": {
-"run_at": "2026-10-17T13:41:00",
-"src": "outcomes",
+"run_at": "2026-10-18T08:15:51+08:00",
+"src": "judge",
 "by_kind": [
+{
+"kind": "auto_decide",
+"n": 4,
+"hit": 0,
+"miss": 0,
+"unknown": 4,
+"hit_rate": null
+},
+{
+"kind": "confidence_adj",
+"n": 7,
+"hit": 0,
+"miss": 0,
+"unknown": 7,
+"hit_rate": null
+},
 {
 "kind": "delist_shadow_ev",
 "n": 1,
@@ -5257,20 +5273,20 @@
 },
 {
 "kind": "shadow_forward",
-"n": 18,
-"hit": 0,
-"miss": 18,
-"unknown": 0,
-"hit_rate": 0.0
+"n": 63,
+"hit": 10,
+"miss": 21,
+"unknown": 32,
+"hit_rate": 0.323
 }
 ],
 "proposals": 0,
-"skipped": true,
-"last_full_run": "2026-10-11T08:13:27+08:00"
+"skipped": false,
+"last_full_run": ""
 },
 "outcomes": {
-"open": 312,
-"closed": 24,
+"open": 262,
+"closed": 80,
 "by_kind": {
 "l2_downgrade": {
 "open": 0,
@@ -5287,25 +5303,25 @@
 "unknown": 1
 },
 "confidence_adj": {
-"open": 30,
-"closed": 0,
+"open": 23,
+"closed": 7,
 "hit": 0,
 "miss": 0,
-"unknown": 0
+"unknown": 7
 },
 "auto_decide": {
-"open": 177,
-"closed": 0,
+"open": 179,
+"closed": 4,
 "hit": 0,
 "miss": 0,
-"unknown": 0
+"unknown": 4
 },
 "shadow_forward": {
-"open": 102,
-"closed": 18,
-"hit": 0,
-"miss": 18,
-"unknown": 0
+"open": 57,
+"closed": 63,
+"hit": 10,
+"miss": 21,
+"unknown": 32
 },
 "recovery": {
 "open": 2,
@@ -5324,44 +5340,44 @@
 },
 "next_due": [
 {
-"kind": "confidence_adj",
-"key": "hit72",
-"due": "2026-10-12"
-},
-{
-"kind": "auto_decide",
-"key": "D001",
-"due": "2026-10-12"
-},
-{
-"kind": "auto_decide",
-"key": "D002",
-"due": "2026-10-12"
+"kind": "recovery",
+"key": "2026-09-18",
+"due": "2026-10-18"
 },
 {
 "kind": "confidence_adj",
 "key": "hit72",
-"due": "2026-10-13"
+"due": "2026-10-19"
 },
 {
-"kind": "confidence_adj",
-"key": "hit72",
-"due": "2026-10-14"
+"kind": "shadow_forward",
+"key": "cL_impact_ma>=1.5+vol_r>=1.5+vol_dry<=0.4|bull|TP4R|crypto",
+"due": "2026-10-20"
+},
+{
+"kind": "shadow_forward",
+"key": "cL_cvd_div<=-0.3+fund_pct<=0.3|bull|TP3R|crypto",
+"due": "2026-10-20"
+},
+{
+"kind": "shadow_forward",
+"key": "cL_cvd_div<=-0.3+fund_pct<=0.3|bull|TP3R@lt20|crypto",
+"due": "2026-10-20"
 }
 ]
 },
 "events": {
 "h24": {
 "crit": 1,
-"warn": 150,
-"info": 89,
-"suppressed": 86,
-"n": 240
+"warn": 165,
+"info": 95,
+"suppressed": 88,
+"n": 261
 },
 "d7": {
-"crit": 8,
+"crit": 6,
 "warn": 624,
-"info": 679,
+"info": 681,
 "suppressed": 328,
 "n": 1311
 },
@@ -5394,68 +5410,68 @@
 ],
 "latest": [
 {
-"ts": "2026-10-18T08:10",
-"source": "delist_shadow",
-"key": "delist_shadow_binance_gap",
+"ts": "2026-10-18T08:19",
+"source": "queen_chain",
+"key": "drill_ant",
 "level": "warn",
-"suppressed": true,
-"text": "汰/binance_leg: 1 件事件結算不出來(可結算分母 9) -- QUICK-USDT"
+"suppressed": false,
+"text": "08:10 鏈 drill_ant 跑了 156s (>120s), 全鏈 295s"
 },
 {
-"ts": "2026-10-18T08:05",
-"source": "slo",
-"key": "__tick__",
+"ts": "2026-10-18T08:19",
+"source": "queen_chain",
+"key": "rc_roster_lint",
+"level": "warn",
+"suppressed": false,
+"text": "08:10 鏈 roster_lint 回傳 rc=1 (跑了 4s), 去看 roster_lint 的結果檔"
+},
+{
+"ts": "2026-10-18T08:19",
+"source": "self_check",
+"key": "self_check:auto_fix",
 "level": "info",
 "suppressed": false,
-"text": "[SLO] 本輪 超支 6 隻 / 預警 0 隻 / 離線排除壞點 160 次 / 送出 1 則"
+"text": "自我健檢自動修 3 件: claude-assistant/_desk_task_test.py, claude-ass"
 },
 {
-"ts": "2026-10-18T08:05",
-"source": "slo",
-"key": "__daily__",
+"ts": "2026-10-18T08:19",
+"source": "self_check",
+"key": "self_check:deps",
 "level": "warn",
 "suppressed": false,
-"text": "[SLO 每日摘要] 真超支 6 隻(已排除本機離線); 近 24h 狀態轉換 4 次; 離線排除共 160 次壞點"
+"text": "自我健檢: deps 有 1 個問題(sentry_sdk…)"
 },
 {
-"ts": "2026-10-18T08:00",
-"source": "goal_tracker",
-"key": "goal_risk",
+"ts": "2026-10-18T08:18",
+"source": "self_check",
+"key": "self_check:compile",
 "level": "warn",
 "suppressed": false,
-"text": "[北·北極星] 失敗風險儀 2 項超標: 最大 24h 權益跌幅 93.8%(上限 20.0)、熔斷 1次(上限 1) "
+"text": "自我健檢: compile 有 7 個問題(claude-assistant/tama_v5_snapshot.py, "
 },
 {
-"ts": "2026-10-18T07:55",
-"source": "delist_shadow",
-"key": "delist_shadow_binance_gap",
-"level": "warn",
-"suppressed": true,
-"text": "汰/binance_leg: 1 件事件結算不出來(可結算分母 9) -- QUICK-USDT"
-},
-{
-"ts": "2026-10-18T07:41",
-"source": "shadow_tracker",
-"key": "shadow_negative:cL_vol_dry<=0.4+cvd_z>=1|R|commodity",
-"level": "warn",
-"suppressed": false,
-"text": "[影] 候選前瞻翻負: cL_vol_dry<=0.4+cvd_z>=1|R(commodity) 前瞻 33 筆 EV"
-},
-{
-"ts": "2026-10-18T07:40",
-"source": "shadow_tracker",
-"key": "shadow_negative:cL_vol_dry<=0.4+cvd_z>=1+vol_dry<=0.4|R|commodity",
-"level": "warn",
-"suppressed": false,
-"text": "[影] 候選前瞻翻負: cL_vol_dry<=0.4+cvd_z>=1+vol_dry<=0.4|R(commodit"
-},
-{
-"ts": "2026-10-18T07:40",
-"source": "shape_office",
-"key": "shape_office_hit",
+"ts": "2026-10-18T08:16",
+"source": "stress_test",
+"key": "stress_fail",
 "level": "info",
 "suppressed": false,
-"text": "形態命中 46(可交易 46): 美股 AEHR 滑坡放量, 美股 AGPU 滑坡放量, 美股 AMAT 滑坡放量, 美"
+"text": "候選 cL_vol_dry<=0.3+vol_r>=1.5+atr_r>=1.2|bu(crypto) 壓力測試未過: "
+},
+{
+"ts": "2026-10-18T08:16",
+"source": "rule_miner",
+"key": "rule_miner",
+"level": "warn",
+"suppressed": false,
+"text": "⛏ 礦: 挖到 153 個重複模式, 提 3 條待決"
+},
+{
+"ts": "2026-10-18T08:16",
+"source": "stress_test",
+"key": "stress_fail",
+"level": "info",
+"suppressed": false,
+"text": "候選 cL_impact>=1.5+cvd_z>=1+vol_dry<=0.4|bul(crypto) 壓力測試未過: "
 }
 ]
 },
@@ -6156,12 +6172,12 @@
 "decisions": {
 "n": "待裁",
 "h": 1,
-"ts": "2026-10-18T08:10:05+08:00"
+"ts": "2026-10-18T08:20:01+08:00"
 },
 "market": {
 "n": "BTC/持倉",
 "h": 1,
-"ts": "2026-10-18T08:10:05+08:00"
+"ts": "2026-10-18T08:11:03+08:00"
 },
 "weather": {
 "n": "巢外天氣",
@@ -6171,17 +6187,17 @@
 "strategies": {
 "n": "策略蟻",
 "h": 1,
-"ts": "2026-10-18T08:10:05+08:00"
+"ts": "2026-10-18T08:20:01+08:00"
 },
 "ledgers": {
 "n": "成績單",
 "h": 1,
-"ts": "2026-10-18T08:10:05+08:00"
+"ts": "2026-10-18T08:20:01+08:00"
 },
 "board": {
 "n": "留言板",
 "h": 1,
-"ts": "2026-10-18T08:10:05+08:00"
+"ts": "2026-10-18T08:20:01+08:00"
 },
 "mine": {
 "n": "礦機",
@@ -6191,7 +6207,7 @@
 "academy": {
 "n": "學院",
 "h": 24,
-"ts": "2026-10-17T13:40:31+08:00"
+"ts": "2026-10-18T08:15:27+08:00"
 },
 "daily": {
 "n": "日誌/進化/編年",
@@ -6201,7 +6217,7 @@
 "notes": {
 "n": "便利貼",
 "h": 1,
-"ts": null
+"ts": "2026-10-18T08:20:03+08:00"
 },
 "autonomy": {
 "n": "自治儀表",
@@ -6209,7 +6225,7 @@
 "ts": "2026-09-14T00:00:00+08:00"
 }
 },
-"live_ts": "2026-10-18T08:10:05+08:00",
+"live_ts": "2026-10-18T08:20:01+08:00",
 "notes": [
 {
 "id": "gate",
@@ -6222,7 +6238,7 @@
 "stale": false,
 "hash": "ca3e2303e96f",
 "last_changed": "2026-09-26T01:24:17+08:00",
-"shown_at": "2026-10-18T08:10:05+08:00"
+"shown_at": "2026-10-18T08:20:03+08:00"
 },
 {
 "id": "queen",
@@ -6235,20 +6251,20 @@
 "stale": false,
 "hash": "ebacfce4b5d6",
 "last_changed": "2026-10-18T06:20:04+08:00",
-"shown_at": "2026-10-18T08:10:05+08:00"
+"shown_at": "2026-10-18T08:20:03+08:00"
 },
 {
 "id": "worker",
 "d": "深度 -1m · 工蟻房",
 "kind": "live",
 "text": "覓食隊誠實紀錄:近 30 天搬回 -5.1R(30 趟),近 90 天 -5.1R(30 趟,帳本最早只記到 09-19)。其中 AUTO -4.4R/25、B1 -4.6R/3、TL +3.9R/2。現在開著門的:B1。此刻沒有誰蜷在角落——開著的門都朝著空頭的天氣。",
-"ts": "2026-10-18T08:10:05+08:00",
+"ts": "2026-10-18T08:20:01+08:00",
 "period_h": 1,
 "src": "tama_memory.json(D 帳本) · tama_config.json",
 "stale": false,
 "hash": "104bc4ad0a4d",
 "last_changed": "2026-10-18T07:20:03+08:00",
-"shown_at": "2026-10-18T08:10:05+08:00"
+"shown_at": "2026-10-18T08:20:03+08:00"
 },
 {
 "id": "clinic",
@@ -6261,7 +6277,7 @@
 "stale": false,
 "hash": "c21ad7845daa",
 "last_changed": "2026-09-26T01:24:17+08:00",
-"shown_at": "2026-10-18T08:10:05+08:00"
+"shown_at": "2026-10-18T08:20:03+08:00"
 },
 {
 "id": "collapse",
@@ -6274,7 +6290,7 @@
 "stale": false,
 "hash": "7c0d5a1a19b2",
 "last_changed": "2026-09-26T01:24:17+08:00",
-"shown_at": "2026-10-18T08:10:05+08:00"
+"shown_at": "2026-10-18T08:20:03+08:00"
 },
 {
 "id": "darkroom",
@@ -6287,33 +6303,33 @@
 "stale": false,
 "hash": "ee4e9754f2c7",
 "last_changed": "2026-09-26T01:24:17+08:00",
-"shown_at": "2026-10-18T08:10:05+08:00"
+"shown_at": "2026-10-18T08:20:03+08:00"
 },
 {
 "id": "fungus",
 "d": "深度 -1.8m · 真菌園",
 "kind": "live",
-"text": "全巢最值錢的一間。食物會吃完,菌絲不會:菌庫現有 506 份記憶,本週新接種事故 2 件、裁決 21 件。再往下是檔案館,防的是同一件事——重挖已經挖過的土。",
-"ts": "2026-10-17T13:39:00+08:00",
+"text": "全巢最值錢的一間。食物會吃完,菌絲不會:菌庫現有 512 份記憶,本週新接種事故 2 件、裁決 31 件。再往下是檔案館,防的是同一件事——重挖已經挖過的土。",
+"ts": "2026-10-18T08:12:00+08:00",
 "period_h": 24,
 "src": "decision_kb.json · 記憶檔目錄(*.md)",
 "stale": false,
-"hash": "d6aeec1097aa",
-"last_changed": "2026-10-18T08:10:05+08:00",
-"shown_at": "2026-10-18T08:10:05+08:00"
+"hash": "abe44f021697",
+"last_changed": "2026-10-18T08:20:03+08:00",
+"shown_at": "2026-10-18T08:20:03+08:00"
 },
 {
 "id": "grave",
 "d": "深度 -2.4m · 墳場",
 "kind": "live",
 "text": "每一塊碑都是自己人立的。墳場現有 35 塊碑(12 塊封死路口、23 塊只立警示),新礦進門前都要先對過一遍。最新一塊是「台股大型股「20 日報酬&gt;0 做多」」(10-18)。忘記壞路徑的能力,比找到好路徑的能力貴。",
-"ts": "2026-10-17T13:39:00+08:00",
+"ts": "2026-10-18T08:12:00+08:00",
 "period_h": 24,
 "src": "graveyard_signatures.json · decision_kb.json(心跳)",
 "stale": false,
 "hash": "6e583685b3bf",
 "last_changed": "2026-10-18T00:20:04+08:00",
-"shown_at": "2026-10-18T08:10:05+08:00"
+"shown_at": "2026-10-18T08:20:03+08:00"
 },
 {
 "id": "face",
@@ -6326,25 +6342,25 @@
 "stale": false,
 "hash": "5fd3331dd855",
 "last_changed": "2026-10-18T06:20:04+08:00",
-"shown_at": "2026-10-18T08:10:05+08:00"
+"shown_at": "2026-10-18T08:20:03+08:00"
 },
 {
 "id": "weekly",
 "d": "巢口公告 · 本週新事 · 1/24",
 "kind": "rotate",
 "text": "新蟻「形」上崗,編進「研究」組,排班「每日 07」。(10-18)",
-"ts": "2026-10-18T08:10:05+08:00",
+"ts": "2026-10-18T08:20:03+08:00",
 "period_h": 24,
 "src": "supervision_registry.json",
 "stale": false,
-"hash": "ad9f2204ead4",
-"last_changed": "2026-10-18T08:10:05+08:00",
-"shown_at": "2026-10-18T08:10:05+08:00"
+"hash": "c5a0405d9afe",
+"last_changed": "2026-10-18T08:20:03+08:00",
+"shown_at": "2026-10-18T08:20:03+08:00"
 }
 ],
 "roster": {
 "v": 1,
-"ts": "2026-10-18T08:10:05+08:00",
+"ts": "2026-10-18T08:20:03+08:00",
 "n": 163,
 "depts": [
 {
@@ -6892,5 +6908,5 @@
 ],
 "src": "supervision_registry.json x research/autonomy/departments.json"
 },
-"_doc": "APEX 蟻穴公開資料; 每日 08:10 由 queen_weight.py 產出; 金額 eq 為 Jesse 2026-08-28 裁決公開"
+"_doc": "APEX 蟻穴公開資料; 完整鏈每日 08:10 由 queen_weight.py 產出, 每小時 :20 由 board_push.py (nest_hourly) 重算 fresh 列出的區塊; 各區塊資料時間見 fresh; 金額 eq 為 Jesse 2026-08-28 裁決公開"
 }
