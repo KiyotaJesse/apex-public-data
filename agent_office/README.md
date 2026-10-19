@@ -7,6 +7,7 @@
 - 機器:家裡那台跑 APEX 的 Windows 電腦(主基地 `C:\claude-assistant`)。
 - 資料夾:`C:\claude-assistant\agent_office\`(四個檔放在一起)。
 - 啟動:雙擊 `start_agent_office.bat`,瀏覽器會自己開 <http://127.0.0.1:8777/>。黑色視窗開著才有資料,關掉就停。
+- 開機自動啟動:雙擊 `install_autostart.bat`(不需系統管理員)。它在 Windows「啟動」資料夾放一個捷徑,之後每次登入都會用隱藏視窗啟動伺服器,不跳瀏覽器;要看就開 <http://127.0.0.1:8777/>。取消:雙擊 `uninstall_autostart.bat`(會刪捷徑並停掉伺服器)。開機時的錯誤寫在 `agent_office_boot.log`。
 - 自測:`python -X utf8 agent_office\test_agent_office.py`(在 `C:\claude-assistant` 底下跑,不打網路)。
 
 ## 四層畫面與資料來源
