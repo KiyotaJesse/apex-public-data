@@ -1,0 +1,862 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>APEX Agent Office</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a12; --panel:#0e0e19; --panel2:#121222; --line:#24243a; --mag:#ff2fd6; --mag-dim:rgba(255,47,214,.35);
+  --txt:#e6e6f2; --dim:#8a8aa6; --mute:#55556e; --ok:#39ff88; --busy:#ffd23f; --bad:#ff3355; --na:#5a6270;
+  --font:"JetBrains Mono","Cascadia Mono",Consolas,"Microsoft JhengHei",ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--txt);font-family:var(--font);font-size:13px}
+body{
+  background-color:var(--bg);
+  background-image:linear-gradient(rgba(255,47,214,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,47,214,.055) 1px,transparent 1px);
+  background-size:24px 24px;overflow-x:hidden;
+}
+body::after{ /* 掃描線 */
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:50;
+  background:repeating-linear-gradient(to bottom,rgba(255,255,255,.028) 0 1px,transparent 1px 3px);
+  animation:scan 9s linear infinite;
+}
+@keyframes scan{from{background-position:0 0}to{background-position:0 300px}}
+@media (prefers-reduced-motion:reduce){body::after{animation:none}.flash .big{animation:none!important}}
+#frame{
+  min-height:100vh;padding:10px 12px 12px;border:2px solid var(--mag);
+  box-shadow:inset 0 0 18px rgba(255,47,214,.35),0 0 22px rgba(255,47,214,.45);
+  display:grid;gap:10px;
+  grid-template-rows:42px 124px minmax(300px,1fr) 214px 300px;
+}
+.panel{background:rgba(14,14,25,.92);border:1px solid var(--mag-dim);box-shadow:0 0 10px rgba(255,47,214,.12) inset;position:relative;min-width:0;min-height:0}
+.ph{display:flex;align-items:center;gap:12px;height:28px;padding:0 10px;border-bottom:1px solid var(--line);color:var(--dim);font-size:12px;white-space:nowrap;overflow:hidden}
+.ph b{color:var(--mag);font-weight:800;letter-spacing:.06em}
+.ph .sp{flex:1}
+.src{color:var(--mute);font-size:11px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+button{font-family:var(--font);font-size:11px;color:var(--txt);background:#171728;border:1px solid var(--mag-dim);padding:3px 8px;cursor:pointer}
+button:hover,button:focus-visible{border-color:var(--mag);box-shadow:0 0 8px var(--mag-dim);outline:none}
+button.on{background:var(--mag);color:#0a0a12;font-weight:800}
+button:disabled{opacity:.4;cursor:default}
+.na{color:var(--mute)}
+.pos{color:var(--ok)} .neg{color:var(--bad)}
+
+/* 頂列 */
+#top{display:flex;align-items:center;gap:16px;padding:0 4px}
+#top .logo{font-weight:800;font-size:18px;letter-spacing:.12em;color:var(--mag);text-shadow:0 0 10px var(--mag)}
+#top .sub{color:var(--dim);font-size:12px}
+#pills{display:flex;gap:6px;flex-wrap:nowrap;overflow:hidden;flex:1;justify-content:center}
+.pill{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--dim);border:1px solid var(--line);padding:2px 7px;white-space:nowrap;cursor:help}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--na);flex:none}
+.dot.ok{background:var(--ok);box-shadow:0 0 6px var(--ok)} .dot.busy{background:var(--busy);box-shadow:0 0 6px var(--busy)}
+.dot.alert{background:var(--bad);box-shadow:0 0 8px var(--bad)} .dot.na{background:var(--na)}
+#clock{text-align:right;line-height:1.05}
+#clock .utc{font-size:22px;font-weight:800;color:#fff;text-shadow:0 0 8px var(--mag)}
+#clock .tpe{font-size:11px;color:var(--dim)}
+#conn{font-size:11px;color:var(--dim);display:flex;align-items:center;gap:5px}
+
+/* 第 1 層: 卡片 */
+#cards{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px}
+.card{background:rgba(14,14,25,.94);border:1px solid var(--line);border-left:3px solid var(--c);padding:7px 9px;display:flex;flex-direction:column;gap:4px;cursor:pointer;position:relative;min-width:0}
+.card:hover,.card:focus-visible{border-color:var(--mag);outline:none;box-shadow:0 0 10px var(--mag-dim)}
+.card .hd{display:flex;align-items:center;gap:6px;white-space:nowrap}
+.card .zh{font-weight:800;color:var(--c);font-size:16px;width:20px;text-align:center}
+.card .nm{font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.card .st{margin-left:auto;font-size:11px;color:var(--dim);overflow:hidden;text-overflow:ellipsis;max-width:46%}
+.card .act{font-size:11px;color:var(--dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;height:15px}
+.card .act i{font-style:normal;color:var(--mute)}
+.card .num{display:flex;align-items:baseline;gap:6px}
+.card .num .v{font-size:22px;font-weight:800;color:#fff}
+.card .num .u{color:var(--dim);font-size:12px}
+.card .num .l{color:var(--mute);font-size:11px;margin-left:auto}
+.bar{height:5px;background:#1b1b2c;position:relative;overflow:hidden}
+.bar>span{position:absolute;left:0;top:0;bottom:0;background:var(--c);box-shadow:0 0 6px var(--c);transition:width .7s ease}
+.bar.bad>span{background:var(--bad);box-shadow:0 0 6px var(--bad)}
+.card .bl{font-size:10px;color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card.pulse{animation:cpulse .9s ease}
+@keyframes cpulse{0%{box-shadow:0 0 0 var(--c)}35%{box-shadow:0 0 18px var(--c)}100%{box-shadow:0 0 0 var(--c)}}
+
+/* 第 2 層: 辦公室 */
+#officeP{display:flex;flex-direction:column}
+#officeWrap{position:relative;flex:1;min-height:0}
+#office,#officeOv{position:absolute;inset:0;width:100%;height:100%;display:block}
+#office{image-rendering:pixelated}
+#replayTag{position:absolute;left:12px;top:8px;font-size:12px;color:var(--busy);text-shadow:0 0 6px var(--busy);display:none;background:rgba(10,10,18,.75);padding:3px 8px;border:1px solid rgba(255,210,63,.4)}
+#legend{display:flex;gap:10px;font-size:11px;color:var(--dim)}
+#legend span{display:flex;align-items:center;gap:4px}
+#warn{color:var(--busy);font-size:11px;overflow:hidden;text-overflow:ellipsis}
+
+/* 第 3 層: 資金曲線 */
+#eqP{display:flex;flex-direction:column}
+#eqBody{flex:1;display:flex;min-height:0}
+#eqWrap{flex:1;position:relative;min-width:0}
+#eqc{position:absolute;inset:0;width:100%;height:100%}
+#eqSide{width:440px;border-left:1px solid var(--line);padding:6px 12px;display:flex;flex-direction:column;gap:2px;min-width:0}
+#eqSide .row2{display:grid;grid-template-columns:1fr 1fr;column-gap:16px}
+#eqSide .lab{font-size:11px;color:var(--dim)}
+#bal{font-size:30px;font-weight:800;color:var(--ok);text-shadow:0 0 12px rgba(57,255,136,.6);line-height:1.05}
+#bal.na{color:var(--mute);text-shadow:none}
+#bal small{font-size:13px;color:var(--dim);font-weight:400}
+.kv{display:flex;justify-content:space-between;font-size:12px;gap:8px}
+.kv span:first-child{color:var(--dim)}
+#evlist{margin-top:3px;border-top:1px solid var(--line);padding-top:3px;font-size:11px;overflow:hidden;flex:1;line-height:15px}
+#evlist div{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--dim)}
+#evlist div b{color:var(--bad);font-weight:600}
+
+/* 第 4 層 */
+#bottom{display:grid;grid-template-columns:1.25fr 1fr;gap:10px;min-height:0}
+#klP,#parP{display:flex;flex-direction:column;min-height:0}
+#klBody{flex:1;display:flex;min-height:0}
+#klWrap{flex:1;position:relative;min-width:0}
+#klc{position:absolute;inset:0;width:100%;height:100%}
+#klSide{width:250px;border-left:1px solid var(--line);padding:6px 10px;font-size:12px;display:flex;flex-direction:column;gap:2px;overflow:hidden}
+#klSide .big{font-size:20px;font-weight:800}
+#klSide .sec{margin-top:5px;color:var(--mag);font-size:11px;border-top:1px solid var(--line);padding-top:4px}
+#chips{display:flex;gap:4px;overflow:hidden}
+#chips button{padding:1px 6px}
+#parBody{flex:1;overflow:auto;padding:7px 9px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-flow:row dense;gap:6px;align-content:start}
+.pg{border:1px solid var(--line);padding:4px 6px;min-width:0}
+.pg.tall{grid-row:span 2}
+.pg h4{margin:0 0 2px;font-size:11.5px;display:flex;justify-content:space-between;color:#fff}
+.tag{font-size:10px;padding:0 5px;border:1px solid var(--mute);color:var(--dim)}
+.tag.live{border-color:var(--ok);color:var(--ok);box-shadow:0 0 5px rgba(57,255,136,.5)}
+.pr{display:flex;justify-content:space-between;font-size:11px;gap:6px;padding:0 2px;line-height:15.5px}
+.pr span:first-child{color:var(--dim);white-space:nowrap}
+.pr span:last-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pr.chg{animation:chg 2.4s ease}
+@keyframes chg{0%,40%{background:rgba(255,47,214,.45)}100%{background:transparent}}
+#parFoot{font-size:11px;color:var(--mute);padding:4px 10px;border-top:1px solid var(--line);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* 覆蓋層 */
+#links{position:fixed;left:0;top:0;width:100vw;height:100vh;pointer-events:none;z-index:40}
+.flash{position:fixed;left:50%;top:44%;transform:translate(-50%,-50%);z-index:60;pointer-events:none;text-align:center;display:none}
+.flash .big{font-size:56px;font-weight:800;color:#fff;letter-spacing:.06em;padding:14px 34px;border:3px solid var(--bad);background:rgba(40,0,12,.86);
+  text-shadow:0 0 14px var(--bad),2px 0 0 #ff2fd6,-2px 0 0 #00e5ff;box-shadow:0 0 40px var(--bad),inset 0 0 30px rgba(255,51,85,.5);
+  animation:blink .45s steps(2) 6}
+.flash .det{margin-top:8px;font-size:15px;color:#ffd0d8;background:rgba(10,10,18,.85);display:inline-block;padding:4px 12px;border:1px solid var(--bad)}
+@keyframes blink{0%{opacity:1}50%{opacity:.25}}
+#drawer{position:fixed;right:0;top:0;bottom:0;width:440px;max-width:92vw;background:#0d0d18;border-left:2px solid var(--mag);box-shadow:-10px 0 30px rgba(255,47,214,.25);z-index:70;transform:translateX(105%);transition:transform .25s ease;display:flex;flex-direction:column}
+#drawer.open{transform:none}
+#drawer .dh{padding:10px 14px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px}
+#drawer .db{padding:10px 14px;overflow:auto;flex:1;font-size:12px;line-height:1.55}
+#drawer .ev{display:flex;gap:8px;border-bottom:1px dashed #1f1f33;padding:3px 0}
+#drawer .ev i{font-style:normal;color:var(--mute);flex:none}
+#veil{position:fixed;inset:0;z-index:80;background:rgba(10,10,18,.92);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;font-size:15px;color:var(--dim)}
+#veil .t{color:var(--mag);font-size:22px;font-weight:800;letter-spacing:.1em;text-shadow:0 0 12px var(--mag)}
+#errbar{position:fixed;left:50%;top:6px;transform:translateX(-50%);z-index:75;background:#2a0010;border:1px solid var(--bad);color:#ffd0d8;padding:6px 14px;font-size:13px;display:none;box-shadow:0 0 18px rgba(255,51,85,.5)}
+.tip{position:fixed;z-index:65;pointer-events:none;background:#0d0d18;border:1px solid var(--mag);padding:5px 8px;font-size:11.5px;display:none;white-space:pre;box-shadow:0 0 10px var(--mag-dim)}
+
+@media (max-width:1280px){
+  #frame{grid-template-rows:auto auto 340px 240px auto}
+  #cards{grid-template-columns:repeat(4,minmax(0,1fr))}
+  #bottom{grid-template-columns:1fr}
+  #klP{height:320px} #parBody{grid-template-columns:repeat(3,minmax(0,1fr))}
+  #pills{display:none}
+}
+@media (max-width:720px){
+  #frame{grid-template-rows:auto auto 600px 240px auto}
+  #cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #eqSide{width:170px} #klSide{display:none} #top .sub{display:none}
+  #parBody{grid-template-columns:1fr}
+  .flash .big{font-size:28px}
+}
+</style>
+</head>
+<body>
+<div id="frame">
+  <header id="top">
+    <div><div class="logo">APEX // AGENT OFFICE</div><div class="sub">TAMA/APEX 實況 · 本機 127.0.0.1 · 每 2 秒更新</div></div>
+    <div id="pills"></div>
+    <div id="conn"><span class="dot" id="connDot"></span><span id="connTxt">連線中</span></div>
+    <div id="clock"><div class="utc" id="utc">--:--:--</div><div class="tpe" id="tpe">UTC · 台北 --:--</div></div>
+  </header>
+
+  <section id="cards" aria-label="agent 狀態卡"></section>
+
+  <section class="panel" id="officeP">
+    <div class="ph"><b>形態辦公室</b><span id="offInfo">N/A</span><span id="warn"></span><span class="sp"></span>
+      <div id="legend"><span><i class="dot ok"></i>正常</span><span><i class="dot busy"></i>處理中</span><span><i class="dot alert"></i>警報</span><span><i class="dot na"></i>N/A</span></div>
+      <button id="btnReplay" title="照 state.json 裡每個動作的真實時間戳, 把最近一班重演一次">▶ 重播這一班</button>
+      <button id="btnAuto" class="on" title="每 10 分鐘自動重播一次最近一班(畫面左上會標「重播」)">自動重播</button>
+    </div>
+    <div id="officeWrap"><canvas id="office"></canvas><canvas id="officeOv"></canvas><div id="replayTag"></div></div>
+  </section>
+
+  <section class="panel" id="eqP">
+    <div class="ph"><b>資金曲線</b><span id="eqInfo">N/A</span><span class="sp"></span>
+      <button data-r="1">24H</button><button data-r="7">7D</button><button data-r="30" class="on">30D</button><button data-r="0">ALL</button>
+    </div>
+    <div id="eqBody">
+      <div id="eqWrap"><canvas id="eqc"></canvas></div>
+      <div id="eqSide">
+        <div class="lab">即時餘額(權益, USDT)</div>
+        <div id="bal" class="na">N/A</div>
+        <div class="row2"><div class="kv"><span>可用保證金</span><span id="bAvail" class="na">N/A</span></div>
+        <div class="kv"><span>未實現損益</span><span id="bUpnl" class="na">N/A</span></div>
+        <div class="kv"><span>區間報酬</span><span id="bRet" class="na">N/A</span></div>
+        <div class="kv"><span>區間最大回撤</span><span id="bDd" class="na">N/A</span></div></div>
+        <div class="src" id="bSrc">來源 N/A</div>
+        <div id="evlist"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="bottom">
+    <div class="panel" id="klP">
+      <div class="ph"><b>當前標的</b><span id="klSym">N/A</span><span id="klWhy" class="src"></span><span class="sp"></span><div id="chips"></div></div>
+      <div id="klBody"><div id="klWrap"><canvas id="klc"></canvas></div><div id="klSide"></div></div>
+    </div>
+    <div class="panel" id="parP">
+      <div class="ph"><b>即時參數</b><span class="src">tama_config(唯讀, 改值請走控制台)</span><span class="sp"></span><span id="parAge" class="src"></span></div>
+      <div id="parBody"></div>
+      <div id="parFoot">N/A</div>
+    </div>
+  </section>
+</div>
+
+<canvas id="links"></canvas>
+<div class="flash" id="flash"><div class="big" id="flashBig"></div><div><span class="det" id="flashDet"></span></div></div>
+<aside id="drawer" aria-hidden="true"><div class="dh"><span id="dTitle" style="font-weight:800"></span><span class="sp" style="flex:1"></span><button id="dClose">關閉 Esc</button></div><div class="db" id="dBody"></div></aside>
+<div id="veil"><div class="t">APEX // AGENT OFFICE</div><div id="veilMsg">連線本機伺服器 agent_office_server.py…</div></div>
+<div id="errbar"></div>
+<div class="tip" id="tip"></div>
+
+<script>
+"use strict";
+/* ====================== 共用 ====================== */
+const $ = s => document.querySelector(s);
+const POLL_MS = 2000;
+const C = {ok:"#39ff88", busy:"#ffd23f", alert:"#ff3355", na:"#5a6270", mag:"#ff2fd6"};
+let S = null, prevS = null, failN = 0, inflight = false, lastOkAt = 0;
+const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const isNum = v => typeof v === "number" && isFinite(v);
+let FF = getComputedStyle(document.body).fontFamily;   // 每格動畫都要用, 先存起來
+if(document.fonts && document.fonts.ready) document.fonts.ready.then(()=>{ FF = getComputedStyle(document.body).fontFamily; if(S){ drawEquity(); drawKline(); } });
+function fmtN(v, d=2){ return isNum(v) ? v.toLocaleString("en-US",{minimumFractionDigits:d,maximumFractionDigits:d}) : "N/A"; }
+function fmtPx(v){ if(!isNum(v)) return "N/A"; const a=Math.abs(v); return a>=1000? fmtN(v,2) : a>=1? v.toPrecision(6).replace(/0+$/,"").replace(/\.$/,"") : v.toPrecision(5); }
+function fmtPct(v, d=2, sign=true){ return isNum(v) ? ((sign && v>0?"+":"") + (v*100).toFixed(d) + "%") : "N/A"; }
+function fmtAge(s){ if(!isNum(s)) return "N/A"; s=Math.max(0,s); return s<90? Math.round(s)+" 秒前" : s<5400? Math.round(s/60)+" 分鐘前" : s<172800? (s/3600).toFixed(1)+" 小時前" : (s/86400).toFixed(1)+" 天前"; }
+function tpe(ms, withDate){ if(!isNum(ms)) return "N/A"; const d=new Date(ms+8*3600e3); const p=n=>String(n).padStart(2,"0");
+  return (withDate? p(d.getUTCMonth()+1)+"-"+p(d.getUTCDate())+" " : "")+p(d.getUTCHours())+":"+p(d.getUTCMinutes()); }
+function cls(v){ return isNum(v) ? (v>0?"pos":v<0?"neg":"") : "na"; }
+function sizeCanvas(cv){ const r=cv.getBoundingClientRect(), dpr=window.devicePixelRatio||1;
+  const w=Math.max(1,Math.round(r.width*dpr)), h=Math.max(1,Math.round(r.height*dpr));
+  if(cv.width!==w||cv.height!==h){cv.width=w;cv.height=h;} return {w:r.width,h:r.height,dpr}; }
+
+/* 數字滾動 */
+const tweens = new Map();
+function roll(el, to, fmt, dur=700){
+  if(!el) return;
+  if(!isNum(to)){ el.textContent = "N/A"; el.classList.add("na"); el._v = undefined; return; }
+  el.classList.remove("na");
+  const from = isNum(el._v) ? el._v : to;
+  el._v = to;
+  if(from === to){ el.textContent = fmt(to); return; }
+  const t0 = performance.now();
+  tweens.set(el, {from, to, fmt, t0, dur});
+  el.style.textShadow = to > from ? "0 0 12px #39ff88" : "0 0 12px #ff3355";
+  setTimeout(()=>{ el.style.textShadow=""; }, dur+400);
+}
+function stepTweens(now){
+  for(const [el, t] of tweens){
+    const k = Math.min(1, (now - t.t0)/t.dur), e = 1 - Math.pow(1-k, 3);
+    el.textContent = t.fmt(t.from + (t.to - t.from)*e);
+    if(k >= 1) { el.textContent = t.fmt(t.to); tweens.delete(el); }
+  }
+}
+
+/* ====================== 輪詢 ====================== */
+async function poll(){
+  if(inflight) return; inflight = true;
+  const ac = new AbortController(); const to = setTimeout(()=>ac.abort(), 6000);
+  try{
+    const r = await fetch("/api/state", {cache:"no-store", signal:ac.signal});
+    if(!r.ok) throw new Error("HTTP "+r.status);
+    const d = await r.json();
+    prevS = S; S = d; failN = 0; lastOkAt = Date.now();
+    $("#veil").style.display = "none"; $("#errbar").style.display = "none";
+    render();
+  }catch(e){
+    failN++;
+    if(failN >= 2){
+      const msg = "本機伺服器沒回應(" + (e.name==="AbortError"?"逾時":e.message) + ")。請確認 start_agent_office.bat 開出來的黑色視窗還開著。畫面停在 " + (lastOkAt? new Date(lastOkAt).toLocaleTimeString() : "—") + " 的資料。";
+      if(!S){ $("#veilMsg").textContent = msg; } else { $("#errbar").textContent = msg; $("#errbar").style.display = "block"; }
+    }
+  }finally{ clearTimeout(to); inflight = false; setConn(); }
+}
+function setConn(){
+  const ok = failN === 0 && lastOkAt;
+  $("#connDot").className = "dot " + (ok ? "ok" : failN ? "alert" : "na");
+  $("#connTxt").textContent = ok ? "2s 輪詢" : failN ? "斷線 ×"+failN : "連線中";
+}
+
+/* ====================== 頂列 ====================== */
+const PILLS = [
+  ["office","辦公室"],["tama","TAMA 記憶"],["balance","BingX 餘額"],["positions","BingX 持倉"],
+  ["kline","K 線"],["config","參數檔"],["killwatch","斬首規則"],["readback","設定回讀"]
+];
+const STALE = {office:26*3600, tama:180, balance:90, positions:90, kline:180, config:3*86400, killwatch:2*86400, readback:2*86400};
+function renderPills(){
+  const box = $("#pills"); const src = S.sources || {};
+  box.innerHTML = PILLS.map(([k, zh])=>{
+    const m = src[k] || {}; let st = "na", why = m.err || "";
+    if(m.ok){ st = (isNum(m.age_s) && m.age_s > STALE[k]) ? "busy" : "ok"; if(st==="busy") why = "資料偏舊 " + fmtAge(m.age_s); }
+    else if(m.err) st = "alert";
+    const tip = zh + "\n來源: " + (m.src||"N/A") + "\n資料時間: " + fmtAge(m.age_s) + (why? "\n狀態: "+why : "") + (m.note? "\n"+m.note : "");
+    return `<span class="pill" data-tip="${esc(tip)}"><i class="dot ${st}"></i>${esc(zh)}</span>`;
+  }).join("");
+}
+function tickClock(){
+  const d = new Date(), p = n=>String(n).padStart(2,"0");
+  $("#utc").textContent = "UTC " + p(d.getUTCHours())+":"+p(d.getUTCMinutes())+":"+p(d.getUTCSeconds());
+  const t = new Date(d.getTime()+8*3600e3);
+  $("#tpe").textContent = d.getUTCFullYear()+"-"+p(d.getUTCMonth()+1)+"-"+p(d.getUTCDate())+" · 台北 "+p(t.getUTCHours())+":"+p(t.getUTCMinutes());
+}
+
+/* ====================== 第 1 層: 卡片 ====================== */
+function renderCards(){
+  const box = $("#cards"); const ags = S.agents || [];
+  if(box.children.length !== ags.length){
+    box.innerHTML = ags.map(a=>`<div class="card" id="card-${a.key}" tabindex="0" role="button" style="--c:${a.color}" data-key="${a.key}">
+      <div class="hd"><i class="dot"></i><span class="zh">${esc(a.zh)}</span><span class="nm">${esc(a.name)}</span><span class="st"></span></div>
+      <div class="act"></div>
+      <div class="num"><span class="v">N/A</span><span class="u"></span><span class="l"></span></div>
+      <div class="bar"><span style="width:0"></span></div><div class="bl"></div></div>`).join("");
+    box.querySelectorAll(".card").forEach(el=>{
+      el.addEventListener("click", ()=>openDrawer(el.dataset.key));
+      el.addEventListener("keydown", e=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); openDrawer(el.dataset.key);} });
+    });
+  }
+  ags.forEach(a=>{
+    const el = $("#card-"+a.key); if(!el) return;
+    const st = replayBusy.has(a.key) ? "busy" : a.status;
+    el.querySelector(".hd .dot").className = "dot " + st;
+    el.querySelector(".st").textContent = replayBusy.has(a.key) ? "處理中(重播)" : (a.status_text || "N/A");
+    el.querySelector(".act").innerHTML = (a.action_t? `<i>${esc(a.action_t)}</i> ` : "") + esc(a.action || "N/A");
+    el.querySelector(".act").title = a.action || "";
+    const m = a.metric, v = el.querySelector(".num .v");
+    if(m && isNum(m.value)) roll(v, m.value, x=>Math.round(x).toString());
+    else { tweens.delete(v); v._v = undefined; v.textContent = m && m.value != null ? String(m.value) : "N/A"; v.classList.toggle("na", !m || m.value == null || m.value === "N/A"); }
+    el.querySelector(".num .u").textContent = m ? (m.unit||"") : "";
+    el.querySelector(".num .l").textContent = m ? m.label : "";
+    const b = a.bar, bar = el.querySelector(".bar");
+    bar.className = "bar" + (b && b.tone==="bad" ? " bad" : "");
+    bar.firstElementChild.style.width = b && isNum(b.v) ? (Math.max(0,Math.min(1,b.v))*100).toFixed(1)+"%" : "0";
+    el.querySelector(".bl").textContent = b ? b.label : "進度 N/A";
+  });
+}
+
+/* ====================== 卡片之間的發光連線 + 光點封包 ====================== */
+const linkCv = $("#links"); const links = [];
+function cardAnchor(key){ const el = $("#card-"+key); if(!el) return null; const r = el.getBoundingClientRect(); return {x:r.left+r.width/2, y:r.bottom, top:r.top}; }
+function linkCards(from, to){
+  const a = cardAnchor(from), b = cardAnchor(to); if(!a||!b) return;
+  links.push({from, to, t0: performance.now()});
+  const ea = $("#card-"+to); if(ea){ ea.classList.remove("pulse"); void ea.offsetWidth; ea.classList.add("pulse"); }
+}
+function drawLinks(now){
+  const {w,h,dpr} = sizeCanvas(linkCv); const c = linkCv.getContext("2d");
+  c.setTransform(dpr,0,0,dpr,0,0); c.clearRect(0,0,w,h);
+  for(let i=links.length-1;i>=0;i--){
+    const L = links[i], age = now - L.t0, a = cardAnchor(L.from), b = cardAnchor(L.to);
+    if(age > 1500 || !a || !b){ links.splice(i,1); continue; }
+    const dist = Math.abs(b.x - a.x), cy = Math.max(a.y, b.y) + Math.min(56, 20 + dist*0.08);
+    const col = (S && (S.agents||[]).find(x=>x.key===L.from)||{}).color || C.mag;
+    const fade = age < 600 ? 1 : Math.max(0, 1 - (age-600)/900);
+    c.save(); c.globalAlpha = fade; c.lineWidth = 2.2; c.strokeStyle = C.mag; c.shadowColor = C.mag; c.shadowBlur = 14;
+    c.beginPath(); c.moveTo(a.x, a.y); c.quadraticCurveTo((a.x+b.x)/2, cy, b.x, b.y); c.stroke();
+    const k = Math.min(1, age/600);   // 0.6 秒走完
+    for(let j=0;j<6;j++){
+      const kk = Math.max(0, k - j*0.035), u = 1-kk;
+      const x = u*u*a.x + 2*u*kk*(a.x+b.x)/2 + kk*kk*b.x, y = u*u*a.y + 2*u*kk*cy + kk*kk*b.y;
+      c.globalAlpha = fade*(1 - j/6); c.fillStyle = j? col : "#fff"; c.shadowColor = col; c.shadowBlur = 16;
+      c.beginPath(); c.arc(x, y, j? 3.2-j*0.4 : 4.2, 0, 7); c.fill();
+    }
+    c.restore();
+  }
+}
+
+/* ====================== 第 2 層: 等角像素辦公室 ====================== */
+const offCv = $("#office"), ovCv = $("#officeOv");
+const PX = 3, TW = 32, TH = 16;
+let OB = null;          // {bw,bh,buf,stat,desks:{key:{...}},W,H,dpr}
+const sprites = {};     // key -> {x,y,path:[],q:[],face,walkT,busyT}
+const bubbles = {};     // key -> {text,until}
+let replayBusy = new Set();
+const DESK_ORDER = ["shaper","sentinel","cost","lever","ledger","judge","calib","tama"];
+
+function iso(gx, gy, h){ return [OB.OX + (gx-gy)*TW/2, OB.OY + (gx+gy)*TH/2 - (h||0)]; }
+function toGrid(sx, sy){ const a=(sx-OB.OX)/(TW/2), b=(sy-OB.OY)/(TH/2); return [(a+b)/2, (b-a)/2]; }
+function poly(c, pts, fill, stroke){ c.beginPath(); c.moveTo(Math.round(pts[0][0]), Math.round(pts[0][1]));
+  for(let i=1;i<pts.length;i++) c.lineTo(Math.round(pts[i][0]), Math.round(pts[i][1])); c.closePath();
+  if(fill){c.fillStyle=fill;c.fill();} if(stroke){c.strokeStyle=stroke;c.lineWidth=1;c.stroke();} }
+function box(c, gx, gy, w, d, h, top, left, right, edge){
+  const A=iso(gx,gy,h),B=iso(gx+w,gy,h),Cc=iso(gx+w,gy+d,h),D=iso(gx,gy+d,h);
+  const Bb=iso(gx+w,gy,0),Cb=iso(gx+w,gy+d,0),Db=iso(gx,gy+d,0);
+  poly(c,[D,Cc,Cb,Db],left); poly(c,[B,Cc,Cb,Bb],right); poly(c,[A,B,Cc,D],top,edge);
+}
+function shade(hex, f){ const n=parseInt(hex.slice(1),16); let r=n>>16,g=n>>8&255,b=n&255;
+  r=Math.round(Math.min(255,r*f)); g=Math.round(Math.min(255,g*f)); b=Math.round(Math.min(255,b*f));
+  return "#"+((1<<24)+(r<<16)+(g<<8)+b).toString(16).slice(1); }
+function agentOf(key){ return S && (S.agents||[]).find(a=>a.key===key); }
+
+function layoutOffice(){
+  const {w,h,dpr} = sizeCanvas(offCv); sizeCanvas(ovCv);
+  const bw = Math.ceil(w/PX), bh = Math.ceil(h/PX);
+  const buf = OB && OB.bw===bw && OB.bh===bh ? OB.buf : document.createElement("canvas");
+  buf.width = bw; buf.height = bh;
+  const stat = document.createElement("canvas"); stat.width = bw; stat.height = bh;
+  const cols = w < 900 ? 2 : 4, nrow = Math.ceil(DESK_ORDER.length / cols);   // 窄螢幕(手機)改 2 欄 4 排
+  const rowsY = nrow === 2 ? [bh*0.45, bh*0.83] : Array.from({length:nrow}, (_, r)=> bh*(0.26 + r*0.66/(nrow-1)));
+  OB = {bw, bh, buf, stat, W:w, H:h, dpr, OX: bw/2, OY: -bh*0.9, desks:{}, rowsY};
+  const DW = 2.4, DD = 1.25;
+  DESK_ORDER.forEach((k, i)=>{
+    const r = Math.floor(i/cols), col = i%cols;
+    const sx = bw*(col+0.5)/cols + (nrow === 2 ? (r? bw*0.035 : -bw*0.035) : (col? -bw*0.07 : bw*0.01)), sy = rowsY[r];
+    let [gx, gy] = toGrid(sx, sy); gx -= DW/2; gy -= DD/2;
+    const seat = [gx + DW + 0.55, gy + DD*0.55];     // 自己的位置: 桌子右側, 面向桌面
+    const visit = [gx + DW + 0.75, gy + DD + 0.55];  // 別人來交件時站的位置: 座位右前
+    OB.desks[k] = {gx, gy, w:DW, d:DD, seat, visit, row:r};
+    if(!sprites[k]) sprites[k] = {g:[...seat], path:[], q:[], face:"back", walkT:0};
+    else if(!sprites[k].path.length) sprites[k].g = [...seat];
+  });
+  drawStatic();
+}
+function drawStatic(){
+  const c = OB.stat.getContext("2d"), {bw,bh} = OB;
+  c.fillStyle = "#0b0b16"; c.fillRect(0,0,bw,bh);
+  const [g0x,g0y] = toGrid(0,0), [g1x,g1y] = toGrid(bw,bh), [g2x,g2y] = toGrid(bw,0), [g3x,g3y] = toGrid(0,bh);
+  const xs=[g0x,g1x,g2x,g3x], ys=[g0y,g1y,g2y,g3y];
+  const gxMin=Math.floor(Math.min(...xs))-1, gxMax=Math.ceil(Math.max(...xs))+1, gyMin=Math.floor(Math.min(...ys))-1, gyMax=Math.ceil(Math.max(...ys))+1;
+  for(let gx=gxMin; gx<=gxMax; gx++) for(let gy=gyMin; gy<=gyMax; gy++){
+    const p=[iso(gx,gy),iso(gx+1,gy),iso(gx+1,gy+1),iso(gx,gy+1)];
+    if(p.every(q=>q[0]<-TW||q[0]>bw+TW||q[1]<-TH||q[1]>bh+TH)) continue;
+    poly(c, p, (gx+gy)%2? "#0e0e1b" : "#0c0c18", "rgba(255,47,214,.16)");
+  }
+  // 走道(兩排桌子中間)與桌下的代理色地光
+  for(let r=0; r<OB.rowsY.length-1; r++){
+    const ay0 = Math.round((OB.rowsY[r] + OB.rowsY[r+1])/2 + 4); c.fillStyle = "rgba(255,47,214,.05)"; c.fillRect(0, ay0-3, bw, 6);
+    c.fillStyle = "rgba(255,47,214,.22)"; for(let x=0; x<bw; x+=8) c.fillRect(x, ay0, 4, 1);
+  }
+  // 後牆: 深色牆面 + 霓虹邊 + 窗格
+  c.fillStyle = "#08080f"; c.fillRect(0, 0, bw, 6); c.fillStyle = "rgba(255,47,214,.85)"; c.fillRect(0, 6, bw, 1);
+  for(let x=14; x<bw*0.62; x+=46){ c.fillStyle = "#101026"; c.fillRect(x, 1, 30, 4); c.fillStyle = "rgba(0,229,255,.18)"; c.fillRect(x+1, 2, 28, 1); }
+  for(const k of DESK_ORDER){
+    const D = OB.desks[k], col = (agentOf(k)||{}).color || "#888";
+    const glow = [iso(D.gx-0.5,D.gy-0.5),iso(D.gx+D.w+0.5,D.gy-0.5),iso(D.gx+D.w+0.5,D.gy+D.d+1.3),iso(D.gx-0.5,D.gy+D.d+1.3)];
+    c.globalAlpha = 0.10; poly(c, glow, col); c.globalAlpha = 1;
+    box(c, D.gx-0.15, D.gy-0.15, D.w+0.3, D.d+0.3, 1, "#151526", "#101020", "#0d0d1a");          // 地墊
+    box(c, D.gx, D.gy, D.w, D.d, 9, "#2b2b44", "#1d1d30", "#171728", shade(col,0.9));             // 桌子
+    const [mx,my] = iso(D.gx + D.w*0.5, D.gy + 0.28, 9);
+    c.fillStyle="#22223a"; c.fillRect(Math.round(mx-1), Math.round(my-3), 2, 3);                   // 螢幕腳
+    c.fillStyle = "#07070d"; c.fillRect(Math.round(mx-13), Math.round(my-19), 26, 16);              // 螢幕框
+    c.fillStyle = shade(col,0.55); c.fillRect(Math.round(mx-13), Math.round(my-19), 26, 1); c.fillRect(Math.round(mx-13), Math.round(my-4), 26, 1);
+    c.fillRect(Math.round(mx-13), Math.round(my-19), 1, 16); c.fillRect(Math.round(mx+12), Math.round(my-19), 1, 16);
+    D.mon = [Math.round(mx-12), Math.round(my-18), 24, 14];
+    const [kx,ky] = iso(D.gx + D.w*0.5, D.gy + D.d*0.72, 9);                                         // 鍵盤
+    c.fillStyle="#3a3a58"; c.fillRect(Math.round(kx-5), Math.round(ky-1), 10, 2);
+    const [cx,cy] = iso(D.seat[0]+0.1, D.seat[1]);                                                    // 椅子
+    c.fillStyle="#1c1c2e"; c.fillRect(Math.round(cx-4), Math.round(cy-5), 8, 3); c.fillStyle="#26263c"; c.fillRect(Math.round(cx-1), Math.round(cy-2), 2, 2);
+    const [px2,py2] = iso(D.gx + D.w*0.5, D.gy + D.d, 6.5);                                           // 桌前名牌底
+    c.fillStyle = "#07070d"; c.fillRect(Math.round(px2-17), Math.round(py2-3), 34, 8); c.fillStyle = shade(col,0.7); c.fillRect(Math.round(px2-17), Math.round(py2+5), 34, 1);
+  }
+}
+function spriteXY(k){ const s = sprites[k]; return iso(s.g[0], s.g[1]); }
+function drawSprite(c, k, t){
+  const a = agentOf(k) || {}, s = sprites[k], col = a.color || "#888";
+  const [x0,y0] = spriteXY(k), x = Math.round(x0), y = Math.round(y0);
+  const walking = s.path.length > 0, busy = replayBusy.has(k) || a.status === "busy";
+  const f = Math.floor(t/140)%2;
+  c.fillStyle="rgba(0,0,0,.45)"; c.fillRect(x-4,y-1,8,2);
+  c.fillStyle="#24243a";                                                    // 腳
+  if(walking){ c.fillRect(x-3, y-5+(f?1:0), 2, 5-(f?1:0)); c.fillRect(x+1, y-5+(f?0:1), 2, 5-(f?0:1)); }
+  else { c.fillRect(x-3,y-5,2,5); c.fillRect(x+1,y-5,2,5); }
+  c.fillStyle = col; c.fillRect(x-4, y-12, 8, 7);                            // 身體
+  c.fillStyle = shade(col,0.65); c.fillRect(x-4, y-6, 8, 1);
+  const armUp = busy && !walking ? (Math.floor(t/110)%2) : 0;               // 打字
+  c.fillStyle = shade(col,0.8); c.fillRect(x-5, y-11-(armUp?1:0), 1, 4); c.fillRect(x+4, y-11-(armUp?0:1), 1, 4);
+  c.fillStyle = "#f1c9a5"; c.fillRect(x-3, y-18, 6, 6);                     // 頭
+  c.fillStyle = shade(col,0.45);
+  if(s.face==="back" && !walking){ c.fillRect(x-3,y-18,6,4); }
+  else { c.fillRect(x-3,y-18,6,2); c.fillStyle="#0a0a12"; c.fillRect(x-2,y-15,1,1); c.fillRect(x+1,y-15,1,1); }
+}
+function stepSprites(dt){
+  for(const k of DESK_ORDER){
+    const s = sprites[k]; if(!s) continue;
+    if(!s.path.length && s.q.length){ s.path = s.q.shift(); }
+    if(!s.path.length) continue;
+    const tgt = s.path[0];
+    if(tgt.wait){ tgt.wait -= dt; if(tgt.wait <= 0) s.path.shift(); continue; }
+    const dx = tgt[0]-s.g[0], dy = tgt[1]-s.g[1], d = Math.hypot(dx,dy), v = 7.5*dt;   // 格/秒
+    s.face = "front";
+    if(d <= v){ s.g = [tgt[0], tgt[1]]; s.path.shift(); if(!s.path.length) s.face = "back"; }
+    else { s.g = [s.g[0]+dx/d*v, s.g[1]+dy/d*v]; }
+  }
+}
+function walkTo(from, to){
+  if(!OB || !OB.desks[from] || !OB.desks[to]) return;
+  const A = OB.desks[from], B = OB.desks[to], s = sprites[from];
+  // 先走到桌前走道, 沿走道水平走到對方那一欄, 再走到對方座位旁交件(停 0.8 秒), 原路回座
+  const [hx, hy] = iso(A.seat[0], A.seat[1]), [vx, vy] = iso(B.visit[0], B.visit[1]);
+  const aisle = Math.max(hy, vy) + 3;
+  const pts = [[hx, aisle], [vx, aisle], [vx, vy]].map(q=>toGrid(q[0], q[1]));
+  const go = [pts[0], pts[1], pts[2], {wait:0.8}, pts[1], pts[0], [A.seat[0], A.seat[1]]];
+  if(s.path.length) s.q.push(go); else s.path = go;
+}
+
+function monitorChart(c, k, rect, sc, t){
+  const a = agentOf(k); if(!a || !a.monitor) { c.fillStyle="#55556e"; c.font=`${10*OB.dpr}px ${FF}`; c.textAlign="center"; c.fillText("N/A", rect[0]+rect[2]/2, rect[1]+rect[3]/2+4*OB.dpr); c.textAlign="left"; return; }
+  const m = a.monitor, col = a.color, [x,y,w,h] = rect, pad = 2*sc;
+  c.save(); c.beginPath(); c.rect(x,y,w,h); c.clip();
+  c.fillStyle = "rgba(255,255,255,.03)"; c.fillRect(x,y,w,h);
+  if(m.type === "line" || m.type === "lines"){
+    const ser = m.type === "line" ? [m.values||[]] : (m.series||[]);
+    const all = ser.flat().filter(isNum); if(!all.length){ c.restore(); return; }
+    const lo = Math.min(...all), hi = Math.max(...all), rg = (hi-lo)||1;
+    ser.forEach((vals, si)=>{
+      const v = vals.filter(isNum); if(v.length < 2) return;
+      c.strokeStyle = m.type==="line" ? C.ok : [col,"#ff8a5c","#39ff88"][si%3]; c.lineWidth = 1.2*sc/2.2; c.shadowColor = c.strokeStyle; c.shadowBlur = 4;
+      c.beginPath(); v.forEach((q,i)=>{ const X = x+pad+i*(w-2*pad)/(v.length-1), Y = y+h-pad-(q-lo)/rg*(h-2*pad); i? c.lineTo(X,Y) : c.moveTo(X,Y); }); c.stroke();
+    });
+  } else {
+    const vals = m.values||[], n = vals.length, mx = Math.max(1, ...vals.filter(isNum));
+    const bwid = (w-2*pad)/Math.max(1,n);
+    vals.forEach((v,i)=>{
+      const bh2 = isNum(v) ? Math.max(1, v/mx*(h-2*pad-7*sc/2.2)) : 0;
+      c.fillStyle = (m.colors && m.colors[i]) || (m.tone==="bad" ? C.alert : col); c.shadowColor = c.fillStyle; c.shadowBlur = 4;
+      c.fillRect(x+pad+i*bwid+bwid*0.18, y+h-pad-bh2, bwid*0.64, bh2);
+    });
+  }
+  c.restore();
+}
+function drawOffice(now, dt){
+  if(!OB) return;
+  stepSprites(dt);
+  const b = OB.buf.getContext("2d");
+  b.drawImage(OB.stat, 0, 0);
+  // 由後往前畫小人(依等角深度)
+  DESK_ORDER.slice().sort((p,q)=> (sprites[p].g[0]+sprites[p].g[1]) - (sprites[q].g[0]+sprites[q].g[1])).forEach(k=>drawSprite(b, k, now));
+  const c = offCv.getContext("2d"); c.imageSmoothingEnabled = false;
+  c.drawImage(OB.buf, 0, 0, OB.bw*PX*OB.dpr, OB.bh*PX*OB.dpr);
+  // 全解析度覆蓋層: 螢幕圖表 / 名牌 / 狀態色點 / 對話泡泡
+  const o = ovCv.getContext("2d"), sc = PX*OB.dpr, ff = FF;
+  o.setTransform(1,0,0,1,0,0); o.clearRect(0,0,ovCv.width,ovCv.height);
+  o.save(); o.font = `800 ${12*OB.dpr}px ${ff}`; o.textAlign = "right"; o.fillStyle = "#ff2fd6"; o.shadowColor = "#ff2fd6"; o.shadowBlur = 10*OB.dpr*(0.75+0.25*Math.sin(now/700));
+  o.fillText("SHAPE OFFICE · 形態辦公室 · 影子帳不下單", ovCv.width - 14*OB.dpr, 5.4*sc); o.restore();
+  for(const k of DESK_ORDER){
+    const D = OB.desks[k], a = agentOf(k) || {}; if(!D.mon) continue;
+    monitorChart(o, k, [D.mon[0]*sc, D.mon[1]*sc, D.mon[2]*sc, D.mon[3]*sc], sc, now);
+    const [lx0, ly0] = iso(D.gx + D.w*0.5, D.gy + D.d, 6.5);
+    o.font = `700 ${10.5*OB.dpr}px ${ff}`; o.textAlign = "center"; o.fillStyle = a.color || "#999";
+    o.fillText((a.zh||"") + " " + (a.name||k), lx0*sc, (ly0+3.2)*sc);
+    const st = replayBusy.has(k) ? "busy" : (a.status||"na");
+    const [qx, qy] = iso(D.gx + D.w*0.5, D.gy + D.d + 0.6);
+    o.font = `${10*OB.dpr}px ${ff}`; o.fillStyle = C[st] || "#8a8aa6"; o.globalAlpha = 0.9;
+    o.fillText("● " + (replayBusy.has(k)? "處理中(重播)" : (a.status_text||"N/A")), qx*sc, Math.min(ovCv.height - 4*OB.dpr, (qy+2)*sc)); o.globalAlpha = 1; o.textAlign = "left";
+    const [sx, sy] = spriteXY(k), pul = 0.65 + 0.35*Math.sin(now/260 + k.length);
+    o.save(); o.fillStyle = C[st] || C.na; o.shadowColor = o.fillStyle; o.shadowBlur = 14*OB.dpr*pul;
+    o.beginPath(); o.arc(sx*sc, (sy-23)*sc, 4.2*OB.dpr, 0, 7); o.fill(); o.restore();
+    const bub = bubbles[k];
+    if(bub && bub.until > now){
+      const txt = bub.text.length > 34 ? bub.text.slice(0,33)+"…" : bub.text;
+      o.font = `${11*OB.dpr}px ${ff}`; const tw = o.measureText(txt).width + 14*OB.dpr, th = 20*OB.dpr;
+      let bx = sx*sc - tw/2, by = (sy-28)*sc - th; bx = Math.max(4, Math.min(ovCv.width - tw - 4, bx)); by = Math.max(4, by);
+      o.fillStyle = "rgba(10,10,18,.92)"; o.strokeStyle = a.color || C.mag; o.lineWidth = 1.2*OB.dpr;
+      o.fillRect(bx, by, tw, th); o.strokeRect(bx, by, tw, th);
+      o.fillStyle = "#fff"; o.textAlign = "left"; o.fillText(txt, bx + 7*OB.dpr, by + 14*OB.dpr);
+    }
+  }
+}
+function officeHit(ev){
+  if(!OB) return null; const r = ovCv.getBoundingClientRect(); const x = (ev.clientX - r.left)/PX, y = (ev.clientY - r.top)/PX;
+  let best = null, bd = 1e9;
+  for(const k of DESK_ORDER){ const D = OB.desks[k]; const [cx, cy] = iso(D.gx+D.w/2, D.gy+D.d/2); const [sx, sy] = spriteXY(k);
+    const d = Math.min(Math.hypot(x-cx, y-cy), Math.hypot(x-sx, y-sy+8)); if(d < bd){ bd = d; best = k; } }
+  return bd < 40 ? best : null;
+}
+
+/* 重播: 照 state.json 裡每個事件的真實時間戳演一遍; 換桌 = 交接(連線 + 小人走過去) */
+let replay = null, lastAutoReplay = 0, autoReplay = true, lastShift = null;
+function startReplay(){
+  const o = S && S.office; if(!o || !(o.timeline||[]).length) return;
+  stopReplay();
+  const tl = o.timeline, t0 = tl[0].t, items = []; let prev = -1;
+  const hset = new Map((o.handoffs||[]).map(h=>[h.t+"|"+h.to, h]));
+  tl.forEach(e=>{ const at = Math.max((e.t - t0)*1000, prev + 650); prev = at; items.push({at, e, h: hset.get(e.t+"|"+e.desk)}); });
+  replay = {t0: performance.now() + 400, items, i: 0, shift: o.generated, n: tl.length};
+  lastAutoReplay = Date.now();
+  $("#replayTag").style.display = "block";
+}
+function stopReplay(){ replay = null; replayBusy = new Set(); $("#replayTag").style.display = "none"; }
+function stepReplay(now){
+  if(!replay) return;
+  const el = now - replay.t0;
+  while(replay.i < replay.items.length && replay.items[replay.i].at <= el){
+    const it = replay.items[replay.i++], k = it.e.desk;
+    replayBusy = new Set([k]);
+    bubbles[k] = {text: it.e.text, until: now + 2600};
+    if(it.h){ linkCards(it.h.from, it.h.to); walkTo(it.h.from, it.h.to); }
+    $("#replayTag").textContent = `▶ 重播 ${replay.shift||""} 班 · ${it.e.hms} · ${replay.i}/${replay.n} · ${(agentOf(k)||{}).zh||""} ${it.e.text.slice(0,40)}`;
+    if(S) renderCards();
+  }
+  if(replay.i >= replay.items.length && el > replay.items[replay.items.length-1].at + 3000){ stopReplay(); if(S) renderCards(); }
+}
+
+function renderOfficeHead(){
+  const o = S.office;
+  if(!o){ $("#offInfo").innerHTML = `<span class="na">N/A · ${esc((S.sources.office||{}).err||"讀不到 state.json")}</span>`; $("#btnReplay").disabled = true; return; }
+  $("#btnReplay").disabled = !(o.timeline||[]).length;
+  const secs = o.shift && isNum(o.shift.seconds) ? o.shift.seconds.toFixed(0)+" 秒" : "N/A";
+  $("#offInfo").textContent = `${o.status||""} · 第 ${o.n_runs ?? "N/A"} 班 ${o.generated||"N/A"} · 跑 ${secs} · ${o.running? "● 正在跑班" : "下一班 07:40(台北)"}`;
+  $("#warn").textContent = o.warning ? "⚠ " + o.warning : "";
+  $("#warn").title = (o.notices||[]).map(t=>t.replace(/<[^>]+>/g,"")).join("\n");
+  if(lastShift && o.generated && o.generated !== lastShift) startReplay();   // 新的一班剛跑完 -> 自動演一次
+  lastShift = o.generated;
+}
+
+/* ====================== 第 3 層: 資金曲線 ====================== */
+let eqRange = 30, eqHover = null;
+const eqCv = $("#eqc");
+function eqData(){
+  const e = S && S.equity; if(!e) return {ser:[], vol:[]};
+  let ser = e.series || [], vol = e.vol || [];
+  if(eqRange && ser.length){ const cut = ser[ser.length-1][0] - eqRange*86400e3; ser = ser.filter(p=>p[0] >= cut); vol = vol.filter(v=>v[0] >= cut - 86400e3); }
+  return {ser, vol};
+}
+function drawEquity(){
+  const {w,h,dpr} = sizeCanvas(eqCv), c = eqCv.getContext("2d"); c.setTransform(dpr,0,0,dpr,0,0); c.clearRect(0,0,w,h);
+  const ff = FF; c.font = `11px ${ff}`;
+  const {ser, vol} = eqData();
+  if(ser.length < 2){ c.fillStyle = "#55556e"; c.font = `14px ${ff}`; c.textAlign = "center";
+    c.fillText("N/A · " + (((S||{}).sources||{}).tama||{}).err || "還沒有權益資料", w/2, h/2); c.textAlign = "left"; return; }
+  const L = 58, R = 10, T = 10, B = 22, VH = Math.round((h-T-B)*0.24), PH = h-T-B-VH-6;
+  const x0 = ser[0][0], x1 = ser[ser.length-1][0], xr = (x1-x0)||1;
+  const vals = ser.map(p=>p[1]); let lo = Math.min(...vals), hi = Math.max(...vals); const pad = (hi-lo)*0.08 || hi*0.02 || 1;
+  lo = Math.max(lo >= 0 ? 0 : -Infinity, lo - pad); hi += pad;   // 權益不會是負的, 軸也不畫負
+  const X = t => L + (t-x0)/xr*(w-L-R), Y = v => T + (hi-v)/(hi-lo)*PH;
+  c.strokeStyle = "rgba(255,47,214,.10)"; c.lineWidth = 1; c.fillStyle = "#6a6a88"; c.textAlign = "right";
+  for(let i=0;i<=4;i++){ const v = lo + (hi-lo)*i/4, y = Y(v); c.beginPath(); c.moveTo(L,y); c.lineTo(w-R,y); c.stroke(); c.fillText(fmtN(v, v<100?2:0), L-6, y+4); }
+  c.textAlign = "center"; const nx = Math.max(2, Math.floor((w-L-R)/130));
+  for(let i=0;i<=nx;i++){ const t = x0 + xr*i/nx; c.textAlign = i===0? "left" : i===nx? "right" : "center"; c.fillText(tpe(t, true).slice(0, eqRange===1? 11 : 5), X(t), h-6); }
+  // 成交量柱(每日真實結算筆數: 綠=賺 紅=賠 灰=平)
+  const vmax = Math.max(1, ...vol.map(v=>v[1]+v[2]+v[3])), vy0 = T+PH+6+VH, dayW = Math.max(2, 86400e3/xr*(w-L-R)*0.7);
+  vol.forEach(v=>{ const x = X(v[0]+43200e3) - dayW/2; if(x < L || x + dayW > w-R+1) return; let y = vy0;
+    [[v[1],"rgba(57,255,136,.75)"],[v[2],"rgba(255,51,85,.75)"],[v[3],"rgba(138,138,166,.6)"]].forEach(([n,col])=>{ if(!n) return; const hh = n/vmax*VH; c.fillStyle = col; c.fillRect(x, y-hh, dayW, hh); y -= hh; }); });
+  c.textAlign = "left";
+  // 面積 + 發光折線
+  const g = c.createLinearGradient(0, T, 0, T+PH); g.addColorStop(0, "rgba(57,255,136,.28)"); g.addColorStop(1, "rgba(57,255,136,0)");
+  c.beginPath(); ser.forEach((p,i)=>{ const x=X(p[0]), y=Y(p[1]); i? c.lineTo(x,y) : c.moveTo(x,y); }); c.lineTo(X(x1), T+PH); c.lineTo(X(x0), T+PH); c.closePath(); c.fillStyle = g; c.fill();
+  c.save(); c.strokeStyle = "#39ff88"; c.lineWidth = 2; c.shadowColor = "#39ff88"; c.shadowBlur = 12; c.lineJoin = "round";
+  c.beginPath(); ser.forEach((p,i)=>{ const x=X(p[0]), y=Y(p[1]); i? c.lineTo(x,y) : c.moveTo(x,y); }); c.stroke(); c.restore();
+  const lp = ser[ser.length-1]; c.fillStyle = "#fff"; c.shadowColor = "#39ff88"; c.shadowBlur = 10; c.beginPath(); c.arc(X(lp[0]), Y(lp[1]), 3.5, 0, 7); c.fill(); c.shadowBlur = 0;
+  if(eqHover != null && eqHover > L && eqHover < w-R){
+    const t = x0 + (eqHover-L)/(w-L-R)*xr; let bi = 0, bd = 1e18; ser.forEach((p,i)=>{ const d = Math.abs(p[0]-t); if(d<bd){bd=d;bi=i;} });
+    const p = ser[bi], x = X(p[0]), y = Y(p[1]);
+    c.strokeStyle = "rgba(255,255,255,.35)"; c.setLineDash([3,3]); c.beginPath(); c.moveTo(x,T); c.lineTo(x,T+PH); c.stroke(); c.setLineDash([]);
+    const txt = `${tpe(p[0], true)} 台北  權益 ${fmtN(p[1])} USDT`; c.font = `12px ${ff}`; const tw = c.measureText(txt).width + 12;
+    const bx = Math.min(w-R-tw, Math.max(L, x+8)); c.fillStyle = "rgba(10,10,18,.92)"; c.strokeStyle = "#39ff88"; c.fillRect(bx, T+2, tw, 20); c.strokeRect(bx, T+2, tw, 20);
+    c.fillStyle = "#fff"; c.textAlign = "left"; c.fillText(txt, bx+6, T+16);
+  }
+}
+function renderEquity(){
+  const e = S.equity || {}, ser = e.series || [], {ser: rs} = eqData();
+  const vmax = Math.max(0, ...(e.vol||[]).map(v=>v[1]+v[2]+v[3]));
+  $("#eqInfo").textContent = ser.length ? `${ser.length} 點 · ${tpe(ser[0][0], true)} → ${tpe(ser[ser.length-1][0], true)}(台北)· 底部柱 = 每日結算筆數(綠賺/紅賠/灰平, 單日最多 ${vmax})· 來源 ${(S.sources.tama||{}).src||"N/A"}` : "N/A · " + ((S.sources.tama||{}).err || "");
+  const b = e.balance;
+  const bal = $("#bal");
+  if(b && isNum(b.equity)){ roll(bal, b.equity, v=>fmtN(v)); bal.classList.remove("na"); } else { bal.textContent = "N/A"; bal._v = undefined; bal.classList.add("na"); }
+  roll($("#bAvail"), b && b.available, v=>fmtN(v));
+  const up = $("#bUpnl"); roll(up, b && b.upnl, v=>(v>0?"+":"")+fmtN(v)); up.className = b && isNum(b.upnl) ? cls(b.upnl) : "na";
+  if(rs.length >= 2){
+    const r0 = rs[0][1], r1 = rs[rs.length-1][1]; const ret = r1/r0 - 1; let pk = -1e18, dd = 0; rs.forEach(p=>{ pk = Math.max(pk, p[1]); dd = Math.min(dd, p[1]/pk - 1); });
+    const er = $("#bRet"); er.textContent = fmtPct(ret); er.className = cls(ret);
+    const ed = $("#bDd"); ed.textContent = fmtPct(dd); ed.className = dd < 0 ? "neg" : "";
+  } else { $("#bRet").textContent = "N/A"; $("#bRet").className = "na"; $("#bDd").textContent = "N/A"; $("#bDd").className = "na"; }
+  $("#bSrc").textContent = b ? `來源 ${b.src} · ${fmtAge(S.now - b.ts)}` : `來源 N/A · BingX: ${(S.sources.balance||{}).err||"N/A"}`;
+  $("#bSrc").title = $("#bSrc").textContent;
+  const evs = ((S.risk||{}).events||[]).slice(0, 4);
+  $("#evlist").innerHTML = '<div style="color:#ff2fd6">最近風控事件(點一下重播閃燈)</div>' + (evs.length ? evs.map((x,i)=>`<div data-ev="${i}" style="cursor:pointer" title="${esc(x.detail)}"><b>${esc(x.ts? tpe(x.ts*1000,true) : "現在")}</b> ${esc(x.zh)} · ${esc(x.detail)}</div>`).join("") : '<div class="na">沒有紀錄</div>');
+  drawEquity();
+}
+eqCv.addEventListener("mousemove", e=>{ eqHover = e.clientX - eqCv.getBoundingClientRect().left; drawEquity(); });
+eqCv.addEventListener("mouseleave", ()=>{ eqHover = null; drawEquity(); });
+document.querySelectorAll("#eqP .ph button").forEach(btn=>btn.addEventListener("click", ()=>{
+  eqRange = +btn.dataset.r; document.querySelectorAll("#eqP .ph button").forEach(b=>b.classList.toggle("on", b===btn)); if(S) renderEquity(); }));
+$("#evlist").addEventListener("click", e=>{ const d = e.target.closest("[data-ev]"); if(!d || !S) return; const x = ((S.risk||{}).events||[])[+d.dataset.ev]; if(x) flashEvent(x, true); });
+
+/* ====================== 第 4 層左: K 線分析 ====================== */
+const klCv = $("#klc"); let klHover = null;
+function drawKline(){
+  const {w,h,dpr} = sizeCanvas(klCv), c = klCv.getContext("2d"); c.setTransform(dpr,0,0,dpr,0,0); c.clearRect(0,0,w,h);
+  const ff = FF; c.font = `11px ${ff}`;
+  const k = S && S.kline;
+  if(!k || !(k.bars||[]).length){ c.fillStyle = "#55556e"; c.font = `14px ${ff}`; c.textAlign = "center";
+    c.fillText("N/A · " + ((((S||{}).sources||{}).kline||{}).err || "K 線讀取中"), w/2, h/2); c.textAlign = "left"; return; }
+  const bars = k.bars, n = bars.length, L = 8, R = 64, T = 10, B = 20, VH = Math.round((h-T-B)*0.18), PH = h-T-B-VH-4;
+  const ctx = S.kline_ctx || {}, lines = [];
+  (ctx.open||[]).forEach(p=>{ if(isNum(p.entry)) lines.push([p.entry,"#ffffff","進 "+p.tag]); if(isNum(p.sl)) lines.push([p.sl,C.alert,"SL"]); if(isNum(p.tp)) lines.push([p.tp,C.ok,"TP"]); });
+  (ctx.bx||[]).forEach(p=>{ if(isNum(p.avg)) lines.push([p.avg,"#ffffff","均價"]); if(isNum(p.liq) && p.liq>0) lines.push([p.liq,"#ff8a5c","強平"]); });
+  (ctx.verdicts||[]).forEach(v=>{ if(isNum(v.stop_px)) lines.push([v.stop_px,C.busy,"判官止損"]); });
+  let lo = Math.min(...bars.map(b=>b[3])), hi = Math.max(...bars.map(b=>b[2]));
+  const lo0 = lo, hi0 = hi; lines.forEach(l=>{ if(l[0] > lo0*0.85 && l[0] < hi0*1.15){ lo = Math.min(lo, l[0]); hi = Math.max(hi, l[0]); } });
+  const pad = (hi-lo)*0.05 || 1; lo -= pad; hi += pad;
+  const cw = (w-L-R)/n, X = i => L + i*cw + cw/2, Y = v => T + (hi-v)/(hi-lo)*PH;
+  c.strokeStyle = "rgba(255,47,214,.09)"; c.fillStyle = "#6a6a88"; c.textAlign = "left";
+  for(let i=0;i<=4;i++){ const v = lo+(hi-lo)*i/4, y = Y(v); c.beginPath(); c.moveTo(L,y); c.lineTo(w-R,y); c.stroke(); c.fillText(fmtPx(v), w-R+5, y+4); }
+  for(let i=0;i<n;i+=Math.max(1,Math.round(n/6))){ c.textAlign = i===0? "left" : "center"; c.fillText(tpe(bars[i][0], true), i===0? L : X(i), h-5); }
+  const vmax = Math.max(...bars.map(b=>b[5]||0)) || 1;
+  bars.forEach((b,i)=>{ const up = b[4] >= b[1], col = up? C.ok : C.alert; c.fillStyle = up? "rgba(57,255,136,.35)" : "rgba(255,51,85,.35)";
+    const vh = (b[5]||0)/vmax*VH; c.fillRect(X(i)-cw*0.35, T+PH+4+VH-vh, cw*0.7, vh);
+    c.strokeStyle = col; c.lineWidth = 1; c.beginPath(); c.moveTo(X(i), Y(b[2])); c.lineTo(X(i), Y(b[3])); c.stroke();
+    const y1 = Y(Math.max(b[1],b[4])), y2 = Y(Math.min(b[1],b[4])); c.fillStyle = col; c.fillRect(X(i)-cw*0.32, y1, cw*0.64, Math.max(1, y2-y1)); });
+  const ema = (k.analysis||{}).ema20_series || [];
+  c.save(); c.strokeStyle = C.mag; c.lineWidth = 1.6; c.shadowColor = C.mag; c.shadowBlur = 8; c.beginPath(); let st = false;
+  ema.forEach((v,i)=>{ if(!isNum(v)) return; const x = X(i), y = Y(v); st? c.lineTo(x,y) : c.moveTo(x,y); st = true; }); c.stroke(); c.restore();
+  c.fillStyle = C.mag; c.textAlign = "left"; c.fillText("EMA20", L+4, T+12);
+  lines.forEach(([v,col,lab])=>{ if(v < lo || v > hi) return; const y = Y(v); c.strokeStyle = col; c.setLineDash([5,4]); c.beginPath(); c.moveTo(L,y); c.lineTo(w-R,y); c.stroke(); c.setLineDash([]);
+    c.fillStyle = col; c.fillRect(w-R+1, y-8, R-2, 16); c.fillStyle = "#0a0a12"; c.fillText(lab, w-R+4, y+4); });
+  (ctx.trades||[]).forEach(t=>{ [[t.open_ts,t.entry,"▲"],[t.ts,t.exit,"✕"]].forEach(([ts,px,s])=>{ if(!isNum(ts)||!isNum(px)) return; const ms = ts*1000; if(ms < bars[0][0] || ms > bars[n-1][0]+3600e3) return;
+    const i = Math.min(n-1, Math.max(0, Math.round((ms - bars[0][0])/3600e3))); c.fillStyle = s==="✕" ? ((t.r||0)>0? C.ok : C.alert) : "#fff"; c.textAlign = "center"; c.fillText(s, X(i), Y(px)+4); }); });
+  if(klHover != null){ const i = Math.floor((klHover-L)/cw); if(i>=0 && i<n){ const b = bars[i];
+    c.strokeStyle = "rgba(255,255,255,.3)"; c.setLineDash([3,3]); c.beginPath(); c.moveTo(X(i),T); c.lineTo(X(i),T+PH); c.stroke(); c.setLineDash([]);
+    const txt = `${tpe(b[0],true)}  O ${fmtPx(b[1])} H ${fmtPx(b[2])} L ${fmtPx(b[3])} C ${fmtPx(b[4])}`; c.font = `11.5px ${ff}`; const tw = c.measureText(txt).width+12;
+    c.fillStyle = "rgba(10,10,18,.92)"; c.strokeStyle = C.mag; c.fillRect(L+4, T+18, tw, 20); c.strokeRect(L+4, T+18, tw, 20); c.fillStyle = "#fff"; c.textAlign = "left"; c.fillText(txt, L+10, T+32); } }
+}
+function renderKline(){
+  const k = S.kline, a = k && k.analysis, ctx = S.kline_ctx || {};
+  $("#klSym").textContent = (S.kline_sym || "N/A") + " · 1h";
+  $("#klWhy").textContent = "選它的理由: " + (S.kline_why||"N/A") + " · " + (k ? `${k.src} · ${fmtAge(k.age_s)}` : ((S.sources.kline||{}).err||""));
+  const ch = $("#chips"), cands = S.kline_cands || [];
+  ch.innerHTML = `<button data-sym="" title="自動挑(持倉 > 最近成交 > 判官最高信心 > BTC)">自動</button>` + cands.slice(0,6).map(x=>`<button data-sym="${esc(x.sym)}" class="${x.sym===S.kline_sym?"on":""}" title="${esc(x.why)}">${esc(x.sym.replace("-USDT",""))}</button>`).join("");
+  let html = "";
+  if(!a){ html = `<div class="na">N/A · ${esc((S.sources.kline||{}).err||"沒有 K 線")}</div>`; }
+  else {
+    html += `<div class="big">${fmtPx(a.last)}</div><div class="${cls(a.chg24)}">24h ${fmtPct(a.chg24)}</div>`;
+    html += `<div class="kv"><span>24h 高/低</span><span>${fmtPx(a.hi24)} / ${fmtPx(a.lo24)}</span></div>`;
+    html += `<div class="kv"><span>EMA20 / 50</span><span>${fmtPx(a.ema20)} / ${fmtPx(a.ema50)}</span></div>`;
+    const tr = a.above_ema20 == null ? "N/A" : (a.above_ema20 ? "價在 EMA20 上" : "價在 EMA20 下") + (isNum(a.ema20_slope5) ? (a.ema20_slope5 > 0 ? " · 均線上彎" : " · 均線下彎") : "");
+    html += `<div class="kv"><span>趨勢</span><span class="${a.above_ema20? "pos" : a.above_ema20===false? "neg" : "na"}">${tr}</span></div>`;
+    html += `<div class="kv"><span>ATR14</span><span>${fmtPx(a.atr)}(${fmtPct(a.atr_pct,2,false)})</span></div>`;
+    html += `<div class="kv"><span>樣本</span><span>${a.n} 根 1h</span></div>`;
+  }
+  (ctx.open||[]).slice(0,2).forEach(p=>{ html += `<div class="sec">${esc(p.tag)} ${p.pending?"掛單":"持倉"} ${esc(p.dir)}</div>
+    <div class="kv"><span>進場</span><span>${fmtPx(p.entry)}</span></div><div class="kv"><span>停損</span><span class="neg">${fmtPx(p.sl)}${a && isNum(p.sl)? " ("+fmtPct(p.sl/a.last-1)+")" : ""}</span></div>
+    <div class="kv"><span>停利</span><span class="pos">${fmtPx(p.tp)}</span></div>`; });
+  (ctx.bx||[]).slice(0,1).forEach(p=>{ html += `<div class="sec">BingX 實際持倉 ${esc(p.side)}</div><div class="kv"><span>均價/標記</span><span>${fmtPx(p.avg)} / ${fmtPx(p.mark)}</span></div><div class="kv"><span>未實現</span><span class="${cls(p.upnl)}">${fmtN(p.upnl)}</span></div><div class="kv"><span>強平價</span><span>${fmtPx(p.liq)}</span></div>`; });
+  (ctx.verdicts||[]).slice(0,1).forEach(v=>{ html += `<div class="sec">判官 ${esc(v.date||"")}</div><div class="kv"><span>方向/信心</span><span class="${v.dir>0?"pos":v.dir<0?"neg":""}">${v.dir>0?"多":v.dir<0?"空":"不做"} · ${isNum(v.conf)?v.conf.toFixed(2):"N/A"}</span></div>
+    <div class="kv"><span>槓桿/止損</span><span>${v.lev??"N/A"}x / ${fmtPx(v.stop_px)}</span></div><div style="color:#8a8aa6;font-size:11px" title="${esc(v.reason)}">認錯條件: ${esc(v.wrong_if||"N/A")}</div>`; });
+  const tr = (ctx.trades||[]).slice(0,3);
+  if(tr.length) html += `<div class="sec">這檔最近成交</div>` + tr.map(t=>`<div class="kv"><span>${esc(t.tag)} ${tpe((t.ts||0)*1000,true)}</span><span class="${cls(t.r)}">${isNum(t.r)? (t.r>0?"+":"")+t.r.toFixed(2)+"R" : "N/A"}</span></div>`).join("");
+  $("#klSide").innerHTML = html;
+  drawKline();
+}
+klCv.addEventListener("mousemove", e=>{ klHover = e.clientX - klCv.getBoundingClientRect().left; drawKline(); });
+klCv.addEventListener("mouseleave", ()=>{ klHover = null; drawKline(); });
+$("#chips").addEventListener("click", async e=>{ const b = e.target.closest("button"); if(!b) return;
+  try{ await fetch("/api/pin?sym=" + encodeURIComponent(b.dataset.sym||""), {cache:"no-store"}); }catch(_){} setTimeout(poll, 300); setTimeout(poll, 1500); });
+
+/* ====================== 第 4 層右: 參數面板 ====================== */
+function fmtParam(v, f){
+  if(v === null || v === undefined) return '<span class="na">N/A</span>';
+  if(f === "bool") return v === true ? '<span class="pos">開</span>' : v === false ? '<span style="color:#8a8aa6">關</span>' : esc(v);
+  if(f === "bool_bad") return v === true ? '<span class="neg">停機中</span>' : v === false ? '<span class="pos">正常</span>' : esc(v);
+  if(f === "pct") return isNum(v) ? (v*100).toFixed(v*100 < 1 ? 3 : 2).replace(/0+$/,"").replace(/\.$/,"") + "%" : esc(v);
+  if(f === "x") return isNum(v) ? v + "x" : esc(v);
+  if(f === "h") return isNum(v) ? v + " 小時" : esc(v);
+  return esc(v);
+}
+let prevParams = null;
+function renderParams(){
+  const p = S.params, body = $("#parBody");
+  if(!p){ body.innerHTML = `<div class="na">N/A · ${esc((S.sources.config||{}).err || "讀不到 tama_config_live_snapshot.json")}</div>`; $("#parFoot").textContent = "N/A"; return; }
+  const cur = {}; p.groups.forEach(g=>g.rows.forEach(r=>cur[r.k] = JSON.stringify(r.v)));
+  body.innerHTML = p.groups.map(g=>`<div class="pg${g.rows.length >= 8 ? " tall" : ""}"><h4>${esc(g.title)}${g.key==="global" ? "" : `<span class="tag ${g.live===true?"live":""}">${g.live===true?"實彈":"停用"}</span>`}</h4>${
+    g.rows.map(r=>`<div class="pr${prevParams && prevParams[r.k] !== undefined && prevParams[r.k] !== cur[r.k] ? " chg" : ""}" title="${esc(r.k)}"><span>${esc(r.zh)}</span><span>${fmtParam(r.v, r.fmt)}</span></div>`).join("")}</div>`).join("")
+    + `<div class="pg"><h4>AUTO 礦機策略<span class="tag ${p.auto.live? "live":""}">${p.auto.live}/${p.auto.n} 實彈</span></h4>${
+      (p.auto.states||[]).map(s=>`<div class="pr" title="${esc(s.id)}"><span>${esc(String(s.id||"").replace(/^AUTO_/,"").slice(0,22))}</span><span>${esc(s.state||"")} ${s.live? '<span class="pos">實彈</span>' : ""}</span></div>`).join("") || '<div class="na">沒有</div>'}</div>`;
+  prevParams = cur;
+  $("#parAge").textContent = "檔案 " + fmtAge(p.file_age_s);
+  $("#parFoot").textContent = `設定 ${p.updated||"N/A"} · ${p.by||""} · GitHub ${p.gh_sha||"N/A"} ${p.applied===true? "= D 已套用" : p.applied===false? "≠ D 套用中的 "+p.applied_sha : ""} · 回讀 ${p.readback_at||"N/A"}`;
+  $("#parFoot").title = $("#parFoot").textContent;
+}
+
+/* ====================== 風控事件閃燈 ====================== */
+const seenEv = new Set(); let evPrimed = false; const flashQ = []; let flashing = false;
+function handleRisk(){
+  const evs = (S.risk||{}).events || [];
+  if(!evPrimed){ evs.forEach(e=>seenEv.add(e.id)); evPrimed = true; return; }   // 開頁前就有的不閃(點右側清單可重播)
+  evs.slice().reverse().forEach(e=>{ if(!seenEv.has(e.id)){ seenEv.add(e.id); flashEvent(e, false); } });
+}
+function flashEvent(e, isReplay){ flashQ.push({e, isReplay}); if(!flashing) nextFlash(); }
+function nextFlash(){
+  const it = flashQ.shift(); if(!it){ flashing = false; return; } flashing = true;
+  $("#flashBig").textContent = it.e.en;
+  $("#flashDet").textContent = (it.isReplay ? "【重播】" : "") + (it.e.ts ? tpe(it.e.ts*1000, true) + " 台北 · " : "") + it.e.zh + " · " + it.e.detail;
+  const f = $("#flash"); f.style.display = "block"; const big = $("#flashBig"); big.style.animation = "none"; void big.offsetWidth; big.style.animation = "";
+  const ct = $("#card-tama"); if(ct){ ct.classList.remove("pulse"); void ct.offsetWidth; ct.classList.add("pulse"); }
+  setTimeout(()=>{ f.style.display = "none"; setTimeout(nextFlash, 250); }, 2900);
+}
+
+/* ====================== 側欄(點卡片/小人) ====================== */
+let drawerKey = null;
+function openDrawer(key){ drawerKey = key; renderDrawer(); $("#drawer").classList.add("open"); $("#drawer").setAttribute("aria-hidden","false"); }
+function closeDrawer(){ drawerKey = null; $("#drawer").classList.remove("open"); $("#drawer").setAttribute("aria-hidden","true"); }
+function renderDrawer(){
+  if(!drawerKey || !S) return; const a = agentOf(drawerKey); if(!a) return;
+  $("#dTitle").innerHTML = `<span style="color:${a.color}">${esc(a.zh)} ${esc(a.name)}</span> <span style="color:#8a8aa6;font-weight:400">${esc(a.role)}</span>`;
+  let h = `<div class="kv"><span>狀態</span><span>${esc(a.status_text)}</span></div><div class="kv"><span>最後一班</span><span>${esc(a.last_run||"N/A")}</span></div>`;
+  if(a.did) h += `<div class="kv"><span>這班做了</span><span>${esc(a.did)}</span></div>`;
+  if(a.next) h += `<div class="kv"><span>下一班</span><span>${esc(a.next)}</span></div>`;
+  if(a.key === "tama"){
+    const t = S.tama || {};
+    h += `<div class="kv"><span>主迴圈心跳</span><span>${isNum(t.heartbeat)? fmtAge(S.now - t.heartbeat) : "N/A"}</span></div>`;
+    const br = t.breaker || {}; h += `<div class="kv"><span>總開關 / 回撤停機 / 日損上限</span><span>${br.killswitch?"開":"關"} / ${br.dd_halt?"開":"關"} / ${br.daily_loss_limit_hit?"觸發":"未觸發"}</span></div>`;
+    h += `<h4 style="color:#ff2fd6">持倉與掛單(${(t.open||[]).length})</h4>` + ((t.open||[]).map(p=>`<div class="ev"><i>${esc(p.tag)}</i>${esc(p.sym)} ${esc(p.dir)} 進 ${fmtPx(p.entry)} SL ${fmtPx(p.sl)} TP ${fmtPx(p.tp)}${p.pending?" (掛單)":""}</div>`).join("") || '<div class="na">沒有</div>');
+    h += `<h4 style="color:#ff2fd6">最近結算(共 ${t.n_trades ?? "N/A"} 筆)</h4>` + ((t.recent||[]).map(x=>`<div class="ev"><i>${tpe((x.ts||0)*1000,true)}</i>${esc(x.tag)} ${esc(x.sym)} ${esc(x.dir)} <span class="${cls(x.r)}">${isNum(x.r)? x.r.toFixed(2)+"R":"N/A"}</span> ${esc(x.reason)}</div>`).join("") || '<div class="na">沒有</div>');
+  } else {
+    const evs = ((S.office||{}).timeline||[]).filter(e=>e.desk === a.key);
+    h += `<h4 style="color:#ff2fd6">這一班的每一句(${evs.length}, 真實時間)</h4>` + (evs.map(e=>`<div class="ev"><i>${esc(e.hms)}</i><span>${esc(e.text)}</span></div>`).join("") || '<div class="na">沒有事件</div>');
+    const hs = ((S.office||{}).handoffs||[]).filter(x=>x.from===a.key || x.to===a.key);
+    if(hs.length) h += `<h4 style="color:#ff2fd6">交接</h4>` + hs.map(x=>`<div class="ev"><i>${esc((agentOf(x.from)||{}).zh)}→${esc((agentOf(x.to)||{}).zh)}</i><span>${esc(x.text)}</span></div>`).join("");
+  }
+  $("#dBody").innerHTML = h;
+}
+$("#dClose").addEventListener("click", closeDrawer);
+document.addEventListener("keydown", e=>{ if(e.key === "Escape") closeDrawer(); });
+ovCv.addEventListener("click", e=>{ const k = officeHit(e); if(k) openDrawer(k); });
+ovCv.addEventListener("mousemove", e=>{ ovCv.style.cursor = officeHit(e) ? "pointer" : "default"; });
+
+/* 小提示 */
+const tip = $("#tip");
+document.addEventListener("mouseover", e=>{ const t = e.target.closest("[data-tip]"); if(!t){ tip.style.display = "none"; return; } tip.textContent = t.dataset.tip; tip.style.display = "block"; });
+document.addEventListener("mousemove", e=>{ if(tip.style.display === "block"){ tip.style.left = Math.min(innerWidth - tip.offsetWidth - 8, e.clientX + 12) + "px"; tip.style.top = (e.clientY + 14) + "px"; } });
+
+/* ====================== 主迴圈 ====================== */
+$("#btnReplay").addEventListener("click", startReplay);
+$("#btnAuto").addEventListener("click", ()=>{ autoReplay = !autoReplay; $("#btnAuto").classList.toggle("on", autoReplay); });
+let firstRender = true;
+function render(){
+  renderPills(); renderCards(); renderOfficeHead(); renderEquity(); renderKline(); renderParams(); handleRisk(); renderDrawer();
+  if(firstRender){ firstRender = false; layoutOffice(); setTimeout(startReplay, 1500); }
+  if(autoReplay && !replay && Date.now() - lastAutoReplay > 10*60e3) startReplay();
+}
+let lastT = performance.now();
+function frame(now){
+  const dt = Math.min(0.1, (now - lastT)/1000); lastT = now;
+  stepTweens(now); stepReplay(now);
+  if(OB) drawOffice(now, dt);
+  drawLinks(now);
+  requestAnimationFrame(frame);
+}
+let rz = null;
+window.addEventListener("resize", ()=>{ clearTimeout(rz); rz = setTimeout(()=>{ if(S){ layoutOffice(); drawEquity(); drawKline(); } }, 120); });
+tickClock(); setInterval(tickClock, 1000);
+poll(); setInterval(poll, POLL_MS);
+requestAnimationFrame(frame);
+</script>
+</body>
+</html>
