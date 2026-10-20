@@ -1,6 +1,6 @@
 {
- "ts": "2026-10-20T15:20:05",
- "data_ts": "2026-10-20T15:20:01",
+ "ts": "2026-10-20T16:20:06",
+ "data_ts": "2026-10-20T16:20:01",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
@@ -150,11 +150,11 @@
    "q": "影子晉升: cS_brk_low25<0+coil>=0.6+atr_r>=1.2|TP4R 在 stock 市場前瞻 78 筆 EV +0",
    "rec": "B"
   },
-  "line": "近 24 小時: 自動裁決 1 件、自動修復/回滾 0 件。下一個自動到期 D229(2026-10-22), 沒人異議就採建議 B。成形雷達: 成形中 449 檔／已成形 52 檔(全條件 52)(跨 5 市場; 宇宙 434 檔, 休市排除 307)。預言帳：2049 則前瞻在等結算、持牌 6／預言者 325。消息：近 24h 1248 則／高重要 21 則／最新一則「Arista Networks Is Outgrowing The Market」(來源 1 個停抓中)｜實證：20 類消息裡 0 類會動價格、4 類不會、16 類樣本不足(事件 n=280)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 81 則發言、提到 CPI×3／GOLD×3／TSLA×3、淨多空 +1.9。今日事件：2 件(最重要 GE 財報 19:00)／黑窗中：否。影子: 追蹤中 1055 單／已結 4003 單(live 3091＋登記日回填 912)／105 個規格在追；最接近晉升的 cS_brk_low25<0+coil>=0.6+imp(stock) 已達 n=108 EV=+1.302R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=38 EV-0.624、SC1 n=29 EV-1.006、SC3 n=178 EV-0.098；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 267 筆 EV-0.284R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 50%(1/2)。",
+  "line": "近 24 小時: 自動裁決 1 件、自動修復/回滾 0 件。下一個自動到期 D229(2026-10-22), 沒人異議就採建議 B。成形雷達: 成形中 517 檔／已成形 60 檔(全條件 60)(跨 5 市場; 宇宙 434 檔, 休市排除 307)。預言帳：2045 則前瞻在等結算、持牌 4／預言者 325。消息：近 24h 1272 則／高重要 21 則／最新一則「Arista Networks Is Outgrowing The Market」(來源 1 個停抓中)｜實證：20 類消息裡 0 類會動價格、4 類不會、16 類樣本不足(事件 n=280)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 81 則發言、提到 CPI×3／GOLD×3／TSLA×3、淨多空 +1.9。今日事件：2 件(最重要 GE 財報 19:00)／黑窗中：否。影子: 追蹤中 1073 單／已結 4000 單(live 3091＋登記日回填 909)／105 個規格在追；最接近晉升的 cS_brk_low25<0+coil>=0.6+imp(stock) 已達 n=108 EV=+1.302R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=38 EV-0.624、SC1 n=29 EV-1.006、SC3 n=178 EV-0.098；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 267 筆 EV-0.284R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 50%(1/2)。",
   "radar": {
-   "forming": 449,
-   "fired": 52,
-   "fired_full": 52,
+   "forming": 517,
+   "fired": 60,
+   "fired_full": 60,
    "markets": [
     "commodity",
     "crypto",
@@ -164,22 +164,22 @@
    ],
    "universe_fresh": 434,
    "stale_excluded": 307,
-   "ts_utc": "2026-10-20T06:35",
+   "ts_utc": "2026-10-20T07:35",
    "age_h": 0.8
   },
   "forecast": {
-   "pending": 2049,
-   "licensed": 6,
+   "pending": 2045,
+   "licensed": 4,
    "forecasters": 325,
-   "n_forecasts": 45861,
-   "n_resolved": 43812,
-   "asOf": "2026-10-20T06:40:13"
+   "n_forecasts": 45918,
+   "n_resolved": 43873,
+   "asOf": "2026-10-20T07:40:14"
   },
   "shadow": {
-   "n_open": 1055,
-   "n_closed": 4003,
+   "n_open": 1073,
+   "n_closed": 4000,
    "n_live": 3091,
-   "n_post_reg": 912,
+   "n_post_reg": 909,
    "n_backfill": 0,
    "n_specs": 105,
    "best": {
@@ -198,7 +198,7 @@
      "n_live": 108,
      "n_post_reg": 0,
      "ev": 1.3024,
-     "random_z": 0.85,
+     "random_z": 0.87,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": false
@@ -229,18 +229,18 @@
     }
    ],
    "eta_promo": null,
-   "opens_per_day": 174.4,
+   "opens_per_day": 175.6,
    "rate_days": 14,
-   "ts_utc": "2026-10-20T06:40"
+   "ts_utc": "2026-10-20T07:40"
   },
   "news": {
-   "n_24h": 1248,
+   "n_24h": 1272,
    "n_hi": 21,
    "by_category": {
-    "stock": 377,
-    "macro": 113,
-    "commodity_fx": 331,
-    "crypto": 427
+    "stock": 374,
+    "macro": 114,
+    "commodity_fx": 353,
+    "crypto": 431
    },
    "sources_green": 39,
    "sources_red": 1,
@@ -250,7 +250,7 @@
     "src": "yahoo_finance",
     "ts": "2026-10-19T20:17:21Z"
    },
-   "run_at": "2026-10-20T07:18:01",
+   "run_at": "2026-10-20T08:18:01",
    "impact": {
     "line": "｜實證：20 類消息裡 0 類會動價格、4 類不會、16 類樣本不足(事件 n=280)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 20,
@@ -304,7 +304,7 @@
       "short": 0
      }
     ],
-    "run_at": "2026-10-20T07:09:01"
+    "run_at": "2026-10-20T08:09:01"
    }
   },
   "calendar": {
@@ -331,13 +331,13 @@
     "source": "nasdaq_earnings",
     "blackout": "1.0h/1.0h"
    },
-   "age_h": 1.0,
+   "age_h": 2.0,
    "ts": "2026-10-20T06:20:02"
   },
   "live_shadow": {
    "window": {
     "from": "2026-09-01",
-    "to": "2026-10-20T06:45"
+    "to": "2026-10-20T07:45"
    },
    "n_closed": 267,
    "n_open": 6,
@@ -349,7 +349,7 @@
     "pf": 0.623,
     "sum_r": -75.75
    },
-   "ts": "2026-10-20T06:45",
+   "ts": "2026-10-20T07:45",
    "per": {
     "B1": {
      "n": 6,
@@ -415,12 +415,12 @@
     "funding_missing": 0
    },
    "n_open": 0,
-   "ts": "2026-10-20T07:10:04Z"
+   "ts": "2026-10-20T08:10:04Z"
   }
  },
  "north_star": {
   "ts": "2026-10-20T08:00:02",
-  "age_h": 7.3,
+  "age_h": 8.3,
   "stale": false,
   "risk_light": "red",
   "risk_why": "最大 24h 權益跌幅 93.8%(上限 20.0)、熔斷 1次(上限 1)",
@@ -486,11 +486,11 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-10-20T07:05",
+  "attendance": "supervision_state.json @ 2026-10-20T08:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
   "calendar": "calendar_board.json @ 2026-10-20T06:20:02",
-  "news": "news_board.json @ 2026-10-20T07:18:01",
+  "news": "news_board.json @ 2026-10-20T08:18:01",
   "north_star": "goal_state.json @ 2026-10-20T08:00:02",
   "rules": "brief_rules.json v1.0"
  },
