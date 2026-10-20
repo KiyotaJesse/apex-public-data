@@ -1,6 +1,6 @@
 {
- "ts": "2026-10-20T07:20:05",
- "data_ts": "2026-10-20T07:20:02",
+ "ts": "2026-10-20T08:10:06",
+ "data_ts": "2026-10-20T08:10:04",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
@@ -166,11 +166,11 @@
    "q": "停用條件觸發: AUTO 的規則 AUTO_stress_fail:cS_brk_low25<0+coil>=0.6+atr_r>=1.2|",
    "rec": "A"
   },
-  "line": "近 24 小時: 自動裁決 4 件、自動修復/回滾 0 件。下一個自動到期 D232(2026-10-20), 沒人異議就採建議 A。成形雷達: 成形中 1638 檔／已成形 84 檔(全條件 84)(跨 5 市場; 宇宙 570 檔, 休市排除 67)。預言帳：2091 則前瞻在等結算、持牌 5／預言者 325。消息：近 24h 1333 則／高重要 23 則／最新一則「Arista Networks Is Outgrowing The Market」(來源 1 個停抓中)｜實證：20 類消息裡 0 類會動價格、4 類不會、16 類樣本不足(事件 n=280)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 41 則發言、提到 TSLA×3／GEOPOL×1／CPI×1、淨多空 +0.0。今日事件：2 件(最重要 GE 財報 19:00)／黑窗中：否。影子: 追蹤中 942 單／已結 4002 單(live 3079＋登記日回填 923)／102 個規格在追；最接近晉升的 cS_brk_low25<0+coil>=0.6+imp(stock) 已達 n=108 EV=+1.302R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=38 EV-0.624、SC1 n=29 EV-1.006、SC3 n=178 EV-0.098；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 267 筆 EV-0.284R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 50%(1/2)。",
+  "line": "近 24 小時: 自動裁決 4 件、自動修復/回滾 0 件。下一個自動到期 D232(2026-10-20), 沒人異議就採建議 A。成形雷達: 成形中 1177 檔／已成形 98 檔(全條件 98)(跨 5 市場; 宇宙 570 檔, 休市排除 67)。預言帳：2091 則前瞻在等結算、持牌 6／預言者 325。消息：近 24h 1363 則／高重要 24 則／最新一則「Arista Networks Is Outgrowing The Market」(來源 1 個停抓中)｜實證：20 類消息裡 0 類會動價格、4 類不會、16 類樣本不足(事件 n=280)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 41 則發言、提到 TSLA×3／GEOPOL×1／CPI×1、淨多空 +0.0。今日事件：2 件(最重要 GE 財報 19:00)／黑窗中：否。影子: 追蹤中 955 單／已結 4000 單(live 3079＋登記日回填 921)／102 個規格在追；最接近晉升的 cS_brk_low25<0+coil>=0.6+imp(stock) 已達 n=108 EV=+1.302R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=38 EV-0.624、SC1 n=29 EV-1.006、SC3 n=178 EV-0.098；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 267 筆 EV-0.284R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 50%(1/2)。",
   "radar": {
-   "forming": 1638,
-   "fired": 84,
-   "fired_full": 84,
+   "forming": 1177,
+   "fired": 98,
+   "fired_full": 98,
    "markets": [
     "commodity",
     "crypto",
@@ -180,22 +180,22 @@
    ],
    "universe_fresh": 570,
    "stale_excluded": 67,
-   "ts_utc": "2026-10-19T22:35",
-   "age_h": 0.8
+   "ts_utc": "2026-10-19T23:35",
+   "age_h": 0.6
   },
   "forecast": {
    "pending": 2091,
-   "licensed": 5,
+   "licensed": 6,
    "forecasters": 325,
-   "n_forecasts": 45396,
-   "n_resolved": 43305,
-   "asOf": "2026-10-19T22:40:13"
+   "n_forecasts": 45455,
+   "n_resolved": 43364,
+   "asOf": "2026-10-19T23:40:14"
   },
   "shadow": {
-   "n_open": 942,
-   "n_closed": 4002,
+   "n_open": 955,
+   "n_closed": 4000,
    "n_live": 3079,
-   "n_post_reg": 923,
+   "n_post_reg": 921,
    "n_backfill": 0,
    "n_specs": 102,
    "best": {
@@ -214,7 +214,7 @@
      "n_live": 108,
      "n_post_reg": 0,
      "ev": 1.3024,
-     "random_z": 0.57,
+     "random_z": 0.6,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": false
@@ -226,7 +226,7 @@
      "n_live": 82,
      "n_post_reg": 0,
      "ev": 1.2435,
-     "random_z": 0.5,
+     "random_z": 0.49,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": false
@@ -245,18 +245,18 @@
     }
    ],
    "eta_promo": null,
-   "opens_per_day": 166.8,
+   "opens_per_day": 167.4,
    "rate_days": 14,
-   "ts_utc": "2026-10-19T22:40"
+   "ts_utc": "2026-10-19T23:40"
   },
   "news": {
-   "n_24h": 1333,
-   "n_hi": 23,
+   "n_24h": 1363,
+   "n_hi": 24,
    "by_category": {
-    "stock": 390,
-    "macro": 113,
-    "crypto": 454,
-    "commodity_fx": 376
+    "stock": 398,
+    "macro": 117,
+    "crypto": 465,
+    "commodity_fx": 383
    },
    "sources_green": 39,
    "sources_red": 1,
@@ -266,7 +266,7 @@
     "src": "yahoo_finance",
     "ts": "2026-10-19T20:17:21Z"
    },
-   "run_at": "2026-10-19T23:18:01",
+   "run_at": "2026-10-20T00:03:01",
    "impact": {
     "line": "｜實證：20 類消息裡 0 類會動價格、4 類不會、16 類樣本不足(事件 n=280)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 20,
@@ -320,7 +320,7 @@
       "short": 1
      }
     ],
-    "run_at": "2026-10-19T23:09:01"
+    "run_at": "2026-10-20T00:09:01"
    }
   },
   "calendar": {
@@ -347,13 +347,13 @@
     "source": "nasdaq_earnings",
     "blackout": "1.0h/1.0h"
    },
-   "age_h": 1.0,
+   "age_h": 1.8,
    "ts": "2026-10-19T22:20:02"
   },
   "live_shadow": {
    "window": {
     "from": "2026-09-01",
-    "to": "2026-10-19T22:45"
+    "to": "2026-10-19T23:45"
    },
    "n_closed": 267,
    "n_open": 6,
@@ -365,7 +365,7 @@
     "pf": 0.623,
     "sum_r": -75.75
    },
-   "ts": "2026-10-19T22:45",
+   "ts": "2026-10-19T23:45",
    "per": {
     "B1": {
      "n": 6,
@@ -431,12 +431,12 @@
     "funding_missing": 0
    },
    "n_open": 0,
-   "ts": "2026-10-19T23:10:04Z"
+   "ts": "2026-10-20T00:10:06Z"
   }
  },
  "north_star": {
-  "ts": "2026-10-19T08:00:03",
-  "age_h": 23.3,
+  "ts": "2026-10-20T08:00:02",
+  "age_h": 0.2,
   "stale": false,
   "risk_light": "red",
   "risk_why": "最大 24h 權益跌幅 93.8%(上限 20.0)、熔斷 1次(上限 1)",
@@ -466,23 +466,23 @@
     "id": "M1",
     "name": "第一支樣本外為正的策略",
     "pct": 60.0,
-    "note": "最佳規格 94/30 筆; 壓測七項 未過; 待決成立 否",
-    "status": "unknown",
-    "est": "未知",
+    "note": "最佳規格 108/30 筆; 壓測七項 未過; 待決成立 否",
+    "status": "ahead",
+    "est": "2026-11-09",
     "jesse": "2026-11-30",
-    "delta": "無預估日",
-    "path": "M1 最短路徑: 最接近晉升的是 cS_brk_low25<0+coil>=0.6+imp(stock) -- 還差 0 筆(目前 94 筆 EV +1.479, 預估 未知)。"
+    "delta": "提前 21 天",
+    "path": "M1 最短路徑: D256 2026-10-26 到期, 建議 A, 壓力測試尚未測到(壓 stress_test 還沒跑或這案不在名單) -- 到期無異議即成立, 成立後才進晉升產線。"
    },
    {
     "id": "M2",
     "name": "月 R 連三個月為正",
     "pct": 0,
     "note": "本月 4 筆 -5.77R／連正 0/3 月",
-    "status": "unknown",
-    "est": "未知",
+    "status": "late",
+    "est": "2027-03-26",
     "jesse": "2027-02-28",
-    "delta": "無預估日",
-    "path": "M2 最短路徑: 本月 4 筆 -5.77R, 連正 0/3 月; 還缺 3 個正月(預估 未知)。"
+    "delta": "延後 26 天",
+    "path": "M2 最短路徑: 本月 4 筆 -5.77R, 連正 0/3 月; 還缺 3 個正月(預估 2027-03-26)。"
    },
    {
     "id": "M3",
@@ -490,9 +490,9 @@
     "pct": 0,
     "note": "權益達目標 0%(起算 2026-09-16)",
     "status": "late",
-    "est": "2032-04-13",
+    "est": "2032-04-14",
     "jesse": "2029-05-31",
-    "delta": "延後 1048 天",
+    "delta": "延後 1049 天",
     "path": "M3 最短路徑: 以目前斜率永不達標(近 90 天 -5.09R, 月報酬 -3.4%) —— M3 是 M2 的結果, 這個月唯一能做的是把 M1 往前推。"
    }
   ]
@@ -502,12 +502,12 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-10-19T23:05",
+  "attendance": "supervision_state.json @ 2026-10-20T00:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
   "calendar": "calendar_board.json @ 2026-10-19T22:20:02",
-  "news": "news_board.json @ 2026-10-19T23:18:01",
-  "north_star": "goal_state.json @ 2026-10-19T08:00:03",
+  "news": "news_board.json @ 2026-10-20T00:03:01",
+  "north_star": "goal_state.json @ 2026-10-20T08:00:02",
   "rules": "brief_rules.json v1.0"
  },
  "rules_version": "1.0"
