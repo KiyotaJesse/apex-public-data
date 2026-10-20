@@ -1,6 +1,6 @@
 {
- "ts": "2026-10-20T22:20:05",
- "data_ts": "2026-10-20T22:20:02",
+ "ts": "2026-10-20T23:20:06",
+ "data_ts": "2026-10-20T23:20:02",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
@@ -15,7 +15,7 @@
    "巢健康度 0 低於 85",
    "你有事項 0 天內到期",
    "SLO 超支 8 項",
-   "有 16 件行動項目逾期(我的)"
+   "有 15 件行動項目逾期(我的)"
   ],
   "n_red": 4,
   "n_amber": 4
@@ -26,7 +26,7 @@
    "v": "0",
    "unit": "/100",
    "tone": "red",
-   "sub": "扣分: 病蟻 7 隻 -45、逾期行動 16 件 -10"
+   "sub": "扣分: 病蟻 7 隻 -45、逾期行動 15 件 -10"
   },
   {
    "k": "本月策略 R",
@@ -131,6 +131,14 @@
    "due_in": 2,
    "late": false,
    "howto": "nightshift_sentinel_run.log 10/17 21:53/22:13/22:33/22:53、10/18 05:33;"
+  },
+  {
+   "id": "AI296",
+   "title": "D199 t 關退化值: shadow_tracker.py t_crse_day() 日簇<2 回 None(分類器擋改碼) → 貼 py",
+   "due": "2026-10-22",
+   "due_in": 2,
+   "late": false,
+   "howto": "10/20 首輪真跑 2 支 n_days=1 規格 t=1.2e16/8.3e15 過 t 關; 今天 promo_ok 仍被 n>=30"
   }
  ],
  "auto": {
@@ -150,11 +158,11 @@
    "q": "影子晉升: cS_brk_low25<0+coil>=0.6+atr_r>=1.2|TP4R 在 stock 市場前瞻 78 筆 EV +0",
    "rec": "B"
   },
-  "line": "近 24 小時: 自動裁決 1 件、自動修復/回滾 0 件。下一個自動到期 D229(2026-10-22), 沒人異議就採建議 B。成形雷達: 成形中 963 檔／已成形 54 檔(全條件 54)(跨 5 市場; 宇宙 436 檔, 休市排除 305)。預言帳：2011 則前瞻在等結算、持牌 6／預言者 325。消息：近 24h 1246 則／高重要 22 則／最新一則「USO, USO Gain Premarket As Brent Crude H」(來源 1 個停抓中)｜實證：20 類消息裡 0 類會動價格、4 類不會、16 類樣本不足(事件 n=280)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 72 則發言、提到 GOLD×4／CPI×3／AMZN×2、淨多空 +1.9。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 1289 單／已結 4004 單(live 3098＋登記日回填 906)／106 個規格在追；最接近晉升的 cS_brk_low25<0+coil>=0.6+imp(stock) 已達 n=108 EV=+1.302R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=38 EV-0.624、SC1 n=29 EV-1.006、SC3 n=178 EV-0.098；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 267 筆 EV-0.284R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 50%(1/2)。",
+  "line": "近 24 小時: 自動裁決 1 件、自動修復/回滾 0 件。下一個自動到期 D229(2026-10-22), 沒人異議就採建議 B。成形雷達: 成形中 1056 檔／已成形 118 檔(全條件 118)(跨 5 市場; 宇宙 551 檔, 休市排除 88)。預言帳：1997 則前瞻在等結算、持牌 8／預言者 325。消息：近 24h 1212 則／高重要 25 則／最新一則「USO, USO Gain Premarket As Brent Crude H」(來源 1 個停抓中)｜實證：20 類消息裡 0 類會動價格、4 類不會、16 類樣本不足(事件 n=280)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 72 則發言、提到 GOLD×4／GEOPOL×3／CPI×3、淨多空 +1.9。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 1310 單／已結 4000 單(live 3100＋登記日回填 900)／106 個規格在追；最接近晉升的 cS_brk_low25<0+coil>=0.6+imp(stock) 已達 n=108 EV=+1.302R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=38 EV-0.624、SC1 n=29 EV-1.006、SC3 n=178 EV-0.098；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 267 筆 EV-0.284R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 50%(1/2)。",
   "radar": {
-   "forming": 963,
-   "fired": 54,
-   "fired_full": 54,
+   "forming": 1056,
+   "fired": 118,
+   "fired_full": 118,
    "markets": [
     "commodity",
     "crypto",
@@ -162,24 +170,24 @@
     "index",
     "stock"
    ],
-   "universe_fresh": 436,
-   "stale_excluded": 305,
-   "ts_utc": "2026-10-20T13:35",
+   "universe_fresh": 551,
+   "stale_excluded": 88,
+   "ts_utc": "2026-10-20T14:35",
    "age_h": 0.8
   },
   "forecast": {
-   "pending": 2011,
-   "licensed": 6,
+   "pending": 1997,
+   "licensed": 8,
    "forecasters": 325,
-   "n_forecasts": 46234,
-   "n_resolved": 44223,
-   "asOf": "2026-10-20T13:40:15"
+   "n_forecasts": 46287,
+   "n_resolved": 44290,
+   "asOf": "2026-10-20T14:40:17"
   },
   "shadow": {
-   "n_open": 1289,
-   "n_closed": 4004,
-   "n_live": 3098,
-   "n_post_reg": 906,
+   "n_open": 1310,
+   "n_closed": 4000,
+   "n_live": 3100,
+   "n_post_reg": 900,
    "n_backfill": 0,
    "n_specs": 106,
    "best": {
@@ -229,18 +237,18 @@
     }
    ],
    "eta_promo": null,
-   "opens_per_day": 189.9,
+   "opens_per_day": 191.1,
    "rate_days": 14,
-   "ts_utc": "2026-10-20T13:40"
+   "ts_utc": "2026-10-20T14:54"
   },
   "news": {
-   "n_24h": 1246,
-   "n_hi": 22,
+   "n_24h": 1212,
+   "n_hi": 25,
    "by_category": {
-    "stock": 384,
-    "crypto": 403,
-    "macro": 118,
-    "commodity_fx": 341
+    "stock": 392,
+    "crypto": 383,
+    "macro": 115,
+    "commodity_fx": 322
    },
    "sources_green": 39,
    "sources_red": 1,
@@ -250,7 +258,7 @@
     "src": "yahoo_finance",
     "ts": "2026-10-20T10:35:34Z"
    },
-   "run_at": "2026-10-20T14:18:02",
+   "run_at": "2026-10-20T15:18:02",
    "impact": {
     "line": "｜實證：20 類消息裡 0 類會動價格、4 類不會、16 類樣本不足(事件 n=280)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 20,
@@ -264,7 +272,7 @@
     "ts": "2026-10-17T20:30:19"
    },
    "trump": {
-    "line": "｜川普：近 24h 72 則發言、提到 GOLD×4／CPI×3／AMZN×2、淨多空 +1.9",
+    "line": "｜川普：近 24h 72 則發言、提到 GOLD×4／GEOPOL×3／CPI×3、淨多空 +1.9",
     "n_24h": 72,
     "net_long_24h": 1.93,
     "top_symbols": [
@@ -273,6 +281,13 @@
       "n": 4,
       "net": 2.87,
       "long": 4,
+      "short": 0
+     },
+     {
+      "symbol": "GEOPOL",
+      "n": 3,
+      "net": 0.93,
+      "long": 1,
       "short": 0
      },
      {
@@ -290,21 +305,14 @@
       "short": 0
      },
      {
-      "symbol": "GEOPOL",
-      "n": 2,
-      "net": 0.93,
-      "long": 1,
-      "short": 0
-     },
-     {
-      "symbol": "TSLA",
-      "n": 2,
-      "net": 1.0,
-      "long": 1,
-      "short": 0
+      "symbol": "TARIFF",
+      "n": 1,
+      "net": -0.53,
+      "long": 0,
+      "short": 1
      }
     ],
-    "run_at": "2026-10-20T14:09:02"
+    "run_at": "2026-10-20T15:09:02"
    }
   },
   "calendar": {
@@ -316,13 +324,13 @@
    "blackout_event": null,
    "blackout_markets": [],
    "head": null,
-   "age_h": 0.0,
+   "age_h": 1.0,
    "ts": "2026-10-20T14:20:02"
   },
   "live_shadow": {
    "window": {
     "from": "2026-09-01",
-    "to": "2026-10-20T13:45"
+    "to": "2026-10-20T14:45"
    },
    "n_closed": 267,
    "n_open": 6,
@@ -334,7 +342,7 @@
     "pf": 0.623,
     "sum_r": -75.75
    },
-   "ts": "2026-10-20T13:45",
+   "ts": "2026-10-20T14:45",
    "per": {
     "B1": {
      "n": 6,
@@ -400,12 +408,12 @@
     "funding_missing": 0
    },
    "n_open": 0,
-   "ts": "2026-10-20T14:10:04Z"
+   "ts": "2026-10-20T15:10:08Z"
   }
  },
  "north_star": {
   "ts": "2026-10-20T08:00:02",
-  "age_h": 14.3,
+  "age_h": 15.3,
   "stale": false,
   "risk_light": "red",
   "risk_why": "最大 24h 權益跌幅 93.8%(上限 20.0)、熔斷 1次(上限 1)",
@@ -471,11 +479,11 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-10-20T14:05",
+  "attendance": "supervision_state.json @ 2026-10-20T15:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
   "calendar": "calendar_board.json @ 2026-10-20T14:20:02",
-  "news": "news_board.json @ 2026-10-20T14:18:02",
+  "news": "news_board.json @ 2026-10-20T15:18:02",
   "north_star": "goal_state.json @ 2026-10-20T08:00:02",
   "rules": "brief_rules.json v1.0"
  },
