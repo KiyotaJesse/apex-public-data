@@ -1,6 +1,6 @@
 {
- "ts": "2026-10-25T02:20:06",
- "data_ts": "2026-10-25T02:20:01",
+ "ts": "2026-10-25T03:20:05",
+ "data_ts": "2026-10-25T03:20:01",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
@@ -156,11 +156,11 @@
    "q": "E1 重複事件: delist_shadow/delist_shadow_binance_gap 近 30 天叫了 171 次(166 次被",
    "rec": "A"
   },
-  "line": "近 24 小時: 自動裁決 2 件、自動修復/回滾 0 件。下一個自動到期 D253(2026-10-25), 沒人異議就採建議 A。成形雷達: 成形中 1181 檔／已成形 53 檔(全條件 53)(跨 4 市場; 宇宙 393 檔, 休市排除 371)。預言帳：2048 則前瞻在等結算、持牌 9／預言者 336。消息：近 24h 764 則／高重要 13 則／最新一則「Bitcoin ETFs Just Had Their Biggest Outf」(來源 1 個停抓中)｜實證：20 類消息裡 0 類會動價格、4 類不會、16 類樣本不足(事件 n=280)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 59 則發言、提到 GOOGL×25／GOLD×10／TSLA×4、淨多空 +2.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 927 單／已結 4013 單(live 3701＋登記日回填 312)／124 個規格在追；最接近晉升的 cS_brk_low25<0+coil>=0.6+atr(stock) 已達 n=104 EV=+1.576R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=43 EV-0.448、SC1 n=29 EV-1.006、SC3 n=183 EV-0.135；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 277 筆 EV-0.283R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 50%(1/2)。",
+  "line": "近 24 小時: 自動裁決 2 件、自動修復/回滾 0 件。下一個自動到期 D253(2026-10-25), 沒人異議就採建議 A。成形雷達: 成形中 1005 檔／已成形 37 檔(全條件 37)(跨 4 市場; 宇宙 393 檔, 休市排除 371)。預言帳：2035 則前瞻在等結算、持牌 9／預言者 337。消息：近 24h 761 則／高重要 12 則／最新一則「Bitcoin ETFs Just Had Their Biggest Outf」(來源 1 個停抓中)｜實證：20 類消息裡 0 類會動價格、4 類不會、16 類樣本不足(事件 n=280)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 63 則發言、提到 GOOGL×35／GOLD×7／TSLA×2、淨多空 +2.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 920 單／已結 4007 單(live 3695＋登記日回填 312)／124 個規格在追；最接近晉升的 cS_brk_low25<0+coil>=0.6+atr(stock) 已達 n=104 EV=+1.576R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=43 EV-0.448、SC1 n=29 EV-1.006、SC3 n=183 EV-0.135；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 277 筆 EV-0.283R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 50%(1/2)。",
   "radar": {
-   "forming": 1181,
-   "fired": 53,
-   "fired_full": 53,
+   "forming": 1005,
+   "fired": 37,
+   "fired_full": 37,
    "markets": [
     "commodity",
     "crypto",
@@ -169,21 +169,21 @@
    ],
    "universe_fresh": 393,
    "stale_excluded": 371,
-   "ts_utc": "2026-10-24T17:35",
+   "ts_utc": "2026-10-24T18:35",
    "age_h": 0.8
   },
   "forecast": {
-   "pending": 2048,
+   "pending": 2035,
    "licensed": 9,
-   "forecasters": 336,
-   "n_forecasts": 51581,
-   "n_resolved": 49533,
-   "asOf": "2026-10-24T17:40:19"
+   "forecasters": 337,
+   "n_forecasts": 51634,
+   "n_resolved": 49599,
+   "asOf": "2026-10-24T18:40:20"
   },
   "shadow": {
-   "n_open": 927,
-   "n_closed": 4013,
-   "n_live": 3701,
+   "n_open": 920,
+   "n_closed": 4007,
+   "n_live": 3695,
    "n_post_reg": 312,
    "n_backfill": 0,
    "n_specs": 124,
@@ -203,7 +203,7 @@
      "n_live": 104,
      "n_post_reg": 0,
      "ev": 1.5762,
-     "random_z": 1.14,
+     "random_z": 1.15,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": false
@@ -215,7 +215,7 @@
      "n_live": 43,
      "n_post_reg": 0,
      "ev": 0.9167,
-     "random_z": 2.56,
+     "random_z": 2.57,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": true
@@ -236,16 +236,16 @@
    "eta_promo": null,
    "opens_per_day": 273.4,
    "rate_days": 14,
-   "ts_utc": "2026-10-24T17:40"
+   "ts_utc": "2026-10-24T18:40"
   },
   "news": {
-   "n_24h": 764,
-   "n_hi": 13,
+   "n_24h": 761,
+   "n_hi": 12,
    "by_category": {
-    "stock": 209,
-    "crypto": 288,
-    "macro": 52,
-    "commodity_fx": 215
+    "stock": 190,
+    "crypto": 301,
+    "macro": 46,
+    "commodity_fx": 224
    },
    "sources_green": 39,
    "sources_red": 1,
@@ -255,7 +255,7 @@
     "src": "yahoo_finance",
     "ts": "2026-10-24T15:37:42Z"
    },
-   "run_at": "2026-10-24T18:18:01",
+   "run_at": "2026-10-24T19:18:01",
    "impact": {
     "line": "｜實證：20 類消息裡 0 類會動價格、4 類不會、16 類樣本不足(事件 n=280)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 20,
@@ -269,27 +269,27 @@
     "ts": "2026-10-17T20:30:19"
    },
    "trump": {
-    "line": "｜川普：近 24h 59 則發言、提到 GOOGL×25／GOLD×10／TSLA×4、淨多空 +2.0",
-    "n_24h": 59,
+    "line": "｜川普：近 24h 63 則發言、提到 GOOGL×35／GOLD×7／TSLA×2、淨多空 +2.0",
+    "n_24h": 63,
     "net_long_24h": 2.0,
     "top_symbols": [
      {
       "symbol": "GOOGL",
-      "n": 25,
+      "n": 35,
       "net": 2.0,
       "long": 2,
       "short": 0
      },
      {
       "symbol": "GOLD",
-      "n": 10,
-      "net": 4.06,
-      "long": 10,
+      "n": 7,
+      "net": 3.12,
+      "long": 7,
       "short": 0
      },
      {
       "symbol": "TSLA",
-      "n": 4,
+      "n": 2,
       "net": 0.0,
       "long": 0,
       "short": 0
@@ -309,7 +309,7 @@
       "short": 1
      }
     ],
-    "run_at": "2026-10-24T18:09:01"
+    "run_at": "2026-10-24T19:09:01"
    }
   },
   "calendar": {
@@ -321,13 +321,13 @@
    "blackout_event": null,
    "blackout_markets": [],
    "head": null,
-   "age_h": 0.0,
+   "age_h": 1.0,
    "ts": "2026-10-24T18:20:01"
   },
   "live_shadow": {
    "window": {
     "from": "2026-09-01",
-    "to": "2026-10-24T17:45"
+    "to": "2026-10-24T18:45"
    },
    "n_closed": 277,
    "n_open": 2,
@@ -339,7 +339,7 @@
     "pf": 0.623,
     "sum_r": -78.509
    },
-   "ts": "2026-10-24T17:45",
+   "ts": "2026-10-24T18:45",
    "per": {
     "B1": {
      "n": 6,
@@ -405,12 +405,12 @@
     "funding_missing": 0
    },
    "n_open": 0,
-   "ts": "2026-10-24T18:10:03Z"
+   "ts": "2026-10-24T19:10:05Z"
   }
  },
  "north_star": {
   "ts": "2026-10-24T08:00:02",
-  "age_h": 18.3,
+  "age_h": 19.3,
   "stale": false,
   "risk_light": "red",
   "risk_why": "最大 24h 權益跌幅 93.8%(上限 20.0)",
@@ -476,11 +476,11 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-10-24T18:05",
+  "attendance": "supervision_state.json @ 2026-10-24T19:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
   "calendar": "calendar_board.json @ 2026-10-24T18:20:01",
-  "news": "news_board.json @ 2026-10-24T18:18:01",
+  "news": "news_board.json @ 2026-10-24T19:18:01",
   "north_star": "goal_state.json @ 2026-10-24T08:00:02",
   "rules": "brief_rules.json v1.0"
  },
