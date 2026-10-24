@@ -1,6 +1,6 @@
 {
- "ts": "2026-10-24T09:20:05",
- "data_ts": "2026-10-24T09:20:01",
+ "ts": "2026-10-24T10:20:05",
+ "data_ts": "2026-10-24T10:20:01",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
@@ -156,11 +156,11 @@
    "q": "E1 重複事件: delist_shadow/delist_shadow_binance_gap 近 30 天叫了 171 次(166 次被",
    "rec": "A"
   },
-  "line": "近 24 小時: 自動裁決 2 件、自動修復/回滾 0 件。下一個自動到期 D253(2026-10-25), 沒人異議就採建議 A。成形雷達: 成形中 519 檔／已成形 91 檔(全條件 91)(跨 5 市場; 宇宙 587 檔, 休市排除 66)。預言帳：2123 則前瞻在等結算、持牌 9／預言者 329。消息：近 24h 1299 則／高重要 23 則／最新一則「S&P 500, Dow Drop As Elevated Oil Prices」(來源 1 個停抓中)｜實證：20 類消息裡 0 類會動價格、4 類不會、16 類樣本不足(事件 n=280)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 52 則發言、提到 TSLA×17／GOLD×9／GOOGL×4、淨多空 +0.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 952 單／已結 4006 單(live 3694＋登記日回填 312)／126 個規格在追；最接近晉升的 cS_brk_low25<0+coil>=0.6+atr(stock) 已達 n=106 EV=+1.527R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=43 EV-0.448、SC1 n=29 EV-1.006、SC3 n=183 EV-0.135；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 277 筆 EV-0.283R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 50%(1/2)。",
+  "line": "近 24 小時: 自動裁決 2 件、自動修復/回滾 0 件。下一個自動到期 D253(2026-10-25), 沒人異議就採建議 A。成形雷達: 成形中 479 檔／已成形 95 檔(全條件 95)(跨 5 市場; 宇宙 586 檔, 休市排除 67)。預言帳：2182 則前瞻在等結算、持牌 7／預言者 329。消息：近 24h 1270 則／高重要 21 則／最新一則「S&P 500, Dow Drop As Elevated Oil Prices」(來源 1 個停抓中)｜實證：20 類消息裡 0 類會動價格、4 類不會、16 類樣本不足(事件 n=280)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 51 則發言、提到 TSLA×16／GOLD×9／GOOGL×4、淨多空 +0.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 951 單／已結 4001 單(live 3689＋登記日回填 312)／126 個規格在追；最接近晉升的 cS_brk_low25<0+coil>=0.6+atr(stock) 已達 n=106 EV=+1.527R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=43 EV-0.448、SC1 n=29 EV-1.006、SC3 n=183 EV-0.135；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 277 筆 EV-0.283R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 50%(1/2)。",
   "radar": {
-   "forming": 519,
-   "fired": 91,
-   "fired_full": 91,
+   "forming": 479,
+   "fired": 95,
+   "fired_full": 95,
    "markets": [
     "commodity",
     "crypto",
@@ -168,23 +168,23 @@
     "index",
     "stock"
    ],
-   "universe_fresh": 587,
-   "stale_excluded": 66,
-   "ts_utc": "2026-10-24T00:35",
+   "universe_fresh": 586,
+   "stale_excluded": 67,
+   "ts_utc": "2026-10-24T01:35",
    "age_h": 0.8
   },
   "forecast": {
-   "pending": 2123,
-   "licensed": 9,
+   "pending": 2182,
+   "licensed": 7,
    "forecasters": 329,
-   "n_forecasts": 50797,
-   "n_resolved": 48674,
-   "asOf": "2026-10-24T00:40:20"
+   "n_forecasts": 50884,
+   "n_resolved": 48702,
+   "asOf": "2026-10-24T01:40:13"
   },
   "shadow": {
-   "n_open": 952,
-   "n_closed": 4006,
-   "n_live": 3694,
+   "n_open": 951,
+   "n_closed": 4001,
+   "n_live": 3689,
    "n_post_reg": 312,
    "n_backfill": 0,
    "n_specs": 126,
@@ -216,7 +216,7 @@
      "n_live": 43,
      "n_post_reg": 0,
      "ev": 0.9167,
-     "random_z": 2.46,
+     "random_z": 2.48,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": true
@@ -228,25 +228,25 @@
      "n_live": 37,
      "n_post_reg": 0,
      "ev": 0.8563,
-     "random_z": 2.76,
+     "random_z": 2.78,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": true
     }
    ],
    "eta_promo": null,
-   "opens_per_day": 267.2,
+   "opens_per_day": 267.0,
    "rate_days": 14,
-   "ts_utc": "2026-10-24T00:40"
+   "ts_utc": "2026-10-24T01:40"
   },
   "news": {
-   "n_24h": 1299,
-   "n_hi": 23,
+   "n_24h": 1270,
+   "n_hi": 21,
    "by_category": {
-    "stock": 442,
-    "crypto": 373,
-    "macro": 111,
-    "commodity_fx": 373
+    "stock": 440,
+    "crypto": 364,
+    "macro": 108,
+    "commodity_fx": 358
    },
    "sources_green": 39,
    "sources_red": 1,
@@ -256,7 +256,7 @@
     "src": "yahoo_finance",
     "ts": "2026-10-23T22:35:57Z"
    },
-   "run_at": "2026-10-24T01:18:02",
+   "run_at": "2026-10-24T02:18:02",
    "impact": {
     "line": "｜實證：20 類消息裡 0 類會動價格、4 類不會、16 類樣本不足(事件 n=280)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 20,
@@ -270,13 +270,13 @@
     "ts": "2026-10-17T20:30:19"
    },
    "trump": {
-    "line": "｜川普：近 24h 52 則發言、提到 TSLA×17／GOLD×9／GOOGL×4、淨多空 +0.0",
-    "n_24h": 52,
+    "line": "｜川普：近 24h 51 則發言、提到 TSLA×16／GOLD×9／GOOGL×4、淨多空 +0.0",
+    "n_24h": 51,
     "net_long_24h": 0.0,
     "top_symbols": [
      {
       "symbol": "TSLA",
-      "n": 17,
+      "n": 16,
       "net": 0.0,
       "long": 0,
       "short": 0
@@ -303,14 +303,14 @@
       "short": 1
      },
      {
-      "symbol": "GEOPOL",
+      "symbol": "WTI",
       "n": 2,
       "net": 0.0,
       "long": 0,
       "short": 0
      }
     ],
-    "run_at": "2026-10-24T01:09:02"
+    "run_at": "2026-10-24T02:09:02"
    }
   },
   "calendar": {
@@ -322,13 +322,13 @@
    "blackout_event": null,
    "blackout_markets": [],
    "head": null,
-   "age_h": 3.0,
-   "ts": "2026-10-23T22:20:01"
+   "age_h": 0.0,
+   "ts": "2026-10-24T02:20:01"
   },
   "live_shadow": {
    "window": {
     "from": "2026-09-01",
-    "to": "2026-10-24T00:45"
+    "to": "2026-10-24T01:45"
    },
    "n_closed": 277,
    "n_open": 2,
@@ -340,7 +340,7 @@
     "pf": 0.623,
     "sum_r": -78.509
    },
-   "ts": "2026-10-24T00:45",
+   "ts": "2026-10-24T01:45",
    "per": {
     "B1": {
      "n": 6,
@@ -406,12 +406,12 @@
     "funding_missing": 0
    },
    "n_open": 0,
-   "ts": "2026-10-24T01:10:07Z"
+   "ts": "2026-10-24T02:10:04Z"
   }
  },
  "north_star": {
   "ts": "2026-10-24T08:00:02",
-  "age_h": 1.3,
+  "age_h": 2.3,
   "stale": false,
   "risk_light": "red",
   "risk_why": "最大 24h 權益跌幅 93.8%(上限 20.0)",
@@ -477,11 +477,11 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-10-24T01:05",
+  "attendance": "supervision_state.json @ 2026-10-24T02:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
-  "calendar": "calendar_board.json @ 2026-10-23T22:20:01",
-  "news": "news_board.json @ 2026-10-24T01:18:02",
+  "calendar": "calendar_board.json @ 2026-10-24T02:20:01",
+  "news": "news_board.json @ 2026-10-24T02:18:02",
   "north_star": "goal_state.json @ 2026-10-24T08:00:02",
   "rules": "brief_rules.json v1.0"
  },
