@@ -1,20 +1,20 @@
 {
- "ts": "2026-10-25T08:10:06",
- "data_ts": "2026-10-25T08:10:04",
+ "ts": "2026-10-25T08:20:05",
+ "data_ts": "2026-10-25T08:20:02",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
   "word": "要動",
   "tone": "red",
-  "why": "你有 11 件行動項目逾期",
+  "why": "你有 10 件行動項目逾期",
   "fired": [
-   "你有 11 件行動項目逾期",
+   "你有 10 件行動項目逾期",
    "巢健康度 0 低於 70",
    "你有事項今天到期",
    "病蟻 5 隻(排程紅燈)",
    "巢健康度 0 低於 85",
    "你有事項 0 天內到期",
-   "待決事項 0 天內自動裁決",
+   "待決事項 1 天內自動裁決",
    "SLO 超支 10 項",
    "有 37 件行動項目逾期(我的)"
   ],
@@ -124,39 +124,36 @@
    "due_in": -3,
    "late": true,
    "howto": "10/20 首輪真跑 2 支 n_days=1 規格 t=1.2e16/8.3e15 過 t 關; 今天 promo_ok 仍被 n>=30"
-  },
-  {
-   "id": "AI298",
-   "title": "考慮把非交易資金提到冷錢包(場地風險 elevated)",
-   "due": "2026-10-24",
-   "due_in": -1,
-   "late": true,
-   "howto": "score=50; +20 資金 100% 在單一所(無場外備援) [a]; +30 近 7 天 2 則 BingX + 提幣暫停/維護/下"
   }
  ],
  "auto": {
-  "decided_24h": 2,
+  "decided_24h": 3,
   "decided": [
    {
-    "id": "D207",
-    "q": "tama-trading main 自 9/29 live 之後多 5,506 筆 commit(228/250 是 m",
+    "id": "D253",
+    "q": "E1 重複事件: delist_shadow/delist_shadow_binance_gap 近 30 天叫了 17",
     "choice": "A"
    },
    {
-    "id": "D213",
-    "q": "非加密 美股 市場組合 cS_brk_low25<0+coil>=0.6+atr_r>=1.2|R 過五關+隨機基準(E",
+    "id": "D254",
+    "q": "E1 重複事件: event_shadow/event_shadow_bx_sources_down 近 30 天叫了 ",
+    "choice": "A"
+   },
+   {
+    "id": "D255",
+    "q": "E1 重複事件: graveyard_guard/graveyard_guard 近 30 天叫了 103 次(0 次被",
     "choice": "A"
    }
   ],
   "repaired_24h": 0,
   "crit_24h": 1,
   "next": {
-   "id": "D253",
-   "due": "2026-10-25",
-   "q": "E1 重複事件: delist_shadow/delist_shadow_binance_gap 近 30 天叫了 171 次(166 次被",
-   "rec": "A"
+   "id": "D256",
+   "due": "2026-10-26",
+   "q": "影子晉升: cL_impact_ma>=1.5+vol_r>=1.5+vol_dry<=0.4|bull|TP4R 在 crypto 市場前",
+   "rec": "B"
   },
-  "line": "近 24 小時: 自動裁決 2 件、自動修復/回滾 0 件。下一個自動到期 D253(2026-10-25), 沒人異議就採建議 A。成形雷達: 成形中 969 檔／已成形 81 檔(全條件 81)(跨 5 市場; 宇宙 415 檔, 休市排除 349)。預言帳：2061 則前瞻在等結算、持牌 9／預言者 348。消息：近 24h 624 則／高重要 7 則／最新一則「Can silver recover from its latest sell-」(來源 1 個停抓中)｜實證：22 類消息裡 3 類會動價格、5 類不會、14 類樣本不足(事件 n=660)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 59 則發言、提到 GOOGL×41／GEOPOL×1／GOLD×1、淨多空 +2.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 1092 單／已結 4018 單(live 3404＋登記日回填 614)／109 個規格在追；最接近晉升的 cS_brk_low25<0+coil>=0.6+atr(stock) 已達 n=54 EV=+1.477R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=45 EV-0.417、SC1 n=29 EV-1.006、SC3 n=183 EV-0.135；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 279 筆 EV-0.280R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 50%(1/2)。",
+  "line": "近 24 小時: 自動裁決 3 件、自動修復/回滾 0 件。下一個自動到期 D256(2026-10-26), 沒人異議就採建議 B。成形雷達: 成形中 969 檔／已成形 81 檔(全條件 81)(跨 5 市場; 宇宙 415 檔, 休市排除 349)。預言帳：2061 則前瞻在等結算、持牌 9／預言者 348。消息：近 24h 618 則／高重要 6 則／最新一則「Can silver recover from its latest sell-」(來源 1 個停抓中)｜實證：22 類消息裡 3 類會動價格、5 類不會、14 類樣本不足(事件 n=660)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 59 則發言、提到 GOOGL×41／GEOPOL×1／GOLD×1、淨多空 +2.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 1092 單／已結 4018 單(live 3404＋登記日回填 614)／109 個規格在追；最接近晉升的 cS_brk_low25<0+coil>=0.6+atr(stock) 已達 n=54 EV=+1.477R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=45 EV-0.417、SC1 n=29 EV-1.006、SC3 n=183 EV-0.135；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 279 筆 EV-0.280R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 50%(1/2)。",
   "radar": {
    "forming": 969,
    "fired": 81,
@@ -171,7 +168,7 @@
    "universe_fresh": 415,
    "stale_excluded": 349,
    "ts_utc": "2026-10-24T23:35",
-   "age_h": 0.6
+   "age_h": 0.8
   },
   "forecast": {
    "pending": 2061,
@@ -240,13 +237,13 @@
    "ts_utc": "2026-10-24T23:40"
   },
   "news": {
-   "n_24h": 624,
-   "n_hi": 7,
+   "n_24h": 618,
+   "n_hi": 6,
    "by_category": {
-    "stock": 96,
-    "crypto": 276,
-    "macro": 42,
-    "commodity_fx": 210
+    "stock": 93,
+    "crypto": 275,
+    "macro": 41,
+    "commodity_fx": 209
    },
    "sources_green": 39,
    "sources_red": 1,
@@ -256,7 +253,7 @@
     "src": "yahoo_finance",
     "ts": "2026-10-24T21:04:17Z"
    },
-   "run_at": "2026-10-25T00:03:01",
+   "run_at": "2026-10-25T00:18:01",
    "impact": {
     "line": "｜實證：22 類消息裡 3 類會動價格、5 類不會、14 類樣本不足(事件 n=660)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 22,
@@ -308,7 +305,7 @@
    "blackout_event": null,
    "blackout_markets": [],
    "head": null,
-   "age_h": 1.8,
+   "age_h": 2.0,
    "ts": "2026-10-24T22:20:01"
   },
   "live_shadow": {
@@ -397,7 +394,7 @@
  },
  "north_star": {
   "ts": "2026-10-25T08:00:02",
-  "age_h": 0.2,
+  "age_h": 0.3,
   "stale": false,
   "risk_light": "red",
   "risk_why": "最大 24h 權益跌幅 93.8%(上限 20.0)",
@@ -467,7 +464,7 @@
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
   "calendar": "calendar_board.json @ 2026-10-24T22:20:01",
-  "news": "news_board.json @ 2026-10-25T00:03:01",
+  "news": "news_board.json @ 2026-10-25T00:18:01",
   "north_star": "goal_state.json @ 2026-10-25T08:00:02",
   "rules": "brief_rules.json v1.0"
  },
