@@ -1,6 +1,6 @@
 {
- "ts": "2026-10-26T21:20:05",
- "data_ts": "2026-10-26T21:20:01",
+ "ts": "2026-10-26T22:20:07",
+ "data_ts": "2026-10-26T22:20:01",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
@@ -11,7 +11,7 @@
    "你有 10 件行動項目逾期",
    "巢健康度 0 低於 70",
    "你有事項今天到期",
-   "病蟻 5 隻(排程紅燈)",
+   "病蟻 6 隻(排程紅燈)",
    "巢健康度 0 低於 85",
    "你有事項 0 天內到期",
    "SLO 超支 10 項",
@@ -26,7 +26,7 @@
    "v": "0",
    "unit": "/100",
    "tone": "red",
-   "sub": "扣分: 病蟻 5 隻 -45、逾期行動 60 件 -10"
+   "sub": "扣分: 病蟻 6 隻 -45、逾期行動 60 件 -10"
   },
   {
    "k": "本月策略 R",
@@ -37,10 +37,10 @@
   },
   {
    "k": "蟻口出勤",
-   "v": "160/166",
+   "v": "159/166",
    "unit": "(96%)",
    "tone": "red",
-   "sub": "紅燈 5 隻: OB-V2 L20 盤口、E 偵錯小組稽核、CI 回歸測試(A re"
+   "sub": "紅燈 6 隻: OB-V2 L20 盤口、E 偵錯小組稽核、CI 回歸測試(A re"
   }
  ],
  "jesse": [
@@ -142,11 +142,11 @@
    "q": "非加密 美股 市場組合 cS_rsi>=65+ema_rel<0+coil>=0.6|TP6R 過五關+隨機基準(EV+0.35 n=566",
    "rec": "A"
   },
-  "line": "近 24 小時: 自動裁決 1 件、自動修復/回滾 0 件。下一個自動到期 D233(2026-10-31), 沒人異議就採建議 A。成形雷達: 成形中 836 檔／已成形 160 檔(全條件 160)(跨 5 市場; 宇宙 464 檔, 休市排除 303)。預言帳：2132 則前瞻在等結算、持牌 6／預言者 357。消息：近 24h 1089 則／高重要 16 則／最新一則「Fanatics teams up with OpenAI for new AI」(來源 1 個停抓中)｜實證：22 類消息裡 3 類會動價格、5 類不會、14 類樣本不足(事件 n=660)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 37 則發言、提到 GOLD×7／TARIFF×7／WTI×7、淨多空 +1.9。今日事件：2 件(最重要 VZ 財報 19:00)／黑窗中：是（VZ 財報）。影子: 追蹤中 1606 單／已結 4008 單(live 3620＋登記日回填 388)／116 個規格在追；最接近晉升的 cS_rsi>=75+ema_rel<0|TP6R(stock) 已達 n=867 EV=+1.190R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=45 EV-0.417、SC1 n=29 EV-1.006、SC3 n=195 EV-0.163；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 291 筆 EV-0.292R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 50%(1/2)。",
+  "line": "近 24 小時: 自動裁決 1 件、自動修復/回滾 0 件。下一個自動到期 D233(2026-10-31), 沒人異議就採建議 A。成形雷達: 成形中 758 檔／已成形 203 檔(全條件 203)(跨 5 市場; 宇宙 464 檔, 休市排除 303)。預言帳：2125 則前瞻在等結算、持牌 7／預言者 357。消息：近 24h 1099 則／高重要 19 則／最新一則「8-K - NATHANS FAMOUS, INC. (0000069733) 」(來源 1 個停抓中)｜實證：22 類消息裡 3 類會動價格、5 類不會、14 類樣本不足(事件 n=660)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 38 則發言、提到 GOLD×10／TARIFF×7／WTI×6、淨多空 +1.9。今日事件：0 件(無)／黑窗中：是（SMMT 財報）。影子: 追蹤中 1639 單／已結 4071 單(live 3680＋登記日回填 391)／116 個規格在追；最接近晉升的 cS_rsi>=75+ema_rel<0|TP6R(stock) 已達 n=868 EV=+1.188R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=45 EV-0.417、SC1 n=29 EV-1.006、SC3 n=195 EV-0.163；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 291 筆 EV-0.292R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 50%(1/2)。",
   "radar": {
-   "forming": 836,
-   "fired": 160,
-   "fired_full": 160,
+   "forming": 758,
+   "fired": 203,
+   "fired_full": 203,
    "markets": [
     "commodity",
     "crypto",
@@ -156,29 +156,29 @@
    ],
    "universe_fresh": 464,
    "stale_excluded": 303,
-   "ts_utc": "2026-10-26T12:35",
+   "ts_utc": "2026-10-26T13:35",
    "age_h": 0.8
   },
   "forecast": {
-   "pending": 2132,
-   "licensed": 6,
+   "pending": 2125,
+   "licensed": 7,
    "forecasters": 357,
-   "n_forecasts": 53908,
-   "n_resolved": 51776,
-   "asOf": "2026-10-26T12:40:17"
+   "n_forecasts": 53959,
+   "n_resolved": 51834,
+   "asOf": "2026-10-26T13:40:23"
   },
   "shadow": {
-   "n_open": 1606,
-   "n_closed": 4008,
-   "n_live": 3620,
-   "n_post_reg": 388,
+   "n_open": 1639,
+   "n_closed": 4071,
+   "n_live": 3680,
+   "n_post_reg": 391,
    "n_backfill": 0,
    "n_specs": 116,
    "best": {
     "spec": "cS_rsi>=75+ema_rel<0|TP6R",
     "market": "stock",
-    "n": 867,
-    "ev": 1.1903,
+    "n": 868,
+    "ev": 1.1876,
     "to_promo_n": 0,
     "beats_p95": true
    },
@@ -186,11 +186,11 @@
     {
      "spec": "cS_rsi>=75+ema_rel<0|TP6R",
      "market": "stock",
-     "n": 867,
-     "n_live": 867,
+     "n": 868,
+     "n_live": 868,
      "n_post_reg": 0,
-     "ev": 1.1903,
-     "random_z": 2.72,
+     "ev": 1.1876,
+     "random_z": 2.56,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": true
@@ -198,10 +198,10 @@
     {
      "spec": "cS_vwap_dev>=2+cvd_z<=-1+impact>=1|TP6R",
      "market": "stock",
-     "n": 44,
-     "n_live": 44,
+     "n": 37,
+     "n_live": 37,
      "n_post_reg": 0,
-     "ev": 0.5416,
+     "ev": 0.8499,
      "random_z": null,
      "to_promo_n": 0,
      "eta": null,
@@ -214,35 +214,35 @@
      "n_live": 47,
      "n_post_reg": 0,
      "ev": 0.3624,
-     "random_z": 0.6,
+     "random_z": 0.61,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": false
     }
    ],
    "eta_promo": null,
-   "opens_per_day": 390.1,
+   "opens_per_day": 396.9,
    "rate_days": 14,
-   "ts_utc": "2026-10-26T12:40"
+   "ts_utc": "2026-10-26T13:40"
   },
   "news": {
-   "n_24h": 1089,
-   "n_hi": 16,
+   "n_24h": 1099,
+   "n_hi": 19,
    "by_category": {
-    "macro": 103,
-    "stock": 195,
-    "crypto": 397,
-    "commodity_fx": 394
+    "stock": 227,
+    "macro": 102,
+    "crypto": 393,
+    "commodity_fx": 377
    },
    "sources_green": 39,
    "sources_red": 1,
    "top": {
-    "t": "Fanatics teams up with OpenAI for new AI-powered shopping suggestion feature",
-    "imp": 80,
-    "src": "cnbc_top",
-    "ts": "2026-10-26T13:02:37Z"
+    "t": "8-K - NATHANS FAMOUS, INC. (0000069733) (Filer)",
+    "imp": 83,
+    "src": "sec_edgar_8k",
+    "ts": "2026-10-26T13:00:49Z"
    },
-   "run_at": "2026-10-26T13:18:01",
+   "run_at": "2026-10-26T14:18:01",
    "impact": {
     "line": "｜實證：22 類消息裡 3 類會動價格、5 類不會、14 類樣本不足(事件 n=660)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 22,
@@ -256,13 +256,13 @@
     "ts": "2026-10-24T20:30:22"
    },
    "trump": {
-    "line": "｜川普：近 24h 37 則發言、提到 GOLD×7／TARIFF×7／WTI×7、淨多空 +1.9",
-    "n_24h": 37,
+    "line": "｜川普：近 24h 38 則發言、提到 GOLD×10／TARIFF×7／WTI×6、淨多空 +1.9",
+    "n_24h": 38,
     "net_long_24h": 1.93,
     "top_symbols": [
      {
       "symbol": "GOLD",
-      "n": 7,
+      "n": 10,
       "net": 2.48,
       "long": 7,
       "short": 0
@@ -276,7 +276,7 @@
      },
      {
       "symbol": "WTI",
-      "n": 7,
+      "n": 6,
       "net": 0.0,
       "long": 0,
       "short": 0
@@ -296,42 +296,27 @@
       "short": 0
      }
     ],
-    "run_at": "2026-10-26T13:09:01"
+    "run_at": "2026-10-26T14:09:01"
    }
   },
   "calendar": {
-   "n_today": 2,
+   "n_today": 0,
    "n_tomorrow": 12,
    "n_next7d": 93,
-   "n_week_high": 3,
+   "n_week_high": 2,
    "in_blackout": true,
-   "blackout_event": "VZ 財報",
+   "blackout_event": "SMMT 財報",
    "blackout_markets": [
     "stock"
    ],
-   "head": {
-    "ts_taipei": "2026-10-26 19:00",
-    "ts_utc": "2026-10-26T11:00:00Z",
-    "name": "VZ 財報",
-    "importance": 2,
-    "category": "earnings",
-    "markets": [
-     "stock"
-    ],
-    "symbols": [
-     "NCSKVZ2USD-USDT"
-    ],
-    "confirmed": false,
-    "source": "nasdaq_earnings",
-    "blackout": "1.0h/1.0h"
-   },
-   "age_h": 3.0,
-   "ts": "2026-10-26T10:20:01"
+   "head": null,
+   "age_h": 0.0,
+   "ts": "2026-10-26T14:20:01"
   },
   "live_shadow": {
    "window": {
     "from": "2026-09-01",
-    "to": "2026-10-26T12:45"
+    "to": "2026-10-26T13:45"
    },
    "n_closed": 291,
    "n_open": 1,
@@ -343,7 +328,7 @@
     "pf": 0.614,
     "sum_r": -85.117
    },
-   "ts": "2026-10-26T12:45",
+   "ts": "2026-10-26T13:45",
    "per": {
     "B1": {
      "n": 6,
@@ -409,12 +394,12 @@
     "funding_missing": 0
    },
    "n_open": 0,
-   "ts": "2026-10-26T13:10:06Z"
+   "ts": "2026-10-26T14:10:05Z"
   }
  },
  "north_star": {
   "ts": "2026-10-26T08:00:02",
-  "age_h": 13.3,
+  "age_h": 14.3,
   "stale": false,
   "risk_light": "red",
   "risk_why": "最大 24h 權益跌幅 93.8%(上限 20.0)",
@@ -480,11 +465,11 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-10-26T13:05",
+  "attendance": "supervision_state.json @ 2026-10-26T14:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
-  "calendar": "calendar_board.json @ 2026-10-26T10:20:01",
-  "news": "news_board.json @ 2026-10-26T13:18:01",
+  "calendar": "calendar_board.json @ 2026-10-26T14:20:01",
+  "news": "news_board.json @ 2026-10-26T14:18:01",
   "north_star": "goal_state.json @ 2026-10-26T08:00:02",
   "rules": "brief_rules.json v1.0"
  },
