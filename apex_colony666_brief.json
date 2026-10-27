@@ -1,6 +1,6 @@
 {
- "ts": "2026-10-28T04:20:06",
- "data_ts": "2026-10-28T04:20:02",
+ "ts": "2026-10-28T05:20:08",
+ "data_ts": "2026-10-28T05:20:02",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
@@ -136,11 +136,11 @@
    "q": "非加密 美股 市場組合 cS_rsi>=65+ema_rel<0+coil>=0.6|TP6R 過五關+隨機基準(EV+0.35 n=566",
    "rec": "A"
   },
-  "line": "近 24 小時: 自動裁決 0 件、自動修復/回滾 0 件。下一個自動到期 D233(2026-10-31), 沒人異議就採建議 A。成形雷達: 成形中 553 檔／已成形 410 檔(全條件 410)(跨 5 市場; 宇宙 582 檔, 休市排除 84)。預言帳：1573 則前瞻在等結算、持牌 10／預言者 357。消息：近 24h 1292 則／高重要 29 則／最新一則「Bitcoin (BTC) Lightning Maintenance」(來源 1 個停抓中)｜實證：22 類消息裡 3 類會動價格、5 類不會、14 類樣本不足(事件 n=660)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 107 則發言、提到 EWZ×18／WTI×6／GOOGL×2、淨多空 +2.0。今日事件：12 件(最重要 BBAI 財報 04:30)／黑窗中：否。影子: 追蹤中 2446 單／已結 4014 單(live 3642＋登記日回填 372)／116 個規格在追；最接近晉升的 cS_rsi>=75+ema_rel<0|TP6R(stock) 已達 n=897 EV=+1.128R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=45 EV-0.417、SC1 n=29 EV-1.006、SC3 n=195 EV-0.163；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 291 筆 EV-0.292R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 50%(1/2)。",
+  "line": "近 24 小時: 自動裁決 0 件、自動修復/回滾 0 件。下一個自動到期 D233(2026-10-31), 沒人異議就採建議 A。成形雷達: 成形中 588 檔／已成形 458 檔(全條件 458)(跨 5 市場; 宇宙 582 檔, 休市排除 84)。預言帳：1595 則前瞻在等結算、持牌 11／預言者 357。消息：近 24h 1331 則／高重要 27 則／最新一則「Bitcoin (BTC) Lightning Maintenance」(來源 1 個停抓中)｜實證：22 類消息裡 3 類會動價格、5 類不會、14 類樣本不足(事件 n=660)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 68 則發言、提到 EWZ×14／WTI×6／GASOLINE×2、淨多空 +2.0。今日事件：12 件(最重要 BBAI 財報 04:30)／黑窗中：否。影子: 追蹤中 2464 單／已結 4009 單(live 3637＋登記日回填 372)／116 個規格在追；最接近晉升的 cS_rsi>=75+ema_rel<0|TP6R(stock) 已達 n=897 EV=+1.128R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=45 EV-0.417、SC1 n=29 EV-1.006、SC3 n=195 EV-0.163；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 291 筆 EV-0.292R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 50%(1/2)。",
   "radar": {
-   "forming": 553,
-   "fired": 410,
-   "fired_full": 410,
+   "forming": 588,
+   "fired": 458,
+   "fired_full": 458,
    "markets": [
     "commodity",
     "crypto",
@@ -150,21 +150,21 @@
    ],
    "universe_fresh": 582,
    "stale_excluded": 84,
-   "ts_utc": "2026-10-27T19:35",
+   "ts_utc": "2026-10-27T20:35",
    "age_h": 0.8
   },
   "forecast": {
-   "pending": 1573,
-   "licensed": 10,
+   "pending": 1595,
+   "licensed": 11,
    "forecasters": 357,
-   "n_forecasts": 55622,
-   "n_resolved": 54049,
-   "asOf": "2026-10-27T19:40:23"
+   "n_forecasts": 55673,
+   "n_resolved": 54078,
+   "asOf": "2026-10-27T20:40:22"
   },
   "shadow": {
-   "n_open": 2446,
-   "n_closed": 4014,
-   "n_live": 3642,
+   "n_open": 2464,
+   "n_closed": 4009,
+   "n_live": 3637,
    "n_post_reg": 372,
    "n_backfill": 0,
    "n_specs": 116,
@@ -184,7 +184,7 @@
      "n_live": 897,
      "n_post_reg": 0,
      "ev": 1.128,
-     "random_z": 2.99,
+     "random_z": 2.97,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": true
@@ -215,18 +215,18 @@
     }
    ],
    "eta_promo": null,
-   "opens_per_day": 447.3,
+   "opens_per_day": 447.7,
    "rate_days": 14,
-   "ts_utc": "2026-10-27T19:40"
+   "ts_utc": "2026-10-27T20:40"
   },
   "news": {
-   "n_24h": 1292,
-   "n_hi": 29,
+   "n_24h": 1331,
+   "n_hi": 27,
    "by_category": {
-    "crypto": 365,
-    "commodity_fx": 356,
-    "macro": 145,
-    "stock": 426
+    "crypto": 388,
+    "commodity_fx": 365,
+    "macro": 166,
+    "stock": 412
    },
    "sources_green": 39,
    "sources_red": 1,
@@ -236,7 +236,7 @@
     "src": "kraken_status",
     "ts": "2026-10-27T07:16:07Z"
    },
-   "run_at": "2026-10-27T20:18:02",
+   "run_at": "2026-10-27T21:18:02",
    "impact": {
     "line": "｜實證：22 類消息裡 3 類會動價格、5 類不會、14 類樣本不足(事件 n=660)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 22,
@@ -250,13 +250,13 @@
     "ts": "2026-10-24T20:30:22"
    },
    "trump": {
-    "line": "｜川普：近 24h 107 則發言、提到 EWZ×18／WTI×6／GOOGL×2、淨多空 +2.0",
-    "n_24h": 107,
+    "line": "｜川普：近 24h 68 則發言、提到 EWZ×14／WTI×6／GASOLINE×2、淨多空 +2.0",
+    "n_24h": 68,
     "net_long_24h": 2.0,
     "top_symbols": [
      {
       "symbol": "EWZ",
-      "n": 18,
+      "n": 14,
       "net": 0.0,
       "long": 0,
       "short": 0
@@ -269,18 +269,18 @@
       "short": 0
      },
      {
-      "symbol": "GOOGL",
+      "symbol": "GASOLINE",
       "n": 2,
       "net": 0.0,
       "long": 0,
       "short": 0
      },
      {
-      "symbol": "GEOPOL",
+      "symbol": "GOOGL",
       "n": 2,
-      "net": -0.31,
+      "net": 0.0,
       "long": 0,
-      "short": 1
+      "short": 0
      },
      {
       "symbol": "RECRUIT",
@@ -290,7 +290,7 @@
       "short": 0
      }
     ],
-    "run_at": "2026-10-27T20:09:02"
+    "run_at": "2026-10-27T21:09:02"
    }
   },
   "calendar": {
@@ -317,13 +317,13 @@
     "source": "nasdaq_earnings",
     "blackout": "1.0h/1.0h"
    },
-   "age_h": 2.0,
+   "age_h": 3.0,
    "ts": "2026-10-27T18:20:02"
   },
   "live_shadow": {
    "window": {
     "from": "2026-09-01",
-    "to": "2026-10-27T19:45"
+    "to": "2026-10-27T20:45"
    },
    "n_closed": 291,
    "n_open": 4,
@@ -335,7 +335,7 @@
     "pf": 0.614,
     "sum_r": -85.117
    },
-   "ts": "2026-10-27T19:45",
+   "ts": "2026-10-27T20:45",
    "per": {
     "B1": {
      "n": 6,
@@ -401,12 +401,12 @@
     "funding_missing": 0
    },
    "n_open": 0,
-   "ts": "2026-10-27T20:10:05Z"
+   "ts": "2026-10-27T21:10:07Z"
   }
  },
  "north_star": {
   "ts": "2026-10-27T08:00:03",
-  "age_h": 20.3,
+  "age_h": 21.3,
   "stale": false,
   "risk_light": "red",
   "risk_why": "最大 24h 權益跌幅 93.8%(上限 20.0)",
@@ -472,11 +472,11 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-10-27T20:05",
+  "attendance": "supervision_state.json @ 2026-10-27T21:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
   "calendar": "calendar_board.json @ 2026-10-27T18:20:02",
-  "news": "news_board.json @ 2026-10-27T20:18:02",
+  "news": "news_board.json @ 2026-10-27T21:18:02",
   "north_star": "goal_state.json @ 2026-10-27T08:00:03",
   "rules": "brief_rules.json v1.0"
  },
