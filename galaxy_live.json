@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-30T05:30:42.485214+08:00",
-  "ts": "2026-10-30 05:30:42",
+  "generated_at": "2026-10-30T05:40:44.035194+08:00",
+  "ts": "2026-10-30 05:40:44",
   "btc": {
     "price": 79028.0,
     "change_24h": 2.7,
@@ -41,7 +41,8 @@
   "bingx": {
     "open_positions": 1,
     "pnl_24h_pct": 0.0,
-    "upnl_pct": -99.61,
-    "status": "online"
+    "upnl_pct": null,
+    "status": "degraded",
+    "reason": "pct_out_of_range"
   }
 }
