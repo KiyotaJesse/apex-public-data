@@ -287,7 +287,7 @@
 "分期工程每日開"
 ],
 "btc": {
-"chg": 3.3
+"chg": 3.5
 },
 "pos": 1,
 "sig": 0,
@@ -2332,7 +2332,7 @@
 "n": "礦機口糧",
 "v": 0.22,
 "ok": true,
-"k": "135h",
+"k": "136h",
 "t": "上輪 10-25 05:25 掃畢 · 名冊容忍 174h(每週日 04:00 開工), 電腦休眠會斷糧"
 },
 {
@@ -2345,7 +2345,7 @@
 {
 "n": "API 餘額",
 "v": 0.0,
-"t": "餘額耗盡(canary 400) · AI 功能停擺, 交易不受影響 · 12 小時前補貨 · 哨兵每日 08:20 探餘額",
+"t": "餘額耗盡(canary 400) · AI 功能停擺, 交易不受影響 · 13 小時前補貨 · 哨兵每日 08:20 探餘額",
 "ok": false,
 "k": "耗盡",
 "mute": true
@@ -3291,9 +3291,18 @@
 }
 },
 "alerts": {
-"ts": "10-30T19:55",
+"ts": "10-30T20:55",
 "top": "P0",
 "events": [
+{
+"lv": "P0",
+"s": "ZEC-USDT",
+"t": "ZEC-USDT: 1 隻蟻同時點名(秤)",
+"d": [
+"[秤] 毛槓桿 33.2x, 單一標的佔 100%"
+],
+"dist": 1.9
+},
 {
 "lv": "P0",
 "s": "帳戶",
@@ -3311,15 +3320,6 @@
 "[帳] 帳外倉: NCSKANTHROPIC2USD-USDT LONG 數量0.04118 且無SL掛單(裸倉!)"
 ],
 "dist": null
-},
-{
-"lv": "P1",
-"s": "ZEC-USDT",
-"t": "ZEC-USDT: 1 隻蟻同時點名(秤)",
-"d": [
-"[秤] 毛槓桿 28.6x, 單一標的佔 100%"
-],
-"dist": 1.9
 }
 ],
 "stale": false
@@ -5279,64 +5279,64 @@
 ],
 "board": [
 {
-"ts": "2026-10-30T20:10:11+08:00",
+"ts": "2026-10-30T21:10:04+08:00",
 "who": "蟻",
 "t": "汰/binance_leg: 1 件事件結算不出來(可結算分母 9) -- QU"
 },
 {
-"ts": "2026-10-30T19:55:04+08:00",
+"ts": "2026-10-30T21:07:11+08:00",
+"who": "蟻",
+"t": "15m 聚合對不上原生 1h(不在已知清單): {\"NCSKINDA2USD-U"
+},
+{
+"ts": "2026-10-30T21:03:08+08:00",
+"who": "蟻",
+"t": "[聞] 重要度 80 crypto/listing_delisting - | "
+},
+{
+"ts": "2026-10-30T21:03:08+08:00",
+"who": "蟻",
+"t": "[聞] 重要度 77 crypto/listing_delisting LIST"
+},
+{
+"ts": "2026-10-30T20:55:06+08:00",
 "who": "蟻",
 "t": "汰/binance_leg: 1 件事件結算不出來(可結算分母 9) -- QU"
 },
 {
-"ts": "2026-10-30T19:52:12+08:00",
+"ts": "2026-10-30T20:52:14+08:00",
 "who": "蟻",
-"t": "15m 聚合對不上原生 1h(不在已知清單): {\"NCSKASX2USD-US"
+"t": "15m 聚合對不上原生 1h(不在已知清單): {\"NCSKFLEX2USD-U"
 },
 {
-"ts": "2026-10-30T19:48:11+08:00",
+"ts": "2026-10-30T20:48:13+08:00",
 "who": "蟻",
-"t": "[聞] 重要度 70 stock/other OP | 8-K - Federa"
+"t": "[聞] 重要度 80 stock/inflation_print 241NATG"
 },
 {
-"ts": "2026-10-30T19:48:11+08:00",
+"ts": "2026-10-30T20:48:13+08:00",
 "who": "蟻",
-"t": "[聞] 重要度 70 stock/other DE | 8-K - CHURCH"
+"t": "[聞] 重要度 73 stock/inflation_print GEOPOL "
 },
 {
-"ts": "2026-10-30T19:48:11+08:00",
+"ts": "2026-10-30T20:48:13+08:00",
 "who": "蟻",
-"t": "[聞] 重要度 70 macro/earnings TSLA | Musk an"
+"t": "[聞] 重要度 73 stock/inflation_print AMZN | "
 },
 {
-"ts": "2026-10-30T19:40:05+08:00",
+"ts": "2026-10-30T20:48:13+08:00",
+"who": "蟻",
+"t": "[聞] 重要度 70 stock/other RIVER | 8-K - RED"
+},
+{
+"ts": "2026-10-30T20:48:13+08:00",
+"who": "蟻",
+"t": "[聞] 重要度 70 stock/earnings CVX·XOM | Earn"
+},
+{
+"ts": "2026-10-30T20:40:04+08:00",
 "who": "蟻",
 "t": "汰/binance_leg: 1 件事件結算不出來(可結算分母 9) -- QU"
-},
-{
-"ts": "2026-10-30T19:37:15+08:00",
-"who": "蟻",
-"t": "15m 聚合對不上原生 1h(不在已知清單): {\"NCSKAMAT2USD-U"
-},
-{
-"ts": "2026-10-30T19:33:09+08:00",
-"who": "蟻",
-"t": "[聞] 重要度 80 macro/inflation_print CPI | P"
-},
-{
-"ts": "2026-10-30T19:33:09+08:00",
-"who": "蟻",
-"t": "[聞] 重要度 70 commodity_fx/other BOJ | Bank"
-},
-{
-"ts": "2026-10-30T19:25:04+08:00",
-"who": "蟻",
-"t": "汰/binance_leg: 1 件事件結算不出來(可結算分母 9) -- QU"
-},
-{
-"ts": "2026-10-30T19:22:12+08:00",
-"who": "蟻",
-"t": "15m 聚合對不上原生 1h(不在已知清單): {\"NCSKAAOI2USD-U"
 }
 ],
 "autonomy": {
@@ -5483,7 +5483,7 @@
 "blocked_on_jesse": []
 },
 "ledgers": {
-"asOf": "2026-10-30T20:20:02",
+"asOf": "2026-10-30T21:20:02",
 "judge": {
 "run_at": "2026-10-30T08:15:27",
 "src": "outcomes",
@@ -5641,33 +5641,33 @@
 "events": {
 "h24": {
 "crit": 1,
-"warn": 167,
-"info": 82,
-"suppressed": 135,
-"n": 250
+"warn": 168,
+"info": 87,
+"suppressed": 136,
+"n": 256
 },
 "d7": {
 "crit": 5,
-"warn": 673,
-"info": 386,
-"suppressed": 530,
-"n": 1064
+"warn": 681,
+"info": 393,
+"suppressed": 537,
+"n": 1079
 },
 "top_keys": [
 {
 "source": "delist_shadow",
 "key": "delist_shadow_binance_gap",
-"n": 432
+"n": 436
 },
 {
 "source": "kline15_collect",
 "key": "kline15_parity_fail",
-"n": 102
+"n": 106
 },
 {
 "source": "news_collector",
 "key": "hi_listing_delisting_LISTING",
-"n": 44
+"n": 45
 },
 {
 "source": "slo",
@@ -5682,7 +5682,7 @@
 ],
 "latest": [
 {
-"ts": "2026-10-30T20:10",
+"ts": "2026-10-30T21:10",
 "source": "delist_shadow",
 "key": "delist_shadow_binance_gap",
 "level": "warn",
@@ -5690,47 +5690,31 @@
 "text": "汰/binance_leg: 1 件事件結算不出來(可結算分母 9) -- QUICK-USDT"
 },
 {
-"ts": "2026-10-30T19:55",
-"source": "delist_shadow",
-"key": "delist_shadow_binance_gap",
-"level": "warn",
-"suppressed": true,
-"text": "汰/binance_leg: 1 件事件結算不出來(可結算分母 9) -- QUICK-USDT"
-},
-{
-"ts": "2026-10-30T19:52",
+"ts": "2026-10-30T21:07",
 "source": "kline15_collect",
 "key": "kline15_parity_fail",
 "level": "warn",
 "suppressed": true,
-"text": "15m 聚合對不上原生 1h(不在已知清單): {\"NCSKASX2USD-USDT\": {\"status\": \"fai"
+"text": "15m 聚合對不上原生 1h(不在已知清單): {\"NCSKINDA2USD-USDT\": {\"status\": \"fa"
 },
 {
-"ts": "2026-10-30T19:48",
+"ts": "2026-10-30T21:03",
 "source": "news_collector",
-"key": "hi_other_OP",
+"key": "hi_listing_delisting_-",
 "level": "info",
 "suppressed": false,
-"text": "[聞] 重要度 70 stock/other OP | 8-K - Federal Realty OP LP (0001"
+"text": "[聞] 重要度 80 crypto/listing_delisting - | Bybit to Delist 2 To"
 },
 {
-"ts": "2026-10-30T19:48",
+"ts": "2026-10-30T21:03",
 "source": "news_collector",
-"key": "hi_other_DE",
+"key": "hi_listing_delisting_LISTING",
 "level": "info",
 "suppressed": false,
-"text": "[聞] 重要度 70 stock/other DE | 8-K - CHURCH & DWIGHT CO INC /DE"
+"text": "[聞] 重要度 77 crypto/listing_delisting LISTING | [Important] Bi"
 },
 {
-"ts": "2026-10-30T19:48",
-"source": "news_collector",
-"key": "hi_earnings_TSLA",
-"level": "info",
-"suppressed": false,
-"text": "[聞] 重要度 70 macro/earnings TSLA | Musk and Zuckerberg echo Tr"
-},
-{
-"ts": "2026-10-30T19:40",
+"ts": "2026-10-30T20:55",
 "source": "delist_shadow",
 "key": "delist_shadow_binance_gap",
 "level": "warn",
@@ -5738,19 +5722,35 @@
 "text": "汰/binance_leg: 1 件事件結算不出來(可結算分母 9) -- QUICK-USDT"
 },
 {
-"ts": "2026-10-30T19:37",
+"ts": "2026-10-30T20:52",
 "source": "kline15_collect",
 "key": "kline15_parity_fail",
 "level": "warn",
 "suppressed": true,
-"text": "15m 聚合對不上原生 1h(不在已知清單): {\"NCSKAMAT2USD-USDT\": {\"status\": \"fa"
+"text": "15m 聚合對不上原生 1h(不在已知清單): {\"NCSKFLEX2USD-USDT\": {\"status\": \"fa"
+},
+{
+"ts": "2026-10-30T20:48",
+"source": "news_collector",
+"key": "hi_inflation_print_241NATGAS",
+"level": "info",
+"suppressed": false,
+"text": "[聞] 重要度 80 stock/inflation_print 241NATGAS·CPI·NATGAS | US S"
+},
+{
+"ts": "2026-10-30T20:48",
+"source": "news_collector",
+"key": "hi_inflation_print_GEOPOL",
+"level": "info",
+"suppressed": false,
+"text": "[聞] 重要度 73 stock/inflation_print GEOPOL | Iran Claimed Four "
 }
 ]
 },
 "forecast": {
-"asOf": "2026-10-30T11:40:18",
-"n_forecasts": 59368,
-"n_prospective_total": 53508,
+"asOf": "2026-10-30T12:40:18",
+"n_forecasts": 59420,
+"n_prospective_total": 53556,
 "n_backfill_total": 57,
 "licensed": 11,
 "n_rows": 357,
@@ -5763,8 +5763,22 @@
 "n_pro": 107,
 "n_bf": 0,
 "hit_rate": 0.6355,
-"voice_rate": 0.9397,
+"voice_rate": 0.9327,
 "shrunk_skill": 0.3532,
+"p_fam": 0.0,
+"licensed": true,
+"event_driven": true,
+"blocked": ""
+},
+{
+"who": "formation_radar:cS_trap_hi>=0.1+ema_rel<0|TP4R",
+"type": "direction",
+"market": "crypto",
+"n_pro": 135,
+"n_bf": 0,
+"hit_rate": 0.837,
+"voice_rate": 0.8273,
+"shrunk_skill": 0.2551,
 "p_fam": 0.0,
 "licensed": true,
 "event_driven": true,
@@ -5777,23 +5791,9 @@
 "n_pro": 72,
 "n_bf": 0,
 "hit_rate": 0.7778,
-"voice_rate": 0.9397,
-"shrunk_skill": 0.2264,
+"voice_rate": 0.9327,
+"shrunk_skill": 0.2262,
 "p_fam": 0.00624,
-"licensed": true,
-"event_driven": true,
-"blocked": ""
-},
-{
-"who": "formation_radar:cS_trap_hi>=0.1+ema_rel<0|TP4R",
-"type": "direction",
-"market": "crypto",
-"n_pro": 135,
-"n_bf": 0,
-"hit_rate": 0.837,
-"voice_rate": 0.8262,
-"shrunk_skill": 0.2551,
-"p_fam": 0.0,
 "licensed": true,
 "event_driven": true,
 "blocked": ""
@@ -5805,7 +5805,7 @@
 "n_pro": 260,
 "n_bf": 0,
 "hit_rate": 0.6846,
-"voice_rate": 0.9808,
+"voice_rate": 0.9809,
 "shrunk_skill": 0.1428,
 "p_fam": 0.000316,
 "licensed": true,
@@ -5819,9 +5819,9 @@
 "n_pro": 35,
 "n_bf": 0,
 "hit_rate": 0.8857,
-"voice_rate": 0.3948,
-"shrunk_skill": 0.2872,
-"p_fam": 0.010574,
+"voice_rate": 0.3934,
+"shrunk_skill": 0.286,
+"p_fam": 0.011196,
 "licensed": false,
 "event_driven": true,
 "blocked": "前瞻樣本不足（n_prospective=35 < 50）"
@@ -5833,7 +5833,7 @@
 "n_pro": 72,
 "n_bf": 0,
 "hit_rate": 0.6111,
-"voice_rate": 0.4341,
+"voice_rate": 0.4336,
 "shrunk_skill": 0.227,
 "p_fam": 0.01643,
 "licensed": true,
@@ -5847,7 +5847,7 @@
 "n_pro": 100,
 "n_bf": 0,
 "hit_rate": 0.57,
-"voice_rate": 0.9024,
+"voice_rate": 0.9031,
 "shrunk_skill": 0.1067,
 "p_fam": 1.0,
 "licensed": false,
@@ -5861,8 +5861,8 @@
 "n_pro": 134,
 "n_bf": 0,
 "hit_rate": 0.5672,
-"voice_rate": 0.3783,
-"shrunk_skill": 0.1996,
+"voice_rate": 0.378,
+"shrunk_skill": 0.1999,
 "p_fam": 0.000628,
 "licensed": true,
 "event_driven": true,
@@ -5875,7 +5875,7 @@
 "n_pro": 4,
 "n_bf": 0,
 "hit_rate": 1.0,
-"voice_rate": 0.1621,
+"voice_rate": 0.1619,
 "shrunk_skill": 0.435,
 "p_fam": 1.0,
 "licensed": false,
@@ -5889,12 +5889,26 @@
 "n_pro": 92,
 "n_bf": 0,
 "hit_rate": 0.75,
-"voice_rate": 0.3504,
+"voice_rate": 0.35,
 "shrunk_skill": 0.1849,
-"p_fam": 0.02618,
+"p_fam": 0.025872,
 "licensed": true,
 "event_driven": true,
 "blocked": ""
+},
+{
+"who": "formation_radar:MRS",
+"type": "direction",
+"market": "si",
+"n_pro": 101,
+"n_bf": 0,
+"hit_rate": 0.6337,
+"voice_rate": 0.378,
+"shrunk_skill": 0.1642,
+"p_fam": 0.140148,
+"licensed": false,
+"event_driven": true,
+"blocked": "族內多重性校正後不顯著（p_fam=0.140148，m=319）"
 },
 {
 "who": "formation_radar:cS_vwap_dev>=1.5+ema_rel<0+coil>=0.6|TP6R",
@@ -5903,26 +5917,12 @@
 "n_pro": 110,
 "n_bf": 0,
 "hit_rate": 0.5364,
-"voice_rate": 0.8877,
+"voice_rate": 0.8884,
 "shrunk_skill": 0.0671,
 "p_fam": 1.0,
 "licensed": false,
 "event_driven": true,
 "blocked": "族內多重性校正後不顯著（p_fam=1.0，m=319）"
-},
-{
-"who": "formation_radar:cS_vwap_dev>=1+vol_r>=1.5+atr_r>=1.2|TP4R",
-"type": "direction",
-"market": "crypto",
-"n_pro": 92,
-"n_bf": 0,
-"hit_rate": 0.6739,
-"voice_rate": 0.3948,
-"shrunk_skill": 0.1404,
-"p_fam": 0.875367,
-"licensed": false,
-"event_driven": true,
-"blocked": "族內多重性校正後不顯著（p_fam=0.875367，m=319）"
 }
 ]
 }
@@ -6461,32 +6461,32 @@
 "alerts": {
 "n": "警報",
 "h": 1,
-"ts": "2026-10-30T19:55:19+08:00"
+"ts": "2026-10-30T20:55:20+08:00"
 },
 "sick": {
 "n": "病蟻",
 "h": 1,
-"ts": "2026-10-30T20:05:01+08:00"
+"ts": "2026-10-30T21:05:01+08:00"
 },
 "pantry": {
 "n": "糧倉",
 "h": 1,
-"ts": "2026-10-30T20:05:01+08:00"
+"ts": "2026-10-30T21:05:01+08:00"
 },
 "health": {
 "n": "巢健康",
 "h": 1,
-"ts": "2026-10-30T20:05:01+08:00"
+"ts": "2026-10-30T21:05:01+08:00"
 },
 "decisions": {
 "n": "待裁",
 "h": 1,
-"ts": "2026-10-30T20:20:01+08:00"
+"ts": "2026-10-30T21:20:01+08:00"
 },
 "market": {
 "n": "BTC/持倉",
 "h": 1,
-"ts": "2026-10-30T20:12:49+08:00"
+"ts": "2026-10-30T21:12:59+08:00"
 },
 "weather": {
 "n": "巢外天氣",
@@ -6496,17 +6496,17 @@
 "strategies": {
 "n": "策略蟻",
 "h": 1,
-"ts": "2026-10-30T20:20:01+08:00"
+"ts": "2026-10-30T21:20:01+08:00"
 },
 "ledgers": {
 "n": "成績單",
 "h": 1,
-"ts": "2026-10-30T20:20:01+08:00"
+"ts": "2026-10-30T21:20:01+08:00"
 },
 "board": {
 "n": "留言板",
 "h": 1,
-"ts": "2026-10-30T20:20:01+08:00"
+"ts": "2026-10-30T21:20:01+08:00"
 },
 "mine": {
 "n": "礦機",
@@ -6526,7 +6526,7 @@
 "notes": {
 "n": "便利貼",
 "h": 1,
-"ts": "2026-10-30T20:20:03+08:00"
+"ts": "2026-10-30T21:20:03+08:00"
 },
 "autonomy": {
 "n": "自治儀表",
@@ -6534,7 +6534,7 @@
 "ts": "2026-09-14T00:00:00+08:00"
 }
 },
-"live_ts": "2026-10-30T20:20:01+08:00",
+"live_ts": "2026-10-30T21:20:01+08:00",
 "notes": [
 {
 "id": "gate",
@@ -6547,7 +6547,7 @@
 "stale": false,
 "hash": "ca3e2303e96f",
 "last_changed": "2026-09-26T01:24:17+08:00",
-"shown_at": "2026-10-30T20:20:03+08:00"
+"shown_at": "2026-10-30T21:20:03+08:00"
 },
 {
 "id": "queen",
@@ -6560,20 +6560,20 @@
 "stale": true,
 "hash": "8160f90b2883",
 "last_changed": "2026-10-25T06:20:04+08:00",
-"shown_at": "2026-10-30T20:20:03+08:00"
+"shown_at": "2026-10-30T21:20:03+08:00"
 },
 {
 "id": "worker",
 "d": "深度 -1m · 工蟻房",
 "kind": "live",
 "text": "覓食隊誠實紀錄:近 30 天搬回 -5.8R(4 趟),近 90 天 -5.1R(30 趟,帳本最早只記到 09-19)。其中 AUTO -4.4R/25、B1 -4.6R/3、TL +3.9R/2。現在開著門的:B1。此刻沒有誰蜷在角落——開著的門都朝著空頭的天氣。",
-"ts": "2026-10-30T20:20:01+08:00",
+"ts": "2026-10-30T21:20:01+08:00",
 "period_h": 1,
 "src": "tama_memory.json(D 帳本) · tama_config.json",
 "stale": false,
 "hash": "d4ad538a43a3",
 "last_changed": "2026-10-30T00:20:05+08:00",
-"shown_at": "2026-10-30T20:20:03+08:00"
+"shown_at": "2026-10-30T21:20:03+08:00"
 },
 {
 "id": "clinic",
@@ -6586,7 +6586,7 @@
 "stale": false,
 "hash": "c21ad7845daa",
 "last_changed": "2026-09-26T01:24:17+08:00",
-"shown_at": "2026-10-30T20:20:03+08:00"
+"shown_at": "2026-10-30T21:20:03+08:00"
 },
 {
 "id": "collapse",
@@ -6599,7 +6599,7 @@
 "stale": false,
 "hash": "7c0d5a1a19b2",
 "last_changed": "2026-09-26T01:24:17+08:00",
-"shown_at": "2026-10-30T20:20:03+08:00"
+"shown_at": "2026-10-30T21:20:03+08:00"
 },
 {
 "id": "darkroom",
@@ -6612,7 +6612,7 @@
 "stale": false,
 "hash": "ee4e9754f2c7",
 "last_changed": "2026-09-26T01:24:17+08:00",
-"shown_at": "2026-10-30T20:20:03+08:00"
+"shown_at": "2026-10-30T21:20:03+08:00"
 },
 {
 "id": "fungus",
@@ -6625,7 +6625,7 @@
 "stale": false,
 "hash": "7a6051ac286d",
 "last_changed": "2026-10-30T00:20:05+08:00",
-"shown_at": "2026-10-30T20:20:03+08:00"
+"shown_at": "2026-10-30T21:20:03+08:00"
 },
 {
 "id": "grave",
@@ -6638,7 +6638,7 @@
 "stale": false,
 "hash": "792ac6c5e174",
 "last_changed": "2026-10-19T23:20:04+08:00",
-"shown_at": "2026-10-30T20:20:03+08:00"
+"shown_at": "2026-10-30T21:20:03+08:00"
 },
 {
 "id": "face",
@@ -6651,25 +6651,25 @@
 "stale": true,
 "hash": "cca61c28e23e",
 "last_changed": "2026-10-25T06:20:04+08:00",
-"shown_at": "2026-10-30T20:20:03+08:00"
+"shown_at": "2026-10-30T21:20:03+08:00"
 },
 {
 "id": "weekly",
-"d": "巢口公告 · 本週新事 · 1/6",
+"d": "巢口公告 · 本週新事 · 2/6",
 "kind": "rotate",
-"text": "裁蟻自動拍板 D256:影子晉升: cL_impact_ma&gt;=1.5+vol_r&gt;=1.5+vol_dry&lt;=…——採「再等 30 筆前瞻樣本」。(10-26)",
-"ts": "2026-10-30T20:20:03+08:00",
+"text": "裁蟻自動拍板 D255:E1 重複事件: graveyard_guard/graveyard_guard 近 3…——採「建(交行動項目給 Claude)」。(10-25)",
+"ts": "2026-10-30T21:20:03+08:00",
 "period_h": 24,
 "src": "decisions.json",
 "stale": false,
 "hash": "c14ffcd4dd2b",
 "last_changed": "2026-10-28T00:20:04+08:00",
-"shown_at": "2026-10-30T20:20:03+08:00"
+"shown_at": "2026-10-30T21:20:03+08:00"
 }
 ],
 "roster": {
 "v": 1,
-"ts": "2026-10-30T20:20:03+08:00",
+"ts": "2026-10-30T21:20:03+08:00",
 "n": 167,
 "depts": [
 {
