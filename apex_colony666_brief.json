@@ -1,6 +1,6 @@
 {
- "ts": "2026-11-01T00:20:06",
- "data_ts": "2026-11-01T00:20:02",
+ "ts": "2026-11-01T01:20:06",
+ "data_ts": "2026-11-01T01:20:02",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
@@ -238,35 +238,34 @@
    "q": "H17 觀察腿要不要補 τ=30 分?",
    "rec": "A"
   },
-  "line": "近 24 小時: 自動裁決 20 件、自動修復/回滾 0 件。下一個自動到期 D101(2026-11-01), 沒人異議就採建議 A。成形雷達: 成形中 575 檔／已成形 154 檔(全條件 154)(跨 5 市場; 宇宙 422 檔, 休市排除 370)。預言帳：2059 則前瞻在等結算、持牌 9／預言者 375。消息：近 24h 848 則／高重要 11 則／最新一則「SEC Issues Exemptive Relief from Treasur」(來源 1 個停抓中)｜實證：22 類消息裡 3 類會動價格、5 類不會、14 類樣本不足(事件 n=660)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 94 則發言、提到 GEOPOL×5／WTI×5／TSLA×2、淨多空 +3.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 2291 單／已結 4027 單(live 3848＋登記日回填 179)／126 個規格在追；最接近晉升的 cL_vol_dry<=0.4+cvd_z>=1+vol(stock) 已達 n=44 EV=+0.150R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=46 EV-0.424、SC1 n=29 EV-1.006、SC3 n=223 EV-0.239；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 320 筆 EV-0.335R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 50%(1/2)。",
+  "line": "近 24 小時: 自動裁決 20 件、自動修復/回滾 0 件。下一個自動到期 D101(2026-11-01), 沒人異議就採建議 A。成形雷達: 成形中 678 檔／已成形 175 檔(全條件 175)(跨 4 市場; 宇宙 422 檔, 休市排除 370)。預言帳：2076 則前瞻在等結算、持牌 8／預言者 375。消息：近 24h 856 則／高重要 12 則／最新一則「SEC Issues Exemptive Relief from Treasur」(來源 1 個停抓中)｜實證：22 類消息裡 3 類會動價格、5 類不會、14 類樣本不足(事件 n=660)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 95 則發言、提到 GEOPOL×6／WTI×6／TSLA×2、淨多空 +3.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 2297 單／已結 4009 單(live 3830＋登記日回填 179)／126 個規格在追；最接近晉升的 cL_vol_dry<=0.4+cvd_z>=1+vol(stock) 已達 n=44 EV=+0.150R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=46 EV-0.424、SC1 n=29 EV-1.006、SC3 n=223 EV-0.239；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 320 筆 EV-0.335R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 50%(1/2)。",
   "radar": {
-   "forming": 575,
-   "fired": 154,
-   "fired_full": 154,
+   "forming": 678,
+   "fired": 175,
+   "fired_full": 175,
    "markets": [
     "commodity",
     "crypto",
-    "fx",
     "index",
     "stock"
    ],
    "universe_fresh": 422,
    "stale_excluded": 370,
-   "ts_utc": "2026-10-31T15:35",
+   "ts_utc": "2026-10-31T16:35",
    "age_h": 0.8
   },
   "forecast": {
-   "pending": 2059,
-   "licensed": 9,
+   "pending": 2076,
+   "licensed": 8,
    "forecasters": 375,
-   "n_forecasts": 60914,
-   "n_resolved": 58855,
-   "asOf": "2026-10-31T15:40:25"
+   "n_forecasts": 60965,
+   "n_resolved": 58889,
+   "asOf": "2026-10-31T16:40:49"
   },
   "shadow": {
-   "n_open": 2291,
-   "n_closed": 4027,
-   "n_live": 3848,
+   "n_open": 2297,
+   "n_closed": 4009,
+   "n_live": 3830,
    "n_post_reg": 179,
    "n_backfill": 0,
    "n_specs": 126,
@@ -286,7 +285,7 @@
      "n_live": 44,
      "n_post_reg": 0,
      "ev": 0.1503,
-     "random_z": 1.04,
+     "random_z": 1.05,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": false
@@ -298,7 +297,7 @@
      "n_live": 44,
      "n_post_reg": 0,
      "ev": 0.1503,
-     "random_z": 1.04,
+     "random_z": 1.05,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": false
@@ -310,25 +309,25 @@
      "n_live": 0,
      "n_post_reg": 77,
      "ev": -0.0523,
-     "random_z": -0.27,
+     "random_z": -0.28,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": false
     }
    ],
    "eta_promo": null,
-   "opens_per_day": 450.7,
+   "opens_per_day": 449.9,
    "rate_days": 14,
-   "ts_utc": "2026-10-31T15:40"
+   "ts_utc": "2026-10-31T16:40"
   },
   "news": {
-   "n_24h": 848,
-   "n_hi": 11,
+   "n_24h": 856,
+   "n_hi": 12,
    "by_category": {
-    "stock": 236,
-    "crypto": 286,
-    "macro": 73,
-    "commodity_fx": 253
+    "stock": 219,
+    "crypto": 310,
+    "macro": 66,
+    "commodity_fx": 261
    },
    "sources_green": 39,
    "sources_red": 1,
@@ -338,7 +337,7 @@
     "src": "sec_press",
     "ts": "2026-10-30T19:30:00Z"
    },
-   "run_at": "2026-10-31T16:18:02",
+   "run_at": "2026-10-31T17:18:02",
    "impact": {
     "line": "｜實證：22 類消息裡 3 類會動價格、5 類不會、14 類樣本不足(事件 n=660)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 22,
@@ -352,20 +351,20 @@
     "ts": "2026-10-24T20:30:22"
    },
    "trump": {
-    "line": "｜川普：近 24h 94 則發言、提到 GEOPOL×5／WTI×5／TSLA×2、淨多空 +3.0",
-    "n_24h": 94,
+    "line": "｜川普：近 24h 95 則發言、提到 GEOPOL×6／WTI×6／TSLA×2、淨多空 +3.0",
+    "n_24h": 95,
     "net_long_24h": 3.0,
     "top_symbols": [
      {
       "symbol": "GEOPOL",
-      "n": 5,
+      "n": 6,
       "net": 0.0,
       "long": 0,
       "short": 0
      },
      {
       "symbol": "WTI",
-      "n": 5,
+      "n": 6,
       "net": 0.0,
       "long": 0,
       "short": 0
@@ -392,7 +391,7 @@
       "short": 0
      }
     ],
-    "run_at": "2026-10-31T16:09:02"
+    "run_at": "2026-10-31T17:09:02"
    }
   },
   "calendar": {
@@ -404,13 +403,13 @@
    "blackout_event": null,
    "blackout_markets": [],
    "head": null,
-   "age_h": 2.0,
+   "age_h": 3.0,
    "ts": "2026-10-31T14:20:05"
   },
   "live_shadow": {
    "window": {
     "from": "2026-09-01",
-    "to": "2026-10-31T15:45"
+    "to": "2026-10-31T16:45"
    },
    "n_closed": 320,
    "n_open": 72,
@@ -422,7 +421,7 @@
     "pf": 0.57,
     "sum_r": -107.248
    },
-   "ts": "2026-10-31T15:45",
+   "ts": "2026-10-31T16:45",
    "per": {
     "B1": {
      "n": 6,
@@ -488,12 +487,12 @@
     "funding_missing": 0
    },
    "n_open": 0,
-   "ts": "2026-10-31T16:10:10Z"
+   "ts": "2026-10-31T17:10:06Z"
   }
  },
  "north_star": {
   "ts": "2026-10-31T08:00:03",
-  "age_h": 16.3,
+  "age_h": 17.3,
   "stale": false,
   "risk_light": "red",
   "risk_why": "最大 24h 權益跌幅 100.0%(上限 20.0)",
@@ -559,11 +558,11 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-10-31T16:05",
+  "attendance": "supervision_state.json @ 2026-10-31T17:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
   "calendar": "calendar_board.json @ 2026-10-31T14:20:05",
-  "news": "news_board.json @ 2026-10-31T16:18:02",
+  "news": "news_board.json @ 2026-10-31T17:18:02",
   "north_star": "goal_state.json @ 2026-10-31T08:00:03",
   "rules": "brief_rules.json v1.0"
  },
