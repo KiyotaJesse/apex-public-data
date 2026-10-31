@@ -1,6 +1,6 @@
 {
- "ts": "2026-11-01T04:20:07",
- "data_ts": "2026-11-01T04:20:02",
+ "ts": "2026-11-01T05:20:05",
+ "data_ts": "2026-11-01T05:20:02",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
@@ -238,11 +238,11 @@
    "q": "H17 觀察腿要不要補 τ=30 分?",
    "rec": "A"
   },
-  "line": "近 24 小時: 自動裁決 20 件、自動修復/回滾 0 件。下一個自動到期 D101(2026-11-01), 沒人異議就採建議 A。成形雷達: 成形中 853 檔／已成形 174 檔(全條件 174)(跨 4 市場; 宇宙 422 檔, 休市排除 370)。預言帳：2140 則前瞻在等結算、持牌 8／預言者 375。消息：近 24h 755 則／高重要 8 則／最新一則「8-K - ACCENDRA HEALTH INC/VA/ (000007525」(來源 1 個停抓中)｜實證：22 類消息裡 3 類會動價格、5 類不會、14 類樣本不足(事件 n=660)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 151 則發言、提到 GEOPOL×6／WTI×6／TSLA×2、淨多空 +3.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 2278 單／已結 4018 單(live 3840＋登記日回填 178)／122 個規格在追；最接近晉升的 cL_vol_dry<=0.4+cvd_z>=1+vol(stock) 已達 n=44 EV=+0.150R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=46 EV-0.424、SC1 n=29 EV-1.006、SC3 n=223 EV-0.239；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 320 筆 EV-0.335R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 50%(1/2)。",
+  "line": "近 24 小時: 自動裁決 20 件、自動修復/回滾 0 件。下一個自動到期 D101(2026-11-01), 沒人異議就採建議 A。成形雷達: 成形中 854 檔／已成形 132 檔(全條件 132)(跨 4 市場; 宇宙 422 檔, 休市排除 370)。預言帳：2180 則前瞻在等結算、持牌 8／預言者 376。消息：近 24h 770 則／高重要 5 則／最新一則「Circle Stock Fell 9% in a Day as the Bin」(來源 1 個停抓中)｜實證：22 類消息裡 3 類會動價格、6 類不會、13 類樣本不足(事件 n=1162)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 165 則發言、提到 GEOPOL×7／WTI×6／TSLA×2、淨多空 +3.9。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 2269 單／已結 4011 單(live 3833＋登記日回填 178)／122 個規格在追；最接近晉升的 cL_vol_dry<=0.4+cvd_z>=1+vol(stock) 已達 n=44 EV=+0.150R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=46 EV-0.424、SC1 n=29 EV-1.006、SC3 n=223 EV-0.239；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 320 筆 EV-0.335R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 50%(1/2)。",
   "radar": {
-   "forming": 853,
-   "fired": 174,
-   "fired_full": 174,
+   "forming": 854,
+   "fired": 132,
+   "fired_full": 132,
    "markets": [
     "commodity",
     "crypto",
@@ -251,21 +251,21 @@
    ],
    "universe_fresh": 422,
    "stale_excluded": 370,
-   "ts_utc": "2026-10-31T19:35",
+   "ts_utc": "2026-10-31T20:35",
    "age_h": 0.8
   },
   "forecast": {
-   "pending": 2140,
+   "pending": 2180,
    "licensed": 8,
-   "forecasters": 375,
-   "n_forecasts": 61133,
-   "n_resolved": 58993,
-   "asOf": "2026-10-31T19:40:26"
+   "forecasters": 376,
+   "n_forecasts": 61193,
+   "n_resolved": 59013,
+   "asOf": "2026-10-31T20:40:23"
   },
   "shadow": {
-   "n_open": 2278,
-   "n_closed": 4018,
-   "n_live": 3840,
+   "n_open": 2269,
+   "n_closed": 4011,
+   "n_live": 3833,
    "n_post_reg": 178,
    "n_backfill": 0,
    "n_specs": 122,
@@ -309,57 +309,57 @@
      "n_live": 0,
      "n_post_reg": 77,
      "ev": -0.0523,
-     "random_z": -0.35,
+     "random_z": -0.37,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": false
     }
    ],
    "eta_promo": null,
-   "opens_per_day": 449.1,
+   "opens_per_day": 448.0,
    "rate_days": 14,
-   "ts_utc": "2026-10-31T19:40"
+   "ts_utc": "2026-10-31T20:40"
   },
   "news": {
-   "n_24h": 755,
-   "n_hi": 8,
+   "n_24h": 770,
+   "n_hi": 5,
    "by_category": {
-    "stock": 163,
-    "crypto": 299,
-    "macro": 51,
-    "commodity_fx": 242
+    "stock": 125,
+    "crypto": 324,
+    "macro": 69,
+    "commodity_fx": 252
    },
    "sources_green": 39,
    "sources_red": 1,
    "top": {
-    "t": "8-K - ACCENDRA HEALTH INC/VA/ (0000075252) (Filer)",
-    "imp": 83,
-    "src": "sec_edgar_8k",
-    "ts": "2026-10-30T20:50:27Z"
+    "t": "Circle Stock Fell 9% in a Day as the Binance Hack Hit Crypto Stocks. Here’s Where the Stock Could Go by 2030",
+    "imp": 80,
+    "src": "yahoo_finance",
+    "ts": "2026-10-31T06:47:36Z"
    },
-   "run_at": "2026-10-31T20:18:02",
+   "run_at": "2026-10-31T21:18:01",
    "impact": {
-    "line": "｜實證：22 類消息裡 3 類會動價格、5 類不會、14 類樣本不足(事件 n=660)；黑窗 差異落在噪音裡, 黑窗沒有證據",
+    "line": "｜實證：22 類消息裡 3 類會動價格、6 類不會、13 類樣本不足(事件 n=1162)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 22,
     "n_moves": 3,
-    "n_insufficient": 14,
+    "n_insufficient": 13,
     "blackout": {
      "status": "ok",
-     "delta_ev": -0.3537,
+     "delta_ev": -0.2836,
      "reading": "差異落在噪音裡, 黑窗沒有證據"
     },
-    "ts": "2026-10-24T20:30:22"
+    "ts": "2026-10-31T20:30:28"
    },
    "trump": {
-    "line": "｜川普：近 24h 151 則發言、提到 GEOPOL×6／WTI×6／TSLA×2、淨多空 +3.0",
-    "n_24h": 151,
-    "net_long_24h": 3.0,
+    "line": "｜川普：近 24h 165 則發言、提到 GEOPOL×7／WTI×6／TSLA×2、淨多空 +3.9",
+    "n_24h": 165,
+    "net_long_24h": 3.85,
     "top_symbols": [
      {
       "symbol": "GEOPOL",
-      "n": 6,
-      "net": 0.0,
-      "long": 0,
+      "n": 7,
+      "net": 0.85,
+      "long": 1,
       "short": 0
      },
      {
@@ -391,7 +391,7 @@
       "short": 0
      }
     ],
-    "run_at": "2026-10-31T20:09:02"
+    "run_at": "2026-10-31T21:09:02"
    }
   },
   "calendar": {
@@ -403,13 +403,13 @@
    "blackout_event": null,
    "blackout_markets": [],
    "head": null,
-   "age_h": 2.0,
+   "age_h": 3.0,
    "ts": "2026-10-31T18:20:01"
   },
   "live_shadow": {
    "window": {
     "from": "2026-09-01",
-    "to": "2026-10-31T19:45"
+    "to": "2026-10-31T20:45"
    },
    "n_closed": 320,
    "n_open": 72,
@@ -421,7 +421,7 @@
     "pf": 0.57,
     "sum_r": -107.248
    },
-   "ts": "2026-10-31T19:45",
+   "ts": "2026-10-31T20:45",
    "per": {
     "B1": {
      "n": 6,
@@ -487,12 +487,12 @@
     "funding_missing": 0
    },
    "n_open": 0,
-   "ts": "2026-10-31T20:10:04Z"
+   "ts": "2026-10-31T21:10:05Z"
   }
  },
  "north_star": {
   "ts": "2026-10-31T08:00:03",
-  "age_h": 20.3,
+  "age_h": 21.3,
   "stale": false,
   "risk_light": "red",
   "risk_why": "最大 24h 權益跌幅 100.0%(上限 20.0)",
@@ -558,11 +558,11 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-10-31T20:05",
+  "attendance": "supervision_state.json @ 2026-10-31T21:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
   "calendar": "calendar_board.json @ 2026-10-31T18:20:01",
-  "news": "news_board.json @ 2026-10-31T20:18:02",
+  "news": "news_board.json @ 2026-10-31T21:18:01",
   "north_star": "goal_state.json @ 2026-10-31T08:00:03",
   "rules": "brief_rules.json v1.0"
  },
