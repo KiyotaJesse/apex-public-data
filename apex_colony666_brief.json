@@ -1,6 +1,6 @@
 {
- "ts": "2026-11-02T04:20:06",
- "data_ts": "2026-11-02T04:20:01",
+ "ts": "2026-11-02T05:20:05",
+ "data_ts": "2026-11-02T05:20:01",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
@@ -182,11 +182,11 @@
    "q": "非加密 美股 市場組合 cS_vwap_dev>=1.5+ema_rel<0+coil>=0.6|TP6R 過五關+隨機基準(EV+0.41",
    "rec": "A"
   },
-  "line": "近 24 小時: 自動裁決 9 件、自動修復/回滾 0 件。下一個自動到期 D258(2026-11-07), 沒人異議就採建議 A。成形雷達: 成形中 1653 檔／已成形 171 檔(全條件 171)(跨 5 市場; 宇宙 441 檔, 休市排除 354)。預言帳：2011 則前瞻在等結算、持牌 11／預言者 386。消息：近 24h 768 則／高重要 5 則／最新一則「Is Coinbase Safe After the $6 Billion Bi」(來源 1 個停抓中)｜實證：22 類消息裡 3 類會動價格、6 類不會、13 類樣本不足(事件 n=1162)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 62 則發言、提到 NVDA×5／INDA×3／EWZ×3、淨多空 +0.8。今日事件：5 件(最重要 CIFR 財報 20:00)／黑窗中：否。影子: 追蹤中 1977 單／已結 4012 單(live 3825＋登記日回填 187)／111 個規格在追；最接近晉升的 cS_rsi>=75+ema_rel<0|TP6R(crypto) 已達 n=76 EV=+0.924R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=54 EV-0.518、SC1 n=29 EV-1.006、SC3 n=263 EV-0.328；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 368 筆 EV-0.404R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 50%(1/2)。",
+  "line": "近 24 小時: 自動裁決 9 件、自動修復/回滾 0 件。下一個自動到期 D258(2026-11-07), 沒人異議就採建議 A。成形雷達: 成形中 1710 檔／已成形 175 檔(全條件 175)(跨 5 市場; 宇宙 452 檔, 休市排除 343)。預言帳：1980 則前瞻在等結算、持牌 11／預言者 389。消息：近 24h 820 則／高重要 5 則／最新一則「Is Coinbase Safe After the $6 Billion Bi」(來源 1 個停抓中)｜實證：22 類消息裡 3 類會動價格、6 類不會、13 類樣本不足(事件 n=1162)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 45 則發言、提到 NVDA×5／INDA×3／EWZ×3、淨多空 +0.0。今日事件：5 件(最重要 CIFR 財報 20:00)／黑窗中：否。影子: 追蹤中 1994 單／已結 4008 單(live 3821＋登記日回填 187)／112 個規格在追；最接近晉升的 cS_rsi>=75+ema_rel<0|TP6R(crypto) 已達 n=76 EV=+0.924R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=54 EV-0.518、SC1 n=29 EV-1.006、SC3 n=263 EV-0.328；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 368 筆 EV-0.404R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 50%(1/2)。",
   "radar": {
-   "forming": 1653,
-   "fired": 171,
-   "fired_full": 171,
+   "forming": 1710,
+   "fired": 175,
+   "fired_full": 175,
    "markets": [
     "commodity",
     "crypto",
@@ -194,26 +194,26 @@
     "index",
     "stock"
    ],
-   "universe_fresh": 441,
-   "stale_excluded": 354,
-   "ts_utc": "2026-11-01T19:35",
+   "universe_fresh": 452,
+   "stale_excluded": 343,
+   "ts_utc": "2026-11-01T20:35",
    "age_h": 0.8
   },
   "forecast": {
-   "pending": 2011,
+   "pending": 1980,
    "licensed": 11,
-   "forecasters": 386,
-   "n_forecasts": 62468,
-   "n_resolved": 60457,
-   "asOf": "2026-11-01T19:40:20"
+   "forecasters": 389,
+   "n_forecasts": 62529,
+   "n_resolved": 60549,
+   "asOf": "2026-11-01T20:40:21"
   },
   "shadow": {
-   "n_open": 1977,
-   "n_closed": 4012,
-   "n_live": 3825,
+   "n_open": 1994,
+   "n_closed": 4008,
+   "n_live": 3821,
    "n_post_reg": 187,
    "n_backfill": 0,
-   "n_specs": 111,
+   "n_specs": 112,
    "best": {
     "spec": "cS_rsi>=75+ema_rel<0|TP6R",
     "market": "crypto",
@@ -230,7 +230,7 @@
      "n_live": 76,
      "n_post_reg": 0,
      "ev": 0.9237,
-     "random_z": 1.46,
+     "random_z": 1.47,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": false
@@ -261,18 +261,18 @@
     }
    ],
    "eta_promo": null,
-   "opens_per_day": 425.5,
+   "opens_per_day": 426.4,
    "rate_days": 14,
-   "ts_utc": "2026-11-01T19:40"
+   "ts_utc": "2026-11-01T20:40"
   },
   "news": {
-   "n_24h": 768,
+   "n_24h": 820,
    "n_hi": 5,
    "by_category": {
-    "stock": 83,
-    "macro": 58,
-    "crypto": 332,
-    "commodity_fx": 295
+    "stock": 79,
+    "macro": 59,
+    "crypto": 348,
+    "commodity_fx": 334
    },
    "sources_green": 39,
    "sources_red": 1,
@@ -282,7 +282,7 @@
     "src": "yahoo_finance",
     "ts": "2026-11-01T17:54:09Z"
    },
-   "run_at": "2026-11-01T20:18:01",
+   "run_at": "2026-11-01T21:18:01",
    "impact": {
     "line": "｜實證：22 類消息裡 3 類會動價格、6 類不會、13 類樣本不足(事件 n=1162)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 22,
@@ -296,9 +296,9 @@
     "ts": "2026-10-31T20:30:28"
    },
    "trump": {
-    "line": "｜川普：近 24h 62 則發言、提到 NVDA×5／INDA×3／EWZ×3、淨多空 +0.8",
-    "n_24h": 62,
-    "net_long_24h": 0.85,
+    "line": "｜川普：近 24h 45 則發言、提到 NVDA×5／INDA×3／EWZ×3、淨多空 +0.0",
+    "n_24h": 45,
+    "net_long_24h": 0,
     "top_symbols": [
      {
       "symbol": "NVDA",
@@ -336,7 +336,7 @@
       "short": 0
      }
     ],
-    "run_at": "2026-11-01T20:09:01"
+    "run_at": "2026-11-01T21:09:01"
    }
   },
   "calendar": {
@@ -363,13 +363,13 @@
     "source": "nasdaq_earnings",
     "blackout": "1.0h/1.0h"
    },
-   "age_h": 2.0,
+   "age_h": 3.0,
    "ts": "2026-11-01T18:20:02"
   },
   "live_shadow": {
    "window": {
     "from": "2026-09-01",
-    "to": "2026-11-01T19:45"
+    "to": "2026-11-01T20:45"
    },
    "n_closed": 368,
    "n_open": 25,
@@ -381,7 +381,7 @@
     "pf": 0.502,
     "sum_r": -148.821
    },
-   "ts": "2026-11-01T19:45",
+   "ts": "2026-11-01T20:45",
    "per": {
     "B1": {
      "n": 6,
@@ -447,12 +447,12 @@
     "funding_missing": 0
    },
    "n_open": 0,
-   "ts": "2026-11-01T20:10:04Z"
+   "ts": "2026-11-01T21:10:16Z"
   }
  },
  "north_star": {
   "ts": "2026-11-01T08:00:04",
-  "age_h": 20.3,
+  "age_h": 21.3,
   "stale": false,
   "risk_light": "red",
   "risk_why": "最大 24h 權益跌幅 100.0%(上限 20.0)",
@@ -518,11 +518,11 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-11-01T20:05",
+  "attendance": "supervision_state.json @ 2026-11-01T21:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
   "calendar": "calendar_board.json @ 2026-11-01T18:20:02",
-  "news": "news_board.json @ 2026-11-01T20:18:01",
+  "news": "news_board.json @ 2026-11-01T21:18:01",
   "north_star": "goal_state.json @ 2026-11-01T08:00:04",
   "rules": "brief_rules.json v1.0"
  },
