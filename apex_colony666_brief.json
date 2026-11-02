@@ -1,6 +1,6 @@
 {
- "ts": "2026-11-03T05:20:07",
- "data_ts": "2026-11-03T05:20:02",
+ "ts": "2026-11-03T06:20:05",
+ "data_ts": "2026-11-03T06:20:01",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
@@ -136,11 +136,11 @@
    "q": "非加密 美股 市場組合 cS_vwap_dev>=1.5+ema_rel<0+coil>=0.6|TP6R 過五關+隨機基準(EV+0.41",
    "rec": "A"
   },
-  "line": "近 24 小時: 自動裁決 0 件、自動修復/回滾 0 件。下一個自動到期 D258(2026-11-07), 沒人異議就採建議 A。成形雷達: 成形中 1620 檔／已成形 332 檔(全條件 332)(跨 5 市場; 宇宙 612 檔, 休市排除 83)。預言帳：1707 則前瞻在等結算、持牌 9／預言者 433。消息：近 24h 1329 則／高重要 35 則／最新一則「KuCoin Will Delist Multiple Tokens on 20」(來源 1 個停抓中)｜實證：22 類消息裡 3 類會動價格、6 類不會、13 類樣本不足(事件 n=1162)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 68 則發言、提到 TSLA×12／WTI×7／GEOPOL×3、淨多空 +0.0。今日事件：12 件(最重要 AAPL 財報 05:30)／黑窗中：否。影子: 追蹤中 4231 單／已結 4006 單(live 3741＋登記日回填 265)／136 個規格在追；最接近晉升的 cS_rsi>=75+ema_rel<0|TP6R(crypto) 已達 n=92 EV=+1.319R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=57 EV-0.251、SC1 n=29 EV-1.006、SC3 n=263 EV-0.328；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 371 筆 EV-0.364R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 25%(1/4)。",
+  "line": "近 24 小時: 自動裁決 0 件、自動修復/回滾 0 件。下一個自動到期 D258(2026-11-07), 沒人異議就採建議 A。成形雷達: 成形中 1612 檔／已成形 267 檔(全條件 267)(跨 5 市場; 宇宙 635 檔, 休市排除 60)。預言帳：1694 則前瞻在等結算、持牌 9／預言者 435。消息：近 24h 1372 則／高重要 37 則／最新一則「KuCoin Will Delist Multiple Tokens on 20」(來源 1 個停抓中)｜實證：22 類消息裡 3 類會動價格、6 類不會、13 類樣本不足(事件 n=1162)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 84 則發言、提到 TSLA×12／WTI×7／GEOPOL×2、淨多空 +0.0。今日事件：10 件(最重要 APO 財報 20:00)／黑窗中：是（AAPL 財報）。影子: 追蹤中 4419 單／已結 4020 單(live 3755＋登記日回填 265)／136 個規格在追；最接近晉升的 cS_vwap_dev>=1+vol_r>=1.5+at(crypto) 已達 n=32 EV=+1.338R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=57 EV-0.251、SC1 n=50 EV-0.817、SC3 n=263 EV-0.328；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 392 筆 EV-0.375R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 25%(1/4)。",
   "radar": {
-   "forming": 1620,
-   "fired": 332,
-   "fired_full": 332,
+   "forming": 1612,
+   "fired": 267,
+   "fired_full": 267,
    "markets": [
     "commodity",
     "crypto",
@@ -148,58 +148,58 @@
     "index",
     "stock"
    ],
-   "universe_fresh": 612,
-   "stale_excluded": 83,
-   "ts_utc": "2026-11-02T20:35",
+   "universe_fresh": 635,
+   "stale_excluded": 60,
+   "ts_utc": "2026-11-02T21:35",
    "age_h": 0.8
   },
   "forecast": {
-   "pending": 1707,
+   "pending": 1694,
    "licensed": 9,
-   "forecasters": 433,
-   "n_forecasts": 63909,
-   "n_resolved": 62202,
-   "asOf": "2026-11-02T20:40:23"
+   "forecasters": 435,
+   "n_forecasts": 63977,
+   "n_resolved": 62283,
+   "asOf": "2026-11-02T21:40:24"
   },
   "shadow": {
-   "n_open": 4231,
-   "n_closed": 4006,
-   "n_live": 3741,
+   "n_open": 4419,
+   "n_closed": 4020,
+   "n_live": 3755,
    "n_post_reg": 265,
    "n_backfill": 0,
    "n_specs": 136,
    "best": {
-    "spec": "cS_rsi>=75+ema_rel<0|TP6R",
+    "spec": "cS_vwap_dev>=1+vol_r>=1.5+atr_r>=1.2|TP4R",
     "market": "crypto",
-    "n": 92,
-    "ev": 1.3189,
+    "n": 32,
+    "ev": 1.3376,
     "to_promo_n": 0,
     "beats_p95": true
    },
    "nearest": [
     {
-     "spec": "cS_rsi>=75+ema_rel<0|TP6R",
+     "spec": "cS_vwap_dev>=1+vol_r>=1.5+atr_r>=1.2|TP4R",
      "market": "crypto",
-     "n": 92,
-     "n_live": 92,
+     "n": 32,
+     "n_live": 32,
      "n_post_reg": 0,
-     "ev": 1.3189,
-     "random_z": 2.11,
+     "ev": 1.3376,
+     "random_z": 2.17,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": true
     },
     {
-     "spec": "cS_vwap_dev>=1+vol_r>=1.5+atr_r>=1.2|TP4R",
+     "spec": "cS_rsi>=75+ema_rel<0|TP6R",
      "market": "crypto",
-     "n": 31,
-     "n_live": 31,
+     "n": 98,
+     "n_live": 98,
      "n_post_reg": 0,
-     "ev": 1.2571,
-     "random_z": 1.92,
+     "ev": 1.2332,
+     "random_z": 1.9,
      "to_promo_n": 0,
      "eta": null,
-     "beats_p95": false
+     "beats_p95": true
     },
     {
      "spec": "cS_trap_hi>=0.1+ema_rel<0|TP4R",
@@ -215,18 +215,18 @@
     }
    ],
    "eta_promo": null,
-   "opens_per_day": 582.1,
+   "opens_per_day": 596.5,
    "rate_days": 14,
-   "ts_utc": "2026-11-02T20:40"
+   "ts_utc": "2026-11-02T21:40"
   },
   "news": {
-   "n_24h": 1329,
-   "n_hi": 35,
+   "n_24h": 1372,
+   "n_hi": 37,
    "by_category": {
-    "crypto": 437,
-    "stock": 348,
-    "commodity_fx": 436,
-    "macro": 108
+    "crypto": 441,
+    "stock": 384,
+    "commodity_fx": 435,
+    "macro": 112
    },
    "sources_green": 39,
    "sources_red": 1,
@@ -236,7 +236,7 @@
     "src": "kucoin_delist",
     "ts": "2026-11-02T03:20:01Z"
    },
-   "run_at": "2026-11-02T21:18:01",
+   "run_at": "2026-11-02T22:18:01",
    "impact": {
     "line": "｜實證：22 類消息裡 3 類會動價格、6 類不會、13 類樣本不足(事件 n=1162)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 22,
@@ -250,8 +250,8 @@
     "ts": "2026-10-31T20:30:28"
    },
    "trump": {
-    "line": "｜川普：近 24h 68 則發言、提到 TSLA×12／WTI×7／GEOPOL×3、淨多空 +0.0",
-    "n_24h": 68,
+    "line": "｜川普：近 24h 84 則發言、提到 TSLA×12／WTI×7／GEOPOL×2、淨多空 +0.0",
+    "n_24h": 84,
     "net_long_24h": 0.0,
     "top_symbols": [
      {
@@ -270,7 +270,7 @@
      },
      {
       "symbol": "GEOPOL",
-      "n": 3,
+      "n": 2,
       "net": 0.0,
       "long": 0,
       "short": 0
@@ -290,52 +290,54 @@
       "short": 0
      }
     ],
-    "run_at": "2026-11-02T21:09:01"
+    "run_at": "2026-11-02T22:09:01"
    }
   },
   "calendar": {
-   "n_today": 12,
+   "n_today": 10,
    "n_tomorrow": 12,
-   "n_next7d": 111,
+   "n_next7d": 114,
    "n_week_high": 2,
-   "in_blackout": false,
-   "blackout_event": null,
-   "blackout_markets": [],
+   "in_blackout": true,
+   "blackout_event": "AAPL 財報",
+   "blackout_markets": [
+    "stock"
+   ],
    "head": {
-    "ts_taipei": "2026-11-03 05:30",
-    "ts_utc": "2026-11-02T21:30:00Z",
-    "name": "AAPL 財報",
+    "ts_taipei": "2026-11-03 20:00",
+    "ts_utc": "2026-11-03T12:00:00Z",
+    "name": "APO 財報",
     "importance": 2,
     "category": "earnings",
     "markets": [
      "stock"
     ],
     "symbols": [
-     "NCSKAAPL2USD-USDT"
+     "NCSKAPO2USD-USDT"
     ],
     "confirmed": false,
     "source": "nasdaq_earnings",
     "blackout": "1.0h/1.0h"
    },
-   "age_h": 3.0,
-   "ts": "2026-11-02T18:20:02"
+   "age_h": 0.0,
+   "ts": "2026-11-02T22:20:02"
   },
   "live_shadow": {
    "window": {
     "from": "2026-09-01",
-    "to": "2026-11-02T20:45"
+    "to": "2026-11-02T21:45"
    },
-   "n_closed": 371,
-   "n_open": 24,
+   "n_closed": 392,
+   "n_open": 31,
    "pooled": {
-    "n": 371,
-    "ev": -0.3643,
-    "sd": 1.27,
-    "win_pct": 31.5,
-    "pf": 0.547,
-    "sum_r": -135.156
+    "n": 392,
+    "ev": -0.3746,
+    "sd": 1.2431,
+    "win_pct": 30.9,
+    "pf": 0.529,
+    "sum_r": -146.858
    },
-   "ts": "2026-11-02T20:45",
+   "ts": "2026-11-02T21:45",
    "per": {
     "B1": {
      "n": 6,
@@ -352,20 +354,20 @@
     "MRS": {
      "n": 57,
      "ev": -0.2507,
-     "z": -1.14,
+     "z": -0.39,
      "n_open": 3
     },
     "SC1": {
-     "n": 29,
-     "ev": -1.0055,
-     "z": -3.33,
-     "n_open": 21
+     "n": 50,
+     "ev": -0.8172,
+     "z": -3.52,
+     "n_open": 0
     },
     "SC3": {
      "n": 263,
      "ev": -0.3282,
-     "z": -1.5,
-     "n_open": 0
+     "z": -0.69,
+     "n_open": 28
     }
    }
   },
@@ -401,12 +403,12 @@
     "funding_missing": 0
    },
    "n_open": 0,
-   "ts": "2026-11-02T21:10:03Z"
+   "ts": "2026-11-02T22:10:03Z"
   }
  },
  "north_star": {
   "ts": "2026-11-02T08:00:02",
-  "age_h": 21.3,
+  "age_h": 22.3,
   "stale": false,
   "risk_light": "red",
   "risk_why": "最大 24h 權益跌幅 100.0%(上限 20.0)",
@@ -472,11 +474,11 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-11-02T21:05",
+  "attendance": "supervision_state.json @ 2026-11-02T22:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
-  "calendar": "calendar_board.json @ 2026-11-02T18:20:02",
-  "news": "news_board.json @ 2026-11-02T21:18:01",
+  "calendar": "calendar_board.json @ 2026-11-02T22:20:02",
+  "news": "news_board.json @ 2026-11-02T22:18:01",
   "north_star": "goal_state.json @ 2026-11-02T08:00:02",
   "rules": "brief_rules.json v1.0"
  },
