@@ -1,10 +1,10 @@
 {
- "ts": "2026-11-02T14:04:54+00:00",
+ "ts": "2026-11-02T14:07:53+00:00",
  "total": 166,
- "ok": 149,
- "bad": 7,
+ "ok": 150,
+ "bad": 6,
  "pending": 0,
- "need_you": 21,
+ "need_you": 20,
  "items": [
   {
    "id": "queen_weight",
@@ -14,7 +14,7 @@
    "purpose": "每日查BingX權益算指數, 更新蟻丘頁蟻后體型並推GitHub Pages(只推指數不推金額)",
    "cadence": "每日 08:10",
    "state": "ok",
-   "detail": "13.9 小時前",
+   "detail": "14.0 小時前",
    "last": "2026-11-02T00:10:01",
    "next": "2026-11-03T00:10:00"
   },
@@ -26,8 +26,8 @@
    "purpose": "四策略掃描下單的心跳; 停了就完全沒有交易",
    "cadence": "60 秒",
    "state": "ok",
-   "detail": "1 分鐘前",
-   "last": "2026-11-02T14:03:29Z",
+   "detail": "0 分鐘前",
+   "last": "2026-11-02T14:07:39Z",
    "next": null
   },
   {
@@ -38,7 +38,7 @@
    "purpose": "價格/服務/心跳警報 + 星系圖資料產出",
    "cadence": "連續",
    "state": "ok",
-   "detail": "1 分鐘前",
+   "detail": "4 分鐘前",
    "last": "2026-11-02T14:03:42Z",
    "next": null
   },
@@ -74,7 +74,7 @@
    "purpose": "每日盤口深度與未平倉量原始資料, T3 滑價防護與未來研究的原料",
    "cadence": "每日一檔",
    "state": "ok",
-   "detail": "最新檔 2026-11-02(14 分鐘前寫入)",
+   "detail": "最新檔 2026-11-02(17 分鐘前寫入)",
    "last": "2026-11-02T13:51:22Z",
    "next": null
   },
@@ -98,7 +98,7 @@
    "purpose": "同源 K 線庫(T1): 讓回測與實盤吃同一份資料",
    "cadence": "每日一檔",
    "state": "ok",
-   "detail": "最新檔 2026-11-01.json(15.7 小時前寫入)",
+   "detail": "最新檔 2026-11-01.json(15.8 小時前寫入)",
    "last": "2026-11-01T22:20:27Z",
    "next": null
   },
@@ -110,7 +110,7 @@
    "purpose": "同源 K 線庫(T1) 4 小時級別",
    "cadence": "每日一檔",
    "state": "ok",
-   "detail": "最新檔 2026-11-01.json(15.7 小時前寫入)",
+   "detail": "最新檔 2026-11-01.json(15.8 小時前寫入)",
    "last": "2026-11-01T22:20:50Z",
    "next": null
   },
@@ -122,7 +122,7 @@
    "purpose": "控制台/指揮中心的即時資料源",
    "cadence": "隨 config 變更 + 定期",
    "state": "ok",
-   "detail": "41 分鐘前",
+   "detail": "44 分鐘前",
    "last": "2026-11-02T13:23:34Z",
    "next": null
   },
@@ -158,7 +158,7 @@
    "purpose": "每日餘額canary+API花費估計一行報, credit/billing 異常立即紅色警報",
    "cadence": "每日 08:20",
    "state": "ok",
-   "detail": "13.7 小時前",
+   "detail": "13.8 小時前",
    "last": "2026-11-02T00:20:24.486445+00:00",
    "next": null
   },
@@ -194,7 +194,7 @@
    "purpose": "依績效自動升降風險檔位",
    "cadence": "每日",
    "state": "ok",
-   "detail": "12.4 小時前",
+   "detail": "12.5 小時前",
    "last": "2026-11-02T01:40:25.433056+00:00",
    "next": null
   },
@@ -254,7 +254,7 @@
    "purpose": "每月總結",
    "cadence": "每月 1 日 09:20",
    "state": "ok",
-   "detail": "36.7 小時前",
+   "detail": "36.8 小時前",
    "last": "2026-11-01T01:20:24.516583+00:00",
    "next": null
   },
@@ -266,7 +266,7 @@
    "purpose": "每週日晚上的交易覆盤參謀",
    "cadence": "每週日 20:20",
    "state": "ok",
-   "detail": "25.7 小時前",
+   "detail": "25.8 小時前",
    "last": "2026-11-01T12:20:29.038057+00:00",
    "next": null
   },
@@ -290,7 +290,7 @@
    "purpose": "18 項防線證據日檢 + 出勤打卡到雲端",
    "cadence": "每日 08:50",
    "state": "ok",
-   "detail": "13.2 小時前",
+   "detail": "13.3 小時前",
    "last": "2026-11-02T00:50:01",
    "next": "2026-11-03T00:50:00"
   },
@@ -303,7 +303,7 @@
    "cadence": "每小時",
    "state": "ok",
    "detail": "0 分鐘前",
-   "last": "2026-11-02T14:04:50",
+   "last": "2026-11-02T14:07:52",
    "next": "2026-11-02T15:05:00"
   },
   {
@@ -386,7 +386,7 @@
    "purpose": "每月 5-15 日盯營收公告",
    "cadence": "每日 09:30 +每 3 小時",
    "state": "ok",
-   "detail": "35 分鐘前",
+   "detail": "38 分鐘前",
    "last": "2026-11-02T13:30:01",
    "next": "2026-11-03T01:30:00"
   },
@@ -398,7 +398,7 @@
    "purpose": "一詮2486每日五訊號盯盤(268突破/250回測/233破壞/外資回補/融資接刀), 2026-08-28建, 取代已死的雲端routine",
    "cadence": "平日 21:45 +隔晨 08:40 補跑",
    "state": "ok",
-   "detail": "20 分鐘前",
+   "detail": "23 分鐘前",
    "last": "2026-11-02T13:45:00",
    "next": "2026-11-03T00:40:00"
   },
@@ -446,7 +446,7 @@
    "purpose": "每日抓 Binance 逐筆成交壓成 5m 微結構特徵(機器自學主力的原料庫)",
    "cadence": "每日 09:10",
    "state": "ok",
-   "detail": "12.9 小時前",
+   "detail": "13.0 小時前",
    "last": "2026-11-02T01:10:01",
    "next": "2026-11-03T01:10:00"
   },
@@ -458,7 +458,7 @@
    "purpose": "盯 orderbook_data 累積天數(滿90天通知可開工驗莊家行為)+蒐集器斷線立即警報",
    "cadence": "每週一 09:10",
    "state": "ok",
-   "detail": "12.9 小時前",
+   "detail": "13.0 小時前",
    "last": "2026-11-02T01:10:00",
    "next": "2026-11-09T01:10:00"
   },
@@ -470,7 +470,7 @@
    "purpose": "每日檢查, 距上次>=pool.review_days(旋鈕預設3天)才重審; 產 pool_tiers.json 給 D 端交易池與研究端共用",
    "cadence": "每日 09:20",
    "state": "ok",
-   "detail": "12.7 小時前",
+   "detail": "12.8 小時前",
    "last": "2026-11-02T01:20:01",
    "next": "2026-11-03T01:20:00"
   },
@@ -542,7 +542,7 @@
    "purpose": "開公司這件事有沒有停下來; 週一推進度、期限逼近或階段停滯 14 天才叫, 其餘靜默。專案獨立於 claude-assistant, 只在此掛號",
    "cadence": "每日 09:10",
    "state": "ok",
-   "detail": "12.9 小時前",
+   "detail": "13.0 小時前",
    "last": "2026-11-02T01:10:01",
    "next": "2026-11-03T01:10:00"
   },
@@ -554,7 +554,7 @@
    "purpose": "每 6 小時掃 Google News RSS 的 Rocket Lab Neutron 新料(首飛時程/結果/測試里程碑), 新文才推 TG(CRIT 不限量/INFO 每日 2 則), 沒新料靜默; RKLB 唯一催化=Neutron 首飛",
    "cadence": "每 6 小時(09:15 起)",
    "state": "ok",
-   "detail": "50 分鐘前",
+   "detail": "53 分鐘前",
    "last": "2026-11-02T13:15:01",
    "next": "2026-11-02T19:15:00"
   },
@@ -566,7 +566,7 @@
    "purpose": "盯 2026-08-27 TP5R 切換後的 TL 實彈; 8筆失血提前叫/15-25-40筆里程碑判定綠黃紅; 紅燈附 revert 一鍵; 防回測-實彈落差(TL 前科 -0.63R)重演",
    "cadence": "每日 21:05",
    "state": "ok",
-   "detail": "60 分鐘前",
+   "detail": "1.0 小時前",
    "last": "2026-11-02T13:05:01",
    "next": "2026-11-03T13:05:00"
   },
@@ -674,7 +674,7 @@
    "purpose": "每筆實單的真實成本法醫(income逐筆手續費+資金費換算bps), 逐幣累積對照D端成本表, 實測>假設1.5倍才叫; 滑價分解為v2待盤口對齊; 參謀化T3軌",
    "cadence": "每日 09:40",
    "state": "ok",
-   "detail": "12.4 小時前",
+   "detail": "12.5 小時前",
    "last": "2026-11-02T01:40:01",
    "next": "2026-11-03T01:40:00"
   },
@@ -686,7 +686,7 @@
    "purpose": "每小時看整巢總曝險(含帳外手動倉): 同向注數+持倉相關性+有效注數N_eff; 同向>=4或名目與有效差>=1.5注才叫; 純建議層不擋單(8/28六連停損=同注下六次的解藥); 2026-09-08 搬上雲端(本機休眠14h全滅事故): 邏輯 apex_ants.py, 狀態/輸出在 A 記憶 ants.*, 監督台每小時鏡像回本機檔; 卡=真的跑完才打",
    "cadence": "每小時 :45(Render A 排程)",
    "state": "ok",
-   "detail": "19 分鐘前",
+   "detail": "22 分鐘前",
    "last": "2026-11-02T13:45:25.263858+00:00",
    "next": null
   },
@@ -698,7 +698,7 @@
    "purpose": "蟻穴第一隻元蟻:讀所有蟻的結果檔,把多蟻指向同一標的的發現合成單一事件並分級P0-P3;P0每15分重播直到解除;算距爆倉還剩幾根K棒;只調音量不下單不改參數; 2026-09-08 搬上雲端(本機休眠14h全滅事故): 邏輯 apex_ants.py, 狀態/輸出在 A 記憶 ants.*, 監督台每小時鏡像回本機檔; 卡=真的跑完才打",
    "cadence": "每 15 分鐘(Render A 排程)",
    "state": "ok",
-   "detail": "9 分鐘前",
+   "detail": "12 分鐘前",
    "last": "2026-11-02T13:55:25.176007+00:00",
    "next": null
   },
@@ -711,7 +711,7 @@
    "cadence": "常駐(登入時由看門狗拉起)",
    "state": "ok",
    "detail": "剛剛寫入",
-   "last": "2026-11-02T14:05:04.905702+00:00",
+   "last": "2026-11-02T14:08:04.953165+00:00",
    "next": null
   },
   {
@@ -722,7 +722,7 @@
    "purpose": "把 Claude 記憶目錄編成五張表(裁決錄/墳場/事故簿/策略手冊/專案紀錄), 本機 decision_kb.json 給螞蟻查, Notion 給 Jesse 讀; 由蟻丘 08:10 順帶跑",
    "cadence": "每日 08:10(隨 queen_weight)",
    "state": "ok",
-   "detail": "13.7 小時前",
+   "detail": "13.8 小時前",
    "last": "2026-11-02T00:19:59.421424+00:00",
    "next": null
   },
@@ -734,7 +734,7 @@
    "purpose": "本機不在 git 的關鍵狀態(記憶/.env/名冊/蟻丘/決策庫/各 state)每日打包到 C:/apex_snapshots, 30 天+週日永久; restore 先解 staging 再 --apply",
    "cadence": "每日 08:10(隨 queen_weight)",
    "state": "ok",
-   "detail": "13.9 小時前",
+   "detail": "14.0 小時前",
    "last": "2026-11-02T00:10:20.713001+00:00",
    "next": null
   },
@@ -769,7 +769,7 @@
    "purpose": "每天 08:10 一張卡三行: 巢況一句/糧倉缺不缺/今天要你決定的一件事(按鈕); 有逾期行動或 SLO 超支才多一行",
    "cadence": "每日 08:10(隨 queen_weight)",
    "state": "ok",
-   "detail": "13.7 小時前",
+   "detail": "13.8 小時前",
    "last": "2026-11-02T00:21:15.004037+00:00",
    "next": null
   },
@@ -781,7 +781,7 @@
    "purpose": "actions.json 行動項目帳: 每個洞有負責人與期限, 逾期才 TG(每日一次); 進 Notion 行動項目表",
    "cadence": "每日 08:10(隨 queen_weight)",
    "state": "ok",
-   "detail": "13.7 小時前",
+   "detail": "13.8 小時前",
    "last": "2026-11-02T00:21:10.553306+00:00",
    "next": null
   },
@@ -793,8 +793,8 @@
    "purpose": "每隻蟻 30 天達成率 vs 名冊 slo_pct(預設 95); 超支才 TG; 隨監督台每小時點名累積",
    "cadence": "每小時(隨 supervisor)",
    "state": "ok",
-   "detail": "6 分鐘前",
-   "last": "2026-11-02T13:58:31.031015+00:00",
+   "detail": "2 分鐘前",
+   "last": "2026-11-02T14:05:23.733441+00:00",
    "next": null
   },
   {
@@ -805,7 +805,7 @@
    "purpose": "網路學來的公開交易法(教材附出處)翻成D同源規格入學, 只前瞻不下單; 每月結算 >=3筆且淨R>0=過/<=0記過/三次除名立碑; 連過3月畢業交礦機五關; 事件才TG",
    "cadence": "每日 08:10(隨 queen_weight)",
    "state": "ok",
-   "detail": "13.7 小時前",
+   "detail": "13.8 小時前",
    "last": "2026-11-02T00:20:20.755849+00:00",
    "next": null
   },
@@ -817,7 +817,7 @@
    "purpose": "帝國藍圖第一章: 待決事項到期無異議即採建議、留痕(記憶md+TG/信箱/events.jsonl)、建後續行動項目(不直接碰交易設定, 執行走/deploy或/control); 逾期掛Jesse名下的行動項目由巢接手; 甲級四件policy=manual永不自動裁",
    "cadence": "每日 08:10(隨 queen_weight)",
    "state": "ok",
-   "detail": "13.7 小時前",
+   "detail": "13.8 小時前",
    "last": "2026-11-02T00:20:41.036527+00:00",
    "next": null
   },
@@ -829,7 +829,7 @@
    "purpose": "蟻群留言板(Jesse 2026-09-10): 每小時把近12小時巢內留痕(events.jsonl裁決/警報+今日進化)推成 apex_colony666_board.json, 蟻穴頁用小螞蟻足跡把每則畫成字, 每則12小時後自動散掉; 內容沒變不推",
    "cadence": "每小時 :20",
    "state": "ok",
-   "detail": "45 分鐘前",
+   "detail": "48 分鐘前",
    "last": "2026-11-02T13:20:01",
    "next": "2026-11-02T14:20:00",
    "light": "yellow",
@@ -852,7 +852,7 @@
    "purpose": "帝國第一章: 本機與A互為看門狗的第三隻眼。每30分看 A 記憶分支最後commit(>45分=A停)與本機監督台推的 supervision_state.json(>4h=本機停); 任一停就TG留痕, 兩邊全停且有Deploy Hook secret就自動打hook復活。GitHub cron會遲到, 只當最後一道",
    "cadence": "每 30 分鐘(GitHub cron, 會遲到)",
    "state": "late",
-   "detail": "success 但 6.0 小時前 沒跑(容忍 6h)",
+   "detail": "success 但 6.1 小時前 沒跑(容忍 6h)",
    "last": "2026-11-02T08:02:31Z",
    "next": null
   },
@@ -864,7 +864,7 @@
    "purpose": "帝國第二章缺口#8: 每小時比對 GitHub tama_config.json sha 與 D 記憶 applied_sha; 不符且 commit>5分 才留痕(同一sha只叫一次, 恢復叫一次); L1/L2/礦機任何人寫了沒生效都抓得到",
    "cadence": "每小時 :50",
    "state": "ok",
-   "detail": "15 分鐘前",
+   "detail": "18 分鐘前",
    "last": "2026-11-02T13:50:01",
    "next": "2026-11-02T14:50:00"
   },
@@ -876,7 +876,7 @@
    "purpose": "帝國第二章缺口#26: 每週日隨08:10鏈拿最新快照走真正的restore路徑到staging(不覆蓋): testzip CRC+檔數+抽5檔sha; 不過才留痕; 平日跑會標skipped",
    "cadence": "每週日 08:10(隨 queen_weight)",
    "state": "ok",
-   "detail": "13.7 小時前",
+   "detail": "13.8 小時前",
    "last": "2026-11-02T00:21:01.554306+00:00",
    "next": null
   },
@@ -888,7 +888,7 @@
    "purpose": "帝國第一章缺口#15: 14個log>1MB改名兩代; Deadloop常駐握著的兩份跳過",
    "cadence": "每日 08:10(隨 queen_weight)",
    "state": "ok",
-   "detail": "13.7 小時前",
+   "detail": "13.8 小時前",
    "last": "2026-11-02T00:21:01.464974+00:00",
    "next": null
   },
@@ -960,7 +960,7 @@
    "purpose": "對齊五份會漂移的名單: (1).claude/agents/*.md 有沒有進監督台名冊 (2)使用者層與專案層同名 agent 內容是否一致(使用者層會覆蓋專案層) (3)registry 非退役 id 有沒有蟻丘 ALIAS 名牌 (4)VBS 裡 apex_ping.py <key> 是否同時存在 JOBS 與 deadloop.db checks(缺一即靜默失聯) (5)registry schtask 的 args.task 是否真的在 Windows 工作排程器且 Ready/Running",
    "cadence": "每日 08:10(隨 queen_weight)",
    "state": "ok",
-   "detail": "13.7 小時前",
+   "detail": "13.8 小時前",
    "last": "2026-11-02T00:21:05.755428+00:00",
    "next": null
   },
@@ -972,7 +972,7 @@
    "purpose": "每週替名冊上每隻蟻粗估成本(每週跑幾次 x 每次幾分)x價值(30天內候選/事件/行動項目/結果檔新鮮度), 把高成本低價值的列成瘦身提案進 auto_decide 待決佇列(rec=降頻, 7天無異議成立只建行動項目); 丙級自動, 只提案不執行, 永不自己停蟻",
    "cadence": "每週日 08:10(隨 queen_weight)",
    "state": "ok",
-   "detail": "13.7 小時前",
+   "detail": "13.8 小時前",
    "last": "2026-11-02T00:21:05.839465+00:00",
    "next": null
   },
@@ -984,7 +984,7 @@
    "purpose": "帝國藍圖第四章缺口#19(退役半邊): 讀 tama_config.auto_verdicts 與 A 記憶 adaptive_risk 找新退役者, 自動立碑(obits.json->蟻丘墓碑)+寫知識庫墳場 md(retire_<id>_<date>.md)+名冊改 retired+events 留痕; live_enabled=false 但無 L2 紀錄的只算已下線不立碑; 墳場簽名要人審, 葬蟻不自己加",
    "cadence": "每日 08:10(隨 queen_weight)",
    "state": "ok",
-   "detail": "13.7 小時前",
+   "detail": "13.8 小時前",
    "last": "2026-11-02T00:21:07.597514+00:00",
    "next": null
   },
@@ -996,7 +996,7 @@
    "purpose": "帝國第二卷第陸章「回饋」: 決策結果帳(outcomes.jsonl)到期對答案, 算每類自動規則的事後命中率(L2降檔/L1換將/墳場擋單/礦機探針/盤感折扣/自動裁決); hit+miss>=10 且命中率<40% 自動提降權待決走 auto_decide; 判官只打分與提案, 不自己改任何規則",
    "cadence": "每週日 08:10(隨 queen_weight)",
    "state": "ok",
-   "detail": "13.7 小時前",
+   "detail": "13.8 小時前",
    "last": "2026-11-02T00:21:07.720138+00:00",
    "next": null
   },
@@ -1008,7 +1008,7 @@
    "purpose": "帝國藍圖第三卷「自我升級」: 巢的程式層週度體檢八項(py_compile+pyflakes、Ant 基類版本落後、鷹架完整度(結果檔/ALIAS)、結果檔 schema、Python 與依賴漂移、編碼與換行、殭屍檔、每隻蟻 --selftest); 只自動修三件零風險(去 BOM、.py CRLF→LF、刪超過 24h 的 Ant .lock, 一律先備份 _bak/self_check/), 交易檔與 queen_weight/apex_anthill 只報告; 失敗超過 3 檔或同檔連兩週失敗 -> auto_decide 提案",
    "cadence": "每週日 08:10(隨 queen_weight)",
    "state": "ok",
-   "detail": "13.7 小時前",
+   "detail": "13.8 小時前",
    "last": "2026-11-02T00:21:08.021920+00:00",
    "next": null
   },
@@ -1020,7 +1020,7 @@
    "purpose": "王座公理肆「領地互不連坐」的機器檢查: 遮蔽任一領地根目錄(vela/venture/throne/deadloop/apex_artifacts)後實跑監督台本機採集/蟻丘純函式/名冊lint/今日一卡, 掛掉的列成連坐清單; 含遮蔽自驗(證明遮蔽真的有咬到)與寫入沙盒導向(不污染真實 state)",
    "cadence": "每週日 08:10(隨 queen_weight)",
    "state": "ok",
-   "detail": "13.7 小時前",
+   "detail": "13.8 小時前",
    "last": "2026-11-02T00:21:08.185157+00:00",
    "next": null
   },
@@ -1032,7 +1032,7 @@
    "purpose": "本機巢節點地圖(WO-25): 純靜態 AST+regex 掃 claude-assistant/apex_artifacts/deadloop/vela 四領地的腳本、資料檔、VBS 啟動器與外部 API, 產 LOCAL_NODES.md(人看)與 depgraph.json(機器吃); 列出高扇入單點(壞了連坐)、寫入衝突(競態候選)、孤兒產出(與 rule_miner E4 互相印證)與跨領地邊(拆除測試 TARGETS 提示); 只讀不執行任何被掃描的腳本, 只輸出不改別的蟻",
    "cadence": "每週日 08:10(隨 queen_weight)",
    "state": "ok",
-   "detail": "37.7 小時前",
+   "detail": "37.8 小時前",
    "last": "2026-11-01T00:21:28.565955+00:00",
    "next": null
   },
@@ -1044,7 +1044,7 @@
    "purpose": "每週拿實際數字(健康度/事件/SLO/新裁決事故/連坐/秤帳)逐條對照王座六公理, 有證據才提修憲提案(最多3條); 純規則式不呼叫 LLM; 只提案不修——修憲屬甲級, 有提案時建一筆 policy=manual 待決永不自動裁",
    "cadence": "每週日 08:10(隨 queen_weight)",
    "state": "ok",
-   "detail": "13.7 小時前",
+   "detail": "13.8 小時前",
    "last": "2026-11-02T00:21:08.349273+00:00",
    "next": null
   },
@@ -1056,7 +1056,7 @@
    "purpose": "A 每小時獨立對帳名冊裡雲端驗得到的項目(punch/gh_commit/render/gh_action), 補本機監督台睡著的盲區; 結果寫 A 記憶 cloud_supervision",
    "cadence": "每小時",
    "state": "ok",
-   "detail": "24 分鐘前",
+   "detail": "27 分鐘前",
    "last": "2026-11-02T13:40:34.602712+00:00",
    "next": null
   },
@@ -1068,7 +1068,7 @@
    "purpose": "偵測熔斷解除並啟動7天保護期提案與每日留痕",
    "cadence": "每小時 :55",
    "state": "ok",
-   "detail": "10 分鐘前",
+   "detail": "13 分鐘前",
    "last": "2026-11-02T13:55:01",
    "next": "2026-11-02T14:55:00"
   },
@@ -1080,7 +1080,7 @@
    "purpose": "每週從巢自己的歷史挖「同一件事重複發生」的六種模式(重複事件/重演事故/慢性遲到/孤兒產出/靜默 ping 缺 key/陳年行動項目), 每種都代表缺一條檢查或缺一隻蟻; 純規則式不呼叫 LLM; 只提案不改東西——每週最多 3 條走 auto_decide(指紋 90 天去重, 同一週只提一批)",
    "cadence": "每週日 08:10(隨 queen_weight)",
    "state": "ok",
-   "detail": "13.7 小時前",
+   "detail": "13.8 小時前",
    "last": "2026-11-02T00:21:07.806587+00:00",
    "next": null
   },
@@ -1092,7 +1092,7 @@
    "purpose": "每週體檢長期記憶(Claude memory 目錄 + MEMORY.md): 孤兒檔/索引與[[link]]死連結/重複主題/過時待辦/矛盾數值/超長檔/可壓縮群組七項, 純規則式不呼叫 LLM; 只讀不改——提案走 auto_decide(rec A=交行動項目給 Claude), 任何記憶 md 都不會被它動到",
    "cadence": "每週日 08:10(隨 queen_weight)",
    "state": "ok",
-   "detail": "13.7 小時前",
+   "detail": "13.8 小時前",
    "last": "2026-11-02T00:21:08.105310+00:00",
    "next": null
   },
@@ -1104,7 +1104,7 @@
    "purpose": "每週日製造七種可控故障(Deadloop 空轉/失聯、看門狗復活、事件匯流排節流與升級、留痕出口 fallback、監督台紅燈、寫後回讀不符), 驗免疫系統壞掉時真的會叫; 全程可逆隔離有時限(預算 240 秒), 臨時物件一律 drill 前綴且用完即刪; 任一項偵測器沒反應 = 免疫系統的洞 -> events crit, 連兩週同項 fail -> auto_decide 提案",
    "cadence": "每週日 08:10(隨 queen_weight)",
    "state": "ok",
-   "detail": "13.7 小時前",
+   "detail": "13.8 小時前",
    "last": "2026-11-02T00:21:07.928234+00:00",
    "next": null
   },
@@ -1116,7 +1116,7 @@
    "purpose": "帳外手動倉制度化: 對照 D 端五本帳算出手動倉, 每筆量三數(交易所止損掛單有無/距爆倉幾%幾根1h ATR/名義是策略權益幾倍), 超過 manual_guard_rules.json 門檻 crit 留痕+建行動項; 總曝險超標建加倉鎖待決。不下單不撤單不碰 tama_config(兩次熔斷 76% 虧損來自手動倉)",
    "cadence": "每小時 :50",
    "state": "ok",
-   "detail": "15 分鐘前",
+   "detail": "18 分鐘前",
    "last": "2026-11-02T13:50:02",
    "next": "2026-11-02T14:50:00"
   },
@@ -1140,7 +1140,7 @@
    "purpose": "對 pool_tiers.main 逐幣算往返成本(衡實測手續費+slippage_audit 估算價差), 換成 R 與各策略 TP 距離佔比並排名; 依成本產 elite 精英池提案寫回 pool_tiers.json(不動 main, D 端不讀); 排在 pool_review 09:20 與衡 09:40 之後",
    "cadence": "每日 09:50",
    "state": "ok",
-   "detail": "12.2 小時前",
+   "detail": "12.3 小時前",
    "last": "2026-11-02T01:50:01",
    "next": "2026-11-03T01:50:00"
   },
@@ -1199,7 +1199,7 @@
    "purpose": "關鍵資料資產(20 項)列數/新鮮度/schema 逐日斷言; 縮水=疑似覆蓋(crit+行動項); 只讀不修, 還原走 time_machine; 順便重畫資料血緣圖(孤兒讀/死寫)",
    "cadence": "每日 07:40",
    "state": "ok",
-   "detail": "14.4 小時前",
+   "detail": "14.5 小時前",
    "last": "2026-11-01T23:40:01",
    "next": "2026-11-02T23:40:00",
    "light": "yellow",
@@ -1226,7 +1226,7 @@
    "purpose": "每小時把 kline_store/1h 全宇宙(加密+非加密, 自動發現新 symbol)對照現役五支/AUTO/候選/最強策略的進場條件, 算每個(標的,規格)成形度=滿足條件數/可評條件數, 未滿足條件附正規化缺口與 6 根趨勢; forming=>=60%且全在接近, fired=100%; 只看得到不下單不建行動項, 非fired->fired 留痕一次; 產 formation_radar_board.json 給蟻丘",
    "cadence": "每小時 :35",
    "state": "ok",
-   "detail": "30 分鐘前",
+   "detail": "33 分鐘前",
    "last": "2026-11-02T13:35:01",
    "next": "2026-11-02T14:35:00"
   },
@@ -1238,7 +1238,7 @@
    "purpose": "BingX 589 檔非加密合約(美股496/外匯42/商品33/指數18)1h K 線每小時增量進 kline_store; 休市(contracts status=25)直接跳過記 paused 不問 klines(避免 109429 連坐整個 IP); 連續 72h 零新棒且非週末才 warn; 每週日刷新 nc_universe.json; 4h/1d 靠重採樣",
    "cadence": "每小時 :25",
    "state": "ok",
-   "detail": "40 分鐘前",
+   "detail": "43 分鐘前",
    "last": "2026-11-02T13:25:01",
    "next": "2026-11-02T14:25:00"
   },
@@ -1250,7 +1250,7 @@
    "purpose": "所有蟻的看法寫成可證偽預言進同一本帳; 每小時收預言->結算到期->重算榜",
    "cadence": "每小時 :40",
    "state": "ok",
-   "detail": "25 分鐘前",
+   "detail": "28 分鐘前",
    "last": "2026-11-02T13:40:01",
    "next": "2026-11-02T14:40:00"
   },
@@ -1322,7 +1322,7 @@
    "purpose": "每小時直掃(--scan)全宇宙: 對 candidate_registry 存活規格(含 nc_scan 落地的非加密組合)＋最強策略, 用 prospector_combo 同一批特徵與同一個進場語意, 在 kline_store 所有有資料且新鮮的標的上評「上一根已收盤棒是否 fired」, fired 就開影子單, 用回測同一個結算函式(prospector_combo.sim_*)跑真實後續棒結算成 R; 新規格另從登記日(candidate_registry.discovered)起回填「登記後才發生」的訊號(origin=post_registration_backfill, 計入 n, 與 live 分開列)。累積前瞻樣本 -> n>=30 且 EV>0 且勝隨機 p95 就建晉升待決, n>=20 且 EV<-0.3 就發「候選前瞻翻負」警報; 只記帳不下單。舊式 --backfill 單標 backfill=True, 是樣本內, 永遠不計入前瞻成績。",
    "cadence": "每小時 :40",
    "state": "ok",
-   "detail": "25 分鐘前",
+   "detail": "28 分鐘前",
    "last": "2026-11-02T13:40:01",
    "next": "2026-11-02T14:40:00",
    "light": "yellow",
@@ -1345,7 +1345,7 @@
    "purpose": "每 15 分鐘從 news_sources.json 白名單(33 個可用來源, 含 Fed/BLS/BEA/SEC EDGAR/Nasdaq halts/EIA/CFTC/BoJ/BoE/Binance 公告等 tier1 官方一手)抓 RSS/Atom/官方 JSON, 正規化成事件並標實體/主題/重要度, 去重後進 news_events.jsonl; 產 news_latest.json 與 news_board.json 餵風蟻與信心度引擎(只削減不加碼); 只蒐不交易 [SP4 2026-09-28: 幣安 CMS 兩來源另有雲端腿(cloud_leg), 本機仍是其餘 37 來源唯一載具]",
    "cadence": "每 15 分鐘 :03/:18/:33/:48",
    "state": "ok",
-   "detail": "2 分鐘前",
+   "detail": "5 分鐘前",
    "last": "2026-11-02T14:03:01",
    "next": "2026-11-02T14:18:00",
    "light": "yellow",
@@ -1380,7 +1380,7 @@
    "purpose": "event_calendar.py --quick: 每 4 小時只重抓便宜來源(未來 3 天)並重算黑窗建議, 產 calendar_next7d.json 給成形雷達與風蟻用; 全量在每日 06:00 那列。只建議不接 D 端、不下單",
    "cadence": "每 4 小時(:20 增量)",
    "state": "ok",
-   "detail": "3.7 小時前",
+   "detail": "3.8 小時前",
    "last": "2026-11-02T10:20:01",
    "next": "2026-11-02T14:20:00"
   },
@@ -1404,9 +1404,9 @@
    "purpose": "受控宇宙(<=80 檔: 主池+news_impact 代表標的+影子近 30 天美股+elite)的 15m K 線增量進 kline_store/15m, 給消息衝擊量測(發布後 5~15 分鐘)與影子細粒度結算用; 休市記 paused 不當失敗; 每輪抽 3 檔驗 4 根 15m 聚合 == 原生 1h(對不上就叫, 細粒度重放會說謊)",
    "cadence": "每 15 分 :07/:22/:37/:52",
    "state": "ok",
-   "detail": "13 分鐘前",
-   "last": "2026-11-02T13:52:01",
-   "next": "2026-11-02T14:07:00",
+   "detail": "1 分鐘前",
+   "last": "2026-11-02T14:07:01",
+   "next": "2026-11-02T14:22:00",
    "light": "yellow",
    "const_repeat": {
     "n": 53,
@@ -1427,7 +1427,7 @@
    "purpose": "把「影子晉升裁決成立」變成「一行指令就能上線」: 讀 decisions.json 已成立的晉升案, 重驗影子統計/墳場/裁決衝突, 產出 config 差異 + 帶七道閘門與四綠的推送腳本 + 一張晉升卡, 並建一筆 owner=Jesse 的行動項目(標題就是那行指令); 規格事後翻負會自動撤回。不寫 tama_config、不推 GitHub、不碰 D 端、不下單",
    "cadence": "每日 08:20",
    "state": "ok",
-   "detail": "13.7 小時前",
+   "detail": "13.8 小時前",
    "last": "2026-11-02T00:20:01",
    "next": "2026-11-03T00:20:00"
   },
@@ -1439,7 +1439,7 @@
    "purpose": "每週把 _bak 超過 14 天的備份(含 self_check 子目錄、registry_io 的 .bad_ 屍體)zip 冷藏到 C:/apex_cold 並記帳; 密鑰命中留原地; 不刪只搬(先驗 sha 再搬)",
    "cadence": "每週日 04:45",
    "state": "ok",
-   "detail": "41.3 小時前",
+   "detail": "41.4 小時前",
    "last": "2026-10-31T20:45:00",
    "next": "2026-11-07T20:45:00"
   },
@@ -1451,7 +1451,7 @@
    "purpose": "候選規格上實盤前的最後一關: 對 to_promo_n==0 且贏隨機 p95 的規格(含已提案待決)跑六項壓力測試(標的集中度/時間切片/regime/成本x2/出場形狀/1000次隨機基準), 任一致命項失敗就把晉升待決的建議從 A 降成 B 並寫明哪項掛。只讀影子帳本, 唯一寫入走 auto_decide CLI; 不碰 D 端、不改實盤設定、不下單",
    "cadence": "每日 08:15",
    "state": "ok",
-   "detail": "13.8 小時前",
+   "detail": "13.9 小時前",
    "last": "2026-11-02T00:15:01",
    "next": "2026-11-03T00:15:00"
   },
@@ -1463,7 +1463,7 @@
    "purpose": "用現役五支自己的引擎(revalidate_3y.signals_b1/mrs/sc + walkforward_revalidate.entries_tl + revalidate_3y.sim + SPECS 生效參數 + BTC regime 閘門)每小時對 pool_tiers.main 評「上一根已收盤棒有沒有進場訊號」, 有就開一張影子單, 後續棒真的走完 maxh 根才用同一台 sim 結算成 R; 從 2026-09-01(三年樣本外重驗裁決日)起回填真前瞻(origin=post_verdict_backfill, 與 live 分開列, 合計才是 n)。n>=30 且 EV>0 且贏同期同形狀隨機 p95 -> auto_decide 建「解除該策略影子/恢復配額」待決; n>=30 且 EV<-0.20 -> 建「該策略轉影子」待決。只提案, 永不改 D 端或 tama_config。",
    "cadence": "每小時 :45",
    "state": "ok",
-   "detail": "20 分鐘前",
+   "detail": "23 分鐘前",
    "last": "2026-11-02T13:45:01",
    "next": "2026-11-02T14:45:00"
   },
@@ -1475,7 +1475,7 @@
    "purpose": "每日快照 BingX 合約(含 NC)與現貨上市名單落 contracts_hist/, 並把新增/移除/status 變動追到 contracts_changes.jsonl; 給事件驅動策略回測「事件當下能不能下單」(was_listed)",
    "cadence": "每日 00:10 + 每 6 小時",
    "state": "ok",
-   "detail": "3.9 小時前",
+   "detail": "4.0 小時前",
    "last": "2026-11-02T10:10:01",
    "next": "2026-11-02T16:10:00"
   },
@@ -1487,7 +1487,7 @@
    "purpose": "WO-67 + WO-122 D078/D082。兩條腿, 統計互不污染: bingx_leg 量**可交易率**(讀 news_events 的 source_id=binance_delist, 依 delist_shadow_rules.json 分 token_delist/pair_removal/futures_delist, 只有 token_delist 開單; 代幣解析 import research/h17_delist/build_events.toks; 查 BingX 當下有無 {SYM}-USDT 永續, 有就開影子空單沒有就記 untradable -- 現況 7/7 無標的, venue_locked)。binance_leg 量**EV 本身**(同一份 settle 換結算源: Binance fapi 1h/15m + fundingRate, 成本 20bps 與 391bps 並列; 凍結規格 spec_hash 每跑比對, 改到就前瞻 n 歸零; t 用 research/cluster_stats.crse 簇=公告時戳; 合併樣本 = 歷史 24 簇(research/h17_delist/h17_hist_seed.json, h17b_net 凍結, parity +0.4342/1.87) + 前瞻新簇; t_merged 與 t_fwd_only 都記, 後者才是乾淨樣本外; **判定只做一次** -- 簇數首達 27.5 時判, 外推 2026-12-06, 硬停 2027-03-31 判 INSUFFICIENT; 三個分母 n_events_seen/n_settled/n_data_gap 各自落檔(另有 n_no_contract: 幣安沒這檔合約是可交易性事實不是資料洞))。binance_leg **永不下單、不得出 D 端工單**, 只能提開戶+撥款的甲級待決由 Jesse 本人拍板。回填(origin=backfill)不計入前瞻 n。只記帳, 不碰 D 端。 [SP4 2026-09-28: 公告擷取+當下可交易性另有雲端腿(cloud_leg), 結算仍只在本機]",
    "cadence": "每 15 分鐘(:10/:25/:40/:55)",
    "state": "ok",
-   "detail": "10 分鐘前",
+   "detail": "13 分鐘前",
    "last": "2026-11-02T13:55:01",
    "next": "2026-11-02T14:10:00",
    "light": "yellow",
@@ -1522,7 +1522,7 @@
    "purpose": "WO-76 風險預算: (1)波動率目標倉位 -- 組合年化 10%(AQR)/20%(加密慣例) 兩檔, 每幣建議名目=目標σ÷該幣60天已實現σ×權益, 並對照交易所實際名目給 ratio_actual_vs_target; (2)組合波動貢獻 MCR 前三名(用秤蟻同一份相關矩陣); (3)滾動回撤停用建議 -- 30天滾動回撤 vs 過去365天所有30天回撤的95分位, 超過=halt_advice, 樣本不足一律 unknown 不裁決。輸出 risk_budget.json 給秤(mcr_top3/vol_target_ratio)與信心度引擎(第四道折扣 x0.7)。全部建議層, 任何數字都不進 D 端、不寫 tama_config.json、不下單。",
    "cadence": "每小時 :50",
    "state": "ok",
-   "detail": "15 分鐘前",
+   "detail": "18 分鐘前",
    "last": "2026-11-02T13:50:01",
    "next": "2026-11-02T14:50:00",
    "light": "yellow",
@@ -1545,7 +1545,7 @@
    "purpose": "WO-78 多市場趨勢籃子影子帳: 1/3/12 月報酬符號三訊號等權 + 年化 10% 波動率目標 + 逐日再平衡, 宇宙 = 22 幣(幣安 4h 聚日) + BingX 非加密合成合約(NCFX/NCCO, 資料 >= 300 交易日; WO 原門檻 400 天實測 0 檔達標)。每日寫 trend_basket_shadow.json(每檔訊號/σ/權重/換手) 與 trend_basket_book.jsonl(前瞻淨值, 次日開盤成交、扣成本)。**只算不下單**: 不進 D 端、不寫 tama_config.json。回測見 research/trend_basket.py。",
    "cadence": "每日 06:10",
    "state": "ok",
-   "detail": "15.9 小時前",
+   "detail": "16.0 小時前",
    "last": "2026-11-01T22:10:01",
    "next": "2026-11-02T22:10:00"
   },
@@ -1581,7 +1581,7 @@
    "purpose": "WO-82 資本容量表: 每檔兩個容量數字 -- (1)盤口容量: 現抓 BingX /quote/depth(limit=20) 線性吃單, 成交均價偏離 mid <=5bps 的最大單筆名目(含半價差), 買賣兩側取 min; (2)ADV 容量: BingX 自己的 1h 成交額近30天中位數 x 1% 參與率(機構慣例非實測)。再用 risk_pct x 權益 / (sl_atr x atr_pct_med) 反推每支策略的撞牆權益(第一個幣/全池)與 236/1000/2360/10000U 四級可交易檔數; 趨勢籃子改用波動目標權重。資金費/基差容量 n/a。純資訊層: 不寫 tama_config.json、不進 D 端、不下單; 沒事靜默, 只在現行權益已超過某檔容量時留痕。",
    "cadence": "每週日 07:20",
    "state": "ok",
-   "detail": "38.7 小時前",
+   "detail": "38.8 小時前",
    "last": "2026-10-31T23:20:00",
    "next": "2026-11-07T23:20:00"
   },
@@ -1593,7 +1593,7 @@
    "purpose": "WO-87 損益歸因: 把權益變動逐筆拆成策略(分策略 USDT + 帳本 R)/手動單/手續費/資金費/強平保險金/滑價(目前 n/a), 三欄期間(近7天/近30天/自2026-06-20)。資料 = risk_budget_income.jsonl 快取(只讀, 落後 >6h 才現抓補在記憶體) x 五本策略帳本(live tama_memory + archive_ledger/mem_before_wipe_20260831.json), symbol+時間窗配對判策略單/手動單/不明。對帳差用本蟻自己的權益快照歷史算(首跑必 null, 絕不用 income 反推的曲線對 income)。純資訊層不碰 D 端; 沒事靜默, 只有新強平或對帳差>5% 才留痕。",
    "cadence": "每週日 07:50 + 每月 1 日 07:50",
    "state": "ok",
-   "detail": "38.2 小時前",
+   "detail": "38.3 小時前",
    "last": "2026-10-31T23:50:00",
    "next": "2026-11-07T23:50:00"
   },
@@ -1605,7 +1605,7 @@
    "purpose": "WO-86 情境壓力測試: 把現在的持倉丟進六個歷史崩盤日(2020-03-12/2021-05-19/2022-05 LUNA/2022-11 FTX/2024-08-05/2025-10-10)的 24h 與 72h 視窗極值, 以及五個假設衝擊(全池-20/-35/+25, BTC±15%其餘beta1.3), 每情境算權益變動%、爆倉倉數、觸及爆倉所需跌幅 vs 情境跌幅, 策略倉與手動倉分開小計。爆倉判定用交易所 liquidationPrice 不自推公式; 歷史衝擊由幣安五年 1h 資料當場重算不寫死。只有任一歷史情境會爆倉或最壞情境權益跌>50% 才留痕(24h一次), 其餘靜默。結果檔只寫百分比不寫金額。純觀測: 不下單、不改 tama_config.json、不碰 D 端",
    "cadence": "每日 07:40",
    "state": "ok",
-   "detail": "14.4 小時前",
+   "detail": "14.5 小時前",
    "last": "2026-11-01T23:40:01",
    "next": "2026-11-02T23:40:00"
   },
@@ -1653,7 +1653,7 @@
    "purpose": "WO-91 盤點全樹 JSON 的 producer/consumer/新鮮度/頂層鍵名, 每日重生 DATA_DICTIONARY.md; 只有出現新幽靈檔或名冊在案卻過期 >3 天才留痕(24h 一次)",
    "cadence": "每日 06:40",
    "state": "ok",
-   "detail": "15.4 小時前",
+   "detail": "15.5 小時前",
    "last": "2026-11-01T22:40:01",
    "next": "2026-11-02T22:40:00",
    "light": "yellow",
@@ -1676,7 +1676,7 @@
    "purpose": "WO-97 live-vs-expected 分布監控: 每支策略/候選規格的『前瞻逐筆 R 分布』對『回測逐筆 R 分布』做雙樣本 KS 檢定(自實作零依賴), 外加前瞻近 30 筆 z 與半衰期(EV 歸零日)外推。ks_p<0.01 且 n>=30 才留痕, 7 天一次。純觀測層, 結論只餵 kill_watch 的 drift_ks_p 規則走待決, 不改 D 端不下單。",
    "cadence": "每日 08:40",
    "state": "ok",
-   "detail": "13.4 小時前",
+   "detail": "13.5 小時前",
    "last": "2026-11-02T00:40:01",
    "next": "2026-11-03T00:40:00"
   },
@@ -1688,7 +1688,7 @@
    "purpose": "WO-100: kline_store.update_list() 全池(main 22+promote_candidates 13) 1h 增量; 不是 Ant 無打卡, 新鮮度由 data_guard.pool_kline_fresh(>72h 警告)看守",
    "cadence": "每小時 :50",
    "state": "ok",
-   "detail": "15 分鐘前",
+   "detail": "18 分鐘前",
    "last": "2026-11-02T13:50:01",
    "next": "2026-11-02T14:50:00"
   },
@@ -1700,7 +1700,7 @@
    "purpose": "WO-101/AI056 每支策略自己的 30 天滾動回撤現值(live 實彈帳本逐筆 R / shadow 役蟻影子帳, R 與 % 兩口徑), 與 dd_backtest_p95.json 的回測門檻同定義同 risk_pct -> 給 kill_watch 的 B1_dd_p95 / MRS_dd_p95 當對齊後的現值; 兩個底都算不出來才留痕",
    "cadence": "每小時 :55",
    "state": "ok",
-   "detail": "10 分鐘前",
+   "detail": "13 分鐘前",
    "last": "2026-11-02T13:55:01",
    "next": "2026-11-02T14:55:00"
   },
@@ -1712,7 +1712,7 @@
    "purpose": "WO-87 每月 1 日的損益歸因(與週日那支同一隻蟻 pnl_attribution.py, 只是月初另跑一次產 research/pnl_attribution_YYYY-MM.md)",
    "cadence": "每月 1 日 07:50",
    "state": "ok",
-   "detail": "38.2 小時前",
+   "detail": "38.3 小時前",
    "last": "2026-10-31T23:50:00",
    "next": "2026-11-30T23:50:00"
   },
@@ -1748,7 +1748,7 @@
    "purpose": "每 15 分鐘抓川普本人在 Truth Social / 白宮官網 / 媒體轉述的發言, 規則式標出提到的股票/幣/主題與語氣; 有方向的提及寫成 24h 可證偽預言進預言帳, 並餵信心度引擎第 7 道川普通道(拿到牌照才加分); 不產生進場訊號、不碰 D 端",
    "cadence": "每 15 分鐘 :09/:24/:39/:54",
    "state": "ok",
-   "detail": "11 分鐘前",
+   "detail": "14 分鐘前",
    "last": "2026-11-02T13:54:01",
    "next": "2026-11-02T14:09:00"
   },
@@ -1760,7 +1760,7 @@
    "purpose": "蒐集 Binance 永續未平倉量(OI) 1h 歷史 -- 端點只給 30 天, 不持續蒐就永遠測不了 H36x OI x 量",
    "cadence": "每6小時 :20",
    "state": "ok",
-   "detail": "3.7 小時前",
+   "detail": "3.8 小時前",
    "last": "2026-11-02T10:20:01",
    "next": "2026-11-02T16:20:00"
   },
@@ -1772,7 +1772,7 @@
    "purpose": "BingX 非加密永續(美股/外匯/商品/指數)資金費歷史增量蒐集; 自帶 markPrice 當價格序列; 休市合約先濾掉避免 109429 連坐",
    "cadence": "每日 04:20",
    "state": "ok",
-   "detail": "17.7 小時前",
+   "detail": "17.8 小時前",
    "last": "2026-11-01T20:20:01",
    "next": "2026-11-02T20:20:00"
   },
@@ -1784,9 +1784,9 @@
    "purpose": "BingX 自家逐筆成交聚合成 1m 桶(buy/sell/n/vwap) -- 端點無歷史, 今天不蒐就永遠沒有; 唯一能在自家場地重驗量能特徵的原料",
    "cadence": "每5分 :00",
    "state": "ok",
-   "detail": "5 分鐘前",
-   "last": "2026-11-02T14:00:01",
-   "next": "2026-11-02T14:05:00"
+   "detail": "3 分鐘前",
+   "last": "2026-11-02T14:05:01",
+   "next": "2026-11-02T14:10:00"
   },
   {
    "id": "binance_basis",
@@ -1796,7 +1796,7 @@
    "purpose": "Binance 永續/當季基差全史回補 + 每日增量(2019-12 起); 期限結構因子, BingX 無季度合約故只能當條件變數不可當可交易策略",
    "cadence": "每日 05:10",
    "state": "ok",
-   "detail": "16.9 小時前",
+   "detail": "17.0 小時前",
    "last": "2026-11-01T21:10:01",
    "next": "2026-11-02T21:10:00"
   },
@@ -1820,7 +1820,7 @@
    "purpose": "2026-09-26: 律的雲端備份——筆電關機時照跑 I1/I2/I3/I8(I8=從 BingX income 原料獨立重算手動已實現 vs D 的 manual_realized_cum); 邏輯 invariant_core.py(與本機同一份), 狀態/結果存 A 記憶 ants.invariant; 成功才打卡, D 記憶讀不到不打卡 [P2 2026-09-28: +I4 master CI(GitHub Actions API, 與本機 check_i4 同一份); I5/I6/I7 留本機]",
    "cadence": "每小時 :15(Render A 排程; 部署後啟動補跑一次)",
    "state": "ok",
-   "detail": "49 分鐘前",
+   "detail": "52 分鐘前",
    "last": "2026-11-02T13:15:36.075195+00:00",
    "next": null
   },
@@ -1832,7 +1832,7 @@
    "purpose": "2026-09-26 P0: 讀 data/a-memory 分支 gm_inbox.json, 以雲端 tama_config 現值算削減單 would-change(白名單/方向/TTL/整張拒 = cut_executor.evaluate); 唯一寫入 A 記憶 gm.cut_dry, 不寫 tama_config; 成功才打卡",
    "cadence": "每小時 :20(Render A 排程; 部署後啟動補跑一次)",
    "state": "ok",
-   "detail": "44 分鐘前",
+   "detail": "47 分鐘前",
    "last": "2026-11-02T13:20:27.701171+00:00",
    "next": null
   },
@@ -1844,7 +1844,7 @@
    "purpose": "每交易日產出前十大法人/投信囤貨訊號+熱門題材圖文日報, HTML落 C:/throne/台股籌碼日報.html + TG附檔; 2026-10-01 Jesse 要求; 2026-10-02 加個股盯盤 新唐4919/國巨2327(外資連買/倒貨/融資流向散戶/接刀/爆量收跌), 融資晚出則21:40補跑只送新訊號",
    "cadence": "平日 17:40 + 21:40 補跑(冪等)",
    "state": "ok",
-   "detail": "25 分鐘前",
+   "detail": "28 分鐘前",
    "last": "2026-11-02T13:40:00",
    "next": "2026-11-03T09:40:00"
   },
@@ -1856,7 +1856,7 @@
    "purpose": "每日把 memory/research/根目錄報告約 500 份 md 重編成互連 wiki(kb_wiki/: 主題樞紐+backlinks+BM25 檢索資料), 建置時遮蔽金鑰樣式; /kb 問答與 python kb_wiki.py ask 查得到最新記憶; 分類重用 decision_kb",
    "cadence": "每日 06:40",
    "state": "ok",
-   "detail": "15.4 小時前",
+   "detail": "15.5 小時前",
    "last": "2026-11-01T22:40:01",
    "next": "2026-11-02T22:40:00"
   },
@@ -1868,7 +1868,7 @@
    "purpose": "機械 GM 本機影子(R4-B): 讀各部門資料源算 KPI/紅綠燈, 產指令草稿(gm_directives.jsonl 只追加)與董事會一頁 gm_board.html; 只讀不執行; 手動倉只量測(D150, 2026-10-05 拿掉手動倉類指令)。包裝 gm_core_job.py(singleton/成功才 ping)",
    "cadence": "每小時 :32",
    "state": "ok",
-   "detail": "33 分鐘前",
+   "detail": "36 分鐘前",
    "last": "2026-11-02T13:32:02",
    "next": "2026-11-02T14:32:00"
   },
@@ -1880,7 +1880,7 @@
    "purpose": "每日判 gm_directives.jsonl 到期指令: 自己讀資料源判 passed/failed/量不到(部門自述不算), 判決只追加 gm_verdicts.jsonl。包裝 gm_verifier_job.py",
    "cadence": "每日 07:03",
    "state": "ok",
-   "detail": "15.0 小時前",
+   "detail": "15.1 小時前",
    "last": "2026-11-01T23:03:01",
    "next": "2026-11-02T23:03:00"
   },
@@ -1904,7 +1904,7 @@
    "purpose": "每日策略生命週期帳(lifecycle_ledger.json): 探針/正式/休眠/下架狀態機+本月探針預算; 只產建議, 不改 tama_config。包裝 lifecycle_ledger_job.py",
    "cadence": "每日 07:27",
    "state": "ok",
-   "detail": "14.6 小時前",
+   "detail": "14.7 小時前",
    "last": "2026-11-01T23:27:01",
    "next": "2026-11-02T23:27:00"
   },
@@ -1916,7 +1916,7 @@
    "purpose": "P3 U2 加碼路徑乾跑: 只產加碼建議單與乾跑帳(lifecycle_upsize_plan.json / _dryrun.jsonl), 七道硬上限; 不寫 tama_config/gm_inbox。排在 lifecycle_ledger 之後。包裝 lifecycle_upsize_job.py",
    "cadence": "每日 07:38",
    "state": "ok",
-   "detail": "14.4 小時前",
+   "detail": "14.5 小時前",
    "last": "2026-11-01T23:38:01",
    "next": "2026-11-02T23:38:00"
   },
@@ -1940,9 +1940,9 @@
    "purpose": "SPEED-2 事件優勢前瞻帳: OKX 現貨下架(OKX_S)/Binance 監控標籤(MON) 做空, 公告首見即記, 到期用 Binance 公開 K 線結算 R; 判定只做一次; 只記帳不下單、不碰 D 端。BingX 三族 2026-10-09 E6b 已併入(Zendesk 兩欄源, 四腿 BXS_15m/BXP_15m/BXF_15m/BXF_short_15m, PREREG_E6b_forward sha a021cb96f1c9d2c3)",
    "cadence": "每 15 分鐘(:05/:20/:35/:50)",
    "state": "ok",
-   "detail": "15 分鐘前",
-   "last": "2026-11-02T13:50:01",
-   "next": "2026-11-02T14:05:00"
+   "detail": "3 分鐘前",
+   "last": "2026-11-02T14:05:01",
+   "next": "2026-11-02T14:20:00"
   },
   {
    "id": "lf_shadow",
@@ -1952,7 +1952,7 @@
    "purpose": "LF2 前瞻影子帳: 1d TSMOM M0 + 4h TSMOM L025 + 隨機時點負控制, 只記帳不下單",
    "cadence": "每日 08:20",
    "state": "ok",
-   "detail": "13.7 小時前",
+   "detail": "13.8 小時前",
    "last": "2026-11-02T00:20:01",
    "next": "2026-11-03T00:20:00"
   },
@@ -1964,7 +1964,7 @@
    "purpose": "夜班主對話斷線(視窗關/額度耗盡)且心跳逾 40 分時, 以 claude -p 無人值守接手續跑; 非夜班時段只判斷不開 session(靜默)",
    "cadence": "每 20 分鐘 :13/:33/:53",
    "state": "ok",
-   "detail": "12 分鐘前",
+   "detail": "15 分鐘前",
    "last": "2026-11-02T13:53:01",
    "next": "2026-11-02T14:13:00"
   },
@@ -1975,9 +1975,9 @@
    "group": "治理",
    "purpose": "鐵則17: 每天讀 phase_tracker.json, 到期/逾期期別當場開工並附驗收證據(Claude 桌面 App 排程 apex-phase-tracker-daily; App 開著才會跑)",
    "cadence": "每日 09:30(桌面 cron 30 9 * * *, 抖動至多約 13 分)",
-   "state": "late",
-   "detail": "逾期未跑: 上次開跑 6.5 天前(容忍 30h); 真因: 24h 內被排程器跳過 1425 次(per_task_limit), 擋路的是 10/27 09:43(台北) 開跑那輪 session local_b81e52be(0 回合做完, 已閒置 -0.0h, 多半停在權限提示); 最近一輪做完回合: 10/26 14:49(台北) 開跑",
-   "last": "2026-10-27T01:43:45.621Z",
+   "state": "ok",
+   "detail": "2 分鐘前開跑; 注意: 24h 內被排程器跳過 1423 次(per_task_limit), 擋路的是 11/02 22:06(台北) 開跑那輪 session local_1e2da26f(0 回合做完, 已閒置 0.0h, 多半停在權限提示); 最近一輪做完回合: 10/27 09:43(台北) 開跑",
+   "last": "2026-11-02T14:06:13.952Z",
    "next": null
   },
   {
@@ -1988,7 +1988,7 @@
    "purpose": "每週用新眼光唯讀掃一遍: 輸出對外部真相是否正確(不是只看有沒有在跑); 派 4 個唯讀代理, 修法出成 _wo 腳本(桌面排程 apex-weekly-fresh-eyes-audit)",
    "cadence": "每週日 03:00(桌面 cron 0 3 * * 0)",
    "state": "ok",
-   "detail": "43.1 小時前開跑; 最近一輪做完回合: 10/25 03:00(台北) 開跑",
+   "detail": "43.1 小時前開跑; 最近一輪做完回合: 11/01 03:00(台北) 開跑",
    "last": "2026-10-31T19:00:58.626Z",
    "next": null
   },
@@ -2036,8 +2036,8 @@
    "purpose": "做到一半被中斷的事: 開對話時自動掃 Claude Code 對話紀錄 + phase_tracker/actions 逾期項, 產 halfway_ledger.json(mod 半途分頁讀它)",
    "cadence": "每次開對話(SessionStart hook)＋每日 08:10(隨 queen_weight 的 outer_brain_tick)",
    "state": "ok",
-   "detail": "32 分鐘前",
-   "last": "2026-11-02T13:32:27.711502+00:00",
+   "detail": "1 分鐘前",
+   "last": "2026-11-02T14:06:32.691566+00:00",
    "next": null
   },
   {
@@ -2048,8 +2048,8 @@
    "purpose": "Jesse 的想法一句話記下, 待採滿 7 天沒人改就自動採建議(開對話時 idea.py expire 執行); 資料 ideas.json",
    "cadence": "每次開對話(SessionStart hook)＋每日 08:10(隨 queen_weight 的 outer_brain_tick)",
    "state": "ok",
-   "detail": "32 分鐘前",
-   "last": "2026-11-02T13:32:28.116950+00:00",
+   "detail": "1 分鐘前",
+   "last": "2026-11-02T14:06:33.168530+00:00",
    "next": null
   },
   {
@@ -2060,8 +2060,8 @@
    "purpose": "被分類器擋下的 settings/hooks 改動先登記, 開對話時 proposed.py check 比 sha 自動標已套用; 資料 proposed_changes.json",
    "cadence": "開對話時(SessionStart hook 跑 proposed.py check), 無排程",
    "state": "ok",
-   "detail": "剛剛寫入",
-   "last": "2026-11-02T14:05:07.969505+00:00",
+   "detail": "1 分鐘前",
+   "last": "2026-11-02T14:06:33.560985+00:00",
    "next": null
   },
   {
@@ -2072,7 +2072,7 @@
    "purpose": "AI 自己長出來的 3 個價量形狀: 每日掃台股/美股/加密最新 K 線找命中, 記前瞻帳並到期結算, 算各市場成本可交易性, 寫辦公室實況頁",
    "cadence": "每日 07:40",
    "state": "ok",
-   "detail": "14.4 小時前",
+   "detail": "14.5 小時前",
    "last": "2026-11-01T23:40:01",
    "next": "2026-11-02T23:40:00"
   },
@@ -2108,22 +2108,22 @@
    "purpose": "訂單流 v0 影子: OBI5 極端+成交帶 z 判多空, 記帳到期用 1m K 打分, 不下單; 12 月注資前累積兩口徑淨值",
    "cadence": "每 15 分",
    "state": "ok",
-   "detail": "15 分鐘前",
-   "last": "2026-11-02T13:50:01",
-   "next": "2026-11-02T14:05:00"
+   "detail": "3 分鐘前",
+   "last": "2026-11-02T14:05:01",
+   "next": "2026-11-02T14:20:00"
   }
  ],
  "unregistered": [
-  "長駐行程未列管且重複: node.exe\"  \"C: x10 份, 最久已跑 14819 分鐘",
-  "長駐行程未列管且重複: np x10 份, 最久已跑 14819 分鐘",
-  "長駐行程未列管且重複: main.js x10 份, 最久已跑 14819 分鐘",
-  "長駐行程未列管: progress.py 已跑 14660 分鐘",
-  "長駐行程未列管: Pyt 已跑 14660 分鐘",
-  "長駐行程未列管且重複: server.py x2 份, 最久已跑 11973 分鐘",
-  "長駐行程未列管且重複: main.py x2 份, 最久已跑 10583 分鐘",
-  "長駐行程未列管且重複: nagi_feeder_1026.py x2 份, 最久已跑 8598 分鐘",
-  "已知行程重複啟動: Py x2 份, 最久已跑 1919 分鐘",
-  "已知行程重複啟動: langserver.index.js x2 份, 最久已跑 1919 分鐘",
+  "長駐行程未列管且重複: node.exe\"  \"C: x10 份, 最久已跑 14822 分鐘",
+  "長駐行程未列管且重複: np x10 份, 最久已跑 14822 分鐘",
+  "長駐行程未列管且重複: main.js x10 份, 最久已跑 14822 分鐘",
+  "長駐行程未列管: progress.py 已跑 14663 分鐘",
+  "長駐行程未列管: Pyt 已跑 14663 分鐘",
+  "長駐行程未列管且重複: server.py x2 份, 最久已跑 11976 分鐘",
+  "長駐行程未列管且重複: main.py x2 份, 最久已跑 10586 分鐘",
+  "長駐行程未列管且重複: nagi_feeder_1026.py x2 份, 最久已跑 8601 分鐘",
+  "已知行程重複啟動: Py x2 份, 最久已跑 1922 分鐘",
+  "已知行程重複啟動: langserver.index.js x2 份, 最久已跑 1922 分鐘",
   "本機 mod 未列管: apex-jev@apex-local",
   "名冊自檢: 形態辦公室(形/哨/帳/衡) 週期「每日 07:40」但容忍 72h(合理 19.2-31h) -- 週期改了沒同步?",
   "排程不會再跑了: APEX_A9_SessionProbe_1022：沒有下一次（NextRunTime 空，state=Ready）",
@@ -2140,7 +2140,7 @@
   {
    "id": "task_fleet",
    "name": "變體艦隊",
-   "age_h": 132.5,
+   "age_h": 132.6,
    "summary": "冠軍 b1_coil05_atrr11 全期 +0.04R / 近季 +0.39R (n=664 勝率 47.3%)  共 24 變體"
   },
   {
@@ -2170,7 +2170,7 @@
   {
    "id": "task_tl_acceptance",
    "name": "TL 出場升級驗收哨兵",
-   "age_h": 1.0,
+   "age_h": 1.1,
    "summary": "見結果檔"
   },
   {
@@ -2200,7 +2200,7 @@
   {
    "id": "restore_drill",
    "name": "生(重生演練蟻)",
-   "age_h": 42.0,
+   "age_h": 42.1,
    "summary": "見結果檔"
   }
  ],
@@ -2361,7 +2361,7 @@
    },
    {
     "key": "supervisor|flag:長駐行程未列管且重複: run_batch.py x# 份, 最久已跑 # 分鐘",
-    "n": 6
+    "n": 5
    }
   ],
   "whitelisted": [
