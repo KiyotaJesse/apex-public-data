@@ -1,6 +1,6 @@
 {
- "ts": "2026-11-03T18:20:06",
- "data_ts": "2026-11-03T18:20:01",
+ "ts": "2026-11-03T19:20:06",
+ "data_ts": "2026-11-03T19:20:02",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
@@ -136,11 +136,11 @@
    "q": "非加密 美股 市場組合 cS_vwap_dev>=1.5+ema_rel<0+coil>=0.6|TP6R 過五關+隨機基準(EV+0.41",
    "rec": "A"
   },
-  "line": "近 24 小時: 自動裁決 0 件、自動修復/回滾 0 件。下一個自動到期 D258(2026-11-07), 沒人異議就採建議 A。成形雷達: 成形中 510 檔／已成形 136 檔(全條件 136)(跨 5 市場; 宇宙 488 檔, 休市排除 317)。預言帳：1718 則前瞻在等結算、持牌 10／預言者 436。消息：近 24h 1390 則／高重要 34 則／最新一則「Hacksaw Initiates a Share Buyback Progra」(來源 1 個停抓中)｜實證：22 類消息裡 3 類會動價格、6 類不會、13 類樣本不足(事件 n=1162)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 137 則發言、提到 TSLA×13／WTI×5／GEOPOL×3、淨多空 +2.8。今日事件：10 件(最重要 APO 財報 20:00)／黑窗中：否。影子: 追蹤中 4696 單／已結 4005 單(live 3740＋登記日回填 265)／142 個規格在追；最接近晉升的 cS_vwap_dev>=1+vol_r>=1.5+at(crypto) 已達 n=32 EV=+1.453R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=57 EV-0.251、SC1 n=50 EV-0.817、SC3 n=263 EV-0.328；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 392 筆 EV-0.375R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 25%(1/4)。",
+  "line": "近 24 小時: 自動裁決 0 件、自動修復/回滾 0 件。下一個自動到期 D258(2026-11-07), 沒人異議就採建議 A。成形雷達: 成形中 545 檔／已成形 114 檔(全條件 114)(跨 5 市場; 宇宙 488 檔, 休市排除 317)。預言帳：1722 則前瞻在等結算、持牌 10／預言者 436。消息：近 24h 1406 則／高重要 31 則／最新一則「Hacksaw Initiates a Share Buyback Progra」(來源 1 個停抓中)｜實證：22 類消息裡 3 類會動價格、6 類不會、13 類樣本不足(事件 n=1162)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 134 則發言、提到 TSLA×13／GEOPOL×3／WTI×2、淨多空 +2.8。今日事件：10 件(最重要 APO 財報 20:00)／黑窗中：否。影子: 追蹤中 4725 單／已結 4007 單(live 3742＋登記日回填 265)／142 個規格在追；最接近晉升的 cS_vwap_dev>=1+vol_r>=1.5+at(crypto) 已達 n=32 EV=+1.453R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=57 EV-0.251、SC1 n=50 EV-0.817、SC3 n=263 EV-0.328；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 392 筆 EV-0.375R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 25%(1/4)。",
   "radar": {
-   "forming": 510,
-   "fired": 136,
-   "fired_full": 136,
+   "forming": 545,
+   "fired": 114,
+   "fired_full": 114,
    "markets": [
     "commodity",
     "crypto",
@@ -150,21 +150,21 @@
    ],
    "universe_fresh": 488,
    "stale_excluded": 317,
-   "ts_utc": "2026-11-03T09:35",
+   "ts_utc": "2026-11-03T10:35",
    "age_h": 0.8
   },
   "forecast": {
-   "pending": 1718,
+   "pending": 1722,
    "licensed": 10,
    "forecasters": 436,
-   "n_forecasts": 64677,
-   "n_resolved": 62959,
-   "asOf": "2026-11-03T09:40:32"
+   "n_forecasts": 64731,
+   "n_resolved": 63009,
+   "asOf": "2026-11-03T10:40:29"
   },
   "shadow": {
-   "n_open": 4696,
-   "n_closed": 4005,
-   "n_live": 3740,
+   "n_open": 4725,
+   "n_closed": 4007,
+   "n_live": 3742,
    "n_post_reg": 265,
    "n_backfill": 0,
    "n_specs": 142,
@@ -184,7 +184,7 @@
      "n_live": 32,
      "n_post_reg": 0,
      "ev": 1.453,
-     "random_z": 2.11,
+     "random_z": 2.0,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": true
@@ -208,25 +208,25 @@
      "n_live": 104,
      "n_post_reg": 0,
      "ev": 1.1797,
-     "random_z": 1.8,
+     "random_z": 1.86,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": true
     }
    ],
    "eta_promo": null,
-   "opens_per_day": 613.9,
+   "opens_per_day": 615.9,
    "rate_days": 14,
-   "ts_utc": "2026-11-03T09:40"
+   "ts_utc": "2026-11-03T10:40"
   },
   "news": {
-   "n_24h": 1390,
-   "n_hi": 34,
+   "n_24h": 1406,
+   "n_hi": 31,
    "by_category": {
-    "stock": 423,
-    "crypto": 448,
-    "macro": 103,
-    "commodity_fx": 416
+    "stock": 417,
+    "crypto": 474,
+    "macro": 102,
+    "commodity_fx": 413
    },
    "sources_green": 39,
    "sources_red": 1,
@@ -236,7 +236,7 @@
     "src": "yahoo_finance",
     "ts": "2026-11-03T06:20:00Z"
    },
-   "run_at": "2026-11-03T10:18:01",
+   "run_at": "2026-11-03T11:18:01",
    "impact": {
     "line": "｜實證：22 類消息裡 3 類會動價格、6 類不會、13 類樣本不足(事件 n=1162)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 22,
@@ -250,8 +250,8 @@
     "ts": "2026-10-31T20:30:28"
    },
    "trump": {
-    "line": "｜川普：近 24h 137 則發言、提到 TSLA×13／WTI×5／GEOPOL×3、淨多空 +2.8",
-    "n_24h": 137,
+    "line": "｜川普：近 24h 134 則發言、提到 TSLA×13／GEOPOL×3／WTI×2、淨多空 +2.8",
+    "n_24h": 134,
     "net_long_24h": 2.82,
     "top_symbols": [
      {
@@ -262,17 +262,17 @@
       "short": 0
      },
      {
-      "symbol": "WTI",
-      "n": 5,
-      "net": 0.0,
-      "long": 0,
-      "short": 0
-     },
-     {
       "symbol": "GEOPOL",
       "n": 3,
       "net": 0.89,
       "long": 1,
+      "short": 0
+     },
+     {
+      "symbol": "WTI",
+      "n": 2,
+      "net": 0.0,
+      "long": 0,
       "short": 0
      },
      {
@@ -290,7 +290,7 @@
       "short": 0
      }
     ],
-    "run_at": "2026-11-03T10:09:01"
+    "run_at": "2026-11-03T11:09:01"
    }
   },
   "calendar": {
@@ -317,13 +317,13 @@
     "source": "nasdaq_earnings",
     "blackout": "1.0h/1.0h"
    },
-   "age_h": 0.0,
+   "age_h": 1.0,
    "ts": "2026-11-03T10:20:01"
   },
   "live_shadow": {
    "window": {
     "from": "2026-09-01",
-    "to": "2026-11-03T09:45"
+    "to": "2026-11-03T10:45"
    },
    "n_closed": 392,
    "n_open": 31,
@@ -335,7 +335,7 @@
     "pf": 0.529,
     "sum_r": -146.858
    },
-   "ts": "2026-11-03T09:45",
+   "ts": "2026-11-03T10:45",
    "per": {
     "B1": {
      "n": 6,
@@ -401,12 +401,12 @@
     "funding_missing": 0
    },
    "n_open": 0,
-   "ts": "2026-11-03T10:10:04Z"
+   "ts": "2026-11-03T11:10:03Z"
   }
  },
  "north_star": {
   "ts": "2026-11-03T08:00:03",
-  "age_h": 10.3,
+  "age_h": 11.3,
   "stale": false,
   "risk_light": "red",
   "risk_why": "最大 24h 權益跌幅 100.0%(上限 20.0)",
@@ -472,11 +472,11 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-11-03T10:05",
+  "attendance": "supervision_state.json @ 2026-11-03T11:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
   "calendar": "calendar_board.json @ 2026-11-03T10:20:01",
-  "news": "news_board.json @ 2026-11-03T10:18:01",
+  "news": "news_board.json @ 2026-11-03T11:18:01",
   "north_star": "goal_state.json @ 2026-11-03T08:00:03",
   "rules": "brief_rules.json v1.0"
  },
