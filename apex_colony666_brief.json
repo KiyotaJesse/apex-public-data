@@ -1,6 +1,6 @@
 {
- "ts": "2026-11-03T15:20:06",
- "data_ts": "2026-11-03T15:20:01",
+ "ts": "2026-11-03T16:20:05",
+ "data_ts": "2026-11-03T16:20:01",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
@@ -11,7 +11,7 @@
    "你有 10 件行動項目逾期",
    "巢健康度 0 低於 70",
    "你有事項今天到期",
-   "病蟻 6 隻(排程紅燈)",
+   "病蟻 7 隻(排程紅燈)",
    "巢健康度 0 低於 85",
    "你有事項 0 天內到期",
    "SLO 超支 10 項",
@@ -26,7 +26,7 @@
    "v": "0",
    "unit": "/100",
    "tone": "red",
-   "sub": "扣分: 病蟻 6 隻 -45、逾期行動 113 件 -10"
+   "sub": "扣分: 病蟻 7 隻 -45、逾期行動 113 件 -10"
   },
   {
    "k": "本月策略 R",
@@ -37,10 +37,10 @@
   },
   {
    "k": "蟻口出勤",
-   "v": "160/166",
+   "v": "159/166",
    "unit": "(96%)",
    "tone": "red",
-   "sub": "紅燈 6 隻: OB-V2 L20 盤口、E 偵錯小組稽核、CI 回歸測試(A re"
+   "sub": "紅燈 7 隻: OB-V2 L20 盤口、E 偵錯小組稽核、CI 回歸測試(A re"
   }
  ],
  "jesse": [
@@ -136,11 +136,11 @@
    "q": "非加密 美股 市場組合 cS_vwap_dev>=1.5+ema_rel<0+coil>=0.6|TP6R 過五關+隨機基準(EV+0.41",
    "rec": "A"
   },
-  "line": "近 24 小時: 自動裁決 0 件、自動修復/回滾 0 件。下一個自動到期 D258(2026-11-07), 沒人異議就採建議 A。成形雷達: 成形中 1003 檔／已成形 181 檔(全條件 181)(跨 5 市場; 宇宙 485 檔, 休市排除 319)。預言帳：1724 則前瞻在等結算、持牌 10／預言者 435。消息：近 24h 1453 則／高重要 35 則／最新一則「Hacksaw Initiates a Share Buyback Progra」(來源 1 個停抓中)｜實證：22 類消息裡 3 類會動價格、6 類不會、13 類樣本不足(事件 n=1162)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 139 則發言、提到 TSLA×13／WTI×7／GEOPOL×3、淨多空 +2.8。今日事件：10 件(最重要 APO 財報 20:00)／黑窗中：否。影子: 追蹤中 4658 單／已結 4008 單(live 3743＋登記日回填 265)／142 個規格在追；最接近晉升的 cS_vwap_dev>=1+vol_r>=1.5+at(crypto) 已達 n=32 EV=+1.453R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=57 EV-0.251、SC1 n=50 EV-0.817、SC3 n=263 EV-0.328；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 392 筆 EV-0.375R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 25%(1/4)。",
+  "line": "近 24 小時: 自動裁決 0 件、自動修復/回滾 0 件。下一個自動到期 D258(2026-11-07), 沒人異議就採建議 A。成形雷達: 成形中 859 檔／已成形 108 檔(全條件 108)(跨 5 市場; 宇宙 485 檔, 休市排除 320)。預言帳：1765 則前瞻在等結算、持牌 10／預言者 435。消息：近 24h 1396 則／高重要 35 則／最新一則「Hacksaw Initiates a Share Buyback Progra」(來源 1 個停抓中)｜實證：22 類消息裡 3 類會動價格、6 類不會、13 類樣本不足(事件 n=1162)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 139 則發言、提到 TSLA×13／WTI×7／GEOPOL×3、淨多空 +2.8。今日事件：10 件(最重要 APO 財報 20:00)／黑窗中：否。影子: 追蹤中 4658 單／已結 4006 單(live 3741＋登記日回填 265)／142 個規格在追；最接近晉升的 cS_vwap_dev>=1+vol_r>=1.5+at(crypto) 已達 n=32 EV=+1.453R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=57 EV-0.251、SC1 n=50 EV-0.817、SC3 n=263 EV-0.328；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 392 筆 EV-0.375R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 25%(1/4)。",
   "radar": {
-   "forming": 1003,
-   "fired": 181,
-   "fired_full": 181,
+   "forming": 859,
+   "fired": 108,
+   "fired_full": 108,
    "markets": [
     "commodity",
     "crypto",
@@ -149,22 +149,22 @@
     "stock"
    ],
    "universe_fresh": 485,
-   "stale_excluded": 319,
-   "ts_utc": "2026-11-03T06:35",
+   "stale_excluded": 320,
+   "ts_utc": "2026-11-03T07:35",
    "age_h": 0.8
   },
   "forecast": {
-   "pending": 1724,
+   "pending": 1765,
    "licensed": 10,
    "forecasters": 435,
-   "n_forecasts": 64513,
-   "n_resolved": 62789,
-   "asOf": "2026-11-03T06:40:21"
+   "n_forecasts": 64567,
+   "n_resolved": 62802,
+   "asOf": "2026-11-03T07:40:22"
   },
   "shadow": {
    "n_open": 4658,
-   "n_closed": 4008,
-   "n_live": 3743,
+   "n_closed": 4006,
+   "n_live": 3741,
    "n_post_reg": 265,
    "n_backfill": 0,
    "n_specs": 142,
@@ -192,10 +192,10 @@
     {
      "spec": "cS_trap_hi>=0.1+ema_rel<0|TP4R",
      "market": "crypto",
-     "n": 143,
-     "n_live": 143,
+     "n": 144,
+     "n_live": 144,
      "n_post_reg": 0,
-     "ev": 1.2258,
+     "ev": 1.21,
      "random_z": null,
      "to_promo_n": 0,
      "eta": null,
@@ -208,25 +208,25 @@
      "n_live": 103,
      "n_post_reg": 0,
      "ev": 1.2019,
-     "random_z": 2.19,
+     "random_z": 2.18,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": true
     }
    ],
    "eta_promo": null,
-   "opens_per_day": 611.7,
+   "opens_per_day": 611.5,
    "rate_days": 14,
-   "ts_utc": "2026-11-03T06:40"
+   "ts_utc": "2026-11-03T07:40"
   },
   "news": {
-   "n_24h": 1453,
+   "n_24h": 1396,
    "n_hi": 35,
    "by_category": {
     "stock": 432,
-    "crypto": 476,
-    "macro": 108,
-    "commodity_fx": 437
+    "crypto": 452,
+    "macro": 104,
+    "commodity_fx": 408
    },
    "sources_green": 39,
    "sources_red": 1,
@@ -236,7 +236,7 @@
     "src": "yahoo_finance",
     "ts": "2026-11-03T06:20:00Z"
    },
-   "run_at": "2026-11-03T07:18:01",
+   "run_at": "2026-11-03T08:18:01",
    "impact": {
     "line": "｜實證：22 類消息裡 3 類會動價格、6 類不會、13 類樣本不足(事件 n=1162)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 22,
@@ -290,7 +290,7 @@
       "short": 0
      }
     ],
-    "run_at": "2026-11-03T07:09:01"
+    "run_at": "2026-11-03T08:09:01"
    }
   },
   "calendar": {
@@ -317,13 +317,13 @@
     "source": "nasdaq_earnings",
     "blackout": "1.0h/1.0h"
    },
-   "age_h": 1.0,
+   "age_h": 2.0,
    "ts": "2026-11-03T06:20:01"
   },
   "live_shadow": {
    "window": {
     "from": "2026-09-01",
-    "to": "2026-11-03T06:45"
+    "to": "2026-11-03T07:45"
    },
    "n_closed": 392,
    "n_open": 31,
@@ -335,7 +335,7 @@
     "pf": 0.529,
     "sum_r": -146.858
    },
-   "ts": "2026-11-03T06:45",
+   "ts": "2026-11-03T07:45",
    "per": {
     "B1": {
      "n": 6,
@@ -401,12 +401,12 @@
     "funding_missing": 0
    },
    "n_open": 0,
-   "ts": "2026-11-03T07:10:05Z"
+   "ts": "2026-11-03T08:10:06Z"
   }
  },
  "north_star": {
   "ts": "2026-11-03T08:00:03",
-  "age_h": 7.3,
+  "age_h": 8.3,
   "stale": false,
   "risk_light": "red",
   "risk_why": "最大 24h 權益跌幅 100.0%(上限 20.0)",
@@ -472,11 +472,11 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-11-03T07:05",
+  "attendance": "supervision_state.json @ 2026-11-03T08:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
   "calendar": "calendar_board.json @ 2026-11-03T06:20:01",
-  "news": "news_board.json @ 2026-11-03T07:18:01",
+  "news": "news_board.json @ 2026-11-03T08:18:01",
   "north_star": "goal_state.json @ 2026-11-03T08:00:03",
   "rules": "brief_rules.json v1.0"
  },
