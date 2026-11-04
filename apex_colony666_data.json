@@ -2550,13 +2550,13 @@
 "c": 279
 }
 ],
-"built": "11-03 08:13",
-"synced": "11-03 08:14",
+"built": "11-04 08:14",
+"synced": "11-04 08:14",
 "open": 158,
 "overdue": 114
 },
 "mailbox": {
-"sent": "",
+"sent": "08:15",
 "open": 0,
 "answered": 30,
 "buttons": true,
@@ -2905,8 +2905,8 @@
 "st": "學員",
 "k": 2,
 "w": 0,
-"mn": 0,
-"mr": 0.0,
+"mn": 1,
+"mr": -1.09,
 "born": "2026-09-06",
 "lesson": "Connors RSI(2)<5 且價在 200MA 上做多, RSI>65 出場, 原版不設停損。特徵庫只有 RSI(14), 改 rsi<=25 + ema50>ema200; 出場改 2R/1.5ATR 止損(adapted, 且 Connors 說停損傷績效, 這是刻意違背以符合巢規)。",
 "src": "https://www.quantifiedstrategies.com/rsi-2-strategy/",
@@ -2935,8 +2935,8 @@
 "st": "學員",
 "k": 1,
 "w": 0,
-"mn": 0,
-"mr": 0.0,
+"mn": 7,
+"mr": -1.72,
 "born": "2026-09-06",
 "lesson": "價跌破下軌且 RSI<30 買回歸。下軌用 VWAP 偏離 -2ATR 代替(adapted)。文獻警告: 強趨勢裡會被輾。",
 "src": "https://www.capmint.com/learn/videos/bollinger-bands-rsi-combo-strategy",
@@ -3145,8 +3145,8 @@
 "st": "學員",
 "k": 1,
 "w": 0,
-"mn": 0,
-"mr": 0.0,
+"mn": 7,
+"mr": -2.76,
 "born": "2026-09-06",
 "lesson": "Larry Williams 式: 放量(2 倍均量)突破前高進場。",
 "src": "https://github.com/SC4RECOIN/simple-crypto-breakout-strategy",
@@ -3205,8 +3205,8 @@
 "st": "學員",
 "k": 2,
 "w": 0,
-"mn": 0,
-"mr": 0.0,
+"mn": 7,
+"mr": 1.25,
 "born": "2026-09-06",
 "lesson": "鏡像: 跌破前低又收回(Wyckoff spring)做多。",
 "src": "https://audacity.capital/trading-guides/opening-range-breakout-strategy/",
@@ -3295,8 +3295,8 @@
 "st": "學員",
 "k": 1,
 "w": 1,
-"mn": 0,
-"mr": 0.0,
+"mn": 2,
+"mr": 0.81,
 "born": "2026-09-07",
 "lesson": "ICT 流動性掃蕩: 價格用長下影線掃過前低(掃掉停損)後收回並放量, 於收回做多, 止損放掃蕩低點下。刺破深度 >=0.8ATR + 量 >=1.5 倍 adapted。",
 "src": "https://dailypriceaction.com/blog/liquidity-sweep-reversals/",
@@ -3355,8 +3355,8 @@
 "st": "學員",
 "k": 2,
 "w": 0,
-"mn": 0,
-"mr": 0.0,
+"mn": 5,
+"mr": -2.65,
 "born": "2026-09-07",
 "lesson": "價低但累積成交量差(CVD)相對強=吸籌背離, 在偏離 VWAP 下方時做多。文獻要求加濾網(支撐/吸收), 這裡用 VWAP 偏離當濾網 adapted。",
 "src": "https://medium.com/@FMZQuant/cvd-divergence-quantitative-trading-strategy-7f50e3f1451a",
@@ -3409,7 +3409,7 @@
 }
 ],
 "graves": {},
-"updated": "11-03 08:15",
+"updated": "11-04 08:14",
 "rehearsal": {
 "asof": "2026-11-02 08:20",
 "since": "2026-08-02"
@@ -5403,7 +5403,7 @@
 "病蟻 7 隻 -45",
 "逾期行動 114 件 -10",
 "SLO 超支 OB-V2L2、控制台快照、LAPD -30",
-"日檢 31h 未更新(不採用) -5",
+"日檢 32h 未更新(不採用) -5",
 "Deadloop 異常 3(BTC 抄底盯盤器、信心度引擎、跡 24h 觀測率>=0.8) -18",
 "監督台紅燈 7(已含在病蟻扣分內, 不重複扣)"
 ],
@@ -5423,6 +5423,26 @@
 }
 ],
 "board": [
+{
+"ts": "2026-11-04T08:17:01+08:00",
+"who": "蟻",
+"t": "候選 cS_rsi>=75+ema_rel<0|TP6R(crypto) 壓力測"
+},
+{
+"ts": "2026-11-04T08:15:51+08:00",
+"who": "蟻",
+"t": "候選 cS_vwap_dev>=1+vol_r>=1.5+atr_r>=1.2|"
+},
+{
+"ts": "2026-11-04T08:15:01+08:00",
+"who": "蟻",
+"t": "08:10 鏈 roster_lint 回傳 rc=1 (跑了 4s), 去看 "
+},
+{
+"ts": "2026-11-04T08:14:09+08:00",
+"who": "蟻",
+"t": "程式碼異地備份 2026-11-04 失敗: RuntimeError('HTT"
+},
 {
 "ts": "2026-11-04T08:10:04+08:00",
 "who": "蟻",
@@ -5462,26 +5482,6 @@
 "ts": "2026-11-04T07:55:02+08:00",
 "who": "蟻",
 "t": "汰: 從雲端腿補進 2 則本機沒抓到的下架公告(本機為主, 這幾則本機完全沒有)"
-},
-{
-"ts": "2026-11-04T07:52:11+08:00",
-"who": "蟻",
-"t": "15m 聚合對不上原生 1h(不在已知清單): {\"NCSKOKTA2USD-U"
-},
-{
-"ts": "2026-11-04T07:48:11+08:00",
-"who": "蟻",
-"t": "[聞] 重要度 70 stock/guidance BOE | SPARTAN "
-},
-{
-"ts": "2026-11-04T07:41:19+08:00",
-"who": "蟻",
-"t": "形態命中 25(可交易 25): 美股 ABBV 急漲後回檔, 美股 BIIB "
-},
-{
-"ts": "2026-11-04T07:40:11+08:00",
-"who": "蟻",
-"t": "資料守衛 信心度日誌: 停更 22.2h(上限 4h, 依據資料時間戳)"
 }
 ],
 "autonomy": {
@@ -5628,9 +5628,9 @@
 "blocked_on_jesse": []
 },
 "ledgers": {
-"asOf": "2026-11-04T08:10:05",
+"asOf": "2026-11-04T08:20:02",
 "judge": {
-"run_at": "2026-11-03T08:15:25",
+"run_at": "2026-11-04T08:14:57",
 "src": "outcomes",
 "by_kind": [
 {
@@ -5786,17 +5786,17 @@
 "events": {
 "h24": {
 "crit": 1,
-"warn": 186,
-"info": 181,
+"warn": 185,
+"info": 183,
 "suppressed": 157,
-"n": 368
+"n": 369
 },
 "d7": {
 "crit": 7,
 "warn": 1248,
-"info": 696,
+"info": 697,
 "suppressed": 1024,
-"n": 1951
+"n": 1952
 },
 "top_keys": [
 {
@@ -5826,6 +5826,38 @@
 }
 ],
 "latest": [
+{
+"ts": "2026-11-04T08:17",
+"source": "stress_test",
+"key": "stress_fail",
+"level": "info",
+"suppressed": false,
+"text": "候選 cS_rsi>=75+ema_rel<0|TP6R(crypto) 壓力測試未過: (b) 時間切片、(g) 三年"
+},
+{
+"ts": "2026-11-04T08:15",
+"source": "stress_test",
+"key": "stress_fail",
+"level": "info",
+"suppressed": false,
+"text": "候選 cS_vwap_dev>=1+vol_r>=1.5+atr_r>=1.2|TP4(crypto) 壓力測試未過: "
+},
+{
+"ts": "2026-11-04T08:15",
+"source": "queen_chain",
+"key": "rc_roster_lint",
+"level": "warn",
+"suppressed": false,
+"text": "08:10 鏈 roster_lint 回傳 rc=1 (跑了 4s), 去看 roster_lint 的結果檔"
+},
+{
+"ts": "2026-11-04T08:14",
+"source": "offsite_backup",
+"key": "offsite_code_fail",
+"level": "warn",
+"suppressed": false,
+"text": "程式碼異地備份 2026-11-04 失敗: RuntimeError('HTTP 502 POST https://a"
+},
 {
 "ts": "2026-11-04T08:10",
 "source": "delist_shadow",
@@ -5857,38 +5889,6 @@
 "level": "info",
 "suppressed": false,
 "text": "[SLO] 本輪 超支 10 隻 / 預警 0 隻 / 離線排除壞點 12 次 / 送出 1 則"
-},
-{
-"ts": "2026-11-04T08:05",
-"source": "slo",
-"key": "__daily__",
-"level": "warn",
-"suppressed": false,
-"text": "[SLO 每日摘要] 真超支 10 隻(已排除本機離線); 近 24h 狀態轉換 0 次; 離線排除共 12 次壞點"
-},
-{
-"ts": "2026-11-04T08:00",
-"source": "goal_tracker",
-"key": "goal_risk",
-"level": "warn",
-"suppressed": false,
-"text": "[北·北極星] 失敗風險儀 1 項超標: 最大 24h 權益跌幅 100.0%(上限 20.0) -> M1/M2/M3"
-},
-{
-"ts": "2026-11-04T07:55",
-"source": "delist_shadow",
-"key": "delist_shadow_binance_gap",
-"level": "warn",
-"suppressed": true,
-"text": "汰/binance_leg: 2 件事件結算不出來(可結算分母 11) -- QUICK-USDT, QUICK-USD"
-},
-{
-"ts": "2026-11-04T07:55",
-"source": "delist_shadow",
-"key": "delist_shadow_cloud_backfill",
-"level": "info",
-"suppressed": false,
-"text": "汰: 從雲端腿補進 2 則本機沒抓到的下架公告(本機為主, 這幾則本機完全沒有)"
 }
 ]
 },
@@ -6646,12 +6646,12 @@
 "decisions": {
 "n": "待裁",
 "h": 1,
-"ts": "2026-11-04T08:10:06+08:00"
+"ts": "2026-11-04T08:20:01+08:00"
 },
 "market": {
 "n": "BTC/持倉",
 "h": 1,
-"ts": "2026-11-04T08:10:06+08:00"
+"ts": "2026-11-04T08:18:58+08:00"
 },
 "weather": {
 "n": "巢外天氣",
@@ -6661,17 +6661,17 @@
 "strategies": {
 "n": "策略蟻",
 "h": 1,
-"ts": "2026-11-04T08:10:06+08:00"
+"ts": "2026-11-04T08:20:01+08:00"
 },
 "ledgers": {
 "n": "成績單",
 "h": 1,
-"ts": "2026-11-04T08:10:06+08:00"
+"ts": "2026-11-04T08:20:01+08:00"
 },
 "board": {
 "n": "留言板",
 "h": 1,
-"ts": "2026-11-04T08:10:06+08:00"
+"ts": "2026-11-04T08:20:01+08:00"
 },
 "mine": {
 "n": "礦機",
@@ -6681,7 +6681,7 @@
 "academy": {
 "n": "學院",
 "h": 24,
-"ts": "2026-11-03T08:15:03+08:00"
+"ts": "2026-11-04T08:14:40+08:00"
 },
 "daily": {
 "n": "日誌/進化/編年",
@@ -6691,7 +6691,7 @@
 "notes": {
 "n": "便利貼",
 "h": 1,
-"ts": null
+"ts": "2026-11-04T08:20:03+08:00"
 },
 "autonomy": {
 "n": "自治儀表",
@@ -6699,7 +6699,7 @@
 "ts": "2026-09-14T00:00:00+08:00"
 }
 },
-"live_ts": "2026-11-04T08:10:06+08:00",
+"live_ts": "2026-11-04T08:20:01+08:00",
 "notes": [
 {
 "id": "gate",
@@ -6712,7 +6712,7 @@
 "stale": false,
 "hash": "ca3e2303e96f",
 "last_changed": "2026-09-26T01:24:17+08:00",
-"shown_at": "2026-11-04T08:10:06+08:00"
+"shown_at": "2026-11-04T08:20:03+08:00"
 },
 {
 "id": "queen",
@@ -6725,20 +6725,20 @@
 "stale": true,
 "hash": "b249d8d293d4",
 "last_changed": "2026-11-01T06:20:04+08:00",
-"shown_at": "2026-11-04T08:10:06+08:00"
+"shown_at": "2026-11-04T08:20:03+08:00"
 },
 {
 "id": "worker",
 "d": "深度 -1m · 工蟻房",
 "kind": "live",
 "text": "覓食隊誠實紀錄:近 30 天搬回 -2.6R(2 趟),近 90 天 -5.1R(30 趟,帳本最早只記到 09-19)。其中 AUTO -4.4R/25、B1 -4.6R/3、TL +3.9R/2。現在開著門的:B1。此刻沒有誰蜷在角落——開著的門都朝著空頭的天氣。",
-"ts": "2026-11-04T08:10:06+08:00",
+"ts": "2026-11-04T08:20:01+08:00",
 "period_h": 1,
 "src": "tama_memory.json(D 帳本) · tama_config.json",
 "stale": false,
 "hash": "75c14cc4a082",
 "last_changed": "2026-11-03T17:20:03+08:00",
-"shown_at": "2026-11-04T08:10:06+08:00"
+"shown_at": "2026-11-04T08:20:03+08:00"
 },
 {
 "id": "clinic",
@@ -6751,7 +6751,7 @@
 "stale": false,
 "hash": "c21ad7845daa",
 "last_changed": "2026-09-26T01:24:17+08:00",
-"shown_at": "2026-11-04T08:10:06+08:00"
+"shown_at": "2026-11-04T08:20:03+08:00"
 },
 {
 "id": "collapse",
@@ -6764,7 +6764,7 @@
 "stale": false,
 "hash": "7c0d5a1a19b2",
 "last_changed": "2026-09-26T01:24:17+08:00",
-"shown_at": "2026-11-04T08:10:06+08:00"
+"shown_at": "2026-11-04T08:20:03+08:00"
 },
 {
 "id": "darkroom",
@@ -6777,33 +6777,33 @@
 "stale": false,
 "hash": "ee4e9754f2c7",
 "last_changed": "2026-09-26T01:24:17+08:00",
-"shown_at": "2026-11-04T08:10:06+08:00"
+"shown_at": "2026-11-04T08:20:03+08:00"
 },
 {
 "id": "fungus",
 "d": "深度 -1.8m · 真菌園",
 "kind": "live",
 "text": "全巢最值錢的一間。食物會吃完,菌絲不會:菌庫現有 583 份記憶,本週新接種事故 3 件、裁決 26 件。再往下是檔案館,防的是同一件事——重挖已經挖過的土。",
-"ts": "2026-11-03T08:13:00+08:00",
+"ts": "2026-11-04T08:14:00+08:00",
 "period_h": 24,
 "src": "decision_kb.json · 記憶檔目錄(*.md)",
 "stale": false,
 "hash": "58dd5ebf78b3",
 "last_changed": "2026-11-03T00:20:04+08:00",
-"shown_at": "2026-11-04T08:10:06+08:00"
+"shown_at": "2026-11-04T08:20:03+08:00"
 },
 {
 "id": "grave",
 "d": "深度 -2.4m · 墳場",
 "kind": "live",
 "text": "每一塊碑都是自己人立的。墳場現有 37 塊碑(12 塊封死路口、25 塊只立警示),新礦進門前都要先對過一遍。最新一塊是「MAX 樂透效應證偽」(10-19)。忘記壞路徑的能力,比找到好路徑的能力貴。",
-"ts": "2026-11-03T08:13:00+08:00",
+"ts": "2026-11-04T08:14:00+08:00",
 "period_h": 24,
 "src": "graveyard_signatures.json · decision_kb.json(心跳)",
 "stale": false,
 "hash": "792ac6c5e174",
 "last_changed": "2026-10-19T23:20:04+08:00",
-"shown_at": "2026-11-04T08:10:06+08:00"
+"shown_at": "2026-11-04T08:20:03+08:00"
 },
 {
 "id": "face",
@@ -6816,25 +6816,25 @@
 "stale": true,
 "hash": "6c34f392418b",
 "last_changed": "2026-11-01T06:20:04+08:00",
-"shown_at": "2026-11-04T08:10:06+08:00"
+"shown_at": "2026-11-04T08:20:03+08:00"
 },
 {
 "id": "weekly",
 "d": "巢口公告 · 本週新事 · 1/6",
 "kind": "rotate",
 "text": "裁蟻自動拍板 D266:來源 sec_press 連 4 週的事件後波動低於基準(最近 n=21, 高於基準比率…——採「降一級 tier(只影響聞蟻的重要度計分, 不停抓)」。(11-01)",
-"ts": "2026-11-04T08:10:06+08:00",
+"ts": "2026-11-04T08:20:03+08:00",
 "period_h": 24,
 "src": "decisions.json",
 "stale": false,
 "hash": "5f67d216ee1d",
 "last_changed": "2026-11-01T08:20:04+08:00",
-"shown_at": "2026-11-04T08:10:06+08:00"
+"shown_at": "2026-11-04T08:20:03+08:00"
 }
 ],
 "roster": {
 "v": 1,
-"ts": "2026-11-04T08:10:06+08:00",
+"ts": "2026-11-04T08:20:03+08:00",
 "n": 167,
 "depts": [
 {
@@ -7397,5 +7397,5 @@
 ],
 "src": "supervision_registry.json x research/autonomy/departments.json"
 },
-"_doc": "APEX 蟻穴公開資料; 每日 08:10 由 queen_weight.py 產出; 金額 eq 為 Jesse 2026-08-28 裁決公開"
+"_doc": "APEX 蟻穴公開資料; 完整鏈每日 08:10 由 queen_weight.py 產出, 每小時 :20 由 board_push.py (nest_hourly) 重算 fresh 列出的區塊; 各區塊資料時間見 fresh; 金額 eq 為 Jesse 2026-08-28 裁決公開"
 }
