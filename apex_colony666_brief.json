@@ -1,6 +1,6 @@
 {
- "ts": "2026-11-08T19:20:05",
- "data_ts": "2026-11-08T19:20:01",
+ "ts": "2026-11-08T20:20:05",
+ "data_ts": "2026-11-08T20:20:01",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
@@ -166,11 +166,11 @@
    "q": "現役 SC1 的前瞻影子帳 n=50 EV=-0.817R(< -0.20) -- 要不要把 SC1 轉影子/維持停用?",
    "rec": "A"
   },
-  "line": "近 24 小時: 自動裁決 4 件、自動修復/回滾 0 件。下一個自動到期 D294(2026-11-09), 沒人異議就採建議 A。成形雷達: 成形中 1665 檔／已成形 121 檔(全條件 121)(跨 4 市場; 宇宙 423 檔, 休市排除 408)。預言帳：2105 則前瞻在等結算、持牌 17／預言者 451。消息：近 24h 572 則／高重要 8 則／最新一則「Our Pick Of The Best Canadian Dividend S」(來源 1 個停抓中)｜實證：21 類消息裡 1 類會動價格、6 類不會、14 類樣本不足(事件 n=451)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 23 則發言、提到 META×3／INDA×1／GEOPOL×1、淨多空 +0.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 1727 單／已結 4003 單(live 4003＋登記日回填 0)／155 個規格在追；最接近晉升的 cS_rsi>=75+ema_rel<0|TP4R(crypto) 已達 n=84 EV=+1.160R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=67 EV-0.155、SC1 n=50 EV-0.817、SC3 n=303 EV-0.299；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 442 筆 EV-0.334R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 25%(1/4)。",
+  "line": "近 24 小時: 自動裁決 4 件、自動修復/回滾 0 件。下一個自動到期 D294(2026-11-09), 沒人異議就採建議 A。成形雷達: 成形中 1561 檔／已成形 136 檔(全條件 136)(跨 4 市場; 宇宙 423 檔, 休市排除 408)。預言帳：2097 則前瞻在等結算、持牌 17／預言者 451。消息：近 24h 546 則／高重要 6 則／最新一則「3 British Quality Stocks With ROE Over 2」(來源 1 個停抓中)｜實證：21 類消息裡 1 類會動價格、6 類不會、14 類樣本不足(事件 n=451)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 23 則發言、提到 META×3／INDA×1／GEOPOL×1、淨多空 +0.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 1731 單／已結 4001 單(live 4001＋登記日回填 0)／155 個規格在追；最接近晉升的 cS_rsi>=75+ema_rel<0|TP4R(crypto) 已達 n=84 EV=+1.160R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=67 EV-0.155、SC1 n=50 EV-0.817、SC3 n=303 EV-0.299；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 442 筆 EV-0.334R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 25%(1/4)。",
   "radar": {
-   "forming": 1665,
-   "fired": 121,
-   "fired_full": 121,
+   "forming": 1561,
+   "fired": 136,
+   "fired_full": 136,
    "markets": [
     "commodity",
     "crypto",
@@ -179,21 +179,21 @@
    ],
    "universe_fresh": 423,
    "stale_excluded": 408,
-   "ts_utc": "2026-11-08T10:35",
+   "ts_utc": "2026-11-08T11:35",
    "age_h": 0.8
   },
   "forecast": {
-   "pending": 2105,
+   "pending": 2097,
    "licensed": 17,
    "forecasters": 451,
-   "n_forecasts": 71416,
-   "n_resolved": 69311,
-   "asOf": "2026-11-08T10:40:23"
+   "n_forecasts": 71470,
+   "n_resolved": 69373,
+   "asOf": "2026-11-08T11:40:23"
   },
   "shadow": {
-   "n_open": 1727,
-   "n_closed": 4003,
-   "n_live": 4003,
+   "n_open": 1731,
+   "n_closed": 4001,
+   "n_live": 4001,
    "n_post_reg": 0,
    "n_backfill": 0,
    "n_specs": 155,
@@ -213,7 +213,7 @@
      "n_live": 84,
      "n_post_reg": 0,
      "ev": 1.1596,
-     "random_z": 1.7,
+     "random_z": 1.6,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": false
@@ -225,7 +225,7 @@
      "n_live": 84,
      "n_post_reg": 0,
      "ev": 1.0018,
-     "random_z": 1.06,
+     "random_z": 1.05,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": false
@@ -244,28 +244,28 @@
     }
    ],
    "eta_promo": null,
-   "opens_per_day": 408.1,
+   "opens_per_day": 408.2,
    "rate_days": 14,
-   "ts_utc": "2026-11-08T10:40"
+   "ts_utc": "2026-11-08T11:40"
   },
   "news": {
-   "n_24h": 572,
-   "n_hi": 8,
+   "n_24h": 546,
+   "n_hi": 6,
    "by_category": {
     "stock": 115,
-    "macro": 57,
-    "crypto": 219,
-    "commodity_fx": 181
+    "crypto": 206,
+    "macro": 56,
+    "commodity_fx": 169
    },
    "sources_green": 39,
    "sources_red": 1,
    "top": {
-    "t": "Our Pick Of The Best Canadian Dividend Stocks In November 2026",
-    "imp": 80,
+    "t": "3 British Quality Stocks With ROE Over 27%",
+    "imp": 73,
     "src": "yahoo_finance",
-    "ts": "2026-11-07T12:14:28Z"
+    "ts": "2026-11-08T02:14:45Z"
    },
-   "run_at": "2026-11-08T11:18:01",
+   "run_at": "2026-11-08T12:18:01",
    "impact": {
     "line": "｜實證：21 類消息裡 1 類會動價格、6 類不會、14 類樣本不足(事件 n=451)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 21,
@@ -305,7 +305,7 @@
       "short": 0
      }
     ],
-    "run_at": "2026-11-08T11:09:01"
+    "run_at": "2026-11-08T12:09:01"
    }
   },
   "calendar": {
@@ -317,13 +317,13 @@
    "blackout_event": null,
    "blackout_markets": [],
    "head": null,
-   "age_h": 1.0,
+   "age_h": 2.0,
    "ts": "2026-11-08T10:20:03"
   },
   "live_shadow": {
    "window": {
     "from": "2026-09-01",
-    "to": "2026-11-08T10:45"
+    "to": "2026-11-08T11:45"
    },
    "n_closed": 442,
    "n_open": 1,
@@ -335,7 +335,7 @@
     "pf": 0.572,
     "sum_r": -147.387
    },
-   "ts": "2026-11-08T10:45",
+   "ts": "2026-11-08T11:45",
    "per": {
     "B1": {
      "n": 6,
@@ -401,12 +401,12 @@
     "funding_missing": 0
    },
    "n_open": 0,
-   "ts": "2026-11-08T11:10:04Z"
+   "ts": "2026-11-08T12:10:04Z"
   }
  },
  "north_star": {
   "ts": "2026-11-08T08:00:03",
-  "age_h": 11.3,
+  "age_h": 12.3,
   "stale": false,
   "risk_light": "red",
   "risk_why": "最大 24h 權益跌幅 100.0%(上限 20.0)",
@@ -472,11 +472,11 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-11-08T11:05",
+  "attendance": "supervision_state.json @ 2026-11-08T12:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
   "calendar": "calendar_board.json @ 2026-11-08T10:20:03",
-  "news": "news_board.json @ 2026-11-08T11:18:01",
+  "news": "news_board.json @ 2026-11-08T12:18:01",
   "north_star": "goal_state.json @ 2026-11-08T08:00:03",
   "rules": "brief_rules.json v1.0"
  },
