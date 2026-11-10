@@ -1,6 +1,6 @@
 {
- "ts": "2026-11-10T11:20:07",
- "data_ts": "2026-11-10T11:20:03",
+ "ts": "2026-11-10T12:20:07",
+ "data_ts": "2026-11-10T12:20:03",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
@@ -144,11 +144,11 @@
    "q": "LF2 影子首個可判日(11/06)兩腿皆判 FAIL(預登記三條件; 1d M0 n=94 前瞻 EV -0.386R 落歷史 boots",
    "rec": "A"
   },
-  "line": "近 24 小時: 自動裁決 0 件、自動修復/回滾 0 件。下一個自動到期 D295(2026-11-13), 沒人異議就採建議 A。成形雷達: 成形中 1353 檔／已成形 999 檔(全條件 999)(跨 5 市場; 宇宙 638 檔, 休市排除 77)。預言帳：1529 則前瞻在等結算、持牌 12／預言者 464。消息：近 24h 1420 則／高重要 30 則／最新一則「Dow Jones Soars 1,132 Points As Amazon, 」(來源 1 個停抓中)｜實證：21 類消息裡 1 類會動價格、6 類不會、14 類樣本不足(事件 n=451)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 45 則發言、提到 NVDA×32／GEOPOL×3／WTI×1、淨多空 +0.0。今日事件：6 件(最重要 美國 CPI 21:30)／黑窗中：否。影子: 追蹤中 6902 單／已結 4010 單(live 4010＋登記日回填 0)／146 個規格在追；最接近晉升的 cS_rsi>=75+ema_rel<0|TP4R(crypto) 已達 n=110 EV=+1.181R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=67 EV-0.155、SC1 n=50 EV-0.817、SC3 n=303 EV-0.299；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 442 筆 EV-0.334R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 25%(1/4)。",
+  "line": "近 24 小時: 自動裁決 0 件、自動修復/回滾 0 件。下一個自動到期 D295(2026-11-13), 沒人異議就採建議 A。成形雷達: 成形中 1069 檔／已成形 784 檔(全條件 784)(跨 5 市場; 宇宙 472 檔, 休市排除 376)。預言帳：1539 則前瞻在等結算、持牌 14／預言者 464。消息：近 24h 1373 則／高重要 31 則／最新一則「Gate Will Delist KIMI, FLYBRAIN and 12 O」(來源 1 個停抓中)｜實證：21 類消息裡 1 類會動價格、6 類不會、14 類樣本不足(事件 n=451)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 46 則發言、提到 NVDA×33／GEOPOL×3／WTI×1、淨多空 +0.0。今日事件：6 件(最重要 美國 CPI 21:30)／黑窗中：否。影子: 追蹤中 7166 單／已結 4016 單(live 4016＋登記日回填 0)／155 個規格在追；最接近晉升的 cS_rsi>=75+ema_rel<0|TP4R(crypto) 已達 n=110 EV=+1.181R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=67 EV-0.155、SC1 n=50 EV-0.817、SC3 n=303 EV-0.299；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 442 筆 EV-0.334R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 25%(1/4)。",
   "radar": {
-   "forming": 1353,
-   "fired": 999,
-   "fired_full": 999,
+   "forming": 1069,
+   "fired": 784,
+   "fired_full": 784,
    "markets": [
     "commodity",
     "crypto",
@@ -156,26 +156,26 @@
     "index",
     "stock"
    ],
-   "universe_fresh": 638,
-   "stale_excluded": 77,
-   "ts_utc": "2026-11-10T02:35",
+   "universe_fresh": 472,
+   "stale_excluded": 376,
+   "ts_utc": "2026-11-10T03:35",
    "age_h": 0.8
   },
   "forecast": {
-   "pending": 1529,
-   "licensed": 12,
+   "pending": 1539,
+   "licensed": 14,
    "forecasters": 464,
-   "n_forecasts": 73585,
-   "n_resolved": 72056,
-   "asOf": "2026-11-10T02:40:22"
+   "n_forecasts": 73637,
+   "n_resolved": 72098,
+   "asOf": "2026-11-10T03:40:27"
   },
   "shadow": {
-   "n_open": 6902,
-   "n_closed": 4010,
-   "n_live": 4010,
+   "n_open": 7166,
+   "n_closed": 4016,
+   "n_live": 4016,
    "n_post_reg": 0,
    "n_backfill": 0,
-   "n_specs": 146,
+   "n_specs": 155,
    "best": {
     "spec": "cS_rsi>=75+ema_rel<0|TP4R",
     "market": "crypto",
@@ -200,11 +200,11 @@
     {
      "spec": "cS_rsi>=65+ema_rel<0+coil>=0.6|TP6R",
      "market": "crypto",
-     "n": 43,
-     "n_live": 43,
+     "n": 44,
+     "n_live": 44,
      "n_post_reg": 0,
-     "ev": 1.1456,
-     "random_z": 1.28,
+     "ev": 1.0953,
+     "random_z": 1.35,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": false
@@ -216,35 +216,35 @@
      "n_live": 110,
      "n_post_reg": 0,
      "ev": 1.0105,
-     "random_z": 1.45,
+     "random_z": 1.46,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": false
     }
    ],
    "eta_promo": null,
-   "opens_per_day": 778.2,
+   "opens_per_day": 797.5,
    "rate_days": 14,
-   "ts_utc": "2026-11-10T02:40"
+   "ts_utc": "2026-11-10T03:40"
   },
   "news": {
-   "n_24h": 1420,
-   "n_hi": 30,
+   "n_24h": 1373,
+   "n_hi": 31,
    "by_category": {
-    "stock": 457,
-    "crypto": 456,
-    "commodity_fx": 402,
-    "macro": 105
+    "crypto": 436,
+    "stock": 459,
+    "commodity_fx": 375,
+    "macro": 103
    },
    "sources_green": 39,
    "sources_red": 1,
    "top": {
-    "t": "Dow Jones Soars 1,132 Points As Amazon, Tesla Rally, But Nvidia Dives; CPI Inflation Report Next",
-    "imp": 80,
-    "src": "yahoo_finance",
-    "ts": "2026-11-09T22:00:15Z"
+    "t": "Gate Will Delist KIMI, FLYBRAIN and 12 Other Tokens Perpetuals",
+    "imp": 90,
+    "src": "gate_delist",
+    "ts": "2026-11-10T03:50:21Z"
    },
-   "run_at": "2026-11-10T03:18:01",
+   "run_at": "2026-11-10T04:18:01",
    "impact": {
     "line": "｜實證：21 類消息裡 1 類會動價格、6 類不會、14 類樣本不足(事件 n=451)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 21,
@@ -258,13 +258,13 @@
     "ts": "2026-11-07T20:30:21"
    },
    "trump": {
-    "line": "｜川普：近 24h 45 則發言、提到 NVDA×32／GEOPOL×3／WTI×1、淨多空 +0.0",
-    "n_24h": 45,
+    "line": "｜川普：近 24h 46 則發言、提到 NVDA×33／GEOPOL×3／WTI×1、淨多空 +0.0",
+    "n_24h": 46,
     "net_long_24h": 0.0,
     "top_symbols": [
      {
       "symbol": "NVDA",
-      "n": 32,
+      "n": 33,
       "net": -0.38,
       "long": 0,
       "short": 1
@@ -291,7 +291,7 @@
       "short": 0
      }
     ],
-    "run_at": "2026-11-10T03:09:01"
+    "run_at": "2026-11-10T04:09:01"
    }
   },
   "calendar": {
@@ -316,13 +316,13 @@
     "source": "nasdaq_econ",
     "blackout": "2.0h/1.0h"
    },
-   "age_h": 1.0,
+   "age_h": 2.0,
    "ts": "2026-11-10T02:20:03"
   },
   "live_shadow": {
    "window": {
     "from": "2026-09-01",
-    "to": "2026-11-10T02:45"
+    "to": "2026-11-10T03:45"
    },
    "n_closed": 442,
    "n_open": 23,
@@ -334,7 +334,7 @@
     "pf": 0.572,
     "sum_r": -147.387
    },
-   "ts": "2026-11-10T02:45",
+   "ts": "2026-11-10T03:45",
    "per": {
     "B1": {
      "n": 6,
@@ -400,12 +400,12 @@
     "funding_missing": 0
    },
    "n_open": 0,
-   "ts": "2026-11-10T03:10:05Z"
+   "ts": "2026-11-10T04:10:04Z"
   }
  },
  "north_star": {
   "ts": "2026-11-10T08:00:03",
-  "age_h": 3.3,
+  "age_h": 4.3,
   "stale": false,
   "risk_light": "red",
   "risk_why": "最大 24h 權益跌幅 100.0%(上限 20.0)",
@@ -471,11 +471,11 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-11-10T03:05",
+  "attendance": "supervision_state.json @ 2026-11-10T04:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
   "calendar": "calendar_board.json @ 2026-11-10T02:20:03",
-  "news": "news_board.json @ 2026-11-10T03:18:01",
+  "news": "news_board.json @ 2026-11-10T04:18:01",
   "north_star": "goal_state.json @ 2026-11-10T08:00:03",
   "rules": "brief_rules.json v1.0"
  },
