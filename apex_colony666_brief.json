@@ -1,6 +1,6 @@
 {
- "ts": "2026-11-11T11:20:07",
- "data_ts": "2026-11-11T11:20:01",
+ "ts": "2026-11-11T12:20:07",
+ "data_ts": "2026-11-11T12:20:01",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
@@ -144,11 +144,11 @@
    "q": "LF2 影子首個可判日(11/06)兩腿皆判 FAIL(預登記三條件; 1d M0 n=94 前瞻 EV -0.386R 落歷史 boots",
    "rec": "A"
   },
-  "line": "近 24 小時: 自動裁決 0 件、自動修復/回滾 0 件。下一個自動到期 D295(2026-11-13), 沒人異議就採建議 A。成形雷達: 成形中 1026 檔／已成形 249 檔(全條件 249)(跨 5 市場; 宇宙 645 檔, 休市排除 78)。預言帳：1626 則前瞻在等結算、持牌 15／預言者 464。消息：近 24h 1329 則／高重要 24 則／最新一則「Discontinuation of POL as Collateral and」(來源 1 個停抓中)｜實證：21 類消息裡 1 類會動價格、6 類不會、14 類樣本不足(事件 n=451)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 52 則發言、提到 NVDA×30／GEOPOL×5／WTI×4、淨多空 +1.9。今日事件：1 件(最重要 EIA 原油庫存週報(規則推算) 23:30)／黑窗中：否。影子: 追蹤中 8474 單／已結 4026 單(live 4026＋登記日回填 0)／157 個規格在追；最接近晉升的 cS_cvd_div>=0.3+ema_rel<0+co(crypto) 已達 n=53 EV=+2.349R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=67 EV-0.155、SC1 n=50 EV-0.817、SC3 n=325 EV-0.362；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 464 筆 EV-0.376R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 25%(1/4)。",
+  "line": "近 24 小時: 自動裁決 0 件、自動修復/回滾 0 件。下一個自動到期 D295(2026-11-13), 沒人異議就採建議 A。成形雷達: 成形中 724 檔／已成形 160 檔(全條件 160)(跨 5 市場; 宇宙 464 檔, 休市排除 387)。預言帳：1623 則前瞻在等結算、持牌 16／預言者 464。消息：近 24h 1308 則／高重要 24 則／最新一則「Gate Will Delist FLYBRAIN Perpetual Futu」(來源 1 個停抓中)｜實證：21 類消息裡 1 類會動價格、6 類不會、14 類樣本不足(事件 n=451)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 56 則發言、提到 NVDA×29／GEOPOL×6／WTI×5、淨多空 +1.9。今日事件：1 件(最重要 EIA 原油庫存週報(規則推算) 23:30)／黑窗中：否。影子: 追蹤中 8488 單／已結 4052 單(live 4052＋登記日回填 0)／164 個規格在追；最接近晉升的 cS_cvd_div>=0.3+ema_rel<0+co(crypto) 已達 n=53 EV=+2.349R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=67 EV-0.155、SC1 n=50 EV-0.817、SC3 n=325 EV-0.362；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 464 筆 EV-0.376R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 25%(1/4)。",
   "radar": {
-   "forming": 1026,
-   "fired": 249,
-   "fired_full": 249,
+   "forming": 724,
+   "fired": 160,
+   "fired_full": 160,
    "markets": [
     "commodity",
     "crypto",
@@ -156,26 +156,26 @@
     "index",
     "stock"
    ],
-   "universe_fresh": 645,
-   "stale_excluded": 78,
-   "ts_utc": "2026-11-11T02:35",
+   "universe_fresh": 464,
+   "stale_excluded": 387,
+   "ts_utc": "2026-11-11T03:35",
    "age_h": 0.8
   },
   "forecast": {
-   "pending": 1626,
-   "licensed": 15,
+   "pending": 1623,
+   "licensed": 16,
    "forecasters": 464,
-   "n_forecasts": 74984,
-   "n_resolved": 73358,
-   "asOf": "2026-11-11T02:40:23"
+   "n_forecasts": 75035,
+   "n_resolved": 73412,
+   "asOf": "2026-11-11T03:40:25"
   },
   "shadow": {
-   "n_open": 8474,
-   "n_closed": 4026,
-   "n_live": 4026,
+   "n_open": 8488,
+   "n_closed": 4052,
+   "n_live": 4052,
    "n_post_reg": 0,
    "n_backfill": 0,
-   "n_specs": 157,
+   "n_specs": 164,
    "best": {
     "spec": "cS_cvd_div>=0.3+ema_rel<0+coil>=0.6|PYR",
     "market": "crypto",
@@ -192,7 +192,7 @@
      "n_live": 53,
      "n_post_reg": 0,
      "ev": 2.3489,
-     "random_z": 3.74,
+     "random_z": 3.64,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": true
@@ -204,7 +204,7 @@
      "n_live": 54,
      "n_post_reg": 0,
      "ev": 1.3611,
-     "random_z": 1.57,
+     "random_z": 1.56,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": false
@@ -216,35 +216,35 @@
      "n_live": 109,
      "n_post_reg": 0,
      "ev": 1.2213,
-     "random_z": 1.88,
+     "random_z": 1.87,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": true
     }
    ],
    "eta_promo": null,
-   "opens_per_day": 891.6,
+   "opens_per_day": 894.5,
    "rate_days": 14,
-   "ts_utc": "2026-11-11T02:40"
+   "ts_utc": "2026-11-11T03:40"
   },
   "news": {
-   "n_24h": 1329,
+   "n_24h": 1308,
    "n_hi": 24,
    "by_category": {
-    "crypto": 400,
-    "macro": 151,
+    "crypto": 391,
+    "macro": 152,
     "stock": 449,
-    "commodity_fx": 329
+    "commodity_fx": 316
    },
    "sources_green": 39,
    "sources_red": 1,
    "top": {
-    "t": "Discontinuation of POL as Collateral and Lending Asset",
+    "t": "Gate Will Delist FLYBRAIN Perpetual Futures Trading Market",
     "imp": 90,
-    "src": "bybit_delist",
-    "ts": "2026-11-10T07:00:09Z"
+    "src": "gate_delist",
+    "ts": "2026-11-11T04:05:27Z"
    },
-   "run_at": "2026-11-11T03:18:01",
+   "run_at": "2026-11-11T04:18:01",
    "impact": {
     "line": "｜實證：21 類消息裡 1 類會動價格、6 類不會、14 類樣本不足(事件 n=451)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 21,
@@ -258,27 +258,27 @@
     "ts": "2026-11-07T20:30:21"
    },
    "trump": {
-    "line": "｜川普：近 24h 52 則發言、提到 NVDA×30／GEOPOL×5／WTI×4、淨多空 +1.9",
-    "n_24h": 52,
+    "line": "｜川普：近 24h 56 則發言、提到 NVDA×29／GEOPOL×6／WTI×5、淨多空 +1.9",
+    "n_24h": 56,
     "net_long_24h": 1.85,
     "top_symbols": [
      {
       "symbol": "NVDA",
-      "n": 30,
+      "n": 29,
       "net": 0.0,
       "long": 1,
       "short": 1
      },
      {
       "symbol": "GEOPOL",
-      "n": 5,
+      "n": 6,
       "net": 0.85,
       "long": 1,
       "short": 0
      },
      {
       "symbol": "WTI",
-      "n": 4,
+      "n": 5,
       "net": 0.0,
       "long": 0,
       "short": 0
@@ -298,7 +298,7 @@
       "short": 0
      }
     ],
-    "run_at": "2026-11-11T03:09:01"
+    "run_at": "2026-11-11T04:09:01"
    }
   },
   "calendar": {
@@ -323,13 +323,13 @@
     "source": "rule:eia",
     "blackout": "1.0h/1.0h"
    },
-   "age_h": 1.0,
+   "age_h": 2.0,
    "ts": "2026-11-11T02:20:01"
   },
   "live_shadow": {
    "window": {
     "from": "2026-09-01",
-    "to": "2026-11-11T02:45"
+    "to": "2026-11-11T03:45"
    },
    "n_closed": 464,
    "n_open": 19,
@@ -341,7 +341,7 @@
     "pf": 0.531,
     "sum_r": -174.317
    },
-   "ts": "2026-11-11T02:45",
+   "ts": "2026-11-11T03:45",
    "per": {
     "B1": {
      "n": 6,
@@ -407,12 +407,12 @@
     "funding_missing": 0
    },
    "n_open": 0,
-   "ts": "2026-11-11T03:10:05Z"
+   "ts": "2026-11-11T04:10:04Z"
   }
  },
  "north_star": {
   "ts": "2026-11-11T08:00:02",
-  "age_h": 3.3,
+  "age_h": 4.3,
   "stale": false,
   "risk_light": "red",
   "risk_why": "最大 24h 權益跌幅 100.0%(上限 20.0)",
@@ -478,11 +478,11 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-11-11T03:05",
+  "attendance": "supervision_state.json @ 2026-11-11T04:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
   "calendar": "calendar_board.json @ 2026-11-11T02:20:01",
-  "news": "news_board.json @ 2026-11-11T03:18:01",
+  "news": "news_board.json @ 2026-11-11T04:18:01",
   "north_star": "goal_state.json @ 2026-11-11T08:00:02",
   "rules": "brief_rules.json v1.0"
  },
