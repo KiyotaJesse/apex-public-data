@@ -4,16 +4,16 @@
 "asOf": "11-12",
 "ts": "2026-11-12T08:10:05+08:00",
 "weather": {
-"long": 29.0,
-"short": 82.0,
+"long": 41.0,
+"short": 58.0,
 "conf": {
-"TL": 28,
-"B1": 57,
-"MRS": 46,
-"SC": 46
+"TL": 22,
+"B1": 38,
+"MRS": 30,
+"SC": 31
 },
 "mega": 28.7,
-"fng": 29,
+"fng": 28,
 "regime": "bear",
 "stale": false
 },
@@ -283,10 +283,11 @@
 ],
 "sick": [
 "E稽核",
+"律",
 "夜班night"
 ],
 "btc": {
-"chg": 0.6
+"chg": 0.3
 },
 "pos": 0,
 "sig": 0,
@@ -2306,7 +2307,7 @@
 "n": "礦機口糧",
 "v": 0.42,
 "ok": true,
-"k": "100h",
+"k": "101h",
 "t": "上輪 11-08 05:14 掃畢 · 名冊容忍 174h(每週日 04:00 開工), 電腦休眠會斷糧"
 },
 {
@@ -2319,7 +2320,7 @@
 {
 "n": "API 餘額",
 "v": 0.0,
-"t": "餘額耗盡(canary 400) · AI 功能停擺, 交易不受影響 · 1 小時前補貨 · 哨兵每日 08:20 探餘額",
+"t": "餘額耗盡(canary 400) · AI 功能停擺, 交易不受影響 · 2 小時前補貨 · 哨兵每日 08:20 探餘額",
 "ok": false,
 "k": "耗盡",
 "mute": true
@@ -3389,7 +3390,7 @@
 }
 },
 "alerts": {
-"ts": "11-12T09:04",
+"ts": "11-12T10:04",
 "top": "",
 "events": [],
 "stale": false
@@ -5445,12 +5446,12 @@
 "health": {
 "score": 0,
 "why": [
-"病蟻 2 隻 -30",
+"病蟻 3 隻 -45",
 "逾期行動 64 件 -10",
 "SLO 超支 OB-V2L2、控制台快照、LAPD -30",
 "日檢紅 2(未認領: 雲端排程點名、BingX通道) -16",
 "Deadloop 異常 7(籃(趨勢籃子影子帳)、境(情境壓力測試蟻)、場(場地/對手風險蟻)) -18",
-"監督台紅燈 3(已含在病蟻扣分內, 不重複扣)"
+"監督台紅燈 4(已含在病蟻扣分內, 不重複扣)"
 ],
 "prev": 34,
 "streak": {}
@@ -5469,64 +5470,64 @@
 ],
 "board": [
 {
+"ts": "2026-11-12T10:10:05+08:00",
+"who": "蟻",
+"t": "汰/binance_leg: 2 件事件結算不出來(可結算分母 11) -- Q"
+},
+{
+"ts": "2026-11-12T10:05:29+08:00",
+"who": "蟻",
+"t": "律(不變式蟻): 結果檔自報失敗(ok=false) -- C:/claude-"
+},
+{
+"ts": "2026-11-12T09:55:04+08:00",
+"who": "蟻",
+"t": "汰/binance_leg: 2 件事件結算不出來(可結算分母 11) -- Q"
+},
+{
+"ts": "2026-11-12T09:50:09+08:00",
+"who": "蟻",
+"t": "elite 只剩 0 幣(main 20) -- 若 D 端改吃 elite 會"
+},
+{
+"ts": "2026-11-12T09:48:11+08:00",
+"who": "蟻",
+"t": "[聞] 重要度 70 stock/guidance 24COPPER·COPPE"
+},
+{
+"ts": "2026-11-12T09:48:11+08:00",
+"who": "蟻",
+"t": "[聞] 重要度 70 stock/earnings MARA | MARA Ho"
+},
+{
+"ts": "2026-11-12T09:40:04+08:00",
+"who": "蟻",
+"t": "汰/binance_leg: 2 件事件結算不出來(可結算分母 11) -- Q"
+},
+{
+"ts": "2026-11-12T09:33:15+08:00",
+"who": "蟻",
+"t": "[聞] 重要度 70 macro/rate_decision - | Barr,"
+},
+{
+"ts": "2026-11-12T09:33:15+08:00",
+"who": "蟻",
+"t": "[聞] 重要度 70 commodity_fx/other BOJ | Bank"
+},
+{
+"ts": "2026-11-12T09:25:07+08:00",
+"who": "蟻",
+"t": "[律] I7 告警噪音(單一來源不得壟斷): 近 24h 188 筆事件裡 de"
+},
+{
+"ts": "2026-11-12T09:25:04+08:00",
+"who": "蟻",
+"t": "汰/binance_leg: 2 件事件結算不出來(可結算分母 11) -- Q"
+},
+{
 "ts": "2026-11-12T09:10:04+08:00",
 "who": "蟻",
 "t": "汰/binance_leg: 2 件事件結算不出來(可結算分母 11) -- Q"
-},
-{
-"ts": "2026-11-12T09:05:29+08:00",
-"who": "蟻",
-"t": "🛰 [監督台] 146/156 正常運轉　·　⚠️ 6 件需要你"
-},
-{
-"ts": "2026-11-12T09:05:28+08:00",
-"who": "蟻",
-"t": "夜班 night1111 SendReport(單次): 逾期未跑: 26.6 "
-},
-{
-"ts": "2026-11-12T09:05:27+08:00",
-"who": "蟻",
-"t": "夜班 night1111 SendChoices(單次): 逾期未跑: 26.9"
-},
-{
-"ts": "2026-11-12T09:03:07+08:00",
-"who": "蟻",
-"t": "[聞] 重要度 75 crypto/listing_delisting LIST"
-},
-{
-"ts": "2026-11-12T08:55:05+08:00",
-"who": "蟻",
-"t": "汰/binance_leg: 2 件事件結算不出來(可結算分母 11) -- Q"
-},
-{
-"ts": "2026-11-12T08:50:34+08:00",
-"who": "蟻",
-"t": "🛰 [驗證網日檢] 21/25 綠"
-},
-{
-"ts": "2026-11-12T08:50:33+08:00",
-"who": "蟻",
-"t": "[驗證網] BingX通道: 淨值 0U"
-},
-{
-"ts": "2026-11-12T08:50:32+08:00",
-"who": "蟻",
-"t": "[驗證網] 雲端排程點名: 未點到:E稽核逾38天"
-},
-{
-"ts": "2026-11-12T08:40:04+08:00",
-"who": "蟻",
-"t": "汰/binance_leg: 2 件事件結算不出來(可結算分母 11) -- Q"
-},
-{
-"ts": "2026-11-12T08:40:03+08:00",
-"who": "蟻",
-"t": "漂移: cS_brk_low55<0+coil>=0.6|R|crypto 前瞻"
-},
-{
-"ts": "2026-11-12T08:40:03+08:00",
-"who": "蟻",
-"t": "漂移: cS_brk_low25<0+coil>=0.6+impact>=1|T"
 }
 ],
 "autonomy": {
@@ -5673,7 +5674,7 @@
 "blocked_on_jesse": []
 },
 "ledgers": {
-"asOf": "2026-11-12T09:20:03",
+"asOf": "2026-11-12T10:20:03",
 "judge": {
 "run_at": "2026-11-12T08:13:57",
 "src": "outcomes",
@@ -5740,7 +5741,7 @@
 "last_full_run": "2026-11-08T08:16:18+08:00"
 },
 "outcomes": {
-"open": 342,
+"open": 343,
 "closed": 277,
 "by_kind": {
 "l2_downgrade": {
@@ -5758,7 +5759,7 @@
 "unknown": 2
 },
 "confidence_adj": {
-"open": 30,
+"open": 31,
 "closed": 21,
 "hit": 8,
 "miss": 0,
@@ -5831,23 +5832,23 @@
 "events": {
 "h24": {
 "crit": 0,
-"warn": 117,
+"warn": 120,
 "info": 70,
 "suppressed": 102,
-"n": 187
+"n": 190
 },
 "d7": {
 "crit": 1,
-"warn": 1027,
-"info": 437,
-"suppressed": 846,
-"n": 1465
+"warn": 1034,
+"info": 441,
+"suppressed": 850,
+"n": 1476
 },
 "top_keys": [
 {
 "source": "delist_shadow",
 "key": "delist_shadow_binance_gap",
-"n": 580
+"n": 584
 },
 {
 "source": "kline15_collect",
@@ -5872,7 +5873,7 @@
 ],
 "latest": [
 {
-"ts": "2026-11-12T09:10",
+"ts": "2026-11-12T10:10",
 "source": "delist_shadow",
 "key": "delist_shadow_binance_gap",
 "level": "warn",
@@ -5880,39 +5881,47 @@
 "text": "汰/binance_leg: 2 件事件結算不出來(可結算分母 11) -- QUICK-USDT, QUICK-USD"
 },
 {
-"ts": "2026-11-12T09:05",
+"ts": "2026-11-12T10:05",
 "source": "supervisor",
-"key": "__daily__",
-"level": "info",
-"suppressed": false,
-"text": "🛰 [監督台] 146/156 正常運轉　·　⚠️ 6 件需要你"
-},
-{
-"ts": "2026-11-12T09:05",
-"source": "supervisor",
-"key": "red:task_night1111_send_report",
+"key": "red:invariant_watch",
 "level": "warn",
 "suppressed": false,
-"text": "夜班 night1111 SendReport(單次): 逾期未跑: 26.6 小時前(容忍 24h)"
+"text": "律(不變式蟻): 結果檔自報失敗(ok=false) -- C:/claude-assistant/invariant_"
 },
 {
-"ts": "2026-11-12T09:05",
-"source": "supervisor",
-"key": "red:task_night1111_send_choices",
+"ts": "2026-11-12T09:55",
+"source": "delist_shadow",
+"key": "delist_shadow_binance_gap",
+"level": "warn",
+"suppressed": true,
+"text": "汰/binance_leg: 2 件事件結算不出來(可結算分母 11) -- QUICK-USDT, QUICK-USD"
+},
+{
+"ts": "2026-11-12T09:50",
+"source": "cost_map",
+"key": "cost_map_elite_thin",
 "level": "warn",
 "suppressed": false,
-"text": "夜班 night1111 SendChoices(單次): 逾期未跑: 26.9 小時前(容忍 24h)"
+"text": "elite 只剩 0 幣(main 20) -- 若 D 端改吃 elite 會是巨大行為變化, 先別接"
 },
 {
-"ts": "2026-11-12T09:03",
+"ts": "2026-11-12T09:48",
 "source": "news_collector",
-"key": "hi_listing_delisting_LISTING",
+"key": "hi_guidance_24COPPER",
 "level": "info",
 "suppressed": false,
-"text": "[聞] 重要度 75 crypto/listing_delisting LISTING | KuCoin Futures"
+"text": "[聞] 重要度 70 stock/guidance 24COPPER·COPPER·SILVER | Did Highe"
 },
 {
-"ts": "2026-11-12T08:55",
+"ts": "2026-11-12T09:48",
+"source": "news_collector",
+"key": "hi_earnings_MARA",
+"level": "info",
+"suppressed": false,
+"text": "[聞] 重要度 70 stock/earnings MARA | MARA Holdings Inc (MARA) (Q"
+},
+{
+"ts": "2026-11-12T09:40",
 "source": "delist_shadow",
 "key": "delist_shadow_binance_gap",
 "level": "warn",
@@ -5920,27 +5929,19 @@
 "text": "汰/binance_leg: 2 件事件結算不出來(可結算分母 11) -- QUICK-USDT, QUICK-USD"
 },
 {
-"ts": "2026-11-12T08:50",
-"source": "verify_matrix",
-"key": "__daily__",
+"ts": "2026-11-12T09:33",
+"source": "news_collector",
+"key": "hi_rate_decision_-",
 "level": "info",
 "suppressed": false,
-"text": "🛰 [驗證網日檢] 21/25 綠"
-},
-{
-"ts": "2026-11-12T08:50",
-"source": "verify_matrix",
-"key": "BingX通道",
-"level": "warn",
-"suppressed": false,
-"text": "🔴 [驗證網] BingX通道: 淨值 0U"
+"text": "[聞] 重要度 70 macro/rate_decision - | Barr, Economic Conditions"
 }
 ]
 },
 "forecast": {
-"asOf": "2026-11-12T00:40:28",
-"n_forecasts": 76138,
-"n_prospective_total": 69414,
+"asOf": "2026-11-12T01:40:22",
+"n_forecasts": 76231,
+"n_prospective_total": 69457,
 "n_backfill_total": 57,
 "licensed": 16,
 "n_rows": 467,
@@ -5953,7 +5954,7 @@
 "n_pro": 65,
 "n_bf": 0,
 "hit_rate": 0.6923,
-"voice_rate": 0.609,
+"voice_rate": 0.6068,
 "shrunk_skill": 0.3541,
 "p_fam": 0.0,
 "licensed": true,
@@ -5967,7 +5968,7 @@
 "n_pro": 65,
 "n_bf": 0,
 "hit_rate": 0.6923,
-"voice_rate": 0.609,
+"voice_rate": 0.6068,
 "shrunk_skill": 0.3541,
 "p_fam": 0.0,
 "licensed": true,
@@ -5981,8 +5982,22 @@
 "n_pro": 65,
 "n_bf": 0,
 "hit_rate": 0.6923,
-"voice_rate": 0.6062,
+"voice_rate": 0.6041,
 "shrunk_skill": 0.3541,
+"p_fam": 0.0,
+"licensed": true,
+"event_driven": true,
+"blocked": ""
+},
+{
+"who": "formation_radar:cS_rsi>=75+ema_rel<0|TP4R",
+"type": "direction",
+"market": "co",
+"n_pro": 268,
+"n_bf": 0,
+"hit_rate": 0.6866,
+"voice_rate": 0.915,
+"shrunk_skill": 0.1796,
 "p_fam": 0.0,
 "licensed": true,
 "event_driven": true,
@@ -5995,9 +6010,9 @@
 "n_pro": 65,
 "n_bf": 0,
 "hit_rate": 0.6462,
-"voice_rate": 0.5963,
+"voice_rate": 0.5977,
 "shrunk_skill": 0.266,
-"p_fam": 0.002954,
+"p_fam": 0.002947,
 "licensed": true,
 "event_driven": true,
 "blocked": ""
@@ -6009,7 +6024,7 @@
 "n_pro": 63,
 "n_bf": 0,
 "hit_rate": 0.6349,
-"voice_rate": 0.5963,
+"voice_rate": 0.5977,
 "shrunk_skill": 0.2556,
 "p_fam": 0.00838,
 "licensed": true,
@@ -6023,7 +6038,7 @@
 "n_pro": 63,
 "n_bf": 0,
 "hit_rate": 0.6349,
-"voice_rate": 0.5963,
+"voice_rate": 0.5977,
 "shrunk_skill": 0.2556,
 "p_fam": 0.00838,
 "licensed": true,
@@ -6034,11 +6049,11 @@
 "who": "formation_radar:cS_trap_hi>=0.1+ema_rel<0|TP4R",
 "type": "direction",
 "market": "crypto",
-"n_pro": 227,
+"n_pro": 228,
 "n_bf": 0,
-"hit_rate": 0.7577,
-"voice_rate": 0.7005,
-"shrunk_skill": 0.1851,
+"hit_rate": 0.7544,
+"voice_rate": 0.7012,
+"shrunk_skill": 0.1864,
 "p_fam": 0.0,
 "licensed": true,
 "event_driven": true,
@@ -6051,8 +6066,8 @@
 "n_pro": 105,
 "n_bf": 0,
 "hit_rate": 0.5524,
-"voice_rate": 0.7191,
-"shrunk_skill": 0.131,
+"voice_rate": 0.7201,
+"shrunk_skill": 0.1352,
 "p_fam": 1.0,
 "licensed": false,
 "event_driven": true,
@@ -6065,26 +6080,12 @@
 "n_pro": 364,
 "n_bf": 0,
 "hit_rate": 0.6346,
-"voice_rate": 0.872,
-"shrunk_skill": 0.1075,
-"p_fam": 0.007157,
+"voice_rate": 0.8723,
+"shrunk_skill": 0.1067,
+"p_fam": 0.00838,
 "licensed": true,
 "event_driven": true,
 "blocked": ""
-},
-{
-"who": "formation_radar:cS_cvd_div>=0.3+ema_rel<0+coil>=0.6|PYR",
-"type": "direction",
-"market": "fx",
-"n_pro": 263,
-"n_bf": 0,
-"hit_rate": 0.4715,
-"voice_rate": 0.872,
-"shrunk_skill": 0.0943,
-"p_fam": 0.47736,
-"licensed": false,
-"event_driven": true,
-"blocked": "族內多重性校正後不顯著（p_fam=0.47736，m=428）"
 },
 {
 "who": "formation_radar:cS_rsi>=75+ema_rel<0|TP4R",
@@ -6093,26 +6094,26 @@
 "n_pro": 305,
 "n_bf": 0,
 "hit_rate": 0.682,
-"voice_rate": 0.9148,
-"shrunk_skill": 0.0894,
-"p_fam": 0.243492,
+"voice_rate": 0.915,
+"shrunk_skill": 0.0921,
+"p_fam": 0.17384,
 "licensed": false,
 "event_driven": true,
-"blocked": "族內多重性校正後不顯著（p_fam=0.243492，m=428）"
+"blocked": "族內多重性校正後不顯著（p_fam=0.17384，m=428）"
 },
 {
-"who": "formation_radar:MRS",
+"who": "formation_radar:cS_cvd_div>=0.3+ema_rel<0+coil>=0.6|PYR",
 "type": "direction",
-"market": "si",
-"n_pro": 122,
+"market": "fx",
+"n_pro": 263,
 "n_bf": 0,
-"hit_rate": 0.6311,
-"voice_rate": 0.4197,
-"shrunk_skill": 0.1822,
-"p_fam": 0.010842,
-"licensed": true,
+"hit_rate": 0.4715,
+"voice_rate": 0.8723,
+"shrunk_skill": 0.0956,
+"p_fam": 0.413512,
+"licensed": false,
 "event_driven": true,
-"blocked": ""
+"blocked": "族內多重性校正後不顯著（p_fam=0.413512，m=428）"
 }
 ]
 }
@@ -6714,52 +6715,52 @@
 "alerts": {
 "n": "警報",
 "h": 1,
-"ts": "2026-11-12T09:04:16+08:00"
+"ts": "2026-11-12T10:04:16+08:00"
 },
 "sick": {
 "n": "病蟻",
 "h": 1,
-"ts": "2026-11-12T09:05:01+08:00"
+"ts": "2026-11-12T10:05:01+08:00"
 },
 "pantry": {
 "n": "糧倉",
 "h": 1,
-"ts": "2026-11-12T09:05:01+08:00"
+"ts": "2026-11-12T10:05:01+08:00"
 },
 "health": {
 "n": "巢健康",
 "h": 1,
-"ts": "2026-11-12T09:05:01+08:00"
+"ts": "2026-11-12T10:05:01+08:00"
 },
 "decisions": {
 "n": "待裁",
 "h": 1,
-"ts": "2026-11-12T09:20:02+08:00"
+"ts": "2026-11-12T10:20:02+08:00"
 },
 "market": {
 "n": "BTC/持倉",
 "h": 1,
-"ts": "2026-11-12T09:16:37+08:00"
+"ts": "2026-11-12T10:16:45+08:00"
 },
 "weather": {
 "n": "巢外天氣",
 "h": 1,
-"ts": "2026-11-11T09:25:04+08:00"
+"ts": "2026-11-12T09:25:05+08:00"
 },
 "strategies": {
 "n": "策略蟻",
 "h": 1,
-"ts": "2026-11-12T09:20:02+08:00"
+"ts": "2026-11-12T10:20:02+08:00"
 },
 "ledgers": {
 "n": "成績單",
 "h": 1,
-"ts": "2026-11-12T09:20:02+08:00"
+"ts": "2026-11-12T10:20:02+08:00"
 },
 "board": {
 "n": "留言板",
 "h": 1,
-"ts": "2026-11-12T09:20:02+08:00"
+"ts": "2026-11-12T10:20:02+08:00"
 },
 "mine": {
 "n": "礦機",
@@ -6779,7 +6780,7 @@
 "notes": {
 "n": "便利貼",
 "h": 1,
-"ts": "2026-11-12T09:20:04+08:00"
+"ts": "2026-11-12T10:20:04+08:00"
 },
 "autonomy": {
 "n": "自治儀表",
@@ -6787,7 +6788,7 @@
 "ts": "2026-09-14T00:00:00+08:00"
 }
 },
-"live_ts": "2026-11-12T09:20:02+08:00",
+"live_ts": "2026-11-12T10:20:02+08:00",
 "notes": [
 {
 "id": "gate",
@@ -6800,7 +6801,7 @@
 "stale": false,
 "hash": "ca3e2303e96f",
 "last_changed": "2026-09-26T01:24:17+08:00",
-"shown_at": "2026-11-12T09:20:04+08:00"
+"shown_at": "2026-11-12T10:20:04+08:00"
 },
 {
 "id": "queen",
@@ -6813,20 +6814,20 @@
 "stale": true,
 "hash": "1785accbb700",
 "last_changed": "2026-11-08T05:20:04+08:00",
-"shown_at": "2026-11-12T09:20:04+08:00"
+"shown_at": "2026-11-12T10:20:04+08:00"
 },
 {
 "id": "worker",
 "d": "深度 -1m · 工蟻房",
 "kind": "live",
 "text": "覓食隊誠實紀錄:近 30 天搬回 -2.6R(2 趟),近 90 天 -5.1R(30 趟,帳本最早只記到 09-19)。其中 AUTO -4.4R/25、B1 -4.6R/3、TL +3.9R/2。現在開著門的:B1。此刻沒有誰蜷在角落——開著的門都朝著空頭的天氣。",
-"ts": "2026-11-12T09:20:02+08:00",
+"ts": "2026-11-12T10:20:02+08:00",
 "period_h": 1,
 "src": "tama_memory.json(D 帳本) · tama_config.json",
 "stale": false,
 "hash": "75c14cc4a082",
 "last_changed": "2026-11-06T10:20:03+08:00",
-"shown_at": "2026-11-12T09:20:04+08:00"
+"shown_at": "2026-11-12T10:20:04+08:00"
 },
 {
 "id": "clinic",
@@ -6839,7 +6840,7 @@
 "stale": false,
 "hash": "c21ad7845daa",
 "last_changed": "2026-09-26T01:24:17+08:00",
-"shown_at": "2026-11-12T09:20:04+08:00"
+"shown_at": "2026-11-12T10:20:04+08:00"
 },
 {
 "id": "collapse",
@@ -6852,7 +6853,7 @@
 "stale": false,
 "hash": "7c0d5a1a19b2",
 "last_changed": "2026-09-26T01:24:17+08:00",
-"shown_at": "2026-11-12T09:20:04+08:00"
+"shown_at": "2026-11-12T10:20:04+08:00"
 },
 {
 "id": "darkroom",
@@ -6865,7 +6866,7 @@
 "stale": false,
 "hash": "ee4e9754f2c7",
 "last_changed": "2026-09-26T01:24:17+08:00",
-"shown_at": "2026-11-12T09:20:04+08:00"
+"shown_at": "2026-11-12T10:20:04+08:00"
 },
 {
 "id": "fungus",
@@ -6878,7 +6879,7 @@
 "stale": false,
 "hash": "38ec58689dd0",
 "last_changed": "2026-11-12T08:20:05+08:00",
-"shown_at": "2026-11-12T09:20:04+08:00"
+"shown_at": "2026-11-12T10:20:04+08:00"
 },
 {
 "id": "grave",
@@ -6891,7 +6892,7 @@
 "stale": false,
 "hash": "792ac6c5e174",
 "last_changed": "2026-10-19T23:20:04+08:00",
-"shown_at": "2026-11-12T09:20:04+08:00"
+"shown_at": "2026-11-12T10:20:04+08:00"
 },
 {
 "id": "face",
@@ -6904,25 +6905,25 @@
 "stale": true,
 "hash": "630e26c1c4e7",
 "last_changed": "2026-11-08T05:20:04+08:00",
-"shown_at": "2026-11-12T09:20:04+08:00"
+"shown_at": "2026-11-12T10:20:04+08:00"
 },
 {
 "id": "weekly",
-"d": "巢口公告 · 本週新事 · 8/15",
+"d": "巢口公告 · 本週新事 · 9/15",
 "kind": "rotate",
-"text": "新蟻「勘」上崗,編進「偵察」組,排班「每日 06」。(11-06)",
-"ts": "2026-11-12T09:20:04+08:00",
+"text": "新蟻「錄」上崗,編進「偵察」組,排班「常駐; 排程每 5 分鐘確認活著」。(11-06)",
+"ts": "2026-11-12T10:20:04+08:00",
 "period_h": 24,
 "src": "supervision_registry.json",
 "stale": false,
 "hash": "2ee078f320af",
 "last_changed": "2026-11-12T08:10:08+08:00",
-"shown_at": "2026-11-12T09:20:04+08:00"
+"shown_at": "2026-11-12T10:20:04+08:00"
 }
 ],
 "roster": {
 "v": 1,
-"ts": "2026-11-12T09:20:04+08:00",
+"ts": "2026-11-12T10:20:04+08:00",
 "n": 157,
 "depts": [
 {
