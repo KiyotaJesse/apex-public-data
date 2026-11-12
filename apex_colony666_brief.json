@@ -1,6 +1,6 @@
 {
- "ts": "2026-11-12T19:20:05",
- "data_ts": "2026-11-12T19:20:01",
+ "ts": "2026-11-12T20:20:05",
+ "data_ts": "2026-11-12T20:20:01",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
@@ -102,14 +102,6 @@
    "howto": "icacls 實查 2026-11-04; key_ledger_result.json acl[0].ok=false"
   },
   {
-   "id": "AI401",
-   "title": "【待決 J1】部署盤口半 tick 修補: 貼 python research/obv2/fix_halftick/push_d_halft",
-   "due": "2026-11-14",
-   "due_in": 2,
-   "late": false,
-   "howto": "PowerShell 到 C:\\claude-assistant 跑: python push_d_halftick.py --push"
-  },
-  {
    "id": "AI402",
    "title": "【待決 J3】是否預授權: 12/05 逆選擇基底若 <= -3.0 bps/腳, 自動把 20~50x 極短線 maker 家族標不可行(",
    "due": "2026-12-04",
@@ -129,11 +121,11 @@
    "q": "LF2 影子首個可判日(11/06)兩腿皆判 FAIL(預登記三條件; 1d M0 n=94 前瞻 EV -0.386R 落歷史 boots",
    "rec": "A"
   },
-  "line": "近 24 小時: 自動裁決 0 件、自動修復/回滾 0 件。下一個自動到期 D295(2026-11-13), 沒人異議就採建議 A。成形雷達: 成形中 306 檔／已成形 26 檔(全條件 26)(跨 5 市場; 宇宙 455 檔, 休市排除 404)。預言帳：1598 則前瞻在等結算、持牌 17／預言者 467。消息：近 24h 1123 則／高重要 18 則／最新一則「SEC enters fight over who regulates perp」(來源 1 個停抓中)｜實證：21 類消息裡 1 類會動價格、6 類不會、14 類樣本不足(事件 n=451)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 25 則發言、提到 NVDA×18／GEOPOL×2／SPY×1、淨多空 +0.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 5865 單／已結 4118 單(live 4118＋登記日回填 0)／176 個規格在追；最接近晉升的 cS_cvd_div>=0.3+ema_rel<0+co(crypto) 已達 n=34 EV=+2.003R，且贏隨機 p95（已建晉升待決）。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=67 EV-0.155、SC1 n=50 EV-0.817、SC3 n=325 EV-0.362；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 464 筆 EV-0.376R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 25%(1/4)。",
+  "line": "近 24 小時: 自動裁決 0 件、自動修復/回滾 0 件。下一個自動到期 D295(2026-11-13), 沒人異議就採建議 A。成形雷達: 成形中 321 檔／已成形 30 檔(全條件 30)(跨 5 市場; 宇宙 455 檔, 休市排除 404)。預言帳：1585 則前瞻在等結算、持牌 17／預言者 467。消息：近 24h 1111 則／高重要 24 則／最新一則「8-K - AtlasClear Holdings, Inc. (0001963」(來源 1 個停抓中)｜實證：21 類消息裡 1 類會動價格、6 類不會、14 類樣本不足(事件 n=451)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 27 則發言、提到 NVDA×18／GEOPOL×3／GOLD×1、淨多空 +1.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 5824 單／已結 4050 單(live 4050＋登記日回填 0)／170 個規格在追；最接近晉升的 cS_brk_low55<0+ema_rel<0+coi(crypto) 已達 n=34 EV=+0.921R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=67 EV-0.155、SC1 n=50 EV-0.817、SC3 n=325 EV-0.362；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 464 筆 EV-0.376R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 25%(1/4)。",
   "radar": {
-   "forming": 306,
-   "fired": 26,
-   "fired_full": 26,
+   "forming": 321,
+   "fired": 30,
+   "fired_full": 30,
    "markets": [
     "commodity",
     "crypto",
@@ -143,53 +135,41 @@
    ],
    "universe_fresh": 455,
    "stale_excluded": 404,
-   "ts_utc": "2026-11-12T10:35",
+   "ts_utc": "2026-11-12T11:35",
    "age_h": 0.8
   },
   "forecast": {
-   "pending": 1598,
+   "pending": 1585,
    "licensed": 17,
    "forecasters": 467,
-   "n_forecasts": 76677,
-   "n_resolved": 75079,
-   "asOf": "2026-11-12T10:40:39"
+   "n_forecasts": 76719,
+   "n_resolved": 75134,
+   "asOf": "2026-11-12T11:40:27"
   },
   "shadow": {
-   "n_open": 5865,
-   "n_closed": 4118,
-   "n_live": 4118,
+   "n_open": 5824,
+   "n_closed": 4050,
+   "n_live": 4050,
    "n_post_reg": 0,
    "n_backfill": 0,
-   "n_specs": 176,
+   "n_specs": 170,
    "best": {
-    "spec": "cS_cvd_div>=0.3+ema_rel<0+coil>=0.6|PYR",
+    "spec": "cS_brk_low55<0+ema_rel<0+coil>=0.6|R",
     "market": "crypto",
     "n": 34,
-    "ev": 2.0028,
+    "ev": 0.9214,
     "to_promo_n": 0,
-    "beats_p95": true
+    "beats_p95": false
    },
    "nearest": [
     {
-     "spec": "cS_cvd_div>=0.3+ema_rel<0+coil>=0.6|PYR",
+     "spec": "cS_brk_low55<0+ema_rel<0+coil>=0.6|R",
      "market": "crypto",
      "n": 34,
      "n_live": 34,
      "n_post_reg": 0,
-     "ev": 2.0028,
-     "random_z": 2.88,
-     "to_promo_n": 0,
-     "eta": null,
-     "beats_p95": true
-    },
-    {
-     "spec": "cS_brk_low55<0+ema_rel<0+coil>=0.6|R",
-     "market": "crypto",
-     "n": 36,
-     "n_live": 36,
-     "n_post_reg": 0,
-     "ev": 1.0181,
-     "random_z": 1.29,
+     "ev": 0.9214,
+     "random_z": 1.1,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": false
@@ -197,39 +177,51 @@
     {
      "spec": "cS_brk_low55<0+coil>=0.6|R",
      "market": "crypto",
-     "n": 38,
-     "n_live": 38,
+     "n": 36,
+     "n_live": 36,
      "n_post_reg": 0,
-     "ev": 0.9643,
-     "random_z": 0.96,
+     "ev": 0.87,
+     "random_z": 0.78,
+     "to_promo_n": 0,
+     "eta": null,
+     "beats_p95": false
+    },
+    {
+     "spec": "cS_brk_low55<0+ema_rel<0+coil>=0.6|TP3R",
+     "market": "crypto",
+     "n": 34,
+     "n_live": 34,
+     "n_post_reg": 0,
+     "ev": 0.5031,
+     "random_z": 0.13,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": false
     }
    ],
    "eta_promo": null,
-   "opens_per_day": 711.7,
+   "opens_per_day": 703.9,
    "rate_days": 14,
-   "ts_utc": "2026-11-12T10:40"
+   "ts_utc": "2026-11-12T11:40"
   },
   "news": {
-   "n_24h": 1123,
-   "n_hi": 18,
+   "n_24h": 1111,
+   "n_hi": 24,
    "by_category": {
-    "crypto": 398,
-    "stock": 289,
-    "macro": 96,
-    "commodity_fx": 340
+    "stock": 319,
+    "crypto": 385,
+    "macro": 87,
+    "commodity_fx": 320
    },
    "sources_green": 39,
    "sources_red": 1,
    "top": {
-    "t": "SEC enters fight over who regulates perpetual derivatives on stocks in the US",
-    "imp": 80,
-    "src": "theblock",
-    "ts": "2026-11-11T22:06:47Z"
+    "t": "8-K - AtlasClear Holdings, Inc. (0001963088) (Filer)",
+    "imp": 83,
+    "src": "sec_edgar_8k",
+    "ts": "2026-11-12T11:06:16Z"
    },
-   "run_at": "2026-11-12T11:18:01",
+   "run_at": "2026-11-12T12:18:01",
    "impact": {
     "line": "｜實證：21 類消息裡 1 類會動價格、6 類不會、14 類樣本不足(事件 n=451)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 21,
@@ -243,9 +235,9 @@
     "ts": "2026-11-07T20:30:21"
    },
    "trump": {
-    "line": "｜川普：近 24h 25 則發言、提到 NVDA×18／GEOPOL×2／SPY×1、淨多空 +0.0",
-    "n_24h": 25,
-    "net_long_24h": 0.0,
+    "line": "｜川普：近 24h 27 則發言、提到 NVDA×18／GEOPOL×3／GOLD×1、淨多空 +1.0",
+    "n_24h": 27,
+    "net_long_24h": 1.0,
     "top_symbols": [
      {
       "symbol": "NVDA",
@@ -256,9 +248,16 @@
      },
      {
       "symbol": "GEOPOL",
-      "n": 2,
+      "n": 3,
       "net": 0.0,
       "long": 0,
+      "short": 0
+     },
+     {
+      "symbol": "GOLD",
+      "n": 1,
+      "net": 1.0,
+      "long": 1,
       "short": 0
      },
      {
@@ -276,7 +275,7 @@
       "short": 0
      }
     ],
-    "run_at": "2026-11-12T11:09:01"
+    "run_at": "2026-11-12T12:09:01"
    }
   },
   "calendar": {
@@ -288,13 +287,13 @@
    "blackout_event": null,
    "blackout_markets": [],
    "head": null,
-   "age_h": 1.0,
+   "age_h": 2.0,
    "ts": "2026-11-12T10:20:01"
   },
   "live_shadow": {
    "window": {
     "from": "2026-09-01",
-    "to": "2026-11-12T10:45"
+    "to": "2026-11-12T11:45"
    },
    "n_closed": 464,
    "n_open": 21,
@@ -306,7 +305,7 @@
     "pf": 0.531,
     "sum_r": -174.317
    },
-   "ts": "2026-11-12T10:45",
+   "ts": "2026-11-12T11:45",
    "per": {
     "B1": {
      "n": 6,
@@ -372,12 +371,12 @@
     "funding_missing": 0
    },
    "n_open": 0,
-   "ts": "2026-11-12T11:10:04Z"
+   "ts": "2026-11-12T12:10:04Z"
   }
  },
  "north_star": {
   "ts": "2026-11-12T08:00:03",
-  "age_h": 11.3,
+  "age_h": 12.3,
   "stale": false,
   "risk_light": "red",
   "risk_why": "最大 24h 權益跌幅 100.0%(上限 20.0)",
@@ -443,11 +442,11 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-11-12T11:05",
+  "attendance": "supervision_state.json @ 2026-11-12T12:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
   "calendar": "calendar_board.json @ 2026-11-12T10:20:01",
-  "news": "news_board.json @ 2026-11-12T11:18:01",
+  "news": "news_board.json @ 2026-11-12T12:18:01",
   "north_star": "goal_state.json @ 2026-11-12T08:00:03",
   "rules": "brief_rules.json v1.0"
  },
