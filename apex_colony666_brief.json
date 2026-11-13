@@ -1,6 +1,6 @@
 {
- "ts": "2026-11-14T06:20:07",
- "data_ts": "2026-11-14T06:20:02",
+ "ts": "2026-11-14T07:20:07",
+ "data_ts": "2026-11-14T07:20:02",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
@@ -11,15 +11,16 @@
    "你有 7 件行動項目逾期",
    "巢健康度 0 低於 70",
    "你有事項今天到期",
-   "病蟻 4 隻(排程紅燈)",
+   "病蟻 5 隻(排程紅燈)",
    "巢健康度 0 低於 85",
    "你有事項 0 天內到期",
    "待決事項 0 天內自動裁決",
    "SLO 超支 16 項",
-   "有 77 件行動項目逾期(我的)"
+   "有 77 件行動項目逾期(我的)",
+   "糧倉 1 項偏低"
   ],
   "n_red": 4,
-  "n_amber": 5
+  "n_amber": 6
  },
  "numbers": [
   {
@@ -27,7 +28,7 @@
    "v": "0",
    "unit": "/100",
    "tone": "red",
-   "sub": "扣分: 病蟻 4 隻 -45、逾期行動 77 件 -10"
+   "sub": "扣分: 病蟻 5 隻 -45、缺糧 4H K 線 歸檔 -5"
   },
   {
    "k": "本月策略 R",
@@ -38,10 +39,10 @@
   },
   {
    "k": "蟻口出勤",
-   "v": "151/156",
-   "unit": "(97%)",
+   "v": "150/156",
+   "unit": "(96%)",
    "tone": "red",
-   "sub": "紅燈 5 隻: LAPD 巡邏立案、E 偵錯小組稽核、衛(資料守衛蟻)"
+   "sub": "紅燈 6 隻: 4H K 線歸檔、LAPD 巡邏立案、E 偵錯小組稽核"
   }
  ],
  "jesse": [
@@ -127,11 +128,11 @@
    "q": "非加密 美股 市場組合 cS_brk_low25<0+coil>=0.6|TP4R 過五關+隨機基準(EV+0.30 n=755 p_fam",
    "rec": "A"
   },
-  "line": "近 24 小時: 自動裁決 1 件、自動修復/回滾 0 件。下一個自動到期 D270(2026-11-14), 沒人異議就採建議 A。成形雷達: 成形中 730 檔／已成形 135 檔(全條件 135)(跨 5 市場; 宇宙 640 檔, 休市排除 98)。預言帳：1662 則前瞻在等結算、持牌 11／預言者 467。消息：近 24h 1276 則／高重要 28 則／最新一則「Why Stephens Upgraded Oracle (ORCL)」(來源 1 個停抓中)｜實證：21 類消息裡 1 類會動價格、6 類不會、14 類樣本不足(事件 n=451)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 28 則發言、提到 NVDA×14／WTI×4／AAPL×2、淨多空 +0.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 3211 單／已結 4075 單(live 4075＋登記日回填 0)／142 個規格在追；最接近晉升的 cS_rsi>=70+ema_rel<0|TP6R(crypto) 已達 n=33 EV=+0.746R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=67 EV-0.155、SC1 n=54 EV-0.805、SC3 n=339 EV-0.389；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 482 筆 EV-0.397R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 25%(1/4)。",
+  "line": "近 24 小時: 自動裁決 1 件、自動修復/回滾 0 件。下一個自動到期 D270(2026-11-14), 沒人異議就採建議 A。成形雷達: 成形中 735 檔／已成形 158 檔(全條件 158)(跨 5 市場; 宇宙 638 檔, 休市排除 100)。預言帳：1696 則前瞻在等結算、持牌 11／預言者 467。消息：近 24h 1273 則／高重要 31 則／最新一則「Why Stephens Upgraded Oracle (ORCL)」(來源 1 個停抓中)｜實證：21 類消息裡 1 類會動價格、6 類不會、14 類樣本不足(事件 n=451)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 30 則發言、提到 NVDA×14／WTI×4／AAPL×2、淨多空 +0.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 3241 單／已結 4019 單(live 4019＋登記日回填 0)／142 個規格在追；最接近晉升的 cS_rsi>=70+ema_rel<0|TP6R(crypto) 已達 n=33 EV=+0.746R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=6 EV-1.007、TL n=16 EV+0.040、MRS n=67 EV-0.155、SC1 n=54 EV-0.805、SC3 n=339 EV-0.389；最差 B1(-1.007R)、最好 TL(+0.040R)；合計 482 筆 EV-0.397R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 25%(1/4)。",
   "radar": {
-   "forming": 730,
-   "fired": 135,
-   "fired_full": 135,
+   "forming": 735,
+   "fired": 158,
+   "fired_full": 158,
    "markets": [
     "commodity",
     "crypto",
@@ -139,23 +140,23 @@
     "index",
     "stock"
    ],
-   "universe_fresh": 640,
-   "stale_excluded": 98,
-   "ts_utc": "2026-11-13T21:35",
+   "universe_fresh": 638,
+   "stale_excluded": 100,
+   "ts_utc": "2026-11-13T22:35",
    "age_h": 0.8
   },
   "forecast": {
-   "pending": 1662,
+   "pending": 1696,
    "licensed": 11,
    "forecasters": 467,
-   "n_forecasts": 78544,
-   "n_resolved": 76882,
-   "asOf": "2026-11-13T21:40:35"
+   "n_forecasts": 78595,
+   "n_resolved": 76899,
+   "asOf": "2026-11-13T22:40:37"
   },
   "shadow": {
-   "n_open": 3211,
-   "n_closed": 4075,
-   "n_live": 4075,
+   "n_open": 3241,
+   "n_closed": 4019,
+   "n_live": 4019,
    "n_post_reg": 0,
    "n_backfill": 0,
    "n_specs": 142,
@@ -183,11 +184,11 @@
     {
      "spec": "cS_cvd_div>=0.3+atr_r>=1.2|TP6R",
      "market": "crypto",
-     "n": 35,
-     "n_live": 35,
+     "n": 36,
+     "n_live": 36,
      "n_post_reg": 0,
-     "ev": 0.7248,
-     "random_z": 0.25,
+     "ev": 0.6751,
+     "random_z": 0.16,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": false
@@ -195,29 +196,29 @@
     {
      "spec": "cS_cvd_div>=0.3+ema_rel<0+atr_r>=1.2|TP6R",
      "market": "crypto",
-     "n": 33,
-     "n_live": 33,
+     "n": 34,
+     "n_live": 34,
      "n_post_reg": 0,
-     "ev": 0.6216,
-     "random_z": 0.02,
+     "ev": 0.572,
+     "random_z": -0.2,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": false
     }
    ],
    "eta_promo": null,
-   "opens_per_day": 518.4,
+   "opens_per_day": 516.5,
    "rate_days": 14,
-   "ts_utc": "2026-11-13T21:40"
+   "ts_utc": "2026-11-13T22:40"
   },
   "news": {
-   "n_24h": 1276,
-   "n_hi": 28,
+   "n_24h": 1273,
+   "n_hi": 31,
    "by_category": {
-    "stock": 434,
-    "crypto": 433,
-    "commodity_fx": 307,
-    "macro": 102
+    "stock": 421,
+    "crypto": 438,
+    "commodity_fx": 308,
+    "macro": 106
    },
    "sources_green": 39,
    "sources_red": 1,
@@ -227,7 +228,7 @@
     "src": "yahoo_finance",
     "ts": "2026-11-13T21:31:19Z"
    },
-   "run_at": "2026-11-13T22:18:02",
+   "run_at": "2026-11-13T23:18:02",
    "impact": {
     "line": "｜實證：21 類消息裡 1 類會動價格、6 類不會、14 類樣本不足(事件 n=451)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 21,
@@ -241,8 +242,8 @@
     "ts": "2026-11-07T20:30:21"
    },
    "trump": {
-    "line": "｜川普：近 24h 28 則發言、提到 NVDA×14／WTI×4／AAPL×2、淨多空 +0.0",
-    "n_24h": 28,
+    "line": "｜川普：近 24h 30 則發言、提到 NVDA×14／WTI×4／AAPL×2、淨多空 +0.0",
+    "n_24h": 30,
     "net_long_24h": 0,
     "top_symbols": [
      {
@@ -281,7 +282,7 @@
       "short": 0
      }
     ],
-    "run_at": "2026-11-13T22:09:02"
+    "run_at": "2026-11-13T23:09:02"
    }
   },
   "calendar": {
@@ -293,13 +294,13 @@
    "blackout_event": null,
    "blackout_markets": [],
    "head": null,
-   "age_h": 0.3,
-   "ts": "2026-11-13T22:00:04"
+   "age_h": 1.0,
+   "ts": "2026-11-13T22:20:08"
   },
   "live_shadow": {
    "window": {
     "from": "2026-09-01",
-    "to": "2026-11-13T21:45"
+    "to": "2026-11-13T22:45"
    },
    "n_closed": 482,
    "n_open": 24,
@@ -311,7 +312,7 @@
     "pf": 0.51,
     "sum_r": -191.303
    },
-   "ts": "2026-11-13T21:45",
+   "ts": "2026-11-13T22:45",
    "per": {
     "B1": {
      "n": 6,
@@ -377,12 +378,12 @@
     "funding_missing": 0
    },
    "n_open": 0,
-   "ts": "2026-11-13T22:10:04Z"
+   "ts": "2026-11-13T23:10:05Z"
   }
  },
  "north_star": {
   "ts": "2026-11-13T08:00:04",
-  "age_h": 22.3,
+  "age_h": 23.3,
   "stale": false,
   "risk_light": "red",
   "risk_why": "最大 24h 權益跌幅 100.0%(上限 20.0)",
@@ -448,11 +449,11 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-11-13T22:05",
+  "attendance": "supervision_state.json @ 2026-11-13T23:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
-  "calendar": "calendar_board.json @ 2026-11-13T22:00:04",
-  "news": "news_board.json @ 2026-11-13T22:18:02",
+  "calendar": "calendar_board.json @ 2026-11-13T22:20:08",
+  "news": "news_board.json @ 2026-11-13T23:18:02",
   "north_star": "goal_state.json @ 2026-11-13T08:00:04",
   "rules": "brief_rules.json v1.0"
  },
