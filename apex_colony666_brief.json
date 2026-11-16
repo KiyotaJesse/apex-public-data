@@ -1,6 +1,6 @@
 {
- "ts": "2026-11-17T04:20:07",
- "data_ts": "2026-11-17T04:20:03",
+ "ts": "2026-11-17T05:20:07",
+ "data_ts": "2026-11-17T05:20:03",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
@@ -121,11 +121,11 @@
    "q": "非加密 美股 市場組合 cS_rsi>=70+ema_rel<0+coil>=0.6|TP6R 過五關+隨機基準(EV+0.38 n=575",
    "rec": "A"
   },
-  "line": "近 24 小時: 自動裁決 0 件、自動修復/回滾 0 件。下一個自動到期 D296(2026-11-21), 沒人異議就採建議 A。成形雷達: 成形中 1259 檔／已成形 204 檔(全條件 204)(跨 5 市場; 宇宙 619 檔, 休市排除 122)。預言帳：1624 則前瞻在等結算、持牌 10／預言者 489。消息：近 24h 1343 則／高重要 28 則／最新一則「Gate to Delist ANTHROPIC Pre-Market Perp」(來源 2 個停抓中)｜實證：22 類消息裡 0 類會動價格、10 類不會、12 類樣本不足(事件 n=1001)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 65 則發言、提到 NVDA×48／GOLD×2／GEOPOL×2、淨多空 +0.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 3350 單／已結 4039 單(live 2693＋登記日回填 1346)／161 個規格在追；最接近晉升的 cS_rsi>=70+ema_rel<0|TP6R(crypto) 已達 n=31 EV=+2.935R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=10 EV-0.775、TL n=16 EV+0.040、MRS n=68 EV-0.132、SC1 n=57 EV-0.714、SC3 n=365 EV-0.360；最差 B1(-0.775R)、最好 TL(+0.040R)；合計 516 筆 EV-0.365R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 25%(1/4)。",
+  "line": "近 24 小時: 自動裁決 0 件、自動修復/回滾 0 件。下一個自動到期 D296(2026-11-21), 沒人異議就採建議 A。成形雷達: 成形中 1240 檔／已成形 149 檔(全條件 149)(跨 5 市場; 宇宙 619 檔, 休市排除 122)。預言帳：1615 則前瞻在等結算、持牌 9／預言者 489。消息：近 24h 1409 則／高重要 28 則／最新一則「Gate to Delist ANTHROPIC Pre-Market Perp」(來源 2 個停抓中)｜實證：22 類消息裡 0 類會動價格、10 類不會、12 類樣本不足(事件 n=1001)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 70 則發言、提到 NVDA×52／GOLD×2／GEOPOL×2、淨多空 +0.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 3342 單／已結 4026 單(live 2694＋登記日回填 1332)／161 個規格在追；最接近晉升的 cS_rsi>=70+ema_rel<0|TP6R(crypto) 已達 n=31 EV=+2.935R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=10 EV-0.775、TL n=16 EV+0.040、MRS n=68 EV-0.132、SC1 n=57 EV-0.714、SC3 n=365 EV-0.360；最差 B1(-0.775R)、最好 TL(+0.040R)；合計 516 筆 EV-0.365R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 25%(1/4)。",
   "radar": {
-   "forming": 1259,
-   "fired": 204,
-   "fired_full": 204,
+   "forming": 1240,
+   "fired": 149,
+   "fired_full": 149,
    "markets": [
     "commodity",
     "crypto",
@@ -135,22 +135,22 @@
    ],
    "universe_fresh": 619,
    "stale_excluded": 122,
-   "ts_utc": "2026-11-16T19:35",
+   "ts_utc": "2026-11-16T20:35",
    "age_h": 0.8
   },
   "forecast": {
-   "pending": 1624,
-   "licensed": 10,
+   "pending": 1615,
+   "licensed": 9,
    "forecasters": 489,
-   "n_forecasts": 82373,
-   "n_resolved": 80749,
-   "asOf": "2026-11-16T19:40:27"
+   "n_forecasts": 82423,
+   "n_resolved": 80808,
+   "asOf": "2026-11-16T20:40:30"
   },
   "shadow": {
-   "n_open": 3350,
-   "n_closed": 4039,
-   "n_live": 2693,
-   "n_post_reg": 1346,
+   "n_open": 3342,
+   "n_closed": 4026,
+   "n_live": 2694,
+   "n_post_reg": 1332,
    "n_backfill": 0,
    "n_specs": 161,
    "best": {
@@ -181,7 +181,7 @@
      "n_live": 42,
      "n_post_reg": 0,
      "ev": 2.2991,
-     "random_z": 3.38,
+     "random_z": 3.4,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": true
@@ -189,29 +189,29 @@
     {
      "spec": "cS_brk_low25<0+coil>=0.6|TP4R",
      "market": "crypto",
-     "n": 123,
+     "n": 108,
      "n_live": 0,
-     "n_post_reg": 123,
-     "ev": 0.9326,
-     "random_z": 0.44,
+     "n_post_reg": 108,
+     "ev": 1.0442,
+     "random_z": 0.93,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": false
     }
    ],
    "eta_promo": null,
-   "opens_per_day": 501.7,
+   "opens_per_day": 500.4,
    "rate_days": 14,
-   "ts_utc": "2026-11-16T19:40"
+   "ts_utc": "2026-11-16T20:40"
   },
   "news": {
-   "n_24h": 1343,
+   "n_24h": 1409,
    "n_hi": 28,
    "by_category": {
-    "crypto": 453,
-    "commodity_fx": 408,
-    "stock": 363,
-    "macro": 119
+    "crypto": 478,
+    "commodity_fx": 420,
+    "stock": 380,
+    "macro": 131
    },
    "sources_green": 38,
    "sources_red": 2,
@@ -221,7 +221,7 @@
     "src": "gate_delist",
     "ts": "2026-11-16T11:20:50Z"
    },
-   "run_at": "2026-11-16T20:18:02",
+   "run_at": "2026-11-16T21:18:02",
    "impact": {
     "line": "｜實證：22 類消息裡 0 類會動價格、10 類不會、12 類樣本不足(事件 n=1001)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 22,
@@ -235,13 +235,13 @@
     "ts": "2026-11-14T20:30:20"
    },
    "trump": {
-    "line": "｜川普：近 24h 65 則發言、提到 NVDA×48／GOLD×2／GEOPOL×2、淨多空 +0.0",
-    "n_24h": 65,
+    "line": "｜川普：近 24h 70 則發言、提到 NVDA×52／GOLD×2／GEOPOL×2、淨多空 +0.0",
+    "n_24h": 70,
     "net_long_24h": 0.0,
     "top_symbols": [
      {
       "symbol": "NVDA",
-      "n": 48,
+      "n": 52,
       "net": 1.67,
       "long": 4,
       "short": 0
@@ -268,7 +268,7 @@
       "short": 0
      }
     ],
-    "run_at": "2026-11-16T20:09:02"
+    "run_at": "2026-11-16T21:09:02"
    }
   },
   "calendar": {
@@ -280,13 +280,13 @@
    "blackout_event": null,
    "blackout_markets": [],
    "head": null,
-   "age_h": 2.0,
+   "age_h": 3.0,
    "ts": "2026-11-16T18:20:05"
   },
   "live_shadow": {
    "window": {
     "from": "2026-09-01",
-    "to": "2026-11-16T19:45"
+    "to": "2026-11-16T20:45"
    },
    "n_closed": 516,
    "n_open": 92,
@@ -298,7 +298,7 @@
     "pf": 0.542,
     "sum_r": -188.367
    },
-   "ts": "2026-11-16T19:45",
+   "ts": "2026-11-16T20:45",
    "per": {
     "B1": {
      "n": 10,
@@ -364,12 +364,12 @@
     "funding_missing": 0
    },
    "n_open": 0,
-   "ts": "2026-11-16T20:10:05Z"
+   "ts": "2026-11-16T21:10:05Z"
   }
  },
  "north_star": {
   "ts": "2026-11-16T08:00:02",
-  "age_h": 20.3,
+  "age_h": 21.3,
   "stale": false,
   "risk_light": "red",
   "risk_why": "最大 24h 權益跌幅 100.0%(上限 20.0)",
@@ -435,11 +435,11 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-11-16T20:05",
+  "attendance": "supervision_state.json @ 2026-11-16T21:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
   "calendar": "calendar_board.json @ 2026-11-16T18:20:05",
-  "news": "news_board.json @ 2026-11-16T20:18:02",
+  "news": "news_board.json @ 2026-11-16T21:18:02",
   "north_star": "goal_state.json @ 2026-11-16T08:00:02",
   "rules": "brief_rules.json v1.0"
  },
