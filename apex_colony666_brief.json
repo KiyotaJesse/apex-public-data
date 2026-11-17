@@ -1,6 +1,6 @@
 {
- "ts": "2026-11-17T21:20:07",
- "data_ts": "2026-11-17T21:20:03",
+ "ts": "2026-11-17T22:20:09",
+ "data_ts": "2026-11-17T22:20:04",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
@@ -11,7 +11,7 @@
    "你有 7 件行動項目逾期",
    "巢健康度 0 低於 70",
    "你有事項今天到期",
-   "病蟻 3 隻(排程紅燈)",
+   "病蟻 2 隻(排程紅燈)",
    "巢健康度 0 低於 85",
    "你有事項 0 天內到期",
    "SLO 超支 16 項",
@@ -27,7 +27,7 @@
    "v": "0",
    "unit": "/100",
    "tone": "red",
-   "sub": "扣分: 病蟻 3 隻 -45、缺糧 礦機口糧 -5"
+   "sub": "扣分: 病蟻 2 隻 -30、缺糧 礦機口糧 -5"
   },
   {
    "k": "本月策略 R",
@@ -38,10 +38,10 @@
   },
   {
    "k": "蟻口出勤",
-   "v": "153/157",
-   "unit": "(97%)",
+   "v": "154/157",
+   "unit": "(98%)",
    "tone": "red",
-   "sub": "紅燈 4 隻: E 偵錯小組稽核、律(不變式蟻)、夜班 night1111"
+   "sub": "紅燈 3 隻: E 偵錯小組稽核、夜班 night1111、夜班 night1111"
   }
  ],
  "jesse": [
@@ -121,11 +121,11 @@
    "q": "非加密 美股 市場組合 cS_rsi>=70+ema_rel<0+coil>=0.6|TP6R 過五關+隨機基準(EV+0.38 n=575",
    "rec": "A"
   },
-  "line": "近 24 小時: 自動裁決 0 件、自動修復/回滾 0 件。下一個自動到期 D296(2026-11-21), 沒人異議就採建議 A。成形雷達: 成形中 1773 檔／已成形 233 檔(全條件 233)(跨 5 市場; 宇宙 424 檔, 休市排除 455)。預言帳：1481 則前瞻在等結算、持牌 8／預言者 489。消息：近 24h 1294 則／高重要 31 則／最新一則「Hackers plant crypto-stealing code on 17」(來源 1 個停抓中)｜實證：22 類消息裡 0 類會動價格、10 類不會、12 類樣本不足(事件 n=1001)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 68 則發言、提到 NVDA×54／EWT×2／AMZN×1、淨多空 +0.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 3702 單／已結 4002 單(live 2943＋登記日回填 1059)／175 個規格在追；最接近晉升的 cS_rsi>=70+ema_rel<0|TP6R(crypto) 已達 n=40 EV=+3.511R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=10 EV-0.775、TL n=16 EV+0.040、MRS n=68 EV-0.132、SC1 n=59 EV-0.728、SC3 n=406 EV-0.303；最差 B1(-0.775R)、最好 TL(+0.040R)；合計 559 筆 EV-0.326R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 25%(1/4)。",
+  "line": "近 24 小時: 自動裁決 0 件、自動修復/回滾 0 件。下一個自動到期 D296(2026-11-21), 沒人異議就採建議 A。成形雷達: 成形中 1415 檔／已成形 257 檔(全條件 257)(跨 5 市場; 宇宙 424 檔, 休市排除 455)。預言帳：1512 則前瞻在等結算、持牌 7／預言者 489。消息：近 24h 1246 則／高重要 31 則／最新一則「Sankamap Completes Latest Drill Hole as 」(來源 1 個停抓中)｜實證：22 類消息裡 0 類會動價格、10 類不會、12 類樣本不足(事件 n=1001)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 69 則發言、提到 NVDA×55／EWT×2／AMZN×1、淨多空 +0.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 3799 單／已結 4008 單(live 2951＋登記日回填 1057)／175 個規格在追；最接近晉升的 cS_rsi>=70+ema_rel<0|TP6R(crypto) 已達 n=40 EV=+3.511R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=10 EV-0.775、TL n=16 EV+0.040、MRS n=68 EV-0.132、SC1 n=59 EV-0.728、SC3 n=406 EV-0.303；最差 B1(-0.775R)、最好 TL(+0.040R)；合計 559 筆 EV-0.326R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 25%(1/4)。",
   "radar": {
-   "forming": 1773,
-   "fired": 233,
-   "fired_full": 233,
+   "forming": 1415,
+   "fired": 257,
+   "fired_full": 257,
    "markets": [
     "commodity",
     "crypto",
@@ -135,22 +135,22 @@
    ],
    "universe_fresh": 424,
    "stale_excluded": 455,
-   "ts_utc": "2026-11-17T12:35",
+   "ts_utc": "2026-11-17T13:35",
    "age_h": 0.8
   },
   "forecast": {
-   "pending": 1481,
-   "licensed": 8,
+   "pending": 1512,
+   "licensed": 7,
    "forecasters": 489,
-   "n_forecasts": 83268,
-   "n_resolved": 81787,
-   "asOf": "2026-11-17T12:40:45"
+   "n_forecasts": 83333,
+   "n_resolved": 81821,
+   "asOf": "2026-11-17T13:40:33"
   },
   "shadow": {
-   "n_open": 3702,
-   "n_closed": 4002,
-   "n_live": 2943,
-   "n_post_reg": 1059,
+   "n_open": 3799,
+   "n_closed": 4008,
+   "n_live": 2951,
+   "n_post_reg": 1057,
    "n_backfill": 0,
    "n_specs": 175,
    "best": {
@@ -181,7 +181,7 @@
      "n_live": 48,
      "n_post_reg": 0,
      "ev": 2.1883,
-     "random_z": 2.28,
+     "random_z": 2.32,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": true
@@ -189,39 +189,39 @@
     {
      "spec": "cS_brk_low25<0+coil>=0.6|TP4R",
      "market": "crypto",
-     "n": 53,
-     "n_live": 2,
-     "n_post_reg": 51,
-     "ev": 1.3825,
-     "random_z": 1.32,
+     "n": 52,
+     "n_live": 3,
+     "n_post_reg": 49,
+     "ev": 1.5314,
+     "random_z": 1.45,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": false
     }
    ],
    "eta_promo": null,
-   "opens_per_day": 530.2,
+   "opens_per_day": 537.6,
    "rate_days": 14,
-   "ts_utc": "2026-11-17T12:40"
+   "ts_utc": "2026-11-17T13:40"
   },
   "news": {
-   "n_24h": 1294,
+   "n_24h": 1246,
    "n_hi": 31,
    "by_category": {
-    "crypto": 426,
-    "stock": 385,
-    "macro": 150,
-    "commodity_fx": 333
+    "stock": 389,
+    "crypto": 402,
+    "macro": 139,
+    "commodity_fx": 316
    },
    "sources_green": 39,
    "sources_red": 1,
    "top": {
-    "t": "Hackers plant crypto-stealing code on 178 major websites, including HSBC and Ledger",
+    "t": "Sankamap Completes Latest Drill Hole as Part of Broader Exploration Program at Kuma Copper-Gold Project",
     "imp": 80,
-    "src": "coindesk",
-    "ts": "2026-11-17T10:22:18Z"
+    "src": "yahoo_finance",
+    "ts": "2026-11-17T13:30:00Z"
    },
-   "run_at": "2026-11-17T13:18:02",
+   "run_at": "2026-11-17T14:18:02",
    "impact": {
     "line": "｜實證：22 類消息裡 0 類會動價格、10 類不會、12 類樣本不足(事件 n=1001)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 22,
@@ -235,13 +235,13 @@
     "ts": "2026-11-14T20:30:20"
    },
    "trump": {
-    "line": "｜川普：近 24h 68 則發言、提到 NVDA×54／EWT×2／AMZN×1、淨多空 +0.0",
-    "n_24h": 68,
+    "line": "｜川普：近 24h 69 則發言、提到 NVDA×55／EWT×2／AMZN×1、淨多空 +0.0",
+    "n_24h": 69,
     "net_long_24h": 0.0,
     "top_symbols": [
      {
       "symbol": "NVDA",
-      "n": 54,
+      "n": 55,
       "net": 1.67,
       "long": 4,
       "short": 0
@@ -275,7 +275,7 @@
       "short": 0
      }
     ],
-    "run_at": "2026-11-17T13:09:01"
+    "run_at": "2026-11-17T14:09:02"
    }
   },
   "calendar": {
@@ -287,13 +287,13 @@
    "blackout_event": null,
    "blackout_markets": [],
    "head": null,
-   "age_h": 3.0,
+   "age_h": 4.0,
    "ts": "2026-11-17T10:20:01"
   },
   "live_shadow": {
    "window": {
     "from": "2026-09-01",
-    "to": "2026-11-17T12:45"
+    "to": "2026-11-17T13:45"
    },
    "n_closed": 559,
    "n_open": 50,
@@ -305,7 +305,7 @@
     "pf": 0.581,
     "sum_r": -181.962
    },
-   "ts": "2026-11-17T12:45",
+   "ts": "2026-11-17T13:45",
    "per": {
     "B1": {
      "n": 10,
@@ -371,12 +371,12 @@
     "funding_missing": 0
    },
    "n_open": 0,
-   "ts": "2026-11-17T13:10:04Z"
+   "ts": "2026-11-17T14:10:05Z"
   }
  },
  "north_star": {
   "ts": "2026-11-17T08:00:04",
-  "age_h": 13.3,
+  "age_h": 14.3,
   "stale": false,
   "risk_light": "red",
   "risk_why": "最大 24h 權益跌幅 100.0%(上限 20.0)",
@@ -442,11 +442,11 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-11-17T13:05",
+  "attendance": "supervision_state.json @ 2026-11-17T14:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
   "calendar": "calendar_board.json @ 2026-11-17T10:20:01",
-  "news": "news_board.json @ 2026-11-17T13:18:02",
+  "news": "news_board.json @ 2026-11-17T14:18:02",
   "north_star": "goal_state.json @ 2026-11-17T08:00:04",
   "rules": "brief_rules.json v1.0"
  },
