@@ -1,6 +1,6 @@
 {
- "ts": "2026-11-19T02:20:07",
- "data_ts": "2026-11-19T02:20:02",
+ "ts": "2026-11-19T03:20:06",
+ "data_ts": "2026-11-19T03:20:01",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
@@ -121,11 +121,11 @@
    "q": "非加密 美股 市場組合 cS_rsi>=70+ema_rel<0+coil>=0.6|TP6R 過五關+隨機基準(EV+0.38 n=575",
    "rec": "A"
   },
-  "line": "近 24 小時: 自動裁決 0 件、自動修復/回滾 0 件。下一個自動到期 D296(2026-11-21), 沒人異議就採建議 A。成形雷達: 成形中 1391 檔／已成形 196 檔(全條件 196)(跨 5 市場; 宇宙 633 檔, 休市排除 121)。預言帳：1554 則前瞻在等結算、持牌 11／預言者 489。消息：近 24h 1225 則／高重要 35 則／最新一則「Stan Druckenmiller Says He’s “Taking a B」(來源 1 個停抓中)｜實證：22 類消息裡 0 類會動價格、10 類不會、12 類樣本不足(事件 n=1001)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 18 則發言、提到 NVDA×5／META×3／GASOLINE×2、淨多空 +1.0。今日事件：1 件(最重要 EIA 原油庫存週報(規則推算) 23:30)／黑窗中：否。影子: 追蹤中 5602 單／已結 4017 單(live 3486＋登記日回填 531)／188 個規格在追；最接近晉升的 cS_rsi>=70+ema_rel<0|TP6R(crypto) 已達 n=58 EV=+2.559R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=10 EV-0.775、TL n=16 EV+0.040、MRS n=68 EV-0.132、SC1 n=90 EV-0.166、SC3 n=407 EV-0.306；最差 B1(-0.775R)、最好 TL(+0.040R)；合計 591 筆 EV-0.263R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 25%(1/4)。",
+  "line": "近 24 小時: 自動裁決 0 件、自動修復/回滾 0 件。下一個自動到期 D296(2026-11-21), 沒人異議就採建議 A。成形雷達: 成形中 1518 檔／已成形 217 檔(全條件 217)(跨 5 市場; 宇宙 633 檔, 休市排除 121)。預言帳：1562 則前瞻在等結算、持牌 14／預言者 489。消息：近 24h 1259 則／高重要 39 則／最新一則「Stan Druckenmiller Says He’s “Taking a B」(來源 1 個停抓中)｜實證：22 類消息裡 0 類會動價格、10 類不會、12 類樣本不足(事件 n=1001)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 19 則發言、提到 NVDA×5／META×3／GEOPOL×2、淨多空 +1.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 5631 單／已結 4014 單(live 3499＋登記日回填 515)／188 個規格在追；最接近晉升的 cS_rsi>=70+ema_rel<0|TP6R(crypto) 已達 n=58 EV=+2.559R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=10 EV-0.775、TL n=16 EV+0.040、MRS n=68 EV-0.132、SC1 n=90 EV-0.166、SC3 n=407 EV-0.306；最差 B1(-0.775R)、最好 TL(+0.040R)；合計 591 筆 EV-0.263R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 25%(1/4)。",
   "radar": {
-   "forming": 1391,
-   "fired": 196,
-   "fired_full": 196,
+   "forming": 1518,
+   "fired": 217,
+   "fired_full": 217,
    "markets": [
     "commodity",
     "crypto",
@@ -135,22 +135,22 @@
    ],
    "universe_fresh": 633,
    "stale_excluded": 121,
-   "ts_utc": "2026-11-18T17:35",
+   "ts_utc": "2026-11-18T18:35",
    "age_h": 0.8
   },
   "forecast": {
-   "pending": 1554,
-   "licensed": 11,
+   "pending": 1562,
+   "licensed": 14,
    "forecasters": 489,
-   "n_forecasts": 84848,
-   "n_resolved": 83294,
-   "asOf": "2026-11-18T17:40:30"
+   "n_forecasts": 84910,
+   "n_resolved": 83348,
+   "asOf": "2026-11-18T18:40:33"
   },
   "shadow": {
-   "n_open": 5602,
-   "n_closed": 4017,
-   "n_live": 3486,
-   "n_post_reg": 531,
+   "n_open": 5631,
+   "n_closed": 4014,
+   "n_live": 3499,
+   "n_post_reg": 515,
    "n_backfill": 0,
    "n_specs": 188,
    "best": {
@@ -181,7 +181,7 @@
      "n_live": 30,
      "n_post_reg": 0,
      "ev": 2.557,
-     "random_z": 3.44,
+     "random_z": 3.45,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": true
@@ -200,18 +200,18 @@
     }
    ],
    "eta_promo": null,
-   "opens_per_day": 669.3,
+   "opens_per_day": 671.5,
    "rate_days": 14,
-   "ts_utc": "2026-11-18T17:40"
+   "ts_utc": "2026-11-18T18:40"
   },
   "news": {
-   "n_24h": 1225,
-   "n_hi": 35,
+   "n_24h": 1259,
+   "n_hi": 39,
    "by_category": {
-    "stock": 414,
-    "commodity_fx": 309,
-    "crypto": 379,
-    "macro": 123
+    "stock": 411,
+    "commodity_fx": 323,
+    "crypto": 394,
+    "macro": 131
    },
    "sources_green": 39,
    "sources_red": 1,
@@ -221,7 +221,7 @@
     "src": "yahoo_finance",
     "ts": "2026-11-18T15:08:26Z"
    },
-   "run_at": "2026-11-18T18:18:02",
+   "run_at": "2026-11-18T19:18:01",
    "impact": {
     "line": "｜實證：22 類消息裡 0 類會動價格、10 類不會、12 類樣本不足(事件 n=1001)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 22,
@@ -235,8 +235,8 @@
     "ts": "2026-11-14T20:30:20"
    },
    "trump": {
-    "line": "｜川普：近 24h 18 則發言、提到 NVDA×5／META×3／GASOLINE×2、淨多空 +1.0",
-    "n_24h": 18,
+    "line": "｜川普：近 24h 19 則發言、提到 NVDA×5／META×3／GEOPOL×2、淨多空 +1.0",
+    "n_24h": 19,
     "net_long_24h": 1.0,
     "top_symbols": [
      {
@@ -254,6 +254,13 @@
       "short": 0
      },
      {
+      "symbol": "GEOPOL",
+      "n": 2,
+      "net": 0.0,
+      "long": 0,
+      "short": 0
+     },
+     {
       "symbol": "GASOLINE",
       "n": 2,
       "net": 0.0,
@@ -261,52 +268,32 @@
       "short": 0
      },
      {
-      "symbol": "AAPL",
-      "n": 1,
-      "net": 0.0,
-      "long": 0,
-      "short": 0
-     },
-     {
-      "symbol": "MSFT",
+      "symbol": "TARIFF",
       "n": 1,
       "net": 0.0,
       "long": 0,
       "short": 0
      }
     ],
-    "run_at": "2026-11-18T18:09:01"
+    "run_at": "2026-11-18T19:09:01"
    }
   },
   "calendar": {
-   "n_today": 1,
+   "n_today": 0,
    "n_tomorrow": 0,
    "n_next7d": 4,
    "n_week_high": 1,
    "in_blackout": false,
    "blackout_event": null,
    "blackout_markets": [],
-   "head": {
-    "ts_taipei": "2026-11-18 23:30",
-    "ts_utc": "2026-11-18T15:30:00Z",
-    "name": "EIA 原油庫存週報(規則推算)",
-    "importance": 2,
-    "category": "energy",
-    "markets": [
-     "commodity"
-    ],
-    "symbols": [],
-    "confirmed": false,
-    "source": "rule:eia",
-    "blackout": "1.0h/1.0h"
-   },
-   "age_h": 4.0,
-   "ts": "2026-11-18T14:20:07"
+   "head": null,
+   "age_h": 1.0,
+   "ts": "2026-11-18T18:20:01"
   },
   "live_shadow": {
    "window": {
     "from": "2026-09-01",
-    "to": "2026-11-18T17:45"
+    "to": "2026-11-18T18:45"
    },
    "n_closed": 591,
    "n_open": 21,
@@ -318,7 +305,7 @@
     "pf": 0.644,
     "sum_r": -155.469
    },
-   "ts": "2026-11-18T17:45",
+   "ts": "2026-11-18T18:45",
    "per": {
     "B1": {
      "n": 10,
@@ -384,12 +371,12 @@
     "funding_missing": 0
    },
    "n_open": 0,
-   "ts": "2026-11-18T18:10:05Z"
+   "ts": "2026-11-18T19:10:04Z"
   }
  },
  "north_star": {
   "ts": "2026-11-18T08:00:03",
-  "age_h": 18.3,
+  "age_h": 19.3,
   "stale": false,
   "risk_light": "red",
   "risk_why": "最大 24h 權益跌幅 100.0%(上限 20.0)",
@@ -455,11 +442,11 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-11-18T18:05",
+  "attendance": "supervision_state.json @ 2026-11-18T19:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
-  "calendar": "calendar_board.json @ 2026-11-18T14:20:07",
-  "news": "news_board.json @ 2026-11-18T18:18:02",
+  "calendar": "calendar_board.json @ 2026-11-18T18:20:01",
+  "news": "news_board.json @ 2026-11-18T19:18:01",
   "north_star": "goal_state.json @ 2026-11-18T08:00:03",
   "rules": "brief_rules.json v1.0"
  },
