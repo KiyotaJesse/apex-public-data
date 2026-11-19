@@ -1,6 +1,6 @@
 {
- "ts": "2026-11-20T06:20:05",
- "data_ts": "2026-11-20T06:20:02",
+ "ts": "2026-11-20T07:20:06",
+ "data_ts": "2026-11-20T07:20:02",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
@@ -130,11 +130,11 @@
    "q": "非加密 美股 市場組合 cS_rsi>=70+ema_rel<0+coil>=0.6|TP6R 過五關+隨機基準(EV+0.38 n=575",
    "rec": "A"
   },
-  "line": "近 24 小時: 自動裁決 0 件、自動修復/回滾 0 件。下一個自動到期 D296(2026-11-21), 沒人異議就採建議 A。成形雷達: 成形中 2414 檔／已成形 455 檔(全條件 455)(跨 5 市場; 宇宙 653 檔, 休市排除 101)。預言帳：1561 則前瞻在等結算、持牌 15／預言者 489。消息：近 24h 1180 則／高重要 23 則／最新一則「Binance Will Add Anthropic (ANTB) bStock」(來源 2 個停抓中)｜實證：22 類消息裡 0 類會動價格、10 類不會、12 類樣本不足(事件 n=1001)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 51 則發言、提到 TSLA×16／NVDA×8／META×4、淨多空 +3.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 6442 單／已結 4056 單(live 3987＋登記日回填 69)／192 個規格在追；最接近晉升的 cS_rsi>=70+ema_rel<0|TP6R(crypto) 已達 n=56 EV=+2.359R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=10 EV-0.775、TL n=16 EV+0.040、MRS n=68 EV-0.132、SC1 n=107 EV-0.244、SC3 n=409 EV-0.310；最差 B1(-0.775R)、最好 TL(+0.040R)；合計 610 筆 EV-0.277R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 25%(1/4)。",
+  "line": "近 24 小時: 自動裁決 0 件、自動修復/回滾 0 件。下一個自動到期 D296(2026-11-21), 沒人異議就採建議 A。成形雷達: 成形中 2259 檔／已成形 356 檔(全條件 356)(跨 5 市場; 宇宙 653 檔, 休市排除 101)。預言帳：1566 則前瞻在等結算、持牌 14／預言者 489。消息：近 24h 1212 則／高重要 25 則／最新一則「Binance Will Add Anthropic (ANTB) bStock」(來源 2 個停抓中)｜實證：22 類消息裡 0 類會動價格、10 類不會、12 類樣本不足(事件 n=1001)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 56 則發言、提到 TSLA×16／NVDA×8／META×4、淨多空 +6.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 6516 單／已結 4022 單(live 3953＋登記日回填 69)／192 個規格在追；最接近晉升的 cS_rsi>=70+ema_rel<0|TP6R(crypto) 已達 n=56 EV=+2.359R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=10 EV-0.775、TL n=16 EV+0.040、MRS n=68 EV-0.132、SC1 n=107 EV-0.244、SC3 n=409 EV-0.310；最差 B1(-0.775R)、最好 TL(+0.040R)；合計 610 筆 EV-0.277R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 25%(1/4)。",
   "radar": {
-   "forming": 2414,
-   "fired": 455,
-   "fired_full": 455,
+   "forming": 2259,
+   "fired": 356,
+   "fired_full": 356,
    "markets": [
     "commodity",
     "crypto",
@@ -144,21 +144,21 @@
    ],
    "universe_fresh": 653,
    "stale_excluded": 101,
-   "ts_utc": "2026-11-19T21:35",
+   "ts_utc": "2026-11-19T22:35",
    "age_h": 0.8
   },
   "forecast": {
-   "pending": 1561,
-   "licensed": 15,
+   "pending": 1566,
+   "licensed": 14,
    "forecasters": 489,
-   "n_forecasts": 86368,
-   "n_resolved": 84807,
-   "asOf": "2026-11-19T21:40:28"
+   "n_forecasts": 86427,
+   "n_resolved": 84861,
+   "asOf": "2026-11-19T22:40:30"
   },
   "shadow": {
-   "n_open": 6442,
-   "n_closed": 4056,
-   "n_live": 3987,
+   "n_open": 6516,
+   "n_closed": 4022,
+   "n_live": 3953,
    "n_post_reg": 69,
    "n_backfill": 0,
    "n_specs": 192,
@@ -178,7 +178,7 @@
      "n_live": 56,
      "n_post_reg": 0,
      "ev": 2.3587,
-     "random_z": 1.42,
+     "random_z": 1.43,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": false
@@ -198,29 +198,29 @@
     {
      "spec": "cS_cvd_div>=0.3+ema_rel<0+atr_r>=1.2|TP6R",
      "market": "stock",
-     "n": 104,
-     "n_live": 104,
+     "n": 102,
+     "n_live": 102,
      "n_post_reg": 0,
-     "ev": 1.7443,
-     "random_z": 2.92,
+     "ev": 1.7662,
+     "random_z": 3.33,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": true
     }
    ],
    "eta_promo": null,
-   "opens_per_day": 744.2,
+   "opens_per_day": 747.1,
    "rate_days": 14,
-   "ts_utc": "2026-11-19T21:40"
+   "ts_utc": "2026-11-19T22:40"
   },
   "news": {
-   "n_24h": 1180,
-   "n_hi": 23,
+   "n_24h": 1212,
+   "n_hi": 25,
    "by_category": {
-    "crypto": 388,
-    "commodity_fx": 342,
-    "stock": 337,
-    "macro": 113
+    "crypto": 399,
+    "commodity_fx": 355,
+    "stock": 341,
+    "macro": 117
    },
    "sources_green": 38,
    "sources_red": 2,
@@ -230,7 +230,7 @@
     "src": "binance_announcements",
     "ts": "2026-11-19T17:10:04Z"
    },
-   "run_at": "2026-11-19T22:18:01",
+   "run_at": "2026-11-19T23:18:01",
    "impact": {
     "line": "｜實證：22 類消息裡 0 類會動價格、10 類不會、12 類樣本不足(事件 n=1001)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 22,
@@ -244,9 +244,9 @@
     "ts": "2026-11-14T20:30:20"
    },
    "trump": {
-    "line": "｜川普：近 24h 51 則發言、提到 TSLA×16／NVDA×8／META×4、淨多空 +3.0",
-    "n_24h": 51,
-    "net_long_24h": 3.0,
+    "line": "｜川普：近 24h 56 則發言、提到 TSLA×16／NVDA×8／META×4、淨多空 +6.0",
+    "n_24h": 56,
+    "net_long_24h": 6.0,
     "top_symbols": [
      {
       "symbol": "TSLA",
@@ -278,13 +278,13 @@
      },
      {
       "symbol": "SILVER",
-      "n": 1,
-      "net": 1.0,
-      "long": 1,
+      "n": 2,
+      "net": 2.0,
+      "long": 2,
       "short": 0
      }
     ],
-    "run_at": "2026-11-19T22:09:01"
+    "run_at": "2026-11-19T23:09:01"
    }
   },
   "calendar": {
@@ -296,13 +296,13 @@
    "blackout_event": null,
    "blackout_markets": [],
    "head": null,
-   "age_h": 0.3,
-   "ts": "2026-11-19T22:00:02"
+   "age_h": 1.0,
+   "ts": "2026-11-19T22:20:02"
   },
   "live_shadow": {
    "window": {
     "from": "2026-09-01",
-    "to": "2026-11-19T21:45"
+    "to": "2026-11-19T22:45"
    },
    "n_closed": 610,
    "n_open": 3,
@@ -314,7 +314,7 @@
     "pf": 0.626,
     "sum_r": -169.012
    },
-   "ts": "2026-11-19T21:45",
+   "ts": "2026-11-19T22:45",
    "per": {
     "B1": {
      "n": 10,
@@ -380,12 +380,12 @@
     "funding_missing": 0
    },
    "n_open": 0,
-   "ts": "2026-11-19T22:10:05Z"
+   "ts": "2026-11-19T23:10:07Z"
   }
  },
  "north_star": {
   "ts": "2026-11-19T08:00:02",
-  "age_h": 22.3,
+  "age_h": 23.3,
   "stale": false,
   "risk_light": "red",
   "risk_why": "最大 24h 權益跌幅 100.0%(上限 20.0)",
@@ -451,11 +451,11 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-11-19T22:05",
+  "attendance": "supervision_state.json @ 2026-11-19T23:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
-  "calendar": "calendar_board.json @ 2026-11-19T22:00:02",
-  "news": "news_board.json @ 2026-11-19T22:18:01",
+  "calendar": "calendar_board.json @ 2026-11-19T22:20:02",
+  "news": "news_board.json @ 2026-11-19T23:18:01",
   "north_star": "goal_state.json @ 2026-11-19T08:00:02",
   "rules": "brief_rules.json v1.0"
  },
