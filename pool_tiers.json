@@ -1,672 +1,685 @@
 {
  "_doc": "分層幣池(單一真相)。main=可實盤(D 端交易掃描吃這層); observe=只蒐資料不交易(D 端 kline_archive/orderbook 吃 main+observe); promote_candidates=流動性與歷史合格但缺一年驗證, 跑驗證後才可升 main。main 永不自動長大 -- 這是 XMR 事故(實彈在跑而回測沒看過)的程式化防線。",
  "version": 1,
- "reviewed_at": "2026-11-21T09:20",
+ "reviewed_at": "2026-11-24T09:20",
  "review_days": 3,
- "next_review": "2026-11-24T09:20",
+ "next_review": "2026-11-27T09:20",
  "validated_source": "ad_consistency frozen set",
  "main": [
   {
    "symbol": "BTC-USDT",
-   "vol24h_m": 2391.6,
+   "vol24h_m": 1885.5,
    "spread_bps": 0.0,
-   "age_days": 2418.4,
+   "age_days": 2421.4,
    "thin_volume": false,
    "thin_spread": false
   },
   {
    "symbol": "ETH-USDT",
-   "vol24h_m": 915.4,
+   "vol24h_m": 487.4,
    "spread_bps": 0.1,
-   "age_days": 2418.4,
+   "age_days": 2421.4,
    "thin_volume": false,
    "thin_spread": false
   },
   {
    "symbol": "SOL-USDT",
-   "vol24h_m": 304.2,
-   "spread_bps": 1.3,
-   "age_days": 1843.4,
-   "thin_volume": false,
-   "thin_spread": false
-  },
-  {
-   "symbol": "BNB-USDT",
-   "vol24h_m": 121.0,
-   "spread_bps": 0.2,
-   "age_days": 1715.4,
-   "thin_volume": false,
-   "thin_spread": false
-  },
-  {
-   "symbol": "OP-USDT",
-   "vol24h_m": 56.5,
-   "spread_bps": 1.4,
-   "age_days": 1634.4,
-   "thin_volume": false,
-   "thin_spread": false
-  },
-  {
-   "symbol": "BCH-USDT",
-   "vol24h_m": 54.3,
-   "spread_bps": 0.5,
-   "age_days": 2383.4,
-   "thin_volume": false,
-   "thin_spread": false
-  },
-  {
-   "symbol": "XRP-USDT",
-   "vol24h_m": 46.8,
-   "spread_bps": 1.1,
-   "age_days": 1999.4,
-   "thin_volume": false,
-   "thin_spread": false
-  },
-  {
-   "symbol": "APT-USDT",
-   "vol24h_m": 44.9,
-   "spread_bps": 2.7,
-   "age_days": 1494.4,
-   "thin_volume": false,
-   "thin_spread": false
-  },
-  {
-   "symbol": "NEAR-USDT",
-   "vol24h_m": 42.7,
-   "spread_bps": 3.6,
-   "age_days": 1842.4,
-   "thin_volume": false,
-   "thin_spread": false
-  },
-  {
-   "symbol": "AVAX-USDT",
-   "vol24h_m": 37.1,
-   "spread_bps": 1.5,
-   "age_days": 1884.4,
-   "thin_volume": false,
-   "thin_spread": false
-  },
-  {
-   "symbol": "AAVE-USDT",
-   "vol24h_m": 36.1,
-   "spread_bps": 1.0,
-   "age_days": 1838.4,
-   "thin_volume": false,
-   "thin_spread": false
-  },
-  {
-   "symbol": "TRX-USDT",
-   "vol24h_m": 32.6,
-   "spread_bps": 0.3,
-   "age_days": 1831.4,
-   "thin_volume": false,
-   "thin_spread": false
-  },
-  {
-   "symbol": "LINK-USDT",
-   "vol24h_m": 28.5,
+   "vol24h_m": 352.4,
    "spread_bps": 1.2,
-   "age_days": 2203.4,
+   "age_days": 1846.4,
    "thin_volume": false,
    "thin_spread": false
   },
   {
    "symbol": "INJ-USDT",
-   "vol24h_m": 27.7,
+   "vol24h_m": 88.8,
    "spread_bps": 1.6,
-   "age_days": 1516.4,
-   "thin_volume": false,
-   "thin_spread": false
-  },
-  {
-   "symbol": "ADA-USDT",
-   "vol24h_m": 25.1,
-   "spread_bps": 7.0,
-   "age_days": 1999.4,
+   "age_days": 1519.4,
    "thin_volume": false,
    "thin_spread": false
   },
   {
    "symbol": "DOGE-USDT",
-   "vol24h_m": 17.8,
+   "vol24h_m": 64.2,
    "spread_bps": 1.8,
-   "age_days": 1838.4,
-   "thin_volume": false,
-   "thin_spread": false
-  },
-  {
-   "symbol": "DOT-USDT",
-   "vol24h_m": 16.8,
-   "spread_bps": 1.5,
-   "age_days": 1885.4,
+   "age_days": 1841.4,
    "thin_volume": false,
    "thin_spread": false
   },
   {
    "symbol": "ARB-USDT",
-   "vol24h_m": 16.3,
+   "vol24h_m": 60.6,
    "spread_bps": 0.9,
-   "age_days": 1339.4,
+   "age_days": 1342.4,
+   "thin_volume": false,
+   "thin_spread": false
+  },
+  {
+   "symbol": "XRP-USDT",
+   "vol24h_m": 54.1,
+   "spread_bps": 1.1,
+   "age_days": 2002.4,
+   "thin_volume": false,
+   "thin_spread": false
+  },
+  {
+   "symbol": "AAVE-USDT",
+   "vol24h_m": 49.6,
+   "spread_bps": 1.0,
+   "age_days": 1841.4,
+   "thin_volume": false,
+   "thin_spread": false
+  },
+  {
+   "symbol": "LINK-USDT",
+   "vol24h_m": 42.3,
+   "spread_bps": 1.1,
+   "age_days": 2206.4,
+   "thin_volume": false,
+   "thin_spread": false
+  },
+  {
+   "symbol": "BNB-USDT",
+   "vol24h_m": 41.0,
+   "spread_bps": 0.2,
+   "age_days": 1718.4,
+   "thin_volume": false,
+   "thin_spread": false
+  },
+  {
+   "symbol": "NEAR-USDT",
+   "vol24h_m": 39.2,
+   "spread_bps": 3.3,
+   "age_days": 1845.4,
+   "thin_volume": false,
+   "thin_spread": false
+  },
+  {
+   "symbol": "ADA-USDT",
+   "vol24h_m": 38.1,
+   "spread_bps": 13.3,
+   "age_days": 2002.4,
+   "thin_volume": false,
+   "thin_spread": false
+  },
+  {
+   "symbol": "OP-USDT",
+   "vol24h_m": 32.2,
+   "spread_bps": 1.4,
+   "age_days": 1637.4,
    "thin_volume": false,
    "thin_spread": false
   },
   {
    "symbol": "ETC-USDT",
-   "vol24h_m": 15.8,
-   "spread_bps": 1.8,
-   "age_days": 1683.4,
+   "vol24h_m": 30.2,
+   "spread_bps": 1.7,
+   "age_days": 1686.4,
    "thin_volume": false,
    "thin_spread": false
   },
   {
-   "symbol": "UNI-USDT",
-   "vol24h_m": 14.5,
-   "spread_bps": 2.2,
-   "age_days": 1838.4,
+   "symbol": "APT-USDT",
+   "vol24h_m": 27.3,
+   "spread_bps": 2.6,
+   "age_days": 1497.4,
    "thin_volume": false,
    "thin_spread": false
   },
   {
    "symbol": "FIL-USDT",
-   "vol24h_m": 14.2,
-   "spread_bps": 1.9,
-   "age_days": 1838.4,
+   "vol24h_m": 21.0,
+   "spread_bps": 1.8,
+   "age_days": 1841.4,
+   "thin_volume": false,
+   "thin_spread": false
+  },
+  {
+   "symbol": "AVAX-USDT",
+   "vol24h_m": 19.8,
+   "spread_bps": 1.5,
+   "age_days": 1887.4,
+   "thin_volume": false,
+   "thin_spread": false
+  },
+  {
+   "symbol": "UNI-USDT",
+   "vol24h_m": 19.4,
+   "spread_bps": 2.0,
+   "age_days": 1841.4,
    "thin_volume": false,
    "thin_spread": false
   },
   {
    "symbol": "LTC-USDT",
-   "vol24h_m": 10.0,
-   "spread_bps": 2.5,
-   "age_days": 1999.4,
+   "vol24h_m": 15.4,
+   "spread_bps": 2.4,
+   "age_days": 2002.4,
    "thin_volume": false,
    "thin_spread": false
   },
   {
    "symbol": "ATOM-USDT",
-   "vol24h_m": 3.4,
-   "spread_bps": 24.6,
-   "age_days": 1842.4,
+   "vol24h_m": 10.0,
+   "spread_bps": 7.8,
+   "age_days": 1845.4,
    "thin_volume": true,
-   "thin_spread": true
-  }
- ],
- "thin_book_watch": [
+   "thin_spread": false
+  },
   {
-   "symbol": "ATOM-USDT",
-   "spread_bps": 24.6,
-   "vol24h_m": 3.4,
-   "note": "價差為回測成本假設(10bps全程)的 2.5 倍"
+   "symbol": "TRX-USDT",
+   "vol24h_m": 9.3,
+   "spread_bps": 0.3,
+   "age_days": 1834.4,
+   "thin_volume": true,
+   "thin_spread": false
+  },
+  {
+   "symbol": "DOT-USDT",
+   "vol24h_m": 8.0,
+   "spread_bps": 1.5,
+   "age_days": 1888.4,
+   "thin_volume": true,
+   "thin_spread": false
+  },
+  {
+   "symbol": "BCH-USDT",
+   "vol24h_m": 7.4,
+   "spread_bps": 0.5,
+   "age_days": 2386.4,
+   "thin_volume": true,
+   "thin_spread": false
   }
  ],
+ "thin_book_watch": [],
  "promote_candidates": [
   {
    "symbol": "ZEC-USDT",
-   "vol24h_m": 127.3,
+   "vol24h_m": 111.2,
    "spread_bps": 0.1,
-   "age_days": 406.6,
+   "age_days": 409.6,
    "reason": "已過一年驗證且流動性足, 只是還沒加進 D 池(可低成本升)"
-  },
-  {
-   "symbol": "BANANA-USDT",
-   "vol24h_m": 80.3,
-   "spread_bps": 4.1,
-   "age_days": 849.7,
-   "reason": "量能與歷史都達理想值, 缺一年驗證"
-  },
-  {
-   "symbol": "WIF-USDT",
-   "vol24h_m": 70.9,
-   "spread_bps": 8.2,
-   "age_days": 1037.6,
-   "reason": "量能與歷史都達理想值, 缺一年驗證"
-  },
-  {
-   "symbol": "SEI-USDT",
-   "vol24h_m": 58.1,
-   "spread_bps": 8.5,
-   "age_days": 1193.4,
-   "reason": "量能與歷史都達理想值, 缺一年驗證"
-  },
-  {
-   "symbol": "ORDI-USDT",
-   "vol24h_m": 55.7,
-   "spread_bps": 4.0,
-   "age_days": 1293.4,
-   "reason": "量能與歷史都達理想值, 缺一年驗證"
   },
   {
    "symbol": "NCSKNVDA2USD-USDT",
-   "vol24h_m": 47.7,
-   "spread_bps": 0.8,
-   "age_days": 372.7,
-   "reason": "量能與歷史都達理想值, 缺一年驗證"
-  },
-  {
-   "symbol": "1000PEPE-USDT",
-   "vol24h_m": 45.9,
-   "spread_bps": 0.3,
-   "age_days": 1187.4,
-   "reason": "量能與歷史都達理想值, 缺一年驗證"
-  },
-  {
-   "symbol": "LDO-USDT",
-   "vol24h_m": 44.6,
-   "spread_bps": 4.2,
-   "age_days": 1580.4,
-   "reason": "量能與歷史都達理想值, 缺一年驗證"
-  },
-  {
-   "symbol": "STRK-USDT",
-   "vol24h_m": 43.4,
-   "spread_bps": 3.3,
-   "age_days": 1004.5,
-   "reason": "量能與歷史都達理想值, 缺一年驗證"
-  },
-  {
-   "symbol": "IMX-USDT",
-   "vol24h_m": 40.9,
-   "spread_bps": 11.0,
-   "age_days": 1719.4,
-   "reason": "量能與歷史都達理想值, 缺一年驗證"
-  },
-  {
-   "symbol": "ONDO-USDT",
-   "vol24h_m": 40.3,
-   "spread_bps": 3.6,
-   "age_days": 1035.5,
-   "reason": "已過一年驗證且流動性足, 只是還沒加進 D 池(可低成本升)"
-  },
-  {
-   "symbol": "PENDLE-USDT",
-   "vol24h_m": 33.5,
-   "spread_bps": 0.8,
-   "age_days": 1213.4,
-   "reason": "量能與歷史都達理想值, 缺一年驗證"
-  },
-  {
-   "symbol": "HYPE-USDT",
-   "vol24h_m": 32.2,
-   "spread_bps": 0.2,
-   "age_days": 701.6,
-   "reason": "量能與歷史都達理想值, 缺一年驗證"
-  },
-  {
-   "symbol": "NOT-USDT",
-   "vol24h_m": 31.8,
-   "spread_bps": 13.8,
-   "age_days": 917.6,
-   "reason": "量能與歷史都達理想值, 缺一年驗證"
-  },
-  {
-   "symbol": "JUP-USDT",
-   "vol24h_m": 29.2,
-   "spread_bps": 4.4,
-   "age_days": 1024.3,
-   "reason": "已過一年驗證且流動性足, 只是還沒加進 D 池(可低成本升)"
-  },
-  {
-   "symbol": "BOME-USDT",
-   "vol24h_m": 28.8,
-   "spread_bps": 2.2,
-   "age_days": 980.6,
-   "reason": "量能與歷史都達理想值, 缺一年驗證"
-  },
-  {
-   "symbol": "WLD-USDT",
-   "vol24h_m": 27.6,
-   "spread_bps": 4.4,
-   "age_days": 1216.4,
-   "reason": "已過一年驗證且流動性足, 只是還沒加進 D 池(可低成本升)"
-  },
-  {
-   "symbol": "ZRO-USDT",
-   "vol24h_m": 27.5,
-   "spread_bps": 0.9,
-   "age_days": 883.5,
-   "reason": "量能與歷史都達理想值, 缺一年驗證"
-  },
-  {
-   "symbol": "SUI-USDT",
-   "vol24h_m": 26.7,
-   "spread_bps": 1.5,
-   "age_days": 1298.4,
-   "reason": "量能與歷史都達理想值, 缺一年驗證"
-  },
-  {
-   "symbol": "AUCTION-USDT",
-   "vol24h_m": 25.9,
-   "spread_bps": 12.0,
-   "age_days": 1071.6,
-   "reason": "量能與歷史都達理想值, 缺一年驗證"
-  },
-  {
-   "symbol": "CRV-USDT",
-   "vol24h_m": 25.9,
-   "spread_bps": 5.6,
-   "age_days": 1740.4,
-   "reason": "量能與歷史都達理想值, 缺一年驗證"
-  },
-  {
-   "symbol": "PEOPLE-USDT",
-   "vol24h_m": 25.0,
-   "spread_bps": 2.1,
-   "age_days": 1661.4,
-   "reason": "量能與歷史都達理想值, 缺一年驗證"
-  },
-  {
-   "symbol": "MEW-USDT",
-   "vol24h_m": 23.9,
-   "spread_bps": 3.5,
-   "age_days": 941.4,
-   "reason": "量能與歷史都達理想值, 缺一年驗證"
-  },
-  {
-   "symbol": "RUNE-USDT",
-   "vol24h_m": 22.7,
-   "spread_bps": 6.2,
-   "age_days": 1183.4,
+   "vol24h_m": 105.7,
+   "spread_bps": 0.6,
+   "age_days": 375.7,
    "reason": "量能與歷史都達理想值, 缺一年驗證"
   },
   {
    "symbol": "10000SATS-USDT",
-   "vol24h_m": 22.6,
-   "spread_bps": 14.0,
-   "age_days": 1103.6,
+   "vol24h_m": 83.7,
+   "spread_bps": 13.7,
+   "age_days": 1106.6,
    "reason": "量能與歷史都達理想值, 缺一年驗證"
   },
   {
-   "symbol": "ATH-USDT",
-   "vol24h_m": 22.0,
-   "spread_bps": 2.8,
-   "age_days": 889.7,
+   "symbol": "CRV-USDT",
+   "vol24h_m": 57.1,
+   "spread_bps": 5.5,
+   "age_days": 1743.4,
    "reason": "量能與歷史都達理想值, 缺一年驗證"
   },
   {
-   "symbol": "APE-USDT",
-   "vol24h_m": 21.4,
-   "spread_bps": 13.5,
-   "age_days": 1710.4,
+   "symbol": "GALA-USDT",
+   "vol24h_m": 50.8,
+   "spread_bps": 7.4,
+   "age_days": 1714.4,
    "reason": "量能與歷史都達理想值, 缺一年驗證"
   },
   {
-   "symbol": "EVAA-USDT",
-   "vol24h_m": 20.5,
-   "spread_bps": 0.2,
-   "age_days": 413.6,
-   "reason": "量能與歷史都達理想值, 缺一年驗證"
-  },
-  {
-   "symbol": "TIA-USDT",
-   "vol24h_m": 20.4,
-   "spread_bps": 3.0,
-   "age_days": 1116.3,
-   "reason": "量能與歷史都達理想值, 缺一年驗證"
-  },
-  {
-   "symbol": "XAUT-USDT",
-   "vol24h_m": 19.2,
-   "spread_bps": 0.0,
-   "age_days": 596.4,
+   "symbol": "1000PEPE-USDT",
+   "vol24h_m": 48.2,
+   "spread_bps": 0.3,
+   "age_days": 1190.4,
    "reason": "量能與歷史都達理想值, 缺一年驗證"
   },
   {
    "symbol": "DYM-USDT",
-   "vol24h_m": 19.0,
+   "vol24h_m": 42.9,
    "spread_bps": 8.9,
-   "age_days": 1017.8,
+   "age_days": 1020.8,
    "reason": "量能與歷史都達理想值, 缺一年驗證"
   },
   {
-   "symbol": "RENDER-USDT",
-   "vol24h_m": 18.2,
-   "spread_bps": 7.8,
-   "age_days": 847.7,
+   "symbol": "CFX-USDT",
+   "vol24h_m": 35.9,
+   "spread_bps": 3.0,
+   "age_days": 1384.4,
    "reason": "量能與歷史都達理想值, 缺一年驗證"
   },
   {
-   "symbol": "ENS-USDT",
-   "vol24h_m": 18.0,
-   "spread_bps": 2.8,
-   "age_days": 1732.4,
+   "symbol": "SEI-USDT",
+   "vol24h_m": 35.8,
+   "spread_bps": 2.9,
+   "age_days": 1196.4,
    "reason": "量能與歷史都達理想值, 缺一年驗證"
   },
   {
-   "symbol": "ETHFI-USDT",
-   "vol24h_m": 17.9,
-   "spread_bps": 2.2,
-   "age_days": 977.5,
+   "symbol": "HYPE-USDT",
+   "vol24h_m": 33.4,
+   "spread_bps": 0.2,
+   "age_days": 704.6,
+   "reason": "量能與歷史都達理想值, 缺一年驗證"
+  },
+  {
+   "symbol": "RUNE-USDT",
+   "vol24h_m": 30.2,
+   "spread_bps": 7.7,
+   "age_days": 1186.4,
+   "reason": "量能與歷史都達理想值, 缺一年驗證"
+  },
+  {
+   "symbol": "ONDO-USDT",
+   "vol24h_m": 25.7,
+   "spread_bps": 3.4,
+   "age_days": 1038.5,
+   "reason": "已過一年驗證且流動性足, 只是還沒加進 D 池(可低成本升)"
+  },
+  {
+   "symbol": "TRB-USDT",
+   "vol24h_m": 25.6,
+   "spread_bps": 3.1,
+   "age_days": 1184.4,
+   "reason": "量能與歷史都達理想值, 缺一年驗證"
+  },
+  {
+   "symbol": "TIA-USDT",
+   "vol24h_m": 25.5,
+   "spread_bps": 3.0,
+   "age_days": 1119.3,
+   "reason": "量能與歷史都達理想值, 缺一年驗證"
+  },
+  {
+   "symbol": "SUI-USDT",
+   "vol24h_m": 24.8,
+   "spread_bps": 1.5,
+   "age_days": 1301.4,
+   "reason": "量能與歷史都達理想值, 缺一年驗證"
+  },
+  {
+   "symbol": "JUP-USDT",
+   "vol24h_m": 21.4,
+   "spread_bps": 4.2,
+   "age_days": 1027.3,
+   "reason": "已過一年驗證且流動性足, 只是還沒加進 D 池(可低成本升)"
+  },
+  {
+   "symbol": "AUCTION-USDT",
+   "vol24h_m": 19.6,
+   "spread_bps": 11.9,
+   "age_days": 1074.6,
    "reason": "量能與歷史都達理想值, 缺一年驗證"
   },
   {
    "symbol": "TAO-USDT",
-   "vol24h_m": 15.8,
-   "spread_bps": 0.6,
-   "age_days": 1025.6,
+   "vol24h_m": 19.6,
+   "spread_bps": 0.5,
+   "age_days": 1028.6,
    "reason": "已過一年驗證且流動性足, 只是還沒加進 D 池(可低成本升)"
   },
   {
-   "symbol": "CFX-USDT",
-   "vol24h_m": 14.2,
-   "spread_bps": 3.3,
-   "age_days": 1381.4,
+   "symbol": "EVAA-USDT",
+   "vol24h_m": 17.2,
+   "spread_bps": 3.5,
+   "age_days": 416.6,
    "reason": "量能與歷史都達理想值, 缺一年驗證"
   },
   {
-   "symbol": "KAS-USDT",
-   "vol24h_m": 13.4,
+   "symbol": "WLD-USDT",
+   "vol24h_m": 16.7,
+   "spread_bps": 4.2,
+   "age_days": 1219.4,
+   "reason": "已過一年驗證且流動性足, 只是還沒加進 D 池(可低成本升)"
+  },
+  {
+   "symbol": "ZRO-USDT",
+   "vol24h_m": 15.8,
+   "spread_bps": 0.9,
+   "age_days": 886.5,
+   "reason": "量能與歷史都達理想值, 缺一年驗證"
+  },
+  {
+   "symbol": "PEOPLE-USDT",
+   "vol24h_m": 15.7,
+   "spread_bps": 6.1,
+   "age_days": 1664.4,
+   "reason": "量能與歷史都達理想值, 缺一年驗證"
+  },
+  {
+   "symbol": "ENS-USDT",
+   "vol24h_m": 14.8,
+   "spread_bps": 2.8,
+   "age_days": 1735.4,
+   "reason": "量能與歷史都達理想值, 缺一年驗證"
+  },
+  {
+   "symbol": "IMX-USDT",
+   "vol24h_m": 14.7,
+   "spread_bps": 33.5,
+   "age_days": 1722.4,
+   "reason": "量能與歷史都達理想值, 缺一年驗證"
+  },
+  {
+   "symbol": "ATH-USDT",
+   "vol24h_m": 13.8,
+   "spread_bps": 10.6,
+   "age_days": 892.7,
+   "reason": "量能與歷史都達理想值, 缺一年驗證"
+  },
+  {
+   "symbol": "XAUT-USDT",
+   "vol24h_m": 13.8,
+   "spread_bps": 0.0,
+   "age_days": 599.4,
+   "reason": "量能與歷史都達理想值, 缺一年驗證"
+  },
+  {
+   "symbol": "ORDI-USDT",
+   "vol24h_m": 13.7,
    "spread_bps": 3.8,
-   "age_days": 1137.8,
+   "age_days": 1296.4,
    "reason": "量能與歷史都達理想值, 缺一年驗證"
   },
   {
-   "symbol": "TRB-USDT",
-   "vol24h_m": 13.1,
-   "spread_bps": 2.5,
-   "age_days": 1181.4,
+   "symbol": "JTO-USDT",
+   "vol24h_m": 12.6,
+   "spread_bps": 4.2,
+   "age_days": 1081.7,
    "reason": "量能與歷史都達理想值, 缺一年驗證"
   },
   {
-   "symbol": "AKE-USDT",
-   "vol24h_m": 12.9,
-   "spread_bps": 1.7,
-   "age_days": 420.5,
+   "symbol": "STRK-USDT",
+   "vol24h_m": 12.6,
+   "spread_bps": 3.1,
+   "age_days": 1007.5,
+   "reason": "量能與歷史都達理想值, 缺一年驗證"
+  },
+  {
+   "symbol": "BLESS-USDT",
+   "vol24h_m": 12.3,
+   "spread_bps": 0.7,
+   "age_days": 426.7,
+   "reason": "量能與歷史都達理想值, 缺一年驗證"
+  },
+  {
+   "symbol": "LDO-USDT",
+   "vol24h_m": 11.8,
+   "spread_bps": 4.2,
+   "age_days": 1583.4,
+   "reason": "量能與歷史都達理想值, 缺一年驗證"
+  },
+  {
+   "symbol": "TURBO-USDT",
+   "vol24h_m": 11.3,
+   "spread_bps": 7.0,
+   "age_days": 906.7,
+   "reason": "量能與歷史都達理想值, 缺一年驗證"
+  },
+  {
+   "symbol": "1000BONK-USDT",
+   "vol24h_m": 10.9,
+   "spread_bps": 4.5,
+   "age_days": 1096.7,
    "reason": "量能與歷史都達理想值, 缺一年驗證"
   },
   {
    "symbol": "ICP-USDT",
-   "vol24h_m": 12.4,
-   "spread_bps": 5.0,
-   "age_days": 1850.4,
+   "vol24h_m": 10.8,
+   "spread_bps": 4.8,
+   "age_days": 1853.4,
+   "reason": "量能與歷史都達理想值, 缺一年驗證"
+  },
+  {
+   "symbol": "RENDER-USDT",
+   "vol24h_m": 10.6,
+   "spread_bps": 7.6,
+   "age_days": 850.7,
+   "reason": "量能與歷史都達理想值, 缺一年驗證"
+  },
+  {
+   "symbol": "ENA-USDT",
+   "vol24h_m": 10.4,
+   "spread_bps": 1.0,
+   "age_days": 965.6,
    "reason": "量能與歷史都達理想值, 缺一年驗證"
   }
  ],
  "observe": [
   {
    "symbol": "NCCOGOLD2USD-USDT",
-   "vol24h_m": 1011.5,
+   "vol24h_m": 870.7,
    "is_nc": true,
    "reason": "非加密: 只有 6 週歷史, 先蒐資料"
   },
   {
    "symbol": "NCSINASDAQ1002USD-USDT",
-   "vol24h_m": 81.5,
+   "vol24h_m": 48.5,
    "is_nc": true,
    "reason": "非加密: 只有 6 週歷史, 先蒐資料"
   },
   {
    "symbol": "NCCOXAG2USD-USDT",
-   "vol24h_m": 55.8,
-   "is_nc": true,
-   "reason": "非加密: 只有 6 週歷史, 先蒐資料"
-  },
-  {
-   "symbol": "NCCO1OILBRENT2USD-USDT",
-   "vol24h_m": 29.6,
+   "vol24h_m": 29.4,
    "is_nc": true,
    "reason": "非加密: 只有 6 週歷史, 先蒐資料"
   },
   {
    "symbol": "NCCO1OILWTI2USD-USDT",
-   "vol24h_m": 28.0,
+   "vol24h_m": 22.1,
    "is_nc": true,
    "reason": "非加密: 只有 6 週歷史, 先蒐資料"
   },
   {
    "symbol": "NCSISP5002USD-USDT",
-   "vol24h_m": 17.4,
+   "vol24h_m": 15.0,
+   "is_nc": true,
+   "reason": "非加密: 只有 6 週歷史, 先蒐資料"
+  },
+  {
+   "symbol": "NCCO1OILBRENT2USD-USDT",
+   "vol24h_m": 11.3,
+   "is_nc": true,
+   "reason": "非加密: 只有 6 週歷史, 先蒐資料"
+  },
+  {
+   "symbol": "NCFXEUR2USD-USDT",
+   "vol24h_m": 7.5,
    "is_nc": true,
    "reason": "非加密: 只有 6 週歷史, 先蒐資料"
   },
   {
    "symbol": "NCSKSOXL2USD-USDT",
-   "vol24h_m": 66.9,
+   "vol24h_m": 18.4,
    "is_nc": false,
-   "reason": "上市213天<365; 未驗證"
+   "reason": "上市216天<365; 未驗證"
   },
   {
    "symbol": "NCSKANTHROPIC2USD-USDT",
-   "vol24h_m": 29.6,
+   "vol24h_m": 17.7,
    "is_nc": false,
-   "reason": "上市180天<365; 未驗證"
+   "reason": "上市183天<365; 未驗證"
   },
   {
-   "symbol": "STX-USDT",
-   "vol24h_m": 9.5,
+   "symbol": "NCSKMU2USD-USDT",
+   "vol24h_m": 10.4,
    "is_nc": false,
-   "reason": "量9.5M<10M; 未驗證"
+   "reason": "上市284天<365; 未驗證"
   },
   {
-   "symbol": "TURBO-USDT",
-   "vol24h_m": 9.0,
+   "symbol": "APE-USDT",
+   "vol24h_m": 9.6,
    "is_nc": false,
-   "reason": "量9.0M<10M; 未驗證"
+   "reason": "量9.6M<10M; 未驗證"
   },
   {
-   "symbol": "GALA-USDT",
+   "symbol": "BOME-USDT",
    "vol24h_m": 8.9,
    "is_nc": false,
    "reason": "量8.9M<10M; 未驗證"
   },
   {
-   "symbol": "NCSKMSTR2USD-USDT",
-   "vol24h_m": 8.9,
+   "symbol": "PIEVERSE-USDT",
+   "vol24h_m": 8.5,
    "is_nc": false,
-   "reason": "量8.9M<10M; 未驗證"
+   "reason": "量8.5M<10M; 未驗證"
+  },
+  {
+   "symbol": "ETHFI-USDT",
+   "vol24h_m": 8.5,
+   "is_nc": false,
+   "reason": "量8.5M<10M; 未驗證"
   },
   {
    "symbol": "NCSKSNDK2USD-USDT",
-   "vol24h_m": 8.4,
+   "vol24h_m": 8.5,
    "is_nc": false,
-   "reason": "量8.4M<10M; 上市226天<365; 未驗證"
+   "reason": "量8.5M<10M; 上市229天<365; 未驗證"
   },
   {
-   "symbol": "1INCH-USDT",
+   "symbol": "COMP-USDT",
+   "vol24h_m": 8.2,
+   "is_nc": false,
+   "reason": "量8.2M<10M; 未驗證"
+  },
+  {
+   "symbol": "KAS-USDT",
+   "vol24h_m": 8.2,
+   "is_nc": false,
+   "reason": "量8.2M<10M; 未驗證"
+  },
+  {
+   "symbol": "PUMP-USDT",
+   "vol24h_m": 8.2,
+   "is_nc": false,
+   "reason": "量8.2M<10M; 未驗證"
+  },
+  {
+   "symbol": "BANANA-USDT",
    "vol24h_m": 7.7,
    "is_nc": false,
    "reason": "量7.7M<10M; 未驗證"
   },
   {
-   "symbol": "JASMY-USDT",
-   "vol24h_m": 7.6,
-   "is_nc": false,
-   "reason": "量7.6M<10M; 未驗證"
-  },
-  {
-   "symbol": "NCSKMU2USD-USDT",
-   "vol24h_m": 7.0,
-   "is_nc": false,
-   "reason": "量7.0M<10M; 上市281天<365; 未驗證"
-  },
-  {
-   "symbol": "MMT-USDT",
-   "vol24h_m": 6.5,
-   "is_nc": false,
-   "reason": "量6.5M<10M; 未驗證"
-  },
-  {
-   "symbol": "NCSKGOOGL2USD-USDT",
-   "vol24h_m": 6.5,
-   "is_nc": false,
-   "reason": "量6.5M<10M; 未驗證"
-  },
-  {
-   "symbol": "ENA-USDT",
-   "vol24h_m": 6.0,
-   "is_nc": false,
-   "reason": "量6.0M<10M; 未驗證"
-  },
-  {
-   "symbol": "JTO-USDT",
-   "vol24h_m": 5.4,
-   "is_nc": false,
-   "reason": "量5.4M<10M; 未驗證"
-  },
-  {
-   "symbol": "NCSKSOXS12USD-USDT",
-   "vol24h_m": 5.3,
-   "is_nc": false,
-   "reason": "量5.3M<10M; 上市128天<365; 未驗證"
-  },
-  {
-   "symbol": "COMP-USDT",
-   "vol24h_m": 5.1,
-   "is_nc": false,
-   "reason": "量5.1M<10M; 未驗證"
-  },
-  {
    "symbol": "DYDX-USDT",
-   "vol24h_m": 5.0,
+   "vol24h_m": 7.5,
    "is_nc": false,
-   "reason": "量5.0M<10M; 未驗證"
+   "reason": "量7.5M<10M; 未驗證"
   },
   {
-   "symbol": "PUMP-USDT",
+   "symbol": "JASMY-USDT",
+   "vol24h_m": 7.4,
+   "is_nc": false,
+   "reason": "量7.4M<10M; 未驗證"
+  },
+  {
+   "symbol": "PENDLE-USDT",
+   "vol24h_m": 7.3,
+   "is_nc": false,
+   "reason": "量7.3M<10M; 未驗證"
+  },
+  {
+   "symbol": "ELSA-USDT",
+   "vol24h_m": 6.5,
+   "is_nc": false,
+   "reason": "量6.5M<10M; 上市308天<365; 未驗證"
+  },
+  {
+   "symbol": "MEW-USDT",
+   "vol24h_m": 6.5,
+   "is_nc": false,
+   "reason": "量6.5M<10M; 未驗證"
+  },
+  {
+   "symbol": "1INCH-USDT",
+   "vol24h_m": 5.7,
+   "is_nc": false,
+   "reason": "量5.7M<10M; 未驗證"
+  },
+  {
+   "symbol": "NCSKSPCX2USD-USDT",
+   "vol24h_m": 5.2,
+   "is_nc": false,
+   "reason": "量5.2M<10M; 上市186天<365; 未驗證"
+  },
+  {
+   "symbol": "ARIA-USDT",
+   "vol24h_m": 4.8,
+   "is_nc": false,
+   "reason": "量4.8M<10M; 未驗證"
+  },
+  {
+   "symbol": "FLOKI-USDT",
+   "vol24h_m": 4.8,
+   "is_nc": false,
+   "reason": "量4.8M<10M; 未驗證"
+  },
+  {
+   "symbol": "VVV-USDT",
    "vol24h_m": 4.7,
    "is_nc": false,
    "reason": "量4.7M<10M; 未驗證"
   },
   {
-   "symbol": "BLESS-USDT",
-   "vol24h_m": 4.6,
-   "is_nc": false,
-   "reason": "量4.6M<10M; 未驗證"
-  },
-  {
-   "symbol": "KERNEL-USDT",
+   "symbol": "WIF-USDT",
    "vol24h_m": 4.3,
    "is_nc": false,
    "reason": "量4.3M<10M; 未驗證"
   },
   {
-   "symbol": "ICNT-USDT",
-   "vol24h_m": 4.3,
-   "is_nc": false,
-   "reason": "量4.3M<10M; 未驗證"
-  },
-  {
-   "symbol": "NCSKSPCX2USD-USDT",
+   "symbol": "NCSKSOXS12USD-USDT",
    "vol24h_m": 4.2,
    "is_nc": false,
-   "reason": "量4.2M<10M; 上市183天<365; 未驗證"
+   "reason": "量4.2M<10M; 上市131天<365; 未驗證"
   },
   {
-   "symbol": "CYBER-USDT",
-   "vol24h_m": 3.8,
+   "symbol": "STX-USDT",
+   "vol24h_m": 4.2,
    "is_nc": false,
-   "reason": "量3.8M<10M; 未驗證"
+   "reason": "量4.2M<10M; 未驗證"
+  },
+  {
+   "symbol": "BLUR-USDT",
+   "vol24h_m": 4.0,
+   "is_nc": false,
+   "reason": "量4.0M<10M; 未驗證"
+  },
+  {
+   "symbol": "PROM-USDT",
+   "vol24h_m": 3.9,
+   "is_nc": false,
+   "reason": "量3.9M<10M; 未驗證"
   },
   {
    "symbol": "FARTCOIN-USDT",
+   "vol24h_m": 3.6,
+   "is_nc": false,
+   "reason": "量3.6M<10M; 未驗證"
+  },
+  {
+   "symbol": "BULLA-USDT",
+   "vol24h_m": 3.3,
+   "is_nc": false,
+   "reason": "量3.3M<10M; 上市77天<365; 未驗證"
+  },
+  {
+   "symbol": "AKE-USDT",
    "vol24h_m": 3.3,
    "is_nc": false,
    "reason": "量3.3M<10M; 未驗證"
   },
   {
-   "symbol": "IRYS-USDT",
-   "vol24h_m": 3.1,
+   "symbol": "QNT-USDT",
+   "vol24h_m": 3.2,
    "is_nc": false,
-   "reason": "量3.1M<10M; 上市361天<365; 未驗證"
+   "reason": "量3.2M<10M; 未驗證"
+  },
+  {
+   "symbol": "NCSKMSTR2USD-USDT",
+   "vol24h_m": 3.2,
+   "is_nc": false,
+   "reason": "量3.2M<10M; 未驗證"
   }
  ],
  "cost_vetoed": {},
