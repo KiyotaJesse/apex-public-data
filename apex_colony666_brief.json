@@ -1,6 +1,6 @@
 {
- "ts": "2026-11-26T04:20:08",
- "data_ts": "2026-11-26T04:20:04",
+ "ts": "2026-11-26T05:20:12",
+ "data_ts": "2026-11-26T05:20:06",
  "data_age_h": 0.0,
  "stale": false,
  "verdict": {
@@ -160,11 +160,11 @@
    "q": "非加密 指數 市場組合 cS_vwap_dev>=2+ema_rel<0+impact>=1|TP6R 過五關+隨機基準(EV+0.46 n",
    "rec": "A"
   },
-  "line": "近 24 小時: 自動裁決 0 件、自動修復/回滾 0 件。下一個自動到期 D311(2026-11-28), 沒人異議就採建議 A。成形雷達: 成形中 2801 檔／已成形 1262 檔(全條件 1262)(跨 5 市場; 宇宙 667 檔, 休市排除 106)。預言帳：1902 則前瞻在等結算、持牌 9／預言者 541。消息：近 24h 1387 則／高重要 33 則／最新一則「Crypto Long & Short: Bitcoin investors c」(來源 1 個停抓中)｜實證：22 類消息裡 1 類會動價格、9 類不會、12 類樣本不足(事件 n=1364)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 85 則發言、提到 NVDA×55／GOLD×16／FXI×10、淨多空 +1.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 14823 單／已結 4037 單(live 4003＋登記日回填 34)／237 個規格在追；最接近晉升的 cS_vwap_dev>=2+ema_rel<0+imp(stock) 已達 n=37 EV=+0.955R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=12 EV-0.628、TL n=16 EV+0.040、MRS n=74 EV-0.111、SC1 n=114 EV-0.254、SC3 n=487 EV-0.309；最差 B1(-0.628R)、最好 TL(+0.040R)；合計 703 筆 EV-0.277R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 25%(1/4)。",
+  "line": "近 24 小時: 自動裁決 0 件、自動修復/回滾 0 件。下一個自動到期 D311(2026-11-28), 沒人異議就採建議 A。成形雷達: 成形中 2058 檔／已成形 1263 檔(全條件 1263)(跨 5 市場; 宇宙 667 檔, 休市排除 106)。預言帳：1923 則前瞻在等結算、持牌 12／預言者 541。消息：近 24h 1410 則／高重要 33 則／最新一則「SpaceX Slashes GPU Pricing? Plus, IREN’s」(來源 1 個停抓中)｜實證：22 類消息裡 1 類會動價格、9 類不會、12 類樣本不足(事件 n=1364)；黑窗 差異落在噪音裡, 黑窗沒有證據｜川普：近 24h 89 則發言、提到 NVDA×56／GOLD×17／FXI×11、淨多空 +1.0。今日事件：0 件(無)／黑窗中：否。影子: 追蹤中 15103 單／已結 4018 單(live 3984＋登記日回填 34)／237 個規格在追；最接近晉升的 cS_vwap_dev>=2+ema_rel<0+imp(stock) 已達 n=37 EV=+0.955R，但還沒贏隨機 p95。現役前瞻(役, 2026-09-01 起): B1 n=12 EV-0.628、TL n=16 EV+0.040、MRS n=74 EV-0.111、SC1 n=114 EV-0.254、SC3 n=487 EV-0.309；最差 B1(-0.628R)、最好 TL(+0.040R)；合計 703 筆 EV-0.277R(樣本只有兩週、同一 regime, 不能當三年樣本外的反證)。下架影子(汰): 前瞻 n=1、淨EV+4.354R、可交易率 25%(1/4)。",
   "radar": {
-   "forming": 2801,
-   "fired": 1262,
-   "fired_full": 1262,
+   "forming": 2058,
+   "fired": 1263,
+   "fired_full": 1263,
    "markets": [
     "commodity",
     "crypto",
@@ -174,21 +174,21 @@
    ],
    "universe_fresh": 667,
    "stale_excluded": 106,
-   "ts_utc": "2026-11-25T19:35",
+   "ts_utc": "2026-11-25T20:35",
    "age_h": 0.8
   },
   "forecast": {
-   "pending": 1902,
-   "licensed": 9,
+   "pending": 1923,
+   "licensed": 12,
    "forecasters": 541,
-   "n_forecasts": 94626,
-   "n_resolved": 92724,
-   "asOf": "2026-11-25T19:40:40"
+   "n_forecasts": 94684,
+   "n_resolved": 92761,
+   "asOf": "2026-11-25T20:40:41"
   },
   "shadow": {
-   "n_open": 14823,
-   "n_closed": 4037,
-   "n_live": 4003,
+   "n_open": 15103,
+   "n_closed": 4018,
+   "n_live": 3984,
    "n_post_reg": 34,
    "n_backfill": 0,
    "n_specs": 237,
@@ -216,11 +216,11 @@
     {
      "spec": "cL_brk_high25>0+atr_r>=1.2+cvd_z>=1|R",
      "market": "stock",
-     "n": 226,
-     "n_live": 225,
+     "n": 227,
+     "n_live": 226,
      "n_post_reg": 1,
-     "ev": 0.9,
-     "random_z": 3.24,
+     "ev": 0.8911,
+     "random_z": 3.16,
      "to_promo_n": 0,
      "eta": null,
      "beats_p95": true
@@ -239,28 +239,28 @@
     }
    ],
    "eta_promo": null,
-   "opens_per_day": 1331.0,
+   "opens_per_day": 1349.4,
    "rate_days": 14,
-   "ts_utc": "2026-11-25T19:40"
+   "ts_utc": "2026-11-25T20:40"
   },
   "news": {
-   "n_24h": 1387,
+   "n_24h": 1410,
    "n_hi": 33,
    "by_category": {
-    "crypto": 422,
-    "macro": 113,
-    "stock": 452,
-    "commodity_fx": 400
+    "stock": 443,
+    "crypto": 429,
+    "macro": 120,
+    "commodity_fx": 418
    },
    "sources_green": 39,
    "sources_red": 1,
    "top": {
-    "t": "Crypto Long & Short: Bitcoin investors can’t keep ignoring Japan",
+    "t": "SpaceX Slashes GPU Pricing? Plus, IREN’s Selloff and CoreWeave’s Distressed Bonds",
     "imp": 80,
-    "src": "coindesk",
-    "ts": "2026-11-25T15:59:44Z"
+    "src": "yahoo_finance",
+    "ts": "2026-11-25T19:57:56Z"
    },
-   "run_at": "2026-11-25T20:18:02",
+   "run_at": "2026-11-25T21:18:02",
    "impact": {
     "line": "｜實證：22 類消息裡 1 類會動價格、9 類不會、12 類樣本不足(事件 n=1364)；黑窗 差異落在噪音裡, 黑窗沒有證據",
     "n_topics": 22,
@@ -274,37 +274,37 @@
     "ts": "2026-11-21T20:30:26"
    },
    "trump": {
-    "line": "｜川普：近 24h 85 則發言、提到 NVDA×55／GOLD×16／FXI×10、淨多空 +1.0",
-    "n_24h": 85,
+    "line": "｜川普：近 24h 89 則發言、提到 NVDA×56／GOLD×17／FXI×11、淨多空 +1.0",
+    "n_24h": 89,
     "net_long_24h": 1.0,
     "top_symbols": [
      {
       "symbol": "NVDA",
-      "n": 55,
-      "net": 0.0,
+      "n": 56,
+      "net": -0.38,
       "long": 0,
-      "short": 0
+      "short": 1
      },
      {
       "symbol": "GOLD",
-      "n": 16,
-      "net": 6.25,
-      "long": 16,
+      "n": 17,
+      "net": 6.63,
+      "long": 17,
       "short": 0
      },
      {
       "symbol": "FXI",
-      "n": 10,
-      "net": -3.99,
+      "n": 11,
+      "net": -4.37,
       "long": 0,
-      "short": 10
+      "short": 11
      },
      {
       "symbol": "DXY",
-      "n": 5,
-      "net": -1.77,
+      "n": 6,
+      "net": -2.07,
       "long": 0,
-      "short": 5
+      "short": 6
      },
      {
       "symbol": "META",
@@ -314,7 +314,7 @@
       "short": 0
      }
     ],
-    "run_at": "2026-11-25T20:09:02"
+    "run_at": "2026-11-25T21:09:02"
    }
   },
   "calendar": {
@@ -326,13 +326,13 @@
    "blackout_event": null,
    "blackout_markets": [],
    "head": null,
-   "age_h": 2.0,
+   "age_h": 3.0,
    "ts": "2026-11-25T18:20:10"
   },
   "live_shadow": {
    "window": {
     "from": "2026-09-01",
-    "to": "2026-11-25T19:45"
+    "to": "2026-11-25T20:45"
    },
    "n_closed": 703,
    "n_open": 17,
@@ -344,7 +344,7 @@
     "pf": 0.626,
     "sum_r": -194.736
    },
-   "ts": "2026-11-25T19:45",
+   "ts": "2026-11-25T20:45",
    "per": {
     "B1": {
      "n": 12,
@@ -410,12 +410,12 @@
     "funding_missing": 0
    },
    "n_open": 0,
-   "ts": "2026-11-25T20:10:04Z"
+   "ts": "2026-11-25T21:10:04Z"
   }
  },
  "north_star": {
   "ts": "2026-11-25T08:00:04",
-  "age_h": 20.3,
+  "age_h": 21.3,
   "stale": false,
   "risk_light": "red",
   "risk_why": "最大 24h 權益跌幅 100.0%(上限 20.0)",
@@ -481,11 +481,11 @@
   "nest": "queen_weight 鏈內 nest",
   "actions": "actions.json",
   "decisions": "decisions.json",
-  "attendance": "supervision_state.json @ 2026-11-25T20:05",
+  "attendance": "supervision_state.json @ 2026-11-25T21:05",
   "events": "events.jsonl",
   "month_r": "tama-trading/tama_memory.json 實彈帳本(B1 + TL/SC/MRS/AUTO)",
   "calendar": "calendar_board.json @ 2026-11-25T18:20:10",
-  "news": "news_board.json @ 2026-11-25T20:18:02",
+  "news": "news_board.json @ 2026-11-25T21:18:02",
   "north_star": "goal_state.json @ 2026-11-25T08:00:04",
   "rules": "brief_rules.json v1.0"
  },
